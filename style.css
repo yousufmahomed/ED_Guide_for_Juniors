@@ -70,6 +70,13 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
+.age-menu-item:nth-of-type(odd) {
+  background-color: #f7d794;
+}
+
+.age-menu-item:nth-of-type(even) {
+  background-color: #e056fd;
+}
 
 .age-menu-item:hover {
   transform: translateY(-5px);
