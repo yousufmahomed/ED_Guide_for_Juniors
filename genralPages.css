@@ -57,6 +57,69 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
   }
+
+  .navbar {
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .navbar-icons {
+    display: flex;
+  }
+  
+  .navbar-icons i {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  
+  .back-button {
+    background-color: #2196F3;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .back-button:hover {
+    background-color: #0D47A1;
+  }
+  .subheading {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .complaint-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .present-illness-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
   
   /* Alternate link colors */
   .links a:nth-child(even) {
@@ -100,6 +163,37 @@ header {
     .links a {
       padding: 0.75rem;
       font-size: 0.9rem;
+    }
+    .navbar {
+      height: 50px;
+    }
+  
+    .main-header {
+      font-size: 20px;
+    }
+  
+    .navbar-icons i {
+      font-size: 20px;
+    }
+  
+    .back-button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+    .subheading {
+      font-size: 20px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+  
+    .complaint-section {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+  
+    .present-illness-section {
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
   }
   
