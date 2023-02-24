@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pain Scale</title>
+    <style>
+        /* Style the label */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the select element */
+  select {
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 200px;
+  }
+  
+  /* Style the option elements */
+  option {
+    font-size: 16px;
+    padding: 8px 10px;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* Style the option elements for mild pain */
+  option[value="1"],
+  option[value="2"],
+  option[value="3"] {
+    background-color: #e6ffe6;
+    color: #000;
+  }
+  
+  /* Style the option elements for moderate pain */
+  option[value="4"],
+  option[value="5"],
+  option[value="6"] {
+    background-color: #ffffe6;
+    color: #000;
+  }
+  
+  /* Style the option elements for severe pain */
+  option[value="7"],
+  option[value="8"],
+  option[value="9"],
+  option[value="10"] {
+    background-color: #ffe6e6;
+    color: #000;
+  }
+    </style>
+</head>
+<body>
+    <label for="pain-scale">Patients pain level:</label>
+        <select id="pain-scale" name="pain-scale">
+            <option value="0">0 - No pain</option>
+            <option value="1">1 - Mild pain</option>
+            <option value="2">2 - Mild pain</option>
+            <option value="3">3 - Mild pain</option>
+            <option value="4">4 - Moderate pain</option>
+            <option value="5">5 - Moderate pain</option>
+            <option value="6">6 - Moderate pain</option>
+            <option value="7">7 - Severe pain</option>
+            <option value="8">8 - Severe pain</option>
+            <option value="9">9 - Severe pain</option>
+            <option value="10">10 - Severe pain</option>
+        </select>
+</body>
+</html>
