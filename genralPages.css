@@ -9,6 +9,7 @@ header {
   
   .logo-container {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     flex: 1;
   }
@@ -108,17 +109,27 @@ header {
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
   }
 
-  .complaint-section {
+  .section {
     margin-top: 40px;
     margin-bottom: 40px;
   }
-
-  .present-illness-section {
-    margin-top: 40px;
-    margin-bottom: 40px;
+  .section p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    text-indent: 1.5em;
+    
   }
+  .section p::before {
+    content: "•"; 
+  display: inline-block;
+  margin-right: 8px; 
+  }
+
+
   
   
   /* Alternate link colors */
@@ -186,15 +197,11 @@ header {
       margin-bottom: 8px;
     }
   
-    .complaint-section {
+    .section {
       margin-top: 24px;
       margin-bottom: 24px;
     }
   
-    .present-illness-section {
-      margin-top: 24px;
-      margin-bottom: 24px;
-    }
   }
   
   
