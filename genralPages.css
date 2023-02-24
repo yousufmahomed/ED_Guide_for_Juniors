@@ -146,6 +146,12 @@ header {
   .links a:hover {
     transform: translateY(-3px);
   }
+  .emphasis-link {
+    font-weight: bold;
+    color: #0070C0;
+    font-size: larger;
+  }
+  
   
   /* Styling for mobile screens */
   @media only screen and (max-width: 600px) {
