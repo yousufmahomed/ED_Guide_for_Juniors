@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/script.js"></script>
+  
     <title>Pain Scale</title>
     <style>
+      header {
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+      }
+      
+      .logo-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex: 1;
+      }
+      
+      .logo-container h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .back-button {
+        background-color: #2196F3;
+        border: none;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      
+      .back-button:hover {
+        background-color: #0D47A1;
+      }
         /* Style the label */
 label {
     display: block;
@@ -56,8 +92,42 @@ label {
     background-color: #ffe6e6;
     color: #000;
   }
+  @media only screen and (max-width: 600px) {
+    .logo-container {
+      font-size: 1rem;
+    }
+  
+    .fa-syringe {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+    }
+  
+    .fa-house {
+      font-size: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+    }
+    .back-button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
     </style>
 </head>
+<header>
+  <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">History Structure</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
 <body>
     <label for="pain-scale">Patients pain level:</label>
         <select id="pain-scale" name="pain-scale">
