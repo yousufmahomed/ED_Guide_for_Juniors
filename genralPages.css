@@ -27,6 +27,7 @@ header {
   
   .fa-house {
     font-size: 2rem;
+    color: #999;
   }
   
   main {
@@ -66,6 +67,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+   
   }
   
   .navbar-container {
@@ -74,6 +76,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
   
   .main-header {
