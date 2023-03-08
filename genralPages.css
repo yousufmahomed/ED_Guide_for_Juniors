@@ -124,11 +124,9 @@ header {
   .section p {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    text-indent: 1.5em;
     
   }
   .section p::before {
-    content: "•"; 
   display: inline-block;
   margin-right: 8px; 
   }
