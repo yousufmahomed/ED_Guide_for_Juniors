@@ -7,6 +7,7 @@ header {
     align-items: center;
     padding: 1rem;
   }
+
   
   .logo-container {
     display: flex;
@@ -211,5 +212,6 @@ header {
     }
   
   }
-  
+
+ 
   
