@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parity &amp; Gravidity Calculator</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    /* Styling for laptop screens */
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/parityGravidity.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; 
+    }
+    div {
+        margin: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+      input[type="number"] {
+        width: 100px;
+      }
+      #calculate-btn {
+        margin-top: 20px;
+        padding: 5px 10px;
+      }
+      
+</style>
+</head>
+<body>
+    <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Parity &amp; Gravidity Calculator</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <div>
+            <label>Live Births:</label>
+            <input type="number" id="live-births">
+        </div>
+        <div>
+            <label>Currently Pregnant:</label>
+            <label><input type="checkbox" id="pregnant" value="yes">Yes</label>
+        </div>
+        <div>
+            <label>Full Term Pregnancies:</label>
+            <input type="number" id="full-term-pregnancies">
+        </div>
+        <div>
+            <label>Pre-term Pregnancies:</label>
+            <input type="number" id="pre-term-pregnancies">
+        </div>
+        <div>
+            <label>Abortions/Stillbirths:</label>
+            <input type="number" id="abortions-stillbirths">
+        </div>
+        <button id="calculate-btn">Calculate</button>
+        <div id="result"></div>
+    </main>
+    <script>
+        const calculateBtn = document.getElementById('calculate-btn');
+        const resultDiv = document.getElementById('result');
+
+        calculateBtn.addEventListener('click', () => {
+            const liveBirths = Number(document.getElementById('live-births').value);
+            const isCurrentlyPregnant = document.getElementById('pregnant').checked;
+            const fullTermPregnancies = Number(document.getElementById('full-term-pregnancies').value);
+            const preTermPregnancies = Number(document.getElementById('pre-term-pregnancies').value);
+            const abortionsStillbirths = Number(document.getElementById('abortions-stillbirths').value);
+
+            // Calculate parity
+            const parity = `P${liveBirths}`;
+
+            // Calculate gravidity
+            const gravidity = `G${(isCurrentlyPregnant ? 1 : 0) + fullTermPregnancies + preTermPregnancies + abortionsStillbirths}`;
+            const gravidityDetails = `${fullTermPregnancies}-${preTermPregnancies}-${abortionsStillbirths}`;
+
+            // Display result
+            resultDiv.textContent = `Parity: ${parity}, Gravidity: ${gravidity} (${gravidityDetails})`;
+        });
+    </script>
+      
+</body>
+</html>
