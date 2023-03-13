@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Commonly Used Antibiotics in Hospitals</title>
+    <title>Commonly Used Drugs for Endocrine Diseases</title>
     <link rel="stylesheet" href="/genralPages.css">
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -55,7 +55,7 @@
   <header>
     <nav class="logo-container">
         <div class="logo-container">
-          <h1 class="main-header">Commonly Used Antibiotics in Hospitals</h1>
+          <h1 class="main-header">Commonly Used Drugs for Endocrine Diseases</h1>
           <div class="navbar-icons">
             <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
           </div>
@@ -64,53 +64,62 @@
       </nav>
     </header>
   <body>
-    
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antibiotics...">
-    <table id="antibiotics">
+   
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
+    <table id="endocrine">
       <tr>
-        <th>Antibiotic</th>
-        <th>Oral Dosage</th>
-        <th>Intravenous Dosage</th>
+        <th>Drug</th>
+        <th>Dosage</th>
+        <th>Route of Administration</th>
+        <th>Indication for Use</th>
       </tr>
       <tr>
-        <td>Amoxicillin</td>
-        <td>500 mg every 8 hours</td>
-        <td>1 g every 8 hours</td>
+        <td>Levothyroxine</td>
+        <td>50-200 mcg/day</td>
+        <td>Oral</td>
+        <td>Hypothyroidism</td>
       </tr>
       <tr>
-        <td>Augmentin</td>
-        <td>250 mg every 8 hours or 500mg every 12 hours</td>
-        <td>1.2 g every 8 hours</td>
+        <td>Metformin</td>
+        <td>500-2000 mg/day</td>
+        <td>Oral</td>
+        <td>Type 2 diabetes mellitus, polycystic ovary syndrome</td>
       </tr>
       <tr>
-        <td>Ceftriaxone</td>
-        <td>N/A</td>
-        <td>1 g once a day</td>
+        <td>Insulin</td>
+        <td>Individualized based on blood glucose levels</td>
+        <td>Subcutaneous or intravenous</td>
+        <td>Type 1 diabetes mellitus, type 2 diabetes mellitus, hyperkalemia</td>
       </tr>
       <tr>
-        <td>Ciprofloxacin</td>
-        <td>500-750 mg every 12 hours</td>
-        <td>400 mg every 8-12 hours</td>
+        <td>Glimepiride</td>
+        <td>1-4 mg once daily with breakfast or the first main meal, titrated based on response</td>
+        <td>Oral</td>
+        <td>TType 2 diabetes mellitus</td>
       </tr>
       <tr>
-        <td>Clindamycin</td>
-        <td>150-300 mg every 6 hours</td>
-        <td>600-900 mg every 8 hours</td>
+        <td>Protaphane (also known as NPH insulin)</td>
+        <td>Individualized based on blood glucose levels, typically 10 units or more once or twice daily</td>
+        <td>SSubcutaneous injection</td>
+        <td>Type 1 and type 2 diabetes mellitus</td>
       </tr>
       <tr>
-        <td>Gentamicin</td>
-        <td>N/A</td>
-        <td>1-2 mg/kg every 8 hours</td>
+        <td>Glyburide</td>
+        <td>1.25-20 mg/day</td>
+        <td>Oral</td>
+        <td>Type 2 diabetes mellitus</td>
       </tr>
       <tr>
-        <td>Levofloxacin</td>
-        <td>500 mg every 24 hours</td>
-        <td>500-750 mg every 24 hours</td>
+        <td>Liraglutide</td>
+        <td>0.6-1.8 mg/day</td>
+        <td>Subcutaneous</td>
+        <td>Type 2 diabetes mellitus, obesity</td>
       </tr>
       <tr>
-        <td>Metronidazole</td>
-        <td>500 mg every 8 hours</td>
-        <td>500-750 mg every 8 hours</td>
+        <td>Calcitonin</td>
+        <td>100-200 IU/day</td>
+        <td>Subcutaneous, intramuscular, or intravenous</td>
+        <td>Osteoporosis, hypercalcemia</td>
       </tr>
     </table>
     <script>
@@ -118,7 +127,7 @@
             let input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("search");
             filter = input.value.toUpperCase();
-            table = document.getElementById("antibiotics");
+            table = document.getElementById("endocrine");
             tr = table.getElementsByTagName("tr");
             for (i = 1; i < tr.length; i++) {
               td = tr[i].getElementsByTagName("td")[0];
@@ -133,4 +142,6 @@
             }
           }
         </script>
-          
+  </body>
+  </html>          
+       

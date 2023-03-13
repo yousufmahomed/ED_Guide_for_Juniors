@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Antidysrhythmic Drugs</title>
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/medications.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+          }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      input[type=text]:focus {
+        border: 2px solid #4CAF50;
+      }
+      
+      .class-header {
+        font-weight: bold;
+        font-size: 1.2em;
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Antidysrhythmic Drugs</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+  <body>
+    
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
+    <table id="antidysrhythmic">
+      <tr>
+        <th>Class</th>
+        <th>Drug</th>
+        <th>Dosage</th>
+        <th>Route of Administration</th>
+        <th>Indication for Use</th>
+      </tr>
+      <!-- Add rows for each drug -->
+      <tr>
+        <td rowspan="2" class="class-header">Class I</td>
+        <td>Lidocaine (Xylocaine)</td>
+        <td>1-1.5 mg/kg bolus followed by 0.5-0.75 mg/kg every 5-10 minutes as needed</td>
+        <td>Intravenous</td>
+        <td>Ventricular tachycardia, ventricular fibrillation</td>
+      </tr>
+      <tr>
+        <td>Procainamide (Procan, Procanbid)</td>
+        <td>20-30 mg/min, maximum dose 17 mg/kg</td>
+        <td>Intravenous</td>
+        <td>Ventricular tachycardia, atrial fibrillation, atrial flutter</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="class-header">Class II</td>
+        <td>Propranolol (Inderal)</td>
+        <td>1-3 mg intravenously over 2-3 minutes, then repeat every 2-5 minutes as needed; maximum dose of 10 mg</td>
+        <td>Intravenous</td>
+        <td>Supraventricular tachycardia, ventricular arrhythmias</td>
+      </tr>
+      <tr>
+        <td>Metoprolol (Lopressor)</td>
+        <td>5 mg intravenously over 1-2 minutes, repeat every 5 minutes as needed; maximum dose of 15 mg</td>
+        <td>Intravenous</td>
+        <td>Supraventricular tachycardia, ventricular arrhythmias</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="class-header">Class III</td>
+        <td>Amiodarone (Cordarone, Pacerone)</td>
+        <td>Initial loading dose of 150-300 mg over 10-20 minutes, followed by a maintenance infusion of 1 mg/min for 6 hours, then 0.5 mg/min for 18 hours</td>
+        <td>Intravenous</td>
+        <td>Ventricular arrhythmias, atrial fibrillation, atrial flutter</td>
+      </tr>
+      <tr>
+        <td>Ibutilide (Corvert)</td>
+        <td>1 mg over 10 minutes; may repeat in 10 minutes at a dose of 0.5 mg if necessary</td>
+        <td>Intravenous</td>
+        <td>Atrial fibrillation, atrial flutter</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="class-header">Class IV</td>
+        <td>Verapamil (Calan, Isoptin)</td>
+        <td>5-10 mg intravenously over 2-3 minutes; may repeat in 30 minutes if necessary</td>
+        <td>Intravenous</td>
+        <td>Supraventricular tachycardia</td>
+      </tr>
+      <tr>
+        <td>Diltiazem (Cardizem)</td>
+        <td>0.25 mg/kg intravenously over 2 minutes, followed by an infusion of 5-15 mg/hour</td>
+        <td>Intravenous</td>
+        <td>Supraventricular tachycardia</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="class-header">First Line</td>
+        <td class="class-header">Adenosine (Adenocard)</td>
+        <td>6 mg rapid intravenous push followed by a 20 mL saline flush; if no response after 1-2 minutes, may administer a 12 mg dose followed by a 20 mL saline flush</td>
+        <td>Intravenous</td>
+        <td>Supraventricular tachycardia</td>
+      </tr>
+    
+      
+      
+    </table>
+    <script>
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("antidysrhythmic");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          } 
+        }
+      }
+    </script>
+  </body>
+</html>
