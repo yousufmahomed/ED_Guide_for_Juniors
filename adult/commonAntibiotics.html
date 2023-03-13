@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Commonly Used Antibiotics in Hospitals</title>
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      input[type=text]:focus {
+        border: 2px solid #4CAF50;
+      }
+    </style>
+  </head>
+  <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Commonly Used Antibiotics in Hospitals</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+  <body>
+    <h1>Commonly Used Antibiotics in Hospitals</h1>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antibiotics...">
+    <table id="antibiotics">
+      <tr>
+        <th>Antibiotic</th>
+        <th>Oral Dosage</th>
+        <th>Intravenous Dosage</th>
+      </tr>
+      <tr>
+        <td>Amoxicillin</td>
+        <td>500 mg every 8 hours</td>
+        <td>1 g every 8 hours</td>
+      </tr>
+      <tr>
+        <td>Augmentin</td>
+        <td>250 mg every 8 hours or 500mg every 12 hours</td>
+        <td>1.2 g every 8 hours</td>
+      </tr>
+      <tr>
+        <td>Ceftriaxone</td>
+        <td>N/A</td>
+        <td>1 g once a day</td>
+      </tr>
+      <tr>
+        <td>Ciprofloxacin</td>
+        <td>500-750 mg every 12 hours</td>
+        <td>400 mg every 8-12 hours</td>
+      </tr>
+      <tr>
+        <td>Clindamycin</td>
+        <td>150-300 mg every 6 hours</td>
+        <td>600-900 mg every 8 hours</td>
+      </tr>
+      <tr>
+        <td>Gentamicin</td>
+        <td>N/A</td>
+        <td>1-2 mg/kg every 8 hours</td>
+      </tr>
+      <tr>
+        <td>Levofloxacin</td>
+        <td>500 mg every 24 hours</td>
+        <td>500-750 mg every 24 hours</td>
+      </tr>
+      <tr>
+        <td>Metronidazole</td>
+        <td>500 mg every 8 hours</td>
+        <td>500-750 mg every 8 hours</td>
+      </tr>
+    </table>
+    <script>
+        function searchTable() {
+            let input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("antibiotics");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[0];
+              if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+        </script>
+          

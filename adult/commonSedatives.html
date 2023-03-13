@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Commonly Used Sedatives in the Emergency Department</title>
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      input[type=text]:focus {
+        border: 2px solid #4CAF50;
+      }
+    </style>
+  </head>
+  <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Commonly Used Sedatives in the Emergency Department</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+  <body>
+    <h1>Commonly Used Sedatives in the Emergency Department</h1>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for sedatives...">
+    <table id="sedatives">
+      <tr>
+        <th>Sedative</th>
+        <th>Dosage</th>
+        <th>Route of Administration</th>
+      </tr>
+      <tr>
+        <td>Diazepam</td>
+        <td>5-10 mg every 2-4 hours</td>
+        <td>Intravenous or intramuscular</td>
+      </tr>
+      <tr>
+        <td>Lorazepam</td>
+        <td>1-4 mg every 4-6 hours</td>
+        <td>Intravenous</td>
+      </tr>
+      <tr>
+        <td>Midazolam</td>
+        <td>1-2 mg every 5-10 minutes</td>
+        <td>Intravenous or intramuscular</td>
+      </tr>
+      <tr>
+        <td>Propofol</td>
+        <td>0.5-2 mg/kg/hour</td>
+        <td>Intravenous</td>
+      </tr>
+      <tr>
+        <td>Ketamine</td>
+        <td>4-5 mg/kg</td>
+        <td><em style="color: red; font-weight:bolder">Intramuscular</em></td>
+      </tr>
+      <tr>
+      <td>Ketamine</td>
+      <td>0.1-0.5 mg/kg</td>
+      <td><em style="color: red; font-weight:bolder">Intravenous</em></td>
+    </tr>
+    <tr>
+      <td>Ketamine</td>
+      <td>5-20 mg/kg</td>
+      <td><em style="color: red; font-weight:bolder">Oral</em></td>
+    </tr>
+    </tr>
+    </table>
+    <script>
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("sedatives");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

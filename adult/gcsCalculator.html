@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/genralPages.css">
+    <title>Glasgow Coma Scale Calculator</title>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <style>
+        h1 {
+            text-align: center;
+          }
+          
+          form {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+          }
+          
+          h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+          }
+          
+          label {
+            display: block;
+            margin-bottom: 10px;
+          }
+          
+          select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+          }
+          
+          button {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          
+          button:hover {
+            background-color: #3e8e41;
+          }
+          
+          #gcs-score {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+          }
+          
+    </style>
+  </head>
+  <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Glasgow Coma Scale Calculator</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+  <body class="vitals-page">
+    <h1>Glasgow Coma Scale Calculator</h1>
+    <p>The Glasgow Coma Scale is a tool used to assess a patient's level of consciousness. It evaluates three parameters: eye opening response, best verbal response, and best motor response.</p>
+    <form>
+      <h2>Eye Opening Response</h2>
+      <label for="eye-response">Choose an eye opening response:</label>
+      <select id="eye-response" name="eye-response">
+        <option value="4">Spontaneous</option>
+        <option value="3">To speech</option>
+        <option value="2">To pain</option>
+        <option value="1">None</option>
+      </select>
+      <h2>Best Verbal Response</h2>
+      <label for="verbal-response">Choose a best verbal response:</label>
+      <select id="verbal-response" name="verbal-response">
+        <option value="5">Oriented</option>
+        <option value="4">Confused conversation</option>
+        <option value="3">Inappropriate words</option>
+        <option value="2">Incomprehensible sounds</option>
+        <option value="1">None</option>
+      </select>
+      <h2>Best Motor Response</h2>
+      <label for="motor-response">Choose a best motor response:</label>
+      <select id="motor-response" name="motor-response">
+        <option value="6">Obeys commands</option>
+        <option value="5">Localizes pain</option>
+        <option value="4">Withdraws from pain</option>
+        <option value="3">Flexion to pain (decorticate)</option>
+        <option value="2">Extension to pain (decerebrate)</option>
+        <option value="1">None</option>
+      </select>
+      <br>
+      <button type="button" onclick="calculateGCS()">Calculate GCS</button>
+      <br>
+      <h2>Total GCS Score</h2>
+      <p id="gcs-score"></p>
+    </form>
+    <script>
+      function calculateGCS() {
+        const eyeResponse = parseInt(document.getElementById("eye-response").value);
+        const verbalResponse = parseInt(document.getElementById("verbal-response").value);
+        const motorResponse = parseInt(document.getElementById("motor-response").value);
+        const totalScore = eyeResponse + verbalResponse + motorResponse;
+        document.getElementById("gcs-score").innerHTML = `Total GCS Score: ${totalScore}`;
+      }
+    </script>
+  </body>
+</html>
