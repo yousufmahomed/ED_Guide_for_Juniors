@@ -117,9 +117,19 @@
 
 		<section>
 			<h2>ECG Analysis</h2>
+			<p>NB! Most of the values requested are provided on your ECG Printout</p>
 			<form id="ecg-form">
 				<label for="heart-rate">Heart Rate (bpm):</label>
 				<input type="number" id="heart-rate" name="heart-rate" min="20" max="300" required>
+
+				<label for="axis">Axis:</label>
+					<select id="axis" name="axis" required>
+						<option value="">--Select--</option>
+						<option value="normal">Normal</option>
+						<option value="left">Left Deviation</option>
+						<option value="right">Right Deviation</option>
+						<option value="extreme">Extreme Deviation</option>
+					</select>
 
 				<label for="rhythm">Rhythm:</label>
 				<select id="rhythm" name="rhythm" required>
@@ -139,6 +149,9 @@
 					<option value="inverted">Inverted</option>
 					<option value="widened">Widened</option>
 				</select>
+
+				<label for="pr-interval">PR Interval (ms):</label>
+					<input type="number" id="pr-interval" name="pr-interval" min="60" max="300" required>
 
 				<label for="qrs-complex">QRS Complex:</label>
 				<select id="qrs-complex" name="qrs-complex" required>
@@ -165,6 +178,16 @@
 					<option value="inverted">Inverted</option>
 					<option value="peaked">Peaked</option>
 				</select>
+				
+
+				<label for="qrs-duration">QRS Duration (ms):</label>
+				    <input type="number" id="qrs-duration" name="qrs-duration" min="40" max="200" required>
+
+				<label for="qt-interval">QT Interval (ms):</label>
+				    <input type="number" id="qt-interval" name="qt-interval" min="300" max="500" required>
+
+
+
 
 				<label for="comments">Comments:</label>
 				<textarea id="comments" name="comments"></textarea>
@@ -245,6 +268,34 @@ analyzeButton.addEventListener('click', (event) => {
 	if (possibleDiagnosis.length === 0) {
 		possibleDiagnosis.push('No abnormalities detected');
 	}
+	const prInterval = parseInt(document.getElementById('pr-interval').value);
+const qrsDuration = parseInt(document.getElementById('qrs-duration').value);
+const qtInterval = parseInt(document.getElementById('qt-interval').value);
+const axis = document.getElementById('axis').value;
+
+if (prInterval < 120 || prInterval > 200) {
+    possibleDiagnosis.push('Abnormal PR interval');
+}
+
+if (qrsDuration > 100) {
+    possibleDiagnosis.push('Abnormal QRS duration');
+}
+
+const qtIntervalUpperLimit = 440;
+const qtIntervalLowerLimit = 350;
+
+if (qtInterval > qtIntervalUpperLimit || qtInterval < qtIntervalLowerLimit) {
+    possibleDiagnosis.push('Abnormal QT interval');
+}
+
+if (axis === 'left') {
+    possibleDiagnosis.push('Left axis deviation');
+} else if (axis === 'right') {
+    possibleDiagnosis.push('Right axis deviation');
+} else if (axis === 'extreme') {
+    possibleDiagnosis.push('Extreme axis deviation');
+}
+
 
 	diagnosis.innerHTML = `<p>Possible diagnosis:</p><ul>${possibleDiagnosis.map((item) => `<li>${item}</li>`).join('')}</ul>`;
 });
