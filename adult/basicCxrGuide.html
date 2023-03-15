@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chest X-ray Analysis for Junior Doctors</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/resp.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    
+
+    h1 {
+      font-size: 24px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: navy;
+      color: whitesmoke;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+    
+  
+  </style>
+</head>
+<header>
+  <div class="logo-container">
+      <h1 style="color: antiquewhite;">Chest X-ray Analysis for Junior Doctors</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+<body>
+  <div class="section">
+  
+  <p>When analyzing a chest x-ray, it is essential to follow a systematic approach. This can help ensure that no significant findings are missed. The following steps can be used as a guide:</p>
+  <ol>
+    <li>Check patient details and image quality:</li>
+      <ul>
+        <li>Ensure the patient's name, date of birth, and study date are correct.</li>
+        <li>Confirm the image is of adequate quality (e.g., penetration, rotation, and inspiration).</li>
+      </ul>
+    <li>Assess the bones and soft tissues:</li>
+      <ul>
+        <li>Look for fractures, dislocations, or bone lesions.</li>
+        <li>Examine the soft tissues for masses, swelling, or gas collections.</li>
+      </ul>
+    <li>Examine the lung fields for any abnormalities:</li>
+      <ul>
+        <li>Inspect for consolidation, masses, nodules, or cavities.</li>
+        <li>Identify any signs of atelectasis or pneumothorax.</li>
+        <li>Assess the lung parenchyma for interstitial changes or fibrosis.</li>
+      </ul>
+    <li>Inspect the mediastinum and hilum:</li>
+      <ul>
+        <li>Evaluate the size and shape of the heart and great vessels.</li>
+        <li>Check for any mediastinal or hilar masses or lymphadenopathy.</li>
+      </ul>
+    <li>Look for any pleural or diaphragmatic abnormalities:</li>
+      <ul>
+        <li>Search for pleural effusions, thickening, or calcifications.</li>
+        <li>Examine the diaphragm for elevation, eventration, or herniation.</li>
+      </ul>
+  </ol>
+  <h2 class="subheading">Please click on the images on this page to enlarge them</h2>
+  <img  src="/images/cxrAnatomy.jpg" alt="Radiological areas of a CXR" class="image" onclick="toggleFullscreenImage('/images/cxrAnatomy.jpg')">
+<caption>The radiological anatomy of a CXR</caption>
+<img src="/images/cxrReviewAreas.jpg" alt="Radiological areas of a CXR that should be reviewed" class="image" onclick="toggleFullscreenImage('/images/cxrReviewAreas.jpg')">
+<caption>Radiological areas of a CXR that should be reviewed</caption>
+</div>
+
+  
+
+  <h2>Common Chest X-ray Diagnoses and Their Radiological Features</h2>
+
+  <strong>Pneumonia</strong> 
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Consolidation</td>
+      <td>Increased opacity in the affected area, usually lobar or segmental</td>
+    </tr>
+    <tr>
+      <td>Air bronchogram</td>
+      <td>Air-filled bronchi visible within areas of consolidation</td>
+    </tr>
+    <tr>
+      <td>Silhouette sign</td>
+      <td>Loss of normal anatomical borders due to adjacent consolidation</td>
+    </tr>
+  </table>
+  <div class="section">
+    <img src="/images/pneumonia.jpg" alt="A comparison of a normal lung and a lung with left middle lobe pneumonia" class="image" onclick="toggleFullscreenImage('/images/pneumonia.jpg')">
+<caption>A comparison of a normal lung and a lung with left middle lobe pneumonia</caption>
+  </div>
+ 
+
+  <strong>Pleural Effusion</strong> 
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Blunted costophrenic angles</td>
+      <td>Loss of the sharp angle between the diaphragm and chest wall</td>
+    </tr>
+    <tr>
+      <td>Fluid layering</td>
+      <td>Horizontal fluid level within the pleural space, visible in lateral decubitus or erect films</td>
+    </tr>
+    <tr>
+      <td>Meniscus sign</td>
+      <td>Crescent-shaped opacity at the lung base, representing fluid in the pleural space</td>
+    </tr>
+  </table>
+  <div class="section">
+    <img src="/images/pleuralEffusion.png" alt="A lung with a left sided Pleural Effusion" class="image" onclick="toggleFullscreenImage('/images/pleuralEffusion.png')">
+<caption>A lung with a left sided Pleural Effusion</caption>
+  </div>
+
+  <strong>Pneumothorax</strong> 
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Visceral pleural line</td>
+      <td>Thin white line representing the edge of the collapsed lung</td>
+    </tr>
+    <tr>
+      <td>Absence of lung markings</td>
+      <td>No vascular markings peripheral to the visceral pleural line</td>
+    </tr>
+    <tr>
+      <td>Deep sulcus sign</td>
+      <td>Increased depth and lucency of the costophrenic angle, suggesting pneumothorax in supine films</td>
+    </tr>
+  </table>
+  <div class="section">
+  <img src="/images/pneumothorax.jpeg" alt="A lung with a right sided pneumothorax" class="image" onclick="toggleFullscreenImage('/images/pneumothorax.jpeg')">
+<caption>A lung with a right sided pneumothorax</caption>
+</div>
+
+  <strong>Heart Failure</strong> 
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Cardiomegaly</td>
+      <td>Enlarged cardiac silhouette</td>
+    </tr>
+    <tr>
+      <td>Kerley B lines</td>
+      <td>Short, horizontal lines at the lung bases, representing interstitial edema</td>
+    </tr>
+    <tr>
+      <td>Upper lobe diversion</td>
+      <td>Increased vascular congestion in the upper lung zones</td>
+    </tr>
+    <tr>
+      <td>Peribronchial cuffing</td>
+      <td>Thickening of bronchial walls due to fluid accumulation</td>
+    </tr>
+  </table>
+  <div class="section">
+    <img src="/images/heartFailure.png"   alt="A Picture of a typical CCF CXR" class="image" onclick="toggleFullscreenImage('/images/heartFailure.png')">
+<caption>A Picture of a typical CCF CXR</caption>
+  </div>
+
+  <strong>Chronic Obstructive Pulmonary Disease (COPD)</strong> 
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Hyperinflated lungs</td>
+      <td>Increased lung volume with flattened diaphragm</td>
+    </tr>
+    <tr>
+      <td>Bullae</td>
+      <td>Round, thin-walled, air-filled spaces within the lung parenchyma</td>
+    </tr>
+    <tr>
+      <td>Narrowed mediastinum</td>
+      <td>Mediastinal structures appear compressed due to lung hyperinflation</td>
+    </tr>
+  </table>
+  <div class="section">
+    <img src="/images/4-Stages-of-COPD.png"   alt="The four stages of COPD" class="image" onclick="toggleFullscreenImage('/images/4-Stages-of-COPD.png')">
+<caption>The four stages of COPD</caption>
+<img src="/images/copd.jpg"   alt="Typical COPD findings on CXR" class="image" onclick="toggleFullscreenImage('/images/copd.jpg')">
+<caption>Typical COPD findings on CXR</caption>
+
+  </div>
+  <div class="section">
+    <strong>Lung Cancer</strong>
+    <table>
+      <tr>
+        <th>Lung Cancer Type</th>
+        <th>Radiological Features</th>
+      </tr>
+      <tr>
+        <td>Non-small cell lung cancer (NSCLC)</td>
+        <td>Solitary nodule or mass, irregular margins, spiculated, cavitation</td>
+      </tr>
+      <tr>
+        <td>Small cell lung cancer (SCLC)</td>
+        <td>Central mass or hilar mass, rapid growth, mediastinal or hilar lymphadenopathy</td>
+      </tr>
+      <tr>
+        <td>Adenocarcinoma</td>
+        <td>Peripheral nodule or mass, ground-glass opacity, lepidic growth pattern</td>
+      </tr>
+      <tr>
+        <td>Squamous cell carcinoma</td>
+        <td>Central mass or nodule, cavitation, hilar lymphadenopathy</td>
+      </tr>
+      <tr>
+        <td>Large cell carcinoma</td>
+        <td>Peripheral or central mass, rapid growth, cavitation</td>
+      </tr>
+      <tr>
+        <td>Bronchial carcinoid tumor</td>
+        <td>Well-defined, round or oval nodule, central or peripheral, slow growth</td>
+      </tr>
+      <tr>
+        <td>Metastases to the lung</td>
+        <td>Multiple nodules, varying sizes, well-defined margins, random distribution, possible cavitation</td>
+      </tr>
+    </table>
+    <div class="section">
+      <img src="/images/Non-small.jpg"   alt="Non-small cell lung cancer (NSCLC)" class="image" onclick="toggleFullscreenImage('/images/Non-small.jpg')">
+  <caption>Non-small cell lung cancer (NSCLC)</caption>
+    </div>
+    <div class="section">
+      <img src="/images/small-cell.jpeg"   alt="Small cell lung cancer (SCLC)" class="image" onclick="toggleFullscreenImage('/images/small-cell.jpeg')">
+  <caption>Small cell lung cancer (SCLC)</caption>
+    </div>
+    <div class="section">
+      <img src="/images/adenocarcinoma.jpeg"   alt="Adenocarcinoma of the lung" class="image" onclick="toggleFullscreenImage('/images/adenocarcinoma.jpeg')">
+  <caption>Adenocarcinoma of the lung</caption>
+    </div>
+    <div class="section">
+      <img src="/images/squamous.jpg"   alt="Squamous cell carcinoma of the lung" class="image" onclick="toggleFullscreenImage('/images/squamous.jpg')">
+  <caption>Squamous cell carcinoma of the lung"</caption>
+    </div>
+    <div class="section">
+      <img src="/images/large_cell.jpg"   alt="Large cell carcinoma of the lung" class="image" onclick="toggleFullscreenImage('/images/large_cell.jpg')">
+  <caption>Large cell carcinoma of the lung"</caption>
+    </div>
+    <div class="section">
+      <img src="/images/bronchial_carcinoid.jpeg"   alt="Bronchial carcinoid tumor of the lung" class="image" onclick="toggleFullscreenImage('/images/bronchial_carcinoid.jpeg')">
+  <caption>Bronchial carcinoid tumor of the lung"</caption>
+    </div>
+    <div class="section">
+      <img src="/images/lung_mets.jpeg"   alt="Metastases to the lung" class="image" onclick="toggleFullscreenImage('/images/lung_mets.jpeg')">
+  <caption>Metastases to the lung"</caption>
+    </div>
+    
+  </div>
+
+  <p>Keep in mind that this is just a basic overview of common chest x-ray findings. Further clinical information, laboratory results, and additional imaging studies may be necessary to confirm a diagnosis.</p>
+  <script>
+    function toggleFullscreenImage(src) {
+    let overlay = document.getElementById('fullscreen-image-overlay');
+  
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'fullscreen-image-overlay';
+      overlay.classList.add('fullscreen-image-overlay');
+      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+      overlay.onclick = () => toggleFullscreenImage(null);
+      document.body.appendChild(overlay);
+    } else {
+      document.body.removeChild(overlay);
+    }
+  }
+  </script>
+</body>
+</html>
+
