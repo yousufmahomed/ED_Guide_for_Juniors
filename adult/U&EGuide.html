@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>U&amp;E Guide</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/bloodTestGuides.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    
+
+    h1 {
+      font-size: 24px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: navy;
+      color: whitesmoke;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+    
+  
+  </style>
+</head>
+<header>
+  <div class="logo-container">
+      <h1 style="color: antiquewhite;">U&amp;E Guide<</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+<body>
+    <div class="section">
+        <h2 class="subheading">U&amp;E Guide (including CMP)</h2>
+        <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Terminology for Increase</th>
+              <th>Terminology for Decrease</th>
+              <th>Differential Diagnosis for Increase</th>
+              <th>Differential Diagnosis for Decrease</th>
+            </tr>
+            <tr>
+              <td>Sodium (Na+)</td>
+              <td>Hypernatremia</td>
+              <td>Hyponatremia</td>
+              <td>Dehydration, diabetes insipidus, excessive sweating, vomiting, diarrhea, hyperaldosteronism</td>
+              <td>Excess fluid intake, syndrome of inappropriate antidiuretic hormone (SIADH), heart failure, liver disease, kidney disease</td>
+            </tr>
+            <tr>
+              <td>Potassium (K+)</td>
+              <td>Hyperkalemia</td>
+              <td>Hypokalemia</td>
+              <td>Renal failure, Addison's disease, medication side effects, tissue damage, acidosis</td>
+              <td>Excessive sweating, vomiting, diarrhea, diuretic use, hyperaldosteronism, alkalosis</td>
+            </tr>
+            <tr>
+              <td>Chloride (Cl-)</td>
+              <td>Hyperchloremia</td>
+              <td>Hypochloremia</td>
+              <td>Dehydration, kidney disease, metabolic acidosis, excess intake of salt</td>
+              <td>Vomiting, diarrhea, heart failure, metabolic alkalosis</td>
+            </tr>
+            <tr>
+              <td>Bicarbonate (HCO3-)</td>
+              <td>Hyperbicarbonatemia</td>
+              <td>Hypobicarbonatemia</td>
+              <td>Chronic obstructive pulmonary disease (COPD), metabolic alkalosis, respiratory alkalosis, kidney disease</td>
+              <td>Metabolic acidosis, diarrhea, renal failure, diabetic ketoacidosis</td>
+            </tr>
+            <tr>
+              <td>Blood Urea Nitrogen (BUN)</td>
+              <td>Increased BUN</td>
+              <td>Decreased BUN</td>
+              <td>Dehydration, kidney disease, urinary tract obstruction, gastrointestinal bleeding, heart failure, shock</td>
+              <td>Liver disease, overhydration, malnutrition, low protein diet, pregnancy</td>
+            </tr>
+            <tr>
+              <td>Creatinine</td>
+              <td>Increased creatinine</td>
+              <td>Decreased creatinine</td>
+              <td>Kidney disease, dehydration, urinary tract obstruction, rhabdomyolysis, shock, medication side effects</td>
+              <td>Muscle wasting, pregnancy, reduced muscle mass due to aging, low protein diet</td>
+            </tr>
+            <tr>
+                <td>Urea</td>
+                <td>Increased urea</td>
+                <td>Decreased urea</td>
+                <td>Dehydration, kidney disease, urinary tract obstruction, gastrointestinal bleeding, heart failure, shock</td>
+                <td>Liver disease, overhydration, malnutrition, low protein diet, pregnancy</td>
+              </tr>
+            <tr>
+                <td>Calcium (Ca2+)</td>
+                <td>Hypercalcemia</td>
+                <td>Hypocalcemia</td>
+                <td>Hyperparathyroidism, cancer (e.g., multiple myeloma), excess vitamin D, prolonged immobilization, thiazide diuretics</td>
+                <td>Hypoparathyroidism, vitamin D deficiency, chronic renal failure, pancreatitis</td>
+              </tr>
+              <tr>
+                <td>Magnesium (Mg2+)</td>
+                <td>Hypermagnesemia</td>
+                <td>Hypomagnesemia</td>
+                <td>Kidney failure, excessive use of magnesium-containing antacids, laxatives, or supplements, adrenal insufficiency, hypothyroidism</td>
+                <td>Malnutrition, chronic diarrhea, alcoholism, diabetes, hyperthyroidism, excessive sweating, diuretic use, burns</td>
+              </tr>
+              <tr>
+                <td>Phosphate (PO43-)</td>
+                <td>Hyperphosphatemia</td>
+                <td>Hypophosphatemia</td>
+                <td>Kidney failure, hypoparathyroidism, tumor lysis syndrome, excess vitamin D, hypothyroidism</td>
+                <td>Malnutrition, alcoholism, chronic diarrhea, hyperparathyroidism, diuretic use, burns</td>
+            </tr>
+          </div>
+<div class="section">
+    
+    <table>
+        <tr>
+          <th>Stage of Renal Failure</th>
+          <th>Glomerular Filtration Rate (GFR) - British Units (ml/min/1.73m<sup>2</sup>)</th>
+          <th>Glomerular Filtration Rate (GFR) - American Units (ml/min)</th>
+          <th>Creatinine - British Units (&mu;mol/L)</th>
+          <th>Creatinine - American Units (mg/dL)</th>
+        </tr>
+        <tr>
+          <td>Stage 1</td>
+          <td>&gt; 90</td>
+          <td>&gt; 90</td>
+          <td>&lt; 104</td>
+          <td>&lt; 1.2</td>
+        </tr>
+        <tr>
+          <td>Stage 2</td>
+          <td>60-89</td>
+          <td>60-89</td>
+          <td>104-159</td>
+          <td>1.2-1.8</td>
+        </tr>
+        <tr>
+          <td>Stage 3A</td>
+          <td>45-59</td>
+          <td>45-59</td>
+          <td>159-200</td>
+          <td>1.8-2.3</td>
+        </tr>
+        <tr>
+          <td>Stage 3B</td>
+          <td>30-44</td>
+          <td>30-44</td>
+          <td>200-309</td>
+          <td>2.3-3.5</td>
+        </tr>
+        <tr>
+          <td>Stage 4</td>
+          <td>15-29</td>
+          <td>15-29</td>
+          <td>309-440</td>
+          <td>3.5-5.0</td>
+        </tr>
+        <tr>
+          <td>Stage 5</td>
+          <td>&lt; 15</td>
+          <td>&lt; 15</td>
+          <td>&gt; 440</td>
+          <td>&gt; 5.0</td>
+        </tr>
+      </table>
+      
+</div>
+</body>
+</html>
