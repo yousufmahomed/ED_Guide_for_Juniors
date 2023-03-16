@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Vitals Validation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+	<style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/vitalsValidator.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+    input[type="number"] {
+      width: 100%;
+    }
+  </style>
+</head>
+<header>
+    <div class="logo-container">
+        <h1>Vitals Validator</h1>
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+<body>
+  <h1>Patient Vital Measurements</h1>
+  <p>Use these Validator to check for abnormalities of the Vitals measurements and possible emergency situations! </p>
+  <form id="vitals-form">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" step="0.01" min="1" required><br><br>
+
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" name="height" step="0.1" min="1" required><br><br>
+
+    <label for="blood_pressure_systolic">Blood Pressure - Systolic (mmHg):</label>
+    <input type="number" id="blood_pressure_systolic" name="blood_pressure_systolic" step="1" min="1" required><br><br>
+
+    <label for="blood_pressure_diastolic">Blood Pressure - Diastolic (mmHg):</label>
+    <input type="number" id="blood_pressure_diastolic" name="blood_pressure_diastolic" step="1" min="1" required><br><br>
+
+    <label for="heart_rate">Heart Rate (bpm):</label>
+    <input type="number" id="heart_rate" name="heart_rate" step="1" min="1" required><br><br>
+
+    <label for="blood_glucose">Blood Glucose (mmol/L):</label>
+    <input type="number" id="blood_glucose" name="blood_glucose" step="0.1" min="1" required><br><br>
+
+    <label for="oxygen_saturation">Oxygen Saturation (%):</label>
+    <input type="number" id="oxygen_saturation" name="oxygen_saturation" step="0.1" min="1" required><br><br>
+
+    <label for="temperature">Temperature (°C):</label>
+    <input type="number" id="temperature" name="temperature" step="0.1" min="30" max="45" required><br><br>
+
+
+    <input type="submit" value="Submit">
+  </form>
+  <p>Check below for values as worked out after pressing submit.</p>
+
+  <div id="alert" style="color: red;"></div>
+
+  <script>
+    function validateBloodPressure(diastolic, systolic) {
+      // Check that diastolic and systolic are numbers
+      if (typeof diastolic !== 'number' || typeof systolic !== 'number') {
+        return false;
+      };
+  
+      // Check that diastolic and systolic are within the valid range
+      if (diastolic < 40 || diastolic > 370 || systolic < 40 || systolic > 370) {
+        return false;
+      }
+  
+      // If we get here, diastolic and systolic are valid
+      return true;
+    };
+  
+    function calculateMeanArterialPressure(systolic, diastolic) {
+      // Check that systolic and diastolic are valid
+      if (!validateBloodPressure(diastolic, systolic)) {
+        return null;
+      }
+  
+      // Calculate MAP using the formula
+      const map = diastolic + ((systolic - diastolic) / 3);
+  
+         // Check if MAP is too low
+    if (map < 60) {
+        alert(`%c The patient's Mean Arterial Pressure (MAP) is too low!`, 'color: red');
+      }
+  
+      // Check if MAP is too high
+      if (map > 100) {
+        alert(`%c The patient's Mean Arterial Pressure (MAP) is too high!`, 'color: red');
+      }
+  
+      // Return the calculated MAP
+      return map;
+    };
+  
+    function calculateBMI(weight, height) {
+      // Convert height to meters
+      const heightMeters = height / 100;
+  
+      // Calculate BMI using the formula
+      const bmi = weight / (heightMeters * heightMeters);
+  
+      // Check if BMI is too low
+      if (bmi < 18.5) {
+        alert(`%c The patient's BMI is too low!`, 'color: red');
+      }
+  
+      // Check if BMI is too high
+      if (bmi > 25) {
+        alert(`%c The patient's BMI is too high!`, 'color: red');
+      }
+  
+      // Return the calculated BMI
+      return bmi;
+    };
+  
+    function validateBloodGlucose(s_glucose) {
+      if (s_glucose < 3.1) {
+        alert("Your patient is Hypoglycaemic and needs immediate IV or Oral Glucose!!");
+      }
+  
+      if (s_glucose > 17.0) {
+        alert("Your patient needs an arterial blood gas and urine dipstix to check for DKA!!");
+      }
+    };
+  
+    function validateHeartRate() {
+      let heartRate = parseInt(document.getElementById("heart_rate").value);
+    
+      if (isNaN(heartRate) || heartRate < 0 || heartRate > 350) {
+        // handle invalid input
+        alert("Heart rate should be between 0 and 350.");
+      } else if (heartRate < 60) {
+        // handle bradycardic case
+        alert("Your patient is bradycardic and needs an ECG immediately!");
+        document.body.style.backgroundColor = "red";
+      } else if (heartRate >= 60 && heartRate <= 90) {
+        // handle normal case
+        document.body.style.backgroundColor = "green";
+      } else if (heartRate > 90 && heartRate <= 150) {
+        // handle tachycardic case
+        alert("Your patient is tachycardic and needs an ECG!");
+        document.body.style.backgroundColor = "red";
+      } else {
+        // handle extreme tachycardic case
+        alert("Your patient has an extreme Tachycardia and needs urgent ECG and management!");
+        document.body.style.backgroundColor = "red";
+      }
+    };
+    
+    function validateSaturation() {
+        let saturation = parseFloat(document.getElementById("oxygen_saturation").value);
+        
+        if (isNaN(saturation) || saturation < 0 || saturation > 100) {
+          // handle invalid input
+          alert("Saturation value should be between 0 and 100.");
+        } else if (saturation < 94) {
+          // handle hypoxic case
+          alert("Your patient is hypoxic and may require Oxygen supplementation.");
+          document.body.style.backgroundColor = "red";
+        } else {
+          // handle normal case
+          document.body.style.backgroundColor = "green";
+        }
+      };
+      
+      function calculateShockIndex(systolic, heartRate, temperature) {
+        // Calculate the shock index as heart rate divided by systolic
+        const shockIndex = systolic / heartRate;
+      
+        // Return the shock index as a decimal
+        return shockIndex.toFixed(2);
+      };
+
+      function validateShockIndex(systolic, heartRate, temperature) {
+        // Calculate the shock index as heart rate divided by systolic
+        const shockIndex = systolic / heartRate;
+        
+        // Check if the shock index is low
+        if (shockIndex < 0.6) {
+          if ( (shockIndex < 0.6 && temperature > 37.8) || (systolic < 90 && temperature > 37.8) ){
+            alert("Your patient has evidence of Septic Shock that warrants further Investigation and Management Urgently!");
+          } else {
+            alert("The shock index is low, Your patient may be in Hypovolaemic / Septic or Anaphylactic Shock!!");
+          }
+        }
+        
+        // Check if the shock index is high
+        if (shockIndex > 1.3) {
+          alert("The shock index is high, please consider admission and further assessment of cardiovascular and neurological systems!!");
+        }
+      };
+      
+    
+      
+      
+  
+      document.addEventListener('DOMContentLoaded', () => {
+        // Get the form element
+        const form = document.getElementById('vitals-form');
+      
+        // Add an event listener to the form submit event
+        form.addEventListener('submit', (event) => {
+          // Prevent the default form submission behavior
+          event.preventDefault();
+      
+          // Get the input values
+          const weight = parseFloat(document.getElementById('weight').value);
+          const height = parseFloat(document.getElementById('height').value);
+          const systolic = parseInt(document.getElementById('blood_pressure_systolic').value);
+          const diastolic = parseInt(document.getElementById('blood_pressure_diastolic').value);
+          const heartRate = parseInt(document.getElementById('heart_rate').value);
+          const bloodGlucose = parseFloat(document.getElementById('blood_glucose').value);
+          const oxygenSaturation = parseFloat(document.getElementById('oxygen_saturation').value);
+          const temperature = parseFloat(document.getElementById('temperature').value);
+      
+          // Validate the heart rate
+          validateHeartRate();
+      
+          // Validate the blood glucose
+          validateBloodGlucose(bloodGlucose);
+      
+          // Validate the oxygen saturation
+          validateSaturation();
+      
+          // Validate the shock index
+          validateShockIndex(systolic, heartRate, temperature);
+      
+          // Calculate the Mean Arterial Pressure (MAP)
+          const map = calculateMeanArterialPressure(systolic, diastolic);
+      
+          // Calculate the Body Mass Index (BMI)
+          const bmi = calculateBMI(weight, height);
+      
+          // Output the results
+          const result = `
+            <p>Weight: ${weight} kg</p>
+            <p>Height: ${height} cm</p>
+            <p>Blood Pressure - Systolic: ${systolic} mmHg</p>
+            <p>Blood Pressure - Diastolic: ${diastolic} mmHg</p>
+            <p>Heart Rate: ${heartRate} bpm</p>
+            <p>Blood Glucose: ${bloodGlucose} mmol/L</p>
+            <p>Oxygen Saturation: ${oxygenSaturation}%</p>
+            <p>Mean Arterial Pressure (MAP): ${map}</p>
+            <p>Body Mass Index (BMI): ${bmi}</p>
+          `;
+          document.getElementById('alert').innerHTML = result;
+        });
+      });
+    </script>
+</body>
+</html>
+
+
+  
+
+  
+
+  
+
