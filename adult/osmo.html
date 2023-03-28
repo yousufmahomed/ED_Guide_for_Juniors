@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Osmolality Calculator</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/bloodTestGuides.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0;
+    }
+    label {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    input[type="number"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    button[type="button"] {
+      background-color: #005daa;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button[type="button"]:hover {
+      background-color: #003b72;
+    }
+    p#result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Osmolality Calculator</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>Indication/Abnormality</th>
+            <th>Definition</th>
+            <th>Interpretation</th>
+            <th>Clinical Implications</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Osmolality</td>
+            <td>The concentration of solutes in a solution, measured in milliosmoles per kilogram (mOsm/kg)</td>
+            <td>Normal range: 275-295 mOsm/kg</td>
+            <td>Used to evaluate hydration status and diagnose electrolyte imbalances, such as dehydration, overhydration, hypernatremia, and hyponatremia.</td>
+          </tr>
+          <tr>
+            <td>High Osmolality</td>
+            <td>Elevated concentration of solutes in the blood</td>
+            <td>May indicate dehydration, hypernatremia, or other electrolyte imbalances</td>
+            <td>Requires further evaluation to determine the underlying cause and appropriate treatment, such as fluid replacement or electrolyte correction.</td>
+          </tr>
+          <tr>
+            <td>Low Osmolality</td>
+            <td>Decreased concentration of solutes in the blood</td>
+            <td>May indicate overhydration, hyponatremia, or other electrolyte imbalances</td>
+            <td>Requires further evaluation to determine the underlying cause and appropriate treatment, such as fluid restriction or electrolyte supplementation.</td>
+          </tr>
+        </tbody>
+      </table>
+      
+  <div class="container">
+    <form>
+      <label for="sodium">Sodium (mmol/L):</label>
+      <input type="number" id="sodium" name="sodium" step="0.1">
+      <label for="glucose">Glucose (mmol/l):</label>
+      <input type="number" id="glucose" name="glucose" step="0.1">
+      <label for="urea">Urea (mg/dL):</label>
+      <input type="number" id="urea" name="urea" step="0.1">
+      <button type="button" onclick="calculateOsmolality()">Calculate Osmolality</button>
+    </form>
+    <p id="result"></p>
+  </div>
+  <script>
+    function calculateOsmolality() {
+      // Get input values
+      const sodium = parseFloat(document.getElementById("sodium").value);
+      const glucose = parseFloat(document.getElementById("glucose").value);
+      const urea = parseFloat(document.getElementById("urea").value);
+
+      // Calculate osmolality (formula: 2 * Na + (glucose / 18) + (urea / 2.8))
+      const osmolality = (2 * sodium) + (glucose / 18) + (urea / 2.8);
+
+      // Display result
+      const resultElement = document.getElementById("result");
+      resultElement.innerHTML = `The calculated osmolality is ${osmolality.toFixed(1)} mOsm/kg.`;
+    }
+  </script>
+</body>
+</html>
