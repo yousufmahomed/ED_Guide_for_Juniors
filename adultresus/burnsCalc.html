@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/genralPages.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burn Fluid Replacement Calculator</title>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/adultresus/images/burnsbackground.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input, select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      #fluid-result {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <header>
+    <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">Burn Fluid Replacement Calculator</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+  <body class="vitals-page">
+    <h1>Burn Fluid Replacement Calculator</h1>
+    <p>Calculate the fluid replacement needed for a burns victim per hour based on the percentage burn and patient weight.</p>
+    <form>
+      <h2>Patient Weight</h2>
+      <label for="patient-weight">Enter patient weight in kg:</label>
+      <input id="patient-weight" name="patient-weight" type="number" step="0.01" min="0">
+
+  <h2>Percentage Burn</h2>
+  <label for="percentage-burn">Enter the percentage of total body surface area (TBSA) burned:</label>
+  <input id="percentage-burn" name="percentage-burn" type="number" step="0.01" min="0" max="100">
+  <br>
+  <button type="button" onclick="calculateFluidReplacement()">Calculate Fluid Replacement</button>
+  <br>
+  <h2>Fluid Replacement Per Hour</h2>
+  <p id="fluid-result"></p>
+</form>
+<script>
+  function calculateFluidReplacement() {
+    const weight = parseFloat(document.getElementById("patient-weight").value);
+    const burnPercentage = parseFloat(document.getElementById("percentage-burn").value);
+    
+    if (weight <= 0 || burnPercentage <= 0) {
+      document.getElementById("fluid-result").innerHTML = "Please enter valid weight and burn percentage.";
+      return;
+    }
+
+    // Calculate fluid replacement using the Parkland formula
+    const totalFluid = 4 * weight * burnPercentage;
+    const first8HoursFluid = totalFluid / 2;
+    const next16HoursFluid = totalFluid / 2;
+    const hourlyFluid8Hours = first8HoursFluid / 8;
+    const hourlyFluid16Hours = next16HoursFluid / 16;
+
+    document.getElementById("fluid-result").innerHTML = `First 8 hours: ${hourlyFluid8Hours.toFixed(2)} mL/hour <br> Next 16 hours: ${hourlyFluid16Hours.toFixed(2)} mL/hour`;
+  }
+</script>
+  </body>
+</html>

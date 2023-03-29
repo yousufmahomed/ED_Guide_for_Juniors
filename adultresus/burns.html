@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burns and Emergency Department Management</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/adultresus/images/burnsbackground.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">Burns and Emergency Department Management</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+  <section class="section">
+    <h2>Burn Classification</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Type of Burn</th>
+      <th>Description</th>
+      <th>Treatment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First-degree (Superficial)</td>
+      <td>Affects only the epidermis; redness, mild swelling, and pain; no blisters</td>
+      <td>Cool the burn, apply aloe or moisturizing cream, and use over-the-counter pain relief</td>
+    </tr>
+    <tr>
+      <td>Second-degree (Partial Thickness)</td>
+      <td>Affects the epidermis and dermis; redness, blisters, and severe pain; may appear wet or shiny</td>
+      <td>Cover the burn with a sterile, non-adherent dressing, elevate the affected area, and consider pain relief and antibiotics</td>
+    </tr>
+    <tr>
+      <td>Third-degree (Full Thickness)</td>
+      <td>Destroys all layers of the skin; may appear white, black, or charred; often painless due to nerve damage</td>
+      <td>Requires immediate medical attention; cover with a sterile, non-adherent dressing and elevate the affected area; fluid resuscitation and pain management</td>
+    </tr>
+    <tr>
+      <td>Fourth-degree</td>
+      <td>Extends beyond the skin layers to underlying tissue, muscle, and bone; black or charred appearance; often painless due to nerve damage</td>
+      <td>Requires immediate medical attention; may need surgical intervention, including debridement or amputation</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Additional Considerations</h2>
+<ul>
+  <li>Chemical burns: Remove the chemical by flushing the area with copious amounts of water, while taking care not to contaminate other body areas or caregivers. Follow specific protocols for the chemical involved.</li>
+  <li>Electrical burns: Disconnect the power source, if possible, and treat any associated injuries, such as fractures or dislocations. Be aware of potential cardiac complications from electrical injuries.</li>
+  <li>Smoke inhalation: Monitor for signs of airway compromise, such as stridor or wheezing, and be aware of potential carbon monoxide or cyanide poisoning.</li>
+</ul>
+
+  </section>
+  <section class="section">
+    <h2>Emergency Department Management of Burns</h2>
+    <ul>
+      <li>Assess airway, breathing, and circulation (ABCs)</li>
+      <li>Administer supplemental oxygen if needed</li>
+      <li>Monitor vital signs and provide pain relief</li>
+      <li>Assess burn extent and depth using the burn classification system</li>
+      <li>Initiate fluid resuscitation if necessary based on burn size and patient's weight</li>
+      <li>Remove any constricting clothing or jewelry near the burn area</li>
+      <li>Cover the burn with a sterile, non-adherent dressing or clean cloth</li>
+      <li>Consider tetanus prophylaxis and antibiotic administration based on severity and potential for infection</li>
+      <li>Arrange for appropriate transfer or referral to a specialized burn center if needed</li>
+    </ul>
+  </section>
+  <div class="section">
+    <h2 class="subheading">Click to Enlarge</h2>
+    <img src="/adultresus/images/burns table.jpg"   alt="Burns Assessment Table " class="image" onclick="toggleFullscreenImage('/adultresus/images/burns table.jpg')">
+<caption>Burns Assessment Table</caption>
+  </div>
+  <div class="section">
+    <img src="/adultresus/images/rule-of-nines-chart-diagram.png"   alt="Burns Assessment Rule-of-Nines Adult " class="image" onclick="toggleFullscreenImage('/adultresus/images/rule-of-nines-chart-diagram.png')">
+<caption>Burns Assessment Rule-of-Nines Adult </caption>
+  </div>
+  <div class="section">
+    <img src="/adultresus/images/paeds_burns.jpg"   alt="Burns Assessment Rule-of-Nines Child " class="image" onclick="toggleFullscreenImage('/adultresus/images/paeds_burns.jpg')">
+<caption>Burns Assessment Rule-of-Nines Child </caption>
+  </div>
+  <div class="section">
+    <img src="/adultresus/images/rule-of-nines-child-infant.png"   alt="Burns Assessment Rule-of-Nines Infant " class="image" onclick="toggleFullscreenImage('/adultresus/images/rule-of-nines-child-infant.png')">
+<caption>Burns Assessment Rule-of-Nines Infant </caption>
+<div class="section">
+    <h2 class="subheading">Advanced Burns Life-Support Guidelines</h2>
+    <a href="/pdfs/2018-abls-providermanual.pdf" target="_blank" class="emphasis-link">View Burns Guidelines (PDF)</a>
+
+</div>
+  </div>
+  <script>
+    function toggleFullscreenImage(src) {
+        let overlay = document.getElementById('fullscreen-image-overlay');
+      
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.id = 'fullscreen-image-overlay';
+          overlay.classList.add('fullscreen-image-overlay');
+          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+          overlay.onclick = () => toggleFullscreenImage(null);
+          document.body.appendChild(overlay);
+        } else {
+          document.body.removeChild(overlay);
+        }
+      }
+  </script>
+</body>
+</html>
