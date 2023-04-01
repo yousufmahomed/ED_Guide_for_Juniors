@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deep Vein Thrombosis Checklist and Scoring</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: #0066cc;
+        color: #ffffff;
+        padding: 20px;
+        margin: 0;
+    }
+
+    h2 {
+        color: #0066cc;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: navy;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+    }
+
+    ul, ol {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 style="color: antiquewhite;">Deep Vein Thrombosis Checklist and Scoring</h1>
+            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
+            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+          </div>
+        </header>
+	<h1>Deep Vein Thrombosis Checklist and Scoring</h1>
+	<h2>Wells Criteria for Deep Vein Thrombosis</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Points</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>+1</td>
+				<td>Active cancer (treatment within last 6 months or palliative)</td>
+			</tr>
+			<tr>
+				<td>+1</td>
+				<td>Paralysis, paresis, or recent plaster immobilization of the lower extremities</td>
+			</tr>
+			<tr>
+				<td>+1</td>
+				<td>Recently bedridden for 3 days or more, or major surgery within the past 12 weeks requiring general or regional anesthesia</td>
+			</tr>
+			<tr>
+				<td>+1</td>
+				<td>Localized tenderness along the distribution of the deep venous system</td>
+			</tr>
+			<tr>
+				<td>+1</td>
+				<td>Entire leg swollen</td>
+			</tr>
+			<tr>
+				<td>+1</td>
+				<td>Calf swelling at least 3 cm larger than asymptomatic side (measured 10 cm below tibial tuberosity)</td>
+			</tr>
+			<tr>
+				<td>+1</td>
+				<td>Pitting edema (greater in the symptomatic leg)</td>
+			</tr>
+            <tr>
+                <td>+1</td>
+                <td>Collateral superficial veins (non-varicose)</td>
+            </tr>
+            <tr>
+                <td>-2</td>
+                <td>An alternative diagnosis is at least as likely as deep vein thrombosis</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Interpretation of Wells Score:</h2>
+    <ul>
+        <li>Low risk: Score of 0 or less</li>
+        <li>Moderate risk: Score of 1 to 2</li>
+        <li>High risk: Score of 3 or more</li>
+    </ul>
+    
+    <h2>Management of Deep Vein Thrombosis (DVT)</h2>
+    <ol>
+        <li>Based on the Wells Score, determine the risk category for DVT</li>
+        <li>For low-risk patients, consider a D-dimer test. If the test is positive, perform imaging studies (e.g., venous duplex ultrasonography)</li>
+        <li>For moderate and high-risk patients, consider imaging studies without a D-dimer test</li>
+        <li>If the imaging study confirms a DVT, initiate anticoagulation therapy</li>
+        <li>Consider compression stockings for symptom relief and to prevent post-thrombotic syndrome</li>
+        <li>Follow up with the patient and adjust treatment as needed, based on clinical response and laboratory monitoring</li>
+        <li>Assess for possible underlying causes of DVT (e.g., malignancy, inherited thrombophilia) and manage accordingly</li>
+    </ol>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>    
