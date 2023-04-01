@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pulmonary Embolism Checklist</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: #0066cc;
+        color: #ffffff;
+        padding: 20px;
+        margin: 0;
+    }
+
+    h2 {
+        color: #0066cc;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: navy;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+    }
+
+    ul, ol {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 style="color: antiquewhite;">Pulmonary Embolism Checklist</h1>
+            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
+            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+          </div>
+        </header>
+	<h2>Wells' Score for Pulmonary Embolism</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Feature</th>
+				<th>Points</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Clinical signs and symptoms of DVT (leg swelling, pain with palpation of the deep veins, or unilateral pitting edema)</td>
+				<td><input type="number" min="0" max="3" value="0"></td>
+			</tr>
+			<tr>
+				<td>Alternative diagnosis less likely than PE</td>
+				<td><input type="number" min="0" max="3" value="0"></td>
+			</tr>
+			<tr>
+				<td>Heart rate ≥ 100 beats/minute</td>
+				<td><input type="number" min="0" max="1" value="0"></td>
+			</tr>
+			<tr>
+				<td>Immobilization or surgery in the previous 4 weeks</td>
+				<td><input type="number" min="0" max="1" value="0"></td>
+			</tr>
+			<tr>
+				<td>History of DVT or PE</td>
+				<td><input type="number" min="0" max="1" value="0"></td>
+			</tr>
+			<tr>
+				<td>			Recent hemoptysis (within 1 month)
+                    <td><input type="number" min="0" max="1" value="0"></td>
+                </tr>
+                <tr>
+                    <td>An active malignant condition (currently receiving treatment or diagnosed within the previous 6 months)</td>
+                    <td><input type="number" min="0" max="1" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Score:</td>
+                    <td><input type="number" min="0" max="12" value="0"></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>PE Checklist</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>YES</th>
+                    <th>NO</th>
+                    <th>Recommendations/ Suggestions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Chest pain or pleuritic pain</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Dyspnea or tachypnea</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Cough or hemoptysis</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Anxiety, restlessness, or sense of impending doom</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Unilateral leg swelling and/or pain</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Hemodynamic instability (hypotension, shock)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Tachycardia or hypoxemia</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>History of DVT or PE</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Malignancy (active or recently diagnosed)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Recent surgery or immobilization</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Management</h2>
+        <ul>
+            <li>If Wells' score is high (≥4), order CT pulmonary angiography (CTPA) or ventilation/perfusion (V/Q) scan</li>
+            <li>If Wells' score is low (<4), consider D-dimer test if no contraindication</li>
+            <li>If CTPA or V/Q scan is negative and low pretest probability of PE, no further imaging is required</li>
+            <li>If D-dimer test is positive, perform CTPA or V/Q scan</li>
+            <li>If D-dimer test is negative, no further testing is required</li>
+            <li>In patients with contraindications to anticoagulation therapy, consider placement of inferior vena cava filter</li>
+            <li>In massive or submassive PE with hemodynamic instability, consider thrombolytic therapy or surgical embolectomy</li>
+            <li>In non-massive PE without hemodynamic instability, start anticoagulation therapy</li>
+            <li>In patients with underlying malignancy, consider placement of inferior vena cava filter and long-term anticoagulation therapy</li>
+            <li>For patients on anticoagulation therapy, monitor for bleeding complications and adjust dosages as necessary</li>
+        </ul>
+    </body>
+    </html>
+        

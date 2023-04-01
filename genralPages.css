@@ -267,6 +267,9 @@ strong{
     }
   
   }
-
+  body {
+    background-image: none;
+    background-color: lightgrey;
+  }
  
   
