@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <title>Pediatric Resuscitation Values</title>
+    <style>
+     /* Make the table responsive */
+     table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hide the table headers on small screens */
+    th {
+      display: none;
+    }
+
+    /* Display the table row as a block to make it easier to read on small screens */
+    tr {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Display the table data as a block to make it easier to read on small screens */
+    td {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Add a label to the table data on small screens */
+    td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    /* Style the table header on large screens */
+    @media (min-width: 600px) {
+      table {
+        display: table;
+      }
+      
+      th {
+        display: table-cell;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+        position: sticky;
+        top: 0;
+        background-color: navy;
+      }
+      
+      tr {
+        display: table-row;
+      }
+      
+      td {
+        display: table-cell;
+        border: 1px solid black;
+        padding: 5px;
+      }
+      
+      td:before {
+        content: none;
+      }
+    }
+      
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+          <h1 style="color: antiquewhite;">Pediatric Resuscitation Values</h1>
+          <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
+          <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+        </div>
+      </header>
+    <table>
+      <tr>
+        <th>Weight (kg)</th>
+        <th>Adrenaline</th>
+        <th>IV Fluids (min/max bolus)</th>
+        <th>IV Fluid Infusion Rate</th>
+        <th>ETT Size (cuffed/uncuffed)</th>
+        <th>ETT Depth</th>
+        <th>Defib Dose (J)</th>
+        <th>Dextrose Bolus</th>
+        <th>Deadly Shock (min acceptable systolic BP)</th>
+        <th>Calcium Dose</th>
+        <th>Ketamine Dose (IV/IM)</th>
+        <th>Suxamethonium</th>
+      
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>1 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>100 ml (10-20 ml/kg) / 500 ml (20 ml/kg)</td>
+        <td>40 ml/hr (10 ml/kg/hr)</td>
+        <td>3.0 mm (cuffed) / 3.5 mm (uncuffed)</td>
+        <td>11 cm at the lip</td>
+        <td>20 J (2 J/kg)</td>
+        <td>2 ml of 10% solution (0.2 g/kg)</td>
+        <td>70 mmHg</td>
+        <td>100-200 mg IV/IO</td>
+        <td>20-40 mg IV/IM</td>
+        <td>2 mg IV0/IO</td>
+       
+       
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>1.2 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>120 ml (10-20 ml/kg) / 600 ml (20 ml/kg)</td>
+        <td>48 ml/hr (12 ml/kg/hr)</td>
+        <td>3.5 mm (cuffed) / 4.0 mm (uncuffed)</td>
+        <td>12 cm at the lip</td>
+        <td>24 J (2 J/kg)</td>
+        <td>2.4 ml of 10% solution (0.24 g/kg)</td>
+        <td>72 mmHg</td>
+        <td>120-240 mg/kg IV/IO</td>
+        <td>24-48 mg IV/IM</td>
+        <td>24 mg IV/IO</td>
+      
+      </tr>
+      
+      <tr>
+        <td>14</td>
+        <td>1.4 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>140 ml (10-20 ml/kg) / 700 ml (20 ml/kg)</td>
+        <td>56 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>4.0 mm (cuffed) / 4.5 mm (uncuffed)</td>
+        <td>13 cm at the lip</td>
+        <td>28 J (2 J/kg)</td>
+        <td>2.8 ml of 10% solution (0.28 g/kg)</td>
+        <td>74 mmHg</td>
+        <td>140-280 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      
+      <tr>
+        <td>16</td>
+        <td>1.6 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>160 ml (10-20 ml/kg) / 800 ml (20 ml/kg)</td>
+        <td>64 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>4.5 mm (cuffed) / 5.0 mm (uncuffed)</td>
+        <td>14 cm at the lip</td>
+        <td>32 J (2 J/kg)</td>
+        <td>3.2 ml of 10% solution (0.32 g/kg)</td>
+        <td>76 mmHg</td>
+        <td>160-320 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+
+      <tr>
+        <td>18</td>
+        <td>1.8 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>180 ml (10-20 ml/kg) / 900 ml (20 ml/kg)</td>
+        <td>72 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>5.0 mm (cuffed) / 5.5 mm (uncuffed)</td>
+        <td>15 cm at the lip</td>
+        <td>36 J (2 J/kg)</td>
+        <td>3.6 ml of 10% solution (0.36 g/kg)</td>
+        <td>78 mmHg</td>
+        <td>180-360 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      
+      <tr>
+        <td>20</td>
+        <td>2 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>200 ml (10-20 ml/kg) / 1000 ml (20 ml/kg)</td>
+        <td>80 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>5.5 mm (cuffed) / 6.0 mm (uncuffed)</td>
+        <td>16 cm at the lip</td>
+        <td>40 J (2 J/kg)</td>
+        <td>4 ml of 10% solution (0.4 g/kg)</td>
+        <td>80 mmHg</td>
+        <td>200-400 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+       
+      </tr>
+
+      <tr>
+        <td>22</td>
+        <td>2.2 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>220 ml (10-20 ml/kg) / 1100 ml (20 ml/kg)</td>
+        <td>88 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>5.5 mm (cuffed) / 6.0 mm (uncuffed)</td>
+        <td>17 cm at the lip</td>
+        <td>44 J (2 J/kg)</td>
+        <td>4.4 ml of 10% solution (0.44 g/kg)</td>
+        <td>82 mmHg</td>
+        <td>220-440 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+
+      <tr>
+        <td>24</td>
+        <td>2.4 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>240 ml (10-20 ml/kg) / 1200 ml (20 ml/kg)</td>
+        <td>96 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>6.0 mm (cuffed) / 6.5 mm (uncuffed)</td>
+        <td>18 cm at the lip</td>
+        <td>48 J (2 J/kg)</td>
+        <td>4.8 ml of 10% solution (0.48 g/kg)</td>
+        <td>84 mmHg</td>
+        <td>240-480 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      
+      <tr>
+        <td>26</td>
+        <td>2.6 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>260 ml (10-20 ml/kg) / 1300 ml (20 ml/kg)</td>
+        <td>104 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>6.5 mm (cuffed) / 7.0 mm (uncuffed)</td>
+        <td>19 cm at the lip</td>
+        <td>52 J (2 J/kg)</td>
+        <td>5.2 ml of 10% solution (0.52 g/kg)</td>
+        <td>86 mmHg</td>
+        <td>260-520 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+       
+      </tr>
+      <tr>
+        <td>28</td>
+        <td>2.8 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>280 ml (10-20 ml/kg) / 1400 ml (20 ml/kg)</td>
+        <td>112 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>6.5 mm (cuffed) / 7.0 mm (uncuffed)</td>
+        <td>20 cm at the lip</td>
+        <td>56 J (2 J/kg)</td>
+        <td>5.6 ml of 10% solution (0.56 g/kg)</td>
+        <td>88 mmHg</td>
+        <td>280-560 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>3 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>300 ml (10-20 ml/kg) / 1500 ml (20 ml/kg)</td>
+        <td>120 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>6.5 mm (cuffed) / 7.0 mm (uncuffed)</td>
+        <td>21 cm at the lip</td>
+        <td>60 J (2 J/kg)</td>
+        <td>6 ml of 10% solution (0.6 g/kg)</td>
+        <td>90 mmHg</td>
+        <td>300-600 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      <tr>
+        <td>32</td>
+        <td>3.2 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>320 ml (10-20 ml/kg) / 1600 ml (20 ml/kg)</td>
+        <td>128 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>7.0 mm (cuffed) / 7.5 mm (uncuffed)</td>
+        <td>22 cm at the lip</td>
+        <td>64 J (2 J/kg)</td>
+        <td>6.4 ml of 10% solution (0.64 g/kg)</td>
+        <td>92 mmHg</td>
+        <td>320-640 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+       
+      </tr>
+
+      <tr>
+        <td>34</td>
+        <td>3.4 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>340 ml (10-20 ml/kg) / 1700 ml (20 ml/kg)</td>
+        <td>136 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>7.5 mm (cuffed) / 8.0 mm (uncuffed)</td>
+        <td>23 cm at the lip</td>
+        <td>68 J (2 J/kg)</td>
+        <td>6.8 ml of 10% solution (0.68 g/kg)</td>
+        <td>94 mmHg</td>
+        <td>340-680 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>3.6 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>360 ml (10-20 ml/kg) / 1800 ml (20 ml/kg)</td>
+        <td>144 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>7.5 mm (cuffed) / 8.0 mm (uncuffed)</td>
+        <td>24 cm at the lip</td>
+        <td>72 J (2 J/kg)</td>
+        <td>7.2 ml of 10% solution (0.72 g/kg)</td>
+        <td>96 mmHg</td>
+        <td>360-720 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+      <tr>
+        <td>38</td>
+        <td>3.8 ml of 1:10,000 solution (0.1 mcg/kg)</td>
+        <td>380 ml (10-20 ml/kg) / 1900 ml (20 ml/kg)</td>
+        <td>152 ml/hr (12 ml/kg/hr for first 10 kg, then 8 ml/kg/hr)</td>
+        <td>8.0 mm (cuffed) / 8.5 mm (uncuffed)</td>
+        <td>25 cm at the lip</td>
+        <td>76 J (2 J/kg)</td>
+        <td>7.6 ml of 10% solution (0.76 g/kg)</td>
+        <td>98 mmHg</td>
+        <td>380-760 mg IV/IO</td>
+        <td>2-4 mg/kg IV/IM</td>
+        <td>2 mg/kg IV/IO</td>
+      
+      </tr>
+    </table>
+  </body>
+</html>
+      
+      
+      
+        
+        
+
