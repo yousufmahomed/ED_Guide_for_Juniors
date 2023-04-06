@@ -92,24 +92,23 @@
     <form>
       <fieldset>
         <legend>Arterial Blood Gas Parameters</legend>
-        
         <label for="ph">pH:</label>
         <input type="number" step="0.01" name="ph" id="ph" required> (e.g. 7.35)
         
         <br>
         
         <label for="paco2">PaCO2:</label>
-        <input type="number" step="0.1" name="paco2" id="paco2" required> mmHg (e.g. 40)
+        <input type="number" step="0.1" name="paco2" id="paco2" required> kPa (e.g. 5.3)
         
         <br>
         
         <label for="hco3">HCO3:</label>
-        <input type="number" step="0.1" name="hco3" id="hco3" required> mmol/L (e.g. 24)
+        <input type="number" step="0.1" name="hco3" id="hco3" required> mEq/L (e.g. 24)
         
         <br>
         
         <label for="po2">PaO2:</label>
-        <input type="number" step="0.1" name="po2" id="po2" required> mmHg (e.g. 80)
+        <input type="number" step="0.1" name="po2" id="po2" required> kPa (e.g. 10.6)
         
         <br>
         
@@ -136,55 +135,59 @@
             const fio2 = parseFloat(document.getElementById("fio2").value);
           
             // Calculate the A-a gradient
-            const aagrad = (713 * (fio2 - (po2/713))) - (paco2/hco3);
+            const aagrad = ((fio2 * 100) - (po2 / 7.5)) / 0.21 - paco2 / 1.2;
           
             // Determine the acid-base imbalance and possible causes
             let result;
             if (ph < 7.35) {
-              if (paco2 > 45 && hco3 > 26) {
+              if (paco2 > 6.0 && hco3 > 26) {
                 result = "Respiratory acidosis with compensatory metabolic alkalosis, possible causes include chronic obstructive pulmonary disease (COPD), pulmonary fibrosis, or neuromuscular disease";
-              } else if (paco2 > 45 && hco3 <= 26) {
+              } else if (paco2 > 6.0 && hco3 <= 26) {
                 result = "Respiratory acidosis with compensatory metabolic compensation, possible causes include hypoventilation due to sedatives or airway obstruction, or acute exacerbation of COPD";
-              } else if (paco2 <= 45 && hco3 < 22) {
+              } else if (paco2 <= 6.0 && hco3 < 22) {
                 result = "Metabolic acidosis, possible causes include diabetic ketoacidosis, lactic acidosis, or renal failure";
               } else {
                 result = "Mixed acid-base disorder";
               }
             } else if (ph > 7.45) {
-              if (paco2 < 35 && hco3 <= 26) {
+              if (paco2 < 4.7 && hco3 <= 26) {
                 result = "Respiratory alkalosis with compensatory metabolic compensation, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
-              } else if (paco2 < 35 && hco3 > 26) {
-                result = "Respiratory alkalosis with compensatory metabolic alkalosis, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
-              } else if (paco2 >= 35 && hco3 > 26) {
-                result = "Metabolic alkalosis, possible causes include vomiting, diuretic use, or excessive bicarbonate administration";
-              } else {
-                result = "Mixed acid-base disorder";
-              }
+              } else if (paco2 < 4.7 && hco3 > 26) {                 result = "Respiratory alkalosis with compensatory metabolic alkalosis, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
+            } else if (paco2 >= 4.7 && hco3 > 26) {
+              result = "Metabolic alkalosis, possible causes include vomiting, diuretic use, or excessive bicarbonate administration";
             } else {
-              if (paco2 > 45 && hco3 < 22) {
-                result = "Compensated respiratory acidosis, possible causes include chronic obstructive pulmonary disease (COPD), pulmonary fibrosis, or neuromuscular disease";
-              } else if (paco2 < 35 && hco3 < 22) {
-                result = "Compensated respiratory alkalosis, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
-              } else if (hco3 > 26) {
-                result = "Compensated metabolic alkalosis, possible causes include vomiting, diuretic use, or excessive bicarbonate administration";
-              } else if (hco3 < 22) {
-                result = "Compensated metabolic acidosis, possible causes include diabetic ketoacidosis, lactic acidosis, or renal failure";
-              } else {
-                result = "Normal ABG";
-              }
+              result = "Mixed acid-base disorder";
             }
+          } else {
+            if (paco2 > 6.0 && hco3 < 22) {
+              result = "Compensated respiratory acidosis, possible causes include chronic obstructive pulmonary disease (COPD), pulmonary fibrosis, or neuromuscular disease";
+            } else if (paco2 < 4.7 && hco3 < 22) {
+              result = "Compensated respiratory alkalosis, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
+            } else if (hco3 > 26) {
+              result = "Compensated metabolic alkalosis, possible causes include vomiting, diuretic use, or excessive bicarbonate administration";
+            } else if (hco3 < 22) {
+              result = "Compensated metabolic acidosis, possible causes include diabetic ketoacidosis, lactic acidosis, or renal failure";
+            } else {
+              result = "Normal ABG";
+            }
+          }
+        
+          // Display the result
+          const analysisResult = document.getElementById('analysis');
+          analysisResult.innerHTML = result;
+      }
+      
+      // Add this to the end of the script
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        analyseABG();
+      });
+  </script>
+</body>
+</html>
+
+               
+
+        
           
-            // Display the result
-            alert(result);
-                        }
-                        // Add this to the end of the script
-                const form = document.querySelector('form');
-                form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                analyseABG();
-                });
-          
-         
-        </script>
-  </body>
-</html>          
