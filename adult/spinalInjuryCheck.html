@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spinal Injury Checklist</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/checklistBackground.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        .fullscreen-image-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          cursor: zoom-out;
+        }
+        
+        .fullscreen-image-overlay img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <h1 style="color: black;">Spinal Injury Checklist</h1>
+        <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+      </div>
+    </header>
+<main>
+    <div class="section">
+        <img src="/images/spinal injury checklist final.png" alt="Spinal Injury Checklist" class="image" onclick="toggleFullscreenImage('/images/spinal injury checklist final.png')">
+      <caption>Spinal Injury Checklist<span style="font-size: x-small;">(Click to enlarge)</span></caption>
+      </div>
+</main>
+<script>
+    function toggleFullscreenImage(src) {
+    let overlay = document.getElementById('fullscreen-image-overlay');
+  
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'fullscreen-image-overlay';
+      overlay.classList.add('fullscreen-image-overlay');
+      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+      overlay.onclick = () => toggleFullscreenImage(null);
+      document.body.appendChild(overlay);
+    } else {
+      document.body.removeChild(overlay);
+    }
+  }
+  </script>
+</body>
+</html>
