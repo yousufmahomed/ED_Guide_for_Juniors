@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Commonly Used Antibiotics in Hospitals for Pediatric Patients</title>
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/medications.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+      }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type=text]:focus {
+    border: 2px solid #4CAF50;
+  }
+  .fullscreen-image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+</style>
+  </head>
+  <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Commonly Used Antibiotics in Hospitals for Pediatric Patients</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+  <body>
+
+<input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antibiotics...">
+<table id="antibiotics">
+  <tr>
+    <th>Antibiotic</th>
+    <th>Oral Dosage (Pediatric Patients)</th>
+    <th>Intravenous Dosage (Pediatric Patients)</th>
+  </tr>
+  <tr>
+    <td>Amoxicillin</td>
+    <td>20-40 mg/kg/day in divided doses every 8 hours</td>
+    <td>25-50 mg/kg/day in divided doses every 8 hours</td>
+  </tr>
+  <tr>
+    <td>Augmentin</td>
+    <td>20-45 mg/kg/day in divided doses every 8 hours</td>
+    <td>25-80 mg/kg/day in divided doses every 8 hours</td>
+  </tr>
+  <tr>
+    <tr>
+        <td>Ceftriaxone</td>
+        <td>20-80 mg/kg/day divided every 12-24 hours</td>
+        <td>20-80 mg/kg/day divided every 12-24 hours</td>
+      </tr>
+      <tr>
+        <td>Cephalexin</td>
+        <td>25-50 mg/kg/day divided every 6-12 hours</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>Clarithromycin</td>
+        <td>7.5 mg/kg/dose every 12 hours</td>
+        <td>7.5 mg/kg/dose every 12 hours</td>
+      </tr>
+      <tr>
+        <td>Linezolid</td>
+        <td>10-20 mg/kg/dose every 8-12 hours</td>
+        <td>10-20 mg/kg/dose every 8-12 hours</td>
+      </tr>
+      <tr>
+        <td>Piperacillin/Tazobactam</td>
+        <td>80-100 mg/kg/day divided every 6 hours</td>
+        <td>80-100 mg/kg/day divided every 6 hours</td>
+      </tr>
+      <tr>
+        <td>Tobramycin</td>
+        <td>N/A</td>
+        <td>2-7 mg/kg/day divided every 8-24 hours</td>
+      </tr>
+    </table>
+    <div class="section">
+      <img src="/images/antibioticCheatSheet.jpg" alt="Antibiotic cheat sheet" class="image" onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')">
+      <caption>Antibiotic cheat sheet</caption>
+    </div>
+    <script>
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("antibiotics");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+      function toggleFullscreenImage(src) {
+        let overlay = document.getElementById('fullscreen-image-overlay');
+      
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.id = 'fullscreen-image-overlay';
+          overlay.classList.add('fullscreen-image-overlay');
+          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+          overlay.onclick = () => toggleFullscreenImage(null);
+          document.body.appendChild(overlay);
+        } else {
+          document.body.removeChild(overlay);
+        }
+      }
+    </script>
+  </body>
+</html>    
+
+
+
+
+

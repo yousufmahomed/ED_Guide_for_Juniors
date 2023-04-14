@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Commonly Used Resuscitation Drugs for Pediatrics</title>
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/medications.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type=text]:focus {
+    border: 2px solid #4CAF50;
+  }
+</style>
+  </head>
+  <header>
+    <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Commonly Used Resuscitation Drugs for Pediatrics</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+  <body>
+
+<input type="text" id="search" onkeyup="searchTable()" placeholder="Search for resuscitation drugs...">
+<table id="resuscitation">
+  <tr>
+    <th>Drug</th>
+    <th>Dosage</th>
+    <th>Route of Administration</th>
+    <th>Indication for Use</th>
+  </tr>
+  <tr>
+    <td>Adrenaline (Epinephrine)</td>
+    <td>0.01 mg/kg/dose (0.1 mL/kg/dose of 1:10,000 solution), every 3-5 minutes</td>
+    <td>Intravenous, intraosseous, or endotracheal</td>
+    <td>Cardiac arrest, anaphylaxis, bronchospasm, hypotension</td>
+  </tr>
+  <tr>
+    <td>Amiodarone</td>
+    <td>5 mg/kg bolus, then 5-10 mg/kg over 20-60 minutes</td>
+    <td>Intravenous</td>
+    <td>Ventricular fibrillation, ventricular tachycardia</td>
+  </tr>
+  <tr>
+    <td>Atropine</td>
+    <td>0.02 mg/kg/dose (minimum dose: 0.1 mg; maximum dose: 0.5 mg) </td>
+    <td>Intravenous, intraosseous, or endotracheal</td>
+    <td>Bradycardia, organophosphate poisoning</td>
+    </tr>
+    <tr>
+    <td>Bicarbonate</td>
+    <td>1-2 mEq/kg/dose (maximum dose: 50 mEq/dose)</td>
+    <td>Intravenous</td>
+    <td>Metabolic acidosis, hyperkalemia</td>
+    </tr>
+    <tr>
+    <td>Lidocaine</td>
+    <td>1 mg/kg/dose, may repeat at 0.5-0.75 mg/kg/dose every 5-10 minutes (maximum dose: 3 mg/kg)</td>
+    <td>Intravenous, intraosseous, or endotracheal</td>
+    <td>Ventricular fibrillation, ventricular tachycardia</td>
+    </tr>
+    <tr>
+    <td>Calcium gluconate</td>
+    <td>100 mg/kg/dose (maximum dose: 1 g/dose)</td>
+    <td>Intravenous</td>
+    <td>Hyperkalemia, hypocalcemia, calcium channel blocker overdose</td>
+    </tr>
+    <tr>
+    <td>Furosemide</td>
+    <td>1 mg/kg/dose intravenous or intramuscular, may repeat every 6 hours as needed</td>
+    <td>Intravenous or intramuscular</td>
+    <td>Acute pulmonary edema, edema associated with heart failure, hypertension</td>
+    </tr>
+    <tr>
+    <td>Hydrocortisone</td>
+    <td>1-2 mg/kg/dose intravenous or intramuscular, every 6 hours as needed</td>
+    <td>Intravenous or intramuscular</td>
+    <td>Adrenal insufficiency, sepsis, anaphylaxis, asthma</td>
+    </tr>
+    <tr>
+    <td>Short-acting insulin</td>
+    <td>0.1-0.2 units/kg/hour intravenous infusion, adjust dose based on blood glucose levels</td>
+    <td>Intravenous</td>
+    <td>Diabetic ketoacidosis, hyperosmolar hyperglycemic state, hyperkalemia</td>
+    </tr>
+    <tr>
+    <td>Ipratropium</td>
+    <td>250-500 mcg (1-2 vials) mixed with 2.5-3 mL of normal saline, administered every 20 minutes up to 3 doses</td>
+    <td>Inhalation</td>
+    <td>Acute exacerbation of asthma or chronic obstructive pulmonary disease (COPD)</td>
+    </tr>
+    <tr>
+    <td>Magnesium sulfate</td>
+    <td>25-50 mg/kg/dose intravenous over 10-20 minutes (maximum dose: 2 g/dose)</td>
+    <td>Intravenous</td>
+    <td>Torsades de pointes, eclampsia, hypomagnesemia</td>
+    </tr>
+    <tr>
+    <td>Promethazine</td>
+    <td>0.25-1 mg/kg/dose intravenous or intramuscular (maximum dose: 25 mg/dose)</td>
+    <td>Intravenous or intramuscular</td>
+</tr>
+<tr>
+  <td>Dexamethasone</td>
+  <td>0.15 mg/kg/dose (maximum dose: 16 mg)</td>
+  <td>Intravenous, intramuscular, or oral</td>
+  <td>Asthma exacerbation, croup, anaphylaxis, acute spinal cord injury</td>
+</tr>
+<tr>
+  <td>Epinephrine (Adrenaline)</td>
+  <td>0.01 mg/kg/dose (maximum dose: 0.3 mg/dose) intramuscular</td>
+  <td>Intramuscular</td>
+  <td>Anaphylaxis, severe asthma exacerbation</td>
+</tr>
+<tr>
+  <td>Ibuprofen</td>
+  <td>10 mg/kg/dose (maximum dose: 400 mg/dose)</td>
+  <td>Oral</td>
+  <td>Fever, pain, inflammatory conditions</td>
+</tr>
+<tr>
+  <td>Paracetamol (Acetaminophen)</td>
+  <td>15 mg/kg/dose (maximum dose: 500 mg/dose)</td>
+  <td>Oral</td>
+  <td>Fever, pain</td>
+</tr>
+<tr>
+  <td>Salbutamol (Albuterol)</td>
+  <td>0.15 mg/kg/dose (maximum dose: 5 mg/dose) nebulized or 0.1 mg/kg/dose (maximum dose: 10 mg/dose) via metered-dose inhaler</td>
+  <td>Inhalation</td>
+  <td>Asthma exacerbation, acute bronchiolitis</td>
+</tr>
+<tr>
+  <td>Ceftriaxone</td>
+  <td>50-100 mg/kg/dose intravenous or intramuscular (maximum dose: 2 g/dose)</td>
+  <td>Intravenous or intramuscular</td>
+  <td>Bacterial infections</td>
+</tr>
+<tr>
+  <td>Ampicillin</td>
+  <td>50-100 mg/kg/dose intravenous or intramuscular (maximum dose: 2 g/dose)</td>
+  <td>Intravenous or intramuscular</td>
+  <td>Bacterial infections</td>
+</tr>
+<tr>
+  <td>Gentamicin</td>
+  <td>4-7.5 mg/kg/dose intravenous or intramuscular (maximum dose: 240 mg/dose)</td>
+  <td>Intravenous or intramuscular</td>
+  <td>Bacterial infections</td>
+</tr>
+<tr>
+  <td>Phenobarbital</td>
+  <td>15-20 mg/kg/dose intravenous (maximum rate: 100 mg/minute)</td>
+  <td>Intravenous</td>
+  <td>Seizures</td>
+</tr>
+<tr>
+  <td>Phenytoin</td>
+  <td>15-20 mg/kg/dose intravenous (maximum rate: 50 mg/minute)</td>
+  <td>Intravenous</td>
+  <td>Seizures</td>
+</tr>
+</table>
+<script>
+  function searchTable() {
+      let input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("resuscitation");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    // Add event listener to the search bar
+    const searchBar = document.getElementById("search");
+    searchBar.addEventListener("keyup", searchTable); 
+    </script>
+  </body>
+</html>    
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
