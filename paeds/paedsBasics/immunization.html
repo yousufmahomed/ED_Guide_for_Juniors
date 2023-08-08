@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>South African Immunization Schedule</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-color: #f0f0f0; /* grey background */
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        table-layout: fixed; /* To enable sticky header */
+    }
+    th {
+        background-color: #1a3b6a; /* deep blue */
+        color: white; /* white text */
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+        position: sticky; /* sticky header */
+        top: 0;
+        z-index: 1;
+    }
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    tr:nth-child(odd) {
+        background-color: #f9f9f9; /* light grey */
+    }
+    tr:nth-child(even) {
+        background-color: #e6e6e6; /* darker grey */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>South African Immunization Schedule</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <section>
+    <h1 class="title">South African Immunization Schedule</h1>
+    <table>
+      <tr>
+        <th>Age</th>
+        <th>Vaccine</th>
+        <th>How it is administered?</th>
+      </tr>
+      <tr><td>Birth</td><td>BCG (tuberculosis vaccine)</td><td>Injection in the arm</td></tr>
+      <tr><td>Birth</td><td>OPV (oral polio vaccine)</td><td>Oral drops</td></tr>
+      <tr><td>6 weeks</td><td>OPV (oral polio vaccine)</td><td>Oral drops</td></tr>
+      <tr><td>6 weeks</td><td>RV (rotavirus vaccine)</td><td>Liquid by mouth</td></tr>
+      <tr><td>6 weeks</td><td>DTaP-IPV-Hib-HepB (diphtheria-tetanus-acellular pertussis-injectable polio-Haemophilus influenza b-Hepatitis B vaccine)</td><td>Injection in the thigh</td></tr>
+      <tr><td>6 weeks</td><td>PCV (pneumococcal conjugate vaccine)</td><td>Injection in the thigh</td></tr>
+      <tr><td>10 weeks</td><td>DTaP-IPV-Hib-HepB (diphtheria-tetanus-acellular pertussis-injectable polio-Haemophilus influenza b-Hepatitis B vaccine)</td><td>Injection in the thigh</td></tr>
+      <tr><td>14 weeks</td><td>RV (rotavirus vaccine)</td><td>Liquid by mouth</td></tr>
+      <tr><td>14 weeks</td><td>DTaP-IPV-Hib-HepB (diphtheria-tetanus-acellular pertussis-injectable polio-Haemophilus influenza b-Hepatitis B vaccine)</td><td>Injection in the thigh</td></tr>
+      <tr><td>14 weeks</td><td>PCV (pneumococcal conjugate vaccine)</td><td>Injection in the thigh</td></tr>
+      <tr><td>6 months</td><td>Measles</td><td>Injection to the thigh or arm</td></tr>
+      <tr><td>9 months</td><td>PCV (pneumococcal conjugate vaccine)</td><td>Injection in the thigh</td></tr>
+      <tr><td>12 months</td><td>Measles</td><td>Injection to the thigh or arm</td></tr>
+      <tr><td>18 months</td><td>DTaP-IPV-Hib-HepB (diphtheria-tetanus-acellular pertussis-injectable polio-Haemophilus influenza b-Hepatitis B vaccine)</td><td>Injection to the thigh</td></tr>
+      <tr><td>6 years</td><td>Td (tetanus, reduced dose diphtheria vaccine)</td><td>Injection in the arm</td></tr>
+      <tr><td>12 years</td><td>Td (tetanus, reduced dose diphtheria vaccine)</td><td>Injection in the arm</td></tr>
+    </table>
+  </section>
+</body>
+</html>
+
