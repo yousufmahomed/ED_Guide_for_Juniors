@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used Analgesics in Pediatrics</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    input[type=text]:focus {
+      border: 2px solid #4CAF50;
+    }
+  </style>
+</head>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Commonly Used Analgesics in Pediatrics</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+<body>
+  
+  <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for analgesics...">
+  <table id="analgesics">
+    <tr>
+      <th>Analgesic</th>
+      <th>Dosage</th>
+      <th>Route of Administration</th>
+      <th>Precautions</th>
+    </tr>
+    <tr>
+      <td>Acetaminophen (Paracetamol)</td>
+      <td>15 mg/kg every 4-6 hours</td>
+      <td>Oral or rectal</td>
+      <td>Avoid excessive use to prevent liver damage.</td>
+    </tr>
+    <tr>
+      <td>Aspirin</td>
+      <td>10-20 mg/kg every 4-6 hours</td>
+      <td>Oral</td>
+      <td>Avoid in children with viral infections due to risk of Reye's syndrome.</td>
+    </tr>
+    <tr>
+      <td>Ibuprofen</td>
+      <td>5-10 mg/kg every 6-8 hours</td>
+      <td>Oral</td>
+      <td>Administer with food to reduce stomach irritation.</td>
+    </tr>
+    <tr>
+      <td>Morphine</td>
+      <td>0.05-0.2 mg/kg every 4 hours</td>
+      <td>Intravenous, intramuscular, or subcutaneous</td>
+      <td>Monitor for respiratory depression and sedation.</td>
+    </tr>
+    <tr>
+      <td>Tramadol</td>
+      <td>1-2 mg/kg every 6-8 hours</td>
+      <td>Oral</td>
+      <td>Use with caution in children with seizures or respiratory disorders.</td>
+    </tr>
+  </table>
+  <h3>Download the <a href="/pdfs/ACUTE PAIN PROTOCOL KHC.pdf" class="emphasis-link" target="_blank">Pediatric Pain Protocol</a></h3>
+  <script>
+    function searchTable() {
+      let input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("analgesics");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

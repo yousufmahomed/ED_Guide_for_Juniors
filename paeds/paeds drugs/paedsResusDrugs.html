@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used Pediatric Resuscitation Drugs</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type=text]:focus {
+      border: 2px solid #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">Commonly Used Pediatric Resuscitation Drugs</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for resuscitation drugs...">
+    <table id="resuscitation">
+      <tr>
+        <th>Drug</th>
+        <th>Pediatric Dosage</th>
+        <th>Route of Administration</th>
+        <th>Indication for Use</th>
+      </tr>
+      <tr>
+        <td>Adrenaline (Epinephrine)</td>
+        <td>0.01 mg/kg every 3-5 minutes</td>
+        <td>Intravenous, intraosseous, or endotracheal</td>
+        <td>Cardiac arrest, anaphylaxis, bronchospasm, hypotension</td>
+      </tr>
+      <!-- Add more drugs and their pediatric dosages here -->
+      <!-- Add this code below the existing drugs -->
+
+<tr>
+    <td>Adenosine</td>
+    <td>0.1 mg/kg rapid IV push, followed by a 1-2 mL saline flush</td>
+    <td>Intravenous</td>
+    <td>Supraventricular tachycardia</td>
+  </tr>
+  <tr>
+    <td>Aminophylline</td>
+    <td>5-6 mg/kg slow IV infusion over 20-30 minutes</td>
+    <td>Intravenous</td>
+    <td>Acute severe asthma</td>
+  </tr>
+  <tr>
+    <td>Bronchodilators (e.g., Salbutamol)</td>
+    <td>0.15-0.3 mg/kg per dose via nebulization or inhalation, up to 10 mg</td>
+    <td>Nebulization or Inhalation</td>
+    <td>Acute asthma exacerbation</td>
+  </tr>
+  <tr>
+    <td>Dextrose 10%</td>
+    <td>5-10 mL/kg IV bolus</td>
+    <td>Intravenous</td>
+    <td>Hypoglycemia</td>
+  </tr>
+  <tr>
+    <td>Diazepam (Valium)</td>
+    <td>0.2-0.5 mg/kg IV or rectal dose, repeat in 5-10 minutes if needed</td>
+    <td>Intravenous or Rectal</td>
+    <td>Seizures, status epilepticus</td>
+  </tr>
+  <tr>
+    <td>Dobutamine</td>
+    <td>2-20 μg/kg/minute continuous IV infusion</td>
+    <td>Intravenous</td>
+    <td>Low cardiac output, heart failure</td>
+  </tr>
+  <tr>
+    <td>Dopamine</td>
+    <td>2-20 μg/kg/minute continuous IV infusion</td>
+    <td>Intravenous</td>
+    <td>Low cardiac output, shock</td>
+  </tr>
+  <tr>
+    <td>Glycopyrrolate</td>
+    <td>0.005-0.01 mg/kg IV or IM, every 2-4 hours</td>
+    <td>Intravenous or Intramuscular</td>
+    <td>Bradycardia, anticholinesterase poisoning</td>
+  </tr>
+  <tr>
+    <td>Midazolam</td>
+    <td>0.05-0.2 mg/kg IV or IM, repeat as needed</td>
+    <td>Intravenous or Intramuscular</td>
+    <td>Sedation, seizures</td>
+  </tr>
+  <tr>
+    <td>Morphine</td>
+    <td>0.05-0.1 mg/kg IV, IM, or subcutaneous</td>
+    <td>Intravenous, Intramuscular, or Subcutaneous</td>
+    <td>Pain relief</td>
+  </tr>
+  <tr>
+    <td>Ondansetron</td>
+    <td>0.15 mg/kg IV or oral dose</td>
+    <td>Intravenous or Oral</td>
+    <td>Nausea and vomiting</td>
+  </tr>
+  <tr>
+    <td>Phenobarbital</td>
+    <td>15-20 mg/kg IV over 15-20 minutes, repeat as needed</td>
+    <td>Intravenous</td>
+    <td>Seizures</td>
+  </tr>
+  <tr>
+    <td>Vasopressin</td>
+    <td>0.0003-0.002 units/kg IV</td>
+    <td>Intravenous</td>
+    <td>Cardiac arrest</td>
+  </tr>
+ 
+  
+    </table>
+    <script>
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("resuscitation");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
