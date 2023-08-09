@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used HIV Drugs in Pediatrics</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    input[type=text]:focus {
+      border: 2px solid #4CAF50;
+    }
+  </style>
+</head>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Commonly Used HIV Drugs in Pediatrics</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+<body>
+  
+  <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
+  <table id="hiv">
+    <tr>
+      <th>Drug</th>
+      <th>Dosage</th>
+      <th>Route of Administration</th>
+      <th>Indication for Use</th>
+      <th>Precautions</th>
+    </tr>
+    <tr>
+      <td>Tenofovir disoproxil fumarate (TDF)</td>
+      <td>8 mg/kg once daily (max: 300 mg)</td>
+      <td>Oral</td>
+      <td>HIV-1 infection in pediatric patients 2 years of age and older</td>
+      <td>Monitor renal function and bone health.</td>
+    </tr>
+    <tr>
+      <td>Emtricitabine (FTC)</td>
+      <td>3 mg/kg once daily (max: 200 mg)</td>
+      <td>Oral</td>
+      <td>HIV-1 infection in pediatric patients 2 years of age and older</td>
+      <td>Monitor for adverse effects.</td>
+    </tr>
+    <tr>
+      <td>Dolutegravir (DTG)</td>
+      <td>Weight-based dosing; consult pediatric guidelines</td>
+      <td>Oral</td>
+      <td>HIV-1 infection in pediatric patients 6 years of age and older</td>
+      <td>Monitor for adverse effects and drug interactions.</td>
+    </tr>
+    <tr>
+      <td>Raltegravir (RAL)</td>
+      <td>Weight-based dosing; consult pediatric guidelines</td>
+      <td>Oral</td>
+      <td>HIV-1 infection in pediatric patients 4 weeks of age and older</td>
+      <td>Monitor for adverse effects and drug interactions.</td>
+    </tr>
+    <tr>
+      <td>Atazanavir (ATV)</td>
+      <td>Weight-based dosing; consult pediatric guidelines</td>
+      <td>Oral</td>
+      <td>HIV-1 infection in pediatric patients 6 years of age and older</td>
+      <td>Monitor for hyperbilirubinemia and drug interactions.</td>
+    </tr>
+    <!-- Add more HIV drugs and precautions as needed -->
+  </table>
+  <script>
+    function searchTable() {
+      let input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("hiv");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
