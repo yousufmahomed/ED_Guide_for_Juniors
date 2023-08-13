@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pediatric Ophthalmology Exam</title>
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+	<style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/eye.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+		.section {
+			margin-bottom: 40px;
+		}
+
+		.subheading {
+			font-size: 24px;
+			font-weight: bold;
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+
+		.image {
+			max-width: 100%;
+			height: 400px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			margin-top: 20px;
+		}
+        table {
+            border-collapse: collapse;
+          }
+          
+          th, td {
+            border: 1px solid black;
+            padding: 8px;
+          }
+    </style>
+</head>
+<header>
+    <div class="logo-container">
+      <h1>Pediatric Ophthalmology Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+<body>
+	<div class="section">
+		<p>Conduct a comprehensive eye and vision exam tailored for pediatric patients, including:</p>
+
+		<div class="section">
+            <h2 class="subheading">Visual Assessment</h2>
+            <p>Evaluate the child's visual acuity using child-friendly eye charts or methods:</p>
+            <p>Visual acuity testing assesses a child's ability to see objects clearly at a distance. It involves using age-appropriate charts or interactive methods to measure how well the child can identify shapes, letters, or symbols.</p>
+            <p>The results are typically recorded as "20/20" if the child can see at a standard distance what a person with normal vision can see at 20 feet. Adjustments can be made for children who are unable to read letters by using pictures or other engaging visual stimuli.</p>
+        </div>
+
+		<h2 class="subheading">External Eye Examination</h2>
+		<p>Perform an external examination of the eyes, including:</p>
+		<ul>
+			<li>Redness, swelling, or discharge: These symptoms may indicate infections or inflammation.</li>
+			<li>Eyelid position and movement: Assess for any abnormalities in eyelid control or movement.</li>
+			<li>Lumps or bumps: Look for any growths or masses that may affect eye health.</li>
+			<li>Foreign bodies: Check for foreign objects that may have entered the eye.</li>
+		</ul>
+		<img src="/images/externalEye.jpg" alt="External Eye anatomy" class="image">
+        <caption>External Eye Anatomy</caption>
+
+		<h2 class="subheading">Internal Eye Examination</h2>
+		<p>Conduct an internal eye examination using specialized tools, including:</p>
+		<ul>
+			<li>Pupillary response: Evaluate pupil size and light reaction for signs of nerve function.</li>
+			<li>Lens clarity: Check the transparency of the lens, looking for cloudiness or abnormalities.</li>
+			<li>Retina and optic nerve: Examine the retina and optic nerve for signs of abnormalities.</li>
+		</ul>
+		<img src="/images/internal eye.jpg" alt="Internal Eye anatomy" class="image">
+        <caption>Internal Eye Anatomy</caption>
+        <img src="/images/fundoscopy.jpg" alt="Normal Fundoscopy" class="image">
+        <caption>Normal Fundoscopy</caption>
+
+		<h2 class="subheading">Intraocular Pressure</h2>
+		<p>Measure the child's intraocular pressure using child-friendly methods. Elevated or low intraocular pressure may have different implications in children than in adults.</p>
+	</div>
+    <div class="section">
+        <h2 class="subheading">Types of Pediatric Eye Conditions</h2>
+        <table>
+        <thead>
+            <tr>
+                <th>Type of Condition</th>
+                <th>Common Clinical Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Amblyopia (Lazy Eye)</td>
+                <td>
+                    <ul>
+                        <li>Reduced vision in one eye</li>
+                        <li>Strabismus (crossed or misaligned eyes)</li>
+                        <li>Squinting or tilting the head to see</li>
+                        <li>Difficulty with depth perception</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Conjunctivitis (Pink Eye)</td>
+                <td>
+                    <ul>
+                        <li>Redness and irritation of the eye</li>
+                        <li>Watery or mucous discharge</li>
+                        <li>Crusty eyelids in the morning</li>
+                        <li>Itching or discomfort</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Pre-septal Cellulitis</td>
+                <td>
+                    <ul>
+                        <li>Swelling and redness around the eye</li>
+                        <li>Tenderness and warmth in the affected area</li>
+                        <li>Eye pain or discomfort</li>
+                        <li>Fever</li>
+                        <li>No visual changes or loss of vision</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Orbital Cellulitis</td>
+                <td>
+                    <ul>
+                        <li>Swelling and redness around the eye</li>
+                        <li>Proptosis (bulging of the eye)</li>
+                        <li>Pain with eye movements</li>
+                        <li>Decreased or blurry vision</li>
+                        <li>Double vision</li>
+                        <li>Fever</li>
+                        <li>Eye pain or discomfort</li>
+                        <li>Tenderness and warmth in the affected area</li>
+                        <li>Decreased eye movement or inability to move the eye</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
