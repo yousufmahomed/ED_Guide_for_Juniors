@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pediatric Fractures in the ED</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
+    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+            color: #333;
+            background-image: url("/images/resp.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        
+    
+        h1 {
+          font-size: 24px;
+          color: #003366;
+          margin-bottom: 10px;
+        }
+    
+        h2 {
+          font-size: 20px;
+          color: #003366;
+          margin-bottom: 10px;
+        }
+    
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+    
+        th, td {
+          border: 1px solid #ccc;
+          text-align: left;
+          padding: 8px;
+        }
+    
+        th {
+          background-color: navy;
+          color: whitesmoke;
+        }
+    
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        .fullscreen-image-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          cursor: zoom-out;
+        }
+        
+        .fullscreen-image-overlay img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 style="color:antiquewhite">Pediatric Fractures in the ED</h1>
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </header>
+
+    <div class="section">
+        <h2 class="subheading">Introduction to Pediatric Fractures</h2>
+        <p>Fractures are common injuries in pediatric patients, often seen in the emergency department. Children's bones are more flexible than adults', making them prone to certain types of fractures. Understanding the types of fractures and their features is crucial for accurate diagnosis and appropriate management.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="subheading">Common Pediatric Fractures</h2>
+        <p>Below are some of the most common types of fractures seen in pediatric patients:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fracture Type</th>
+                    <th>Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Greenstick Fracture</td>
+                    <td>One side of the bone is broken, while the other side is bent. Common in children due to their softer bones.</td>
+                </tr>
+                <tr>
+                    <td>Torus (Buckle) Fracture</td>
+                    <td>Compression injury causing a bulge or bump on the bone. Stable fracture with intact periosteum.</td>
+                </tr>
+                <tr>
+                    <td>Supracondylar Humeral Fracture</td>
+                    <td>Fracture of the distal humerus just above the elbow joint. High risk of nerve or blood vessel injury.</td>
+                </tr>
+                <tr>
+                    <td>Clavicle Fracture</td>
+                    <td>Fracture of the collarbone, often caused by a fall on an outstretched hand. May require a sling for support.</td>
+                </tr>
+                <tr>
+                    <td>Toddler's Fracture</td>
+                    <td>Low-energy spiral fracture of the tibia, often seen in toddlers. May occur after a minor fall.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="subheading">Salter-Harris Fractures</h2>
+        <p>Salter-Harris fractures involve the growth plate (physis) and are classified into five types. These fractures can impact future bone growth. Here's a table summarizing each type:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Treatment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Type I</td>
+                    <td>Fracture through the physis, separating the epiphysis from the metaphysis. Usually requires immobilization.</td>
+                    <td>Immobilization, sometimes surgical if severe.</td>
+                </tr>
+                <tr>
+                    <td>Type II</td>
+                    <td>Fracture through the physis and metaphysis, leaving the epiphysis intact. Common type.</td>
+                    <td>Immobilization, possible surgical intervention.</td>
+                </tr>
+                <tr>
+                    <td>Type III</td>
+                    <td>Fracture through the physis and epiphysis, leaving the metaphysis intact. Requires careful monitoring.</td>
+                    <td>Orthopedic consultation, potential surgery.</td>
+                </tr>
+                <tr>
+                    <td>Type IV</td>
+                    <td>Fracture through the physis, metaphysis, and epiphysis. Requires immediate medical attention.</td>
+                    <td>Urgent orthopedic consultation, surgical intervention.</td>
+                </tr>
+                <tr>
+                    <td>Type V</td>
+                    <td>Crush injury to the physis, affecting bone growth. Often difficult to detect on X-rays.</td>
+                    <td>Orthopedic consultation for monitoring.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2 class="subheading">Pediatric Hip and Leg Injuries</h2>
+        <p>Various hip and leg injuries can affect pediatric patients. Here's a comparison of Slipped Capital Femoral Epiphysis (SCFE) and similar injuries:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Injury</th>
+                    <th>Features</th>
+                    <th>Treatment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Slipped Capital Femoral Epiphysis (SCFE)</td>
+                    <td>
+                        <ul>
+                            <li>Occurs in adolescents during growth spurts.</li>
+                            <li>Epiphysis slips from the femoral neck, leading to hip pain and limited range of motion.</li>
+                            <li>May present with limping, thigh or knee pain referred from the hip, and external rotation of the hip.</li>
+                            <li>X-rays show the characteristic "ice cream falling off the cone" appearance.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Immediate referral to an orthopedic specialist.</li>
+                            <li>Surgical intervention to stabilize the hip joint and prevent further slippage.</li>
+                            <li>Restricted weight-bearing on the affected side.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Legg-Calvé-Perthes Disease</td>
+                    <td>
+                        <ul>
+                            <li>Avascular necrosis of the femoral head in children.</li>
+                            <li>Gradual onset of hip pain, limp, and limited range of motion.</li>
+                            <li>X-rays show a flattened and fragmented femoral head.</li>
+                            <li>Most common in boys aged 4 to 8 years.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Orthopedic consultation for management.</li>
+                            <li>Non-weight-bearing with the use of crutches or a walker.</li>
+                            <li>May require bracing or casting to maintain hip positioning.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Developmental Dysplasia of the Hip (DDH)</td>
+                    <td>
+                        <ul>
+                            <li>Abnormal development of the hip joint, causing instability or dislocation.</li>
+                            <li>Uneven leg folds, limited hip abduction, and hip instability.</li>
+                            <li>More common in females and breech-positioned infants.</li>
+                            <li>Diagnosed through physical examination and ultrasound in infants.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Early detection through newborn and infant hip screening.</li>
+                            <li>Pavlik harness or spica cast for infants.</li>
+                            <li>Surgical intervention for older children.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2 class="subheading">Click to Enlarge</h2>
+      </div>
+    
+    <div class="section">
+        <img src="/images/paeds_greenstick.jpg"   alt="Greenstick Fracture" class="image" onclick="toggleFullscreenImage('/images/paeds_greenstick.jpg')">
+      <caption>Greenstick Fracture</caption>
+      <div class="section">
+        <img src="/images/paeds_torus.jpg"   alt="Torus/Buckle Fracture" class="image" onclick="toggleFullscreenImage('/images/paeds_torus.jpg')">
+      <caption>Torus/Buckle Fracture</caption>
+      <div class="section">
+        <img src="/images/paeds_supracondylar.png"   alt="Supracondylar Fractures" class="image" onclick="toggleFullscreenImage('/images/paeds_supracondylar.png')">
+      <caption>Supracondylar Fractures</caption>
+      <div class="section">
+        <img src="/images/paeds_clavicle.jpeg"   alt="Clavicle Fracture" class="image" onclick="toggleFullscreenImage('/images/paeds_clavicle.jpeg')">
+      <caption>Clavicle Fracture</caption>
+      <div class="section">
+        <img src="/images/paeds_toddler.jpg"   alt="Toddler's Fracture" class="image" onclick="toggleFullscreenImage('/images/paeds_toddler.jpg')">
+      <caption>Toddler's Fracture</caption>
+      <div class="section">
+        <img src="/images/paeds_salter.png"   alt="Salter-Harris Fractures" class="image" onclick="toggleFullscreenImage('/images/paeds_salter.png')">
+      <caption>Salter-Harris Fractures</caption>
+      <img src="/images/paeds_sufe.jpg"   alt="Slipped Upper/Capital Femoral Epiphysis" class="image" onclick="toggleFullscreenImage('/images/paeds_sufe.jpg')">
+      <caption>Slipped Upper/Capital Femoral Epiphysis</caption>
+      <img src="/images/paeds_lcp.jpg"   alt="Legg-Calvé-Perthes Disease" class="image" onclick="toggleFullscreenImage('/images/paeds_lcp.jpg')">
+      <caption>Legg-Calvé-Perthes Disease</caption>
+      <img src="/images/paeds_ddoh.png"   alt="Developmental Dysplasia of the Hip (DDH)" class="image" onclick="toggleFullscreenImage('/images/paeds_ddoh.png')">
+      <caption>Developmental Dysplasia of the Hip (DDH)</caption>
+      </div>
+      <div class="section">
+        <h2 class="subheading">General Disposition of Pediatric Patients with Fractures</h2>
+        <p>Once a pediatric patient with a fracture has been assessed and treated, the appropriate disposition plan is determined based on the type and severity of the fracture. Here are some general guidelines for the disposition of pediatric patients with fractures:</p>
+        <ul>
+            <li><strong>Outpatient Management:</strong> Minor fractures, such as simple fractures of the fingers or toes, may be suitable for outpatient management. The patient is provided with instructions for pain management, wound care, and follow-up with a primary care physician or orthopedic specialist.</li>
+            <li><strong>Inpatient Observation:</strong> In some cases, a short period of inpatient observation may be necessary. This could include fractures that require close monitoring due to the potential for complications, such as fractures near growth plates.</li>
+            <li><strong>Casting or Splinting:</strong> Fractures that can be stabilized with casting or splinting may require a brief hospital stay or same-day surgery. Once the cast or splint is applied, the patient is educated on proper care and provided with follow-up instructions.</li>
+            <li><strong>Surgery and Inpatient Care:</strong> Complex fractures or fractures that require surgical intervention, such as open reduction and internal fixation (ORIF), may necessitate a hospital stay. After surgery, the patient's pain is managed, and physical therapy may be initiated during the hospitalization.</li>
+            <li><strong>Follow-up Care:</strong> Regardless of the disposition, all pediatric patients with fractures require appropriate follow-up care. This includes regular appointments with orthopedic specialists to monitor healing, adjust casts or splints if necessary, and assess any potential complications.</li>
+        </ul>
+        <p>The disposition plan is tailored to each individual patient, taking into consideration their age, the type of fracture, associated injuries, and overall health. A collaborative approach involving orthopedic specialists, pediatricians, nurses, and other healthcare providers ensures the best possible care for pediatric patients with fractures.</p>
+    </div>
+    
+      <script>
+        function toggleFullscreenImage(src) {
+        let overlay = document.getElementById('fullscreen-image-overlay');
+      
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.id = 'fullscreen-image-overlay';
+          overlay.classList.add('fullscreen-image-overlay');
+          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+          overlay.onclick = () => toggleFullscreenImage(null);
+          document.body.appendChild(overlay);
+        } else {
+          document.body.removeChild(overlay);
+        }
+      }
+      </script>
+</body>
+</html>
