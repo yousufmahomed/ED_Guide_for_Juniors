@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ectopic Pregnancy</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/gynae.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .strong {
+      font-size: large;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bolder;
+      color: navy;
+    }
+  
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <h1>Ectopic Pregnancy</h1>
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </header>
+ 
+  
+  <div class="section">
+    <h1 class="subheading">Ectopic Pregnancy</h1>
+    <h2 class="strong">Risk Factors for Ectopic Pregnancy</h2>
+    <ul>
+      <li>Tubal surgery, pelvic inflammatory disease, smoking, advanced age, prior spontaneous abortion, medically induced abortion, history of infertility, intrauterine device use, and assisted reproduction techniques are all known risk factors.</li>
+      <li>These risk factors can help healthcare providers identify individuals who are at a higher risk for ectopic pregnancy and require closer monitoring.</li>
+    </ul>
+
+    <h2 class="strong">Clinical Presentation and Symptoms</h2>
+    <ul>
+      <li>Ectopic pregnancy can be challenging to diagnose due to its variable and sometimes nonspecific symptoms.</li>
+      <li>Classic symptoms include delayed menses, abdominal pain, and vaginal bleeding, but not all patients present with the same combination of symptoms.</li>
+      <li>Patients with known risk factors should be evaluated carefully, even if their symptoms are not typical.</li>
+    </ul>
+
+    <h2 class="strong">Diagnostic Tools</h2>
+    <ul>
+      <li>Transvaginal ultrasonography is a sensitive method for diagnosing ectopic pregnancies, especially in stable patients.</li>
+      <li>Serial measurement of serum hCG levels can help track the progression of pregnancy and determine the likelihood of viable intrauterine pregnancy.</li>
+      <li>Laparoscopy is an accurate diagnostic and therapeutic procedure, especially for unstable patients or those with unclear ultrasound results.</li>
+    </ul>
+
+    <h2 class="strong">Management and Treatment</h2>
+    <ul>
+      <li>The management of ectopic pregnancy depends on the patient's stability and the characteristics of the pregnancy.</li>
+      <li>Unstable patients require immediate intervention, including surgery or medical management.</li>
+      <li>Stable patients with a confirmed ectopic pregnancy can be managed medically with methotrexate, a drug that stops the growth of the abnormal pregnancy tissue.</li>
+      <li>Regular monitoring and follow-up are essential to ensure that the hCG levels return to normal and the ectopic pregnancy resolves.</li>
+    </ul>
+
+    <h2 class="strong">Complications and Follow-Up</h2>
+    <ul>
+      <li>Medical management with methotrexate has a success rate of around 85% to 93%, but close monitoring is necessary to detect any signs of treatment failure.</li>
+      <li>Surgical intervention, whether through laparoscopy or laparotomy, may be needed in cases of severe ectopic pregnancy, rupture, or methotrexate failure.</li>
+    </ul>
+
+    <h2 class="strong">Preventive Measures</h2>
+    <ul>
+      <li>Early prenatal care and regular check-ups can help detect ectopic pregnancies in their early stages.</li>
+      <li>Educating individuals about the risks associated with certain contraceptives and reproductive procedures can help reduce the incidence of ectopic pregnancies.</li>
+    </ul>
+
+    <h2 class="strong">Patient Education</h2>
+    <ul>
+      <li>Patients should be educated about the symptoms of ectopic pregnancy, the importance of early medical attention, and the need for follow-up care after any form of treatment.</li>
+    </ul>
+
+    <h2 class="strong">Advancements in Diagnosis and Treatment</h2>
+    <ul>
+      <li>Advances in ultrasound technology and serum hCG level monitoring have improved the accuracy and efficiency of diagnosing ectopic pregnancies.</li>
+      <li>Laparoscopic techniques have become more common, leading to less invasive surgical interventions.</li>
+    </ul>
+
+  </div>
+  <div class="section">
+    <img src="/images/ectopic1.jpg"   alt="Ectopic Pregnancy Algorithm" class="image" onclick="toggleFullscreenImage('/images/ectopic1.jpg')">
+<caption>Ectopic Pregnancy Algorithm</caption>
+  </div>
+  <div class="section">
+    <img src="/images/ectopic2.png"   alt="Types of Ectopic Pregnancies" class="image" onclick="toggleFullscreenImage('/images/ectopic2.png')">
+<caption>Types of Ectopic Pregnancies</caption>
+  </div>
+  <script>
+    function toggleFullscreenImage(src) {
+    let overlay = document.getElementById('fullscreen-image-overlay');
+  
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'fullscreen-image-overlay';
+      overlay.classList.add('fullscreen-image-overlay');
+      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+      overlay.onclick = () => toggleFullscreenImage(null);
+      document.body.appendChild(overlay);
+    } else {
+      document.body.removeChild(overlay);
+    }
+  }
+  </script>
+</body>
+</html>
