@@ -72,7 +72,7 @@
     <h1>Blood Transfusion Calculator</h1>
     <p>This calculator helps to determine the number of blood transfusion units required based on the current hemoglobin level.</p>
     <form>
-      <label for="hb-level">Enter Current Hemoglobin Level:</label>
+      <label for="hb-level">Enter Current Hemoglobin Level(g/dl):<br> <span style="color: brown; font-size:smaller">If your Hb is in different units, kindly convert to g/dl.</span></label>
       <input type="number" id="hb-level" name="hb-level" min="0" max="20" step="0.1">
       <br>
       <button type="button" onclick="calculateTransfusion()">Calculate Units</button>
@@ -80,6 +80,8 @@
       <h2>Transfusion Recommendation</h2>
       <p id="transfusion-result"></p>
     </form>
+
+ 
     <script>
         function calculateTransfusion() {
           const hbLevel = parseFloat(document.getElementById("hb-level").value);
@@ -108,6 +110,8 @@
       
           document.getElementById("transfusion-result").innerHTML = resultMessage;
         }
+
+       
       </script>
       
   </body>
