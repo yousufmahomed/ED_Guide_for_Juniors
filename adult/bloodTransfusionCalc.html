@@ -73,7 +73,7 @@
   </header>
   <body class="vitals-page">
     <h1>Blood Transfusion Calculator</h1>
-    <p>This calculator helps to determine the number of blood transfusion units required based on the current hemoglobin level.</p>
+    <p>This calculator helps to determine the number of blood transfusion units required based on the current hemoglobin level and assuming that we attempt to get the Hb in the emergency department to at least 9 g/dl</p>
     <form>
       <label for="hb-level">Enter Current Hemoglobin Level(g/dl):<br> <span style="color: brown; font-size:smaller">If your Hb is in different units, kindly convert to g/dl.</span></label>
       <input type="number" id="hb-level" name="hb-level" min="0" max="20" step="0.1">
@@ -83,6 +83,45 @@
       <h2>Transfusion Recommendation</h2>
       <p id="transfusion-result"></p>
     </form>
+
+ 
+<section>
+  <h2>Platelet Transfusion</h2>
+  <p><strong>Indications:</strong> Used in patients with thrombocytopenia or platelet dysfunction. Commonly indicated for counts <10x10^9/L in asymptomatic patients, <20x10^9/L in febrile patients, or <50x10^9/L in actively bleeding patients or pre-surgery.</p>
+  <p><strong>Precautions:</strong> Ensure correct blood type match, monitor for transfusion reactions. Use cautiously in patients with a history of transfusion reactions.</p>
+  <p><strong>Administration:</strong> Administered intravenously. Dosage and rate depend on the patient's condition and platelet count.</p>
+  <p><em>Note: Administer only under senior authorization.</em></p>
+</section>
+
+
+<section>
+  <h2>Fresh Frozen Plasma (FFP)</h2>
+  <p><strong>Indications:</strong> Used to treat bleeding caused by clotting factor deficiencies, in liver disease, massive transfusions, or warfarin reversal.</p>
+  <p><strong>Precautions:</strong> Risk of volume overload, allergic reactions, and transfusion-related acute lung injury (TRALI). Monitor patient closely.</p>
+  <p><strong>Administration:</strong> Administered intravenously. Dosage based on patient’s weight and clinical condition.</p>
+  <p><em>Note: Administer only under senior authorization.</em></p>
+</section>
+
+
+<section>
+  <h2>Cryoprecipitate Transfusion</h2>
+  <p><strong>Indications:</strong> Used for managing bleeding in patients with low fibrinogen levels, Hemophilia A, von Willebrand disease, and DIC.</p>
+  <p><strong>Precautions:</strong> Risk of viral transmission, allergic reactions, and TRALI. Appropriate cross-matching is required.</p>
+  <p><strong>Administration:</strong> Administered intravenously. Dosage depends on fibrinogen level and patient’s clinical condition.</p>
+  <p><em>Note: Administer only under senior authorization.</em></p>
+</section>
+
+
+<section>
+  <h2>Factor 8 or 9 for Hemophiliac Patients</h2>
+  <p><strong>Indications:</strong> Used in patients with Hemophilia A (Factor VIII deficiency) or Hemophilia B (Factor IX deficiency) for bleeding episodes or prophylaxis.</p>
+  <p><strong>Precautions:</strong> Monitor for development of inhibitors, allergic reactions, and thrombotic events.</p>
+  <p><strong>Administration:</strong> Administered intravenously. Dosage depends on the severity of deficiency, extent of bleeding, and patient’s body weight.</p>
+  <p><em>Note: Administer only under senior authorization.</em></p>
+</section>
+
+
+
 
  
     <script>
