@@ -290,5 +290,41 @@ strong{
     background-image: none;
     background-color: lightgrey;
   }
+
+ 
+
+/* Dark mode specific styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212; /* Dark background for dark mode */
+    color: #ffffff; /* Light text color for better visibility */
+  }
+
+  header, .navbar {
+    background-color: #1a1a1a; /* Slightly different dark color for headers */
+  }
+
+  .links a {
+    background-color: #333333; /* Darker background for links */
+    color: #ffffff; /* Light text for links */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Adjusting box shadow for dark mode */
+  }
+
+  th, .fullscreen-image-overlay {
+    background-color: #2a2a2a; /* Dark background for table headers and image overlays */
+    color: #ffffff; /* Light text color */
+  }
+
+  tr:nth-child(even) {
+    background-color: #242424; /* Darker shade for alternate rows */
+  }
+
+  .emphasis-link {
+    color: #4fc3f7; /* Brighter color for emphasis links */
+  }
+
+  /* Add additional dark mode styles as needed */
+}
+
   
   
