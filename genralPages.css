@@ -291,7 +291,7 @@ strong{
     background-color: lightgrey;
   }
 
- 
+  
 
 /* Dark mode specific styles */
 @media (prefers-color-scheme: dark) {
