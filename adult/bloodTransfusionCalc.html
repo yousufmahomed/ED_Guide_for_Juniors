@@ -77,7 +77,7 @@
   </header>
   <body class="vitals-page">
     <h1>Blood Transfusion Calculator</h1>
-    <p>This calculator helps to determine the number of blood transfusion units required based on the current hemoglobin level and assuming that we attempt to get the Hb in the emergency department to at least 9 g/dl</p>
+    <p>This calculator helps to determine the number of blood transfusion units required based on the current hemoglobin level and assuming that we attempt to get the Hb in the emergency department to at least 10 g/dl</p>
     <form>
       <label for="hb-level">Enter Current Hemoglobin Level(g/dl):<br> <span style="color: brown; font-size:smaller">If your Hb is in different units, kindly convert to g/dl.</span></label>
       <input type="number" id="hb-level" name="hb-level" min="0" max="20" step="0.1">
@@ -165,7 +165,7 @@
     <script>
         function calculateTransfusion() {
           const hbLevel = parseFloat(document.getElementById("hb-level").value);
-          const rawUnitsRequired = (9 - hbLevel) / 1.5;
+          const rawUnitsRequired = (10 - hbLevel) / 1.5;
           const fractionalPart = rawUnitsRequired % 1;
           let unitsRequired;
       
