@@ -3,9 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <title>Systems Examination Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      /* optional: swap or remove this if you add a dedicated systems background */
+      background-image: url("/images/systemsExam.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 800px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      text-align: left;
+    }
+
+    .page-wrapper h1 {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .intro-text {
+      margin-bottom: 16px;
+    }
+
+    .links {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .links li {
+      margin-bottom: 8px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #0059a8;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,22 +77,26 @@
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-  <main>
-    <h1>Choose the <em>System</em> you are planning to examine</h1>
+
+  <main class="page-wrapper">
+    <h1>Choose the <em>system</em> you are planning to examine</h1>
+    <p class="intro-text">
+      Select a system below to open a focused Emergency Department examination guide, including key steps,
+      red flags and common findings for each area.
+    </p>
+
     <ul class="links">
-      <li><a href="/adult/systems examination/cns.html">CNS</a></li>
-      <li><a href="/adult/systems examination/ent.html">ENT</a></li>
+      <li><a href="/adult/systems examination/cns.html">Central Nervous System (CNS)</a></li>
+      <li><a href="/adult/systems examination/ent.html">Ear, Nose &amp; Throat (ENT)</a></li>
       <li><a href="/adult/systems examination/eye.html">Eye</a></li>
       <li><a href="/adult/systems examination/cardiac.html">Cardiac</a></li>
       <li><a href="/adult/systems examination/respiratory.html">Respiratory</a></li>
       <li><a href="/adult/systems examination/abdomen.html">Abdominal</a></li>
       <li><a href="/adult/systems examination/gut.html">Genito-Urinary</a></li>
-      <li><a href="/adult/systems examination/gynae.html">Gynecology</a></li>
-      <li><a href="/adult/systems examination/obstetrics.html">Obstetric</a></li>
+      <li><a href="/adult/systems examination/gynae.html">Gynaecology</a></li>
+      <li><a href="/adult/systems examination/obstetrics.html">Obstetrics</a></li>
       <li><a href="/adult/systems examination/peripheries.html">Peripheries</a></li>
-
     </ul>
-   
-</main>
+  </main>
 </body>
 </html>

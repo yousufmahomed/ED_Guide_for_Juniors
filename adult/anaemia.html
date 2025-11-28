@@ -1,190 +1,312 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Anemia Diagnosis Guide</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-<style>
+  <meta charset="UTF-8">
+  <title>Anemia Diagnosis Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      /* Optional: add a background image if you create one
+      background-image: url("/images/anaemia.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      */
     }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .page-wrapper h1 {
+      font-size: 1.7rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #004c99;
     }
 
     h2 {
-        color: #0066cc;
+      color: #0066cc;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.6;
     }
 
     table {
-        border-collapse: collapse;
-        width: 100%;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 8px;
     }
 
     th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
     }
 
     th {
-        background-color: #f2f2f2;
-        color: navy;
+      background-color: #f2f2f2;
+      color: navy;
+      font-weight: 600;
     }
 
     ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      padding-left: 20px;
     }
 
     li {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 14px 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
     .fullscreen-image-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        cursor: zoom-out;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    a.emphasis-link {
+      color: #0059a8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a.emphasis-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
       }
-      
-      .fullscreen-image-overlay img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
+
+      th, td {
+        padding: 8px;
       }
-</style>
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Anemia Diagnosis Guide</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	
-	<h2>Overview</h2>
-	<p>Anemia is a condition characterized by a decrease in the number of red blood cells (RBCs) or a reduction in the hemoglobin (Hb) content of the blood. This results in reduced oxygen-carrying capacity and can lead to various symptoms, such as fatigue, weakness, pallor, and shortness of breath.</p>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Anemia Diagnosis Guide</h1>
+      <a href="/index.html" title="Home" alt="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <h1>Anemia Diagnosis Guide</h1>
+
+    <h2>Overview</h2>
+    <p>
+      Anemia is a condition characterised by a decrease in the number of red blood cells (RBCs) or a reduction
+      in the haemoglobin (Hb) content of the blood. This results in reduced oxygen-carrying capacity and can
+      lead to symptoms such as fatigue, weakness, pallor and shortness of breath.
+    </p>
+
     <h2>Initial Assessment</h2>
-<ol>
-	<li>Obtain a detailed history: symptoms, duration, family history, diet, medications, etc.</li>
-	<li>Perform a physical examination: pallor, jaundice, tachycardia, hepatosplenomegaly, etc.</li>
-	<li>Order relevant laboratory tests: complete blood count (CBC), reticulocyte count, peripheral blood smear, and iron studies.</li>
-</ol>
+    <ol>
+      <li>Obtain a detailed history: symptoms, duration, family history, diet, medications, menstrual/bleeding history, chronic illness, etc.</li>
+      <li>Perform a physical examination: pallor, jaundice, tachycardia, murmurs, hepatosplenomegaly, lymphadenopathy, signs of chronic disease.</li>
+      <li>Order initial laboratory tests: full blood count (FBC/CBC), reticulocyte count, peripheral smear and iron studies; consider B12/folate, renal and liver function as indicated.</li>
+    </ol>
 
-<h2>Classification of Anemia</h2>
-<p>Anemia can be classified based on the mean corpuscular volume (MCV) of the RBCs:</p>
-<ul>
-	<li>Microcytic anemia (MCV < 80 fL)</li>
-	<li>Normocytic anemia (MCV 80-100 fL)</li>
-	<li>Macrocytic anemia (MCV > 100 fL)</li>
-</ul>
+    <h2>Classification of Anemia</h2>
+    <p>Anemia is commonly classified by mean corpuscular volume (MCV):</p>
+    <ul>
+      <li>Microcytic anaemia (MCV &lt; 80 fL)</li>
+      <li>Normocytic anaemia (MCV 80–100 fL)</li>
+      <li>Macrocytic anaemia (MCV &gt; 100 fL)</li>
+    </ul>
 
-
-
-<h2>Diagnosis of Different Types of Anemia</h2>
-<table>
-	<thead>
-		<tr>
-			<th>Type of Anemia</th>
-			<th>MCV</th>
-			<th>Key Laboratory Findings</th>
-			<th>Causes</th>
-		</tr>
-	</thead>
-	<tbody>
+    <h2>Diagnosis of Different Types of Anemia</h2>
+    <table>
+      <thead>
         <tr>
-			<td>Iron Deficiency Anemia</td>
-			<td>Microcytic (MCV < 80 fL)</td>
-			<td>Low serum iron, low ferritin, high total iron-binding capacity (TIBC)</td>
-			<td>Poor diet, malabsorption, blood loss, pregnancy</td>
-		</tr>
-		<tr>
-			<td>Thalassemia</td>
-			<td>Microcytic (MCV < 80 fL)</td>
-			<td>Normal to high serum iron, normal to high ferritin, normal to low TIBC, hemoglobin electrophoresis may show abnormal Hb patterns</td>
-			<td>Genetic mutation affecting hemoglobin synthesis</td>
-		</tr>
-		<tr>
-			<td>Anemia of Chronic Disease</td>
-			<td>Normocytic (MCV 80-100 fL) or Microcytic (MCV < 80 fL)</td>
-			<td>Low serum iron, high ferritin, low TIBC</td>
-			<td>Chronic infections, inflammation, malignancy</td>
-		</tr>
-		<tr>
-			<td>Macrocytic Anemia</td>
-			<td>Macrocytic (MCV > 100 fL)</td>
-			<td>Low serum B12 or folate, hypersegmented neutrophils on peripheral blood smear</td>
-			<td>Vitamin B12 or folate deficiency, alcoholism, liver disease</td>
-		</tr>
-		<tr>
-			<td>Hemolytic Anemia</td>
-			<td>Normocytic (MCV 80-100 fL)</td>
-			<td>Reticulocytosis, increased indirect bilirubin, increased lactate dehydrogenase (LDH), decreased haptoglobin</td>
-			<td>Intrinsic RBC defects, autoimmune destruction, mechanical damage, infections</td>
-		</tr>
-		<tr>
-			<td>Aplastic Anemia</td>
-			<td>Normocytic (MCV 80-100 fL)</td>
-			<td>Pancytopenia, low reticulocyte count, hypocellular bone marrow</td>
-			<td>Idiopathic, drug toxicity, radiation, viral infections, inherited bone marrow failure syndromes</td>
-		</tr>
-	</tbody>
-</table>
+          <th>Type of Anaemia</th>
+          <th>MCV</th>
+          <th>Key Laboratory Findings</th>
+          <th>Common Causes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Iron Deficiency Anaemia</td>
+          <td>Microcytic (MCV &lt; 80 fL)</td>
+          <td>
+            Low serum iron, low ferritin (or inappropriately normal if inflammation), high total iron-binding capacity (TIBC),
+            low transferrin saturation; hypochromic microcytes on smear.
+          </td>
+          <td>Poor diet, chronic blood loss (GI, gynaecological), malabsorption, pregnancy.</td>
+        </tr>
+        <tr>
+          <td>Thalassaemia</td>
+          <td>Microcytic (MCV &lt; 80 fL)</td>
+          <td>
+            Normal to high serum iron and ferritin, normal to low TIBC; target cells on smear; haemoglobin electrophoresis
+            may show abnormal Hb patterns.
+          </td>
+          <td>Inherited mutations affecting globin chain synthesis.</td>
+        </tr>
+        <tr>
+          <td>Anaemia of Chronic Disease / Inflammation</td>
+          <td>Normocytic (80–100 fL) or microcytic</td>
+          <td>
+            Low serum iron, normal or high ferritin, low TIBC; often low reticulocyte count.
+          </td>
+          <td>Chronic infections, inflammatory diseases, malignancy, chronic kidney disease.</td>
+        </tr>
+        <tr>
+          <td>Macrocytic Anaemia (usually megaloblastic)</td>
+          <td>Macrocytic (MCV &gt; 100 fL)</td>
+          <td>
+            Low serum B12 and/or folate in deficiency; hypersegmented neutrophils and macro-ovalocytes on smear.
+          </td>
+          <td>
+            Vitamin B12 or folate deficiency, malabsorption, alcoholism, liver disease, certain drugs (e.g. methotrexate, hydroxyurea).
+          </td>
+        </tr>
+        <tr>
+          <td>Haemolytic Anaemia</td>
+          <td>Typically normocytic (may be macrocytic from reticulocytosis)</td>
+          <td>
+            Reticulocytosis, raised indirect bilirubin, raised LDH, low haptoglobin; spherocytes, schistocytes or other
+            abnormal cells on smear depending on cause.
+          </td>
+          <td>
+            Intrinsic RBC defects (e.g. hereditary spherocytosis, G6PD deficiency, sickle cell disease),
+            autoimmune haemolysis, microangiopathic haemolysis, infections, drugs, mechanical valves.
+          </td>
+        </tr>
+        <tr>
+          <td>Aplastic Anaemia</td>
+          <td>Normocytic (MCV 80–100 fL)</td>
+          <td>
+            Pancytopenia, low reticulocyte count, hypocellular bone marrow on biopsy.
+          </td>
+          <td>
+            Idiopathic, drug toxicity, radiation, viral infections, autoimmune disease, inherited bone marrow failure syndromes.
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-<h2>Treatment</h2>
-<p>Treatment of anemia depends on the underlying cause. It is essential to address the root cause and provide supportive care. This may include iron, vitamin B12, or folate supplementation, blood transfusions, immunosuppressive therapy, or other specific treatments depending on the type of anemia and its severity.</p>
-<h2>Anaemia Algorithms</h2>
-<div class="section">
-    <img src="/images/macrocytic_anaemia.jpg" alt="Macrocytic Anaemia" class="image" onclick="toggleFullscreenImage('/images/macrocytic_anaemia.jpg')">
-<caption>Macrocytic Anaemia</caption>
-  </div>
-  <div class="section">
-    <img src="/images/normocytic_anaemia.jpg" alt="Normocytic Anaemia" class="image" onclick="toggleFullscreenImage('/images/normocytic_anaemia.jpg')">
-<caption>Normocytic Anaemia</caption>
-  </div>
-  <div class="section">
-    <img src="/images/microcytic_anaemia.jpg" alt="Microcytic Anaemia" class="image" onclick="toggleFullscreenImage('/images/microcytic_anaemia.jpg')">
-<caption>Microcytic Anaemia</caption>
-  </div>
-  <h3>Here you can download an <a href="/pdfs/anaemia protocol .pdf" class="emphasis-link" style="padding: 20px auto;" target="_blank">Anaemia Protocol (PDF)</a></h3>
+    <h2>Treatment</h2>
+    <p>
+      Treatment of anaemia depends on the underlying cause. Address the root cause and provide supportive care:
+    </p>
+    <ul>
+      <li>Iron, vitamin B12 or folate supplementation where deficient.</li>
+      <li>Transfusions for symptomatic or severe anaemia according to local thresholds.</li>
+      <li>Management of chronic disease (e.g. infection control, renal replacement, immunosuppression).</li>
+      <li>Specific therapy for haemolytic anaemia (e.g. steroids, immunosuppressants, treatment of infection, stopping culprits).</li>
+      <li>Specialist management for aplastic anaemia, haemoglobinopathies and bone marrow failure syndromes.</li>
+    </ul>
 
-<script>
-	function goBack() {
-		window.history.back();
-	}
+    <h2>Anaemia Algorithms</h2>
+
+    <figure>
+      <img src="/images/macrocytic_anaemia.jpg" alt="Macrocytic anaemia algorithm" class="image"
+           onclick="toggleFullscreenImage('/images/macrocytic_anaemia.jpg')">
+      <figcaption>Macrocytic Anaemia Algorithm</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/images/normocytic_anaemia.jpg" alt="Normocytic anaemia algorithm" class="image"
+           onclick="toggleFullscreenImage('/images/normocytic_anaemia.jpg')">
+      <figcaption>Normocytic Anaemia Algorithm</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/images/microcytic_anaemia.jpg" alt="Microcytic anaemia algorithm" class="image"
+           onclick="toggleFullscreenImage('/images/microcytic_anaemia.jpg')">
+      <figcaption>Microcytic Anaemia Algorithm</figcaption>
+    </figure>
+
+    <h3>
+      Here you can download an
+      <a href="/pdfs/anaemia protocol .pdf" class="emphasis-link" target="_blank">
+        Anaemia Protocol (PDF)
+      </a>
+    </h3>
+
+  </main>
+
+  <script>
     function toggleFullscreenImage(src) {
-        let overlay = document.getElementById('fullscreen-image-overlay');
-      
-        if (!overlay) {
-          overlay = document.createElement('div');
-          overlay.id = 'fullscreen-image-overlay';
-          overlay.classList.add('fullscreen-image-overlay');
-          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-          overlay.onclick = () => toggleFullscreenImage(null);
-          document.body.appendChild(overlay);
-        } else {
-          document.body.removeChild(overlay);
-        }
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
       }
-</script>
+    }
+  </script>
 </body>
 </html>
-

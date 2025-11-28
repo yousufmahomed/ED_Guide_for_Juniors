@@ -1,116 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Emergency Department ENT Exam</title>
-    <meta charset="UTF-8">
+  <title>Emergency Department ENT Exam</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/ENT.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-          strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-	</style>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/ENT.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <h1>ENT Exam</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </header>
-	
-	<div class="section">
-		<h2 class="subheading">Patient History</h2>
-		<p>Start by asking the patient about their symptoms, including:</p>
-        <ul>
-            <li>Ear pain: This can be a symptom of an ear infection, injury, or other conditions affecting the ear.</li>
-            <li>Loss of hearing: This can be a gradual or sudden decrease in hearing ability, and can be a sign of a variety of conditions, including infections, earwax buildup, or hearing loss due to aging.</li>
-            <li>Tinnitus (ringing in the ears): This is a sensation of ringing, buzzing, or other sounds in the ears, and can be a symptom of a variety of conditions, including ear infections, exposure to loud noise, or certain medications.</li>
-            <li>Vertigo (dizziness): This is a sensation of spinning or dizziness, and can be a symptom of a variety of conditions affecting the ear or the brain.</li>
-            <li>Nasal congestion: This can be a symptom of a sinus infection, allergies, or other conditions affecting the nose and sinuses.</li>
-            <li>Difficulty swallowing: This can be a symptom of a variety of conditions affecting the throat or esophagus, including infections, inflammation, or tumors.</li>
-            <li>Sore throat: This can be a symptom of a variety of conditions, including infections, allergies, or acid reflux.</li>
-            <li>History of ear or sinus infections: Patients who have a history of ear or sinus infections may be more prone to these conditions in the future, and may require more frequent monitoring or treatment.</li>
-            <li>Recent trauma to the head or neck: Recent trauma can cause a variety of symptoms affecting the ears, nose, and throat, and may require immediate medical attention.</li>
-        </ul>
-	</div>
-	
-	<div class="section">
-		<h2 class="subheading">Physical Exam</h2>
-		<p>Perform a thorough physical exam of the ears, nose, and throat, including:</p>
-		<strong>Ears</strong>
-		<p>Use an otoscope to examine the ear canal and tympanic membrane (eardrum). Look for:</p>
-		<ul>
-            <li>Redness, swelling, or discharge: These may indicate an infection or inflammation in the ear. Redness and swelling may also be a sign of trauma to the ear. Discharge can be a symptom of a ruptured eardrum or an ear infection.</li>
-            <li>Tearing or perforation of the eardrum: A ruptured eardrum can cause hearing loss and may require medical treatment.</li>
-            <li>Foreign bodies (such as earwax or insects): These can cause irritation, pain, or hearing loss and may need to be removed by a healthcare professional.</li>
-            <li>Signs of infection or inflammation: These may include redness, warmth, tenderness, and pain in the ear. The ear may also produce pus or other discharge.</li>
-            <li>Abnormalities in hearing: Conduct a hearing test to check for any hearing loss or abnormalities in hearing. This may involve a whisper test or tuning fork test.</li>
-        </ul>
-		<img src="/images/normalTymp.jpg" alt="Ear Exam" class="image">
-        <caption>A normal Tympanic membrane</caption>
-        <img src="/images/otitis.jpg" alt="Otitis changes" class="image">
-        <caption>Tympanic membrane changes in Otitis</caption>
-        <img src="/images/perforatedTm.jpg" alt="Perforated TM" class="image">
-        <caption>Tympanic membrane Perforations</caption>
-		
-		<strong>Nose</strong>
-		<p>Examine the nasal passages for:</p>
-		<ul>
-            <li>Signs of obstruction or congestion: These may indicate a blockage in the nasal passages, which can cause difficulty breathing, snoring, or sleep apnea.</li>
-            <li>Discharge or bleeding: These can be symptoms of a sinus infection, allergies, or other conditions.</li>
-            <li>Deviated septum or other abnormalities: A deviated septum is a common condition in which the nasal septum (the wall that separates the two nostrils) is shifted to one side, making it difficult to breathe through one or both nostrils. Other abnormalities may include nasal polyps, tumors, or cysts.</li>
-            <li>Foreign bodies: These can include objects that are stuck in the nose, such as small toys or food particles. Foreign bodies can cause irritation, inflammation, or infection in the nasal passages.</li>
-        </ul>
-		<img src="/images/normalNasal.jpg" alt="Nose Exam" class="image">
-        <caption>Normal Nasal View</caption>
-		
-		<strong>Throat</strong>
-		<p>Examine the mouth and throat using a tongue depressor and flashlight. Look for:</p>
-		<ul>
-            <li>Redness, swelling, or discharge: These may indicate an infection or inflammation in the throat. Redness and swelling may also be a sign of trauma to the throat. Discharge can be a symptom of a throat infection.</li>
-            <li>Tonsillitis or pharyngitis: Tonsillitis is inflammation of the tonsils, while pharyngitis is inflammation of the pharynx (the back of the throat). These conditions can cause sore throat, difficulty swallowing, fever, and swollen lymph nodes in the neck.</li>
-            <li>Ulcers or lesions: These may indicate a viral infection, such as herpes simplex virus (cold sores) or Epstein-Barr virus (mononucleosis). They can also be a sign of oral cancer or other conditions.</li>
-            <li>Foreign bodies: These can include objects that are stuck in the throat, such as fish bones or pills. Foreign bodies can cause irritation, inflammation, or infection in the throat.</li>
-            <li>Difficulty swallowing: This can be a symptom of a variety of conditions, including throat infections, acid reflux, or neurological disorders.</li>
-            <li>Enlarged lymph nodes: These may indicate an infection or inflammation in the throat, or may be a sign of a more serious condition such as lymphoma.</li>
-        </ul>
-		<img src="/images/normalThroat.jpg" alt="Normal Throat" class="image">
-        <caption>Normal Throat View</caption>
-        <img src="/images/tonsillitis-inflammation.jpg" alt="Tonsillitis" class="image">
-        <caption>Tonsillitis</caption>
-        <img src="/images/quinsy.jpg" alt="peri-tonsillar abscess" class="image">
-        <caption>Peri-tonsillar Abscess/ Quinsy</caption>
-	</div>
-	
-	<div class="section">
-        <h2 class="subheading">Diagnostic Tests</h2>
-        <p>Depending on the patient's symptoms and physical exam findings, diagnostic tests may include:</p>
-        <ul>
-            <li>Audiometry: A hearing test that measures the patient's ability to hear sounds at different frequencies and volumes.</li>
-            <li>Computed tomography (CT) scan: An imaging test that can provide detailed images of the ears, nose, and throat to help diagnose conditions such as sinusitis, tumors, or fractures.</li>
-            <li>Magnetic resonance imaging (MRI): An imaging test that uses a strong magnetic field and radio waves to produce detailed images of the head and neck. It can help diagnose conditions such as tumors, infections, or nerve damage.</li>
-            <li>Endoscopy: A procedure in which a thin, flexible tube with a camera on the end is inserted into the nose or throat to examine the nasal passages, sinuses, or larynx (voice box).</li>
-            <li>Swab culture: A test in which a sample of discharge from the ear, nose, or throat is collected and analyzed in a lab to determine the presence of bacteria, viruses, or fungi.</li>
-        </ul>
+  <header>
+    <div class="logo-container">
+      <h1>ENT Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="section">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The ENT examination in the Emergency Department focuses on rapid identification of airway compromise,
+        deep neck space infection, severe epistaxis, complications of otitis, foreign bodies and trauma.
+        A structured approach includes history, general inspection and targeted examination of the ears, nose and throat.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <p>Key symptom clusters and red flags:</p>
+      <ul>
+        <li><strong>Ear symptoms:</strong> otalgia, discharge, hearing loss (sudden vs gradual), fullness, tinnitus, vertigo,
+          history of trauma, inserting objects or cotton buds, recent water exposure.</li>
+        <li><strong>Nasal symptoms:</strong> obstruction, rhinorrhoea (clear vs purulent), epistaxis, facial pain/pressure,
+          anosmia, history of allergy, prior sinus disease or surgery.</li>
+        <li><strong>Throat symptoms:</strong> sore throat, odynophagia, dysphagia, voice change, muffled “hot potato” voice,
+          drooling, trismus, neck pain or swelling.</li>
+        <li><strong>Vertigo/dizziness:</strong> true spinning vs light-headedness, positional triggers, associated hearing loss
+          or neurological symptoms.</li>
+        <li><strong>Systemic features:</strong> fever, weight loss, night sweats, recent upper respiratory infection,
+          immunosuppression, diabetes, HIV, anticoagulation use.</li>
+      </ul>
+      <p><span class="key-point">Red flags requiring urgent attention:</span> stridor, drooling, severe trismus, rapidly
+        progressive neck swelling, respiratory distress, severe unilateral otalgia in diabetics (malignant otitis externa),
+        severe unilateral facial swelling, or posterior epistaxis with haemodynamic compromise.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Physical Examination</h2>
+      <p>Always begin with a general assessment of airway, breathing and circulation before focusing on ENT.</p>
+
+      <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none;">1. Ears</h3>
+      <p>Inspect externally, then use an otoscope to examine the canal and tympanic membrane.</p>
+      <ul>
+        <li><strong>External ear and canal:</strong> deformity, trauma, lacerations, mastoid tenderness/swelling,
+          erythema, oedema, discharge, foreign bodies.</li>
+        <li><strong>Tympanic membrane:</strong> colour, position, translucency, light reflex, perforation, scarring,
+          presence of fluid or bubbles, bullae.</li>
+        <li><strong>Signs of infection:</strong>
+          <ul>
+            <li>Otitis externa – painful, swollen canal, debris, tragal/pinna tenderness.</li>
+            <li>Acute otitis media – bulging, opaque drum, reduced mobility (if pneumatic otoscopy), possible perforation with discharge.</li>
+          </ul>
+        </li>
+        <li><strong>Screening hearing tests:</strong> whisper test, finger rub; tuning fork tests (Rinne, Weber) if indicated.</li>
+      </ul>
+
+      <figure>
+        <img src="/images/normalTymp.jpg" alt="Normal tympanic membrane" class="image">
+        <figcaption>Normal tympanic membrane.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/otitis.jpg" alt="Otitis media changes" class="image">
+        <figcaption>Inflammatory changes of the tympanic membrane in otitis.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/perforatedTm.jpg" alt="Perforated tympanic membrane" class="image">
+        <figcaption>Examples of tympanic membrane perforations.</figcaption>
+      </figure>
+
+      <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none; margin-top: 16px;">2. Nose</h3>
+      <p>Inspect externally then examine the nasal cavity with a light source and, if available, a nasal speculum.</p>
+      <ul>
+        <li><strong>External nose and midface:</strong> deformity, tenderness, crepitus, septal deviation from trauma.</li>
+        <li><strong>Nasal cavities:</strong> mucosal colour, oedema, septum, turbinates, discharge (purulent, serous, bloody),
+          crusting, foreign bodies, polyps or masses.</li>
+        <li><strong>Epistaxis:</strong> identify anterior source (e.g. Kiesselbach’s area) vs suspected posterior bleed
+          (blood in oropharynx, difficult visualisation, haemodynamic instability).</li>
+        <li><strong>Septal haematoma:</strong> soft, fluctuant swelling on one or both sides of the septum after nasal trauma
+          – urgent ENT referral.</li>
+      </ul>
+
+      <figure>
+        <img src="/images/normalNasal.jpg" alt="Normal nasal view" class="image">
+        <figcaption>Normal anterior nasal view.</figcaption>
+      </figure>
+
+      <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none; margin-top: 16px;">3. Throat and Oral Cavity</h3>
+      <p>Use a light source and tongue depressor; assess airway closely in distressed patients.</p>
+      <ul>
+        <li><strong>Oral cavity:</strong> lips, buccal mucosa, tongue (colour, coating, lesions, mobility), floor of mouth,
+          dentition and gingivae.</li>
+        <li><strong>Oropharynx:</strong> tonsils, pillars, posterior pharyngeal wall; look for erythema, exudates, swelling,
+          uvular deviation, asymmetry.</li>
+        <li><strong>Tonsillitis/pharyngitis:</strong> erythema, exudate, enlarged tonsils, tender cervical nodes, fever.</li>
+        <li><strong>Peritonsillar abscess (quinsy):</strong> unilateral swelling, uvular deviation away from lesion, trismus,
+          muffled “hot potato” voice, drooling.</li>
+        <li><strong>Deep neck infection suspicion:</strong> neck swelling, severe pain, stiffness, toxic appearance, stridor
+          or respiratory distress – low threshold for imaging and senior review.</li>
+        <li><strong>Lymph nodes:</strong> palpate cervical nodes for tenderness, size, fixation and consistency.</li>
+      </ul>
+
+      <figure>
+        <img src="/images/normalThroat.jpg" alt="Normal throat" class="image">
+        <figcaption>Normal oropharyngeal view.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/tonsillitis-inflammation.jpg" alt="Tonsillitis" class="image">
+        <figcaption>Inflamed tonsils in acute tonsillitis.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/quinsy.jpg" alt="Peritonsillar abscess" class="image">
+        <figcaption>Peritonsillar abscess (quinsy) with unilateral swelling.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Investigations in the ED</h2>
+      <p>
+        Further tests are guided by symptoms, examination and the patient’s stability. Common options include:
+      </p>
+      <ul>
+        <li><strong>Audiometry:</strong> formal hearing assessment (often outpatient) for persistent or unexplained hearing loss or tinnitus.</li>
+        <li><strong>Laboratory tests:</strong> FBC, CRP, blood cultures in suspected sepsis; coagulation profile in significant epistaxis, especially on anticoagulants.</li>
+        <li><strong>CT scan:</strong> CT sinuses, temporal bone or neck for complicated sinusitis, deep neck infection, orbital involvement, mastoiditis, trauma or suspected fractures.</li>
+        <li><strong>MRI:</strong> selected cases with suspected tumours, cranial nerve pathology or intracranial complications.</li>
+        <li><strong>Endoscopy (flexible or rigid):</strong> ENT-performed assessment of nasal cavity, nasopharynx, larynx and hypopharynx in persistent hoarseness, suspected malignancy, airway obstruction or unexplained dysphagia.</li>
+        <li><strong>Microbiology:</strong> throat or ear swabs where results will change management (e.g. persistent otorrhoea, immunocompromised host, suspected MRSA).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Summary</h2>
+      <p>
+        A structured ENT examination in the Emergency Department begins with airway assessment and red flag screening,
+        followed by targeted examination of ears, nose and throat. Careful history, focused examination and judicious
+        use of imaging and microbiology help to identify conditions that require urgent intervention, ENT referral or
+        safe conservative management and follow-up.
+      </p>
+    </div>
+  </main>
 </body>
 </html>
-    

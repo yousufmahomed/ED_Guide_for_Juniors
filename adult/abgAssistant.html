@@ -1,193 +1,370 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Arterial Blood Gas Analysis</title>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Arterial Blood Gas Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <link rel="stylesheet" href="/genralPages.css">
   <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f7f7f7;
-        margin: 0;
-        padding: 0;
-        background-image: url("/images/abg.jpg");
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      background-image: url("/images/abg.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+    }
+
+    .page-wrapper {
+      max-width: 700px;
+      margin: 90px auto 40px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.94);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    .subheading {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    fieldset {
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      padding: 12px 14px 16px;
+      margin: 0 0 16px;
+    }
+
+    legend {
+      font-weight: 600;
+      padding: 0 6px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .input-row {
+      margin-bottom: 12px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 2px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95rem;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .btn-row {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    button[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    .result {
+      margin-top: 18px;
+      padding: 14px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      font-size: 0.95rem;
+    }
+
+    .result h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+
+    .result p {
+      margin: 4px 0;
+    }
+
+    .result ul {
+      padding-left: 1.2rem;
+      margin: 6px 0;
+    }
+
+    .result li {
+      margin-bottom: 4px;
+    }
+
+    .error {
+      color: #b00020;
+      font-weight: 600;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
       }
-      
-      h1 {
-        text-align: center;
-        margin-top: 20px;
-      }
-      
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-      
-      form {
-        margin-top: 20px;
-      }
-      
-      label {
-        display: block;
-        margin-bottom: 5px;
-      }
-      
-      input[type="number"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      
-      input[type="submit"]:hover {
-        background-color: #3e8e41;
-      }
-      
-      .result {
-        margin-top: 20px;
-        padding: 20px;
-        background-color: #f2f2f2;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-      
+    }
   </style>
-  </head>
+</head>
+<body>
   <header>
     <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Arterial Blood Gas Analysis</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-container">
+        <h1 class="main-header">Arterial Blood Gas Analysis</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home">
+            <i class="fa-solid fa-house" alt="House icon"></i>
+          </a>
         </div>
-      </nav>
-    </header>
-  <body>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
     <h1>Arterial Blood Gas Analysis</h1>
-    <h2 class="subheading">If you do not have any parameter on your blood gas printout, please enter the suggested value from the form.</h2>
-    
-    <form>
+    <p class="subheading">
+      If a parameter is missing on your printout, you may enter a typical/estimated value, but interpret with caution.
+    </p>
+
+    <form id="abg-form">
       <fieldset>
         <legend>Arterial Blood Gas Parameters</legend>
-        <label for="ph">pH:</label>
-        <input type="number" step="0.01" name="ph" id="ph" required> (e.g. 7.35)
-        
-        <br>
-        
-        <label for="paco2">PaCO2:</label>
-        <input type="number" step="0.1" name="paco2" id="paco2" required> kPa (e.g. 5.3)
-        
-        <br>
-        
-        <label for="hco3">HCO3:</label>
-        <input type="number" step="0.1" name="hco3" id="hco3" required> mEq/L (e.g. 24)
-        
-        <br>
-        
-        <label for="po2">PaO2:</label>
-        <input type="number" step="0.1" name="po2" id="po2" required> kPa (e.g. 10.6)
-        
-        <br>
-        
-        <label for="fio2">FiO2:</label>
-        <input type="number" step="0.01" name="fio2" id="fio2" required> (e.g. 0.21)
-      </fieldset>
-      
-      <br>
-      
-      <input type="submit" value="Analyse">
-    </form>
-    
-    <hr>
-    
-    <div id="analysis"></div>
 
-    
-    <script>
-        function analyseABG() {
-            const ph = parseFloat(document.getElementById("ph").value);
-            const paco2 = parseFloat(document.getElementById("paco2").value);
-            const hco3 = parseFloat(document.getElementById("hco3").value);
-            const po2 = parseFloat(document.getElementById("po2").value);
-            const fio2 = parseFloat(document.getElementById("fio2").value);
-          
-            // Calculate the A-a gradient
-            const aagrad = ((fio2 * 100) - (po2 / 7.5)) / 0.21 - paco2 / 1.2;
-          
-            // Determine the acid-base imbalance and possible causes
-            let result;
-            if (ph < 7.35) {
-              if (paco2 > 6.0 && hco3 > 26) {
-                result = "Respiratory acidosis with compensatory metabolic alkalosis, possible causes include chronic obstructive pulmonary disease (COPD), pulmonary fibrosis, or neuromuscular disease";
-              } else if (paco2 > 6.0 && hco3 <= 26) {
-                result = "Respiratory acidosis with compensatory metabolic compensation, possible causes include hypoventilation due to sedatives or airway obstruction, or acute exacerbation of COPD";
-              } else if (paco2 <= 6.0 && hco3 < 22) {
-                result = "Metabolic acidosis, possible causes include diabetic ketoacidosis, lactic acidosis, or renal failure";
-              } else {
-                result = "Mixed acid-base disorder";
-              }
-            } else if (ph > 7.45) {
-              if (paco2 < 4.7 && hco3 <= 26) {
-                result = "Respiratory alkalosis with compensatory metabolic compensation, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
-              } else if (paco2 < 4.7 && hco3 > 26) {                 result = "Respiratory alkalosis with compensatory metabolic alkalosis, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
-            } else if (paco2 >= 4.7 && hco3 > 26) {
-              result = "Metabolic alkalosis, possible causes include vomiting, diuretic use, or excessive bicarbonate administration";
-            } else {
-              result = "Mixed acid-base disorder";
-            }
-          } else {
-            if (paco2 > 6.0 && hco3 < 22) {
-              result = "Compensated respiratory acidosis, possible causes include chronic obstructive pulmonary disease (COPD), pulmonary fibrosis, or neuromuscular disease";
-            } else if (paco2 < 4.7 && hco3 < 22) {
-              result = "Compensated respiratory alkalosis, possible causes include hyperventilation due to anxiety or pain, salicylate toxicity, or sepsis";
-            } else if (hco3 > 26) {
-              result = "Compensated metabolic alkalosis, possible causes include vomiting, diuretic use, or excessive bicarbonate administration";
-            } else if (hco3 < 22) {
-              result = "Compensated metabolic acidosis, possible causes include diabetic ketoacidosis, lactic acidosis, or renal failure";
-            } else {
-              result = "Normal ABG";
-            }
-          }
-        
-          // Display the result
-          const analysisResult = document.getElementById('analysis');
-          analysisResult.innerHTML = result;
+        <div class="input-row">
+          <label for="ph">pH</label>
+          <input type="number" step="0.01" name="ph" id="ph" required placeholder="e.g. 7.35">
+        </div>
+
+        <div class="input-row">
+          <label for="paco2">PaCO₂ (kPa)</label>
+          <input type="number" step="0.1" name="paco2" id="paco2" required placeholder="e.g. 5.3">
+          <div class="hint">Normal range: 4.7 – 6.0 kPa</div>
+        </div>
+
+        <div class="input-row">
+          <label for="hco3">HCO₃⁻ (mmol/L)</label>
+          <input type="number" step="0.1" name="hco3" id="hco3" required placeholder="e.g. 24">
+          <div class="hint">Normal range: 22 – 26 mmol/L</div>
+        </div>
+
+        <div class="input-row">
+          <label for="po2">PaO₂ (kPa)</label>
+          <input type="number" step="0.1" name="po2" id="po2" required placeholder="e.g. 10.6">
+        </div>
+
+        <div class="input-row">
+          <label for="fio2">FiO₂ (fraction)</label>
+          <input type="number" step="0.01" name="fio2" id="fio2" required placeholder="e.g. 0.21">
+          <div class="hint">Room air = 0.21, 40% venturi ≈ 0.40, etc.</div>
+        </div>
+      </fieldset>
+
+      <div class="btn-row">
+        <button type="submit">Analyse</button>
+      </div>
+
+      <div id="error" class="error" style="display:none;"></div>
+    </form>
+
+    <div id="analysis" class="result" style="display:none;"></div>
+  </main>
+
+  <script>
+    function analyseABG() {
+      const ph    = parseFloat(document.getElementById("ph").value);
+      const paco2 = parseFloat(document.getElementById("paco2").value);
+      const hco3  = parseFloat(document.getElementById("hco3").value);
+      const po2   = parseFloat(document.getElementById("po2").value);
+      const fio2  = parseFloat(document.getElementById("fio2").value);
+
+      const errorDiv = document.getElementById("error");
+      const analysisDiv = document.getElementById("analysis");
+      errorDiv.style.display = "none";
+      analysisDiv.style.display = "none";
+      errorDiv.textContent = "";
+
+      if (
+        isNaN(ph) || isNaN(paco2) || isNaN(hco3) ||
+        isNaN(po2) || isNaN(fio2) || fio2 <= 0
+      ) {
+        errorDiv.textContent = "Please enter valid numeric values for all fields (FiO₂ must be > 0).";
+        errorDiv.style.display = "block";
+        return;
       }
-      
-      // Add this to the end of the script
-      const form = document.querySelector('form');
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        analyseABG();
-      });
+
+      // Basic flags based on standard ranges
+      const acidemia  = ph < 7.35;
+      const alkalemia = ph > 7.45;
+
+      const paCO2High = paco2 > 6.0;
+      const paCO2Low  = paco2 < 4.7;
+
+      const hco3High  = hco3 > 26;
+      const hco3Low   = hco3 < 22;
+
+      let primaryDisorder = "Normal or near-normal acid–base status";
+      let explanation = [];
+      let pattern = "";
+
+      // 1. Primary disorder (simple pattern logic)
+      if (acidemia) {
+        if (paCO2High && !hco3Low) {
+          primaryDisorder = "Primary respiratory acidosis";
+          explanation.push("Low pH with raised PaCO₂ suggests a respiratory cause of acidemia.");
+          if (hco3High) {
+            pattern = "Chronic respiratory acidosis with renal compensation.";
+          } else {
+            pattern = "Acute or partially compensated respiratory acidosis.";
+          }
+        } else if (hco3Low && !paCO2High) {
+          primaryDisorder = "Primary metabolic acidosis";
+          explanation.push("Low pH with low HCO₃⁻ suggests a metabolic cause of acidemia.");
+          if (paCO2Low) {
+            pattern = "Respiratory compensation (hyperventilation) is present.";
+          } else {
+            pattern = "Little or no respiratory compensation is evident.";
+          }
+        } else if (paCO2High && hco3Low) {
+          primaryDisorder = "Mixed respiratory and metabolic acidosis";
+          explanation.push("Low pH with both raised PaCO₂ and low HCO₃⁻ suggests a mixed disorder.");
+        } else {
+          primaryDisorder = "Unclassified acidemic pattern";
+          explanation.push("The values do not fit a simple pattern—consider a mixed disorder or chronic compensation.");
+        }
+      } else if (alkalemia) {
+        if (hco3High && !paCO2Low) {
+          primaryDisorder = "Primary metabolic alkalosis";
+          explanation.push("High pH with raised HCO₃⁻ suggests a metabolic cause of alkalemia.");
+          if (paCO2High) {
+            pattern = "Respiratory compensation (hypoventilation) is present.";
+          } else {
+            pattern = "Little or no respiratory compensation is evident.";
+          }
+        } else if (paCO2Low && !hco3High) {
+          primaryDisorder = "Primary respiratory alkalosis";
+          explanation.push("High pH with low PaCO₂ suggests a respiratory cause of alkalemia.");
+          if (hco3Low) {
+            pattern = "Metabolic compensation (renal loss of bicarbonate) is present.";
+          } else {
+            pattern = "Likely acute respiratory alkalosis with minimal compensation.";
+          }
+        } else if (paCO2Low && hco3High) {
+          primaryDisorder = "Mixed metabolic and respiratory alkalosis";
+          explanation.push("High pH with both low PaCO₂ and elevated HCO₃⁻ suggests a mixed disorder.");
+        } else {
+          primaryDisorder = "Unclassified alkalemic pattern";
+          explanation.push("The values do not fit a simple pattern—consider a mixed disorder or chronic compensation.");
+        }
+      } else {
+        // pH normal range: look for compensated disorders
+        if (paCO2High && hco3High) {
+          primaryDisorder = "Compensated respiratory acidosis";
+          explanation.push("Normal pH with high PaCO₂ and high HCO₃⁻ suggests chronic respiratory acidosis with metabolic compensation.");
+        } else if (paCO2Low && hco3Low) {
+          primaryDisorder = "Compensated respiratory alkalosis";
+          explanation.push("Normal pH with low PaCO₂ and low HCO₃⁻ suggests chronic respiratory alkalosis with metabolic compensation.");
+        } else if (hco3High && !paCO2Low && !paCO2High) {
+          primaryDisorder = "Compensated metabolic alkalosis (possible)";
+          explanation.push("Normal pH with raised HCO₃⁻ may indicate metabolic alkalosis with respiratory compensation.");
+        } else if (hco3Low && !paCO2Low && !paCO2High) {
+          primaryDisorder = "Compensated metabolic acidosis (possible)";
+          explanation.push("Normal pH with low HCO₃⁻ may indicate metabolic acidosis with respiratory compensation.");
+        } else {
+          primaryDisorder = "Normal ABG";
+          explanation.push("pH, PaCO₂ and HCO₃⁻ are all within or close to normal ranges.");
+        }
+      }
+
+      // 2. Oxygenation: P/F ratio (PaO₂/FiO₂) in mmHg
+      const paO2mmHg = po2 * 7.5;
+      const pfRatio  = paO2mmHg / (fio2 * 100); // Berlin definition uses mmHg
+
+      let oxygenation = `Approximate P/F ratio: ${pfRatio.toFixed(1)} (PaO₂/FiO₂). `;
+      if (pfRatio >= 300) {
+        oxygenation += "Oxygenation is within a generally acceptable range.";
+      } else if (pfRatio >= 200) {
+        oxygenation += "Mild impairment of oxygenation (consider early lung involvement or oedema).";
+      } else if (pfRatio >= 100) {
+        oxygenation += "Moderate impairment of oxygenation—consider significant lung pathology or ARDS-level hypoxaemia.";
+      } else {
+        oxygenation += "Severe impairment of oxygenation—consistent with severe lung pathology/ARDS-level hypoxaemia.";
+      }
+
+      // Build output HTML
+      let html = `
+        <h2>ABG Interpretation</h2>
+        <p><strong>Primary pattern:</strong> ${primaryDisorder}</p>
+      `;
+
+      if (pattern) {
+        html += `<p><strong>Compensation/mixed pattern:</strong> ${pattern}</p>`;
+      }
+
+      html += `
+        <p><strong>Details:</strong></p>
+        <ul>
+          <li>pH: ${ph.toFixed(2)}</li>
+          <li>PaCO₂: ${paco2.toFixed(2)} kPa</li>
+          <li>HCO₃⁻: ${hco3.toFixed(1)} mmol/L</li>
+          <li>PaO₂: ${po2.toFixed(1)} kPa</li>
+          <li>FiO₂: ${fio2.toFixed(2)}</li>
+        </ul>
+        <p>${oxygenation}</p>
+      `;
+
+      if (explanation.length > 0) {
+        html += `<p><strong>Comment:</strong> ${explanation.join(" ")}</p>`;
+      }
+
+      html += `
+        <p style="font-size:0.85rem; color:#666; margin-top:8px;">
+          This tool provides a simplified interpretation. Always correlate with the clinical picture and local protocols.
+        </p>
+      `;
+
+      analysisDiv.innerHTML = html;
+      analysisDiv.style.display = "block";
+    }
+
+    const form = document.getElementById('abg-form');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      analyseABG();
+    });
   </script>
 </body>
 </html>
-
-               
-
-        
-          

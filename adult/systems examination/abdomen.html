@@ -1,534 +1,621 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Abdominal Examination</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/abdomen.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		
-		h1 {
-			text-align: center;
-			font-size: 36px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		
-		ul {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			padding-left: 20px;
-		}
-		
-		li {
-			margin-bottom: 5px;
-		}
-		
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-          table {
-            border-collapse: collapse;
-          }
-          
-          th, td {
-            border: 1px solid black;
-            padding: 8px;
-          }
-          
-	</style>
+  <meta charset="UTF-8" />
+  <title>Abdominal Examination – Adult ED</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Main theme + general page styles -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/general.css" />
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
+  <!-- Your script (if needed elsewhere) -->
+  <script src="/script.js" defer></script>
 </head>
-<header>
-    <div class="logo-container">
-        <h1>Abdominal Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
+
+<body class="general-page">
+  <!-- Top navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <button class="back-button" type="button" onclick="history.back()">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </button>
+
+      <h1 class="main-header">Abdominal Examination</h1>
+
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house"></i>
+        </a>
       </div>
-</header>
-<body>
-	
-	
-	<div class="section">
-		<h2 class="subheading">Introduction</h2>
-		<p>An abdominal examination is an important part of the physical exam for patients presenting with abdominal pain or other gastrointestinal symptoms in the emergency department. This exam involves a systematic approach to inspecting, auscultating, palpating, and percussing the patient's abdomen to assess for any abnormalities or signs of underlying disease.</p>
-	</div>
-	
-	<div class="section">
-		<h2 class="subheading">Preparation</h2>
-		<p>Before beginning the examination, ensure that the patient is comfortable and properly positioned. The patient should be lying flat on their back with their arms at their sides and their legs extended. It may be necessary to provide a pillow or blanket for support or warmth. Wash your hands thoroughly and put on gloves before beginning the examination.</p>
-	</div>
-	
-	<div class="section">
-		<h2 class="subheading">Inspection</h2>
-		<p>Begin the examination by visually inspecting the patient's abdomen. Look for any visible abnormalities such as scars, hernias, or distention. Observe the patient's respiratory rate and pattern as well, as this can provide clues to underlying abdominal pathology.</p>
-	</div>
-	
-	<div class="section">
-		<h2 class="subheading">Auscultation</h2>
-		<p>Use a stethoscope to listen to the patient's bowel sounds. The bowel sounds should be audible in all four quadrants of the abdomen and should be regular and normal in tone. Absent or hyperactive bowel sounds may indicate intestinal obstruction or ileus.</p>
-	</div>
-	
-	<div class="section">
-		<h2 class="subheading">Palpation</h2>
-		<p>Palpate the patient's abdomen for any areas of tenderness, masses, or abnormal organ enlargement. Use a light touch to assess for surface tenderness, then gradually increase pressure to assess for deeper tenderness. It may be necessary to perform a deep palpation to assess for any masses or organ enlargement. </p>
-		<p>During palpation, also assess for any signs of guarding, rigidity, or rebound tenderness, as these may indicate peritonitis or other intra-abdominal pathology. Additionally, assess for the presence of a hernia by performing a cough test or asking the patient to perform a Valsalva maneuver.</p>
     </div>
-    <div class="section">
-        <h2 class="subheading">Percussion</h2>
-        <p>Percuss the patient's abdomen to assess for areas of dullness or tympany. Dullness may indicate organ enlargement, fluid accumulation, or a mass, while tympany may indicate the presence of gas in the intestines. </p>
-    </div>
-    <div class="section">
-        <h2 class="subheading">Differential Diagnosis for Abdominal Pain</h2>
-        <p>The location of abdominal pain can provide clues to the underlying cause of the pain. Here are some common differential diagnoses for pain in each quadrant of the abdomen:</p>
-        
-        <div>
-            <strong>Right Upper Quadrant</strong> 
-            <ul>
-                <li>Gallstones or cholecystitis</li>
-                <li>Hepatitis or other liver disease</li>
-                <li>Pancreatitis</li>
-                <li>Duodenal ulcer</li>
-                <li>Right lower lobe pneumonia</li>
-            </ul>
-        </div>
-        
-        <div>
-            <strong>Left Upper Quadrant</strong> 
-            <ul>
-                <li>Splenic rupture or infarction</li>
-                <li>Gastritis or peptic ulcer disease</li>
-                <li>Pancreatitis</li>
-                <li>Left lower lobe pneumonia</li>
-            </ul>
-        </div>
-        
-        <div>
-            <strong>Right Lower Quadrant</strong> 
-            <ul>
-                <li>Appendicitis</li>
-                <li>Diverticulitis</li>
-                <li>Salpingitis or ovarian cyst</li>
-                <li>Crohn's disease or ulcerative colitis</li>
-                <li>Right lower lobe pneumonia</li>
-            </ul>
-        </div>
-        
-        <div>
-            <strong>Left Lower Quadrant</strong> 
-            <ul>
-                <li>Diverticulitis</li>
-                <li>Salpingitis or ovarian cyst</li>
-                <li>Crohn's disease or ulcerative colitis</li>
-                <li>Left lower lobe pneumonia</li>
-            </ul>
-        </div>
-    </div>
-    
-    
-    <div class="section">
-        <h2 class="subheading">Additional Tests</h2>
-        <p>Depending on the patient's symptoms and physical exam findings, additional tests may be ordered to further assess the abdominal area. These tests may include imaging studies such as an abdominal X-ray, ultrasound, or CT scan, as well as laboratory tests to assess for signs of infection or inflammation.</p>
-    </div>
-    
-    <div class="section">
-        <h2 class="subheading">Common Findings and Abnormalities</h2>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section class="section">
+      <h2 class="subheading">Introduction</h2>
+      <p>
+        An abdominal examination is a key part of assessing patients with abdominal pain,
+        vomiting, diarrhoea, trauma or non-specific unwellness in the Emergency Department.
+        A structured approach helps you detect time-critical pathology, support safe
+        decision-making, and communicate clearly with seniors and surgeons.
+      </p>
+      <p>
+        The classic sequence is:
+        <strong>Inspection → Auscultation → Percussion → Palpation</strong>,
+        but in the ED, your assessment is always guided by airway, breathing, circulation and
+        haemodynamic stability.
+      </p>
+    </section>
+
+    <!-- Preparation -->
+    <section class="section">
+      <h2 class="subheading">Preparation</h2>
+      <p>
+        Before you start:
+      </p>
+      <ul>
+        <li>Ensure the patient is haemodynamically stable &mdash; if shocked, prioritise resus first.</li>
+        <li>Explain the examination and obtain consent where possible.</li>
+        <li>Position: patient supine, arms by the side, abdomen exposed from xiphisternum to pubis, with privacy maintained.</li>
+        <li>Provide a pillow or blanket for comfort and warmth.</li>
+        <li>Ask about pain and <strong>examine the painful area last</strong>.</li>
+        <li>Wash your hands, use gloves when appropriate, and ensure good lighting.</li>
+      </ul>
+    </section>
+
+    <!-- Inspection -->
+    <section class="section">
+      <h2 class="subheading">Inspection</h2>
+      <p>
+        Stand at the end of the bed and look for:
+      </p>
+      <ul>
+        <li>Distension, asymmetry or visible masses.</li>
+        <li>Scars (previous surgery), stomas or drains.</li>
+        <li>Visible peristalsis or pulsations.</li>
+        <li>Skin changes &mdash; bruising (e.g. Cullen’s or Grey-Turner’s signs), erythema, rash, striae.</li>
+        <li>Visible hernias (inguinal, umbilical, incisional).</li>
+        <li>Respiratory pattern (pain-related splinting or shallow breathing).</li>
+      </ul>
+    </section>
+
+    <!-- Auscultation -->
+    <section class="section">
+      <h2 class="subheading">Auscultation</h2>
+      <p>
+        Auscultate before you palpate or percuss:
+      </p>
+      <ul>
+        <li>Listen in all four quadrants for bowel sounds (frequency, character).</li>
+        <li>
+          Normal sounds are low-pitched and intermittent. 
+          <strong>Absent</strong> or very faint sounds may suggest ileus or obstruction.
+        </li>
+        <li>
+          High-pitched “tinkling” sounds may also be seen in obstruction.
+        </li>
+        <li>
+          Over the epigastrium or aorta, listen for bruits if vascular pathology is suspected.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Palpation -->
+    <section class="section">
+      <h2 class="subheading">Palpation</h2>
+      <p>
+        Start away from the pain and build up gradually:
+      </p>
+      <ul>
+        <li>Light palpation for tenderness, superficial masses and guarding.</li>
+        <li>Deep palpation for organomegaly (liver, spleen) and deeper masses.</li>
+        <li>
+          Assess for <strong>guarding</strong>, <strong>rigidity</strong> and
+          <strong>rebound tenderness</strong> &mdash; concerning for peritonitis.
+        </li>
+        <li>
+          Check for hernias (inguinal, femoral, umbilical, incisional) &mdash; cough impulse, reducibility, tenderness.
+        </li>
+      </ul>
+      <p>
+        Always re-assess your patient’s pain, vitals and overall appearance during palpation. Worsening pain,
+        tachycardia, hypotension or collapse requires urgent escalation.
+      </p>
+    </section>
+
+    <!-- Percussion -->
+    <section class="section">
+      <h2 class="subheading">Percussion</h2>
+      <p>
+        Percuss the abdomen to assess:
+      </p>
+      <ul>
+        <li><strong>Tympany</strong> over gas-filled loops of bowel.</li>
+        <li><strong>Dullness</strong> suggesting fluid (ascites), enlarged organs or masses.</li>
+        <li>Shifting dullness if ascites is suspected.</li>
+        <li>Dullness over the liver and splenic areas to help define organ size.</li>
+      </ul>
+    </section>
+
+    <!-- Differential diagnosis by quadrant -->
+    <section class="section">
+      <h2 class="subheading">Differential Diagnosis by Pain Location</h2>
+      <p>
+        Pain location, associated symptoms and risk factors help narrow your differential. Always remember
+        extra-abdominal causes such as pneumonia or MI in atypical presentations.
+      </p>
+
+      <div>
+        <strong>Right Upper Quadrant (RUQ)</strong>
         <ul>
-            <li>Abdominal tenderness or pain</li>
-            <li>Masses or organ enlargement</li>
-            <li>Distended abdomen</li>
-            <li>Guarding or rigidity</li>
-            <li>Rebound tenderness</li>
-            <li>Hernias</li>
-            <li>Absent or hyperactive bowel sounds</li>
-            <li>Areas of dullness or tympany on percussion</li>
+          <li>Cholecystitis / biliary colic (gallstones).</li>
+          <li>Hepatitis or other liver disease.</li>
+          <li>Pancreatitis.</li>
+          <li>Duodenal ulcer.</li>
+          <li>Right lower lobe pneumonia or pleurisy.</li>
         </ul>
-    </div>
-    <div class="section">
-        <h2 class="subheading">Causes of Hepatomegaly and Clinical Features</h2>
-        
+      </div>
 
-<table>
-	<thead>
-		<tr>
-			<th>Cause</th>
-			<th>Clinical Features</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Hepatitis</td>
-			<td>Jaundice, malaise, fatigue, nausea, vomiting, abdominal pain, fever</td>
-		</tr>
-		<tr>
-			<td>Cirrhosis</td>
-			<td>Ascites, edema, jaundice, fatigue, confusion, bleeding</td>
-		</tr>
-		<tr>
-			<td>Congestive heart failure</td>
-			<td>Peripheral edema, dyspnea, fatigue, elevated jugular venous pressure</td>
-		</tr>
-		<tr>
-			<td>Budd-Chiari syndrome</td>
-			<td>Abdominal pain, ascites, hepatomegaly, jaundice</td>
-		</tr>
-		<tr>
-			<td>Hemochromatosis</td>
-			<td>Fatigue, joint pain, abdominal pain, diabetes, hyperpigmentation</td>
-		</tr>
-		<tr>
-			<td>Wilson's disease</td>
-			<td>Abdominal pain, tremors, dysarthria, behavioral changes, Kayser-Fleischer rings</td>
-		</tr>
-		<tr>
-			<td>Nonalcoholic fatty liver disease</td>
-			<td>Fatigue, malaise, abdominal pain, elevated liver enzymes</td>
-		</tr>
-	</tbody>
-</table>
-<h2 class="subheading">Causes of Splenomegaly and Hepatosplenomegaly</h2>
+      <div>
+        <strong>Left Upper Quadrant (LUQ)</strong>
+        <ul>
+          <li>Splenic rupture or infarction.</li>
+          <li>Gastritis or peptic ulcer disease.</li>
+          <li>Pancreatitis.</li>
+          <li>Left lower lobe pneumonia or pleurisy.</li>
+        </ul>
+      </div>
 
+      <div>
+        <strong>Right Lower Quadrant (RLQ)</strong>
+        <ul>
+          <li>Appendicitis.</li>
+          <li>Mesenteric adenitis.</li>
+          <li>Diverticulitis (right-sided in some populations).</li>
+          <li>Salpingitis, ovarian cyst, ovarian torsion, ectopic pregnancy.</li>
+          <li>Crohn’s disease or ulcerative colitis.</li>
+        </ul>
+      </div>
 
-<table>
-	<thead>
-		<tr>
-			<th>Cause</th>
-			<th>Clinical Features</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Hemolytic anemia</td>
-			<td>Fatigue, shortness of breath, pallor, jaundice</td>
-		</tr>
-		<tr>
-			<td>Infectious mononucleosis</td>
-			<td>Fatigue, sore throat, fever, lymphadenopathy, splenomegaly</td>
-		</tr>
-		<tr>
-			<td>Malaria</td>
-			<td>Fever, chills, headache, myalgia, anemia</td>
-		</tr>
-		<tr>
-			<td>Leukemia or lymphoma</td>
-			<td>Fatigue, fever, night sweats, weight loss, lymphadenopathy</td>
-		</tr>
-		<tr>
-			<td>Portal hypertension</td>
-			<td>Ascites, variceal bleeding, hepatosplenomegaly, jaundice</td>
-		</tr>
-		<tr>
-			<td>Hemophagocytic lymphohistiocytosis</td>
-			<td>Fever, hepatosplenomegaly, cytopenias, elevated ferritin</td>
-		</tr>
-		<tr>
-			<td>Gaucher's disease</td>
-			<td>Anemia, fatigue, bone pain, hepatosplenomegaly, bruising</td>
-		</tr>
-	</tbody>
-</table>
-    </div>
-    <div class="section">
-        <h2 class="subheading">Appendicitis</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Clinical Feature</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Abdominal pain</td>
-                    <td>Pain typically begins around the belly button and migrates to the lower right quadrant of the abdomen.</td>
-                </tr>
-                <tr>
-                    <td>Nausea and vomiting</td>
-                    <td>Patients may experience nausea and vomiting in response to the pain and inflammation associated with appendicitis.</td>
-                </tr>
-                <tr>
-                    <td>Loss of appetite</td>
-                    <td>Patients may experience a decreased desire to eat due to the abdominal pain and discomfort associated with appendicitis.</td>
-                </tr>
-                <tr>
-                    <td>Fever</td>
-                    <td>A low-grade fever is often present in patients with appendicitis.</td>
-                </tr>
-                <tr>
-                    <td>Tenderness and rigidity</td>
-                    <td>Physical examination may reveal tenderness and rigidity in the lower right quadrant of the abdomen, particularly when pressure is applied.</td>
-                </tr>
-                <tr>
-                    <td>Rebound tenderness</td>
-                    <td>Patients may experience pain when pressure is released from the lower right quadrant of the abdomen, a phenomenon known as rebound tenderness.</td>
-                </tr>
-                <tr>
-                    <td>Guarding</td>
-                    <td>Patients may involuntarily tense the muscles of the abdomen in response to pain and inflammation, a phenomenon known as guarding.</td>
-                </tr>
-                <tr>
-                    <td>Diarrhea or constipation</td>
-                    <td>Changes in bowel movements may occur in patients with appendicitis due to inflammation and obstruction of the appendix.</td>
-                </tr>
-                <tr>
-                    <td>Malaise and fatigue</td>
-                    <td>Patients may experience a general feeling of illness, fatigue, and malaise in response to the inflammation and infection associated with appendicitis.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="section">
-        <h2 class="subheading">Hepatitis</h2>
-        <table>
-            <thead>
-              <tr>
-                <th>Type of Hepatitis</th>
-                <th>Transmission</th>
-                <th>Incubation Period</th>
-                <th>Clinical Features</th>
-                <th>Diagnostic Tests</th>
-                <th>Treatment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Hepatitis A</td>
-                <td>Fecal-oral route</td>
-                <td>15-50 days</td>
-                <td>Flu-like symptoms, jaundice, fatigue, dark urine, light-colored stools</td>
-                <td>Positive IgM anti-HAV antibodies, elevated liver enzymes</td>
-                <td>Supportive care, vaccination</td>
-              </tr>
-              <tr>
-                <td>Hepatitis B</td>
-                <td>Bloodborne, sexual contact, perinatal</td>
-                <td>45-180 days</td>
-                <td>Asymptomatic, flu-like symptoms, jaundice, abdominal pain, joint pain, rash</td>
-                <td>Positive HBsAg, IgM anti-HBc antibodies, elevated liver enzymes</td>
-                <td>Antiviral medication, vaccination</td>
-              </tr>
-              <tr>
-                <td>Hepatitis C</td>
-                <td>Bloodborne</td>
-                <td>14-180 days</td>
-                <td>Asymptomatic, flu-like symptoms, jaundice, fatigue, joint pain, abdominal pain</td>
-                <td>Positive anti-HCV antibodies, elevated liver enzymes</td>
-                <td>Antiviral medication</td>
-              </tr>
-              <tr>
-                <td>Hepatitis D</td>
-                <td>Bloodborne</td>
-                <td>21-56 days</td>
-                <td>Flu-like symptoms, jaundice, abdominal pain</td>
-                <td>Positive anti-HDV antibodies, elevated liver enzymes</td>
-                <td>Treatment of underlying hepatitis B infection</td>
-              </tr>
-              <tr>
-                <td>Hepatitis E</td>
-                <td>Fecal-oral route</td>
-                <td>15-60 days</td>
-                <td>Flu-like symptoms, jaundice, abdominal pain, nausea, vomiting</td>
-                <td>Positive IgM anti-HEV antibodies, elevated liver enzymes</td>
-                <td>Supportive care</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="section">
-            <h2 class="subheading">Cholecystitis:</h2>
-             
+      <div>
+        <strong>Left Lower Quadrant (LLQ)</strong>
+        <ul>
+          <li>Diverticulitis.</li>
+          <li>Salpingitis, ovarian cyst, ovarian torsion, ectopic pregnancy.</li>
+          <li>Crohn’s disease or ulcerative colitis.</li>
+          <li>Constipation.</li>
+        </ul>
+      </div>
+    </section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Abdominal Pain</td>
-      <td>Pain in the right upper quadrant of the abdomen that may radiate to the back or shoulder</td>
-    </tr>
-    <tr>
-      <td>Nausea and Vomiting</td>
-      <td>Often associated with abdominal pain</td>
-    </tr>
-    <tr>
-      <td>Fever</td>
-      <td>Low-grade fever is common</td>
-    </tr>
-    <tr>
-      <td>Murphy's Sign</td>
-      <td>Pain or arrest of inspiration during deep palpation of the right upper quadrant of the abdomen</td>
-    </tr>
-    <tr>
-      <td>Jaundice</td>
-      <td>May be present if there is obstruction of the common bile duct</td>
-    </tr>
-    <tr>
-      <td>Gallstones</td>
-      <td>May be present on imaging studies</td>
-    </tr>
-  </tbody>
-</table>
-<h2 class="subheading">Ascending Cholangitis:</h2>
+    <!-- Additional tests -->
+    <section class="section">
+      <h2 class="subheading">Additional Tests</h2>
+      <p>
+        Based on history and examination, consider:
+      </p>
+      <ul>
+        <li>Point-of-care tests: urine dipstick, pregnancy test (in all females of childbearing age).</li>
+        <li>Bloods: FBC, U&amp;E, LFTs, CRP, amylase/lipase, coagulation profile, lactate.</li>
+        <li>Urinalysis and culture.</li>
+        <li>Abdominal ultrasound (RUQ pain, biliary disease, AAA, ascites, gynaecological pathology).</li>
+        <li>CT abdomen and pelvis (especially in undifferentiated acute abdomen, trauma, suspected obstruction).</li>
+        <li>Endoscopy as indicated for upper or lower GI bleeding.</li>
+      </ul>
+    </section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Abdominal Pain</td>
-      <td>Pain in the right upper quadrant of the abdomen that may radiate to the back or shoulder</td>
-    </tr>
-    <tr>
-      <td>Fever</td>
-      <td>High-grade fever is common</td>
-    </tr>
-    <tr>
-      <td>Jaundice</td>
-      <td>May be present due to obstruction of the common bile duct</td>
-    </tr>
-    <tr>
-      <td>Hypotension</td>
-      <td>May be present due to septic shock</td>
-    </tr>
-    <tr>
-      <td>Mental Status Changes</td>
-      <td>May be present due to septicemia</td>
-    </tr>
-    <tr>
-      <td>Charcot's Triad</td>
-      <td>Fever, jaundice, and abdominal pain</td>
-    </tr>
-    <tr>
-      <td>Reynolds' Pentad</td>
-      <td>Charcot's triad plus hypotension and mental status changes</td>
-    </tr>
-  </tbody>
-</table>
-          
-    </div>
-    <div class="section">
-        <h2 class="subheading">Upper GIT Bleed</h2>
-        <table>
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>Clinical Features</th>
-                <th>Diagnostic Tests</th>
-                <th>Treatment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Peptic Ulcer Disease</td>
-                <td>Epigastric pain, nausea, vomiting, melena, hematemesis</td>
-                <td>Endoscopy, CBC, coagulation studies</td>
-                <td>Proton pump inhibitors, H. pylori eradication therapy, blood transfusions, endoscopic therapy, surgery</td>
-              </tr>
-              <tr>
-                <td>Gastritis</td>
-                <td>Epigastric pain, nausea, vomiting, melena, hematemesis</td>
-                <td>Endoscopy, CBC, coagulation studies</td>
-                <td>Proton pump inhibitors, blood transfusions, endoscopic therapy, surgery (rarely)</td>
-              </tr>
-              <tr>
-                <td>Mallory-Weiss Tear</td>
-                <td>Hematemesis after vomiting, epigastric pain, nausea</td>
-                <td>Endoscopy, CBC, coagulation studies</td>
-                <td>Supportive care, blood transfusions, endoscopic therapy (rarely)</td>
-              </tr>
-              <tr>
-                <td>Esophageal Varices</td>
-                <td>Hematemesis, melena, signs of liver disease (such as jaundice, ascites, spider angiomas)</td>
-                <td>Endoscopy, CBC, liver function tests, coagulation studies</td>
-                <td>Vasoactive medications, endoscopic therapy, TIPS procedure, liver transplant</td>
-              </tr>
-              <tr>
-                <td>Malignancy</td>
-                <td>Epigastric pain, weight loss, anorexia, melena, hematemesis</td>
-                <td>Endoscopy, CBC, coagulation studies, CT scan or other imaging studies</td>
-                <td>Surgery, chemotherapy, radiation therapy, palliative care</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
-    <div class="section">
-        <h2 class="subheading">Lower GIT Bleed</h2>
-        <table>
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>Clinical Features</th>
-                <th>Diagnostic Tests</th>
-                <th>Treatment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Diverticulosis/Diverticulitis</td>
-                <td>Lower abdominal pain, rectal bleeding, constipation, diarrhea, fever</td>
-                <td>Colonoscopy, CT scan or other imaging studies, CBC, fecal occult blood test</td>
-                <td>Bowel rest, antibiotics, surgery (rarely)</td>
-              </tr>
-              <tr>
-                <td>Colorectal Cancer</td>
-                <td>Rectal bleeding, change in bowel habits, abdominal pain, weight loss, anemia</td>
-                <td>Colonoscopy, biopsy, CT scan or other imaging studies, CBC, fecal occult blood test</td>
-                <td>Surgery, chemotherapy, radiation therapy, palliative care</td>
-              </tr>
-              <tr>
-                <td>Inflammatory Bowel Disease (Ulcerative Colitis, Crohn's Disease)</td>
-                <td>Rectal bleeding, diarrhea, abdominal pain, weight loss, anemia, fever</td>
-                <td>Colonoscopy, biopsy, fecal calprotectin test, CBC, stool culture</td>
-                <td>Anti-inflammatory medications, immunosuppressants, biologics, surgery (rarely)</td>
-              </tr>
-              <tr>
-                <td>Ischemic Colitis</td>
-                <td>Abdominal pain, rectal bleeding, diarrhea, nausea, vomiting, fever</td>
-                <td>Colonoscopy, CT scan or other imaging studies, CBC, coagulation studies</td>
-                <td>Bowel rest, supportive care, antibiotics, surgery (rarely)</td>
-              </tr>
-              <tr>
-                <td>Hemorrhoids</td>
-                <td>Bright red rectal bleeding, itching, pain, swelling</td>
-                <td>Physical examination, anoscopy, sigmoidoscopy</td>
-                <td>Dietary changes, topical medications, banding, surgery (rarely)</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
-    
-    <div class="section">
-        <h2 class="subheading">Conclusion</h2>
-        <p>An abdominal examination is an important component of the physical exam for patients presenting with abdominal symptoms in the emergency department. By using a systematic approach to inspecting, auscultating, palpating, and percussing the abdomen, healthcare providers can assess for any signs of underlying disease or pathology and provide appropriate care and treatment.</p>
-    </div>
-  </body>
-  </html>
-    
+    <!-- Common findings -->
+    <section class="section">
+      <h2 class="subheading">Common Findings &amp; Abnormalities</h2>
+      <ul>
+        <li>Localised or generalised abdominal tenderness or pain.</li>
+        <li>Palpable masses or organ enlargement.</li>
+        <li>Distended abdomen.</li>
+        <li>Guarding, rigidity or rebound tenderness.</li>
+        <li>Hernias (reducible vs tender / incarcerated / strangulated).</li>
+        <li>Absent, reduced or hyperactive bowel sounds.</li>
+        <li>Areas of dullness or tympany on percussion.</li>
+      </ul>
+    </section>
+
+    <!-- Hepatomegaly -->
+    <section class="section">
+      <h2 class="subheading">Causes of Hepatomegaly &amp; Clinical Features</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cause</th>
+            <th>Clinical Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hepatitis</td>
+            <td>Jaundice, malaise, fatigue, nausea, vomiting, abdominal pain, fever.</td>
+          </tr>
+          <tr>
+            <td>Cirrhosis</td>
+            <td>Ascites, oedema, jaundice, fatigue, confusion, bleeding, spider naevi.</td>
+          </tr>
+          <tr>
+            <td>Congestive heart failure</td>
+            <td>Peripheral oedema, dyspnoea, fatigue, elevated JVP, hepatomegaly.</td>
+          </tr>
+          <tr>
+            <td>Budd–Chiari syndrome</td>
+            <td>Abdominal pain, ascites, hepatomegaly, jaundice.</td>
+          </tr>
+          <tr>
+            <td>Haemochromatosis</td>
+            <td>Fatigue, arthralgia, abdominal pain, diabetes, hyperpigmentation.</td>
+          </tr>
+          <tr>
+            <td>Wilson’s disease</td>
+            <td>Abdominal pain, tremor, dysarthria, behavioural changes, Kayser–Fleischer rings.</td>
+          </tr>
+          <tr>
+            <td>Non-alcoholic fatty liver disease</td>
+            <td>Often asymptomatic, fatigue, malaise, abdominal discomfort, elevated liver enzymes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Splenomegaly -->
+    <section class="section">
+      <h2 class="subheading">Causes of Splenomegaly / Hepatosplenomegaly</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cause</th>
+            <th>Clinical Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Haemolytic anaemia</td>
+            <td>Fatigue, pallor, jaundice, dark urine, splenomegaly.</td>
+          </tr>
+          <tr>
+            <td>Infectious mononucleosis</td>
+            <td>Fatigue, sore throat, fever, lymphadenopathy, splenomegaly.</td>
+          </tr>
+          <tr>
+            <td>Malaria</td>
+            <td>Fever, chills, headache, myalgia, anaemia, splenomegaly.</td>
+          </tr>
+          <tr>
+            <td>Leukaemia / lymphoma</td>
+            <td>Fatigue, fever, night sweats, weight loss, lymphadenopathy, splenomegaly.</td>
+          </tr>
+          <tr>
+            <td>Portal hypertension</td>
+            <td>Ascites, variceal bleeding, hepatosplenomegaly, jaundice.</td>
+          </tr>
+          <tr>
+            <td>Haemophagocytic lymphohistiocytosis</td>
+            <td>Fever, hepatosplenomegaly, cytopenias, very high ferritin.</td>
+          </tr>
+          <tr>
+            <td>Gaucher’s disease</td>
+            <td>Anaemia, fatigue, bone pain, hepatosplenomegaly, bruising.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Appendicitis -->
+    <section class="section">
+      <h2 class="subheading">Appendicitis – Key Features</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Clinical Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Abdominal pain</td>
+            <td>
+              Classically begins peri-umbilically, then localises to the right iliac fossa.
+              Atypical in pregnancy or retrocaecal appendix.
+            </td>
+          </tr>
+          <tr>
+            <td>Nausea and vomiting</td>
+            <td>Common, particularly as inflammation progresses.</td>
+          </tr>
+          <tr>
+            <td>Loss of appetite</td>
+            <td>Very frequent in appendicitis; anorexia is a key supporting feature.</td>
+          </tr>
+          <tr>
+            <td>Fever</td>
+            <td>Typically low-grade; higher fever may suggest perforation or abscess.</td>
+          </tr>
+          <tr>
+            <td>Tenderness and rigidity</td>
+            <td>RIF tenderness with voluntary or involuntary guarding.</td>
+          </tr>
+          <tr>
+            <td>Rebound tenderness</td>
+            <td>Pain on release of pressure over RIF &mdash; peritoneal irritation.</td>
+          </tr>
+          <tr>
+            <td>Guarding</td>
+            <td>Involuntary tensing of abdominal muscles due to peritoneal inflammation.</td>
+          </tr>
+          <tr>
+            <td>Altered bowel habit</td>
+            <td>Diarrhoea or constipation can occur but are non-specific.</td>
+          </tr>
+          <tr>
+            <td>Malaise and fatigue</td>
+            <td>Non-specific sense of being unwell, often present.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Hepatitis -->
+    <section class="section">
+      <h2 class="subheading">Hepatitis – Summary Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Transmission</th>
+            <th>Incubation</th>
+            <th>Clinical Features</th>
+            <th>Diagnostic Tests</th>
+            <th>Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hepatitis A</td>
+            <td>Feco-oral (contaminated food / water)</td>
+            <td>15–50 days</td>
+            <td>Flu-like illness, jaundice, fatigue, dark urine, pale stools.</td>
+            <td>IgM anti-HAV, LFTs.</td>
+            <td>Supportive care, vaccination for prevention.</td>
+          </tr>
+          <tr>
+            <td>Hepatitis B</td>
+            <td>Blood, sexual contact, perinatal.</td>
+            <td>45–180 days</td>
+            <td>Often asymptomatic; may have jaundice, abdominal pain, arthralgia, rash.</td>
+            <td>HBsAg, IgM anti-HBc, LFTs.</td>
+            <td>Antivirals in chronic disease, vaccination.</td>
+          </tr>
+          <tr>
+            <td>Hepatitis C</td>
+            <td>Blood (needles, transfusion, etc.).</td>
+            <td>14–180 days</td>
+            <td>Often silent early; may have fatigue, arthralgia, abdominal discomfort.</td>
+            <td>Anti-HCV, HCV RNA, LFTs.</td>
+            <td>Direct-acting antivirals (curative in most).</td>
+          </tr>
+          <tr>
+            <td>Hepatitis D</td>
+            <td>Blood; requires co-infection with HBV.</td>
+            <td>21–56 days</td>
+            <td>Similar to hepatitis B, often more severe.</td>
+            <td>Anti-HDV, HDV RNA, LFTs.</td>
+            <td>Manage HBV; limited specific therapy.</td>
+          </tr>
+          <tr>
+            <td>Hepatitis E</td>
+            <td>Feco-oral (water-borne, outbreaks).</td>
+            <td>15–60 days</td>
+            <td>Flu-like symptoms, jaundice, abdominal pain, nausea, vomiting; severe in pregnancy.</td>
+            <td>IgM anti-HEV, LFTs.</td>
+            <td>Supportive; avoid hepatotoxins.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Cholecystitis & ascending cholangitis -->
+    <section class="section">
+      <h2 class="subheading">Cholecystitis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Abdominal pain</td>
+            <td>RUQ pain, may radiate to back or right shoulder, often post-prandial (fatty meals).</td>
+          </tr>
+          <tr>
+            <td>Nausea and vomiting</td>
+            <td>Common with biliary colic and cholecystitis.</td>
+          </tr>
+          <tr>
+            <td>Fever</td>
+            <td>Low-grade fever is common in acute cholecystitis.</td>
+          </tr>
+          <tr>
+            <td>Murphy’s sign</td>
+            <td>Arrest of inspiration with deep palpation under right costal margin.</td>
+          </tr>
+          <tr>
+            <td>Jaundice</td>
+            <td>May occur if there is associated obstruction of the common bile duct.</td>
+          </tr>
+          <tr>
+            <td>Gallstones</td>
+            <td>Often visible on ultrasound or other imaging.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="subheading">Ascending Cholangitis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Abdominal pain</td>
+            <td>RUQ or epigastric pain, may radiate to back or shoulder.</td>
+          </tr>
+          <tr>
+            <td>Fever</td>
+            <td>High fever is typical &mdash; consider sepsis.</td>
+          </tr>
+          <tr>
+            <td>Jaundice</td>
+            <td>Due to biliary obstruction.</td>
+          </tr>
+          <tr>
+            <td>Hypotension</td>
+            <td>May occur in septic shock.</td>
+          </tr>
+          <tr>
+            <td>Mental status changes</td>
+            <td>Confusion, agitation or reduced GCS in severe sepsis.</td>
+          </tr>
+          <tr>
+            <td>Charcot’s triad</td>
+            <td>Fever, jaundice and RUQ pain.</td>
+          </tr>
+          <tr>
+            <td>Reynolds’ pentad</td>
+            <td>Charcot’s triad plus hypotension and altered mental status.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Upper GIT bleed -->
+    <section class="section">
+      <h2 class="subheading">Upper GIT Bleed – Common Causes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cause</th>
+            <th>Clinical Features</th>
+            <th>Diagnostic Tests</th>
+            <th>Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Peptic ulcer disease</td>
+            <td>Epigastric pain, nausea, vomiting, melaena, haematemeis.</td>
+            <td>Endoscopy, FBC, coagulation profile, group &amp; cross-match.</td>
+            <td>PPIs, H. pylori eradication, resuscitation, endoscopic haemostasis, surgery if refractory.</td>
+          </tr>
+          <tr>
+            <td>Gastritis</td>
+            <td>Epigastric discomfort, nausea, vomiting, possible melaena or haematemeis.</td>
+            <td>Endoscopy, FBC, coagulation profile.</td>
+            <td>PPIs, remove offending agents (NSAIDs, alcohol), transfusion as needed.</td>
+          </tr>
+          <tr>
+            <td>Mallory–Weiss tear</td>
+            <td>Haematemesis after forceful vomiting; epigastric pain or discomfort.</td>
+            <td>Endoscopy, FBC, coagulation profile.</td>
+            <td>Often supportive; endoscopic therapy if ongoing bleeding.</td>
+          </tr>
+          <tr>
+            <td>Oesophageal varices</td>
+            <td>Massive haematemesis, melaena, stigmata of chronic liver disease.</td>
+            <td>Endoscopy, FBC, LFTs, coagulation profile, group &amp; cross-match.</td>
+            <td>Resuscitation, vasoactive drugs, banding/sclerotherapy, antibiotics, consider TIPS, manage portal hypertension.</td>
+          </tr>
+          <tr>
+            <td>Malignancy</td>
+            <td>Epigastric pain, weight loss, anorexia, anaemia, occult or overt GI bleeding.</td>
+            <td>Endoscopy with biopsy, imaging as needed.</td>
+            <td>Oncologic management (surgery, chemo, radiotherapy), palliative care as appropriate.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Lower GIT bleed -->
+    <section class="section">
+      <h2 class="subheading">Lower GIT Bleed – Common Causes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cause</th>
+            <th>Clinical Features</th>
+            <th>Diagnostic Tests</th>
+            <th>Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Diverticulosis / Diverticulitis</td>
+            <td>Lower abdominal pain, rectal bleeding, constipation or diarrhoea, fever (if inflamed).</td>
+            <td>CT abdomen, colonoscopy (once stable), FBC, CRP.</td>
+            <td>Bowel rest, antibiotics if diverticulitis, surgery if perforation or severe disease.</td>
+          </tr>
+          <tr>
+            <td>Colorectal cancer</td>
+            <td>Rectal bleeding, change in bowel habit, abdominal pain, weight loss, anaemia.</td>
+            <td>Colonoscopy with biopsy, imaging, FBC.</td>
+            <td>Surgery, chemotherapy, radiotherapy, palliative care as needed.</td>
+          </tr>
+          <tr>
+            <td>Inflammatory bowel disease</td>
+            <td>Bloody diarrhoea, abdominal pain, weight loss, extra-intestinal features.</td>
+            <td>Colonoscopy with biopsy, faecal calprotectin, stool cultures, bloods.</td>
+            <td>Aminosalicylates, steroids, immunomodulators, biologics, surgery in complications.</td>
+          </tr>
+          <tr>
+            <td>Ischaemic colitis</td>
+            <td>Acute abdominal pain (often left sided), rectal bleeding, diarrhoea, cardiovascular risk factors.</td>
+            <td>CT angiography or CT abdomen, colonoscopy, bloods.</td>
+            <td>Supportive care, bowel rest, treat precipitating cause, surgery if necrosis/perforation.</td>
+          </tr>
+          <tr>
+            <td>Haemorrhoids</td>
+            <td>Bright red rectal bleeding on paper or in bowl, anal discomfort or pruritus.</td>
+            <td>Clinical exam, proctoscopy / sigmoidoscopy.</td>
+            <td>Dietary modification, topical therapy, banding, surgery in refractory cases.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Red flags & conclusion -->
+    <section class="section">
+      <h2 class="subheading">Red Flags &amp; ED Pearls</h2>
+      <ul>
+        <li>Severe, sudden onset “tearing” pain &mdash; consider AAA, perforation, mesenteric ischaemia.</li>
+        <li>Persistent tachycardia, hypotension or rising lactate despite fluids &mdash; escalate early.</li>
+        <li>Peritonism (rigidity, rebound) &mdash; surgical review urgently.</li>
+        <li>Unexplained abdominal pain in pregnancy &mdash; always consider ectopic pregnancy.</li>
+        <li>Elderly, diabetic or immunocompromised patients may have blunted signs &mdash; have a low threshold for imaging and senior input.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Conclusion</h2>
+      <p>
+        Abdominal examination in the ED should be systematic, focused and repeatable. Combine your
+        findings with a careful history, vital signs, bedside tests and appropriate imaging. When in
+        doubt, <strong>escalate early</strong>, consider serial examinations, and involve surgical,
+        gastroenterology or ICU teams as needed.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

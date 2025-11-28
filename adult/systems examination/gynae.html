@@ -1,133 +1,252 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Gynecological Examination in the Emergency Department</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-      /* CSS styles for the page */
-      body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/gynae.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gynecological Examination in the Emergency Department</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/gynae.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-weight: normal;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    a {
+      color: #0059a8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
       }
-      .section {
-        margin: 20px 0;
-      }
-      .subheading {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
-     
-    </style>
-  </head>
+    }
+  </style>
+</head>
+<body>
   <header>
     <div class="logo-container">
-        <h1>Gynecological Examination</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-      </div>
-    </header>
-  <body>
+      <h1>Gynecological Examination</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
     <div class="section">
-      <h2 class="subheading">Gynecological Examination in the Emergency Department</h2>
-      <p>A gynecological examination is performed to evaluate a woman's reproductive system. In the emergency department, it is often performed to assess for conditions such as pelvic inflammatory disease, ectopic pregnancy, and ovarian cysts.</p>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        A gynecological examination in the Emergency Department is performed to evaluate acute problems
+        affecting the female reproductive tract. Common indications include pelvic pain, abnormal vaginal
+        bleeding, vaginal discharge, suspected pelvic inflammatory disease, early pregnancy complications,
+        and concerns about sexually transmitted infections.
+      </p>
+      <p>
+        ED priorities are to recognise time-critical conditions such as ectopic pregnancy, ovarian torsion,
+        severe pelvic infection, significant haemorrhage and sexual assault, while maintaining privacy,
+        dignity and clear communication.
+      </p>
     </div>
 
     <div class="section">
       <h2 class="subheading">Preparation</h2>
-      <p>Before the examination, the patient should be positioned comfortably on the examination table and provided with a sheet or gown for modesty. The patient should be informed about the procedure and given the opportunity to ask questions or voice concerns.</p>
+      <ul>
+        <li>Ensure a private space, appropriate draping and a professional chaperone for intimate examinations.</li>
+        <li>Introduce yourself, explain the indication for the examination and obtain verbal consent.</li>
+        <li>Ask the patient about pain and offer simple analgesia before the exam where appropriate.</li>
+        <li>Position the patient comfortably (usually in the lithotomy or semi-recumbent position) and ensure they can stop the examination at any time.</li>
+        <li>Confirm pregnancy status in women of reproductive age and consider a urine or serum β-hCG before internal examination if indicated.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Key History & Red Flags</h2>
+      <ul>
+        <li><strong>Bleeding:</strong> onset, amount (pads/hour, clots), relation to periods or pregnancy, post-coital bleeding.</li>
+        <li><strong>Pain:</strong> site (uni/bilateral), character, radiation, timing (sudden vs gradual), relation to cycle or intercourse.</li>
+        <li><strong>Discharge:</strong> colour, odour, volume, associated pruritus or irritation.</li>
+        <li><strong>Menstrual and obstetric history:</strong> LMP, cycle pattern, contraception, previous pregnancies and outcomes, prior ectopic pregnancy.</li>
+        <li><strong>Sexual history:</strong> new partners, protection use, prior STIs, sexual assault concerns.</li>
+        <li><strong>Systemic features:</strong> fever, nausea, vomiting, syncope, shoulder-tip pain, urinary or bowel symptoms.</li>
+      </ul>
+      <p><span class="key-point">Red flags:</span> haemodynamic instability, severe unilateral pelvic pain, heavy PV bleeding with clots,
+        positive pregnancy test with pain or bleeding, peritonism, fever with cervical motion tenderness, and any suspicion of sexual or gender-based violence.
+      </p>
     </div>
 
     <div class="section">
       <h2 class="subheading">Components of the Examination</h2>
+      <p>Always explain each step as you go and stop if the patient is in distress.</p>
       <ul>
-        <li>Inspection: Assess for any external abnormalities such as lesions, inflammation, or discharge.</li>
-        <li>Speculum examination: Insertion of a speculum into the vagina to visualize the cervix and assess for any abnormalities such as cervical discharge or lesions. Samples of vaginal fluid may be collected for testing for sexually transmitted infections, if indicated.</li>
-        <li>Bimanual examination: Insertion of two fingers into the vagina while the other hand is placed on the abdomen to assess the size and position of the uterus and ovaries. This can be helpful in identifying conditions such as ovarian cysts or pelvic inflammatory disease.</li>
+        <li><strong>External inspection:</strong> assess vulva, perineum and anus for skin changes, lesions, ulcers, warts, scars, trauma, swelling or active bleeding.</li>
+        <li><strong>Speculum examination:</strong> gently insert a lubricated speculum (water-based gel if not doing microscopy) to visualise:
+          <ul>
+            <li>Vaginal walls: discharge, blood, foreign bodies, atrophic changes, lesions.</li>
+            <li>Cervix: appearance, ectropion, friability, discharge (mucoid, purulent, blood), lesions or erosions.</li>
+            <li>Collect samples for STI testing, pH testing, microscopy or culture as indicated.</li>
+          </ul>
+        </li>
+        <li><strong>Bimanual examination:</strong> with one hand in the vagina and the other on the lower abdomen, assess:
+          <ul>
+            <li>Cervical motion tenderness (PID/ectopic suspicion).</li>
+            <li>Uterine size, position (anteverted/retroverted), tenderness and mobility.</li>
+            <li>Adnexal tenderness or masses (cysts, ectopic pregnancy, ovarian torsion).</li>
+          </ul>
+        </li>
+        <li><strong>Abdominal examination:</strong> should be performed before internal exam – look for guarding, rebound, masses or peritonism.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2 class="subheading">Diagnostic Tests</h2>
-      <p>Depending on the patient's symptoms and physical exam findings, diagnostic tests may include:</p>
+      <p>Depending on symptoms and examination findings, investigations may include:</p>
       <ul>
-        <li>Pregnancy test</li>
-        <li>STI testing</li>
-        <li>Pelvic ultrasound</li>
-        <li>Blood tests</li>
+        <li><strong>Pregnancy test:</strong> urine or serum β-hCG in all women of reproductive age with pelvic pain or PV bleeding.</li>
+        <li><strong>STI testing:</strong> cervical/vaginal swabs for Chlamydia, Gonorrhoea and other infections, as per local protocol.</li>
+        <li><strong>Pelvic ultrasound:</strong> transabdominal and/or transvaginal to evaluate uterus, adnexa, free fluid and pregnancy location.</li>
+        <li><strong>Blood tests:</strong> FBC, CRP, U&amp;E, group and save/crossmatch, liver function tests, clotting profile where indicated.</li>
+        <li><strong>Urinalysis:</strong> for haematuria, infection, proteinuria or pregnancy-related complications.</li>
       </ul>
     </div>
 
     <div class="section">
-        <h2 class="subheading">Differential Diagnosis</h2>
-        <p>Conditions that may present with gynecological symptoms in the emergency department include:</p>
-        <table>
+      <h2 class="subheading">Differential Diagnosis</h2>
+      <p>Common conditions presenting with gynaecological symptoms in the Emergency Department include:</p>
+      <table>
+        <thead>
           <tr>
             <th>Condition</th>
             <th>Common Symptoms</th>
             <th>Diagnostic Tests</th>
-            <th>Treatment</th>
+            <th>Treatment (Principles)</th>
             <th>Danger Signs</th>
-            <th>Grading</th>
+            <th>Grading / Notes</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
-            <td>Pelvic inflammatory disease</td>
-            <td>Pelvic pain, fever, vaginal discharge</td>
-            <td>Pelvic exam, cervical swabs, ultrasound</td>
-            <td>Antibiotics, pain management</td>
-            <td>High fever, severe abdominal pain, rapid heartbeat</td>
-            <td>Mild, moderate, severe (based on clinical presentation and laboratory results)</td>
+            <td>Pelvic inflammatory disease (PID)</td>
+            <td>Lower abdominal/pelvic pain, dyspareunia, abnormal discharge, intermenstrual or post-coital bleeding, fever.</td>
+            <td>Pelvic exam (cervical motion tenderness), cervical swabs, pregnancy test, ultrasound if abscess suspected.</td>
+            <td>Broad-spectrum antibiotics according to protocol, analgesia, partner notification and follow-up.</td>
+            <td>High fever, sepsis, peritonism, adnexal mass, suspected tubo-ovarian abscess or failure to respond to therapy.</td>
+            <td>Mild, moderate, severe – based on pain, systemic features and imaging (e.g. presence of abscess).</td>
           </tr>
           <tr>
             <td>Ectopic pregnancy</td>
-            <td>Abdominal pain, vaginal bleeding, missed period</td>
-            <td>Pregnancy test, ultrasound, laparoscopy</td>
-            <td>Surgery or medication to terminate pregnancy, pain management</td>
-            <td>Severe abdominal pain, dizziness or lightheadedness, shoulder pain, vaginal bleeding with clotting</td>
-            <td>Based on size and location of ectopic pregnancy</td>
+            <td>Pelvic or abdominal pain, PV bleeding, amenorrhoea or missed period, sometimes shoulder-tip pain or dizziness.</td>
+            <td>Positive pregnancy test, serial β-hCG, transvaginal ultrasound, sometimes diagnostic laparoscopy.</td>
+            <td>Urgent surgical management for unstable patients or ruptured ectopic; medical (methotrexate) or surgical options for stable patients as per criteria.</td>
+            <td>Haemodynamic instability, sudden severe pain, syncope, heavy PV bleeding, peritonism, falling Hb.</td>
+            <td>Classified by size, location and stability; management guided by haemodynamics and imaging.</td>
           </tr>
           <tr>
             <td>Endometriosis</td>
-            <td>Pelvic pain, painful periods, painful intercourse</td>
-            <td>Pelvic exam, ultrasound, laparoscopy</td>
-            <td>Pain management, hormonal therapy, surgery</td>
-            <td>Severe pelvic pain, heavy bleeding, fever, rapid heartbeat</td>
-            <td>Stage 1-4 (based on extent and severity of endometriosis lesions)</td>
+            <td>Chronic pelvic pain, dysmenorrhoea, deep dyspareunia, subfertility; may flare with periods.</td>
+            <td>Pelvic exam, ultrasound (often normal), laparoscopy is gold standard for diagnosis.</td>
+            <td>Pain management, hormonal therapy, referral for elective surgical management where indicated.</td>
+            <td>Severe acute pain, heavy bleeding, signs of acute abdomen may suggest complications or alternative diagnoses.</td>
+            <td>Stage I–IV based on distribution and severity of lesions (surgical staging, usually non-ED).</td>
           </tr>
           <tr>
-            <td>Urinary tract infection</td>
-            <td>Burning with urination, frequent urination, pelvic pain</td>
-            <td>Urinalysis, urine culture, imaging studies</td>
-            <td>Antibiotics, pain management</td>
-            <td>Fever, nausea, vomiting, chills, severe abdominal pain</td>
-            <td>Mild, moderate, severe (based on clinical presentation and laboratory results)</td>
+            <td>Urinary tract infection (UTI)</td>
+            <td>Dysuria, frequency, urgency, suprapubic discomfort; flank pain and fever if pyelonephritis.</td>
+            <td>Urinalysis, urine culture, blood tests if systemic features; imaging in recurrent/complicated cases.</td>
+            <td>Oral or IV antibiotics (depending on severity), hydration, analgesia; hospitalisation for pyelonephritis with sepsis or pregnancy.</td>
+            <td>Fever with rigors, flank pain, hypotension, pregnancy, recurrent or resistant infection.</td>
+            <td>Mild (uncomplicated cystitis) to severe (pyelonephritis, urosepsis), guided by clinical presentation.</td>
           </tr>
-        </table>
-      </div>
-      <div class="section">
-        <h2 class="subheading">OBGYN Guidelines</h2>
-        <a href="/pdfs/obgyn emergency protocols booklet.pdf" target="_blank" class="emphasis-link">View OBGYN Guidelines (PDF)</a>
+        </tbody>
+      </table>
     </div>
-      </body>
+
+    <div class="section">
+      <h2 class="subheading">OBGYN Guidelines</h2>
+      <p>For detailed management pathways, medication regimens and referral criteria, refer to:</p>
+      <p>
+        <a href="/pdfs/obgyn emergency protocols booklet.pdf" target="_blank" class="emphasis-link">
+          View OBGYN Guidelines (PDF)
+        </a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Conclusion</h2>
+      <p>
+        Gynecological assessment in the Emergency Department requires a structured history, careful and respectful
+        examination and timely use of investigations. Recognising red flags for ectopic pregnancy, ovarian torsion,
+        severe pelvic infection and significant haemorrhage is critical. Local OBGYN guidelines should be followed
+        for definitive management, admission and follow-up planning.
+      </p>
+    </div>
+  </main>
+</body>
 </html>
-      

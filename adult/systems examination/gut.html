@@ -1,255 +1,386 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Genitourinary Examination</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/gut.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		
-		h1 {
-			text-align: center;
-			font-size: 36px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		
-		ul {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			padding-left: 20px;
-		}
-		
-		li {
-			margin-bottom: 5px;
-		}
-		
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-          table {
-            border-collapse: collapse;
-          }
-          
-          th, td {
-            border: 1px solid black;
-            padding: 8px;
-          }
-          
-	</style>
+  <title>Genitourinary Examination</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/gut.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-weight: normal;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    a {
+      color: #0059a8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  
-<header>
+  <header>
     <div class="logo-container">
-        <h1>Genitourinary Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-      </div>
-</header>
-<div class="section">
-    <h1 class="heading">Genitourinary System Examination</h1>
-    <p>The genitourinary system includes the kidneys, ureters, bladder, urethra, prostate (in males), and reproductive organs (in both males and females). A comprehensive examination includes a history, physical examination, and diagnostic tests if necessary.</p>
-    <h2 class="subheading">History</h2>
-    <p>Ask the patient about any symptoms they are experiencing, such as pain with urination, changes in urinary frequency, urgency, or incontinence, blood in the urine, flank pain, or genital or pelvic pain. Also ask about any past medical history, such as kidney disease, urinary tract infections, sexually transmitted infections, or prostate problems.</p>
-    <h2 class="subheading">Physical Examination</h2>
-    <h3 class="subheading">Male Examination</h3>
-    <p>For male patients, the examination may include:</p>
-    <ul>
-      <li>Inspection of the external genitalia for any lesions, swelling, or discharge</li>
-      <li>Palpation of the testes for size, tenderness, or masses</li>
-      <li>Palpation of the prostate for size, tenderness, or nodules</li>
-      <li>Digital rectal examination to assess for any rectal masses or abnormalities</li>
-    </ul>
-    <h3 class="subheading">Female Examination</h3>
-    <p>For female patients, the examination may include:</p>
-    <ul>
-      <li>Inspection of the external genitalia for any lesions, swelling, or discharge</li>
-      <li>Bimanual examination to assess the size, position, and tenderness of the uterus and ovaries</li>
-      <li>Pelvic examination to assess for any masses or tenderness</li>
-      <li>Speculum examination to inspect the cervix and collect samples for testing (such as a Pap smear)</li>
-    </ul>
-    <h2 class="subheading">Diagnostic Tests</h2>
-    <p>Diagnostic tests may include:</p>
-    <ul>
-      <li>Urinalysis to assess for infection, blood, or other abnormalities</li>
-      <li>Urine culture to identify any bacterial infections</li>
-      <li>Blood tests to assess kidney function</li>
-      <li>Imaging studies, such as ultrasound or CT scan, to assess for any abnormalities in the kidneys or bladder</li>
-      <li>Cystoscopy to visualize the bladder and urethra</li>
-    </ul>
-</div>
-    <div class="section">
-        <h2 class="subheading">Table 1: Testicular Torsion</h2>
-        
-
-<table>
-  <thead>
-    <tr>
-      <th>Clinical Features</th>
-      <th>Possible Causes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sudden onset of severe testicular pain</td>
-      <td>Twisting of spermatic cord</td>
-    </tr>
-    <tr>
-      <td>Swelling and discoloration of the scrotum</td>
-      <td>Reduced blood flow to the testicle</td>
-    </tr>
-    <tr>
-      <td>Abdominal pain or nausea</td>
-      <td>Trauma to the scrotum or testicle</td>
-    </tr>
-    <tr>
-      <td>Absent or reduced testicular blood flow on Doppler ultrasound</td>
-      <td>Previous history of testicular torsion</td>
-    </tr>
-  </tbody>
-</table>
-<h2 class="subheading">Table 2: Fournier's Gangrene</h2>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Clinical Features</th>
-      <th>Possible Causes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Pain and swelling in the scrotum or perineum</td>
-      <td>Bacterial infection, often polymicrobial</td>
-    </tr>
-    <tr>
-      <td>Redness and warmth in the affected area</td>
-      <td>Spread of infection from a nearby source</td>
-    </tr>
-    <tr>
-      <td>Fever and chills</td>
-      <td>Immunosuppression or diabetes</td>
-    </tr>
-    <tr>
-      <td>Foul-smelling discharge from the affected area</td>
-      <td>Poor hygiene or skin trauma</td>
-    </tr>
-    <tr>
-      <td>Rapidly spreading tissue necrosis</td>
-      <td>Delay in diagnosis or treatment</td>
-    </tr>
-  </tbody>
-</table>
-<h2 class="subheading">Table 3: Testicular Cancer</h2>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Clinical Features</th>
-      <th>Possible Causes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Painless lump or swelling in the testicle</td>
-      <td>Abnormal cell growth in the testicle</td>
-    </tr>
-    <tr>
-      <td>A feeling of heaviness in the scrotum</td>
-      <td>Previous history of testicular cancer</td>
-    </tr>
-    <tr>
-      <td>Pain or discomfort in the testicle or scrotum</td>
-      <td>Family history of testicular cancer</td>
-    </tr>
-    <tr>
-      <td>Enlargement of the testicle</td>
-      <td>Cryptorchidism (undescended testicle)</td>
-    </tr>
-    <tr>
-      <td>Back pain or abdominal pain</td>
-      <td>Exposure to certain chemicals or radiation</td>
-    </tr>
-  </tbody>
-</table>
+      <h1>Genitourinary Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
+  </header>
+
+  <main class="page-wrapper">
     <div class="section">
-        <table>
-            <thead>
-              <tr>
-                <th>Sexually Transmitted Disease</th>
-                <th>Clinical Features</th>
-                <th>Treatment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Chlamydia</td>
-                <td>Most people have no symptoms; may include abnormal discharge, painful urination, pelvic pain</td>
-                <td>Azithromycin or doxycycline</td>
-              </tr>
-              <tr>
-                <td>Gonorrhea</td>
-                <td>Most people have no symptoms; may include abnormal discharge, painful urination, pelvic pain, anal itching or discharge</td>
-                <td>Ceftriaxone and azithromycin or doxycycline</td>
-              </tr>
-              <tr>
-                <td>Syphilis</td>
-                <td>Primary stage: painless sore (chancre); Secondary stage: rash, fever, joint pain; Latent stage: no symptoms; Late stage: neurological and cardiac complications</td>
-                <td>Penicillin G</td>
-              </tr>
-              <tr>
-                <td>Herpes</td>
-                <td>Most people have no symptoms; may include blisters, sores, itching or pain around the genitals, mouth or anus</td>
-                <td>Antiviral medication (acyclovir, valacyclovir, famciclovir)</td>
-              </tr>
-              <tr>
-                <td>HIV</td>
-                <td>Most people have no symptoms; may include fever, fatigue, sore throat, swollen glands; Late stage: opportunistic infections and cancers</td>
-                <td>Antiretroviral therapy (ART)</td>
-              </tr>
-              <tr>
-                <td>HPV</td>
-                <td>Most people have no symptoms; may include genital warts, abnormal pap test</td>
-                <td>No cure; HPV vaccine, topical treatments, cryotherapy, surgery</td>
-              </tr>
-            </tbody>
-          </table>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The genitourinary (GU) examination in the Emergency Department focuses on identifying
+        time-critical conditions such as testicular torsion, Fournier’s gangrene, urinary retention,
+        renal colic, pyelonephritis and acute STI presentations. It combines a sensitive, respectful
+        examination with appropriate privacy, chaperoning and clear documentation.
+      </p>
+      <p>
+        The GU system includes the kidneys, ureters, bladder, urethra, prostate (in males) and
+        reproductive organs. Always consider associated abdominal, back and systemic symptoms.
+      </p>
     </div>
+
     <div class="section">
-        <h2 class="subheading">South African STD Guidelines</h2>
-        <a href="/pdfs/sti-guidelines-27-08-19.pdf" target="_blank">View STI Guidelines (PDF)</a>
+      <h2 class="subheading">Key Symptoms & Red Flags</h2>
+      <ul>
+        <li>Dysuria, frequency, urgency, nocturia, incontinence.</li>
+        <li>Haematuria (visible or dipstick), clots, dark or foul-smelling urine.</li>
+        <li>Flank or loin pain, groin pain, suprapubic pain.</li>
+        <li>Scrotal pain or swelling, penile pain, discharge or lesions.</li>
+        <li>Vaginal discharge, bleeding, pelvic pain, dyspareunia.</li>
+        <li>Systemic features: fever, rigors, nausea/vomiting, hypotension.</li>
+      </ul>
+      <p><span class="key-point">Red flags:</span> suspected testicular torsion, Fournier’s gangrene,
+        acute urinary retention, severe sepsis from urinary source, scrotal trauma with possible rupture,
+        heavy vaginal bleeding, pregnancy with abdominal pain or PV bleeding, and suspected sexual assault.
+      </p>
+    </div>
 
-</div>
+    <div class="section">
+      <h2 class="subheading">History</h2>
+      <p>Take a focused but respectful history, ensuring privacy and using a chaperone where appropriate.</p>
+      <ul>
+        <li><strong>Urinary symptoms:</strong> onset, duration, dysuria, frequency, urgency, incontinence,
+          hesitancy, weak stream, nocturia, retention, haematuria.</li>
+        <li><strong>Pain:</strong> site (flank, groin, suprapubic, scrotal, pelvic), character, radiation,
+          severity, timing, aggravating/relieving factors (e.g. movement, voiding).</li>
+        <li><strong>Systemic features:</strong> fever, nausea, vomiting, rigors, weight loss, night sweats.</li>
+        <li><strong>Sexual history (where relevant):</strong> partners, protection, new partner, discharge,
+          genital ulcers or lesions, dyspareunia, prior STIs.</li>
+        <li><strong>Past medical history:</strong> kidney disease, recurrent UTIs, stones, prostate disease,
+          diabetes, immunosuppression, prior genital surgery or trauma.</li>
+        <li><strong>Medication history:</strong> anticoagulants, antiplatelets, recent antibiotics, nephrotoxic drugs.</li>
+        <li><strong>Gynaecological/obstetric history (females):</strong> LMP, contraception, pregnancy status,
+          PV bleeding, previous ectopic pregnancy or PID.</li>
+      </ul>
+    </div>
 
-    <h2 class="subheading">Conclusion</h2>
-    <p>The genitourinary system examination is an important aspect of the Emergency Department evaluation, particularly when patients present with symptoms related to urination, genital or pelvic pain, or other concerning findings. A thorough history and physical examination, along with appropriate diagnostic testing, can help identify potential problems and guide appropriate treatment.</p>
-  </div>
-  
+    <div class="section">
+      <h2 class="subheading">Physical Examination</h2>
+      <p>
+        Ensure a chaperone is present for intimate examinations, explain each step, and provide draping.
+        Start with general and abdominal examination, then focus on genital and rectal examinations as indicated.
+      </p>
+
+      <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none;">General & Abdominal</h3>
+      <ul>
+        <li>General appearance: distress, sepsis, dehydration, pallor, jaundice.</li>
+        <li>Vital signs: fever, tachycardia, hypotension, tachypnoea.</li>
+        <li>Abdominal examination: inspection, palpation (tenderness, guarding, masses), percussion, auscultation.</li>
+        <li>Flank and costovertebral angle tenderness in suspected pyelonephritis or renal colic.</li>
+        <li>Bladder palpation and percussion for distension/retention.</li>
+      </ul>
+
+      <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none; margin-top: 16px;">Male Examination</h3>
+      <p>For male patients, with appropriate privacy and chaperone:</p>
+      <ul>
+        <li><strong>Inspection of external genitalia:</strong> penile shaft and glans for lesions, ulcers,
+          discharge, phimosis/paraphimosis, trauma.</li>
+        <li><strong>Scrotum:</strong> size, asymmetry, skin changes, erythema, oedema, ulcers, crepitus
+          (suspicious for Fournier’s gangrene).</li>
+        <li><strong>Testes and epididymis:</strong> palpate each testis for size, consistency, tenderness and lumps;
+          compare sides. Note high-riding or horizontally lying testis in torsion.</li>
+        <li><strong>Spermatic cord:</strong> tenderness, thickening or “bag of worms” (varicocele).</li>
+        <li><strong>Inguinal region:</strong> hernias, lymphadenopathy.</li>
+        <li><strong>Digital rectal examination (DRE):</strong> if indicated – prostate size, consistency,
+          tenderness (prostatitis), nodules; rectal masses or tenderness.</li>
+      </ul>
+
+      <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none; margin-top: 16px;">Female Examination</h3>
+      <p>For female patients, with appropriate privacy and chaperone:</p>
+      <ul>
+        <li><strong>External genitalia:</strong> vulva, labia and perineum for lesions, ulcers, warts,
+          discharge, skin changes or trauma.</li>
+        <li><strong>Speculum examination:</strong> where indicated – assess cervix (erythema, friability,
+          discharge, ulcers, ectropion, lesions), presence of blood or pus in the vaginal vault.</li>
+        <li><strong>Bimanual examination:</strong> assess uterine size, position and mobility; adnexal
+          tenderness or masses; cervical motion tenderness (suggestive of PID).</li>
+        <li><strong>Pelvic tenderness:</strong> localised vs generalised, rebound or guarding (consider ectopic pregnancy,
+          ovarian torsion, ruptured cyst, PID, appendicitis, etc.).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Diagnostic Tests</h2>
+      <p>Investigations should be guided by history and examination findings:</p>
+      <ul>
+        <li><strong>Urinalysis (dipstick and microscopy):</strong> leucocytes, nitrites, blood, protein, glucose, ketones.</li>
+        <li><strong>Urine culture:</strong> in suspected UTI, pyelonephritis, recurrent infections or complicated cases.</li>
+        <li><strong>Blood tests:</strong> FBC, U&amp;E/creatinine, CRP, LFTs, blood cultures in sepsis; β-hCG in women of reproductive age.</li>
+        <li><strong>Imaging:</strong> ultrasound (kidneys, bladder, scrotum, pelvis), CT KUB for stones,
+          CT scan for suspected Fournier’s or abscess, as per local protocols.</li>
+        <li><strong>Bladder scan:</strong> for suspected urinary retention.</li>
+        <li><strong>Cystoscopy:</strong> usually not ED but urology-led for haematuria work-up, strictures, recurrent infections.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Table 1: Testicular Torsion</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Clinical Features</th>
+            <th>Associated Factors / Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sudden onset of severe unilateral testicular pain (often in adolescents/young men).</td>
+            <td>Twisting of spermatic cord → arterial occlusion → ischaemia.</td>
+          </tr>
+          <tr>
+            <td>Scrotal swelling and possible erythema; high-riding or horizontally lying testis.</td>
+            <td>Reduced or absent blood flow on Doppler ultrasound (if available – <strong>do not delay theatre</strong>).</td>
+          </tr>
+          <tr>
+            <td>Lower abdominal pain, nausea or vomiting.</td>
+            <td>Often misdiagnosed as abdominal pathology; maintain high index of suspicion.</td>
+          </tr>
+          <tr>
+            <td>Very tender testis; often absent cremasteric reflex on the affected side.</td>
+            <td>Time critical – salvage best within 6 hours; urgent surgical review.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Table 2: Fournier's Gangrene</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Clinical Features</th>
+            <th>Risk Factors / Causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pain, swelling and erythema of scrotum, perineum or lower abdominal wall.</td>
+            <td>Polymicrobial necrotising soft tissue infection.</td>
+          </tr>
+          <tr>
+            <td>Rapidly progressive tissue necrosis, skin discolouration, crepitus, bullae.</td>
+            <td>Often arises from perianal, perineal or genitourinary infection or trauma.</td>
+          </tr>
+          <tr>
+            <td>Systemic toxicity: fever, tachycardia, hypotension, confusion.</td>
+            <td>Common in diabetes, obesity, immunosuppression, chronic alcohol use.</td>
+          </tr>
+          <tr>
+            <td>Foul-smelling discharge or gas in tissues.</td>
+            <td>Delay in diagnosis or treatment increases mortality; requires urgent surgery + broad-spectrum IV antibiotics.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Table 3: Testicular Cancer</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Clinical Features</th>
+            <th>Risk Factors / Associations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Painless lump or swelling in the testicle.</td>
+            <td>Abnormal germ cell growth within the testis.</td>
+          </tr>
+          <tr>
+            <td>Heaviness or dragging sensation in the scrotum.</td>
+            <td>Previous history of testicular cancer.</td>
+          </tr>
+          <tr>
+            <td>Occasional dull ache or discomfort in testicle or lower abdomen.</td>
+            <td>Family history of testicular cancer.</td>
+          </tr>
+          <tr>
+            <td>Enlarged or firm testis compared with the other side.</td>
+            <td>Cryptorchidism (undescended testis), particularly if not corrected early.</td>
+          </tr>
+          <tr>
+            <td>Back or abdominal pain with advanced disease (from nodal or metastatic spread).</td>
+            <td>Previous testicular atrophy, certain genetic conditions or prior chemotherapy/radiation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Common Sexually Transmitted Infections (STIs)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sexually Transmitted Infection</th>
+            <th>Typical Clinical Features</th>
+            <th>Example Treatments*</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chlamydia</td>
+            <td>Often asymptomatic; urethral or vaginal discharge, dysuria, intermenstrual bleeding, pelvic pain.</td>
+            <td>Azithromycin or doxycycline as per guideline.</td>
+          </tr>
+          <tr>
+            <td>Gonorrhoea</td>
+            <td>Purulent urethral/cervical discharge, dysuria, pelvic pain; often asymptomatic in women.</td>
+            <td>Ceftriaxone-based regimen plus coverage for Chlamydia as per guideline.</td>
+          </tr>
+          <tr>
+            <td>Syphilis</td>
+            <td>Primary: painless chancre; Secondary: rash, mucous patches, lymphadenopathy; Late: neurological and cardiac complications.</td>
+            <td>Penicillin G (benzathine or parenteral preparation depending on stage).</td>
+          </tr>
+          <tr>
+            <td>Genital Herpes (HSV)</td>
+            <td>Recurrent painful vesicles/ulcers, burning or itching, may have systemic symptoms at first episode.</td>
+            <td>Oral antivirals (e.g. aciclovir, valaciclovir, famciclovir).</td>
+          </tr>
+          <tr>
+            <td>HIV</td>
+            <td>Acute retroviral syndrome (fever, rash, sore throat) or asymptomatic; late disease with opportunistic infections.</td>
+            <td>Antiretroviral therapy (ART) and linkage to HIV care.</td>
+          </tr>
+          <tr>
+            <td>HPV</td>
+            <td>Genital warts; abnormal Pap smear; many infections asymptomatic.</td>
+            <td>HPV vaccination, topical treatments, cryotherapy or surgical removal of warts as indicated.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.9rem; margin-top: 6px;">
+        *Always follow the latest national and local STI treatment guidelines.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">South African STI Guidelines</h2>
+      <p>
+        For detailed syndromic management charts, dosages and follow-up recommendations, refer to the national guideline:
+      </p>
+      <p>
+        <a href="/pdfs/sti-guidelines-27-08-19.pdf" target="_blank">
+          View STI Guidelines (PDF)
+        </a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Conclusion</h2>
+      <p>
+        The genitourinary examination is an important part of the Emergency Department assessment when patients
+        present with urinary, scrotal, genital or pelvic symptoms. A respectful, chaperoned examination combined
+        with focused history, bedside tests and appropriate imaging can identify life-threatening conditions
+        such as torsion and Fournier’s gangrene, guide management of common problems like UTIs and renal colic,
+        and ensure timely diagnosis and treatment of STIs in line with national guidelines.
+      </p>
+    </div>
+  </main>
 </body>
-  </html>
+</html>

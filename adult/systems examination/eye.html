@@ -1,180 +1,335 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Emergency Department Ophthalmology Exam</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/eye.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 40px;
-		}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Department Ophthalmology Exam</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/eye.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
 
-		.subheading {
-			font-size: 24px;
-			font-weight: bold;
-			margin-top: 30px;
-			margin-bottom: 20px;
-		}
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
 
-		.image {
-			max-width: 100%;
-			height: 400px;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        table {
-            border-collapse: collapse;
-          }
-          
-          th, td {
-            border: 1px solid black;
-            padding: 8px;
-          }
-          
-	</style>
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-weight: normal;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
-<header>
+<body>
+  <header>
     <div class="logo-container">
       <h1>Ophthalmology Exam</h1>
       <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
-	<div class="section">
-		<p>Perform a thorough exam of the eyes and vision, including:</p>
 
-		<div class="section">
-            <h2 class="subheading">Visual Acuity</h2>
-            <p>Check the patient's visual acuity using an eye chart or other tool. Record the results in both eyes separately.</p>
-            <p>Visual acuity is a measure of the patient's ability to see objects clearly at a distance. The most commonly used tool for measuring visual acuity is the Snellen chart, which consists of letters or symbols of various sizes. The patient stands a certain distance away from the chart and reads the letters or symbols from smallest to largest. The smallest letters or symbols that the patient can read accurately indicate their visual acuity.</p>
-            <p>The results are recorded as a fraction, with the numerator representing the distance from the chart at which the patient is standing (usually 6 meters), and the denominator representing the smallest line of letters or symbols that the patient can read accurately. For example, if a patient can read the line of letters labeled "20/40" at a distance of 6 meters, their visual acuity would be recorded as "20/40" for that eye.</p>
-            <p>Visual acuity is measured separately in each eye, as the results can vary between eyes. A patient may have different visual acuity in each eye due to conditions such as amblyopia (lazy eye), cataracts, or other factors.</p>
-        </div>
-        
-
-		<h2 class="subheading">External Eye Exam</h2>
-		<p>Perform an external exam of the eyes, including:</p>
-		<ul>
-			<li>Redness, swelling, or discharge: These can be symptoms of a variety of conditions, including infections or inflammation.</li>
-			<li>Abnormalities in eyelid position or movement: These can be a sign of nerve damage or other conditions affecting the muscles or nerves controlling the eyelids.</li>
-			<li>Lumps or bumps: These can be a sign of a variety of conditions, including cysts, tumors, or styes.</li>
-			<li>Foreign bodies: These can include objects that are stuck in the eye, such as dirt, sand, or metal shards. Foreign bodies can cause irritation, inflammation, or infection in the eye.</li>
-		</ul>
-		<img src="/images/externalEye.jpg" alt="External Eye anatomy" class="image">
-        <caption>External Eye Anatomy</caption>
-
-		<h2 class="subheading">Internal Eye Exam</h2>
-		<p>Perform an internal exam of the eyes using an ophthalmoscope, including:</p>
-		<ul>
-			<li>Pupillary response: Check the size and reaction of the pupils to light. Abnormalities in pupillary response can be a sign of nerve damage or other conditions affecting the pupils.</li>
-			<li>Lens clarity: Check the clarity of the lens in each eye. Cloudiness or other abnormalities can be a sign of cataracts or other conditions.</li>
-			<li>Retina and optic nerve: Examine the retina and optic nerve using an ophthalmoscope. Look for abnormalities such as hemorrhages, exudates, or optic disc cupping.</li>
-		</ul>
-		<img src="/images/internal eye.jpg" alt="Internal Eye anatomy" class="image">
-        <caption>Internal Eye Anatomy</caption>
-        <img src="/images/fundoscopy.jpg" alt="Normal Fundoscopy" class="image">
-        <caption>Normal Fundoscopy</caption>
-
-		<h2 class="subheading">Intraocular Pressure</h2>
-		<p>Check the patient's intraocular pressure using a tonometer. High intraocular pressure can be a sign of glaucoma, while low intraocular pressure can be a sign of other conditions.</p>
-	</div>
+  <main class="page-wrapper">
     <div class="section">
-        <h2 class="subheading">Types of Glaucoma</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Type of Glaucoma</th>
-                    <th>Common Clinical Features</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Open-angle glaucoma</td>
-                    <td>
-                        <ul>
-                            <li>Gradual onset</li>
-                            <li>Increased intraocular pressure</li>
-                            <li>Damage to optic nerve</li>
-                            <li>Peripheral vision loss</li>
-                            <li>Eye pain or discomfort (in advanced stages)</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Closed-angle glaucoma</td>
-                    <td>
-                        <ul>
-                            <li>Sudden onset</li>
-                            <li>Severe eye pain</li>
-                            <li>Nausea and vomiting</li>
-                            <li>Blurred vision</li>
-                            <li>Halos around lights</li>
-                            <li>Redness in the eye</li>
-                            <li>Increased intraocular pressure</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The eye examination in the Emergency Department focuses on identifying vision-threatening emergencies
+        (e.g. acute angle-closure glaucoma, retinal detachment, central retinal artery occlusion, orbital cellulitis,
+        open globe injuries, chemical burns) and common ED presentations such as conjunctivitis, corneal abrasions and
+        minor trauma.
+      </p>
+      <p>
+        A structured approach includes visual acuity, external inspection, pupils, ocular movements, anterior segment
+        assessment, fundus examination and intraocular pressure where appropriate.
+      </p>
     </div>
+
     <div class="section">
-        <h2 class="subheading">Types of Cellulitis</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Type of Cellulitis</th>
-                    <th>Common Clinical Features</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Pre-septal cellulitis</td>
-                    <td>
-                        <ul>
-                            <li>Swelling and redness around the eye</li>
-                            <li>Tenderness and warmth in the affected area</li>
-                            <li>Eye pain or discomfort</li>
-                            <li>Fever</li>
-                            <li>No visual changes or loss of vision</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Orbital cellulitis</td>
-                    <td>
-                        <ul>
-                            <li>Swelling and redness around the eye</li>
-                            <li>Proptosis (bulging of the eye)</li>
-                            <li>Pain with eye movements</li>
-                            <li>Decreased or blurry vision</li>
-                            <li>Double vision</li>
-                            <li>Fever</li>
-                            <li>Eye pain or discomfort</li>
-                            <li>Tenderness and warmth in the affected area</li>
-                            <li>Decreased eye movement or inability to move the eye</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <h2 class="subheading">Red Flags in Eye Complaints</h2>
+      <ul>
+        <li>Sudden, severe loss of vision in one or both eyes.</li>
+        <li>Severe eye pain, especially with headache, nausea and halos around lights.</li>
+        <li>Marked photophobia, ciliary flush or corneal haze.</li>
+        <li>Trauma with suspected open globe, penetrating injury or foreign body at high velocity.</li>
+        <li>Chemical exposure to the eye.</li>
+        <li>Proptosis, painful/restricted eye movements, fever (suspected orbital cellulitis).</li>
+        <li>New afferent pupillary defect (RAPD) or markedly abnormal pupils.</li>
+        <li>Acute diplopia with neurological signs.</li>
+      </ul>
     </div>
-    
-    
+
+    <div class="section">
+      <h2 class="subheading">Visual Acuity</h2>
+      <p>
+        Visual acuity is the “vital sign” of the eye and should be documented in <strong>each eye separately</strong>
+        (with and without pinhole / correction if possible).
+      </p>
+      <ul>
+        <li>Use a Snellen chart at 6&nbsp;m (or 3&nbsp;m/near chart as available).</li>
+        <li>Test with the patient’s usual glasses/contact lenses where applicable, then with pinhole if reduced.</li>
+        <li>Record as, for example, “VA: OD 6/9, OS 6/18 (improves to 6/9 with pinhole)”.</li>
+        <li>If unable to read the top line, progress to counting fingers, hand movements, perception of light.</li>
+      </ul>
+      <p>
+        Sudden unilateral loss or significant asymmetry between eyes warrants urgent evaluation and often specialist
+        input.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">External Eye Examination</h2>
+      <p>Inspect both eyes and peri-orbital structures:</p>
+      <ul>
+        <li><strong>General:</strong> symmetry, ptosis, proptosis, lid swelling, bruising or lacerations.</li>
+        <li><strong>Lids and lashes:</strong> entropion, ectropion, styes, chalazia, crusting, blepharitis.</li>
+        <li><strong>Conjunctiva and sclera:</strong> injection (pattern), chemosis, subconjunctival haemorrhage, discharge (watery, mucous, purulent).</li>
+        <li><strong>Cornea:</strong> clarity, foreign bodies, obvious abrasions, opacities.</li>
+        <li><strong>Foreign bodies:</strong> evert upper lid to exclude subtarsal foreign bodies in abrasion/foreign body history.</li>
+      </ul>
+
+      <figure>
+        <img src="/images/externalEye.jpg" alt="External eye anatomy" class="image">
+        <figcaption>Basic external eye anatomy and structures to inspect.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Pupils, Eye Movements and Visual Fields</h2>
+      <ul>
+        <li><strong>Pupils:</strong> size, shape and equality in normal light and in the dark.</li>
+        <li><strong>Light reaction:</strong> direct and consensual response to a bright light.</li>
+        <li><strong>Relative afferent pupillary defect (RAPD):</strong> swinging flashlight test – suggests optic nerve or severe retinal disease.</li>
+        <li><strong>Eye movements:</strong> assess ductions in the six cardinal positions of gaze; note diplopia, pain, or restriction.</li>
+        <li><strong>Visual fields:</strong> confrontational testing – gross defects such as hemianopia or quadrantanopia.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Anterior Segment and Internal Eye Exam</h2>
+      <p>
+        Where available, use a slit lamp. Otherwise use a bright light and magnification to evaluate the anterior segment.
+      </p>
+      <ul>
+        <li><strong>Conjunctiva and cornea:</strong> pattern of redness (conjunctival vs ciliary injection), corneal clarity, presence of ulcer, infiltrate or scar.</li>
+        <li><strong>Anterior chamber:</strong> depth (shallow in angle-closure), cells/flare (uveitis), blood (hyphaema), hypopyon.</li>
+        <li><strong>Lens:</strong> obvious cataract or lens dislocation if visible.</li>
+        <li><strong>Fundus/optic nerve:</strong> using direct ophthalmoscope – optic disc (colour, margins, cupping), vessels, macula, haemorrhages, exudates, retinal detachment where visible.</li>
+      </ul>
+
+      <figure>
+        <img src="/images/internal eye.jpg" alt="Internal eye anatomy" class="image">
+        <figcaption>Internal eye structures visible on ophthalmoscopy.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/fundoscopy.jpg" alt="Normal fundoscopy" class="image">
+        <figcaption>Example of a normal fundus appearance.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Fluorescein Staining and Corneal Assessment</h2>
+      <p>
+        In patients with pain, foreign body sensation or trauma, apply topical anaesthetic and fluorescein, then examine with
+        cobalt blue light where available.
+      </p>
+      <ul>
+        <li>Identify corneal abrasions, ulcers and dendritic lesions (herpetic keratitis).</li>
+        <li>Look for linear vertical staining suggesting subtarsal foreign body.</li>
+        <li>Perform a Seidel test if you suspect globe perforation (streaming of dye indicates aqueous leak) – if positive, <strong>shield and do not press the eye</strong>, immediate ophthalmology referral.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Intraocular Pressure (IOP)</h2>
+      <p>
+        Check IOP using a tonometer where trained and when it is safe to do so (avoid in suspected open globe).
+        Elevated pressure suggests glaucoma or other causes of raised IOP; very low pressure can occur after globe rupture.
+      </p>
+      <ul>
+        <li><strong>Normal IOP:</strong> approximately 10–21 mmHg.</li>
+        <li><strong>Marked elevation with pain, redness, mid-dilated pupil and cloudy cornea</strong> suggests acute angle-closure glaucoma.</li>
+        <li>Document the value and which eye was tested.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Types of Glaucoma</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type of Glaucoma</th>
+            <th>Common Clinical Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Open-angle glaucoma</td>
+            <td>
+              <ul>
+                <li>Chronic, usually asymptomatic early on.</li>
+                <li>Gradual optic nerve damage and visual field loss (peripheral first).</li>
+                <li>Intraocular pressure often elevated but can be normal (“normal-tension” glaucoma).</li>
+                <li>No acute redness or severe pain in most cases.</li>
+                <li>Often detected on routine screening or progressive field loss.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Acute angle-closure glaucoma</td>
+            <td>
+              <ul>
+                <li>Sudden onset of severe eye pain and headache.</li>
+                <li>Blurred vision with halos around lights.</li>
+                <li>Nausea and vomiting, systemic unwell feeling.</li>
+                <li>Red eye with a mid-dilated, sluggish pupil.</li>
+                <li>Corneal oedema giving a “hazy” appearance.</li>
+                <li>Markedly raised intraocular pressure – ophthalmic emergency.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Types of Orbital/Periorbital Cellulitis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type of Cellulitis</th>
+            <th>Common Clinical Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pre-septal cellulitis (periorbital)</td>
+            <td>
+              <ul>
+                <li>Swelling, redness and warmth of eyelids and periorbital skin.</li>
+                <li>Tenderness around the eye.</li>
+                <li>May have low-grade fever.</li>
+                <li><strong>Vision normal, no proptosis, full painless eye movements.</strong></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Orbital cellulitis</td>
+            <td>
+              <ul>
+                <li>Swelling and redness around the eye plus systemic illness (fever, malaise).</li>
+                <li><strong>Proptosis (bulging eye) and chemosis.</strong></li>
+                <li><strong>Painful and/or restricted eye movements.</strong></li>
+                <li>Decreased or blurred vision, possible RAPD.</li>
+                <li>Diplopia.</li>
+                <li>Tenderness over orbit and often sinus tenderness.</li>
+                <li>Potential intracranial and cavernous sinus complications – urgent imaging and IV antibiotics.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Summary</h2>
+      <p>
+        A structured ED eye exam begins with visual acuity and red flag screening, followed by systematic assessment of
+        external structures, pupils, movements, anterior segment, cornea and fundus, with IOP measurement where appropriate.
+        Early recognition of emergencies such as acute angle-closure glaucoma, orbital cellulitis, open globe injuries and
+        acute retinal or optic nerve pathology is critical to preserving vision and preventing serious complications.
+      </p>
+    </div>
+  </main>
 </body>
 </html>

@@ -9,166 +9,325 @@
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/cnsExamination.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      strong{
-        font-size: large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: red;
-      }
-      .fullscreen-image-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        cursor: zoom-out;
-      }
-      
-      .fullscreen-image-overlay img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-    </style>
-    </head>
-    <body>
-        <header>
-            <div class="logo-container">
-              <h1>CNS Examination</h1>
-              <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-              <button class="back-button" onclick="goBack()">Back</button>
-            </div>
-          </header>
-              <div class="section">
-                  <h2 class="subheading">Introduction</h2>
-                  <p>The central nervous system examination is a vital part of the evaluation of patients in the emergency department. It is a systematic evaluation of the patient's mental status, cranial nerves, motor system, sensory system, and reflexes. The examination helps to identify neurological abnormalities and determine the need for further diagnostic tests or consultations.</p>
-              </div>
-              
-              <div class="section">
-                  <h2 class="subheading">Mental Status Examination</h2>
-                  <p>The mental status examination evaluates the patient's cognitive function, including attention, memory, language, and orientation. It includes assessment of the following:</p>
-                  <ul>
-                    <li><strong>Appearance and behavior:</strong> The doctor assesses the patient's appearance and behavior, including their grooming, hygiene, and level of consciousness. They also observe the patient's facial expressions and body language to determine if there are any abnormalities or signs of distress.</li>
-                    <li><strong>Speech and language:</strong> The doctor evaluates the patient's speech and language abilities, including their ability to speak clearly, understand and follow instructions, and communicate effectively. They may ask the patient to repeat phrases or answer questions to assess their speech and language abilities.</li>
-                    <li><strong>Mood and affect:</strong> The doctor evaluates the patient's mood and affect, including their emotional state and reactions to stimuli. They may ask the patient about their feelings, assess their level of motivation, and observe their responses to various stimuli to determine if there are any abnormalities.</li>
-                    <li><strong>Thought content and perception:</strong> The doctor evaluates the patient's thought content and perception, including their ability to think logically, process information, and distinguish between reality and delusions or hallucinations. They may ask the patient about their thoughts and beliefs, and assess their ability to perform tasks that require cognitive processing.</li>
-                    <li><strong>Memory and orientation:</strong> The doctor evaluates the patient's memory and orientation, including their ability to recall past events, recognize people and places, and understand their current situation. They may ask the patient to recall details about their medical history or current events to assess their memory and orientation.</li>
-                </ul>
-                  <div class="section">
-                    <h2 class="subheading">Click to Enlarge</h2>
-                  </div>
-                  <img class="image" src="/images/mentalStatusExamination.jpg" alt="Mental status examination image"  onclick="toggleFullscreenImage('/images/mentalStatusExamination.jpg')">
-                  <img class="image" src="/images/alteredMentalState.jpg" alt="Altered mental state"  onclick="toggleFullscreenImage('/images/alteredMentalState.jpg')">
-                  <caption>Algorithm for assessment of Altered Mental Status</caption>
-              </div>
-              
-              <div class="section">
-                  <h2 class="subheading">Cranial Nerves Examination</h2>
-                  <p>The cranial nerves examination evaluates the function of the twelve cranial nerves. It includes assessment of the following:</p>
-                  <ul>
-                    <li><strong>Olfactory nerve (I):</strong> The olfactory nerve is responsible for the sense of smell. To evaluate this nerve, the doctor may ask the patient to identify various scents with their eyes closed, such as coffee, peppermint, or vanilla.</li>
-                    <li><strong>Optic nerve (II):</strong> The optic nerve is responsible for vision. To evaluate this nerve, the doctor may perform a visual acuity test using an eye chart, and may also assess the patient's peripheral vision and eye movements.</li>
-                    <li><strong>Oculomotor nerve (III):</strong> The oculomotor nerve controls eye movement, pupil constriction, and eyelid elevation. To evaluate this nerve, the doctor may assess the patient's ability to move their eyes in different directions, assess the size and shape of their pupils, and check for eyelid drooping or ptosis.</li>
-                    <li><strong>Trochlear nerve (IV):</strong> The trochlear nerve controls eye movement. To evaluate this nerve, the doctor may assess the patient's ability to move their eyes downward and inward, and check for double vision or strabismus.</li>
-                    <li><strong>Trigeminal nerve (V):</strong> The trigeminal nerve controls sensation in the face and motor function in the muscles used for chewing. To evaluate this nerve, the doctor may assess the patient's ability to feel light touch and pain in different areas of the face, and may also ask the patient to clench their jaw and move it from side to side.</li>
-                    <li><strong>Abducens nerve (VI):</strong> The abducens nerve controls eye movement. To evaluate this nerve, the doctor may assess the patient's ability to move their eyes outward, and check for double vision or strabismus.</li>
-                    <li><strong>Facial nerve (VII):</strong> The facial nerve controls facial expression, taste, and tear production. To evaluate this nerve, the doctor may assess the patient's ability to smile, frown, puff out their cheeks, and close their eyes tightly. They may also check for taste abnormalities on the front two-thirds of the tongue and assess tear production.</li>
-                    <li><strong>Vestibulocochlear nerve (VIII):</strong> The vestibulocochlear nerve controls hearing and balance. To evaluate this nerve, the doctor may assess the patient's ability to hear sounds of different frequencies and volumes, and may also assess the patient's balance and coordination.</li>
-                    <li><strong>Glossopharyngeal nerve (IX):</strong> The glossopharyngeal nerve controls taste and sensation in the back of the tongue, as well as muscle function in the pharynx. To evaluate this nerve, the doctor may assess the patient's ability to taste on the back third of the tongue, and may also check for the gag reflex and assess swallowing function.</li>
-                    <li><strong>Vagus nerve (X):</strong> The vagus nerve controls various autonomic functions, such as heart rate and digestion, as well as sensation in the larynx and pharynx. To evaluate this nerve, the doctor may assess the patient's ability to speak and swallow, and may also assess the gag reflex and check for abnormalities in heart rate or blood pressure.</li>
-                    <li><strong>Accessory nerve (XI):</strong> The accessory nerve controls muscle function in the neck and shoulders. To evaluate this nerve, the doctor may assess the patient's ability to shrug their shoulders against resistance and turn their head to the side against resistance.</li>
-                    <li><strong>Hypoglossal nerve (XII):</strong> The hypoglossal nerve controls tongue movement. To evaluate this nerve, the doctor may assess the patient's ability to move their tongue in different directions and stick it out straight. They may also assess the patient's speech and ability to swallow.</li>
-                    
-                    </ul>
-                    <p>During the cranial nerve examination, the doctor will typically assess each nerve individually and may also evaluate the nerves in combination to determine if there are any abnormalities or deficits. <br> The assessment of each nerve may involve various tests and techniques, such as asking the patient to identify scents, perform visual acuity tests, move their eyes in different directions, and perform specific movements with their face or tongue. <br> The doctor may also use specialized equipment, such as an otoscope, to assess the function of certain nerves. <br> The results of the cranial nerve examination can help the doctor diagnose and treat a variety of neurological conditions.</p>
-                  <img class="image" src="/images/cranial nerves.jpg" alt="Cranial nerves image"  onclick="toggleFullscreenImage('/images/cranial nerves.jpg')">
-                  <caption>Cranial Nerves showing where each has its influence</caption>
-                  <img class="image" src="/images/cranialNerves2.jpg" alt="Cranial nerves image"  onclick="toggleFullscreenImage('/images/cranialNerves2.jpg')">
-                  <caption>Anatomy of the cranial nerves</caption>
-              </div>
-              
-              <div class="section">
-                  <h2 class="subheading">Motor System Examination</h2>
-                  <ul>
-                      <li><strong>Inspection of muscle bulk and tone:</strong> The doctor visually inspects the patient's muscles for any signs of atrophy or hypertrophy, and palpates the muscles to assess their tone. Muscle tone is graded on a scale from 0 to 4, with <br> 0 indicating no movement, <br> 1 indicating slight movement, <br> 2 indicating normal movement, <br> 3 indicating increased movement or resistance,  <br> and 4 indicating severe spasticity or rigidity.</li>
-                      <li><strong>Testing of muscle strength in the upper and lower extremities:</strong> The doctor tests the patient's muscle strength by asking them to perform specific movements, such as lifting their arms or legs against resistance. Muscle strength is graded on a scale from 0 to 5, with <br> 0 indicating no movement, <br> 1 indicating slight movement, <br> 2 indicating movement with gravity eliminated, <br> 3 indicating movement against gravity, <br> 4 indicating movement against resistance, and <br> 5 indicating normal strength.</li>
-                      <li><strong>Assessment of muscle tone and coordination:</strong> The doctor assesses the patient's muscle tone and coordination by asking them to perform various movements, such as finger-to-nose or heel-to-shin tests. They may also assess the patient's ability to perform rapid alternating movements, such as pronation and supination of the hands. Any abnormalities in muscle tone or coordination are noted and graded based on the severity of the deficit.</li>
-                      <li><strong>Testing of gait and balance:</strong> The doctor assesses the patient's gait and balance by asking them to walk in a straight line, on their toes, and on their heels. They may also assess the patient's ability to perform tandem gait, which involves walking heel-to-toe in a straight line. Any abnormalities in gait or balance are noted, and the patient's risk of falling is assessed.</li>
-                  </ul>
-                  <p>During the motor system examination, the doctor will typically test each aspect of the examination individually and may also evaluate the various aspects in combination to determine if there are any abnormalities or deficits. The results of the motor system examination can help the doctor diagnose and treat a variety of neurological conditions that affect muscle strength, tone, and coordination.</p>
-                  <img class="image" src="/images/motorSystem.png" alt="Upper vs Lower Motor neuron lesions"  onclick="toggleFullscreenImage('/images/motorSystem.png')">
-                  <caption>Upper vs Lower Motor neuron lesions</caption>
-                  </div>
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/cnsExamination.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
 
-                  <div class="section">
-                    <h2 class="subheading">Sensory System Examination</h2>
-                    <p>The sensory system examination evaluates the patient's sensation, including touch, pain, and temperature. It includes assessment of the following:</p>
-                    <ul>
-                        <li><strong>Testing of light touch and pinprick sensation in the upper and lower extremities:</strong> The doctor uses a soft cotton swab or a pin to touch various areas of the patient's skin, and asks the patient to identify whether they feel a light touch or a pinprick sensation. This test is typically performed on both sides of the body and at various locations on the upper and lower extremities.</li>
-                        <li><strong>Assessment of temperature sensation in the upper and lower extremities:</strong> The doctor uses a cold or warm object, such as a tuning fork or a test tube filled with hot or cold water, to test the patient's ability to detect changes in temperature. The object is placed on various areas of the patient's skin, and the patient is asked to identify whether they feel a cold or warm sensation.</li>
-                        <li><strong>Testing of proprioception and vibration sensation:</strong> The doctor uses a tuning fork or other device to test the patient's ability to sense proprioception and vibration. The tuning fork is placed on the patient's fingers or toes, and the patient is asked to identify whether they feel the vibration or to indicate the direction of movement of a finger or toe that is moved by the examiner.</li>
-                        <li><strong>Assessment of discrimination ability:</strong> The doctor tests the patient's ability to discriminate between different sensations, such as two-point discrimination or the ability to identify various textures. For example, the patient may be asked to identify whether they feel one or two points when touched with two objects at the same time, or to identify different textures by touch alone.</li>
-                    </ul>
-                    
-                    <img class="image" src="/images/sensorySystem1.png" alt="Sensory system examination image"  onclick="toggleFullscreenImage('/images/sensorySystem1.png')">
-                    <caption>Sensory System Breakdown</caption>
-                    <img class="image" src="/images/dermatomes.jpg" alt="Dermatomes of the body"  onclick="toggleFullscreenImage('/images/dermatomes.jpg')">
-                    <caption>Dermatomes</caption>
-                    <img class="image" src="/images/dermatomes2.jpg" alt="Dermatomes of the body"  onclick="toggleFullscreenImage('/images/dermatomes2.jpg')">
-                    <caption>Dermatomes &amp; Nerves</caption>
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
 
-                </div>
-                
-                <div class="section">
-                    <h2 class="subheading">Reflexes Examination</h2>
-                    <p>The reflexes examination evaluates the patient's deep tendon reflexes. It includes assessment of the following:</p>
-                    <ul>
-                        <li><strong>Testing of deep tendon reflexes in the upper and lower extremities:</strong> The doctor uses a reflex hammer to strike various tendons in the patient's upper and lower extremities. The tendons typically tested include the biceps, triceps, brachioradialis, patellar, and Achilles tendons. The doctor observes the patient's reflex response, which should be a brief contraction of the muscle in response to the tap. The reflex response is graded on a scale from 0 to 4, with <br> 0 indicating no reflex response, <br> 1 indicating a trace or barely detectable response, <br> 2 indicating a normal response, <br> 3 indicating an increased response, <br> and 4 indicating a hyperactive response.</li>
-                        <li><strong>Assessment of plantar reflex:</strong> The doctor uses a reflex hammer to stroke the sole of the patient's foot from the heel to the ball of the foot, along the lateral edge. The normal response is a downward flexion of the toes, but in some cases, such as with certain neurological conditions, the toes may extend and fan out. This abnormal response is called a Babinski sign and indicates an upper motor neuron lesion.</li>
-                        <li><strong>Testing of clonus:</strong> The doctor assesses for the presence of clonus, which is a rhythmic, involuntary contraction and relaxation of a muscle. Clonus is typically tested in the ankle, by forcefully dorsiflexing the foot and holding it in that position. The doctor observes the patient's response, and if clonus is present, there will be a series of rapid contractions and relaxations of the calf muscle. Clonus is typically associated with upper motor neuron lesions.</li>
-                    </ul>
-                    
-                    <img style="background-color: antiquewhite;" class="image" src="/images/reflexes.svg" alt="Reflexes examination image"  onclick="toggleFullscreenImage('/images/reflexes.svg')">
-                    <caption>Deep tendon reflexes</caption>
-                    <img class="image" src="/images/mechanismReflex.jpg" alt="Deep tendon reflexes"  onclick="toggleFullscreenImage('/images/mechanismReflex.jpg')">
-                    <caption>Mechanism of a reflex</caption>
-                </div>
-                
-                <div class="section">
-                    <h2 class="subheading">Conclusion</h2>
-                    <p>The central nervous system examination is a critical component of the emergency department evaluation. It helps to identify neurological abnormalities and determine the need for further diagnostic tests or consultations. A thorough examination includes assessment of the patient's mental status, cranial nerves, motor system, sensory system, and reflexes.</p>
-                </div>
-                <script>
-                  function toggleFullscreenImage(src) {
-                  let overlay = document.getElementById('fullscreen-image-overlay');
-                
-                  if (!overlay) {
-                    overlay = document.createElement('div');
-                    overlay.id = 'fullscreen-image-overlay';
-                    overlay.classList.add('fullscreen-image-overlay');
-                    overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-                    overlay.onclick = () => toggleFullscreenImage(null);
-                    document.body.appendChild(overlay);
-                  } else {
-                    document.body.removeChild(overlay);
-                  }
-                }
-                </script>
-          
-    </body>
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    figure {
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>CNS Examination</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="section">
+      <h2 class="subheading">Introduction</h2>
+      <p>
+        The central nervous system (CNS) examination is a core part of the Emergency Department assessment.
+        It helps to rapidly identify time-critical conditions such as stroke, raised intracranial pressure,
+        meningitis/encephalitis, spinal cord lesions and seizures, and to decide on imaging, referral and level of care.
+      </p>
+      <p>
+        A structured exam usually includes mental status, cranial nerves, motor system, sensory system and reflexes.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Mental Status Examination</h2>
+      <p>The mental status exam assesses level of consciousness and higher cortical function:</p>
+      <ul>
+        <li><strong>Level of consciousness:</strong> AVPU or Glasgow Coma Scale (GCS) – eye opening, verbal response, motor response.</li>
+        <li><strong>Appearance and behaviour:</strong> grooming, agitation or drowsiness, psychomotor slowing, abnormal movements.</li>
+        <li><strong>Speech and language:</strong> fluency, comprehension, repetition, naming; presence of dysarthria or aphasia.</li>
+        <li><strong>Mood and affect:</strong> observed emotional state and reactivity, congruence with situation.</li>
+        <li><strong>Thought content and perception:</strong> delusions, hallucinations, suicidal ideas, disorganised thinking.</li>
+        <li><strong>Attention and concentration:</strong> digit span, serial 7s, spelling a word backwards.</li>
+        <li><strong>Memory and orientation:</strong> person, place, time, situation; short-term recall (3 objects), long-term events.</li>
+      </ul>
+
+      <div class="section" style="margin-bottom: 12px;">
+        <h3 class="subheading" style="font-size: 1.15rem; border-bottom: none;">Click to Enlarge</h3>
+      </div>
+
+      <figure>
+        <img class="image" src="/images/mentalStatusExamination.jpg"
+             alt="Mental status examination algorithm"
+             onclick="toggleFullscreenImage('/images/mentalStatusExamination.jpg')">
+        <figcaption>Mental status examination overview.</figcaption>
+      </figure>
+
+      <figure>
+        <img class="image" src="/images/alteredMentalState.jpg"
+             alt="Altered mental state algorithm"
+             onclick="toggleFullscreenImage('/images/alteredMentalState.jpg')">
+        <figcaption>Algorithm for assessment of altered mental status.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Cranial Nerves Examination</h2>
+      <p>
+        The cranial nerve exam helps localise lesions within the brainstem and supratentorial regions, and is
+        essential in suspected stroke, raised ICP, head injury and infections.
+      </p>
+      <ul>
+        <li><strong>I – Olfactory:</strong> test smell in each nostril with familiar odours (if relevant and safe).</li>
+        <li><strong>II – Optic:</strong> visual acuity (Snellen if available), visual fields to confrontation, funduscopy if possible.</li>
+        <li><strong>III, IV, VI – Oculomotor, Trochlear, Abducens:</strong> pupil size and reactivity, eye movements in all directions, ptosis, diplopia, nystagmus.</li>
+        <li><strong>V – Trigeminal:</strong> facial sensation (light touch, pinprick) in all three divisions; masseter strength, jaw opening.</li>
+        <li><strong>VII – Facial:</strong> upper and lower facial movements – raise eyebrows, close eyes tightly, smile, puff out cheeks (UMN vs LMN pattern).</li>
+        <li><strong>VIII – Vestibulocochlear:</strong> hearing to finger rub or whisper; consider Rinne/Weber; assess for nystagmus and balance problems.</li>
+        <li><strong>IX, X – Glossopharyngeal, Vagus:</strong> palate elevation (“ah”), gag reflex (if needed), voice quality, swallowing.</li>
+        <li><strong>XI – Accessory:</strong> shoulder shrug and head rotation against resistance.</li>
+        <li><strong>XII – Hypoglossal:</strong> tongue position at rest and on protrusion, atrophy or fasciculations, tongue strength in cheek.</li>
+      </ul>
+
+      <figure>
+        <img class="image" src="/images/cranial nerves.jpg"
+             alt="Cranial nerves overview"
+             onclick="toggleFullscreenImage('/images/cranial nerves.jpg')">
+        <figcaption>Cranial nerves and their main areas of function.</figcaption>
+      </figure>
+
+      <figure>
+        <img class="image" src="/images/cranialNerves2.jpg"
+             alt="Cranial nerves anatomy"
+             onclick="toggleFullscreenImage('/images/cranialNerves2.jpg')">
+        <figcaption>Basic anatomy of the cranial nerves.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Motor System Examination</h2>
+      <p>Assess bulk, tone, power, coordination and gait in a systematic way.</p>
+      <ul>
+        <li><strong>Inspection:</strong> muscle bulk (atrophy, fasciculations), abnormal posturing, tremor or involuntary movements.</li>
+        <li><strong>Tone:</strong> assessed by passive movement of limbs:
+          <ul>
+            <li>Normal, decreased (flaccid) or increased (spasticity/rigidity).</li>
+            <li>Spasticity suggests an upper motor neuron (UMN) lesion; flaccid tone suggests a lower motor neuron (LMN) or acute UMN lesion.</li>
+          </ul>
+        </li>
+        <li><strong>Power:</strong> test key muscle groups in upper and lower limbs using MRC 0–5 scale:
+          <ul>
+            <li>0 – no contraction</li>
+            <li>1 – flicker</li>
+            <li>2 – movement with gravity eliminated</li>
+            <li>3 – movement against gravity</li>
+            <li>4 – movement against some resistance</li>
+            <li>5 – normal power</li>
+          </ul>
+        </li>
+        <li><strong>Coordination:</strong> finger-to-nose, heel-to-shin, rapid alternating movements (dysdiadochokinesia), rebound phenomenon.</li>
+        <li><strong>Gait and balance:</strong> normal gait, heel and toe walking, tandem gait; Romberg’s test for proprioceptive/vestibular dysfunction.</li>
+      </ul>
+
+      <figure>
+        <img class="image" src="/images/motorSystem.png"
+             alt="Upper vs lower motor neuron lesions"
+             onclick="toggleFullscreenImage('/images/motorSystem.png')">
+        <figcaption>Features distinguishing upper and lower motor neuron lesions.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Sensory System Examination</h2>
+      <p>
+        Sensory testing helps distinguish peripheral nerve, root, spinal cord and cortical lesions. Compare side-to-side
+        and proximal vs distal.
+      </p>
+      <ul>
+        <li><strong>Light touch and pinprick:</strong> test upper and lower limbs; look for dermatomal, “glove and stocking”, unilateral or patchy loss.</li>
+        <li><strong>Temperature:</strong> if needed, use a cool or warm object to test abnormal areas found on pinprick.</li>
+        <li><strong>Vibration sense:</strong> tuning fork over bony prominences (e.g. great toe, ankle, fingers) – often affected early in peripheral neuropathy and dorsal column lesions.</li>
+        <li><strong>Proprioception:</strong> move distal phalanx up/down with eyes closed; patient identifies direction.</li>
+        <li><strong>Cortical sensory functions:</strong> two-point discrimination, graphesthesia (drawn numbers), stereognosis (identify objects by touch) where relevant.</li>
+      </ul>
+
+      <figure>
+        <img class="image" src="/images/sensorySystem1.png"
+             alt="Sensory system overview"
+             onclick="toggleFullscreenImage('/images/sensorySystem1.png')">
+        <figcaption>Overview of sensory modalities.</figcaption>
+      </figure>
+
+      <figure>
+        <img class="image" src="/images/dermatomes.jpg"
+             alt="Dermatomes of the body"
+             onclick="toggleFullscreenImage('/images/dermatomes.jpg')">
+        <figcaption>Dermatomal map of the body.</figcaption>
+      </figure>
+
+      <figure>
+        <img class="image" src="/images/dermatomes2.jpg"
+             alt="Dermatomes and peripheral nerves"
+             onclick="toggleFullscreenImage('/images/dermatomes2.jpg')">
+        <figcaption>Dermatomes and corresponding peripheral nerves.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Reflexes Examination</h2>
+      <p>Deep tendon reflexes help to differentiate UMN from LMN lesions and assess segmental function.</p>
+      <ul>
+        <li><strong>Deep tendon reflexes (DTRs):</strong> biceps, triceps, brachioradialis, patellar, Achilles.
+          <br>Grade:
+          <ul>
+            <li>0 – absent</li>
+            <li>1+ – diminished</li>
+            <li>2+ – normal</li>
+            <li>3+ – brisk</li>
+            <li>4+ – very brisk, often with clonus</li>
+          </ul>
+        </li>
+        <li><strong>Plantar response:</strong> stroke lateral sole from heel to ball of foot.
+          <br>Normal – flexion of toes; extensor response (Babinski) suggests UMN lesion in adults.</li>
+        <li><strong>Clonus:</strong> sustained clonus at the ankle or patella is usually pathologic and supports an UMN lesion.</li>
+      </ul>
+
+      <figure>
+        <img class="image" src="/images/reflexes.svg"
+             alt="Deep tendon reflexes"
+             onclick="toggleFullscreenImage('/images/reflexes.svg')"
+             style="background-color: antiquewhite;">
+        <figcaption>Common deep tendon reflexes and their root levels.</figcaption>
+      </figure>
+
+      <figure>
+        <img class="image" src="/images/mechanismReflex.jpg"
+             alt="Mechanism of a reflex"
+             onclick="toggleFullscreenImage('/images/mechanismReflex.jpg')">
+        <figcaption>Basic mechanism of a reflex arc.</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Conclusion</h2>
+      <p>
+        A structured CNS examination in the Emergency Department supports rapid identification of stroke, spinal cord
+        lesions, raised intracranial pressure, CNS infection, metabolic encephalopathy and functional disorders.
+        Combining a focused history, mental status assessment, cranial nerve exam, motor and sensory testing, and
+        reflexes provides powerful localisation and guides imaging, consultation and disposition decisions.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    function toggleFullscreenImage(src) {
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
+      }
+    }
+  </script>
+</body>
 </html>
