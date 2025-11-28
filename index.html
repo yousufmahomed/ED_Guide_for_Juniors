@@ -1,467 +1,267 @@
-/* === Base === */
-
-:root {
-  --bg: #f5f7fb;
-  --bg-alt: #ffffff;
-  --primary: #0f6abf;
-  --primary-soft: #e1efff;
-  --text-main: #1f2933;
-  --text-muted: #6b7280;
-  --border-subtle: #e5e7eb;
-  --radius-lg: 16px;
-  --radius-full: 999px;
-  --shadow-soft: 0 10px 30px rgba(15, 106, 191, 0.08);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text-main);
-  line-height: 1.5;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* === Layout wrappers === */
-
-main {
-  padding: 0 1rem 2rem;
-}
-
-.section {
-  max-width: 1100px;
-  margin: 0 auto 1.5rem;
-}
-
-.section-alt {
-  background-color: var(--bg-alt);
-  border-radius: 20px;
-  padding: 1.25rem 1rem;
-  box-shadow: 0 4px 18px rgba(15, 106, 191, 0.03);
-}
-
-.section-header h2 {
-  margin: 0 0 0.25rem;
-  font-size: 1.15rem;
-}
-
-.section-header p {
-  margin: 0 0 0.75rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* === Header / nav === */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background-color: rgba(245, 247, 251, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0.6rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.brand-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary), #1691ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  box-shadow: var(--shadow-soft);
-}
-
-.brand-logo i {
-  font-size: 1rem;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.brand-subtitle {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.nav-toggle {
-  border: none;
-  background: var(--primary);
-  color: #ffffff;
-  border-radius: 999px;
-  padding: 0.4rem 0.7rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.nav-toggle i {
-  font-size: 0.95rem;
-}
-
-.site-nav {
-  display: none;
-}
-
-.site-nav.open {
-  display: block;
-}
-
-.site-nav ul {
-  list-style: none;
-  margin: 0.5rem 0 0;
-  padding: 0.5rem 1rem 0.75rem;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.site-nav li {
-  margin: 0.15rem 0;
-}
-
-.site-nav a {
-  display: block;
-  font-size: 0.9rem;
-  padding: 0.25rem 0;
-}
-
-.site-nav a.active,
-.site-nav a:hover {
-  color: var(--primary);
-}
-
-/* === Search section === */
-
-.search-section {
-  max-width: 1100px;
-  margin: 0.5rem auto 0.5rem;
-  padding: 0 1rem;
-}
-
-/* === Hero === */
-
-.hero {
-  max-width: 1100px;
-  margin: 0 auto 1.5rem;
-}
-
-.hero-inner {
-  background: radial-gradient(circle at top left, var(--primary-soft), #ffffff);
-  border-radius: 24px;
-  padding: 1.4rem 1.1rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.15rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  background-color: #ffffff;
-  border: 1px solid var(--primary-soft);
-  color: var(--text-muted);
-  margin-bottom: 0.6rem;
-}
-
-.hero h1 {
-  margin: 0 0 0.6rem;
-  font-size: 1.6rem;
-}
-
-.hero-lead {
-  margin: 0 0 0.9rem;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 0.5rem;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  border: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn.primary {
-  background-color: var(--primary);
-  color: #ffffff;
-}
-
-.btn.secondary {
-  background-color: #ffffff;
-  color: var(--primary);
-  border: 1px solid var(--primary-soft);
-}
-
-.hero-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin: 0.2rem 0 0;
-}
-
-/* === Cards / category grid === */
-
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.9rem;
-}
-
-.card {
-  background-color: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 0.9rem 0.95rem;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 6px 16px rgba(15, 106, 191, 0.03);
-  transition: transform 0.12s ease, box-shadow 0.12s ease,
-    border-color 0.12s ease;
-  color: inherit;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  border-color: var(--primary-soft);
-  box-shadow: 0 10px 24px rgba(15, 106, 191, 0.08);
-}
-
-.card-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
-  background-color: var(--primary-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.4rem;
-}
-
-.card-icon i {
-  font-size: 1rem;
-  color: var(--primary);
-}
-
-.card h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-}
-
-.card p {
-  margin: 0 0 0.5rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.card-tag {
-  display: inline-block;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  color: var(--primary);
-  background-color: var(--primary-soft);
-}
-
-/* === About === */
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.9rem;
-  font-size: 0.9rem;
-}
-
-.about-grid p {
-  margin-top: 0;
-}
-
-.standards-note {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.about-meta h3 {
-  margin: 0 0 0.4rem;
-  font-size: 0.95rem;
-}
-
-.about-meta ul {
-  margin: 0;
-  padding-left: 1.1rem;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
-/* === Community & teaching === */
-
-.community-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  padding: 0.45rem 0.6rem;
-  border-radius: 999px;
-  background-color: #ffffff;
-  border: 1px solid var(--border-subtle);
-}
-
-.social-link i {
-  font-size: 1.1rem;
-  color: #25d366; /* WhatsApp green-ish but subtle across all */
-}
-
-.resource-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  background-color: var(--primary);
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-
-.resource-link i {
-  font-size: 1rem;
-}
-
-.small-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* === Footer === */
-
-.site-footer {
-  border-top: 1px solid var(--border-subtle);
-  padding: 0.85rem 1rem 1rem;
-  margin-top: 1.5rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* === Larger screens === */
-
-@media (min-width: 768px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .header-inner {
-    padding: 0.75rem 1rem;
-  }
-
-  .site-nav {
-    display: block !important;
-  }
-
-  .site-nav ul {
-    margin: 0;
-    padding: 0;
-    border-top: none;
-    display: flex;
-    gap: 1rem;
-  }
-
-  .site-nav li {
-    margin: 0;
-  }
-
-  .site-nav a {
-    font-size: 0.9rem;
-    padding: 0.1rem 0;
-  }
-
-  main {
-    padding: 0 1.5rem 2rem;
-  }
-
-  .hero-inner {
-    padding: 1.6rem 1.6rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .about-grid {
-    grid-template-columns: 3fr 2fr;
-  }
-
-  .community-grid {
-    grid-template-columns: 3fr 2fr;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="ED Assistant is a web application for managing emergency department patients and resources. Aimed at junior doctors and students." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Emergency Department Assistant</title>
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Font Awesome icons -->
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"
+    integrity="sha384-zfNGgMjYzt5H5nc+i1/B2B8WU6UEjv6LTboU6xByc6aWjJkSKv3dC3yX9Xj8WlQu"
+    crossorigin="anonymous"
+  />
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="/images/emergency-icon-512x512-cka5azee.png"
+    type="image/x-icon"
+  />
+</head>
+<body class="home-page">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-truck-medical"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Emergency Department Assistant</span>
+          <span class="brand-subtitle">Practical tools for juniors &amp; students</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/adultresus/adultResus.html">Resuscitation</a></li>
+          <li><a href="/adult/adult.html">Adult ED</a></li>
+          <li><a href="/paeds/paedsMenu.html">Paediatrics</a></li>
+          <li><a href="/weightPaeds.html">Paeds weight tables</a></li>
+          <li><a href="/OBGYN/obgynMenu.html">OBGYN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Google custom search -->
+  <section class="search-section">
+    <script async src="https://cse.google.com/cse.js?cx=220b68de6e1ff4d36"></script>
+    <div class="gcse-search"></div>
+  </section>
+
+  <main>
+    <!-- Hero / intro -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">ED support • South African / British standards</div>
+        <h1>Your pocket ED assistant</h1>
+        <p class="hero-lead">
+          Designed for medical students and young doctors in emergency settings.
+          Use it for quick history prompts, examination guides, calculators and checklists
+          to support safe, structured patient care.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/adultresus/adultResus.html" class="btn primary">
+            <i class="fa-solid fa-truck-medical"></i>
+            <span>Start with Resuscitation</span>
+          </a>
+          <a href="/adult/adult.html" class="btn secondary">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span>Go to Adult ED</span>
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Use your clinical judgement and local protocols first. This site is an educational aid,
+          not a replacement for senior advice or bedside assessment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Category tiles -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Choose a category to begin</h2>
+        <p>Tap a tile below. Optimised for mobile — ideal for use on shift.</p>
+      </div>
+
+      <div class="card-grid">
+        <a href="/adultresus/adultResus.html" class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-truck-medical"></i>
+          </div>
+          <h3>Resuscitation</h3>
+          <p>
+            Structured ABCDE approach, time-critical interventions, and team-based ED resus support.
+          </p>
+          <span class="card-tag">High acuity</span>
+        </a>
+
+        <a href="/adult/adult.html" class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3>Adult ED</h3>
+          <p>
+            Common adult emergencies, red flags, and safe disposition planning for busy departments.
+          </p>
+          <span class="card-tag">Adult protocols</span>
+        </a>
+
+        <a href="/weightPaeds.html" class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-children"></i>
+          </div>
+          <h3>Weight-based paediatric resus tables</h3>
+          <p>
+            Quick weight estimates and dosing bands. For best experience on mobile, view in portrait.
+          </p>
+          <span class="card-tag">Dosing support</span>
+        </a>
+
+        <a href="/paeds/paedsMenu.html" class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-child"></i>
+          </div>
+          <h3>Paediatrics</h3>
+          <p>
+            Paediatric assessment, common presentations, and paeds-specific ED considerations.
+          </p>
+          <span class="card-tag">Paeds ED</span>
+        </a>
+
+        <a href="/OBGYN/obgynMenu.html" class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-person-pregnant"></i>
+          </div>
+          <h3>OBGYN Emergencies</h3>
+          <p>
+            Early pregnancy problems, bleeding, septic miscarriage and other ED-relevant OBGYN scenarios.
+          </p>
+          <span class="card-tag">OBGYN</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section class="section section-alt">
+      <div class="section-header">
+        <h2>About this assistant</h2>
+      </div>
+      <div class="about-grid">
+        <article>
+          <p>
+            Thank you for using the Emergency Department Assistant. This tool was created to support
+            medical students and junior doctors working in emergency settings, particularly in
+            resource-constrained environments.
+          </p>
+          <p>
+            It provides history and examination prompts, calculators, and checklists to help you structure
+            your assessment and management. It is <strong>not</strong> a substitute for a thorough clinical
+            examination, senior input, or your hospital&apos;s protocols.
+          </p>
+          <p>
+            Use your clinical judgement first, then use this assistant to enhance your understanding,
+            organisation, and productivity on shift.
+          </p>
+          <p class="standards-note">
+            Values are based on South African and British standards unless otherwise stated.
+          </p>
+        </article>
+
+        <div class="about-meta">
+          <h3>How to get the most out of it</h3>
+          <ul>
+            <li>Bookmark this site on your phone home screen.</li>
+            <li>Use the tools and checklists at the bedside while seeing patients.</li>
+            <li>Review sections after shifts to consolidate learning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community & teaching -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Community &amp; teaching resources</h2>
+        <p>Stay connected and access more detailed teaching material.</p>
+      </div>
+
+      <div class="community-grid">
+        <div class="community-links">
+          <h3>Join the learning groups</h3>
+          <div class="social-links">
+            <a href="https://chat.whatsapp.com/GReC7EIpuj28wT7go8rGEw" target="_blank" rel="noopener" class="social-link">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp learning group</span>
+            </a>
+            <a href="https://t.me/+Oauwmc7ynVNmYjc0" target="_blank" rel="noopener" class="social-link">
+              <i class="fa-brands fa-telegram"></i>
+              <span>Telegram channel</span>
+            </a>
+            <a href="https://twitter.com/@CMadadeni" target="_blank" rel="noopener" class="social-link">
+              <i class="fa-brands fa-twitter"></i>
+              <span>Twitter / X updates</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="community-resources">
+          <h3>Teaching slides &amp; presentations</h3>
+          <p>
+            Explore presentations on ECGs, ABGs, trauma, and other ED topics:
+          </p>
+          <p>
+            <a href="https://jazzy-fox-934d99.netlify.app/" target="_blank" rel="noopener" class="resource-link">
+              <i class="fa-solid fa-file-powerpoint"></i>
+              <span>View ED teaching presentations</span>
+            </a>
+          </p>
+          <p class="small-note">
+            A dedicated PowerPoints / downloads page can be added here later as your library grows.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      &copy; <span id="year"></span> Emergency Department Assistant.
+      Educational support only – not a substitute for local protocols or senior advice.
+    </p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('open');
+      });
+    }
+
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
