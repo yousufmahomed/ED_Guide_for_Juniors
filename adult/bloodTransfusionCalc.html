@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/genralPages.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Transfusion Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
     <style>
@@ -12,27 +12,47 @@
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 16px;
         font-weight: bold;
-        line-height: 2;
+        line-height: 1.8;
         color: #333;
         background-image: url("/images/bloodTestGuides.svg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
       }
+
+      main {
+        max-width: 900px;
+        margin: 1.5rem auto 3rem auto;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      }
+
       h1 {
         text-align: center;
+        margin-bottom: 0.5rem;
       }
+
+      h2, h3 {
+        text-decoration: underline;
+        margin-top: 1.5rem;
+      }
+
       form {
-        margin: 0 auto;
+        margin: 0 auto 1.5rem auto;
         max-width: 600px;
-        padding: 20px;
+        padding: 1.25rem;
         border: 1px solid #ccc;
         border-radius: 10px;
+        background: #fafafa;
       }
+
       label {
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 0.5rem;
       }
+
       input[type="number"] {
         display: block;
         width: 100%;
@@ -40,159 +60,307 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #f8f8f8;
+        font-size: 1rem;
       }
+
       button {
-        margin-top: 20px;
-        padding: 10px;
+        margin-top: 15px;
+        padding: 10px 16px;
         border-radius: 5px;
         background-color: #4CAF50;
         color: white;
         font-size: 16px;
         cursor: pointer;
+        border: none;
       }
+
       button:hover {
         background-color: #3e8e41;
       }
-      #transfusion-result {
-        font-size: 24px;
-        text-align: center;
-        margin-top: 20px;
-      }
-      h2 , h3 {
-        text-decoration: underline;
 
+      #transfusion-result {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .note {
+        font-size: 0.85rem;
+        font-weight: normal;
+        color: #555;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        main {
+          margin: 1rem;
+          padding: 1rem;
+        }
+
+        form {
+          padding: 1rem;
+        }
       }
     </style>
   </head>
-  <header>
-    <nav class="logo-container">
-      <div class="logo-container">
-        <h1 class="main-header">Blood Transfusion Calculator</h1>
-        <div class="navbar-icons">
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-        </div>
-        <button class="back-button" onclick="goBack()">Back</button>
-      </div>
-    </nav>
-  </header>
+
   <body class="vitals-page">
-    <h1>Blood Transfusion Calculator</h1>
-    <p>This calculator helps to determine the number of blood transfusion units required based on the current hemoglobin level and assuming that we attempt to get the Hb in the emergency department to at least 10 g/dl</p>
-    <form>
-      <label for="hb-level">Enter Current Hemoglobin Level(g/dl):<br> <span style="color: brown; font-size:smaller">If your Hb is in different units, kindly convert to g/dl.</span></label>
-      <input type="number" id="hb-level" name="hb-level" min="0" max="20" step="0.1">
-      <br>
-      <button type="button" onclick="calculateTransfusion()">Calculate Units</button>
-      <br>
-      <h2>Transfusion Recommendation</h2>
-      <p id="transfusion-result"></p>
-    </form>
+    <header>
+      <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Blood Transfusion Calculator</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home">
+              <i class="fa-solid fa-house" alt="House icon"></i>
+            </a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
 
-    <section>
-      <h2>Blood Transfusion Reactions</h2>
-      <p><strong>Overview:</strong> Blood transfusion reactions can vary in severity and require prompt recognition and management. This section provides a guide to identify and manage different types of reactions.</p>
-      
-      <h3>Types of Reactions</h3>
-      <ul>
-        <li><strong>Acute Hemolytic:</strong> Caused by ABO incompatibility. Symptoms include fever, back pain, and hemoglobinuria.</li>
-        <li><strong>Allergic:</strong> Mild to severe allergic responses, including anaphylaxis.</li>
-        <li><strong>Febrile Non-Hemolytic:</strong> Most common, characterized by fever and chills.</li>
-        <!-- ... other reaction types ... -->
-      </ul>
-      
-      <h3>Severity Classification</h3>
-      <p>Reactions are classified from mild (Class I) to severe (Class IV), based on symptoms and clinical impact.</p>
+    <main>
+      <section>
+        <h1>Blood Transfusion Calculator</h1>
+        <p>
+          This tool estimates the number of red cell units required based on the current haemoglobin (Hb)
+          and a <strong>target Hb of 10 g/dL in the Emergency Department</strong>.
+          <span class="note">
+            (Always individualise according to comorbidities and your local transfusion protocol –
+            many modern guidelines favour lower thresholds in stable patients.)
+          </span>
+        </p>
+      </section>
 
-      <h3>Management Protocols</h3>
-      <p><strong>Immediate Actions:</strong> Stop the transfusion, maintain IV access, and monitor vital signs.</p>
-      <p>
-        <strong>Treatment:</strong> The management of transfusion reactions is dependent on the type and severity of the reaction.
+      <section>
+        <form id="transfusion-form" onsubmit="event.preventDefault(); calculateTransfusion();">
+          <label for="hb-level">
+            Enter current haemoglobin (g/dL):
+            <br>
+            <span style="color: brown; font-size: 0.85rem; font-weight: normal;">
+              If your Hb is in different units, please convert to g/dL.
+            </span>
+          </label>
+          <input
+            type="number"
+            id="hb-level"
+            name="hb-level"
+            min="0"
+            max="20"
+            step="0.1"
+            required
+          />
+
+          <button type="submit">Calculate Units</button>
+
+          <h2>Transfusion recommendation</h2>
+          <p id="transfusion-result"></p>
+        </form>
+      </section>
+
+      <section>
+        <h2>Blood Transfusion Reactions</h2>
+        <p>
+          <strong>Overview:</strong>
+          Blood transfusion reactions range from mild to life-threatening and require
+          rapid recognition and management.
+        </p>
+
+        <h3>Types of reactions</h3>
         <ul>
-          <li><strong>For Mild Allergic Reactions:</strong> Administration of antihistamines such as diphenhydramine can alleviate symptoms like itching and hives. Observation and supportive care are also essential.</li>
-          <li><strong>For Anaphylactic Reactions:</strong> Immediate administration of epinephrine is critical, followed by antihistamines and corticosteroids. Airway management may be necessary in severe cases.</li>
-          <li><strong>For Acute Hemolytic Reactions:</strong> This is a medical emergency. Stop the transfusion immediately, maintain intravenous access with saline, and initiate high-flow oxygen. Diuretics may be administered to prevent acute kidney injury. Blood samples should be rechecked for compatibility, and further blood products should be withheld until the cause is determined.</li>
-          <li><strong>For Febrile Non-Hemolytic Reactions:</strong> Antipyretics like acetaminophen can be used to manage fever. Monitoring and supportive care are recommended.</li>
-          <li><strong>For Transfusion-Related Acute Lung Injury (TRALI):</strong> Supportive care, including oxygen therapy and mechanical ventilation, may be required. Corticosteroids can be considered, although their effectiveness is not well established.</li>
-          <li><strong>For Transfusion-Associated Circulatory Overload (TACO):</strong> The patient should be positioned upright, and diuretics can be administered. Oxygen support and monitoring of cardiac function are important.</li>
+          <li>
+            <strong>Acute haemolytic:</strong>
+            Usually due to ABO incompatibility. Fever, flank/back pain, hypotension, haemoglobinuria.
+          </li>
+          <li>
+            <strong>Allergic:</strong>
+            Urticaria, pruritus, can progress to anaphylaxis.
+          </li>
+          <li>
+            <strong>Febrile non-haemolytic:</strong>
+            Fever and chills without haemolysis; most common reaction.
+          </li>
+          <li>
+            <strong>TRALI:</strong>
+            Acute hypoxia and non-cardiogenic pulmonary oedema within 6 hours of transfusion.
+          </li>
+          <li>
+            <strong>TACO:</strong>
+            Respiratory distress, hypertension, raised JVP, evidence of fluid overload.
+          </li>
         </ul>
-        In all cases, immediate cessation of the transfusion and clinical assessment are crucial first steps. Further treatment should be guided by the specific symptoms and severity of the reaction.
-      </p>
-      
-      <p><strong>Reporting:</strong> All reactions should be reported to the blood bank and documented for future reference.</p>
-    </section>
 
+        <h3>Severity classification</h3>
+        <p>
+          Reactions are typically graded from mild to severe based on symptoms,
+          haemodynamic stability, and organ involvement.
+        </p>
 
- 
-<section>
-  <h2>Platelet Transfusion</h2>
-  <p><strong>Indications:</strong> Used in patients with thrombocytopenia or platelet dysfunction. Commonly indicated for counts <10x10^9/L in asymptomatic patients, <20x10^9/L in febrile patients, or <50x10^9/L in actively bleeding patients or pre-surgery.</p>
-  <p><strong>Precautions:</strong> Ensure correct blood type match, monitor for transfusion reactions. Use cautiously in patients with a history of transfusion reactions.</p>
-  <p><strong>Administration:</strong> Administered intravenously. Dosage and rate depend on the patient's condition and platelet count.</p>
-  <p><em>Note: Administer only under senior authorization.</em></p>
-</section>
+        <h3>Management principles</h3>
+        <p><strong>Immediate actions (for any suspected reaction):</strong></p>
+        <ul>
+          <li>Stop the transfusion immediately.</li>
+          <li>Keep the IV line open with normal saline.</li>
+          <li>Check vital signs and perform a quick ABC assessment.</li>
+          <li>Re-check patient identity and blood pack details.</li>
+        </ul>
 
+        <p><strong>Examples of specific treatment:</strong></p>
+        <ul>
+          <li>
+            <strong>Mild allergic reactions:</strong>
+            Stop transfusion, give antihistamine (e.g. chlorpheniramine), observe and reassess.
+          </li>
+          <li>
+            <strong>Anaphylaxis:</strong>
+            IM adrenaline as per anaphylaxis protocol, airway/oxygen, IV fluids, antihistamines, steroids.
+          </li>
+          <li>
+            <strong>Acute haemolytic reactions:</strong>
+            Stop transfusion, high-flow oxygen, IV fluids, monitor urine output, inform blood bank urgently.
+          </li>
+          <li>
+            <strong>Febrile non-haemolytic:</strong>
+            Antipyretics (e.g. paracetamol) and observation once serious causes are excluded.
+          </li>
+          <li>
+            <strong>TRALI:</strong>
+            Oxygen, ventilatory support as needed; usually no diuretics (non-cardiogenic pulmonary oedema).
+          </li>
+          <li>
+            <strong>TACO:</strong>
+            Sit patient up, oxygen, IV diuretics, slow/stop transfusion and reassess need for further units.
+          </li>
+        </ul>
 
-<section>
-  <h2>Fresh Frozen Plasma (FFP)</h2>
-  <p><strong>Indications:</strong> Used to treat bleeding caused by clotting factor deficiencies, in liver disease, massive transfusions, or warfarin reversal.</p>
-  <p><strong>Precautions:</strong> Risk of volume overload, allergic reactions, and transfusion-related acute lung injury (TRALI). Monitor patient closely.</p>
-  <p><strong>Administration:</strong> Administered intravenously. Dosage based on patient’s weight and clinical condition.</p>
-  <p><em>Note: Administer only under senior authorization.</em></p>
-</section>
+        <p><strong>Reporting:</strong> All suspected reactions should be reported to the blood bank and documented.</p>
+      </section>
 
+      <section>
+        <h2>Platelet Transfusion</h2>
+        <p>
+          <strong>Indications (typical adult thresholds, adjust to local protocol):</strong>
+        </p>
+        <ul>
+          <li>Platelets &lt; 10 × 10<sup>9</sup>/L in stable, non-bleeding patient.</li>
+          <li>Platelets &lt; 20 × 10<sup>9</sup>/L with fever, sepsis or other risk factors for bleeding.</li>
+          <li>Platelets &lt; 50 × 10<sup>9</sup>/L with active bleeding or before invasive procedures/surgery.</li>
+        </ul>
+        <p>
+          <strong>Precautions:</strong> Confirm indication, ABO compatibility if possible,
+          and monitor for transfusion reactions and TACO.
+        </p>
+        <p><em>Administer only under senior authorisation.</em></p>
+      </section>
 
-<section>
-  <h2>Cryoprecipitate Transfusion</h2>
-  <p><strong>Indications:</strong> Used for managing bleeding in patients with low fibrinogen levels, Hemophilia A, von Willebrand disease, and DIC.</p>
-  <p><strong>Precautions:</strong> Risk of viral transmission, allergic reactions, and TRALI. Appropriate cross-matching is required.</p>
-  <p><strong>Administration:</strong> Administered intravenously. Dosage depends on fibrinogen level and patient’s clinical condition.</p>
-  <p><em>Note: Administer only under senior authorization.</em></p>
-</section>
+      <section>
+        <h2>Fresh Frozen Plasma (FFP)</h2>
+        <p><strong>Indications:</strong></p>
+        <ul>
+          <li>Clinically significant bleeding with multiple coagulation factor deficiency.</li>
+          <li>Massive transfusion with coagulopathy.</li>
+          <li>Urgent warfarin reversal if PCC unavailable (according to local policy).</li>
+        </ul>
+        <p>
+          <strong>Precautions:</strong>
+          Risk of volume overload, allergic reactions and TRALI – monitor closely.
+        </p>
+        <p><em>Administer only under senior authorisation.</em></p>
+      </section>
 
+      <section>
+        <h2>Cryoprecipitate</h2>
+        <p><strong>Indications:</strong></p>
+        <ul>
+          <li>Low fibrinogen (&lt; 1.0–1.5 g/L) with bleeding or high-risk procedures.</li>
+          <li>Selected cases of DIC with hypofibrinogenaemia.</li>
+          <li>Inherited fibrinogen deficiency (if specific concentrate unavailable).</li>
+        </ul>
+        <p>
+          <strong>Precautions:</strong>
+          As for other blood products (viral risk, allergy, TRALI, volume).
+        </p>
+        <p><em>Administer only under senior authorisation.</em></p>
+      </section>
 
-<section>
-  <h2>Factor 8 or 9 for Hemophiliac Patients</h2>
-  <p><strong>Indications:</strong> Used in patients with Hemophilia A (Factor VIII deficiency) or Hemophilia B (Factor IX deficiency) for bleeding episodes or prophylaxis.</p>
-  <p><strong>Precautions:</strong> Monitor for development of inhibitors, allergic reactions, and thrombotic events.</p>
-  <p><strong>Administration:</strong> Administered intravenously. Dosage depends on the severity of deficiency, extent of bleeding, and patient’s body weight.</p>
-  <p><em>Note: Administer only under senior authorization.</em></p>
-</section>
+      <section>
+        <h2>Factor VIII / IX for Haemophilia</h2>
+        <p><strong>Indications:</strong> Haemophilia A (VIII) or B (IX) with bleeding, trauma, or for procedures.</p>
+        <p>
+          <strong>Precautions:</strong> Monitor for inhibitors, allergic reactions, and thrombosis in high-risk patients.
+        </p>
+        <p><em>Administer only under senior/haematology guidance.</em></p>
+      </section>
 
+      <section>
+        <h2>Massive Transfusion Protocol</h2>
+        <p>
+          If the calculator suggests &gt; 3 units or you are clinically concerned about major haemorrhage,
+          manage according to your hospital’s massive transfusion protocol.
+          You can also access our protocol here:
+          <a href="https://drive.google.com/file/d/1FUIEcxcjk8abjyOx8aQKM_NZUz28-mSh/view?usp=sharing"
+             target="_blank" class="emphasis-link">
+            Massive Transfusion Protocol (Google Drive)
+          </a>.
+        </p>
+      </section>
+    </main>
 
-
-
- 
     <script>
-        function calculateTransfusion() {
-          const hbLevel = parseFloat(document.getElementById("hb-level").value);
-          const rawUnitsRequired = (10 - hbLevel) / 1.5;
-          const fractionalPart = rawUnitsRequired % 1;
-          let unitsRequired;
-      
-          // Apply rounding rules
-          if (fractionalPart >= 0.01 && fractionalPart <= 0.5) {
-            unitsRequired = Math.floor(rawUnitsRequired); // Round down
-          } else if (fractionalPart >= 0.51 && fractionalPart <= 0.99) {
-            unitsRequired = Math.ceil(rawUnitsRequired); // Round up
-          } else {
-            unitsRequired = Math.round(rawUnitsRequired); // Normal rounding for whole numbers
-          }
-      
-          let resultMessage = '';
-          if (unitsRequired < 1) {
-            resultMessage = "Your patient does not require transfusion. Please consult with a senior if you feel that it is needed.";
-          } else if (unitsRequired <= 3) {
-            resultMessage = `Your patient requires ${unitsRequired} unit(s) of blood transfusion.`;
-          } else {
-            resultMessage = `Your patient requires ${unitsRequired} unit(s) of blood transfusion, but needs to be managed as per your department's massive transfusion protocol. You can also use our protocol by clicking on this link: <a href='https://drive.google.com/file/d/1FUIEcxcjk8abjyOx8aQKM_NZUz28-mSh/view?usp=sharing' target='_blank'>Protocol Link</a>`;
-            ;
-          }
-      
-          document.getElementById("transfusion-result").innerHTML = resultMessage;
+      function calculateTransfusion() {
+        const hbInput = document.getElementById("hb-level");
+        const resultEl = document.getElementById("transfusion-result");
+
+        const hbLevel = parseFloat(hbInput.value);
+        const targetHb = 10;          // ED target used in this tool
+        const risePerUnit = 1.5;      // assumed Hb rise (g/dL) per unit in an average adult
+
+        if (isNaN(hbLevel)) {
+          resultEl.innerHTML = "Please enter a valid haemoglobin value.";
+          return;
         }
 
-       
-      </script>
-      
+        if (hbLevel <= 0) {
+          resultEl.innerHTML =
+            "The haemoglobin value entered is not physiologically plausible. Please recheck the result.";
+          return;
+        }
+
+        if (hbLevel >= targetHb) {
+          resultEl.innerHTML =
+            "Based on a target of 10 g/dL, your patient does not require red cell transfusion. " +
+            "Always consider comorbidities and discuss with a senior if unsure.";
+          return;
+        }
+
+        // Calculate required units
+        let rawUnitsRequired = (targetHb - hbLevel) / risePerUnit;
+
+        if (rawUnitsRequired < 0.5) {
+          resultEl.innerHTML =
+            "Your patient is close to the target Hb. Red cell transfusion is usually not required, " +
+            "but discuss with a senior if there are concerning features (e.g. ongoing bleeding, ACS, sepsis).";
+          return;
+        }
+
+        const unitsRequired = Math.round(rawUnitsRequired);
+
+        if (unitsRequired <= 3) {
+          resultEl.innerHTML =
+            `Estimated requirement: <strong>${unitsRequired} unit(s)</strong> of packed red cells. ` +
+            "Adjust for weight, ongoing blood loss and your local protocol.";
+        } else {
+          resultEl.innerHTML =
+            `Estimated requirement: <strong>${unitsRequired} unit(s)</strong> of packed red cells. ` +
+            "This meets criteria for a major haemorrhage – activate or follow your massive transfusion protocol. " +
+            ` You can also use our protocol here: 
+              <a href="https://drive.google.com/file/d/1FUIEcxcjk8abjyOx8aQKM_NZUz28-mSh/view?usp=sharing"
+                 target="_blank">Protocol Link</a>.`;
+        }
+      }
+    </script>
   </body>
 </html>
