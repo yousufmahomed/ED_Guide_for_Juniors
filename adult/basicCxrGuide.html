@@ -1,48 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chest X-ray Analysis for Junior Doctors</title>
   <meta charset="UTF-8">
+  <title>Chest X-ray Analysis for Junior Doctors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/resp.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/resp.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
     }
 
-    h2 {
-      font-size: 20px;
-      color: #003366;
+    .page-wrapper {
+      max-width: 1000px;
+      margin: 90px auto 40px;
+      padding: 20px 24px;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-wrapper h1 {
+      font-size: 1.6rem;
+      margin-top: 0;
       margin-bottom: 10px;
+      color: #003366;
+    }
+
+    h2.subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    h3.subheading {
+      font-size: 1.05rem;
+      color: #003366;
+      margin-top: 16px;
+      margin-bottom: 6px;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
       margin-bottom: 20px;
+      font-size: 0.95rem;
     }
 
     th, td {
       border: 1px solid #ccc;
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
 
     th {
@@ -53,6 +73,26 @@
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 14px 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
     .fullscreen-image-overlay {
       position: fixed;
       top: 0;
@@ -66,334 +106,471 @@
       z-index: 9999;
       cursor: zoom-out;
     }
-    
+
     .fullscreen-image-overlay img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
-    
-  
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      th, td {
+        padding: 6px;
+      }
+    }
   </style>
 </head>
-<header>
-  <div class="logo-container">
-      <h1 style="color: antiquewhite;">Chest X-ray Analysis for Junior Doctors</h1>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Chest X-ray Analysis for Junior Doctors</h1>
       <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
-  <div class="section">
-  
-  <p>When analyzing a chest x-ray, it is essential to follow a systematic approach. This can help ensure that no significant findings are missed. The following steps can be used as a guide:</p>
-  <ol>
-    <li>Check patient details and image quality:</li>
+
+  <main class="page-wrapper">
+    <h1>Chest X-ray Analysis for Junior Doctors</h1>
+
+    <section class="section">
+      <h2 class="subheading">A Structured Approach</h2>
+      <p>
+        When analysing a chest X-ray, a systematic approach helps ensure that no important findings are missed.
+        One simple way is to move from image quality → bones/soft tissues → lungs → mediastinum/heart →
+        pleura/diaphragm.
+      </p>
+      <ol>
+        <li>
+          <strong>Check patient details and image quality</strong>
+          <ul>
+            <li>Confirm name, date of birth, and study date.</li>
+            <li>Check penetration, rotation, and inspiration (ideally 9–10 posterior ribs visible).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Assess bones and soft tissues</strong>
+          <ul>
+            <li>Look for fractures, dislocations, lytic/sclerotic lesions.</li>
+            <li>Scan soft tissues for masses, swelling, subcutaneous emphysema, or foreign bodies.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Examine the lung fields</strong>
+          <ul>
+            <li>Consolidation, masses, nodules, cavities.</li>
+            <li>Signs of atelectasis (volume loss, shift) or pneumothorax.</li>
+            <li>Interstitial markings, fibrosis, reticular/nodular patterns.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Inspect mediastinum and hila</strong>
+          <ul>
+            <li>Heart size and shape; mediastinal width and contour.</li>
+            <li>Hilar enlargement or abnormal contours suggesting lymphadenopathy or mass.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Review pleura and diaphragms</strong>
+          <ul>
+            <li>Pleural effusions, thickening, calcifications, pneumothorax.</li>
+            <li>Diaphragmatic elevation, flattening, eventration, or hernia.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2 class="subheading">Click on Images to Enlarge</h2>
+
+      <figure>
+        <img src="/images/cxrAnatomy.jpg"
+             alt="Radiological anatomy of a normal chest X-ray"
+             class="image"
+             onclick="toggleFullscreenImage('/images/cxrAnatomy.jpg')">
+        <figcaption>Radiological anatomy of a chest X-ray</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/cxrReviewAreas.jpg"
+             alt="Checklist of areas to review on a chest X-ray"
+             class="image"
+             onclick="toggleFullscreenImage('/images/cxrReviewAreas.jpg')">
+        <figcaption>Key areas that should be reviewed on every CXR</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Pneumonia</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Consolidation</td>
+          <td>Lobar or segmental increased opacity obscuring lung detail.</td>
+        </tr>
+        <tr>
+          <td>Air bronchogram</td>
+          <td>Visible air-filled bronchi within opacified lung parenchyma.</td>
+        </tr>
+        <tr>
+          <td>Silhouette sign</td>
+          <td>Loss of normal borders (e.g. heart border, diaphragm) due to adjacent consolidation.</td>
+        </tr>
+      </table>
+
+      <figure>
+        <img src="/images/pneumonia.jpg"
+             alt="Left middle lobe pneumonia versus normal lung"
+             class="image"
+             onclick="toggleFullscreenImage('/images/pneumonia.jpg')">
+        <figcaption>Comparison of a normal lung and left middle lobe pneumonia</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Pleural Effusion</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Blunted costophrenic angle</td>
+          <td>Loss of sharp angle between diaphragm and chest wall.</td>
+        </tr>
+        <tr>
+          <td>Fluid layering</td>
+          <td>Horizontal fluid level, more evident on erect or decubitus views.</td>
+        </tr>
+        <tr>
+          <td>Meniscus sign</td>
+          <td>Crescent-shaped opacity rising higher laterally than medially at the lung base.</td>
+        </tr>
+      </table>
+
+      <figure>
+        <img src="/images/pleuralEffusion.png"
+             alt="Left-sided pleural effusion"
+             class="image"
+             onclick="toggleFullscreenImage('/images/pleuralEffusion.png')">
+        <figcaption>Chest X-ray with a left-sided pleural effusion</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Pneumothorax</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Visceral pleural line</td>
+          <td>Thin sharp white line marking the lung edge, separated from chest wall.</td>
+        </tr>
+        <tr>
+          <td>Absence of lung markings</td>
+          <td>No pulmonary vascular markings peripheral to the visceral pleural line.</td>
+        </tr>
+        <tr>
+          <td>Deep sulcus sign</td>
+          <td>
+            In supine films, abnormally deep and lucent costophrenic angle suggesting an anterior pneumothorax.
+          </td>
+        </tr>
+      </table>
+
+      <figure>
+        <img src="/images/pneumothorax.jpeg"
+             alt="Right-sided pneumothorax"
+             class="image"
+             onclick="toggleFullscreenImage('/images/pneumothorax.jpeg')">
+        <figcaption>Right-sided pneumothorax</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Heart Failure</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Cardiomegaly</td>
+          <td>Enlarged cardiac silhouette (CTR &gt; 0.5 on PA film).</td>
+        </tr>
+        <tr>
+          <td>Kerley B lines</td>
+          <td>Short, horizontal lines at lung bases representing interstitial oedema.</td>
+        </tr>
+        <tr>
+          <td>Upper lobe diversion</td>
+          <td>Prominent upper lobe vessels indicating pulmonary venous hypertension.</td>
+        </tr>
+        <tr>
+          <td>Peribronchial cuffing</td>
+          <td>Thickened bronchial walls due to interstitial fluid.</td>
+        </tr>
+      </table>
+
+      <figure>
+        <img src="/images/heartFailure.png"
+             alt="Typical features of CCF on chest X-ray"
+             class="image"
+             onclick="toggleFullscreenImage('/images/heartFailure.png')">
+        <figcaption>Typical congestive cardiac failure CXR</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Chronic Obstructive Pulmonary Disease (COPD)</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Hyperinflated lungs</td>
+          <td>Increased lung volume, flattened diaphragms, more than 6 anterior ribs above diaphragm.</td>
+        </tr>
+        <tr>
+          <td>Bullae</td>
+          <td>Round, thin-walled, air-filled spaces within lung parenchyma.</td>
+        </tr>
+        <tr>
+          <td>Narrowed mediastinum</td>
+          <td>Compressed mediastinal structures due to hyperinflation.</td>
+        </tr>
+      </table>
+
+      <figure>
+        <img src="/images/4-Stages-of-COPD.png"
+             alt="Four stages of COPD"
+             class="image"
+             onclick="toggleFullscreenImage('/images/4-Stages-of-COPD.png')">
+        <figcaption>The four stages of COPD</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/copd.jpg"
+             alt="Typical COPD findings on chest X-ray"
+             class="image"
+             onclick="toggleFullscreenImage('/images/copd.jpg')">
+        <figcaption>Typical COPD findings on CXR</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Pulmonary Tuberculosis (TB)</h2>
+      <p>
+        Pulmonary tuberculosis is caused by <em>Mycobacterium tuberculosis</em>. It primarily affects the lungs
+        but can disseminate to other organs.
+      </p>
+
+      <table>
+        <tr>
+          <th>Stage</th>
+          <th>Description</th>
+          <th>Chest X-ray Findings</th>
+        </tr>
+        <tr>
+          <td>Latent TB infection</td>
+          <td>Infection without symptoms</td>
+          <td>Chest X-ray often normal.</td>
+        </tr>
+        <tr>
+          <td>Pulmonary TB (active disease)</td>
+          <td>Symptomatic pulmonary infection</td>
+          <td>
+            <ul>
+              <li>Primary TB: hilar lymphadenopathy, Ghon focus / Ghon complex.</li>
+              <li>
+                Post-primary (reactivation) TB: upper lobe/apical consolidations, cavitation, fibrosis,
+                sometimes pleural effusions.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Miliary TB</td>
+          <td>Haematogenous dissemination</td>
+          <td>
+            <ul>
+              <li>Diffuse tiny nodules throughout both lungs (miliary pattern).</li>
+              <li>May have associated involvement of liver, spleen, brain, etc.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <h3 class="subheading">Diagnostic Clues</h3>
       <ul>
-        <li>Ensure the patient's name, date of birth, and study date are correct.</li>
-        <li>Confirm the image is of adequate quality (e.g., penetration, rotation, and inspiration).</li>
+        <li>Positive TST or IGRA.</li>
+        <li>Sputum AFB smear/culture or molecular tests.</li>
+        <li>CXR pattern consistent with TB, interpreted with clinical context.</li>
       </ul>
-    <li>Assess the bones and soft tissues:</li>
-      <ul>
-        <li>Look for fractures, dislocations, or bone lesions.</li>
-        <li>Examine the soft tissues for masses, swelling, or gas collections.</li>
-      </ul>
-    <li>Examine the lung fields for any abnormalities:</li>
-      <ul>
-        <li>Inspect for consolidation, masses, nodules, or cavities.</li>
-        <li>Identify any signs of atelectasis or pneumothorax.</li>
-        <li>Assess the lung parenchyma for interstitial changes or fibrosis.</li>
-      </ul>
-    <li>Inspect the mediastinum and hilum:</li>
-      <ul>
-        <li>Evaluate the size and shape of the heart and great vessels.</li>
-        <li>Check for any mediastinal or hilar masses or lymphadenopathy.</li>
-      </ul>
-    <li>Look for any pleural or diaphragmatic abnormalities:</li>
-      <ul>
-        <li>Search for pleural effusions, thickening, or calcifications.</li>
-        <li>Examine the diaphragm for elevation, eventration, or herniation.</li>
-      </ul>
-  </ol>
-  <h2 class="subheading">Please click on the images on this page to enlarge them</h2>
-  <img  src="/images/cxrAnatomy.jpg" alt="Radiological areas of a CXR" class="image" onclick="toggleFullscreenImage('/images/cxrAnatomy.jpg')">
-<caption>The radiological anatomy of a CXR</caption>
-<img src="/images/cxrReviewAreas.jpg" alt="Radiological areas of a CXR that should be reviewed" class="image" onclick="toggleFullscreenImage('/images/cxrReviewAreas.jpg')">
-<caption>Radiological areas of a CXR that should be reviewed</caption>
-</div>
+      <p>Treatment requires combination anti-TB therapy over several months according to national guidelines.</p>
 
-  
+      <figure>
+        <img src="/images/latent_TB.jpg"
+             alt="Latent TB"
+             class="image"
+             onclick="toggleFullscreenImage('/images/latent_TB.jpg')">
+        <figcaption>Latent TB – often normal CXR</figcaption>
+      </figure>
 
-  <h2>Common Chest X-ray Diagnoses and Their Radiological Features</h2>
+      <figure>
+        <img src="/images/Pulmonary_tb_1.jpg"
+             alt="Pulmonary TB"
+             class="image"
+             onclick="toggleFullscreenImage('/images/Pulmonary_tb_1.jpg')">
+        <figcaption>Active pulmonary TB</figcaption>
+      </figure>
 
-  <strong>Pneumonia</strong> 
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Consolidation</td>
-      <td>Increased opacity in the affected area, usually lobar or segmental</td>
-    </tr>
-    <tr>
-      <td>Air bronchogram</td>
-      <td>Air-filled bronchi visible within areas of consolidation</td>
-    </tr>
-    <tr>
-      <td>Silhouette sign</td>
-      <td>Loss of normal anatomical borders due to adjacent consolidation</td>
-    </tr>
-  </table>
-  <div class="section">
-    <img src="/images/pneumonia.jpg" alt="A comparison of a normal lung and a lung with left middle lobe pneumonia" class="image" onclick="toggleFullscreenImage('/images/pneumonia.jpg')">
-<caption>A comparison of a normal lung and a lung with left middle lobe pneumonia</caption>
-  </div>
- 
+      <figure>
+        <img src="/images/tb_with_ghons.png"
+             alt="Ghon complex on X-ray"
+             class="image"
+             onclick="toggleFullscreenImage('/images/tb_with_ghons.png')">
+        <figcaption>Ghon complex on CXR</figcaption>
+      </figure>
 
-  <strong>Pleural Effusion</strong> 
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Blunted costophrenic angles</td>
-      <td>Loss of the sharp angle between the diaphragm and chest wall</td>
-    </tr>
-    <tr>
-      <td>Fluid layering</td>
-      <td>Horizontal fluid level within the pleural space, visible in lateral decubitus or erect films</td>
-    </tr>
-    <tr>
-      <td>Meniscus sign</td>
-      <td>Crescent-shaped opacity at the lung base, representing fluid in the pleural space</td>
-    </tr>
-  </table>
-  <div class="section">
-    <img src="/images/pleuralEffusion.png" alt="A lung with a left sided Pleural Effusion" class="image" onclick="toggleFullscreenImage('/images/pleuralEffusion.png')">
-<caption>A lung with a left sided Pleural Effusion</caption>
-  </div>
+      <figure>
+        <img src="/images/milliary_tb.jpeg"
+             alt="Miliary TB"
+             class="image"
+             onclick="toggleFullscreenImage('/images/milliary_tb.jpeg')">
+        <figcaption>Miliary TB</figcaption>
+      </figure>
+    </section>
 
-  <strong>Pneumothorax</strong> 
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Visceral pleural line</td>
-      <td>Thin white line representing the edge of the collapsed lung</td>
-    </tr>
-    <tr>
-      <td>Absence of lung markings</td>
-      <td>No vascular markings peripheral to the visceral pleural line</td>
-    </tr>
-    <tr>
-      <td>Deep sulcus sign</td>
-      <td>Increased depth and lucency of the costophrenic angle, suggesting pneumothorax in supine films</td>
-    </tr>
-  </table>
-  <div class="section">
-  <img src="/images/pneumothorax.jpeg" alt="A lung with a right sided pneumothorax" class="image" onclick="toggleFullscreenImage('/images/pneumothorax.jpeg')">
-<caption>A lung with a right sided pneumothorax</caption>
-</div>
+    <section class="section">
+      <h2 class="subheading">Lung Cancer</h2>
+      <table>
+        <tr>
+          <th>Lung Cancer Type</th>
+          <th>Radiological Features</th>
+        </tr>
+        <tr>
+          <td>Non–small cell lung cancer (NSCLC)</td>
+          <td>Solitary nodule or mass, irregular/spiculated margins, possible cavitation.</td>
+        </tr>
+        <tr>
+          <td>Small cell lung cancer (SCLC)</td>
+          <td>Central or hilar mass, rapid growth, prominent lymphadenopathy.</td>
+        </tr>
+        <tr>
+          <td>Adenocarcinoma</td>
+          <td>Peripheral nodule, sometimes ground-glass opacity or lepidic growth pattern.</td>
+        </tr>
+        <tr>
+          <td>Squamous cell carcinoma</td>
+          <td>Central mass or nodule, frequent cavitation, hilar lymphadenopathy.</td>
+        </tr>
+        <tr>
+          <td>Large cell carcinoma</td>
+          <td>Peripheral or central mass, rapid growth, may cavitate.</td>
+        </tr>
+        <tr>
+          <td>Bronchial carcinoid tumour</td>
+          <td>Well-defined, round/oval nodule; central or peripheral; usually slow-growing.</td>
+        </tr>
+        <tr>
+          <td>Metastases to the lung</td>
+          <td>
+            Multiple nodules of varying size, well-defined margins, random distribution; may cavitate depending on primary.
+          </td>
+        </tr>
+      </table>
 
-  <strong>Heart Failure</strong> 
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Cardiomegaly</td>
-      <td>Enlarged cardiac silhouette</td>
-    </tr>
-    <tr>
-      <td>Kerley B lines</td>
-      <td>Short, horizontal lines at the lung bases, representing interstitial edema</td>
-    </tr>
-    <tr>
-      <td>Upper lobe diversion</td>
-      <td>Increased vascular congestion in the upper lung zones</td>
-    </tr>
-    <tr>
-      <td>Peribronchial cuffing</td>
-      <td>Thickening of bronchial walls due to fluid accumulation</td>
-    </tr>
-  </table>
-  <div class="section">
-    <img src="/images/heartFailure.png"   alt="A Picture of a typical CCF CXR" class="image" onclick="toggleFullscreenImage('/images/heartFailure.png')">
-<caption>A Picture of a typical CCF CXR</caption>
-  </div>
+      <figure>
+        <img src="/images/Non-small.jpg"
+             alt="Non–small cell lung cancer"
+             class="image"
+             onclick="toggleFullscreenImage('/images/Non-small.jpg')">
+        <figcaption>Non–small cell lung cancer (NSCLC)</figcaption>
+      </figure>
 
-  <strong>Chronic Obstructive Pulmonary Disease (COPD)</strong> 
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Hyperinflated lungs</td>
-      <td>Increased lung volume with flattened diaphragm</td>
-    </tr>
-    <tr>
-      <td>Bullae</td>
-      <td>Round, thin-walled, air-filled spaces within the lung parenchyma</td>
-    </tr>
-    <tr>
-      <td>Narrowed mediastinum</td>
-      <td>Mediastinal structures appear compressed due to lung hyperinflation</td>
-    </tr>
-  </table>
-  <div class="section">
-    <img src="/images/4-Stages-of-COPD.png"   alt="The four stages of COPD" class="image" onclick="toggleFullscreenImage('/images/4-Stages-of-COPD.png')">
-<caption>The four stages of COPD</caption>
-<img src="/images/copd.jpg"   alt="Typical COPD findings on CXR" class="image" onclick="toggleFullscreenImage('/images/copd.jpg')">
-<caption>Typical COPD findings on CXR</caption>
-  </div>
+      <figure>
+        <img src="/images/small-cell.jpeg"
+             alt="Small cell lung cancer"
+             class="image"
+             onclick="toggleFullscreenImage('/images/small-cell.jpeg')">
+        <figcaption>Small cell lung cancer (SCLC)</figcaption>
+      </figure>
 
-<strong>Pulmonary Tuberculosis (TB)</strong>
-<p>Pulmonary tuberculosis is a bacterial infection caused by Mycobacterium tuberculosis. It primarily affects the lungs but can spread to other parts of the body.</p>
+      <figure>
+        <img src="/images/adenocarcinoma.jpeg"
+             alt="Adenocarcinoma of the lung"
+             class="image"
+             onclick="toggleFullscreenImage('/images/adenocarcinoma.jpeg')">
+        <figcaption>Adenocarcinoma of the lung</figcaption>
+      </figure>
 
-<table>
-  <tr>
-    <th>Stage</th>
-    <th>Description</th>
-    <th>Chest X-ray Findings</th>
-  </tr>
-  <tr>
-    <td>Latent TB Infection</td>
-    <td>Infection without symptoms</td>
-    <td>Normal chest x-ray</td>
-  </tr>
-  <tr>
-    <td>Pulmonary TB</td>
-    <td>Active infection with symptoms</td>
-    <td>
-      <ul>
-        <li>Primary TB: Hilar lymphadenopathy, Ghon complex (calcified nodule with lymph node involvement)</li>
-        <li>Post-primary TB: Cavities, consolidations, fibrosis, pleural effusions</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Milliary TB</td>
-    <td>Disseminated infection via bloodstream</td>
-    <td>
-      <ul>
-        <li>Diffuse small nodules throughout both lungs (miliary pattern)</li>
-        <li>May involve other organs (e.g., liver, spleen, brain)</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+      <figure>
+        <img src="/images/squamous.jpg"
+             alt="Squamous cell carcinoma of the lung"
+             class="image"
+             onclick="toggleFullscreenImage('/images/squamous.jpg')">
+        <figcaption>Squamous cell carcinoma of the lung</figcaption>
+      </figure>
 
-<h3>Diagnostic Criteria</h3>
-<ul>
-  <li>Positive Tuberculin Skin Test (TST) or Interferon-Gamma Release Assay (IGRA)</li>
-  <li>Sputum Acid-Fast Bacilli (AFB) smear or culture</li>
-  <li>Chest x-ray abnormalities consistent with TB</li>
-</ul>
+      <figure>
+        <img src="/images/large_cell.jpg"
+             alt="Large cell carcinoma of the lung"
+             class="image"
+             onclick="toggleFullscreenImage('/images/large_cell.jpg')">
+        <figcaption>Large cell carcinoma of the lung</figcaption>
+      </figure>
 
-<p>Treatment involves a combination of antibiotics for several months to ensure complete eradication of the bacteria.</p>
-</div>
-<div class="section">
-  <img src="/images/latent_TB.jpg"   alt="Latent TB" class="image" onclick="toggleFullscreenImage('/images/latent_TB.jpg')">
-<caption>Latent TB</caption>
-<img src="/images/Pulmonary_tb_1.jpg"   alt="Pulmonary TB" class="image" onclick="toggleFullscreenImage('/images/Pulmonary_tb_1.jpg')">
-<caption>Active PTB</caption>
-<img src="/images/tb_with_ghons.png"   alt="Ghons Complex on X-ray " class="image" onclick="toggleFullscreenImage('/images/tb_with_ghons.png')">
-<caption>Ghons Complex</caption>
-<img src="/images/milliary_tb.jpeg"   alt="Milliary TB" class="image" onclick="toggleFullscreenImage('/images/milliary_tb.jpeg')">
-<caption>Milliary TB</caption>
-</div>
+      <figure>
+        <img src="/images/bronchial_carcinoid.jpeg"
+             alt="Bronchial carcinoid tumour"
+             class="image"
+             onclick="toggleFullscreenImage('/images/bronchial_carcinoid.jpeg')">
+        <figcaption>Bronchial carcinoid tumour</figcaption>
+      </figure>
 
-  </div>
-  <div class="section">
-    <strong>Lung Cancer</strong>
-    <table>
-      <tr>
-        <th>Lung Cancer Type</th>
-        <th>Radiological Features</th>
-      </tr>
-      <tr>
-        <td>Non-small cell lung cancer (NSCLC)</td>
-        <td>Solitary nodule or mass, irregular margins, spiculated, cavitation</td>
-      </tr>
-      <tr>
-        <td>Small cell lung cancer (SCLC)</td>
-        <td>Central mass or hilar mass, rapid growth, mediastinal or hilar lymphadenopathy</td>
-      </tr>
-      <tr>
-        <td>Adenocarcinoma</td>
-        <td>Peripheral nodule or mass, ground-glass opacity, lepidic growth pattern</td>
-      </tr>
-      <tr>
-        <td>Squamous cell carcinoma</td>
-        <td>Central mass or nodule, cavitation, hilar lymphadenopathy</td>
-      </tr>
-      <tr>
-        <td>Large cell carcinoma</td>
-        <td>Peripheral or central mass, rapid growth, cavitation</td>
-      </tr>
-      <tr>
-        <td>Bronchial carcinoid tumor</td>
-        <td>Well-defined, round or oval nodule, central or peripheral, slow growth</td>
-      </tr>
-      <tr>
-        <td>Metastases to the lung</td>
-        <td>Multiple nodules, varying sizes, well-defined margins, random distribution, possible cavitation</td>
-      </tr>
-    </table>
-    <div class="section">
-      <img src="/images/Non-small.jpg"   alt="Non-small cell lung cancer (NSCLC)" class="image" onclick="toggleFullscreenImage('/images/Non-small.jpg')">
-  <caption>Non-small cell lung cancer (NSCLC)</caption>
-    </div>
-    <div class="section">
-      <img src="/images/small-cell.jpeg"   alt="Small cell lung cancer (SCLC)" class="image" onclick="toggleFullscreenImage('/images/small-cell.jpeg')">
-  <caption>Small cell lung cancer (SCLC)</caption>
-    </div>
-    <div class="section">
-      <img src="/images/adenocarcinoma.jpeg"   alt="Adenocarcinoma of the lung" class="image" onclick="toggleFullscreenImage('/images/adenocarcinoma.jpeg')">
-  <caption>Adenocarcinoma of the lung</caption>
-    </div>
-    <div class="section">
-      <img src="/images/squamous.jpg"   alt="Squamous cell carcinoma of the lung" class="image" onclick="toggleFullscreenImage('/images/squamous.jpg')">
-  <caption>Squamous cell carcinoma of the lung"</caption>
-    </div>
-    <div class="section">
-      <img src="/images/large_cell.jpg"   alt="Large cell carcinoma of the lung" class="image" onclick="toggleFullscreenImage('/images/large_cell.jpg')">
-  <caption>Large cell carcinoma of the lung"</caption>
-    </div>
-    <div class="section">
-      <img src="/images/bronchial_carcinoid.jpeg"   alt="Bronchial carcinoid tumor of the lung" class="image" onclick="toggleFullscreenImage('/images/bronchial_carcinoid.jpeg')">
-  <caption>Bronchial carcinoid tumor of the lung"</caption>
-    </div>
-    <div class="section">
-      <img src="/images/lung_mets.jpeg"   alt="Metastases to the lung" class="image" onclick="toggleFullscreenImage('/images/lung_mets.jpeg')">
-  <caption>Metastases to the lung"</caption>
-    </div>
-    
-  </div>
+      <figure>
+        <img src="/images/lung_mets.jpeg"
+             alt="Pulmonary metastases"
+             class="image"
+             onclick="toggleFullscreenImage('/images/lung_mets.jpeg')">
+        <figcaption>Metastatic deposits in the lung</figcaption>
+      </figure>
+    </section>
 
-  <p>Keep in mind that this is just a basic overview of common chest x-ray findings. Further clinical information, laboratory results, and additional imaging studies may be necessary to confirm a diagnosis.</p>
+    <section class="section">
+      <h3 class="subheading">Final Note</h3>
+      <p>
+        This page provides a rapid overview of common CXR patterns for ED practice. Always integrate radiographic
+        findings with clinical assessment, lab results, and further imaging where indicated, and discuss
+        uncertainties with radiology or a senior colleague.
+      </p>
+    </section>
+  </main>
+
   <script>
     function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
-    } else {
-      document.body.removeChild(overlay);
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
+      }
     }
-  }
   </script>
 </body>
 </html>
-

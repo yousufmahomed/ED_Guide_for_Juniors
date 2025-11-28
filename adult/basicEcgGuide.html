@@ -1,139 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Basic ECG Guide for Junior Doctors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-  <script src="/script.js"></script>
-  <link rel="stylesheet" href="/genralPages.css">
-  <style>
-    body {
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/genralPages.css">
+    <style>
+      body {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
+        font-weight: normal;
+        line-height: 1.8;
         color: #333;
+        margin: 0;
         background-image: url("/images/ecgGuide.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-    }
-    
-    header {
+      }
+
+      header {
         background-color: #003366;
         color: #fff;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    header h1 {
+        padding: 16px 12px;
+      }
+
+      header .main-header {
         margin: 0;
-    }
-    
-    main {
-        margin: 20px;
-    }
-    
-    section {
-        margin-bottom: 30px;
-    }
-    
-    h2 {
+        font-size: 1.4rem;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .navbar-icons a {
+        color: #fff;
+        margin-left: 10px;
+        font-size: 1.2rem;
+      }
+
+      main {
+        margin: 80px auto 24px;
+        max-width: 900px;
+        padding: 20px 24px;
+        background-color: rgba(255, 255, 255, 0.97);
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      }
+
+      section {
+        margin-bottom: 24px;
+      }
+
+      h2 {
         color: #003366;
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    
-    li {
-        margin-bottom: 10px;
-    }
-    
-    ol {
-        margin: 0;
-        padding: 0;
-        list-style: decimal;
-    }
-    
-    li {
-        margin-bottom: 10px;
-    }
-    
-    footer {
-        background-color: #003366;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-    }
-    
-    footer p {
-        margin: 0;
-    }
-    
-    @media (max-width: 768px) {
-        h2 {
-            font-size: 20px;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+
+      ul, ol {
+        margin: 8px 0 8px 20px;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .section-link {
+        margin-top: 8px;
+      }
+
+      .emphasis-link {
+        color: #003366;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        main {
+          margin: 70px 12px 20px;
+          padding: 16px;
         }
-    }
-    
-  </style>
+
+        h2 {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
   </head>
-  <header>
-    <nav class="logo-container">
+
+  <body>
+    <header>
+      <nav class="logo-container">
         <div class="logo-container">
           <h1 class="main-header">Basic ECG Guide for Junior Doctors</h1>
           <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+            <a href="/index.html" title="Home">
+              <i class="fa-solid fa-house" alt="House icon"></i>
+            </a>
           </div>
-          <button class="back-button" onclick="goBack()">Back</button>
         </div>
+        <button class="back-button" onclick="goBack()">Back</button>
       </nav>
     </header>
-<body>
 
-	<main>
-		<section>
-			<h2>Introduction</h2>
-			<p>An electrocardiogram (ECG) is a test that records the electrical activity of the heart. ECGs are commonly used to diagnose heart problems, such as arrhythmias, heart attacks, and other cardiac conditions. As a junior doctor, it is important to have a basic understanding of how to interpret ECGs.</p>
-		</section>
+    <main>
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          An electrocardiogram (ECG) is a test that records the electrical activity of the heart.
+          ECGs are commonly used to diagnose heart problems, such as arrhythmias, heart attacks,
+          and other cardiac conditions. As a junior doctor, it is important to have a basic
+          understanding of how to interpret ECGs.
+        </p>
+      </section>
 
-		<section>
-			<h2>ECG Components</h2>
-			<p>There are several key components of an ECG that you should be familiar with:</p>
-			<ul>
-				<li><strong>P wave:</strong> Represents atrial depolarization (contraction).</li>
-				<li><strong>QRS complex:</strong> Represents ventricular depolarization (contraction).</li>
-				<li><strong>T wave:</strong> Represents ventricular repolarization (relaxation).</li>
-				<li><strong>ST segment:</strong> Represents the time between ventricular depolarization and repolarization.</li>
-			</ul>
-			<p>By understanding these components, you can begin to interpret ECG tracings.</p>
-		</section>
+      <section>
+        <h2>ECG Components</h2>
+        <p>There are several key components of an ECG that you should be familiar with:</p>
+        <ul>
+          <li><strong>P wave:</strong> Represents atrial depolarization (contraction).</li>
+          <li><strong>QRS complex:</strong> Represents ventricular depolarization (contraction).</li>
+          <li><strong>T wave:</strong> Represents ventricular repolarization (relaxation).</li>
+          <li><strong>ST segment:</strong> Represents the time between ventricular depolarization and repolarization.</li>
+        </ul>
+        <p>By understanding these components, you can begin to interpret ECG tracings.</p>
+      </section>
 
-		<section>
-			<h2>Interpreting ECGs</h2>
-			<p>When interpreting ECGs, there are several key steps to follow:</p>
-			<ol>
-				<li>Check the patient's details, such as name, age, and sex, to ensure that the correct patient is being tested.</li>
-				<li>Check the ECG tracing to ensure that it is of good quality and free from artifacts, such as muscle tremors or electrical interference.</li>
-				<li>Identify the heart rate by counting the number of QRS complexes in a six-second strip and multiplying by 10.</li>
-				<li>Assess the rhythm by examining the P waves and the regularity of the QRS complexes. Determine whether the rhythm is sinus (normal) or abnormal, such as atrial fibrillation.</li>
-				<li>Examine the ST segment to identify any abnormalities, such as ST elevation or depression, which may indicate ischemia or injury to the heart.</li>
-			</ol>
-		</section>
+      <section>
+        <h2>Interpreting ECGs</h2>
+        <p>When interpreting ECGs, there are several key steps to follow:</p>
+        <ol>
+          <li>Check the patient’s details (name, age, sex) to ensure you have the correct ECG.</li>
+          <li>
+            Check the ECG quality – calibration, gain (usually 10 mm/mV), paper speed (usually 25 mm/s),
+            and artefact (muscle tremor, electrical interference).
+          </li>
+          <li>
+            Identify the heart rate – for a standard 25 mm/s ECG, you can count the QRS complexes in a
+            10-second strip and multiply by 6, or use the “300 / large squares” method.
+          </li>
+          <li>
+            Assess the rhythm – are there P waves? Do they precede each QRS? Is the rhythm regular or irregular?
+            Decide if it is sinus rhythm or another rhythm (e.g. atrial fibrillation).
+          </li>
+          <li>
+            Look at intervals and morphology – PR interval, QRS duration, QT interval, axis, and then ST segments
+            and T waves for ischaemia or injury.
+          </li>
+        </ol>
+      </section>
 
-		<section>
-			<h2>Conclusion</h2>
-			<p>ECG interpretation is an important skill for junior doctors to develop. By understanding the key components of an ECG and following a systematic approach to interpretation, you can diagnose and manage a range of cardiac conditions.</p>
-		</section>
-        <section class="section">If you would like a more in-depth discussion of the basics of ECG analysis please watch this <a href="https://youtube.com/playlist?list=PLDm83OQCM_lytZHvzAsZlEbYnKQ_vJiNW" class="emphasis-link" target="_blank"> youtube <i class="fa-brands fa-youtube"></i></a> playlist</section>
-	</main>
-</body>
+      <section>
+        <h2>Conclusion</h2>
+        <p>
+          ECG interpretation is an important skill for junior doctors to develop. By understanding the key components
+          of an ECG and following a systematic approach to interpretation, you can begin to diagnose and manage a range
+          of cardiac conditions and know when to seek senior or cardiology input.
+        </p>
+      </section>
+
+      <section class="section-link">
+        <p>
+          If you would like a more in-depth discussion of the basics of ECG analysis, please watch this
+          <a href="https://youtube.com/playlist?list=PLDm83OQCM_lytZHvzAsZlEbYnKQ_vJiNW"
+             class="emphasis-link"
+             target="_blank" rel="noopener noreferrer">
+            YouTube <i class="fa-brands fa-youtube"></i>
+          </a> playlist.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
-
-  

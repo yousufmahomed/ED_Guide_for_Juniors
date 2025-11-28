@@ -1,168 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Antidysrhythmic Drugs</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
-      table {
-        border-collapse: collapse;
-        width: 100%;
+<head>
+  <meta charset="UTF-8">
+  <title>Antidysrhythmic Drugs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 1000px;
+      margin: 90px auto 40px;
+      padding: 20px 24px;
+      background-color: rgba(255, 255, 255, 0.94);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .page-title {
+      font-size: 1.7rem;
+      margin: 0 0 12px;
+    }
+
+    .intro-text {
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    #search {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 8px 0 16px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    #search:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .class-header {
+      font-weight: 600;
+      font-size: 1rem;
+      background-color: #ddd;
+    }
+
+    .small-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
       }
-      
+
       th, td {
-        text-align: left;
-        padding: 8px;
+        padding: 6px 8px;
       }
-      
-      th {
-        background-color: #4CAF50;
-        color: white;
+
+      .page-title {
+        font-size: 1.4rem;
       }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-      
-      input[type=text] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-      }
-      
-      input[type=text]:focus {
-        border: 2px solid #4CAF50;
-      }
-      
-      .class-header {
-        font-weight: bold;
-        font-size: 1.2em;
-        background-color: #ddd;
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
+<body>
   <header>
     <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Antidysrhythmic Drugs</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-container">
+        <h1 class="main-header">Antidysrhythmic Drugs</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home">
+            <i class="fa-solid fa-house" alt="House icon"></i>
+          </a>
         </div>
-      </nav>
-    </header>
-  <body>
-    
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <h1 class="page-title">Antidysrhythmic Drugs</h1>
+    <p class="intro-text">
+      Quick reference to commonly used antidysrhythmic drugs in the Emergency Department. 
+      Always confirm doses and indications with your local hospital protocols and reference texts.
+    </p>
+
+    <input
+      type="text"
+      id="search"
+      onkeyup="searchTable()"
+      placeholder="Search for drug name, class, or indication..."
+    >
+
     <table id="antidysrhythmic">
       <tr>
         <th>Class</th>
         <th>Drug</th>
         <th>Dosage</th>
-        <th>Route of Administration</th>
-        <th>Indication for Use</th>
+        <th>Route</th>
+        <th>Indication</th>
       </tr>
-      <!-- Add rows for each drug -->
+
+      <!-- Class I -->
       <tr>
         <td rowspan="2" class="class-header">Class I</td>
         <td>Lidocaine (Xylocaine)</td>
-        <td>1-1.5 mg/kg bolus followed by 0.5-0.75 mg/kg every 5-10 minutes as needed</td>
+        <td>1–1.5 mg/kg bolus, then 0.5–0.75 mg/kg every 5–10 minutes as needed</td>
         <td>Intravenous</td>
         <td>Ventricular tachycardia, ventricular fibrillation</td>
       </tr>
       <tr>
         <td>Procainamide (Procan, Procanbid)</td>
-        <td>20-30 mg/min, maximum dose 17 mg/kg</td>
+        <td>20–30 mg/min, maximum total dose 17 mg/kg</td>
         <td>Intravenous</td>
         <td>Ventricular tachycardia, atrial fibrillation, atrial flutter</td>
       </tr>
+
+      <!-- Class II -->
       <tr>
         <td rowspan="2" class="class-header">Class II</td>
         <td>Propranolol (Inderal)</td>
-        <td>1-3 mg intravenously over 2-3 minutes, then repeat every 2-5 minutes as needed; maximum dose of 10 mg</td>
+        <td>1–3 mg IV over 2–3 minutes, may repeat every 2–5 minutes; max 10 mg</td>
         <td>Intravenous</td>
         <td>Supraventricular tachycardia, ventricular arrhythmias</td>
       </tr>
       <tr>
         <td>Metoprolol (Lopressor)</td>
-        <td>5 mg intravenously over 1-2 minutes, repeat every 5 minutes as needed; maximum dose of 15 mg</td>
+        <td>5 mg IV over 1–2 minutes, repeat every 5 minutes as needed; max 15 mg</td>
         <td>Intravenous</td>
         <td>Supraventricular tachycardia, ventricular arrhythmias</td>
       </tr>
+
+      <!-- Class III -->
       <tr>
         <td rowspan="2" class="class-header">Class III</td>
         <td>Amiodarone (Cordarone, Pacerone)</td>
-        <td>Initial loading dose of 150-300 mg over 10-20 minutes, followed by a maintenance infusion of 1 mg/min for 6 hours, then 0.5 mg/min for 18 hours</td>
+        <td>
+          150–300 mg over 10–20 minutes as a loading dose, then 1 mg/min for 6 hours,
+          followed by 0.5 mg/min for 18 hours (or as per local protocol)
+        </td>
         <td>Intravenous</td>
         <td>Ventricular arrhythmias, atrial fibrillation, atrial flutter</td>
       </tr>
       <tr>
         <td>Ibutilide (Corvert)</td>
-        <td>1 mg over 10 minutes; may repeat in 10 minutes at a dose of 0.5 mg if necessary</td>
+        <td>1 mg over 10 minutes; may repeat once with 0.5–1 mg after 10 minutes if needed</td>
         <td>Intravenous</td>
         <td>Atrial fibrillation, atrial flutter</td>
       </tr>
+
+      <!-- Class IV -->
       <tr>
         <td rowspan="2" class="class-header">Class IV</td>
         <td>Verapamil (Calan, Isoptin)</td>
-        <td>5-10 mg intravenously over 2-3 minutes; may repeat in 30 minutes if necessary</td>
+        <td>5–10 mg IV over 2–3 minutes; may repeat once after 30 minutes if necessary</td>
         <td>Intravenous</td>
         <td>Supraventricular tachycardia</td>
       </tr>
       <tr>
         <td>Diltiazem (Cardizem)</td>
-        <td>0.25 mg/kg intravenously over 2 minutes, followed by an infusion of 5-15 mg/hour</td>
+        <td>0.25 mg/kg IV over 2 minutes, then infusion 5–15 mg/hour</td>
         <td>Intravenous</td>
-        <td>Supraventricular tachycardia</td>
+        <td>Supraventricular tachycardia, rate control in atrial fibrillation</td>
       </tr>
+
+      <!-- First line -->
       <tr>
-        <td rowspan="2" class="class-header">First Line</td>
+        <td rowspan="1" class="class-header">First Line</td>
         <td class="class-header">Adenosine (Adenocard)</td>
-        <td>6 mg rapid intravenous push followed by a 20 mL saline flush; if no response after 1-2 minutes, may administer a 12 mg dose followed by a 20 mL saline flush</td>
-        <td>Intravenous</td>
-        <td>Supraventricular tachycardia</td>
+        <td>
+          6 mg rapid IV bolus followed by 20 mL saline flush; if no response after 1–2 minutes,
+          give 12 mg followed by 20 mL flush (may repeat once as per protocol)
+        </td>
+        <td>Intravenous (rapid bolus)</td>
+        <td>Paroxysmal supraventricular tachycardia (PSVT)</td>
       </tr>
-    
-      
-      
     </table>
-    <script>
-      function searchTable() {
-        let input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("antidysrhythmic");
-        tr = table.getElementsByTagName("tr");
-        for (i = 1; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
+
+    <p class="small-note">
+      <strong>Note:</strong> Above doses are typical examples. Always check patient factors (age, weight, comorbidities, renal/hepatic function),
+      concurrent medications and your local Emergency Department / ACLS guidelines before administration.
+    </p>
+  </main>
+
+  <script>
+    function searchTable() {
+      const input = document.getElementById("search");
+      const filter = input.value.toUpperCase();
+      const table = document.getElementById("antidysrhythmic");
+      const tr = table.getElementsByTagName("tr");
+
+      // Skip header row (index 0)
+      for (let i = 1; i < tr.length; i++) {
+        const tds = tr[i].getElementsByTagName("td");
+        let rowMatch = false;
+
+        for (let j = 0; j < tds.length; j++) {
+          const td = tds[j];
           if (td) {
-            txtValue = td.textContent || td.innerText;
+            const txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
+              rowMatch = true;
+              break;
             }
-          } 
+          }
         }
+
+        tr[i].style.display = rowMatch ? "" : "none";
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
 </html>

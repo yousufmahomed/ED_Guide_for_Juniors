@@ -1,312 +1,504 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>asic ECG Analysis for Junior Doctors</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Basic ECG Analysis for Junior Doctors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <link rel="stylesheet" href="/genralPages.css">
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/ecgAnalysis.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/ecgAnalysis.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
     }
-    
+
     header {
-        background-color: #003366;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
+      background-color: #003366;
+      color: #fff;
+      padding: 16px 12px;
     }
-    
-    header h1 {
-        margin: 0;
+
+    header .main-header {
+      margin: 0;
+      font-size: 1.4rem;
     }
-    
+
     main {
-        margin: 20px;
+      margin: 90px auto 32px;
+      max-width: 900px;
+      padding: 20px 24px;
+      background-color: rgba(255, 255, 255, 0.97);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
     }
-    
-    section {
-        margin-bottom: 30px;
+
+    .section {
+      margin-bottom: 24px;
     }
-    
+
     h2 {
-        color: #003366;
-        font-size: 24px;
-        margin-bottom: 10px;
+      color: #003366;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
-    
+
+    h4 {
+      margin: 8px 20px 0;
+      font-weight: 500;
+    }
+
+    p.notice {
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+
     form label {
-        display: block;
-        margin-bottom: 5px;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+      color: #003366;
+      font-weight: 600;
     }
-    
+
     form input[type="number"],
+    form input[type="text"],
     form select,
     form textarea {
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        margin-bottom: 10px;
+      width: 100%;
+      max-width: 320px;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
     }
-    
+
+    form textarea {
+      max-width: 100%;
+      min-height: 60px;
+    }
+
     form button[type="submit"] {
-        background-color: #003366;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
+      background-color: #003366;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      margin-top: 4px;
     }
-    
+
     form button[type="submit"]:hover {
-        background-color: #002255;
+      background-color: #002255;
     }
-    
+
     #diagnosis {
-        font-size: 18px;
-        font-weight: bold;
+      font-size: 0.98rem;
+      line-height: 1.6;
     }
-    
+
+    #diagnosis strong {
+      color: #003366;
+    }
+
+    #diagnosis ul {
+      margin-top: 6px;
+      padding-left: 20px;
+    }
+
+    .emphasis-link {
+      color: #003366;
+      text-decoration: underline;
+    }
+
+    .warning {
+      color: #b30000;
+      font-weight: 600;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .navbar-icons a {
+      color: #fff;
+      margin-left: 10px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin: 80px 12px 20px;
+        padding: 16px;
+      }
+    }
   </style>
 </head>
-<header>
-<nav class="logo-container">
-    <div class="logo-container">
-      <h1 class="main-header">Basic ECG Analysis for Junior Doctors</h1>
-      <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+<body>
+  <header>
+    <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">Basic ECG Analysis for Junior Doctors</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        </div>
       </div>
       <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </nav>
-  
-</header>
-<body>
-    <h2>Please Note that this is a <em style="color: red; text-decoration:underline; font-weight:bolder">very basic</em> analysis tool, and may be prone to errors, please use your clinical judgement and do not base your diagnosis purely on this tool</h2>
-    <h4>There is a wonderful app that has a much more advanced ECG analysis tool that you can access here <a href="https://www.qaly.co/" class="emphasis-link">Qaly ECG Analysis</a>. (NB! It is a paid app)</h4>
-    <section class="section">If you would like to see more in-depth discussions of ECG analysis please watch this <a href="https://youtube.com/playlist?list=PLDm83OQCM_lzFamCoSzIEaqSwrXK35utf" class="emphasis-link" target="_blank"> youtube <i class="fa-brands fa-youtube"></i></a> playlist</section>
-	
+    </nav>
+  </header>
 
-	<main>
-		<section>
-			<h2>Patient Information</h2>
-			<form id="patient-form">
-				<label for="patient-name">Name:</label>
-				<input type="text" id="patient-name" name="patient-name" required>
+  <main>
+    <section class="section">
+      <p class="notice">
+        <span class="warning">Important:</span> This is a <em style="text-decoration: underline;">very basic</em> teaching tool.
+        It is prone to error and <strong>must not</strong> replace your own ECG interpretation, senior review, or formal
+        cardiology reporting.
+      </p>
+      <p class="notice">
+        For a more advanced analysis (paid tool), you can explore:
+        <a href="https://www.qaly.co/" class="emphasis-link" target="_blank" rel="noopener noreferrer">Qaly ECG Analysis</a>.
+      </p>
+      <p class="notice">
+        For in-depth discussions on ECG interpretation, see this YouTube playlist:
+        <a href="https://youtube.com/playlist?list=PLDm83OQCM_lzFamCoSzIEaqSwrXK35utf"
+           class="emphasis-link"
+           target="_blank" rel="noopener noreferrer">
+          ER Mentorship Hub ECG Playlist <i class="fa-brands fa-youtube"></i>
+        </a>
+      </p>
+    </section>
 
-				<label for="patient-age">Age:</label>
-				<input type="number" id="patient-age" name="patient-age" required>
+    <section class="section">
+      <h2>Patient Information</h2>
+      <form id="patient-form">
+        <label for="patient-name">Name (optional):</label>
+        <input type="text" id="patient-name" name="patient-name" placeholder="e.g. Mr X / Mrs Y">
 
-				<label for="patient-sex">Sex:</label>
-				<select id="patient-sex" name="patient-sex" required>
-					<option value="">--Select--</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-				</select>
-			</form>
-		</section>
+        <label for="patient-age">Age:</label>
+        <input type="number" id="patient-age" name="patient-age" min="0" max="120" required>
 
-		<section>
-			<h2>ECG Analysis</h2>
-			<p>NB! Most of the values requested are provided on your ECG Printout</p>
-			<form id="ecg-form">
-				<label for="heart-rate">Heart Rate (bpm):</label>
-				<input type="number" id="heart-rate" name="heart-rate" min="20" max="300" required>
+        <label for="patient-sex">Sex:</label>
+        <select id="patient-sex" name="patient-sex" required>
+          <option value="">--Select--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </form>
+    </section>
 
-				<label for="axis">Axis:</label>
-					<select id="axis" name="axis" required>
-						<option value="">--Select--</option>
-						<option value="normal">Normal</option>
-						<option value="left">Left Deviation</option>
-						<option value="right">Right Deviation</option>
-						<option value="extreme">Extreme Deviation</option>
-					</select>
+    <section class="section">
+      <h2>ECG Inputs</h2>
+      <p class="notice">
+        Most of the values below are printed on the ECG report. If you are unsure, interpret the ECG manually.
+      </p>
+      <form id="ecg-form">
+        <label for="heart-rate">Heart Rate (bpm):</label>
+        <input type="number" id="heart-rate" name="heart-rate" min="20" max="300" required>
 
-				<label for="rhythm">Rhythm:</label>
-				<select id="rhythm" name="rhythm" required>
-					<option value="">--Select--</option>
-					<option value="sinus">Sinus</option>
-					<option value="afib">Atrial Fibrillation</option>
-					<option value="flutter">Atrial Flutter</option>
-					<option value="brady">Bradycardia</option>
-					<option value="tachy">Tachycardia</option>
-				</select>
+        <label for="axis">Axis:</label>
+        <select id="axis" name="axis" required>
+          <option value="">--Select--</option>
+          <option value="normal">Normal</option>
+          <option value="left">Left Deviation</option>
+          <option value="right">Right Deviation</option>
+          <option value="extreme">Extreme Deviation</option>
+        </select>
 
-				<label for="p-wave">P Wave:</label>
-				<select id="p-wave" name="p-wave" required>
-					<option value="">--Select--</option>
-					<option value="normal">Normal</option>
-					<option value="absent">Absent</option>
-					<option value="inverted">Inverted</option>
-					<option value="widened">Widened</option>
-				</select>
+        <label for="rhythm">Overall Rhythm (machine / your impression):</label>
+        <select id="rhythm" name="rhythm" required>
+          <option value="">--Select--</option>
+          <option value="sinus">Sinus</option>
+          <option value="afib">Atrial Fibrillation</option>
+          <option value="flutter">Atrial Flutter</option>
+          <option value="brady">Bradycardia (non-sinus)</option>
+          <option value="tachy">Tachycardia (non-sinus)</option>
+        </select>
 
-				<label for="pr-interval">PR Interval (ms):</label>
-					<input type="number" id="pr-interval" name="pr-interval" min="60" max="300" required>
+        <label for="p-wave">P Wave:</label>
+        <select id="p-wave" name="p-wave" required>
+          <option value="">--Select--</option>
+          <option value="normal">Normal</option>
+          <option value="absent">Absent</option>
+          <option value="inverted">Inverted / abnormal</option>
+          <option value="widened">P mitrale / P pulmonale / widened</option>
+        </select>
 
-				<label for="qrs-complex">QRS Complex:</label>
-				<select id="qrs-complex" name="qrs-complex" required>
-					<option value="">--Select--</option>
-					<option value="normal">Normal</option>
-					<option value="wide">Wide</option>
-					<option value="narrow">Narrow</option>
-					<option value="low-voltage">Low Voltage</option>
-					<option value="bundle-branch-block">Bundle Branch Block</option>
-				</select>
+        <label for="pr-interval">PR Interval (ms):</label>
+        <input type="number" id="pr-interval" name="pr-interval" min="60" max="320" required>
 
-				<label for="st-segment">ST Segment:</label>
-				<select id="st-segment" name="st-segment" required>
-					<option value="">--Select--</option>
-					<option value="normal">Normal</option>
-					<option value="elevation">Elevation</option>
-					<option value="depression">Depression</option>
-                </select>
+        <label for="qrs-complex">QRS Morphology:</label>
+        <select id="qrs-complex" name="qrs-complex" required>
+          <option value="">--Select--</option>
+          <option value="normal">Normal</option>
+          <option value="wide">Wide</option>
+          <option value="narrow">Narrow</option>
+          <option value="low-voltage">Low Voltage</option>
+          <option value="bundle-branch-block">Bundle Branch Block pattern</option>
+        </select>
 
-				<label for="t-wave">T Wave:</label>
-				<select id="t-wave" name="t-wave" required>
-					<option value="">--Select--</option>
-					<option value="normal">Normal</option>
-					<option value="inverted">Inverted</option>
-					<option value="peaked">Peaked</option>
-				</select>
-				
+        <label for="st-segment">ST Segment:</label>
+        <select id="st-segment" name="st-segment" required>
+          <option value="">--Select--</option>
+          <option value="normal">Normal</option>
+          <option value="elevation">Elevation</option>
+          <option value="depression">Depression</option>
+        </select>
 
-				<label for="qrs-duration">QRS Duration (ms):</label>
-				    <input type="number" id="qrs-duration" name="qrs-duration" min="40" max="200" required>
+        <label for="t-wave">T Wave:</label>
+        <select id="t-wave" name="t-wave" required>
+          <option value="">--Select--</option>
+          <option value="normal">Normal</option>
+          <option value="inverted">Inverted / flattened</option>
+          <option value="peaked">Tall / peaked</option>
+        </select>
 
-				<label for="qt-interval">QT Interval (ms):</label>
-				    <input type="number" id="qt-interval" name="qt-interval" min="300" max="500" required>
+        <label for="qrs-duration">QRS Duration (ms):</label>
+        <input type="number" id="qrs-duration" name="qrs-duration" min="40" max="220" required>
 
+        <label for="qt-interval">QT Interval (ms):</label>
+        <input type="number" id="qt-interval" name="qt-interval" min="260" max="600" required>
 
+        <label for="comments">Comments / Clinical Context (optional):</label>
+        <textarea id="comments" name="comments" placeholder="e.g. chest pain, syncope, electrolytes, drugs…"></textarea>
 
+        <button type="submit">Analyze</button>
+      </form>
+    </section>
 
-				<label for="comments">Comments:</label>
-				<textarea id="comments" name="comments"></textarea>
+    <section class="section">
+      <h2>Output</h2>
+      <p id="diagnosis">
+        Enter the ECG values above and click <strong>Analyze</strong> to generate a structured description and
+        some pattern-based flags. Always correlate with the clinical picture.
+      </p>
+    </section>
+  </main>
 
-				<button type="submit">Analyze</button>
-			</form>
-		</section>
+  <script>
+    const ecgForm = document.getElementById('ecg-form');
+    const diagnosis = document.getElementById('diagnosis');
 
-		<section>
-			<h2>Diagnosis</h2>
-			<p id="diagnosis">Enter the patient's ECG values and abnormalities above and click "Analyze" to generate a possible diagnosis.</p>
-		</section>
-	</main>
+    ecgForm.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-	
+      // Basic numeric inputs
+      const heartRate = parseInt(document.getElementById('heart-rate').value, 10);
+      const prInterval = parseInt(document.getElementById('pr-interval').value, 10);
+      const qrsDuration = parseInt(document.getElementById('qrs-duration').value, 10);
+      const qtInterval = parseInt(document.getElementById('qt-interval').value, 10);
 
-	<script >
-        const form = document.getElementById('ecg-form');
-const diagnosis = document.getElementById('diagnosis');
-const analyzeButton = form.querySelector('button[type="submit"]');
+      // Categorical inputs
+      const rhythm = document.getElementById('rhythm').value;
+      const pWave = document.getElementById('p-wave').value;
+      const qrsComplex = document.getElementById('qrs-complex').value;
+      const stSegment = document.getElementById('st-segment').value;
+      const tWave = document.getElementById('t-wave').value;
+      const axis = document.getElementById('axis').value;
 
-analyzeButton.addEventListener('click', (event) => {
-	event.preventDefault();
+      // Patient info (optional display)
+      const patientName = document.getElementById('patient-name').value.trim();
+      const patientAge = document.getElementById('patient-age').value;
+      const patientSex = document.getElementById('patient-sex').value;
+      const comments = document.getElementById('comments').value.trim();
 
-	const heartRate = parseInt(document.getElementById('heart-rate').value);
-	const rhythm = document.getElementById('rhythm').value;
-	const pWave = document.getElementById('p-wave').value;
-	const qrsComplex = document.getElementById('qrs-complex').value;
-	const stSegment = document.getElementById('st-segment').value;
-	const tWave = document.getElementById('t-wave').value;
+      // ---------- 1. Structured description ----------
 
-	let possibleDiagnosis = [];
+      // Rate category
+      let rateDescription = '';
+      if (heartRate < 60) {
+        rateDescription = 'Bradycardic';
+      } else if (heartRate <= 100) {
+        rateDescription = 'Normal rate';
+      } else {
+        rateDescription = 'Tachycardic';
+      }
 
-	if (heartRate < 60) {
-		possibleDiagnosis.push('Bradycardia');
-	}
+      // Rhythm label (soft)
+      let rhythmDescription = '';
+      switch (rhythm) {
+        case 'sinus':
+          if (heartRate < 60) {
+            rhythmDescription = 'Probable sinus bradycardia';
+          } else if (heartRate > 100) {
+            rhythmDescription = 'Probable sinus tachycardia';
+          } else {
+            rhythmDescription = 'Probable sinus rhythm';
+          }
+          break;
+        case 'afib':
+          rhythmDescription = 'Atrial fibrillation pattern (irregularly irregular, no consistent P waves)';
+          break;
+        case 'flutter':
+          rhythmDescription = 'Atrial flutter pattern (saw-tooth baseline; check conduction ratio)';
+          break;
+        case 'brady':
+          rhythmDescription = 'Non-sinus bradycardia pattern – consider junctional / AV block / escape rhythms';
+          break;
+        case 'tachy':
+          rhythmDescription = 'Non-sinus tachycardia pattern – consider SVT / atrial / ventricular tachycardia';
+          break;
+        default:
+          rhythmDescription = 'Rhythm not specified';
+      }
 
-	if (heartRate > 100) {
-		possibleDiagnosis.push('Tachycardia');
-	}
+      // Axis description
+      let axisDescription = 'Normal axis';
+      if (axis === 'left') axisDescription = 'Left axis deviation';
+      else if (axis === 'right') axisDescription = 'Right axis deviation';
+      else if (axis === 'extreme') axisDescription = 'Extreme axis deviation';
 
-	if (rhythm === 'afib') {
-		possibleDiagnosis.push('Atrial fibrillation');
-	}
+      // PR interval interpretation
+      let prDescription = 'PR interval within normal range (120–200 ms).';
+      if (prInterval < 120) {
+        prDescription = 'Short PR interval (< 120 ms) – consider pre-excitation or junctional rhythm.';
+      } else if (prInterval > 200) {
+        prDescription = 'Prolonged PR interval (> 200 ms) – compatible with first-degree AV block.';
+      }
 
-	if (rhythm === 'flutter') {
-		possibleDiagnosis.push('Atrial flutter');
-	}
+      // QRS duration interpretation (using 120 ms as standard cut-off)
+      let qrsDescription = 'QRS duration within normal range (≤ 120 ms).';
+      if (qrsDuration > 120) {
+        qrsDescription = 'Prolonged QRS duration (> 120 ms) – consider bundle branch block or ventricular origin.';
+      }
 
-	if (pWave === 'absent') {
-		possibleDiagnosis.push('Atrial standstill');
-	}
+      // QT interval – very crude check, not QTc
+      // Keeping a simple range for educational purposes
+      let qtDescription = 'QT interval appears within the usual range (approx. 350–440 ms for adults).';
+      if (qtInterval > 440) {
+        qtDescription = 'QT interval appears prolonged (> 440 ms) – calculate QTc manually and review drugs/electrolytes.';
+      } else if (qtInterval < 350) {
+        qtDescription = 'QT interval appears relatively short (< 350 ms) – consider hypercalcaemia or other causes.';
+      }
 
-	if (qrsComplex === 'wide') {
-		possibleDiagnosis.push('Ventricular tachycardia');
-	}
+      // ---------- 2. Pattern-based flags (very soft suggestions) ----------
 
-	if (qrsComplex === 'low-voltage') {
-		possibleDiagnosis.push('Pericardial effusion or tamponade');
-	}
+      const flags = [];
 
-	if (stSegment === 'elevation') {
-		possibleDiagnosis.push('Myocardial infarction (heart attack)');
-	}
+      // Rate-based flags
+      if (heartRate < 50) {
+        flags.push('Marked bradycardia – correlate with symptoms, drugs, and possible AV block or sick sinus.');
+      }
+      if (heartRate > 130) {
+        flags.push('Marked tachycardia – consider sepsis, hypovolaemia, PE, arrhythmia, pain, anxiety, etc.');
+      }
 
-	if (stSegment === 'depression') {
-		possibleDiagnosis.push('Myocardial ischemia');
-	}
+      // Rhythm-based flags
+      if (rhythm === 'afib') {
+        flags.push('Atrial fibrillation: assess CHA₂DS₂-VASc and rate control / rhythm control strategy.');
+      }
+      if (rhythm === 'flutter') {
+        flags.push('Atrial flutter: look for flutter waves in II, III, aVF and consider underlying structural disease.');
+      }
 
-	if (tWave === 'inverted') {
-		possibleDiagnosis.push('Myocardial ischemia or infarction');
-	}
+      // P wave findings
+      if (pWave === 'absent' && rhythm !== 'afib') {
+        flags.push('Absent P waves – consider AF, junctional rhythm, sinoatrial arrest, or paced rhythm.');
+      }
+      if (pWave === 'widened') {
+        flags.push('Abnormal P wave morphology – consider atrial enlargement (P mitrale / P pulmonale).');
+      }
 
-	if (tWave === 'peaked') {
-		possibleDiagnosis.push('Hyperkalemia');
-	}
+      // QRS morphology and duration
+      if (qrsDuration > 120 && heartRate >= 100) {
+        flags.push('Wide-complex tachycardia – treat as VT until proven otherwise; seek senior/cardiology input urgently.');
+      } else if (qrsDuration > 120) {
+        flags.push('Wide QRS in a non-tachycardic rhythm – consider bundle branch block, paced rhythm, or ventricular origin.');
+      }
 
-	if (possibleDiagnosis.length === 0) {
-		possibleDiagnosis.push('No abnormalities detected');
-	}
-	const prInterval = parseInt(document.getElementById('pr-interval').value);
-const qrsDuration = parseInt(document.getElementById('qrs-duration').value);
-const qtInterval = parseInt(document.getElementById('qt-interval').value);
-const axis = document.getElementById('axis').value;
+      if (qrsComplex === 'bundle-branch-block') {
+        flags.push('Bundle branch block pattern – check axis and look for associated ischaemic changes.');
+      }
 
-if (prInterval < 120 || prInterval > 200) {
-    possibleDiagnosis.push('Abnormal PR interval');
-}
+      if (qrsComplex === 'low-voltage') {
+        flags.push('Low voltage QRS – consider pericardial effusion, obesity, COPD, or infiltrative disease.');
+      }
 
-if (qrsDuration > 100) {
-    possibleDiagnosis.push('Abnormal QRS duration');
-}
+      // ST segment and T waves
+      if (stSegment === 'elevation') {
+        flags.push('ST elevation – consider acute coronary syndrome, pericarditis, or early repolarisation; correlate clinically and with serial ECGs.');
+      }
+      if (stSegment === 'depression') {
+        flags.push('ST depression – may reflect ischaemia, reciprocal changes, or digoxin effect; correlate clinically.');
+      }
 
-const qtIntervalUpperLimit = 440;
-const qtIntervalLowerLimit = 350;
+      if (tWave === 'inverted') {
+        flags.push('T wave inversion / flattening – non-specific; consider ischaemia, strain, or electrolyte imbalance.');
+      }
+      if (tWave === 'peaked') {
+        flags.push('Tall peaked T waves – consider hyperkalaemia; check U&amp;E urgently.');
+      }
 
-if (qtInterval > qtIntervalUpperLimit || qtInterval < qtIntervalLowerLimit) {
-    possibleDiagnosis.push('Abnormal QT interval');
-}
+      // Axis flags
+      if (axis === 'left') {
+        flags.push('Left axis deviation – can be seen in LVH, left anterior fascicular block, inferior MI, or conduction disease.');
+      } else if (axis === 'right') {
+        flags.push('Right axis deviation – consider RVH, PE, COPD, or left posterior fascicular block.');
+      } else if (axis === 'extreme') {
+        flags.push('Extreme axis deviation – may reflect ventricular rhythms, hyperkalaemia, or severe conduction disease.');
+      }
 
-if (axis === 'left') {
-    possibleDiagnosis.push('Left axis deviation');
-} else if (axis === 'right') {
-    possibleDiagnosis.push('Right axis deviation');
-} else if (axis === 'extreme') {
-    possibleDiagnosis.push('Extreme axis deviation');
-}
+      // If nothing interesting
+      if (flags.length === 0) {
+        flags.push('No major red flags based on entered parameters. Always correlate with clinical picture and inspect the actual ECG trace.');
+      }
 
+      // ---------- 3. Build the HTML output ----------
 
-	diagnosis.innerHTML = `<p>Possible diagnosis:</p><ul>${possibleDiagnosis.map((item) => `<li>${item}</li>`).join('')}</ul>`;
-});
+      const patientLineParts = [];
+      if (patientName) patientLineParts.push(`<strong>Patient:</strong> ${patientName}`);
+      if (patientAge) patientLineParts.push(`<strong>Age:</strong> ${patientAge}`);
+      if (patientSex) patientLineParts.push(`<strong>Sex:</strong> ${patientSex.charAt(0).toUpperCase() + patientSex.slice(1)}`);
+      const patientLine = patientLineParts.length ? `<p>${patientLineParts.join(' | ')}</p>` : '';
 
-        
+      const descriptionHtml = `
+        ${patientLine}
+        <p><strong>Structured ECG summary</strong></p>
+        <ul>
+          <li><strong>Rate:</strong> ${heartRate} bpm (${rateDescription})</li>
+          <li><strong>Rhythm impression:</strong> ${rhythmDescription}</li>
+          <li><strong>Axis:</strong> ${axisDescription}</li>
+          <li><strong>PR interval:</strong> ${prInterval} ms – ${prDescription}</li>
+          <li><strong>QRS duration:</strong> ${qrsDuration} ms – ${qrsDescription}</li>
+          <li><strong>QT interval:</strong> ${qtInterval} ms – ${qtDescription}</li>
+          <li><strong>P wave:</strong> ${pWave}</li>
+          <li><strong>QRS pattern:</strong> ${qrsComplex}</li>
+          <li><strong>ST segment:</strong> ${stSegment}</li>
+          <li><strong>T wave:</strong> ${tWave}</li>
+        </ul>
+      `;
 
+      const flagsHtml = `
+        <p><strong>Findings that could be relevant (not definitive diagnoses)</strong></p>
+        <ul>${flags.map(item => `<li>${item}</li>`).join('')}</ul>
+      `;
 
+      const commentsHtml = comments
+        ? `<p><strong>Clinical context you entered:</strong> ${comments}</p>`
+        : '';
 
-    </script>
+      const disclaimerHtml = `
+        <p class="notice">
+          <span class="warning">Disclaimer:</span> This output is for teaching and checklist support only.
+          It is not a definitive ECG report and must not be used as the sole basis for diagnosis or treatment.
+        </p>
+      `;
+
+      diagnosis.innerHTML = descriptionHtml + commentsHtml + flagsHtml + disclaimerHtml;
+    });
+  </script>
 </body>
 </html>
-
-			

@@ -1,48 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Brain &amp; C-spine CT scan Analysis for Junior Doctors</title>
   <meta charset="UTF-8">
+  <title>Brain &amp; C-spine CT scan Analysis for Junior Doctors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/basicCT.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/basicCT.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
     }
 
-    h2 {
-      font-size: 20px;
-      color: #003366;
+    .page-wrapper {
+      max-width: 1000px;
+      margin: 90px auto 40px;
+      padding: 20px 24px;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-wrapper h1 {
+      font-size: 1.6rem;
+      margin-top: 0;
       margin-bottom: 10px;
+      color: #003366;
+    }
+
+    h2.subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    h3.subheading {
+      font-size: 1.05rem;
+      color: #003366;
+      margin-top: 14px;
+      margin-bottom: 6px;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
       margin-bottom: 20px;
+      font-size: 0.95rem;
     }
 
     th, td {
       border: 1px solid #ccc;
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
 
     th {
@@ -53,6 +73,26 @@
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 14px 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
     .fullscreen-image-overlay {
       position: fixed;
       top: 0;
@@ -66,187 +106,337 @@
       z-index: 9999;
       cursor: zoom-out;
     }
-    
+
     .fullscreen-image-overlay img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
-    
-  
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      th, td {
+        padding: 6px;
+      }
+    }
   </style>
 </head>
-<header>
-  <div class="logo-container">
-      <h1 style="color: antiquewhite;">Brain &amp; C-spine CT scan Analysis for Junior Doctors</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Brain &amp; C-spine CT scan Analysis for Junior Doctors</h1>
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
+
+  <main class="page-wrapper">
+    <h1>Basic CT Brain and C-Spine Analysis for Junior Doctors</h1>
+
     <div class="section">
-        <h2 class="subheading">Basic CT Brain and C-Spine Analysis for Junior Doctors</h2>
-        <p>Computed tomography (CT) scans are commonly used to evaluate patients with suspected brain or cervical spine injuries. As a junior doctor, it is important to have a basic understanding of how to analyze these scans in order to make a preliminary assessment and communicate with the radiologist and other members of the medical team. Here are some key points to keep in mind:</p>
-        <h3 class="subheading">CT Brain Analysis</h3>
-        <p>When analyzing a CT brain scan, there are several important features to look for:</p>
-        <ul>
-          <li>Midline shift: Look for any displacement of the midline structures, such as the falx cerebri or septum pellucidum. A midline shift can indicate a mass effect, such as a hemorrhage or tumor.</li>
-          <li>Hemorrhage: Look for any areas of hyperdensity, which can indicate bleeding. Hemorrhages can be classified as epidural, subdural, intraparenchymal, or subarachnoid, depending on their location.</li>
-          <li>Ischemia: Look for any areas of hypodensity, which can indicate ischemic injury. Ischemic injury can be caused by a stroke or other vascular event.</li>
-          <li>Ventricular size: Look at the size and shape of the ventricles to assess for hydrocephalus or other abnormalities.</li>
-        </ul>
-        <h3 class="subheading">CT C-Spine Analysis</h3>
-        <p>When analyzing a CT cervical spine scan, there are several important features to look for:</p>
-        <ul>
-          <li>Bony abnormalities: Look for any fractures or other bony abnormalities.</li>
-          <li>Dislocations: Look for any dislocations or subluxations of the vertebrae.</li>
-          <li>Spinal cord injury: Look for any signs of spinal cord injury, such as compression or contusion.</li>
-          <li>Soft tissue injuries: Look for any injuries to the ligaments, muscles, or other soft tissues of the neck.</li>
-        </ul>
-        <h3 class="subheading">Communicating with the Radiologist</h3>
-        <p>When communicating with the radiologist about a CT scan, be sure to provide a clear and concise summary of your findings. Use appropriate medical terminology, but also be aware of your audience and avoid using jargon that may not be familiar to all members of the medical team. If you are uncertain about your interpretation of the scan, don't hesitate to ask for clarification or additional guidance from the radiologist or a senior member of the medical team.</p>
-        <div class="section">
-            <h2 class="subheading"> CT features of some common conditions in neuroimaging:</h2>
-           
+      <h2 class="subheading">Introduction</h2>
+      <p>
+        CT scans are commonly used to evaluate patients with suspected brain or cervical spine injury.
+        As a junior doctor, having a structured approach to CT analysis helps with early recognition of
+        life-threatening pathology and improves communication with radiology and the trauma team.
+      </p>
+    </div>
 
-            <table>
-              <tr>
-                <th>Condition</th>
-                <th>CT Features</th>
-              </tr>
-              <tr>
-                <td>Subdural Hemorrhage</td>
-                <td>Crescent-shaped hyperdensity that follows the contour of the brain and crosses suture lines. May have a mass effect and midline shift.</td>
-              </tr>
-              <tr>
-                <td>Epidural Hemorrhage</td>
-                <td>Biconvex hyperdensity that does not cross suture lines. May have a characteristic lens-shaped appearance. May have a mass effect and midline shift.</td>
-              </tr>
-              <tr>
-                <td>Intracranial Hemorrhage</td>
-                <td>Hyperdensity with a mass effect and midline shift, location and shape depends on the type of hematoma.</td>
-              </tr>
-              <tr>
-                <td>Generic Tumors (Space-Occupying Lesions)</td>
-                <td>Irregular mass with varying degrees of contrast enhancement and surrounding edema. Midline shift and mass effect may be present.</td>
-              </tr>
-              <tr>
-                <td>Meningitis</td>
-                <td>May show effacement of the sulci, diffuse or localized edema, enhancement of the meninges, and/or ventriculomegaly.</td>
-              </tr>
-              <tr>
-                <td>Pneumocephalus</td>
-                <td>Collection of air within the intracranial cavity, often seen as a hypodense area on CT.</td>
-              </tr>
-              <tr>
-                <td>Base of Skull Fracture</td>
-                <td>May show fracture lines, air-fluid levels in the sinuses, or subdural hematoma along the petrous ridge.</td>
-              </tr>
-              
-              <tr>
-                <td>Sub-Arachnoid Hemorrhage (Diffuse and Localized)</td>
-                <td>Diffuse SAH may show diffuse hyperdensity along the cortical surface, while localized SAH may show focal hyperdensity in a particular area.</td>
-              </tr>
-              <tr>
-                <td>C-Spine Fractures</td>
-                <td>May show fractures of the vertebral bodies, transverse processes, or spinous processes. Alignment may be abnormal.</td>
-              </tr>
-            </table>
-            <div class="section">
-                <h2 class="subheading">Please click on the images on this page to enlarge them</h2>
-                <img src="/images/normalBrainCt.jpg" alt="Normal CT Brain" class="image" onclick="toggleFullscreenImage('/images/normalBrainCt.jpg')">
-                <caption>Normal CT Brain</caption>
-                <img src="/images/subdural_haemorrhage.jpg" alt="Subdural Hemorrhage" class="image" onclick="toggleFullscreenImage('/images/subdural_haemorrhage.jpg')">
-                <caption>Subdural Hemorrhage</caption>
-                <img src="/images/EpiduralHematoma.jpg" alt="Epidural Hemorrhage" class="image" onclick="toggleFullscreenImage('/images/EpiduralHematoma.jpg')">
-                <caption>Epidural Hemorrhage</caption>
-                <img src="/images/intracranialHemmorhage.jpg" alt="Intra-cranial Hemorrhage" class="image" onclick="toggleFullscreenImage('/images/intracranialHemmorhage.jpg')">
-                <caption>Intra-cranial Hemorrhage</caption>
-                <img src="/images/brainTumor.jpeg" alt="CT of brain Tumors" class="image" onclick="toggleFullscreenImage('/images/brainTumor.jpeg')">
-                <caption>CT of brain Tumors</caption>
-                <img src="/images/meningitis.jpeg" alt="CT of Meningitis" class="image" onclick="toggleFullscreenImage('/images/meningitis.jpeg')">
-                <caption>CT of Meningitis</caption>
-                <img src="/images/baseOfSkull1.jpg" alt="Diagram showing base of skull anatomy 1" class="image" onclick="toggleFullscreenImage('/images/baseOfSkull1.jpg')">
-                <caption>Diagram showing base of skull anatomy 1</caption>
-                <img src="/images/baseOfSkull2.jpg" alt="Diagram showing base of skull anatomy 2" class="image" onclick="toggleFullscreenImage('/images/baseOfSkull2.jpg')">
-                <caption>Diagram showing base of skull anatomy 2</caption>
-                <img src="/images/SAHDiffuse.png" alt="Diffuse Sub-arachnoid Hemorrhage" class="image" onclick="toggleFullscreenImage('/images/SAHDiffuse.png')">
-                <caption>Diffuse Sub-arachnoid Hemorrhage</caption>
-                <img src="/images/SAHLocal.jpg" alt="Localized Sub-arachnoid Hemorrhage" class="image" onclick="toggleFullscreenImage('/images/SAHLocal.jpg')">
-                <caption>Localized Sub-arachnoid Hemorrhage</caption>
-                <img src="/images/CspineFracture.jpeg" alt="An example of a C-spine Fracture on CT" class="image" onclick="toggleFullscreenImage('/images/CspineFracture.jpeg')">
-                <caption>An example of a C-spine Fracture on CT</caption>
+    <div class="section">
+      <h2 class="subheading">CT Brain Analysis – Key Features</h2>
+      <p>When reviewing a CT brain, systematically look for:</p>
+      <ul>
+        <li>
+          <strong>Midline shift:</strong> Displacement of midline structures (falx cerebri, septum pellucidum)
+          suggests mass effect from haemorrhage, tumour or major oedema.
+        </li>
+        <li>
+          <strong>Haemorrhage:</strong> Hyperdense areas. Classify as epidural, subdural, intraparenchymal, or
+          subarachnoid based on location and shape.
+        </li>
+        <li>
+          <strong>Ischaemia:</strong> Hypodense regions in a vascular territory, loss of grey–white differentiation,
+          sulcal effacement and early swelling.
+        </li>
+        <li>
+          <strong>Ventricular size:</strong> Look for dilatation, compression or asymmetry suggesting hydrocephalus,
+          raised ICP or mass effect.
+        </li>
+        <li>
+          <strong>Skull and base of skull:</strong> Fracture lines, air in cranial cavity, fluid levels in sinuses.
+        </li>
+      </ul>
+    </div>
 
-            </div>
-            <div class="section">
-                <h2 class="subheading"> The different intracranial infarcts and their CT features:</h2>
-               
+    <div class="section">
+      <h2 class="subheading">CT C-Spine Analysis – Key Features</h2>
+      <p>For the cervical spine CT, adopt a “bones, alignment, joints, soft tissue” approach:</p>
+      <ul>
+        <li><strong>Bony injury:</strong> Vertebral body, pedicle, lamina, spinous/transverse process fractures.</li>
+        <li><strong>Alignment:</strong> Step-offs, listhesis, abnormal angulation, loss of normal lordosis.</li>
+        <li><strong>Dislocations/subluxations:</strong> Facet dislocation, perched or locked facets.</li>
+        <li><strong>Spinal canal and cord:</strong> Canal compromise, retropulsed fragments, visible cord compression (on CT myelogram or MRI as follow-up).</li>
+        <li><strong>Soft tissues:</strong> Prevertebral soft tissue swelling, ligamentous injury, haematoma.</li>
+      </ul>
+    </div>
 
-                        <table>
-                        <tr>
-                            <th>Intracranial Infarct</th>
-                            <th>CT Features</th>
-                        </tr>
-                        <tr>
-                            <td>Ischemic stroke</td>
-                            <td>Area of low attenuation in the affected vascular territory, with or without mass effect</td>
-                        </tr>
-                        <tr>
-                            <td>Hemorrhagic stroke</td>
-                            <td>Hyperdense area (blood) in the brain parenchyma, with or without mass effect</td>
-                        </tr>
-                        <tr>
-                            <td>Cerebral venous thrombosis</td>
-                            <td>Empty delta sign (contrast filling of superior sagittal sinus with a central unenhanced area)</td>
-                        </tr>
-                            <td>Brain abscess</td>
-                            <td>Ring-enhancing lesion with surrounding edema</td>
-                        </tr>
-                        <tr>
-                            <td>Multiple sclerosis plaque</td>
-                            <td>Well-defined area of low attenuation with no mass effect, often periventricular in location</td>
-                        </tr>
-                        </table>
-            </div>
-            <div class="section">
-                <img src="/images/acute_infarct.jpg" alt="An Intracranial Infarct" class="image" onclick="toggleFullscreenImage('/images/acute_infarct.jpg')">
-                <caption>n Intracranial Infarct</caption>
-                <img src="/images/ischaemicStroke.jpg" alt="Ischemic Stroke" class="image" onclick="toggleFullscreenImage('/images/ischaemicStroke.jpg')">
-                <caption>Ischemic Stroke</caption>
-                <img src="/images/intracranialHemmorhage.jpg" alt="Hemorrhagic stroke" class="image" onclick="toggleFullscreenImage('/images/intracranialHemmorhage.jpg')">
-                <caption>Epidural Hemorrhage</caption>
-                <img src="/images/cerebralVenous Thrombosis.jpg" alt="Cerebral venous thrombosis" class="image" onclick="toggleFullscreenImage('/images/cerebralVenous Thrombosis.jpg')">
-                <caption>Cerebral venous thrombosis</caption>
-                <img src="/images/brainAbscess.jpg" alt="CT of Brain Abscess" class="image" onclick="toggleFullscreenImage('/images/brainAbscess.jpg')">
-                <caption>CT of Brain Abscess</caption>
-                <img src="/images/MsSclerosisPlaque.jpg" alt="Multiple sclerosis plaque" class="image" onclick="toggleFullscreenImage('/images/MsSclerosisPlaque.jpg')">
-                <caption>Multiple sclerosis plaque</caption>
+    <div class="section">
+      <h2 class="subheading">CT Features of Common Intracranial Conditions</h2>
+      <table>
+        <tr>
+          <th>Condition</th>
+          <th>CT Features</th>
+        </tr>
+        <tr>
+          <td>Subdural haemorrhage</td>
+          <td>
+            Crescent-shaped hyperdensity along brain surface, crossing suture lines, may track over a large
+            area. Often associated with mass effect and possible midline shift.
+          </td>
+        </tr>
+        <tr>
+          <td>Epidural haemorrhage</td>
+          <td>
+            Biconvex (lens-shaped) hyperdensity that typically does not cross suture lines. May cause mass
+            effect and midline shift; commonly related to skull fracture.
+          </td>
+        </tr>
+        <tr>
+          <td>Intracerebral / intraparenchymal haemorrhage</td>
+          <td>
+            Hyperdense collection within brain parenchyma with variable mass effect. Appearance depends on
+            location and size; may extend into ventricles.
+          </td>
+        </tr>
+        <tr>
+          <td>Space-occupying lesions (tumours, metastases)</td>
+          <td>
+            Irregular or rounded mass, often with surrounding hypodense vasogenic oedema, variable contrast
+            enhancement, and possible midline shift.
+          </td>
+        </tr>
+        <tr>
+          <td>Meningitis</td>
+          <td>
+            May show sulcal effacement, diffuse or localised oedema, meningeal enhancement with contrast,
+            and/or ventriculomegaly. CT can be normal; clinical correlation is essential.
+          </td>
+        </tr>
+        <tr>
+          <td>Pneumocephalus</td>
+          <td>
+            Intracranial air appearing as very low-density (black) areas, often after trauma or neurosurgery.
+          </td>
+        </tr>
+        <tr>
+          <td>Base of skull fracture</td>
+          <td>
+            Fracture lines through temporal bone or skull base, air–fluid levels in sinuses or mastoid air cells,
+            possible associated extra-axial haemorrhage.
+          </td>
+        </tr>
+        <tr>
+          <td>Subarachnoid haemorrhage (SAH)</td>
+          <td>
+            Hyperdensity in sulci, basal cisterns, or fissures. Diffuse SAH shows widespread cortical sulcal
+            hyperdensity; localised SAH may be focal in a specific sulcus or cistern.
+          </td>
+        </tr>
+        <tr>
+          <td>C-spine fractures</td>
+          <td>
+            Fracture lines of vertebral bodies or posterior elements, possible malalignment. Look carefully at
+            occipito-cervical and cervico-thoracic junctions.
+          </td>
+        </tr>
+      </table>
+    </div>
 
-            </div>
-            
-            
-            
-            
-        </div>
-        <h3 class="subheading">Conclusion</h3>
-        <p>Analyzing CT brain and cervical spine scans can be a complex task, but with a basic understanding of key features to look for, junior doctors can make a preliminary assessment and communicate effectively with other members of the medical team. Ongoing education and training are important for continued development of these skills.</p>
-      </div>
-      <script>
-        function toggleFullscreenImage(src) {
-        let overlay = document.getElementById('fullscreen-image-overlay');
-      
-        if (!overlay) {
-          overlay = document.createElement('div');
-          overlay.id = 'fullscreen-image-overlay';
-          overlay.classList.add('fullscreen-image-overlay');
-          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-          overlay.onclick = () => toggleFullscreenImage(null);
-          document.body.appendChild(overlay);
-        } else {
-          document.body.removeChild(overlay);
-        }
+    <div class="section">
+      <h2 class="subheading">Example CT Images (Click to Enlarge)</h2>
+
+      <figure>
+        <img src="/images/normalBrainCt.jpg" alt="Normal CT Brain" class="image"
+             onclick="toggleFullscreenImage('/images/normalBrainCt.jpg')">
+        <figcaption>Normal CT Brain</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/subdural_haemorrhage.jpg" alt="Subdural haemorrhage" class="image"
+             onclick="toggleFullscreenImage('/images/subdural_haemorrhage.jpg')">
+        <figcaption>Subdural Haemorrhage</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/EpiduralHematoma.jpg" alt="Epidural haemorrhage" class="image"
+             onclick="toggleFullscreenImage('/images/EpiduralHematoma.jpg')">
+        <figcaption>Epidural Haemorrhage</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/intracranialHemmorhage.jpg" alt="Intra-cranial haemorrhage" class="image"
+             onclick="toggleFullscreenImage('/images/intracranialHemmorhage.jpg')">
+        <figcaption>Intra-cranial Haemorrhage</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/brainTumor.jpeg" alt="CT of brain tumour" class="image"
+             onclick="toggleFullscreenImage('/images/brainTumor.jpeg')">
+        <figcaption>CT of Brain Tumour</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/meningitis.jpeg" alt="CT of meningitis" class="image"
+             onclick="toggleFullscreenImage('/images/meningitis.jpeg')">
+        <figcaption>CT Features of Meningitis</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/baseOfSkull1.jpg" alt="Base of skull anatomy – diagram 1" class="image"
+             onclick="toggleFullscreenImage('/images/baseOfSkull1.jpg')">
+        <figcaption>Base of Skull Anatomy – Diagram 1</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/baseOfSkull2.jpg" alt="Base of skull anatomy – diagram 2" class="image"
+             onclick="toggleFullscreenImage('/images/baseOfSkull2.jpg')">
+        <figcaption>Base of Skull Anatomy – Diagram 2</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/SAHDiffuse.png" alt="Diffuse subarachnoid haemorrhage" class="image"
+             onclick="toggleFullscreenImage('/images/SAHDiffuse.png')">
+        <figcaption>Diffuse Subarachnoid Haemorrhage</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/SAHLocal.jpg" alt="Localised subarachnoid haemorrhage" class="image"
+             onclick="toggleFullscreenImage('/images/SAHLocal.jpg')">
+        <figcaption>Localised Subarachnoid Haemorrhage</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/CspineFracture.jpeg" alt="C-spine fracture on CT" class="image"
+             onclick="toggleFullscreenImage('/images/CspineFracture.jpeg')">
+        <figcaption>Example of a C-spine Fracture on CT</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Intracranial Infarcts and Related Lesions – CT Features</h2>
+      <table>
+        <tr>
+          <th>Intracranial Lesion</th>
+          <th>CT Features</th>
+        </tr>
+        <tr>
+          <td>Acute ischaemic stroke</td>
+          <td>
+            Area of low attenuation in a vascular territory, loss of grey–white differentiation, sulcal effacement;
+            may have mild mass effect.
+          </td>
+        </tr>
+        <tr>
+          <td>Haemorrhagic stroke</td>
+          <td>
+            Hyperdense intraparenchymal blood clot with or without surrounding oedema and mass effect; may have
+            intraventricular extension.
+          </td>
+        </tr>
+        <tr>
+          <td>Cerebral venous thrombosis</td>
+          <td>
+            May show “empty delta sign” with contrast (unenhanced thrombus centrally with enhancing sinus wall),
+            venous infarcts, or haemorrhagic venous infarcts.
+          </td>
+        </tr>
+        <tr>
+          <td>Brain abscess</td>
+          <td>
+            Ring-enhancing lesion with surrounding oedema; often appears as a mass lesion with central low
+            attenuation. MRI and clinical context help distinguish from tumour.
+          </td>
+        </tr>
+        <tr>
+          <td>Multiple sclerosis plaque</td>
+          <td>
+            Well-defined low-attenuation (or subtle) lesions, often periventricular; better seen on MRI, but CT may
+            show hypodense plaques without mass effect.
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <figure>
+        <img src="/images/acute_infarct.jpg" alt="Acute intracranial infarct" class="image"
+             onclick="toggleFullscreenImage('/images/acute_infarct.jpg')">
+        <figcaption>Acute Intracranial Infarct</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/ischaemicStroke.jpg" alt="Ischaemic stroke" class="image"
+             onclick="toggleFullscreenImage('/images/ischaemicStroke.jpg')">
+        <figcaption>Ischaemic Stroke</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/intracranialHemmorhage.jpg" alt="Haemorrhagic stroke" class="image"
+             onclick="toggleFullscreenImage('/images/intracranialHemmorhage.jpg')">
+        <figcaption>Haemorrhagic Stroke</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/cerebralVenous Thrombosis.jpg" alt="Cerebral venous thrombosis" class="image"
+             onclick="toggleFullscreenImage('/images/cerebralVenous Thrombosis.jpg')">
+        <figcaption>Cerebral Venous Thrombosis</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/brainAbscess.jpg" alt="CT of brain abscess" class="image"
+             onclick="toggleFullscreenImage('/images/brainAbscess.jpg')">
+        <figcaption>CT of Brain Abscess</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/images/MsSclerosisPlaque.jpg" alt="Multiple sclerosis plaque" class="image"
+             onclick="toggleFullscreenImage('/images/MsSclerosisPlaque.jpg')">
+        <figcaption>Multiple Sclerosis Plaque</figcaption>
+      </figure>
+    </div>
+
+    <div class="section">
+      <h3 class="subheading">Conclusion</h3>
+      <p>
+        CT brain and C-spine interpretation is complex and radiologist input is essential, but a structured
+        approach allows junior doctors to identify major red flags early, prioritise management and communicate
+        effectively with the team. Keep revisiting real cases and correlate CT findings with clinical presentation
+        to build confidence.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    function toggleFullscreenImage(src) {
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
       }
-      </script>
-
+    }
+  </script>
 </body>
 </html>
