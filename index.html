@@ -1,161 +1,467 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="ED Assistant is a web application for managing emergency department patients and resources. Aimed at junior doctors and students.">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" integrity="sha384-zfNGgMjYzt5H5nc+i1/B2B8WU6UEjv6LTboU6xByc6aWjJkSKv3dC3yX9Xj8WlQu" crossorigin="anonymous">
-  <link rel="icon" href="/images/emergency-icon-512x512-cka5azee.png" type="image/x-icon">
-  <style>
-    /* Add your custom styles here if needed */
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .logo-container h1 {
-      margin: 0;
-    }
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-decoration: underline;
-    }
-    article {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    li {
-      margin-bottom: 1rem;
-    }
-    a {
-      text-decoration: none;
-      color: #007bff;
-    }
-    a:hover {
-      color: #0056b3;
-    }
-    .age-menu {
-      background-color: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin-top: 2rem;
-    }
-    .age-menu-heading {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .age-menu-links {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .age-menu-item {
-      text-align: center;
-      width: 48%;
-    }
-    .age-menu-link-text {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-    .age-menu-link-icon {
-      font-size: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo-container">
-      <h1 style="color: antiquewhite;">Emergency Department Assistant</h1>
-      <i class="fa-solid fa-syringe"></i>
-    </div>
-  </header>
-  <script async src="https://cse.google.com/cse.js?cx=220b68de6e1ff4d36"></script>
-  <div class="gcse-search"></div>
+/* === Base === */
 
-  <main>
-    <section>
-      <h2>About this Assistant</h2>
-      <article>
-        <p>Thank you for using our Emergency Department Assistant. This tool is designed to help medical students and young doctors in emergency settings. It provides history, clinical examination guides, calculators, and checklists to assist you in patient management.</p>
-        <p>Please note that this Assistant is not a substitute for clinical examination and assessment. Use your clinical judgment first and foremost, and use this tool to enhance your understanding and productivity.</p>
-        <p>Enjoy using it to improve patient care. Check back for updates and join our learning group and Twitter feed for more.</p>
-        <ul>
-          <li><a href="https://chat.whatsapp.com/GReC7EIpuj28wT7go8rGEw" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-          <li><a href="https://t.me/+Oauwmc7ynVNmYjc0" target="_blank"><i class="fa-brands fa-telegram"></i></a></li>
-          <li><a href="https://twitter.com/@CMadadeni" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-        </ul>
-        <p>Check out our presentations on various ED topics <a href="https://jazzy-fox-934d99.netlify.app/" target="_blank">here</a>.</p>
-        <p>Please note that values are based on South African/British standards.</p>
-      </article>
-    </section>
-    
-    <div class="age-menu">
-      <h2 class="age-menu-heading">To begin, choose a category below:</h2>
-      <ul class="age-menu-links">
-        <li class="age-menu-item">
-          <a href="/adultresus/adultResus.html">
-            <span class="age-menu-link-text">Resuscitation</span>
-            <i class="fa-solid fa-truck-medical age-menu-link-icon"></i>
-          </a>
-        </li>
-        <li class="age-menu-item">
-          <a href="/adult/adult.html">
-            <span class="age-menu-link-text">Adult</span>
-            <i class="fas fa-user age-menu-link-icon"></i>
-          </a>
-        </li>
-        <li class="age-menu-item">
-          <a href="/weightPaeds.html">
-            <span class="age-menu-link-text">Weight Based Pediatric Resuscitation Tables</span>
-            <p>If using on mobile please view in portrait</p>
-            <i class="fas fa-regular fa-children age-menu-link-icon"></i>
-          </a>
-        </li>
-        <li class="age-menu-item">
-          <a href="/paeds/paedsMenu.html">
-            <span class="age-menu-link-text">Pediatrics </span>
-            <i class="fas fa-child age-menu-link-icon"></i>
-          </a>
-        </li>
-        
-        <li class="age-menu-item">
-          <a href="/OBGYN/obgynMenu.html">
-            <span class="age-menu-link-text">OBGYN Emergencies<br> 
-            <i class="fas fa-child age-menu-link-icon"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </main>
-  
-</body>
-</html>
+:root {
+  --bg: #f5f7fb;
+  --bg-alt: #ffffff;
+  --primary: #0f6abf;
+  --primary-soft: #e1efff;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --border-subtle: #e5e7eb;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --shadow-soft: 0 10px 30px rgba(15, 106, 191, 0.08);
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Layout wrappers === */
+
+main {
+  padding: 0 1rem 2rem;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+  border-radius: 20px;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 4px 18px rgba(15, 106, 191, 0.03);
+}
+
+.section-header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+}
+
+.section-header p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* === Header / nav === */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(245, 247, 251, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), #1691ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-logo i {
+  font-size: 1rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.nav-toggle {
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-toggle i {
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  display: none;
+}
+
+.site-nav.open {
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 1rem 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.site-nav li {
+  margin: 0.15rem 0;
+}
+
+.site-nav a {
+  display: block;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+  color: var(--primary);
+}
+
+/* === Search section === */
+
+.search-section {
+  max-width: 1100px;
+  margin: 0.5rem auto 0.5rem;
+  padding: 0 1rem;
+}
+
+/* === Hero === */
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-inner {
+  background: radial-gradient(circle at top left, var(--primary-soft), #ffffff);
+  border-radius: 24px;
+  padding: 1.4rem 1.1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid var(--primary-soft);
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: 1.6rem;
+}
+
+.hero-lead {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn.secondary {
+  background-color: #ffffff;
+  color: var(--primary);
+  border: 1px solid var(--primary-soft);
+}
+
+.hero-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+}
+
+/* === Cards / category grid === */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 0.9rem 0.95rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 6px 16px rgba(15, 106, 191, 0.03);
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    border-color 0.12s ease;
+  color: inherit;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-soft);
+  box-shadow: 0 10px 24px rgba(15, 106, 191, 0.08);
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.card-icon i {
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: var(--primary);
+  background-color: var(--primary-soft);
+}
+
+/* === About === */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  font-size: 0.9rem;
+}
+
+.about-grid p {
+  margin-top: 0;
+}
+
+.standards-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.about-meta h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.about-meta ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* === Community & teaching === */
+
+.community-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 999px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+}
+
+.social-link i {
+  font-size: 1.1rem;
+  color: #25d366; /* WhatsApp green-ish but subtle across all */
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.resource-link i {
+  font-size: 1rem;
+}
+
+.small-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* === Footer === */
+
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 0.85rem 1rem 1rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* === Larger screens === */
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .header-inner {
+    padding: 0.75rem 1rem;
+  }
+
+  .site-nav {
+    display: block !important;
+  }
+
+  .site-nav ul {
+    margin: 0;
+    padding: 0;
+    border-top: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .site-nav li {
+    margin: 0;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
+    padding: 0.1rem 0;
+  }
+
+  main {
+    padding: 0 1.5rem 2rem;
+  }
+
+  .hero-inner {
+    padding: 1.6rem 1.6rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .community-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
