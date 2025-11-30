@@ -7,37 +7,37 @@
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/medications.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
       table {
         border-collapse: collapse;
         width: 100%;
       }
-      
+
       th, td {
         text-align: left;
         padding: 8px;
       }
-      
+
       th {
         background-color: #4CAF50;
         color: white;
       }
-      
+
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-      
+
       input[type=text] {
         width: 100%;
         padding: 12px 20px;
@@ -46,26 +46,71 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      
+
       input[type=text]:focus {
         border: 2px solid #4CAF50;
       }
+
+      .warning-box {
+        border-left: 4px solid darkred;
+        background: rgba(255, 240, 240, 0.95);
+        padding: 10px 15px;
+        margin: 20px 0;
+        color: #600;
+      }
+
+      .info-box {
+        border-left: 4px solid navy;
+        background: rgba(240, 248, 255, 0.95);
+        padding: 10px 15px;
+        margin: 20px 0;
+      }
+
+      .section h2 {
+        color: #004080;
+        margin-top: 20px;
+      }
+
+      .section h3 {
+        color: #003366;
+        margin-top: 15px;
+      }
+
+      .tagline {
+        font-size: 0.9rem;
+        font-weight: normal;
+        font-style: italic;
+      }
+
+      @media (max-width: 768px) {
+        table {
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
+
   <header>
     <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Commonly Used Drugs for Endocrine Diseases</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-container">
+        <h1 class="main-header">Commonly Used Drugs for Endocrine Diseases</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
         </div>
-      </nav>
-    </header>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+
   <body>
-   
+    <div class="section warning-box">
+      <strong>ED Safety Note:</strong> Doses below are typical adult starting ranges.  
+      Always adjust for age, renal function, weight and comorbidities, and follow your
+      <strong>local hospital protocol</strong>. When in doubt – call a senior.
+    </div>
+
     <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
+
     <table id="endocrine">
       <tr>
         <th>Drug</th>
@@ -75,73 +120,323 @@
       </tr>
       <tr>
         <td>Levothyroxine</td>
-        <td>50-200 mcg/day</td>
+        <td>50–200 mcg once daily (lower starting doses in elderly / cardiac disease)</td>
         <td>Oral</td>
         <td>Hypothyroidism</td>
       </tr>
       <tr>
         <td>Metformin</td>
-        <td>500-2000 mg/day</td>
+        <td>500–2000 mg/day in divided doses (start low and titrate)</td>
         <td>Oral</td>
         <td>Type 2 diabetes mellitus, polycystic ovary syndrome</td>
       </tr>
       <tr>
-        <td>Insulin</td>
-        <td>Individualized based on blood glucose levels</td>
+        <td>Insulin (short-acting / rapid analogue)</td>
+        <td>Individualised; in ED typically 0.1 u/kg IV in DKA bolus or fixed-rate infusion as per protocol</td>
         <td>Subcutaneous or intravenous</td>
-        <td>Type 1 diabetes mellitus, type 2 diabetes mellitus, hyperkalemia</td>
+        <td>Type 1 and 2 diabetes, DKA/HHS, hyperkalaemia (with dextrose)</td>
       </tr>
       <tr>
         <td>Glimepiride</td>
-        <td>1-4 mg once daily with breakfast or the first main meal, titrated based on response</td>
+        <td>1–4 mg once daily with breakfast or first main meal</td>
         <td>Oral</td>
-        <td>TType 2 diabetes mellitus</td>
+        <td>Type 2 diabetes mellitus</td>
       </tr>
       <tr>
-        <td>Protaphane (also known as NPH insulin)</td>
-        <td>Individualized based on blood glucose levels, typically 10 units or more once or twice daily</td>
-        <td>SSubcutaneous injection</td>
-        <td>Type 1 and type 2 diabetes mellitus</td>
+        <td>Protaphane (NPH insulin)</td>
+        <td>Individualised basal dose; often 0.2–0.4 u/kg/day in 1–2 doses</td>
+        <td>Subcutaneous injection</td>
+        <td>Type 1 and type 2 diabetes mellitus (basal insulin)</td>
       </tr>
       <tr>
-        <td>Glyburide</td>
-        <td>1.25-20 mg/day</td>
+        <td>Gliclazide / Glyburide (SU class)</td>
+        <td>Gliclazide 40–320 mg/day; Glyburide 1.25–20 mg/day in divided doses</td>
         <td>Oral</td>
         <td>Type 2 diabetes mellitus</td>
       </tr>
       <tr>
         <td>Liraglutide</td>
-        <td>0.6-1.8 mg/day</td>
+        <td>0.6–1.8 mg once daily</td>
         <td>Subcutaneous</td>
-        <td>Type 2 diabetes mellitus, obesity</td>
+        <td>Type 2 diabetes mellitus, obesity (as per indication)</td>
       </tr>
       <tr>
         <td>Calcitonin</td>
-        <td>100-200 IU/day</td>
+        <td>100–200 IU/day (dosing varies by indication)</td>
         <td>Subcutaneous, intramuscular, or intravenous</td>
-        <td>Osteoporosis, hypercalcemia</td>
+        <td>Osteoporosis, hypercalcaemia</td>
       </tr>
     </table>
+
+    <!-- DKA EMERGENCY SUMMARY -->
+    <div class="section">
+      <h2>DKA – Emergency Management Summary (Adult)</h2>
+      <p class="tagline">Use this as a teaching aide. Always follow your local DKA protocol.</p>
+
+      <h3>Typical Diagnostic Triad (adult)</h3>
+      <ul>
+        <li>Glucose &gt; 11 mmol/L (or known diabetes)</li>
+        <li>Ketonaemia (blood ketones ≥ 3 mmol/L or moderate/large urine ketones)</li>
+        <li>Metabolic acidosis (pH &lt; 7.3 and/or HCO₃⁻ &lt; 15 mmol/L)</li>
+      </ul>
+
+      <h3>ED Priorities (ABCDE)</h3>
+      <ol>
+        <li>Airway &amp; Breathing – high-flow O₂ if hypoxic, treat any precipitating cause (e.g. infection).</li>
+        <li>Circulation – IV access, monitor BP, HR, urine output, cardiac monitoring.</li>
+        <li>Baseline tests – bedside glucose, ketones, VBG/ABG, U&amp;E, FBC, cultures if indicated, ECG, pregnancy test if appropriate.</li>
+      </ol>
+
+      <h3>Fluids, Insulin &amp; Potassium (Adults)</h3>
+      <table>
+        <tr>
+          <th>Step</th>
+          <th>Typical ED Action</th>
+          <th>Key Points</th>
+        </tr>
+        <tr>
+          <td>1. IV Fluids</td>
+          <td>0.9% NaCl; initial 1 L over 1 hour (slower in elderly / cardiac failure)</td>
+          <td>Reassess BP, urine output, lungs, and adjust rate. Avoid fluid overload.</td>
+        </tr>
+        <tr>
+          <td>2. Potassium</td>
+          <td>Replace once urine output established and K⁺ known</td>
+          <td>
+            K⁺ &lt; 3.5: <strong>senior review</strong>, replacement before starting insulin.<br>
+            K⁺ 3.5–5.0: add ~20–40 mmol KCl to each litre (as per protocol).<br>
+            K⁺ &gt; 5.0: no K⁺ initially, recheck frequently.
+          </td>
+        </tr>
+        <tr>
+          <td>3. Insulin</td>
+          <td>Fixed-rate insulin infusion (FRII) – usually 0.1 u/kg/hour IV</td>
+          <td>Start after first litre of fluid and only if K⁺ ≥ 3.5 mmol/L. Aim glucose fall 3–5 mmol/L/hour.</td>
+        </tr>
+        <tr>
+          <td>4. Dextrose</td>
+          <td>Add 5–10% dextrose when glucose &lt; ~14 mmol/L</td>
+          <td>Continue insulin to clear ketones; run dextrose to prevent hypoglycaemia.</td>
+        </tr>
+      </table>
+
+      <div class="warning-box">
+        <strong>Call a senior early</strong> for: shock, severe acidosis (pH &lt; 7.1), K⁺ &lt; 3.5 or &gt; 6, altered GCS, pregnancy, renal or cardiac failure, or any uncertainty.
+      </div>
+    </div>
+
+    <!-- THYROID STORM VS MYXOEDEMA -->
+    <div class="section">
+      <h2>Thyroid Storm vs Myxoedema Coma – Quick Reference</h2>
+
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Thyroid Storm</th>
+          <th>Myxoedema Coma</th>
+        </tr>
+        <tr>
+          <td>Typical patient</td>
+          <td>Known / suspected hyperthyroid, often younger–middle-aged</td>
+          <td>Long-standing hypothyroidism, elderly or frail</td>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>High fever (&gt; 38.5–39°C)</td>
+          <td>Often hypothermic or normal</td>
+        </tr>
+        <tr>
+          <td>Heart rate</td>
+          <td>Marked tachycardia, AF common</td>
+          <td>Bradycardia or inappropriately normal</td>
+        </tr>
+        <tr>
+          <td>Mental state</td>
+          <td>Agitated, delirious, psychotic, seizures</td>
+          <td>Lethargic, stupor, coma</td>
+        </tr>
+        <tr>
+          <td>BP / CVS</td>
+          <td>High output failure, wide pulse pressure, may progress to shock</td>
+          <td>Hypotension, low output failure</td>
+        </tr>
+        <tr>
+          <td>Other features</td>
+          <td>Diarrhoea, vomiting, sweating, tremor</td>
+          <td>Hyponatraemia, hypoglycaemia, hypoventilation</td>
+        </tr>
+      </table>
+
+      <h3>ED Drug Management (Outline Only – follow local guidelines)</h3>
+
+      <table>
+        <tr>
+          <th>Condition</th>
+          <th>Key Drugs</th>
+          <th>Comments</th>
+        </tr>
+        <tr>
+          <td>Thyroid Storm</td>
+          <td>
+            <ul>
+              <li>Beta-blocker (e.g. Propranolol)</li>
+              <li>Thionamide (e.g. PTU or carbimazole)</li>
+              <li>Iodine solution (given <em>after</em> thionamide)</li>
+              <li>Hydrocortisone</li>
+            </ul>
+          </td>
+          <td>
+            Control HR and fever, treat trigger (infection, surgery, etc.), consider ICU.  
+            Sequence is important: thionamide → iodine → steroids.
+          </td>
+        </tr>
+        <tr>
+          <td>Myxoedema Coma</td>
+          <td>
+            <ul>
+              <li>IV Levothyroxine ± liothyronine (as per protocol)</li>
+              <li>Hydrocortisone (stress dose)</li>
+              <li>Cautious IV fluids</li>
+            </ul>
+          </td>
+          <td>
+            Support airway and ventilation, correct hypoglycaemia and electrolytes, active but gentle warming, treat sepsis. ICU care recommended.
+          </td>
+        </tr>
+      </table>
+
+      <div class="warning-box">
+        <strong>Both conditions are ICU-level emergencies.</strong> In the ED: stabilise, start first-line therapy if protocol is clear, and discuss with senior / endocrinology / ICU urgently.
+      </div>
+    </div>
+
+    <!-- SLIDING SCALE VS CORRECTIONAL INSULIN -->
+    <div class="section">
+      <h2>“Sliding Scale” vs Correctional Insulin</h2>
+      <p class="tagline">Teaching summary – not a full insulin protocol.</p>
+
+      <div class="info-box">
+        <strong>Key message:</strong> A “sliding scale only” (short-acting insulin based purely on current glucose,
+        with no basal insulin) is <strong>unreliable and can be unsafe</strong>.  
+        A safer approach is:
+        <ul>
+          <li>Appropriate <strong>basal insulin</strong> (e.g. Protaphane/NPH or long-acting analogue)</li>
+          <li>± <strong>mealtime insulin</strong> if eating</li>
+          <li>Plus a small dose of <strong>correctional insulin</strong> when capillary glucose is high</li>
+        </ul>
+      </div>
+
+      <h3>Example Adult Correctional Insulin (Rapid / Short-acting)</h3>
+      <p>Use in addition to the patient’s usual basal / meal insulin. Adjust for insulin sensitivity, renal function and frailty.</p>
+
+      <table>
+        <tr>
+          <th>Capillary Glucose (mmol/L)</th>
+          <th>Suggested Correction Dose*</th>
+          <th>Comments</th>
+        </tr>
+        <tr>
+          <td>7.1 – 10</td>
+          <td>0–1 units SC</td>
+          <td>No extra insulin needed in most stable patients.</td>
+        </tr>
+        <tr>
+          <td>10.1 – 14</td>
+          <td>2 units SC</td>
+          <td>Re-check glucose in 2–3 hours.</td>
+        </tr>
+        <tr>
+          <td>14.1 – 18</td>
+          <td>4 units SC</td>
+          <td>Consider infection or missed doses if persistent.</td>
+        </tr>
+        <tr>
+          <td>&gt; 18</td>
+          <td>6 units SC and <strong>discuss with senior</strong></td>
+          <td>Exclude DKA/HHS; may need IV insulin protocol.</td>
+        </tr>
+      </table>
+
+      <p class="tagline">*Example only. Always use your hospital’s insulin charts and protocols.</p>
+    </div>
+
+    <!-- GLYCAEMIC EMERGENCY ALGORITHMS -->
+    <div class="section">
+      <h2>Glycaemic Emergencies – ED Algorithms (Adult)</h2>
+
+      <h3>1. DKA – at a Glance</h3>
+      <ol>
+        <li>Confirm DKA (glucose, ketones, pH/HCO₃⁻).</li>
+        <li>ABC, oxygen if needed, IV access, monitoring, catheter if indicated.</li>
+        <li>Start 0.9% NaCl; take bloods (U&amp;E, FBC, cultures if sepsis suspected).</li>
+        <li>Check K⁺, correct as above, then start fixed-rate IV insulin.</li>
+        <li>Add dextrose when glucose &lt; ~14 mmol/L but continue insulin.</li>
+        <li>Identify and treat trigger (infection, MI, omission of insulin, etc.).</li>
+        <li>Admit to high-care/ICU or appropriate monitored bed.</li>
+      </ol>
+
+      <h3>2. HHS (Hyperosmolar Hyperglycaemic State)</h3>
+      <ul>
+        <li>Very high glucose (often &gt; 30 mmol/L), high osmolality, minimal ketones, often older and dehydrated.</li>
+      </ul>
+      <ol>
+        <li>ABC, IV access, careful fluid resuscitation (slower than DKA, high risk of overload and cerebral oedema).</li>
+        <li>0.9% NaCl as main fluid; aim to correct osmolality gradually.</li>
+        <li>Delay insulin until after initial fluid resuscitation unless ketones are significant.</li>
+        <li>Low-dose IV insulin infusion if needed, with close glucose and electrolyte monitoring.</li>
+        <li>Treat underlying cause (infection, MI, stroke, drugs, etc.).</li>
+        <li>Admit to monitored bed / high-care; discuss with senior early.</li>
+      </ol>
+
+      <h3>3. Severe Hypoglycaemia (Adult)</h3>
+      <div class="info-box">
+        <strong>Definition:</strong> BG usually &lt; 3.0 mmol/L with neuroglycopaenic symptoms
+        (confusion, seizures, coma) OR any symptomatic low sugar needing help.
+      </div>
+
+      <h4>a) If IV access available</h4>
+      <ul>
+        <li>Give IV dextrose:
+          <ul>
+            <li>e.g. 50 mL of 50% dextrose (25 g) OR 150–200 mL of 10% dextrose.</li>
+          </ul>
+        </li>
+        <li>Re-check glucose after 10–15 minutes; repeat if still low.</li>
+        <li>Once awake and able to swallow: give long-acting carb snack / meal.</li>
+      </ul>
+
+      <h4>b) If NO IV access</h4>
+      <ul>
+        <li>Glucagon 1 mg IM/SC (if available) AND urgent IV access.</li>
+        <li>Once IV is in, follow IV dextrose steps above.</li>
+      </ul>
+
+      <div class="warning-box">
+        Always look for and treat the cause of hypoglycaemia (excess insulin or SU, missed meals,
+        renal failure, sepsis, liver disease, alcohol, etc.) and <strong>observe the patient</strong> – rebound
+        hypoglycaemia is common, especially with sulfonylureas.
+      </div>
+    </div>
+
     <script>
-        function searchTable() {
-            let input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("endocrine");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[0];
-              if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-                } else {
-                  tr[i].style.display = "none";
-                }
-              }
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("endocrine");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
             }
           }
-        </script>
+        }
+      }
+    </script>
   </body>
-  </html>          
-       
+</html>

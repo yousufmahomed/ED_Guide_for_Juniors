@@ -1,150 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Commonly Used Analgesics in Hospitals</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
-      table {
-        border-collapse: collapse;
-        width: 100%;
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used Analgesics in Hospitals</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Soft dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      z-index: -1;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    input[type=text]:focus {
+      border-color: #4CAF50;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .warning {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Commonly Used Analgesics in Hospitals</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house"></i>
+        </a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+  <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for analgesics...">
+
+  <table id="analgesics">
+    <tr>
+      <th>Analgesic</th>
+      <th>Dosage</th>
+      <th>Route of Administration</th>
+    </tr>
+
+    <tr>
+      <td>Acetaminophen (Paracetamol)</td>
+      <td>500–1000 mg every 6 hours (max 4 g/day)</td>
+      <td>Oral, IV, rectal</td>
+    </tr>
+
+    <tr>
+      <td>Aspirin</td>
+      <td>300–600 mg every 4–6 hours</td>
+      <td>Oral</td>
+    </tr>
+
+    <tr>
+      <td>Diclofenac Sodium</td>
+      <td>50–75 mg every 8–12 hours</td>
+      <td>Oral, intramuscular</td>
+    </tr>
+
+    <tr>
+      <td>Fentanyl</td>
+      <td>25–100 mcg every 1–2 hours</td>
+      <td>IV, transdermal patch, transmucosal</td>
+    </tr>
+
+    <tr>
+      <td>Ibuprofen</td>
+      <td>200–400 mg every 6 hours (max 2400 mg/day)</td>
+      <td>Oral</td>
+    </tr>
+
+    <tr>
+      <td>Ketorolac <span class="warning">*</span></td>
+      <td>10–30 mg every 6 hours (max 5 days)</td>
+      <td>IV, IM</td>
+    </tr>
+
+    <tr>
+      <td>Morphine</td>
+      <td>2.5–10 mg every 4 hours titrated</td>
+      <td>IV, IM, SC</td>
+    </tr>
+
+    <tr>
+      <td>Pethidine (Meperidine) <span class="warning">**</span></td>
+      <td>50–75 mg every 4–6 hours</td>
+      <td>IM, IV</td>
+    </tr>
+
+    <tr>
+      <td>Tramadol</td>
+      <td>50–100 mg every 6 hours (max 400 mg/day)</td>
+      <td>Oral, IV</td>
+    </tr>
+
+    <tr>
+      <td>Oxycodone</td>
+      <td>5–10 mg every 4–6 hours</td>
+      <td>Oral, IV</td>
+    </tr>
+
+  </table>
+
+  <br>
+
+  <h3>
+    Download the 
+    <a href="/pdfs/ACUTE PAIN PROTOCOL KHC.pdf" class="emphasis-link" target="_blank">
+      Kimberley Hospital Pain Protocol
+    </a>
+  </h3>
+
+  <p class="warning">* Ketorolac: Avoid in renal impairment, elderly, bleeding risk, peptic ulcer disease.</p>
+  <p class="warning">** Pethidine: Avoid high doses due to risk of seizures (normeperidine). Do NOT exceed 75 mg without senior approval.</p>
+
+  <script>
+    function searchTable() {
+      let input = document.getElementById("search");
+      let filter = input.value.toUpperCase();
+      let table = document.getElementById("analgesics");
+      let tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        let txt = tr[i].textContent || tr[i].innerText;
+        tr[i].style.display = txt.toUpperCase().includes(filter) ? "" : "none";
       }
-      
-      th, td {
-        text-align: left;
-        padding: 8px;
-      }
-      
-      th {
-        background-color: #4CAF50;
-        color: white;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-      
-      input[type=text] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-      }
-      
-      input[type=text]:focus {
-        border: 2px solid #4CAF50;
-      }
-    </style>
-  </head>
-  <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Commonly Used Analgesics in Hospitals</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-  <body>
-   
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for analgesics...">
-    <table id="analgesics">
-      <tr>
-        <th>Analgesic</th>
-        <th>Dosage</th>
-        <th>Route of Administration</th>
-      </tr>
-      <tr>
-        <td>Acetaminophen (Paracetamol)</td>
-        <td>325-1000 mg every 4-6 hours</td>
-        <td>Oral or rectal</td>
-      </tr>
-      <tr>
-        <td>Aspirin</td>
-        <td>325-650 mg every 4-6 hours</td>
-        <td>Oral</td>
-      </tr>
-      <tr>
-        <td>Diclofenac Sodium</td>
-        <td>50-100 mg every 8-12 hours</td>
-        <td>Oral or intramuscular</td>
-      </tr>
-      <tr>
-        <td>Fentanyl</td>
-        <td>25-100 mcg every 1-2 hours</td>
-        <td>Intravenous, transdermal, or transmucosal</td>
-      </tr>
-      <tr>
-        <td>Ibuprofen</td>
-        <td>200-400 mg every 4-6 hours</td>
-        <td>Oral</td>
-      </tr>
-      <tr>
-        <td>Ketorolac</td>
-        <td>10-30 mg every 4-6 hours</td>
-        <td>Intravenous or intramuscular</td>
-      </tr>
-      <tr>
-        <td>Morphine</td>
-        <td>2.5-10 mg every 4 hours</td>
-        <td>Intravenous, intramuscular, or subcutaneous</td>
-      </tr>
-      <tr>
-        <td>Pethidine (Meperidine)</td>
-        <td>50-150 mg every 4-6 hours (ideally dont go above 75mg without seniors permission!!)</td>
-        <td>Intramuscular or intravenous</td>
-      </tr>
-      <tr>
-        <td>Tramadol</td>
-        <td>50-100 mg every 4-6 hours</td>
-        <td>IOral or intravenous</td>
-      </tr>
-      <tr>
-        <td>Oxycodone</td>
-        <td>5-15 mg every 4-6 hours</td>
-        <td>Oral or intravenous</td>
-      </tr>
-    </table>
-    <h3>Download the <a href="/pdfs/ACUTE PAIN PROTOCOL KHC.pdf" class="emphasis-link" target="_blank">Kimberly Hospital Pain Protocol</a></h3>
-    <script>
-        function searchTable() {
-            let input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("analgesics");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[0];
-              if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-                } else {
-                  tr[i].style.display = "none";
-                }
-              }
-            }
-          }
-        </script>
-        </body>
-        </html>
-          
-       
+    }
+  </script>
+
+</body>
+</html>

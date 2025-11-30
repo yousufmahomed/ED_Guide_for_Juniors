@@ -6,10 +6,47 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
- 
+  <style>
+    body {
+      background-color: grey;
+      color: whitesmoke;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    main h1 {
+      margin-top: 20px;
+    }
+
+    .links {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 20px;
+    }
+
+    .links li {
+      margin: 8px 0;
+    }
+
+    .links a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .safety-note {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
   </style>
 </head>
-<body style="background-color: grey; color:whitesmoke">
+<body>
   <header>
     <div class="logo-container">
       <h1>Commonly Used Medications</h1>
@@ -17,24 +54,38 @@
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
+
   <main>
-    <h1>Choose Which type of <em style="color: beige; font-weight:bolder; font-size:larger; text-decoration:underline">Commonly Used</em> medication you would like to view</h1>
+    <h1>
+      Choose which type of
+      <em style="color: beige; font-weight:bolder; font-size:larger; text-decoration:underline">
+        commonly used
+      </em>
+      medication you would like to view
+    </h1>
+
+    <p class="safety-note">
+      <strong>Important:</strong> These pages are intended as a quick reference for
+      <strong>adult dosing in the Emergency Department</strong>. Always:
+      • check your local / hospital protocols,
+      • adjust doses for renal/hepatic impairment,
+      • and discuss with a senior in complex or unstable patients.
+      Paediatric doses are listed separately where applicable.
+    </p>
+
     <ul class="links">
-        <li><a href="/adult/commonResus.html"> Resuscitation Drugs</a></li>
-      <li><a href="/adult/commonAntibiotics.html"> Antibiotics</a></li>
-      <li><a href="/adult/commonAnalgesia.html"> Analgesics</a></li>
+      <li><a href="/adult/commonResus.html">Resuscitation Drugs</a></li>
+      <li><a href="/adult/commonAntibiotics.html">Antibiotics</a></li>
+      <li><a href="/adult/commonAnalgesia.html">Analgesics</a></li>
       <li><a href="/adult/antiDysrhythm.html">Antidysrhythmic Drugs</a></li>
-      <li><a href="/adult/commonHpt.html"> Antihypertensive Drugs</a></li>
-      <li><a href="/adult/commonHiv.html"> HIV Drugs</a></li>
-      <li><a href="/adult/commonSedatives.html"> Sedatives</a></li>
-      <li><a href="/adult/commonPsych.html"> Antipsychotics and Neuroleptics</a></li>
-      <li><a href="/adult/commonEpilepsy.html"> Anti-Epileptic Medications</a></li>
-      <li><a href="/adult/commonEndocrine.html"> Drugs for Endocrine Diseases</a></li>
-      <li><a href="/adult/renalHepaticAdj.html"> Renal &amp; Hepatic dosage Adjustment</a></li>
-     
+      <li><a href="/adult/commonHpt.html">Antihypertensive Drugs</a></li>
+      <li><a href="/adult/commonHiv.html">HIV Drugs</a></li>
+      <li><a href="/adult/commonSedatives.html">Sedatives</a></li>
+      <li><a href="/adult/commonPsych.html">Antipsychotics and Neuroleptics</a></li>
+      <li><a href="/adult/commonEpilepsy.html">Anti-epileptic Medications</a></li>
+      <li><a href="/adult/commonEndocrine.html">Drugs for Endocrine Diseases</a></li>
+      <li><a href="/adult/renalHepaticAdj.html">Renal &amp; Hepatic Dosage Adjustment</a></li>
     </ul>
-  
-  </ul>
-</main>
+  </main>
 </body>
 </html>

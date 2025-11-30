@@ -7,38 +7,33 @@
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/medications.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
       table {
         border-collapse: collapse;
         width: 100%;
       }
-      
       th, td {
         text-align: left;
         padding: 8px;
       }
-      
       th {
         background-color: #4CAF50;
         color: white;
       }
-      
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-      
-      input[type=text] {
+      input[type="text"] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -46,14 +41,27 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      
-      input[type=text]:focus {
+      input[type="text"]:focus {
         border: 2px solid #4CAF50;
+      }
+      .section {
+        margin-top: 20px;
+      }
+      .section h2 {
+        margin-bottom: 10px;
+      }
+      .small-note {
+        font-size: 0.9rem;
+        font-weight: normal;
+      }
+      ul {
+        margin-left: 20px;
       }
     </style>
   </head>
-  <header>
-    <nav class="logo-container">
+  <body>
+    <header>
+      <nav class="logo-container">
         <div class="logo-container">
           <h1 class="main-header">Commonly Used HIV Drugs</h1>
           <div class="navbar-icons">
@@ -63,85 +71,185 @@
         </div>
       </nav>
     </header>
-  <body>
-   
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
-    <table id="hiv">
-      <tr>
-        <th>Drug</th>
-        <th>Dosage</th>
-        <th>Route of Administration</th>
-        <th>Indication for Use</th>
-      </tr>
-      <tr>
-        <td>Tenofovir disoproxil fumarate (TDF)</td>
-        <td>300 mg once daily</td>
-        <td>Oral</td>
-        <td>HIV-1 infection in adults and pediatric patients 2 years of age and older</td>
-      </tr>
-      <tr>
-        <td>Emtricitabine (FTC)</td>
-        <td>200 mg once daily</td>
-        <td>Oral</td>
-        <td>HIV-1 infection in adults and pediatric patients 2 years of age and older, pre-exposure prophylaxis (PrEP)</td>
-      </tr>
-      <tr>
-        <td>Dolutegravir (DTG)</td>
-        <td>50 mg once daily</td>
-        <td>Oral</td>
-        <td>HIV-1 infection in adults and pediatric patients 12 years of age and older</td>
+
+    <main>
+      <p class="small-note">
+        <strong>Note:</strong> Doses below are typical adult maintenance doses. Initiation, switching or interruption of ART
+        should follow your hospital / HIV clinic guidelines and be discussed with a senior or HIV specialist.
+      </p>
+
+      <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
+
+      <table id="hiv">
+        <tr>
+          <th>Drug</th>
+          <th>Typical Adult Dose</th>
+          <th>Route</th>
+          <th>Indication (Summary)</th>
         </tr>
         <tr>
-            <td>Raltegravir (RAL)</td>
-            <td>400 mg twice daily</td>
-            <td>Oral</td>
-            <td>HIV-1 infection in adults and pediatric patients 4 weeks of age and older</td>
+          <td>Tenofovir disoproxil fumarate (TDF)</td>
+          <td>300 mg once daily</td>
+          <td>Oral</td>
+          <td>Backbone NRTI in ART; used in HIV-1 treatment and some PrEP regimens</td>
         </tr>
         <tr>
-            <td>Atazanavir (ATV)</td>
-            <td>300-400 mg once daily with ritonavir 100 mg once daily or 200 mg once daily (if ATV is co-administered with tenofovir disoproxil fumarate)</td>
-            <td>Oral</td>
-            <td>HIV-1 infection in adults and pediatric patients 6 years of age and older</td>
+          <td>Emtricitabine (FTC)</td>
+          <td>200 mg once daily</td>
+          <td>Oral</td>
+          <td>NRTI; combined with TDF in HIV-1 treatment and PrEP regimens</td>
         </tr>
         <tr>
-            <td>Ritonavir (RTV)</td>
-            <td>100 mg once daily or twice daily</td>
-            <td>Oral</td>
-            <td>HIV-1 infection in adults and pediatric patients</td>
+          <td>Dolutegravir (DTG)</td>
+          <td>50 mg once daily</td>
+          <td>Oral</td>
+          <td>Integrase inhibitor; core agent in many first-line regimens</td>
         </tr>
         <tr>
-            <td>Darunavir (DRV)</td>
-            <td>800 mg once daily with ritonavir 100 mg once daily or 600 mg twice daily with ritonavir 100 mg twice daily</td>
-            <td>Oral</td>
-            <td>HIV-1 infection in adults and pediatric patients 3 years of age and older</td>
+          <td>Raltegravir (RAL)</td>
+          <td>400 mg twice daily</td>
+          <td>Oral</td>
+          <td>Integrase inhibitor; used in ART and sometimes PEP</td>
         </tr>
         <tr>
-            <td>Lopinavir/ritonavir (LPV/r)</td>
-            <td>800/200 mg once or twice daily</td>
-            <td>Oral</td>
-            <td>HIV-1 infection in adults and pediatric patients</td>
+          <td>Atazanavir (ATV)</td>
+          <td>300–400 mg once daily with ritonavir 100 mg once daily (or 200 mg if given with TDF)</td>
+          <td>Oral</td>
+          <td>Protease inhibitor (usually boosted); component of some ART regimens</td>
         </tr>
+        <tr>
+          <td>Ritonavir (RTV)</td>
+          <td>100 mg once or twice daily (boosting dose)</td>
+          <td>Oral</td>
+          <td>Pharmacokinetic booster for protease inhibitors</td>
+        </tr>
+        <tr>
+          <td>Darunavir (DRV)</td>
+          <td>800 mg once daily + RTV 100 mg once daily, or 600 mg BD + RTV 100 mg BD</td>
+          <td>Oral</td>
+          <td>Boosted protease inhibitor for ART, especially in treatment-experienced patients</td>
+        </tr>
+        <tr>
+          <td>Lopinavir/ritonavir (LPV/r)</td>
+          <td>800/200 mg once or twice daily</td>
+          <td>Oral</td>
+          <td>Boosted protease inhibitor combination for ART</td>
+        </tr>
+      </table>
+
+      <div class="section">
+        <h2>Emergency Department Tips</h2>
+        <ul>
+          <li>
+            <strong>Do not start or stop chronic ART lightly:</strong> Avoid changing long-term regimens from the ED
+            unless clear toxicity or life-threatening reaction is suspected and a senior / HIV specialist is involved.
+          </li>
+          <li>
+            <strong>Post-Exposure Prophylaxis (PEP):</strong> Use your local PEP guideline for occupational and sexual exposures.
+            Start as soon as possible (ideally within hours, and usually within 72 hours) and ensure good follow-up.
+          </li>
+          <li>
+            <strong>Pre-Exposure Prophylaxis (PrEP):</strong> Initial counselling and prescriptions should usually be done
+            via HIV / primary care clinics; the ED role is often identifying candidates and referring appropriately.
+          </li>
+          <li>
+            <strong>Drug interactions:</strong> Always consider interactions with TB drugs, anticonvulsants, azoles,
+            anticoagulants and anti-arrhythmics – especially with boosted protease inhibitors (RTV / LPV/r / DRV).
+          </li>
+          <li>
+            <strong>Acute presentations:</strong> In suspected IRIS, severe opportunistic infection, liver failure or lactic acidosis,
+            urgently discuss with an HIV / ID specialist before stopping or changing ART.
+          </li>
+          <li>
+            <strong>Adherence questions:</strong> Ask about missed doses, stock-outs and traditional / over-the-counter medicines.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Side Effects & Cautions (Quick Reference)</h2>
+        <table>
+          <tr>
+            <th>Drug</th>
+            <th>Common Side Effects</th>
+            <th>Key Cautions</th>
+          </tr>
+          <tr>
+            <td>TDF</td>
+            <td>Renal dysfunction, ↓ bone mineral density, mild GI upset</td>
+            <td>
+              Avoid or reduce dose in significant renal impairment; monitor creatinine and eGFR.
+            </td>
+          </tr>
+          <tr>
+            <td>FTC</td>
+            <td>Generally well tolerated; headache, nausea</td>
+            <td>
+              Adjust dose in renal impairment; usually given in fixed-dose combination with TDF.
+            </td>
+          </tr>
+          <tr>
+            <td>DTG</td>
+            <td>Insomnia, headache, GI upset, weight gain</td>
+            <td>
+              Watch for interactions with cation-containing antacids; discuss with specialist in early pregnancy or women of child-bearing potential as per local guidance.
+            </td>
+          </tr>
+          <tr>
+            <td>RAL</td>
+            <td>Headache, nausea, rash, rare myopathy</td>
+            <td>
+              CK elevation possible; separate from polyvalent cation antacids.
+            </td>
+          </tr>
+          <tr>
+            <td>ATV</td>
+            <td>Hyperbilirubinaemia (jaundice), GI upset</td>
+            <td>
+              Avoid with proton pump inhibitors in some regimens; check for drug interactions; use with RTV as booster.
+            </td>
+          </tr>
+          <tr>
+            <td>DRV + RTV</td>
+            <td>GI upset, rash, ↑ lipids, liver enzyme elevation</td>
+            <td>
+              Many drug interactions (CYP3A4); caution in hepatic impairment; always confirm doses with guideline / senior.
+            </td>
+          </tr>
+          <tr>
+            <td>LPV/r</td>
+            <td>GI upset, hyperlipidaemia, hyperglycaemia</td>
+            <td>
+              Risk of QT / PR prolongation and metabolic complications; check interactions with other QT-prolonging drugs.
+            </td>
+          </tr>
         </table>
-        <script>
-            function searchTable() {
-            let input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("hiv");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
+        <p class="small-note">
+          <strong>Reminder:</strong> Management of ART, PEP and PrEP must follow national / provincial HIV guidelines. When unsure,
+          stabilise the patient and contact your local HIV / ID team or senior doctor for advice.
+        </p>
+      </div>
+    </main>
+
+    <script>
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("hiv");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
+              tr[i].style.display = "";
             } else {
-            tr[i].style.display = "none";
+              tr[i].style.display = "none";
             }
-            }
-            }
-            }
-        </script>
-    
-      </body>
-    </html>
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

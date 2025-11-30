@@ -1,84 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Commonly Used Antibiotics in Hospitals</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used Antibiotics in Hospitals</title>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Soft overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.7);
+      z-index: -1;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 16px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+      border: 2px solid #4CAF50;
+      outline: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin: 16px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      cursor: zoom-in;
+    }
+
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    caption {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
       th, td {
-        text-align: left;
-        padding: 8px;
+        padding: 6px;
       }
-      
-      th {
-        background-color: #4CAF50;
-        color: white;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-      
-      input[type=text] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-      }
-      
-      input[type=text]:focus {
-        border: 2px solid #4CAF50;
-      }
-      .fullscreen-image-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        cursor: zoom-out;
-      }
-    </style>
-  </head>
-  <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Commonly Used Antibiotics in Hospitals</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-  <body>
-    
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antibiotics...">
+    }
+  </style>
+</head>
+
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Commonly Used Antibiotics in Hospitals</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" alt="House icon"></i>
+        </a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <main>
+    <input
+      type="text"
+      id="search"
+      onkeyup="searchTable()"
+      placeholder="Search for antibiotics, doses or routes..."
+    >
+
     <table id="antibiotics">
       <tr>
         <th>Antibiotic</th>
@@ -91,79 +150,132 @@
         <td>1 g every 8 hours</td>
       </tr>
       <tr>
-        <td>Augmentin</td>
-        <td>250 mg every 8 hours or 500mg every 12 hours</td>
+        <td>Amoxicillin/Clavulanate (Augmentin)</td>
+        <td>250 mg every 8 hours or 500 mg every 12 hours</td>
         <td>1.2 g every 8 hours</td>
       </tr>
       <tr>
         <td>Ceftriaxone</td>
         <td>N/A</td>
-        <td>1 g once a day</td>
+        <td>1 g once daily (up to 2 g in severe infection as per protocol)</td>
       </tr>
       <tr>
         <td>Ciprofloxacin</td>
-        <td>500-750 mg every 12 hours</td>
-        <td>400 mg every 8-12 hours</td>
+        <td>500–750 mg every 12 hours</td>
+        <td>400 mg every 8–12 hours</td>
       </tr>
       <tr>
         <td>Clindamycin</td>
-        <td>150-300 mg every 6 hours</td>
-        <td>600-900 mg every 8 hours</td>
+        <td>150–300 mg every 6 hours</td>
+        <td>600–900 mg every 8 hours</td>
       </tr>
       <tr>
         <td>Gentamicin</td>
         <td>N/A</td>
-        <td>1-2 mg/kg every 8 hours</td>
+        <td>1–2 mg/kg every 8 hours (or once-daily dosing per local protocol)</td>
       </tr>
       <tr>
         <td>Levofloxacin</td>
         <td>500 mg every 24 hours</td>
-        <td>500-750 mg every 24 hours</td>
+        <td>500–750 mg every 24 hours</td>
       </tr>
       <tr>
         <td>Metronidazole</td>
-        <td>500 mg every 8 hours</td>
-        <td>500-750 mg every 8 hours</td>
+        <td>400–500 mg every 8 hours</td>
+        <td>500–750 mg every 8 hours</td>
       </tr>
     </table>
+
     <div class="section">
-      <img src="/images/antibioticCheatSheet.jpg" alt="Antibiotic cheat sheet" class="image" onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')">
-<caption>Antibiotic cheat sheet</caption>
+      <caption>Antibiotic Cheat Sheet</caption>
+      <img
+        src="/images/antibioticCheatSheet.jpg"
+        alt="Antibiotic cheat sheet summary"
+        class="image"
+        onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')"
+      >
     </div>
-    <script>
-        function searchTable() {
-            let input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("antibiotics");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[0];
-              if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-                } else {
-                  tr[i].style.display = "none";
-                }
-              }
-            }
-          }
-          function toggleFullscreenImage(src) {
-            let overlay = document.getElementById('fullscreen-image-overlay');
-          
-            if (!overlay) {
-              overlay = document.createElement('div');
-              overlay.id = 'fullscreen-image-overlay';
-              overlay.classList.add('fullscreen-image-overlay');
-              overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-              overlay.onclick = () => toggleFullscreenImage(null);
-              document.body.appendChild(overlay);
-            } else {
-              document.body.removeChild(overlay);
-            }
-          }
-        </script>
-  </body>
+    <section class="section">
+  <h2>Important Cautions When Prescribing Antibiotics</h2>
+  <ul>
+    <li>
+      <strong>Always follow local guidelines:</strong>
+      Use this table as a quick reference only. Choice of antibiotic, dose, and duration should follow your hospital / provincial protocols and microbiology advice.
+    </li>
+    <li>
+      <strong>Adjust for renal and hepatic impairment:</strong>
+      Many agents (e.g. gentamicin, ciprofloxacin, ceftriaxone in severe renal disease) need dose adjustments or avoidance in renal or liver dysfunction. Check eGFR/creatinine and LFTs.
+    </li>
+    <li>
+      <strong>Check allergies carefully:</strong>
+      Clarify the nature of any “penicillin allergy” (rash vs anaphylaxis). Avoid beta-lactams in true anaphylaxis and use appropriate alternatives.
+    </li>
+    <li>
+      <strong>Beware QT prolongation:</strong>
+      Fluoroquinolones (e.g. ciprofloxacin, levofloxacin) and macrolides (e.g. azithromycin) may prolong the QT interval – use cautiously in patients with cardiac disease, electrolyte abnormalities, or on other QT-prolonging drugs.
+    </li>
+    <li>
+      <strong>High C. diff risk drugs:</strong>
+      Clindamycin, broad-spectrum cephalosporins and fluoroquinolones are associated with C. difficile infection; avoid prolonged or unnecessary courses.
+    </li>
+    <li>
+      <strong>Dose by weight where appropriate:</strong>
+      For drugs like gentamicin and other aminoglycosides, use mg/kg dosing and ideal body weight where indicated. Consider drug levels if available.
+    </li>
+    <li>
+      <strong>Pregnancy and breastfeeding:</strong>
+      Avoid or use with caution: tetracyclines, certain fluoroquinolones and others depending on trimester. Check a reliable pregnancy-safe reference or senior advice.
+    </li>
+    <li>
+      <strong>Route matters:</strong>
+      Use IV only when necessary (e.g. sepsis, poor gut absorption). Step down to oral as soon as the patient is clinically stable and able to tolerate PO.
+    </li>
+    <li>
+      <strong>Duration of therapy:</strong>
+      Avoid “just in case” prolonged courses. Use the shortest effective duration as per local protocols (e.g. 5–7 days for many common infections).
+    </li>
+    <li>
+      <strong>Escalate or de-escalate based on cultures:</strong>
+      Start empiric therapy early in sick patients, but narrow the spectrum once culture results and sensitivities are available.
+    </li>
+  </ul>
+
+  <p>
+    <em>
+      This table is a quick aide-mémoire for junior doctors in the Emergency Department and is
+      <strong>not</strong> a substitute for senior review, microbiology input, or your hospital’s antibiotic stewardship programme.
+    </em>
+  </p>
+</section>
+  </main>
+
+  <script>
+    function searchTable() {
+      const input = document.getElementById("search");
+      const filter = input.value.toUpperCase();
+      const table = document.getElementById("antibiotics");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        const rowText = tr[i].textContent || tr[i].innerText;
+        tr[i].style.display = rowText.toUpperCase().includes(filter) ? "" : "none";
+      }
+    }
+
+    function toggleFullscreenImage(src) {
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
+      }
+    }
+  </script>
+</body>
 </html>
-          

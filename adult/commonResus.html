@@ -7,37 +7,32 @@
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/medications.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
       table {
         border-collapse: collapse;
         width: 100%;
       }
-      
       th, td {
         text-align: left;
         padding: 8px;
       }
-      
       th {
         background-color: #4CAF50;
         color: white;
       }
-      
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-      
       input[type=text] {
         width: 100%;
         padding: 12px 20px;
@@ -46,14 +41,28 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      
       input[type=text]:focus {
         border: 2px solid #4CAF50;
       }
+      .section {
+        margin-top: 20px;
+      }
+      .caution-box {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-left: 6px solid #d9534f;
+      }
+      .caution-box h2 {
+        margin-top: 0;
+        color: #d9534f;
+      }
     </style>
   </head>
-  <header>
-    <nav class="logo-container">
+  <body>
+    <header>
+      <nav class="logo-container">
         <div class="logo-container">
           <h1 class="main-header">Commonly Used Resuscitation Drugs</h1>
           <div class="navbar-icons">
@@ -63,145 +72,178 @@
         </div>
       </nav>
     </header>
-  <body>
-    
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for resuscitation drugs...">
-    <table id="resuscitation">
-      <tr>
-        <th>Drug</th>
-        <th>Dosage</th>
-        <th>Route of Administration</th>
-        <th>Indication for Use</th>
-      </tr>
-      <tr>
-        <td>Adrenaline (Epinephrine)</td>
-        <td>1 mg every 3-5 minutes</td>
-        <td>Intravenous, intraosseous, or endotracheal</td>
-        <td>Cardiac arrest, anaphylaxis, bronchospasm, hypotension</td>
-      </tr>
-      <tr>
-        <td>Amiodarone</td>
-        <td>300 mg bolus, then 150 mg over 10 minutes</td>
-        <td>Intravenous</td>
-        <td>Ventricular fibrillation, ventricular tachycardia</td>
-      </tr>
-      <tr>
-        <td>Atropine</td>
-        <td>0.5-1 mg every 3-5 minutes</td>
-        <td>Intravenous, intraosseous, or endotracheal</td>
-        <td>Bradycardia, organophosphate poisoning</td>
-      </tr>
-      <tr>
-        <td>Bicarbonate</td>
-        <td>50-100 mEq</td>
-        <td>Intravenous</td>
-        <td>Metabolic acidosis, hyperkalemia</td>
-      </tr>
-      <tr>
-        <td>Lidocaine</td>
-        <td>1-1.5 mg/kg bolus, then 0.5-0.75 mg/kg every 5-10 minutes</td>
-        <td>Intravenous, intraosseous, or endotracheal</td>
-        <td>Ventricular fibrillation, ventricular tachycardia</td>
-      </tr>
-      <tr>
-        <td>Calcium gluconate</td>
-        <td>1 g (10 mL of 10% solution) over 10-15 minutes</td>
-        <td>Intravenous</td>
-        <td>Hyperkalemia, hypocalcemia, calcium channel blocker overdose</td>
-      </tr>
-      <tr>
-        <td>Furosemide</td>
-        <td>20-40 mg intravenous or intramuscular</td>
-        <td>Intravenous or intramuscular</td>
-        <td>Acute pulmonary edema, edema associated with heart failure, hypertension</td>
-      </tr>
-      <tr>
-        <td>Hydrocortisone</td>
-        <td>100-300 mg/day</td>
-        <td>Intravenous or intramuscular</td>
-        <td>Adrenal insufficiency, sepsis, anaphylaxis, asthma</td>
-      </tr>
-      <tr>
-        <td>Short-acting insulin</td>
-        <td>Based on blood glucose levels</td>
-        <td>Subcutaneous or intravenous</td>
-        <td>Diabetic ketoacidosis, hyperosmolar hyperglycemic state, hyperkalemia</td>
-      </tr>
-      <tr>
-        <td>Ipratropium</td>
-        <td>0.5 mg (1 vial) mixed with 2.5-3 mL of normal saline, administered every 20 minutes up to 3 doses</td>
-        <td>Inhalation</td>
-        <td>Acute exacerbation of asthma or chronic obstructive pulmonary disease (COPD)</td>
-      </tr>
-      <tr>
-        <td>Magnesium sulfate</td>
-        <td>2-4 g intravenous over 5-20 minutes</td>
-        <td>Intravenous</td>
-        <td>Torsades de pointes, eclampsia, hypomagnesemia</td>
-      </tr>
-      <tr>
-        <td>Promethazine</td>
-        <td>12.5-25 mg intravenous or intramuscular</td>
-        <td>Intravenous or intramuscular</td>
-        <td>Nausea and vomiting, motion sickness, allergic reactions</td>
-      </tr>
-      <tr>
-        <td>Sublingual nitrates</td>
-        <td>0.3-0.6 mg every 5 minutes up to 3 doses</td>
-        <td>Sublingual</td>
-        <td>Angina pectoris, acute myocardial infarction</td>
-      </tr>
-      <tr>
-        <td>Thiamine</td>
-        <td>100 mg intravenous or intramuscular</td>
-        <td>Intravenous or intramuscular</td>
-        <td>Wernicke-Korsakoff syndrome, alcohol withdrawal, malnutrition</td>
-      </tr>
-      <tr>
-        <td>Salbutamol (Albuterol)</td>
-        <td>2.5-5 mg nebulized or 4-8 puffs via metered-dose inhaler every 20 minutes up to 3 doses</td>
-        <td>Inhalation</td>
-        <td>Acute exacerbation of asthma or COPD, Hyperkalemia</td>
-      </tr>
-      <tr>
-        <td>Naloxone</td>
-        <td>20.4-2 mg intravenous, intramuscular, or subcutaneous, repeat every 2-3 minutes as needed</td>
-        <td>Intravenous, intramuscular, or subcutaneous</td>
-        <td>Opioid overdose, respiratory depression due to opioids</td>
-      </tr>
-      <tr>
-        <td>50% Dextrose</td>
-        <td>25 g (50 mL of 50% solution) intravenous, may repeat once if needed</td>
-        <td>IIntravenous</td>
-        <td>Hypoglycemia</td>
-      </tr>
-      <tr>
-        <td>Labetalol</td>
-        <td>20 mg intravenous over 2 minutes, may repeat every 10 minutes up to 300 mg total</td>
-        <td>Intravenous</td>
-        <td> Hypertensive emergency, preeclampsia, tachycardia</td>
-      </tr>
-    </table>
+
+    <main>
+      <input
+        type="text"
+        id="search"
+        onkeyup="searchTable()"
+        placeholder="Search for resuscitation drugs..."
+      >
+
+      <table id="resuscitation">
+        <tr>
+          <th>Drug</th>
+          <th>Typical Adult Dose (ED)</th>
+          <th>Route</th>
+          <th>Common ED Indications</th>
+        </tr>
+        <tr>
+          <td>Adrenaline (Epinephrine)</td>
+          <td>
+            Cardiac arrest: 1&nbsp;mg IV/IO every 3–5&nbsp;min<br>
+            Anaphylaxis: 0.3–0.5&nbsp;mg IM (1:1000) repeat q5–10&nbsp;min as needed
+          </td>
+          <td>IV, IO, IM, (ET in arrest if needed)</td>
+          <td>Cardiac arrest, anaphylaxis, severe bronchospasm, profound hypotension</td>
+        </tr>
+        <tr>
+          <td>Amiodarone</td>
+          <td>
+            Arrest (VF/VT): 300&nbsp;mg IV bolus, may give additional 150&nbsp;mg once<br>
+            Perfusing VT/AF: 150&nbsp;mg in 100&nbsp;mL over 10–20&nbsp;min (then infusion as per protocol)
+          </td>
+          <td>IV</td>
+          <td>Ventricular fibrillation, pulseless VT, unstable VT, atrial arrhythmias (per protocol)</td>
+        </tr>
+        <tr>
+          <td>Atropine</td>
+          <td>0.5&nbsp;mg IV every 3–5&nbsp;min (max 3&nbsp;mg total)</td>
+          <td>IV, IO (or ET in arrest if needed)</td>
+          <td>Symptomatic bradycardia, organophosphate poisoning (larger doses in poisoning)</td>
+        </tr>
+        <tr>
+          <td>Sodium Bicarbonate (8.4%)</td>
+          <td>50–100&nbsp;mmol IV (e.g. 50–100&nbsp;mL of 8.4% solution), dose as per blood gas and protocol</td>
+          <td>IV</td>
+          <td>Severe metabolic acidosis, hyperkalaemia, certain poisonings (e.g. TCA overdose)</td>
+        </tr>
+        <tr>
+          <td>Lidocaine (Lignocaine)</td>
+          <td>1–1.5&nbsp;mg/kg IV bolus, then 0.5–0.75&nbsp;mg/kg every 5–10&nbsp;min (max 3&nbsp;mg/kg)</td>
+          <td>IV, IO, (ET in arrest)</td>
+          <td>Ventricular arrhythmias (alternative to amiodarone in some protocols)</td>
+        </tr>
+        <tr>
+          <td>Calcium Gluconate 10%</td>
+          <td>10–30&nbsp;mL of 10% solution (≈1–3&nbsp;g) IV over 5–10&nbsp;min</td>
+          <td>IV</td>
+          <td>Hyperkalaemia with ECG changes, hypocalcaemia, calcium-channel blocker toxicity</td>
+        </tr>
+        <tr>
+          <td>Furosemide</td>
+          <td>20–40&nbsp;mg IV, may repeat/titrate as per response</td>
+          <td>IV (or IM if needed)</td>
+          <td>Acute pulmonary oedema, fluid overload, part of heart failure management</td>
+        </tr>
+        <tr>
+          <td>Hydrocortisone</td>
+          <td>100–200&nbsp;mg IV bolus (then as per protocol)</td>
+          <td>IV (or IM)</td>
+          <td>Adrenal insufficiency, septic shock, anaphylaxis (adjunct), severe asthma/COPD</td>
+        </tr>
+        <tr>
+          <td>Short-acting Insulin (e.g. Regular / Actrapid)</td>
+          <td>
+            DKA/HHS: per fixed-rate insulin infusion protocol<br>
+            Hyperkalaemia: 10&nbsp;units IV with 25&nbsp;g dextrose
+          </td>
+          <td>IV (infusion or bolus), SC</td>
+          <td>Diabetic ketoacidosis, HHS, hyperkalaemia</td>
+        </tr>
+        <tr>
+          <td>Ipratropium Bromide</td>
+          <td>0.5&nbsp;mg (1 nebule) nebulised every 20&nbsp;min for 3 doses then 4–6-hourly</td>
+          <td>Nebulised / inhaled</td>
+          <td>Acute asthma or COPD exacerbation (with β-agonist)</td>
+        </tr>
+        <tr>
+          <td>Magnesium Sulphate</td>
+          <td>
+            Torsades: 2&nbsp;g IV over 5–10&nbsp;min<br>
+            Severe asthma/eclampsia: 2–4&nbsp;g IV over 10–20&nbsp;min (per protocol)
+          </td>
+          <td>IV</td>
+          <td>Torsades de pointes, eclampsia, severe asthma, hypomagnesaemia</td>
+        </tr>
+        <tr>
+          <td>Promethazine</td>
+          <td>12.5–25&nbsp;mg slow IV or deep IM</td>
+          <td>IV (slow) or IM</td>
+          <td>Nausea/vomiting, allergic reactions (adjunct), sedation (per protocol)</td>
+        </tr>
+        <tr>
+          <td>Sublingual Nitrates (Glyceryl trinitrate)</td>
+          <td>0.3–0.6&nbsp;mg SL every 5&nbsp;min up to 3 doses</td>
+          <td>Sublingual</td>
+          <td>Angina, acute coronary syndrome, acute pulmonary oedema (if BP adequate)</td>
+        </tr>
+        <tr>
+          <td>Thiamine</td>
+          <td>100&nbsp;mg IV or IM (before glucose if Wernicke risk)</td>
+          <td>IV or IM</td>
+          <td>Wernicke’s encephalopathy risk, alcohol use disorder, malnutrition</td>
+        </tr>
+        <tr>
+          <td>Salbutamol (Albuterol)</td>
+          <td>
+            Neb: 2.5–5&nbsp;mg nebulised every 20&nbsp;min for 3 doses<br>
+            MDI: 4–8 puffs via spacer every 20&nbsp;min
+          </td>
+          <td>Nebulised / inhaled</td>
+          <td>Acute asthma/COPD, hyperkalaemia (adjunct)</td>
+        </tr>
+        <tr>
+          <td>Naloxone</td>
+          <td>0.4–2&nbsp;mg IV/IM/SC, repeat every 2–3&nbsp;min as needed (titrate to ventilation)</td>
+          <td>IV, IM, SC (or IN if available)</td>
+          <td>Opioid overdose, opioid-induced respiratory depression</td>
+        </tr>
+        <tr>
+          <td>50% Dextrose (D50W)</td>
+          <td>25&nbsp;g IV (50&nbsp;mL of 50% solution), may repeat once if needed</td>
+          <td>IV</td>
+          <td>Severe symptomatic hypoglycaemia</td>
+        </tr>
+        <tr>
+          <td>Labetalol</td>
+          <td>20&nbsp;mg IV over 2&nbsp;min, then 20–80&nbsp;mg every 10&nbsp;min (max 300&nbsp;mg) or infusion</td>
+          <td>IV</td>
+          <td>Hypertensive emergencies, pre-eclampsia/eclampsia, aortic dissection (per protocol)</td>
+        </tr>
+      </table>
+
+      <div class="caution-box">
+        <h2>⚠️ Important Safety Notes</h2>
+        <ul>
+          <li><strong>Adult doses only:</strong> These are typical <em>adult</em> emergency doses. Always use paediatric charts / Broselow tape / local paeds protocols for children.</li>
+          <li><strong>Follow your local guidelines:</strong> Always check your hospital / provincial protocols (e.g. ACLS/ATLS/EMGuidance/SAMF) for exact doses, dilutions, and indications.</li>
+          <li><strong>High-risk drugs:</strong> Adrenaline, amiodarone, insulin, sodium bicarbonate, calcium, labetalol and magnesium are high-risk – double-check dose, concentration, and route with a senior or colleague before giving.</li>
+          <li><strong>Not a substitute for clinical judgement:</strong> This table is a quick reference, not a prescribing guideline. Always consider comorbidities (renal/hepatic failure, pregnancy, elderly, etc.).</li>
+          <li><strong>Monitor continuously:</strong> For IV cardioactive drugs (amiodarone, labetalol, magnesium, insulin, etc.) ensure cardiac monitoring, frequent BP checks, and appropriate IV access.</li>
+        </ul>
+      </div>
+    </main>
+
     <script>
-        function searchTable() {
-            let input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("resuscitation");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[0];
-              if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-                } else {
-                  tr[i].style.display = "none";
-                }
-              }
+      function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("resuscitation");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
             }
           }
-        </script>
-        </body>
-        </html>
-          
+        }
+      }
+    </script>
+  </body>
+</html>

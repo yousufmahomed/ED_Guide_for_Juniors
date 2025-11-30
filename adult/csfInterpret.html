@@ -1,175 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Interpreting CSF Results</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-<style>
+  <meta charset="UTF-8">
+  <title>Interpreting CSF Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
     }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
+    main {
+      padding: 0 1rem 2rem;
+    }
+
+    h1.page-title {
+      background-color: #0066cc;
+      color: #ffffff;
+      padding: 15px 20px;
+      margin: 0 0 10px;
+      font-size: 1.6rem;
     }
 
     h2 {
-        color: #0066cc;
+      color: #0066cc;
+      margin-top: 1.5rem;
     }
 
     table {
-        border-collapse: collapse;
-        width: 100%;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 15px;
     }
 
     th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
     }
 
     th {
-        background-color: #f2f2f2;
-        color: navy;
+      background-color: #f2f2f2;
+      color: navy;
     }
 
     ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 20px;
     }
 
     li {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
-</style>
+
+    .info-box {
+      background-color: #f8fbff;
+      border-left: 4px solid #0066cc;
+      padding: 10px 12px;
+      margin: 10px 0 15px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .danger-box {
+      background-color: #fff5f5;
+      border-left: 4px solid #cc0000;
+      padding: 10px 12px;
+      margin: 10px 0 15px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Interpreting CSF Results</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Interpreting CSF Results</h1>
-	<h2>Key CSF Parameters and their Normal Values</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Parameter</th>
-				<th>Normal Value</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Opening Pressure</td>
-				<td>70-180 mm H2O</td>
-			</tr>
-			<tr>
-				<td>Closing Pressure</td>
-				<td>Similar to opening pressure</td>
-			</tr>
-			<tr>
-				<td>Appearance</td>
-				<td>Clear and colorless</td>
-			</tr>
-			<tr>
-				<td>Total Protein</td>
-				<td>15-45 mg/dL</td>
-			</tr>
-			<tr>
-				<td>Glucose</td>
-				<td>50-80 mg/dL (or 2/3 of blood glucose)</td>
-			</tr>
-			<tr>
-				<td>White Blood Cell (WBC) Count</td>
-				<td>0-5 cells/µL</td>
-			</tr>
-			<tr>
-				<td>Red Blood Cell (RBC) Count</td>
-				<td>0 cells/µL</td>
-			</tr>
-		</tbody>
-	</table>
-    <h2>Common CSF Findings in Various Conditions</h2>
-<table>
-	<thead>
-		<tr>
-			<th>Condition</th>
-			<th>Opening Pressure</th>
-			<th>Appearance</th>
-			<th>WBC Count</th>
-			<th>Protein</th>
-			<th>Glucose</th>
-        </tr>
-        </thead>
-        <tbody>
+  <header>
+    <div class="logo-container">
+      <h1>Interpreting CSF Results</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Interpreting CSF Results</h1>
+
+    <div class="info-box">
+      <strong>Tip for juniors:</strong> Always interpret CSF in context of the clinical picture
+      (fever, neck stiffness, rash, seizures, focal neurology, immunocompromise, recent antibiotics).
+      Normal CSF does not completely exclude meningitis early in the illness.
+    </div>
+
+    <h2>Key CSF Parameters and Their Normal Values</h2>
+    <table>
+      <thead>
         <tr>
-        <td>Normal</td>
-        <td>70-180 mm H2O</td>
-        <td>Clear and colorless</td>
-        <td>0-5 cells/µL</td>
-        <td>15-45 mg/dL</td>
-        <td>50-80 mg/dL (or 2/3 of blood glucose)</td>
+          <th>Parameter</th>
+          <th>Normal Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Opening pressure</td>
+          <td>70–180 mmH<sub>2</sub>O</td>
         </tr>
         <tr>
-        <td>Bacterial Meningitis</td>
-        <td>Raised</td>
-        <td>Cloudy or purulent</td>
-        <td>Increased (predominantly neutrophils)</td>
-        <td>Increased</td>
-        <td>Decreased</td>
+          <td>Closing pressure</td>
+          <td>Similar to opening pressure</td>
         </tr>
         <tr>
-        <td>Viral Meningitis</td>
-        <td>Normal or slightly raised</td>
-        <td>Clear</td>
-        <td>Increased (predominantly lymphocytes)</td>
-        <td>Normal or slightly increased</td>
-        <td>Normal or slightly decreased</td>
+          <td>Appearance</td>
+          <td>Clear and colourless</td>
         </tr>
         <tr>
-        <td>Fungal or Tuberculous Meningitis</td>
-        <td>Raised</td>
-        <td>Clear or slightly cloudy</td>
-        <td>Increased (predominantly lymphocytes)</td>
-        <td>Increased</td>
-        <td>Decreased</td>
+          <td>Total protein</td>
+          <td>15–45 mg/dL</td>
         </tr>
         <tr>
-        <td>Subarachnoid Hemorrhage</td>
-        <td>Raised</td>
-        <td>Xanthochromic or bloody</td>
-        <td>Variable</td>
-        <td>Increased</td>
-        <td>Normal</td>
+          <td>Glucose</td>
+          <td>50–80 mg/dL (≈ 2/3 of simultaneous blood glucose)</td>
         </tr>
         <tr>
-        <td>Multiple Sclerosis</td>
-        <td>Normal</td>
-        <td>Clear</td>
-        <td>Normal or slightly increased</td>
-        <td>Increased (especially IgG)</td>
-        <td>Normal</td>
+          <td>White blood cells (WBC)</td>
+          <td>0–5 cells/µL (mostly lymphocytes)</td>
         </tr>
         <tr>
-        <td>Guillain-Barré Syndrome</td>
-        <td>Normal</td>
-        <td>Clear</td>
-        <td>Normal</td>
-        <td>Increased (albuminocytologic dissociation)</td>
-        <td>Normal</td>
+          <td>Red blood cells (RBC)</td>
+          <td>0 cells/µL</td>
         </tr>
-        </tbody>
-        </table>
+      </tbody>
+    </table>
+
+    <h2>Common CSF Patterns in Various Conditions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Opening Pressure</th>
+          <th>Appearance</th>
+          <th>WBC Count</th>
+          <th>Protein</th>
+          <th>Glucose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Normal</td>
+          <td>70–180 mmH<sub>2</sub>O</td>
+          <td>Clear and colourless</td>
+          <td>0–5 cells/µL</td>
+          <td>15–45 mg/dL</td>
+          <td>50–80 mg/dL (or ~2/3 of blood glucose)</td>
+        </tr>
+        <tr>
+          <td>Bacterial meningitis</td>
+          <td>Raised</td>
+          <td>Cloudy or purulent</td>
+          <td>High (predominantly neutrophils)</td>
+          <td>Markedly increased</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Viral meningitis</td>
+          <td>Normal or slightly raised</td>
+          <td>Clear</td>
+          <td>Increased (predominantly lymphocytes)</td>
+          <td>Normal or slightly increased</td>
+          <td>Normal or slightly low</td>
+        </tr>
+        <tr>
+          <td>Fungal or tuberculous meningitis</td>
+          <td>Raised</td>
+          <td>Clear or slightly cloudy</td>
+          <td>Increased (predominantly lymphocytes)</td>
+          <td>Increased</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Subarachnoid haemorrhage</td>
+          <td>Raised</td>
+          <td>Xanthochromic or bloody</td>
+          <td>Variable</td>
+          <td>Increased</td>
+          <td>Usually normal</td>
+        </tr>
+        <tr>
+          <td>Multiple sclerosis</td>
+          <td>Normal</td>
+          <td>Clear</td>
+          <td>Normal or mildly ↑</td>
+          <td>Increased (esp. IgG / oligoclonal bands)</td>
+          <td>Normal</td>
+        </tr>
+        <tr>
+          <td>Guillain–Barré syndrome</td>
+          <td>Normal</td>
+          <td>Clear</td>
+          <td>Normal</td>
+          <td>Increased (albuminocytologic dissociation)</td>
+          <td>Normal</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>How to Approach CSF Interpretation</h2>
+    <ol>
+      <li>
+        <strong>Check the basics:</strong> Is the sample traumatic (lots of RBCs)? Was it taken before or after antibiotics?
+      </li>
+      <li>
+        <strong>Look at appearance:</strong> Clear vs cloudy vs frankly bloody vs xanthochromic.
+      </li>
+      <li>
+        <strong>Check WBC count and differential:</strong>
+        <ul>
+          <li>Neutrophil predominant → think bacterial (or early viral).</li>
+          <li>Lymphocyte predominant → viral, TB, fungal, partially treated bacterial, malignancy.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Interpret protein:</strong> High in bacterial, TB, fungal, GBS; mild in viral.
+      </li>
+      <li>
+        <strong>Interpret glucose:</strong> Compare to blood glucose.
+        Low CSF glucose strongly suggests bacterial / TB / fungal infection or malignancy.
+      </li>
+      <li>
+        <strong>Always correlate with the patient:</strong> fever, rash, neck stiffness, immunocompromise,
+        focal neurology, seizures, recent trauma or surgery.
+      </li>
+    </ol>
+
+    <h2>Traumatic Tap vs Subarachnoid Haemorrhage (SAH)</h2>
+    <ul>
+      <li>
+        <strong>Traumatic tap:</strong> RBC count typically falls from tube 1 → tube 4, and the supernatant
+        becomes clear after centrifugation (no xanthochromia initially).
+      </li>
+      <li>
+        <strong>SAH:</strong> RBC count similar in all tubes, and xanthochromia appears after a few hours.
+      </li>
+      <li>
+        When in doubt, treat the patient and discuss with a senior / neurosurgery rather than relying on CSF alone.
+      </li>
+    </ul>
+
+    <div class="danger-box">
+      <strong>Red flags:</strong>
+      <ul>
+        <li>Clinical features of meningitis or encephalitis with any abnormal CSF → start empiric antibiotics/antivirals, don’t wait.</li>
+        <li>Immunocompromised patients can have “near-normal” CSF – have a low threshold for treatment.</li>
+        <li>Very high opening pressure, reduced GCS, focal neurology → discuss with senior urgently; consider imaging if not already done.</li>
+      </ul>
+    </div>
+  </main>
 </body>
 </html>

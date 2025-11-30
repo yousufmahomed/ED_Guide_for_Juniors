@@ -7,38 +7,38 @@
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/medications.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
       table {
         border-collapse: collapse;
         width: 100%;
       }
-      
+
       th, td {
         text-align: left;
         padding: 8px;
       }
-      
+
       th {
         background-color: #4CAF50;
         color: white;
       }
-      
+
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-      
-      input[type=text] {
+
+      input[type="text"] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -46,170 +46,308 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      
-      input[type=text]:focus {
+
+      input[type="text"]:focus {
         border: 2px solid #4CAF50;
       }
-      
+
       .class-header {
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 1.05em;
         background-color: #ddd;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .section h2 {
+        margin-bottom: 10px;
+      }
+
+      .small-note {
+        font-size: 0.9rem;
+        font-weight: normal;
+      }
+
+      ul {
+        margin-left: 20px;
       }
     </style>
   </head>
-  <nav class="logo-container">
-    <div class="logo-container">
-      <h1 class="main-header">Commonly Used Antihypertensive Drugs</h1>
-      <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-      </div>
-      <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </nav>
-</header>
   <body>
-   
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
-    <table id="antihypertensive">
-      <tr>
-        <th>Class</th>
-        <th>Drug</th>
-        <th>Dosage</th>
-        <th>Route of Administration</th>
-        <th>Indication for Use</th>
-      </tr>
-      <tr>
-        <td rowspan="3" class="class-header">Diuretics</td>
-        <td>Hydrochlorothiazide</td>
-        <td>12.5-25 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, edema</td>
-      </tr>
-      <tr>
-        <td>Furosemide</td>
-        <td>20-80 mg once or twice daily, titrated based on response</td>
-        <td>Oral, intravenous, or intramuscular</td>
-        <td>Hypertension, edema</td>
-      </tr>
-      <tr>
-        <td>Spironolactone</td>
-        <td>12.5-100 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, heart failure</td>
-      </tr>
-      <tr>
-        <td rowspan="2" class="class-header">Beta Blockers</td>
-        <td>Metoprolol</td>
-        <td>50-200 mg once or twice daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, angina pectoris, heart failure</td>
-      </tr>
-      <tr>
-        <td>Propranolol</td>
-        <td>20-320 mg once or twice daily, titrated based on response</td>
-        <td>Oral, intravenous</td>
-        <td>Hypertension, angina pectoris, arrhythmias</td>
-      </tr>
-      <tr>
-        <td rowspan="2" class="class-header">ACE Inhibitors</td>
-        <td>Lisinopril</td>
-        <td>10-40 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, heart failure</td>
-      </tr>
-      <tr>
-        <td>Enalapril</td>
-        <td>2.5-40 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, heart failure</td>
-      </tr>
-      <tr>
-        <td rowspan="2" class="class-header">ARBs</td>
-        <td>Losartan</td>
-        <td>25-100 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, diabetic nephropathy</td>
-      </tr>
-      <tr>
-        <td>Valsartan</td>
-        <td>80-320 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, heart failure</td>
-      </tr>
-      <tr>
-        <td rowspan="2" class="class-header">Calcium Channel Blockers</td>
-        <td>Amlodipine</td>
-        <td>5-10 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, angina pectoris</td>
-      </tr>
-      <tr>
-        <td>Diltiazem</td>
-        <td>120-360 mg once daily, titrated based on response</td>
-        <td>Oral, intravenous</td>
-        <td>Hypertension, angina pectoris, arrhythmias</td>
-      </tr>
-      <tr>
-        <td rowspan="3" class="class-header">Alpha Blockers</td>
-        <td>Prazosin</td>
-        <td>1-10 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, benign prostatic hyperplasia</td>
-      </tr>
-      <tr>
-        <td>Terazosin</td>
-        <td>1-20 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, benign prostatic hyperplasia</td>
-      </tr>
-      <tr>
-        <td>Doxazosin</td>
-        <td>1-16 mg once daily, titrated based on response</td>
-        <td>Oral</td>
-        <td>Hypertension, benign prostatic hyperplasia</td>
-      </tr>
-      <tr>
+    <header>
+      <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Commonly Used Antihypertensive Drugs</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <p class="small-note">
+        <strong>Note:</strong> The doses below are typical adult maintenance doses. Always individualise therapy
+        and follow local / national hypertension and emergency guidelines. Acute BP management in the ED should
+        be discussed with a senior, especially in suspected hypertensive emergency.
+      </p>
+
+      <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs, class, indication...">
+
+      <table id="antihypertensive">
         <tr>
-            <td rowspan="3" class="class-header">Central Acting Agents</td>
-            <td>Clonidine</td>
-            <td>0.1-0.3 mg twice daily, titrated based on response</td>
-            <td>Oral, transdermal, intravenous</td>
-            <td>Hypertension, attention deficit hyperactivity disorder, opioid withdrawal</td>
+          <th>Class</th>
+          <th>Drug</th>
+          <th>Dosage (Adult, Typical)</th>
+          <th>Route</th>
+          <th>Indication (Summary)</th>
+        </tr>
+
+        <!-- Diuretics -->
+        <tr>
+          <td rowspan="3" class="class-header">Diuretics</td>
+          <td>Hydrochlorothiazide</td>
+          <td>12.5–25 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, mild–moderate oedema</td>
+        </tr>
+        <tr>
+          <td>Furosemide</td>
+          <td>20–80 mg once or twice daily, titrate according to response</td>
+          <td>Oral, IV, IM</td>
+          <td>Hypertension with fluid overload, acute / chronic heart failure, oedema states</td>
+        </tr>
+        <tr>
+          <td>Spironolactone</td>
+          <td>12.5–100 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Resistant hypertension, heart failure, hyperaldosteronism</td>
+        </tr>
+
+        <!-- Beta Blockers -->
+        <tr>
+          <td rowspan="2" class="class-header">Beta Blockers</td>
+          <td>Metoprolol</td>
+          <td>50–200 mg once or twice daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, angina, rate control in AF, heart failure (selected patients)</td>
+        </tr>
+        <tr>
+          <td>Propranolol</td>
+          <td>20–320 mg/day in divided doses, titrate according to response</td>
+          <td>Oral, IV</td>
+          <td>Hypertension, angina, arrhythmias, migraine prophylaxis, thyrotoxicosis symptoms</td>
+        </tr>
+
+        <!-- ACE Inhibitors -->
+        <tr>
+          <td rowspan="2" class="class-header">ACE Inhibitors</td>
+          <td>Lisinopril</td>
+          <td>10–40 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, heart failure, post-MI, diabetic nephropathy</td>
+        </tr>
+        <tr>
+          <td>Enalapril</td>
+          <td>2.5–40 mg once or twice daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, heart failure</td>
+        </tr>
+
+        <!-- ARBs -->
+        <tr>
+          <td rowspan="2" class="class-header">ARBs</td>
+          <td>Losartan</td>
+          <td>25–100 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, diabetic nephropathy, ACEi-intolerant patients</td>
+        </tr>
+        <tr>
+          <td>Valsartan</td>
+          <td>80–320 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, heart failure, post-MI</td>
+        </tr>
+
+        <!-- Calcium Channel Blockers -->
+        <tr>
+          <td rowspan="2" class="class-header">Calcium Channel Blockers</td>
+          <td>Amlodipine</td>
+          <td>5–10 mg once daily</td>
+          <td>Oral</td>
+          <td>Hypertension, angina</td>
+        </tr>
+        <tr>
+          <td>Diltiazem</td>
+          <td>120–360 mg/day (modified release), titrate according to response</td>
+          <td>Oral, IV</td>
+          <td>Hypertension, angina, rate control in some tachyarrhythmias</td>
+        </tr>
+
+        <!-- Alpha Blockers -->
+        <tr>
+          <td rowspan="3" class="class-header">Alpha Blockers</td>
+          <td>Prazosin</td>
+          <td>1–10 mg/day in divided doses, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, benign prostatic hyperplasia (BPH)</td>
+        </tr>
+        <tr>
+          <td>Terazosin</td>
+          <td>1–20 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, BPH</td>
+        </tr>
+        <tr>
+          <td>Doxazosin</td>
+          <td>1–16 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, BPH</td>
+        </tr>
+
+        <!-- Central Acting Agents -->
+        <tr>
+          <td rowspan="3" class="class-header">Central Acting Agents</td>
+          <td>Clonidine</td>
+          <td>0.1–0.3 mg twice daily, titrate according to response</td>
+          <td>Oral, transdermal, IV</td>
+          <td>Resistant hypertension, some withdrawal syndromes (e.g. opioids)</td>
+        </tr>
+        <tr>
+          <td>Methyldopa</td>
+          <td>250–1000 mg two to four times daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension in pregnancy, hypertension in renal disease (as per guideline)</td>
+        </tr>
+        <tr>
+          <td>Guanfacine</td>
+          <td>1–3 mg once daily, titrate according to response</td>
+          <td>Oral</td>
+          <td>Hypertension, sometimes used for ADHD (non-ED indication)</td>
+        </tr>
+      </table>
+
+      <div class="section">
+        <h2>Emergency Department Tips</h2>
+        <ul>
+          <li>
+            <strong>Hypertensive emergency vs urgency:</strong> Emergency = markedly elevated BP
+            <em>with</em> acute target-organ damage (e.g. encephalopathy, stroke, ACS, pulmonary oedema,
+            aortic dissection, AKI). These patients need IV agents and controlled BP reduction with senior input.
+          </li>
+          <li>
+            <strong>Do not aggressively drop BP in asymptomatic chronic hypertension:</strong>
+            Rapid reductions can worsen cerebral, coronary and renal perfusion.
+          </li>
+          <li>
+            <strong>Know your go-to IV agents:</strong> In many hospitals, IV labetalol, GTN and furosemide
+            are commonly available; exact choice should follow your local protocol.
+          </li>
+          <li>
+            <strong>Check ECG, creatinine, troponin, urine and fundi</strong> in significantly high BPs to screen
+            for organ damage where feasible.
+          </li>
+          <li>
+            <strong>Restarting chronic meds:</strong> Where non-adherence is suspected (and no contraindication),
+            it is usually safe to restart the patient’s usual oral regimen and arrange early follow-up.
+          </li>
+          <li>
+            <strong>Pregnancy and postpartum:</strong> Use pregnancy-safe options (e.g. labetalol, nifedipine,
+            methyldopa) and follow obstetric / hypertensive disorders of pregnancy guidelines.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Side Effects & Cautions (Quick Reference)</h2>
+        <table>
+          <tr>
+            <th>Class / Drug</th>
+            <th>Common Side Effects</th>
+            <th>Key Cautions</th>
           </tr>
           <tr>
-            <td>Methyldopa</td>
-            <td>250-1000 mg two to four times daily, titrated based on response</td>
-            <td>Oral</td>
-            <td>Hypertension in pregnancy, hypertension in patients with renal insufficiency</td>
+            <td>Thiazide diuretics (e.g. HCTZ)</td>
+            <td>Hyponatraemia, hypokalaemia, ↑ uric acid, mild ↑ glucose</td>
+            <td>Monitor U&amp;E; caution in gout, severe renal impairment, elderly / frail patients.</td>
           </tr>
           <tr>
-            <td>Guanfacine</td>
-            <td>1-3 mg once daily, titrated based on response</td>
-            <td>Oral</td>
-            <td>Hypertension, attention deficit hyperactivity disorder</td>
+            <td>Loop diuretics (Furosemide)</td>
+            <td>Hypovolaemia, electrolyte disturbance, ototoxicity at high doses</td>
+            <td>Avoid excessive diuresis; monitor renal function, K⁺, Mg²⁺.</td>
           </tr>
-          </table>
-          <script>
-            function searchTable() {
-              let input, filter, table, tr, td, i, txtValue;
-              input = document.getElementById("search");
-              filter = input.value.toUpperCase();
-              table = document.getElementById("antihypertensive");
-              tr = table.getElementsByTagName("tr");
-              for (i = 1; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                  txtValue = td.textContent || td.innerText;
-                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                  } else {
-                    tr[i].style.display = "none";
-                  }
-                } 
+          <tr>
+            <td>Spironolactone</td>
+            <td>Hyperkalaemia, gynaecomastia, menstrual irregularities</td>
+            <td>Caution in renal impairment, ACEi/ARB combination, and baseline high K⁺.</td>
+          </tr>
+          <tr>
+            <td>ACE Inhibitors (Lisinopril, Enalapril)</td>
+            <td>Dry cough, hyperkalaemia, ↑ creatinine, angioedema (rare)</td>
+            <td>Avoid in pregnancy, bilateral renal artery stenosis; monitor renal function &amp; K⁺.</td>
+          </tr>
+          <tr>
+            <td>ARBs (Losartan, Valsartan)</td>
+            <td>Hyperkalaemia, dizziness, ↑ creatinine</td>
+            <td>Similar cautions as ACEi; usually used if ACEi cough or angioedema history.</td>
+          </tr>
+          <tr>
+            <td>Beta Blockers</td>
+            <td>Bradycardia, fatigue, bronchospasm, masking of hypoglycaemia</td>
+            <td>Avoid in acute asthma/COPD exacerbation, severe bradycardia, acute decomp HF.</td>
+          </tr>
+          <tr>
+            <td>Dihydropyridine CCBs (Amlodipine)</td>
+            <td>Ankle oedema, flushing, headache</td>
+            <td>Can worsen peripheral oedema; generally safe in asthma/COPD.</td>
+          </tr>
+          <tr>
+            <td>Non-DHP CCBs (Diltiazem)</td>
+            <td>Bradycardia, heart block, constipation, hypotension</td>
+            <td>Avoid in significant LV dysfunction, pre-existing heart block, with beta-blockers in some patients.</td>
+          </tr>
+          <tr>
+            <td>Central agents (Clonidine, Methyldopa)</td>
+            <td>Sedation, dry mouth, rebound hypertension if abruptly stopped</td>
+            <td>Do not stop suddenly; methyldopa can cause hepatitis / haemolysis – monitor if on long term.</td>
+          </tr>
+        </table>
+        <p class="small-note">
+          <strong>Reminder:</strong> For hypertensive emergencies and complex patients, stabilise the patient
+          and follow your local protocol or discuss with a senior / specialist physician.
+        </p>
+      </div>
+    </main>
+
+    <script>
+      function searchTable() {
+        const input = document.getElementById("search");
+        const filter = input.value.toUpperCase();
+        const table = document.getElementById("antihypertensive");
+        const tr = table.getElementsByTagName("tr");
+
+        // Skip header row (i = 1)
+        for (let i = 1; i < tr.length; i++) {
+          const tds = tr[i].getElementsByTagName("td");
+          let rowMatch = false;
+
+          for (let j = 0; j < tds.length; j++) {
+            const td = tds[j];
+            if (td) {
+              const txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                rowMatch = true;
+                break;
               }
             }
-          </script>
-          </body>
-          </html>
-          
+          }
+
+          tr[i].style.display = rowMatch ? "" : "none";
+        }
+      }
+    </script>
+  </body>
+</html>

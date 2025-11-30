@@ -7,38 +7,33 @@
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/medications.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
       table {
         border-collapse: collapse;
         width: 100%;
       }
-      
       th, td {
         text-align: left;
         padding: 8px;
       }
-      
       th {
         background-color: #4CAF50;
         color: white;
       }
-      
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-      
-      input[type=text] {
+      input[type="text"] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -46,56 +41,146 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      
-      input[type=text]:focus {
+      input[type="text"]:focus {
         border: 2px solid #4CAF50;
+      }
+      .section {
+        margin-top: 20px;
+      }
+      .section h2 {
+        margin-bottom: 10px;
+      }
+      .small-note {
+        font-size: 0.9rem;
+        font-weight: normal;
+      }
+      ul {
+        margin-left: 20px;
       }
     </style>
   </head>
-  <nav class="logo-container">
-    <div class="logo-container">
-      <h1 class="main-header">Commonly Used Anti-Epileptic Medications</h1>
-      <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-      </div>
-      <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </nav>
   <body>
-    
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for anti-epileptic medications...">
-    <table id="antiepileptics">
-      <tr>
-        <th>Medication</th>
-        <th>Dosage</th>
-        <th>Route of Administration</th>
-      </tr>
-      <tr>
-        <td>Carbamazepine</td>
-        <td>200-1200 mg/day</td>
-        <td>Oral</td>
-      </tr>
-      <tr>
-        <td>Lamotrigine</td>
-        <td>50-400 mg/day</td>
-        <td>Oral</td>
-      </tr>
-      <tr>
-        <td>Levetiracetam</td>
-        <td>500-3000 mg/day</td>
-        <td>Oral or intravenous</td>
-      </tr>
-      <tr>
-        <td>Phenytoin</td>
-        <td>200-300 mg/day</td>
-        <td>Oral or intravenous</td>
-      </tr>
-      <tr>
-        <td>Sodium Valproate</td>
-        <td>500-2000 mg/day</td>
-        <td>Oral</td>
-      </tr>
-    </table>
+    <header>
+      <nav class="logo-container">
+        <div class="logo-container">
+          <h1 class="main-header">Commonly Used Anti-Epileptic Medications</h1>
+          <div class="navbar-icons">
+            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+          </div>
+          <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <p class="small-note">
+        <strong>Note:</strong> Doses below are typical adult maintenance ranges. Always adjust for renal/hepatic function, drug levels,
+        local protocols and senior guidance – especially for loading doses in status epilepticus.
+      </p>
+
+      <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for anti-epileptic medications...">
+
+      <table id="antiepileptics">
+        <tr>
+          <th>Medication</th>
+          <th>Typical Adult Daily Dose</th>
+          <th>Route of Administration</th>
+        </tr>
+        <tr>
+          <td>Carbamazepine</td>
+          <td>200–1200 mg/day in divided doses</td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td>Lamotrigine</td>
+          <td>50–400 mg/day (usually divided BID)</td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td>Levetiracetam</td>
+          <td>500–3000 mg/day in divided doses</td>
+          <td>Oral or intravenous</td>
+        </tr>
+        <tr>
+          <td>Phenytoin</td>
+          <td>200–300 mg/day (usually divided)</td>
+          <td>Oral or intravenous</td>
+        </tr>
+        <tr>
+          <td>Sodium Valproate</td>
+          <td>500–2000 mg/day in divided doses</td>
+          <td>Oral (IV preparations available in some centres)</td>
+        </tr>
+      </table>
+
+      <div class="section">
+        <h2>Emergency Department Tips</h2>
+        <ul>
+          <li><strong>Always check current therapy:</strong> Ask about existing anti-epileptic drugs (AEDs), doses, compliance and recent changes.</li>
+          <li><strong>Status epilepticus:</strong> Use your local status epilepticus protocol for IV benzodiazepines and loading doses
+            (e.g. phenytoin / valproate / levetiracetam).</li>
+          <li><strong>Do not abruptly stop chronic AEDs</strong> unless there is a clear acute toxicity or serious reaction and a senior has been consulted.</li>
+          <li><strong>Drug levels:</strong> Consider checking phenytoin / valproate levels if available in cases of poor control, suspected toxicity or non-adherence.</li>
+          <li><strong>Admit or discuss with senior / neurology:</strong> first seizure, status epilepticus, recurrent seizures in ED, new focal neurology,
+            head trauma, pregnancy, or suspected CNS infection.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Side Effects & Cautions (Quick Reference)</h2>
+        <table>
+          <tr>
+            <th>Medication</th>
+            <th>Common Side Effects</th>
+            <th>Key Cautions</th>
+          </tr>
+          <tr>
+            <td>Carbamazepine</td>
+            <td>Drowsiness, dizziness, hyponatraemia, rash</td>
+            <td>
+              Avoid in significant <strong>hyponatraemia</strong>; watch for serious rash (e.g. SJS/TEN);
+              many <strong>drug interactions</strong> (enzyme inducer).
+            </td>
+          </tr>
+          <tr>
+            <td>Lamotrigine</td>
+            <td>Headache, nausea, dizziness, insomnia</td>
+            <td>
+              Start low and go slow – risk of serious <strong>skin reactions</strong> (SJS/TEN), especially with valproate
+              or rapid dose escalation.
+            </td>
+          </tr>
+          <tr>
+            <td>Levetiracetam</td>
+            <td>Somnolence, dizziness, mood changes, irritability</td>
+            <td>
+              Watch for <strong>behavioural / psychiatric symptoms</strong>; adjust in renal impairment.
+            </td>
+          </tr>
+          <tr>
+            <td>Phenytoin</td>
+            <td>Ataxia, nystagmus, sedation, gum hypertrophy (chronic)</td>
+            <td>
+              Narrow therapeutic index; risk of <strong>arrhythmias and hypotension</strong> with rapid IV administration;
+              many drug interactions (enzyme inducer).
+            </td>
+          </tr>
+          <tr>
+            <td>Sodium Valproate</td>
+            <td>Weight gain, tremor, hair changes, GI upset</td>
+            <td>
+              Avoid in <strong>pregnancy</strong> where possible (teratogenic); caution in liver disease and thrombocytopenia;
+              monitor LFTs and platelets.
+            </td>
+          </tr>
+        </table>
+        <p class="small-note">
+          <strong>Remember:</strong> Dosing and choice of AED should follow your hospital / neurology guidelines.
+          When in doubt – discuss with a senior or on-call neurologist.
+        </p>
+      </div>
+    </main>
+
     <script>
       function searchTable() {
         let input, filter, table, tr, td, i, txtValue;

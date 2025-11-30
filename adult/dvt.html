@@ -1,141 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Deep Vein Thrombosis Checklist and Scoring</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-<style>
+  <meta charset="UTF-8">
+  <title>Deep Vein Thrombosis Checklist and Scoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
     }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
+    main {
+      padding: 0 1rem 2rem;
+    }
+
+    h1.page-title {
+      background-color: #0066cc;
+      color: #ffffff;
+      padding: 15px 20px;
+      margin: 0 0 15px;
+      font-size: 1.6rem;
     }
 
     h2 {
-        color: #0066cc;
+      color: #0066cc;
+      margin-top: 1.5rem;
     }
 
     table {
-        border-collapse: collapse;
-        width: 100%;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 15px;
     }
 
     th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
     }
 
     th {
-        background-color: #f2f2f2;
-        color: navy;
+      background-color: #f2f2f2;
+      color: navy;
     }
 
     input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 10px;
+      transform: scale(1.2);
+      margin-right: 8px;
     }
 
     ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 20px;
     }
 
     li {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
-</style>
+
+    .score-box {
+      background-color: #f8fbff;
+      border-left: 4px solid #0066cc;
+      padding: 10px 12px;
+      margin: 10px 0 15px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .danger-box {
+      background-color: #fff5f5;
+      border-left: 4px solid #cc0000;
+      padding: 10px 12px;
+      margin: 10px 0 15px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: none;
+      background-color: #0066cc;
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #004c99;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Deep Vein Thrombosis Checklist and Scoring</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Deep Vein Thrombosis Checklist and Scoring</h1>
-	<h2>Wells Criteria for Deep Vein Thrombosis</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Points</th>
-				<th>Description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>+1</td>
-				<td>Active cancer (treatment within last 6 months or palliative)</td>
-			</tr>
-			<tr>
-				<td>+1</td>
-				<td>Paralysis, paresis, or recent plaster immobilization of the lower extremities</td>
-			</tr>
-			<tr>
-				<td>+1</td>
-				<td>Recently bedridden for 3 days or more, or major surgery within the past 12 weeks requiring general or regional anesthesia</td>
-			</tr>
-			<tr>
-				<td>+1</td>
-				<td>Localized tenderness along the distribution of the deep venous system</td>
-			</tr>
-			<tr>
-				<td>+1</td>
-				<td>Entire leg swollen</td>
-			</tr>
-			<tr>
-				<td>+1</td>
-				<td>Calf swelling at least 3 cm larger than asymptomatic side (measured 10 cm below tibial tuberosity)</td>
-			</tr>
-			<tr>
-				<td>+1</td>
-				<td>Pitting edema (greater in the symptomatic leg)</td>
-			</tr>
-            <tr>
-                <td>+1</td>
-                <td>Collateral superficial veins (non-varicose)</td>
-            </tr>
-            <tr>
-                <td>-2</td>
-                <td>An alternative diagnosis is at least as likely as deep vein thrombosis</td>
-            </tr>
-        </tbody>
+  <header>
+    <div class="logo-container">
+      <h1>Deep Vein Thrombosis Checklist and Scoring</h1>
+      <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Wells Criteria for Suspected DVT</h1>
+
+    <div class="score-box">
+      <strong>Note:</strong> This tool is for teaching and bedside support only. Always use your clinical
+      judgement and follow your hospital / national DVT protocols. Discuss uncertain cases with a senior.
+    </div>
+
+    <h2>Interactive Wells Score Checklist</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Include?</th>
+          <th>Criterion</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Active cancer (treatment within last 6 months or palliative)</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Paralysis, paresis, or recent plaster immobilisation of the lower extremities</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Recently bedridden for ≥3 days, or major surgery within the past 12 weeks requiring general or regional anaesthesia</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Localised tenderness along the distribution of the deep venous system</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Entire leg swollen</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Calf swelling ≥3 cm larger than asymptomatic side (measured 10 cm below tibial tuberosity)</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Pitting oedema confined to the symptomatic leg</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="1">
+          </td>
+          <td>Collateral superficial veins (non-varicose)</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="wells-item" data-points="-2">
+          </td>
+          <td>An alternative diagnosis is at least as likely as DVT</td>
+          <td>−2</td>
+        </tr>
+      </tbody>
     </table>
-    
-    <h2>Interpretation of Wells Score:</h2>
+
+    <button class="btn" type="button" onclick="calculateWells()">Calculate Wells Score</button>
+
+    <div id="wells-result" class="score-box" style="display:none; margin-top:10px;"></div>
+
+    <h2>Interpretation of Wells Score</h2>
     <ul>
-        <li>Low risk: Score of 0 or less</li>
-        <li>Moderate risk: Score of 1 to 2</li>
-        <li>High risk: Score of 3 or more</li>
+      <li><strong>Low risk:</strong> score ≤ 0</li>
+      <li><strong>Moderate risk:</strong> score 1–2</li>
+      <li><strong>High risk:</strong> score ≥ 3</li>
     </ul>
-    
-    <h2>Management of Deep Vein Thrombosis (DVT)</h2>
+
+    <h2>Suggested ED Approach (Framework)</h2>
     <ol>
-        <li>Based on the Wells Score, determine the risk category for DVT</li>
-        <li>For low-risk patients, consider a D-dimer test. If the test is positive, perform imaging studies (e.g., venous duplex ultrasonography)</li>
-        <li>For moderate and high-risk patients, consider imaging studies without a D-dimer test</li>
-        <li>If the imaging study confirms a DVT, initiate anticoagulation therapy</li>
-        <li>Consider compression stockings for symptom relief and to prevent post-thrombotic syndrome</li>
-        <li>Follow up with the patient and adjust treatment as needed, based on clinical response and laboratory monitoring</li>
-        <li>Assess for possible underlying causes of DVT (e.g., malignancy, inherited thrombophilia) and manage accordingly</li>
+      <li>
+        <strong>Calculate Wells score</strong> and place the patient into low / moderate / high risk.
+      </li>
+      <li>
+        <strong>Low risk (≤ 0):</strong>  
+        Consider D-dimer if available and appropriate:
+        <ul>
+          <li>Negative D-dimer → DVT unlikely (consider alternatives).</li>
+          <li>Positive D-dimer → arrange compression ultrasound.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Moderate or high risk (≥ 1):</strong>  
+        <ul>
+          <li>Arrange urgent compression ultrasound of the affected limb.</li>
+          <li>Consider starting empiric anticoagulation if imaging is delayed and bleeding risk is acceptable.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>If DVT is confirmed:</strong>
+        <ul>
+          <li>Start anticoagulation as per local protocol (e.g. LMWH, DOAC, or warfarin-based regimen).</li>
+          <li>Assess renal function, pregnancy status, bleeding risk, and drug interactions.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Symptom control & follow-up:</strong>
+        <ul>
+          <li>Analgesia as needed.</li>
+          <li>Consider compression stockings to reduce risk of post-thrombotic syndrome (once acute pain/swelling settles).</li>
+          <li>Arrange outpatient follow-up (e.g. medical clinic / anticoagulation clinic).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Look for underlying causes:</strong> recent surgery/immobilisation, malignancy, pregnancy, OCP/HRT,
+        thrombophilia, previous VTE, long-haul travel, nephrotic syndrome, etc.
+      </li>
     </ol>
-    
-    <script>
-        function goBack() {
-            window.history.back();
+
+    <div class="danger-box">
+      <strong>Red flags:</strong>
+      <ul>
+        <li>Shortness of breath, pleuritic chest pain, hypoxia, syncope → suspect PE and escalate urgently.</li>
+        <li>Massive limb swelling, phlegmasia, severe pain → discuss urgently with senior / vascular surgery.</li>
+        <li>Major bleeding risk or haemodynamic instability → urgent senior input before anticoagulation.</li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    function calculateWells() {
+      const items = document.querySelectorAll('.wells-item');
+      let score = 0;
+
+      items.forEach(item => {
+        if (item.checked) {
+          const pts = parseFloat(item.getAttribute('data-points')) || 0;
+          score += pts;
         }
-    </script>
+      });
+
+      let riskCategory = '';
+      let summary = '';
+
+      if (score <= 0) {
+        riskCategory = 'Low risk';
+        summary = 'DVT is unlikely. Consider D-dimer (if appropriate) and alternative diagnoses. Always correlate with clinical picture.';
+      } else if (score >= 1 && score <= 2) {
+        riskCategory = 'Moderate risk';
+        summary = 'DVT is possible. Arrange compression ultrasound. Consider D-dimer and local protocols.';
+      } else {
+        riskCategory = 'High risk';
+        summary = 'DVT is likely. Arrange urgent compression ultrasound and consider empiric anticoagulation if not contraindicated.';
+      }
+
+      const resultDiv = document.getElementById('wells-result');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = `
+        <strong>Total Wells score:</strong> ${score} <br>
+        <strong>Risk category:</strong> ${riskCategory} <br>
+        <span style="font-size:0.9rem;">${summary}</span>
+      `;
+    }
+  </script>
 </body>
-</html>    
+</html>

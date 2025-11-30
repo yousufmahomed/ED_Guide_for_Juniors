@@ -8,19 +8,43 @@
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url(/images/coMorbid.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        
-      }
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      color: #333;
+      background-image: url(/images/coMorbid.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    main {
+      padding: 0 1rem 2rem;
+    }
+    .section {
+      margin-bottom: 20px;
+      background-color: rgba(255,255,255,0.85);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      text-decoration: underline;
+      margin-bottom: 5px;
+    }
+    .mnemonic-box {
+      margin: 15px 0;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background-color: rgba(255,255,255,0.9);
+      border-left: 5px solid #2c3e50;
+    }
+    .mnemonic-box strong {
+      color: #2c3e50;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo-container">
@@ -30,142 +54,196 @@
     </div>
   </header>
 
-  <body>
+  <main>
     <h1 class="title">Co-Morbidities</h1>
-    <h2>The mnemonic D-E-A-T-H is useful; Diabetes, Epilepsy, Asthma, TB, Hypertension/HIV. In this section we've added a few more that can also be asked about.</h2>
-    <ul class="links">
-      <section class="section">
-      <li style="font-size: larger; text-decoration:underline;">Diabetes Type I</li>
-      <p>Try and get a history of medications  and dosages especially</p>
-      <p>Previous DKA episodes are very important to note down</p>
-    </section>
+
+    <div class="mnemonic-box">
+      <p>
+        A useful mnemonic is <strong>D-E-A-T-H</strong>:
+        <strong>D</strong>iabetes, <strong>E</strong>pilepsy, <strong>A</strong>sthma,
+        <strong>T</strong>B, <strong>H</strong>ypertension/HIV.
+      </p>
+      <p>In this section we add a few more important conditions that are worth asking about in the emergency setting.</p>
+    </div>
+
     <section class="section">
-      <li style="font-size: larger; text-decoration:underline;">Diabetes Type II</li>
-      <p>Try and find out age of onset, and the current medications used are valuable pieces of information.</p>
-      <p>Dietary habits, body habitus and family history of the disease should also be asked</p>
-      <p>Previous admissions related to the condition are also important.</p>
-      <li style="font-size: larger; text-decoration:underline;">Epilepsy</li>
-      <p>Age of onset is important.</p>
-      <p>You should also try and ask about:- <br>
-        Medications used and dosages, <br>
-        If it was spontaneous onset or due to trauma. <br>
-        Past infections, vascular abnormalities and growths can also be a cause. <br>
-        If the patient is on treatment it is important to know how lng since their last seizure</p> 
-      </section>
-      <section class="section">
-      <li style="font-size: larger; text-decoration:underline;">Asthma</li>
-      <p>Again, you need to ask about medications and dosages</p>
-      <p>Age of onset or triggering factors such as infections or exercise.</p>
-      <p>Previous admissions and a history of having severe asthma attacks , or even ICU admissions for Status asthmaticus.</p>
-    </section>
-    <section class="section">
-      <li style="font-size: larger; text-decoration:underline;">TB</li>
-        <ul>
-          <li><em style="text-decoration:underline; font-size:larger; font-weight:bolder; color:brown">Important!!!</em> Make sure you can look at the TB DOTS (green) Card , or equivalent in your setting.</li>
-          <li>It gives you the timeline, dosages, changes and complications.</li>
-          <li>If you cannot see it, make sure you try and get as much information about this from the patient</li>
-          <li>And differentiate the type of TB</li>
-            <ul>
-              <li>Pulmonary</li>
-              <li>Abdominal</li>
-              <li>Joint</li>
-              <li>Spinal</li>
-              <li>Meningitis</li>
-              <li>Intra-cranial</li>
-            </ul>
-          </section>
-            <section class="section">
-        </ul>
-        <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Hypertension</li>
-        <p>Medications and dosages are important.</p>
-        <p>If the hypertension has an underlying cause like renal vascular disease, its extremely important to note</p>
-        <p>Although, most patients who have secondary HPT they will inform you of the underlying cause.</p>
-        <p>Previous admissions and any known target organ damage is important to know.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">HIV</li>
-        <p>The doctor may ask whether the patient knows their HIV status, whether they have been tested for HIV in the past, and if they have been diagnosed with HIV previously.</p>
-        <p>You may ask about any medications the patient is taking, including antiretroviral therapy (ART) or prophylaxis for HIV.</p>
-        <p>You can ask about any allergies the patient has, as some medications used to treat HIV or related infections can cause allergic reactions.</p>
-        <p>Compliance is also extremely important</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Other Medical Conditions</li>
-        <ul>
-          <li>The Ffg is a concise (but not exhaustive) list of the most common Medical conditions you should ask about</li>
-          <li>Ischemic Heart Disease</li>
-          <li>Congestive Cardiac Failure</li>
-          <li>Valvular Heart Disease</li>
-          <li>Rheumatic heart Disease</li>
-          <li>Known Arrhythmias</li>
-          <li>COPD</li>
-          <li>Pneumonia</li>
-          <li>Lung Cancer</li>
-          <li>Renal Impairment</li>
-            <ul>
-              <li>Its good to know if someone has had to be on dialysis or diuretics or chelating agents.</li>
-            </ul>
-          <li>Liver Disease</li>
-            <ul>
-              <li>Cirrhosis</li>
-              <li>Cancer</li>
-              <li>Cysts and Lesions</li>
-              <li>Includes Gallbladder disease</li>
-            </ul>
-          <li>Previous CVA</li>
-          <li>Space Occupying Lesions</li>
-            <ul>
-              <li>In the neurological diseases it is important to know the patients baseline function.</li>
-            </ul>
-          <li>Its very important to know about previous admissions (especially in the ICU or High-care).</li>
-        </ul>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Other Surgical Diagnosis</li>
-          <ul>
-            <li>The Ffg is a concise (but not exhaustive) list of the most common Surgical conditions you should ask about</li>
-            <li>Previous Abdominal Surgery</li>
-            <li>Appendicitis</li>
-            <li>VPrevious traumatic Brain Injury</li>
-            <li>Hyper/ Hypothyroidism</li>
-            <li>GIT Ulcerations</li>
-            <li>COPD</li>
-            <li>Bowel Obstruction</li>
-            <li>Lung Cancer</li>
-            <li>Hernias</li>
-              <ul>
-                <li>Its good to know if has had previous incarcerations or strangulations.</li>
-              </ul>
-            <li>Deep Vein Thrombosis</li>
-            <li>Peripheral Vascular Disease</li>
-            <li>Amputations</li>
-              <ul>
-                <li>In this case its important to know the reason why the amputation happened.</li>
-              </ul>
-            <li>Its very important to know about previous admissions (especially in the ICU or High-care).</li>
-          </ul>
-        </section>
-        <section class="section">
-          <li style="font-size: larger; text-decoration:underline;">Other Orthopaedic Diagnosis</li>
+      <h2>Diabetes Type I</h2>
       <ul>
-        <li>The Ffg is a concise (but not exhaustive) list of the most common Orthopaedic conditions you should ask about</li>
-        <li>Previous Fracture</li>
-        <li>ORIF (Open Reduction Internal Fixation)</li>
-        <li>Amputations</li>
-        <li>Ligament/ Tendon injuries</li>
-        <li>Spinal Injuries</li>
-        <li>Dislocations</li>
-        <li>Its very important to know about previous admissions (especially in the ICU or High-care).</li>
+        <li>Get a detailed history of medications and dosages (insulin type, units, frequency).</li>
+        <li>Ask about previous episodes of DKA or severe hypoglycaemia.</li>
+        <li>Note any diabetes-related complications (neuropathy, retinopathy, renal disease).</li>
       </ul>
     </section>
-    <section class="section">
-      <li style="font-size: larger; text-decoration:underline;">Previous ICU Admission</li>
-      <li>Details of Other Co-Morbidities and Checked Conditions if Applicable</li>
-    </ul>
-  </section>
 
-    <h2>To get an idea of medications that are commonly used for the above conditions click <a href="/adult/commonMeds.html" class="emphasis-link">here.</a></h2>
-    
-  </body>
+    <section class="section">
+      <h2>Diabetes Type II</h2>
+      <ul>
+        <li>Age of onset and current medications (oral agents, insulin, GLP-1, etc.).</li>
+        <li>Dietary habits, body habitus and family history of diabetes.</li>
+        <li>Previous admissions related to diabetes (DKA, HHS, sepsis, foot sepsis, stroke, MI).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Epilepsy</h2>
+      <ul>
+        <li>Age of onset and seizure type (generalised, focal, absence, myoclonic).</li>
+        <li>Current medications and dosages (and any recent changes).</li>
+        <li>Was the epilepsy spontaneous or secondary to trauma, infection, vascular lesion or tumour?</li>
+        <li>Time since the last seizure and any recent increase in seizure frequency.</li>
+        <li>Medication adherence and any known triggers (sleep deprivation, alcohol, missed doses).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Asthma</h2>
+      <ul>
+        <li>Regular medications and dosages (SABA, ICS, LABA, oral steroids).</li>
+        <li>Age of onset and known triggers (infections, exercise, allergens, occupational exposures).</li>
+        <li>Previous admissions, especially ICU or intubations for status asthmaticus.</li>
+        <li>Recent steroid use, frequent nebulisations or ED visits in the last year.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>TB (Tuberculosis)</h2>
+      <ul>
+        <li>
+          <em style="text-decoration:underline; font-size:larger; font-weight:bolder; color:brown">
+            Important:
+          </em> If possible, examine the TB DOTS (green) card or equivalent.
+        </li>
+        <li>Note duration of treatment, regimen, dosage changes, side effects and complications.</li>
+        <li>If the card is not available, obtain as much detail as possible from the patient or family.</li>
+        <li>Differentiate the type of TB:</li>
+        <ul>
+          <li>Pulmonary</li>
+          <li>Abdominal</li>
+          <li>Joint</li>
+          <li>Spinal</li>
+          <li>Meningitis</li>
+          <li>Intracranial TB (tuberculomas, etc.)</li>
+        </ul>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Hypertension</h2>
+      <ul>
+        <li>Document medications and dosages and ask about adherence.</li>
+        <li>Ask about any known secondary causes (renal disease, endocrine causes, etc.).</li>
+        <li>Previous admissions for hypertensive emergencies or strokes.</li>
+        <li>Any known target organ damage: CKD, LVH/heart failure, previous MI, retinopathy, stroke.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>HIV</h2>
+      <ul>
+        <li>Ask if the patient knows their HIV status and when they were last tested.</li>
+        <li>Current ART regimen, prophylaxis (e.g. cotrimoxazole), and adherence.</li>
+        <li>History of opportunistic infections (TB, PCP, cryptococcal meningitis, etc.).</li>
+        <li>Any known CD4 count and viral load (and when they were last checked).</li>
+        <li>Drug allergies or previous adverse reactions to ART.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Other Important Medical Conditions</h2>
+      <p>The following is a concise (but not exhaustive) list of common medical conditions to ask about:</p>
+      <ul>
+        <li>Ischaemic Heart Disease (previous MI, stents, CABG).</li>
+        <li>Congestive Cardiac Failure.</li>
+        <li>Valvular Heart Disease / Rheumatic Heart Disease.</li>
+        <li>Known arrhythmias (AF, flutter, VT, long QT, WPW, pacemaker, ICD).</li>
+        <li>COPD and other chronic lung diseases (bronchiectasis, fibrosis).</li>
+        <li>Recurrent Pneumonia or chronic infections.</li>
+        <li>Lung Cancer or other malignancies (with site and treatment history).</li>
+        <li>Renal impairment:</li>
+        <ul>
+          <li>History of dialysis (HD, PD) or use of chelating agents or high-dose diuretics.</li>
+        </ul>
+        <li>Liver disease:</li>
+        <ul>
+          <li>Cirrhosis, liver cancer, cysts and lesions.</li>
+          <li>Gallbladder disease (cholecystitis, stones, previous ERCP).</li>
+        </ul>
+        <li>Previous stroke (CVA) or TIA.</li>
+        <li>Space-occupying lesions (brain tumours, abscesses, etc.).</li>
+        <ul>
+          <li>Always clarify baseline neurological function (speech, mobility, cognition).</li>
+        </ul>
+        <li>Previous ICU or High-Care admissions and the reasons for those admissions.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Other Surgical Diagnoses</h2>
+      <p>A concise (but not exhaustive) list of common surgical conditions to ask about:</p>
+      <ul>
+        <li>Previous abdominal surgery (type and indication).</li>
+        <li>Appendicitis and other acute abdominal conditions.</li>
+        <li>Previous traumatic brain injury or neurosurgery.</li>
+        <li>Hyper- or hypothyroidism requiring surgery or radioactive iodine.</li>
+        <li>GIT ulceration or bleeding (e.g. peptic ulcer disease).</li>
+        <li>History of bowel obstruction or adhesions.</li>
+        <li>Hernias (inguinal, femoral, incisional, etc.):</li>
+        <ul>
+          <li>Ask about past incarceration, strangulation or repairs.</li>
+        </ul>
+        <li>Deep Vein Thrombosis (DVT) or Pulmonary Embolism (PE).</li>
+        <li>Peripheral vascular disease.</li>
+        <li>Amputations:</li>
+        <ul>
+          <li>Clarify the underlying cause (vascular, trauma, diabetes, infection, tumour).</li>
+        </ul>
+        <li>Again, note any previous ICU or High-Care admissions related to surgery.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Other Orthopaedic Diagnoses</h2>
+      <p>Common orthopaedic conditions worth asking about:</p>
+      <ul>
+        <li>Previous fractures (site, mechanism, complications).</li>
+        <li>ORIF (Open Reduction Internal Fixation) or other orthopaedic implants.</li>
+        <li>Amputations (level and reason).</li>
+        <li>Ligament or tendon injuries (ACL, rotator cuff, Achilles, etc.).</li>
+        <li>Spinal injuries (fractures, disc disease, surgery, instrumentation).</li>
+        <li>Recurrent dislocations (shoulder, patella, etc.).</li>
+        <li>Previous ICU or High-Care admissions due to trauma.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Previous ICU / High-Care Admissions</h2>
+      <ul>
+        <li>Always ask if the patient has been in ICU or High-Care previously.</li>
+        <li>Clarify why they were admitted (sepsis, trauma, respiratory failure, cardiac event, etc.).</li>
+        <li>Ask about intubation, ventilation, inotropes, and complications (e.g. pressure sores, AKI).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Quick ED Co-Morbidity Checklist</h2>
+      <ul>
+        <li>Diabetes, Hypertension, HIV, TB, Asthma/COPD, Epilepsy.</li>
+        <li>Heart disease (IHD, heart failure, arrhythmia, valve disease).</li>
+        <li>Renal or liver disease, dialysis history.</li>
+        <li>Previous stroke, neurosurgery, space-occupying lesions.</li>
+        <li>Major surgeries, amputations, ICU/High-Care admissions.</li>
+        <li>Current medications and allergies (especially anticoagulants, steroids, ART).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Medication Reference</h2>
+      <p>
+        To get an idea of medications that are commonly used for the above conditions
+        click <a href="/adult/commonMeds.html" class="emphasis-link">here</a>.
+      </p>
+    </section>
+
+  </main>
+</body>
 </html>

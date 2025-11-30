@@ -6,38 +6,39 @@
     <link rel="stylesheet" href="/genralPages.css">
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #333;
+        background-image: url("/images/medications.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
       table {
         border-collapse: collapse;
         width: 100%;
       }
-      
+
       th, td {
         text-align: left;
         padding: 8px;
       }
-      
+
       th {
         background-color: #4CAF50;
         color: white;
       }
-      
+
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-      
+
       input[type=text] {
         width: 100%;
         padding: 12px 20px;
@@ -46,71 +47,149 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      
+
       input[type=text]:focus {
         border: 2px solid #4CAF50;
       }
+
+      .safety-box {
+        background: rgba(255, 0, 0, 0.1);
+        border-left: 5px solid red;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 6px;
+      }
+
+      .section-header {
+        margin-top: 40px;
+        font-size: 22px;
+        color: #003366;
+        text-decoration: underline;
+      }
     </style>
   </head>
-  <nav class="logo-container">
-    <div class="logo-container">
-      <h1 class="main-header">Commonly Used Antipsychotics and Neuroleptics in the Emergency Department</h1>
-      <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-      </div>
-      <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </nav>
-</header>
+
   <body>
-    
+    <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">Commonly Used Antipsychotics and Neuroleptics in the Emergency Department</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+
     <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antipsychotics...">
+
+    <!-- SAFETY SECTION -->
+    <div class="safety-box">
+      <strong>⚠ Important ED Safety Notes:</strong>
+      <ul>
+        <li>Always exclude hypoxia, hypoglycaemia, meningitis, intoxication, and head injury before sedation.</li>
+        <li><strong>Avoid IM Olanzapine within 1 hour of IV benzodiazepines</strong> → risk of respiratory depression.</li>
+        <li><strong>QT prolongation</strong> risk ↑ with Haloperidol, Droperidol, Risperidone.</li>
+        <li><strong>NMS risk:</strong> rigidity, fever, autonomic instability → stop all antipsychotics immediately.</li>
+        <li>Use lower doses in elderly patients or those with renal/hepatic impairment.</li>
+        <li><strong>Always consult a senior for:</strong> pregnancy, HIV neuro involvement, severe agitation requiring repeat dosing, or medically unstable patients.</li>
+      </ul>
+    </div>
+
     <table id="antipsychotics">
       <tr>
-        <th>Antipsychotic/Neuroleptic</th>
-        <th>Dosage</th>
-        <th>Route of Administration</th>
+        <th>Antipsychotic / Neuroleptic</th>
+        <th>Typical ED Dose</th>
+        <th>Route</th>
+        <th>Notes</th>
       </tr>
+
       <tr>
         <td>Haloperidol</td>
-        <td>2-10 mg every 4-8 hours</td>
-        <td>Intramuscular or intravenous</td>
+        <td>2.5–10 mg (may repeat every 30–60 min)</td>
+        <td>IM / IV</td>
+        <td>Risk of QT prolongation; good for psychosis; combine with benzo for severe agitation.</td>
       </tr>
+
       <tr>
         <td>Olanzapine</td>
-        <td>5-10 mg every 2-4 hours</td>
-        <td>Intramuscular or oral</td>
+        <td>5–10 mg (IM) or 5–10 mg (PO)</td>
+        <td>IM / Oral</td>
+        <td><strong>Do NOT give IM within 1 hour of IV benzos.</strong> Good in elderly or medically fragile patients.</td>
       </tr>
+
       <tr>
         <td>Quetiapine</td>
-        <td>25-50 mg every 6-8 hours</td>
+        <td>25–50 mg</td>
         <td>Oral</td>
+        <td>Useful for delirium or mild–moderate agitation; onset slower.</td>
       </tr>
+
       <tr>
         <td>Risperidone</td>
-        <td>0.5-2 mg every 12 hours</td>
-        <td>Oral or intramuscular</td>
+        <td>1–2 mg</td>
+        <td>Oral</td>
+        <td>Useful for chronic psych disorders; slower onset; avoid in QT prolongation.</td>
+      </tr>
+
+      <tr>
+        <td>Droperidol</td>
+        <td>2.5–5 mg (may repeat once)</td>
+        <td>IM / IV</td>
+        <td>Excellent sedative effect; monitor QT; good in violent agitation or meth intoxication.</td>
       </tr>
     </table>
+
+    <!-- RAPID SEDATION SECTION -->
+    <h2 class="section-header">Rapid Chemical Sedation Options (ED)</h2>
+
+    <table>
+      <tr>
+        <th>Regimen</th>
+        <th>Typical Dose</th>
+        <th>Use Case</th>
+      </tr>
+
+      <tr>
+        <td><strong>Haloperidol + Lorazepam</strong></td>
+        <td>Haldol 5 mg IM + Lorazepam 2 mg IM/IV</td>
+        <td>Severe agitation, psychosis</td>
+      </tr>
+
+      <tr>
+        <td><strong>Droperidol</strong></td>
+        <td>5–10 mg IM/IV</td>
+        <td>Violent agitation, stimulant intoxication</td>
+      </tr>
+
+      <tr>
+        <td><strong>Olanzapine (IM)</strong></td>
+        <td>10 mg IM (single agent)</td>
+        <td>Agitation in elderly, frail, HIV patients</td>
+      </tr>
+
+      <tr>
+        <td><strong>Midazolam alone</strong></td>
+        <td>2.5–5 mg IV / 5–10 mg IM</td>
+        <td>Primary sedation when antipsychotics contraindicated</td>
+      </tr>
+    </table>
+
     <script>
       function searchTable() {
-        let input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("antipsychotics");
-        tr = table.getElementsByTagName("tr");
-        for (i = 1; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
+        let input = document.getElementById("search");
+        let filter = input.value.toUpperCase();
+        let table = document.getElementById("antipsychotics");
+        let tr = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td")[0];
           if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
-            }
+            let txtValue = td.textContent || td.innerText;
+            tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
           }
         }
       }
     </script>
+
   </body>
 </html>
