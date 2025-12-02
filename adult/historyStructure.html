@@ -3,155 +3,391 @@
 <head>
   <meta charset="UTF-8">
   <title>History Structure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url(/images/historyStructure.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/historyStructure.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .section {
+      margin-bottom: 1.25rem;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0.25rem 0 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    ul, ol {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    ul ul, ol ul {
+      margin-top: 0.15rem;
+      margin-bottom: 0.15rem;
+    }
+
+    ul ul li {
+      font-size: 0.9rem;
+    }
+
+    .emphasis-link {
+      color: #005daa;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
       }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">History Structure</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <main>
-        <section class="section">
-            <h2 class="subheading">Main Complaint</h2>
-            <p>This is a brief statement by the patient that describes the reason for seeking medical attention. It is important to document the patient's own words.</p>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">History Structure</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <section class="section">
+        <h2 class="subheading">Main Complaint (Presenting Complaint)</h2>
+        <p>
+          This is a brief statement, in the patient’s own words, describing why they
+          came to the Emergency Department.
+        </p>
+        <ul>
+          <li>Try to record it as a short phrase in quotes, e.g. <em>“Severe chest pain since this morning.”</em></li>
+          <li>Elicit as many symptoms as possible – patients often under-report important details initially.</li>
+          <li>Be open to listening – patients are usually not medically trained. You may need to “read between the lines” and consider social, cultural and socio-economic factors.</li>
+          <li>Try to understand the circumstances around the illness or injury:
             <ul>
-              <li>Try and elicit as many symptoms as you can, as this will help you in diagnosis</li>
-              <li>Be open to listening, the patient is not a health professional generally, and you may have to read between the lines, consider social and cultural aspects, and socio-economic impacts, to fully understand why the person is in front of you for this consultation</li>
-              <li>This may sound intimidating, but as you take more histories and practice, it can be accomplished in a very short time</li>
-              <li>It is also important to understand the circumstances surrounding the illness, for example</li>
-                <ul>
-                  <li>There is a big difference between two patients who have an injured ankle, where the first slipped on a wet floor and the second felt dizzy, fainted with a chest pain and woke up with a swollen ankle!!</li>
-                  <li>Your approach to investigating them will be completely different!</li>
-                </ul>
+              <li>There is a big difference between a sprained ankle from slipping on a wet floor and an ankle injury after syncope with chest pain and collapse – your approach and urgency will be very different.</li>
             </ul>
-          </section>
-          
-          <section class="section">
-            <h2 class="subheading">History of Present Illness</h2>
-            <p>This is a detailed description of the current problem.</p>
+          </li>
+        </ul>
+        <p class="note">
+          With practice, this part of the history can be done quickly without sacrificing depth or empathy.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">History of Present Illness (HPI)</h2>
+        <p>
+          This is a detailed description of the current problem from onset until now.
+        </p>
+        <ul>
+          <li>
+            <strong>Onset</strong>
             <ul>
-              <li>
-                Onset
+              <li>Is this the first episode (index presentation) or a recurrence?</li>
+              <li>If recurrent, is this episode similar to previous ones? If not, what is different?</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Duration and progression</strong>
+            <ul>
+              <li>When did the symptoms start, and how have they evolved over time?</li>
+              <li>If symptoms started more than 24 hours ago, ask: <em>“What made you decide to come in today?”</em></li>
+              <li>Common reasons for finally coming in:
                 <ul>
-                  <li>Is this an index(first) presentation or a recurring problem</li>
-                  <li>If it is recurring, try and determine if this episode is similar to others, and if not, how does it differ?</li>
+                  <li>Change or worsening in severity.</li>
+                  <li>Home or over-the-counter remedies no longer helping.</li>
+                  <li>New associated symptoms (e.g. shortness of breath, fever, weakness).</li>
+                  <li>Social issues (e.g. an abusive partner, lack of support at home).</li>
                 </ul>
               </li>
-              <li>Duration of symptoms</li>
-                <ul>
-                  <li>If it is a problem that has started more than 24 hours ago :- What prompted the patient to seek help now?
-                    <ul>
-                      <li>The factors that can make someone come in</li>
-                        <ul>
-                          <li>Change in severity</li>
-                          <li>Alleviating methods no longer helping</li>
-                          <li>Patient may be struggling with an abusive partner?</li>
-                          <li>While it is not necessary to take hours interrogating a person, just asking a few basics can create a picture surrounding the current problem and address your patient holistically!</li>
-                        </ul>
-                    </ul>
-                  </li>
-                </ul>
-              <li>
-                Severity (Use a pain scale if needed)
-                <ul>
-                  <li>Has the severity changed, &amp; if so, over what time-frame</li>
-                  <li>Does anything aggravate or alleviate the severity</li>
-                  <p>See the <a href="/adult/painScale.html" class="emphasis-link">Pain Scale</a> here</p>
-
-                </ul>
-              </li>
             </ul>
-          </section>
-
-          <section class="section">
-            <h2 class="subheading">Past Medical &amp; Co-Morbid History</h2>
-            <p>This includes a summary of the patient's past illnesses, surgeries, hospitalizations, and chronic conditions. </p>
-            <p>For a more comprehensive look at this aspect please go to this <a href="/adult/coMorbid.html" class="emphasis-link"> <em>Section</em> </a> dedicated to its discussion</p> 
-          </section>
-          <section class="section">
-            <h2 class="subheading">Medications</h2>
-            <p>Document all current medications the patient is taking. </p>
-            <p>It is also important to note medications that were taken for long periods before, but have now stopped and why.</p> 
-            <p>While most patients may struggle to know doses, you should try and get a clear picture from them about frequency of use (twice a day, three times a day etc) and which illnesses were being treated. </p>
-            <p> <em style="color: brown;">Hint!!</em> If your patient has brought their medication along (or a prescription or list), thank them for their thoughtfulness, I have found it builds instant rapport and makes the rest of the consultation go much easier.</p>
-            <p>In fact, any opportunity to show appreciation for the actions of the patient or caregiver or parent, makes a <em style="color: brown;">Huge</em> impact on their impression of you, and makes you seem empathetic and sympathetic simultaneously!!</p>
-            <p>Go to this <a href="/adult/commonMeds.html" class="emphasis-link"> <em>Page</em> </a> for a list of commonly used medications and dosages to assist you.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Allergies</h2>
-            <p>Document any known allergies the patient has. </p>
-            <p>Especially important in the ED are allergies to :-</p>
+          </li>
+          <li>
+            <strong>Severity (and impact)</strong>
             <ul>
-              <li>Penicillin</li>
-                <ul>
-                  <li>It is important to note that most penicillin based antibiotics do elicit a rash on first usage, but a true allergy causes a more severe anaphylaxis reaction.</li>
-                </ul>
-              <li>Cephalosporins</li>
-              <li>Sulfur</li>
-              <li>ACE Inhibitors</li>
-              <li>Anaesthetic reactions (especially if patient needs emergency surgery)</li>
-              <li>Eggs</li>
-              <li>Nuts</li>
-
+              <li>Use a pain scale if needed, e.g. 0–10 (<a href="/adult/painScale.html" class="emphasis-link">Pain Scale</a>).</li>
+              <li>Has the severity changed? Over what time-frame?</li>
+              <li>Does anything make it better or worse (position, exertion, meals, movement)?</li>
+              <li>How is it affecting function – can they walk, work, sleep, eat?</li>
             </ul>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Family History</h2>
-            <p>Document any significant medical problems or conditions that run in the patient's family. </p>
-            <p>The co-morbid conditions will give you a good guide on family history as well.</p>
-            <p>But remember, you are trying to get  information on diseases that have caused deaths and extended treatments for immediate family.</p> 
-            <p>It is important to know that a patient with a purulent breast mass has two sisters being treated for breast cancer!!</p>
-            <p>This is something that comes with practice, but if you are starting your medical journey, take time to ask as much as possible.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Social History</h2>
-            <p>This includes information on the patient's occupation, living situation, and any relevant social habits such as smoking or alcohol use. </p>
-            <p>Go to this <a href="/adult/packYears.html" class="emphasis-link"> <em>Page</em> </a> to see the pack years calculator for smoking.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Events preceding illness/ injury.</h2>
-            <p>This is more important for patients where the mechanism of injury seems suspicious or you suspect that another illness may be precipitating current problems. </p>
-            <p>As an example, a child presents with a spiral fracture of the femur, but caregiver insists they fell from the bed. This could indicate Child abuse!</p>
-            <p>Or you could look at the example given before of the two patients with ankle injuries but completely different events led up to the injury.</p>
-            <p>This can also help you later on if cases go to court or evolve into more complex issues.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Patients Last Meal</h2>
-            <p>This is especially important if the patient is going into theatre. </p>
-          </section>
+          </li>
+          <li>
+            <strong>Character and associated symptoms</strong>
+            <ul>
+              <li>Character of the main symptom (sharp, dull, burning, pleuritic, colicky etc.).</li>
+              <li>Location and radiation (e.g. chest pain radiating to jaw or left arm).</li>
+              <li>Associated symptoms – fever, weight loss, nausea/vomiting, dyspnoea, palpitations, neurological symptoms, urinary or bowel changes, etc.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Precipitating factors and relieving factors</strong>
+            <ul>
+              <li>What was the patient doing when the problem started?</li>
+              <li>Has anything helped (rest, medication, position, ice/heat)?</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Ideas, Concerns and Expectations (ICE)</strong>
+            <ul>
+              <li><strong>Ideas:</strong> What does the patient think might be wrong?</li>
+              <li><strong>Concerns:</strong> What are they most worried about (heart attack, cancer, work, family)?</li>
+              <li><strong>Expectations:</strong> What were they hoping for from this visit (relief, admission, a scan, a note)?</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
 
-          <section class="section">
-            <p>It is impossible to cover all the intricacies of history taking on a single page,and you should refer to your Texts and seniors for more information, but this will at least provide you with the basic structure that your history should take. <i class="fa-solid fa-face-smile"></i> </p>
-          </section>
+      <section class="section">
+        <h2 class="subheading">Review of Systems (Screen for Other Problems)</h2>
+        <p>
+          A brief, focused review of other systems can reveal important associated or
+          alternative diagnoses.
+        </p>
+        <ul>
+          <li>Cardiorespiratory: chest pain, dyspnoea, palpitations, orthopnoea, cough, haemoptysis.</li>
+          <li>Abdominal: pain, nausea/vomiting, diarrhoea, constipation, bleeding per rectum, jaundice.</li>
+          <li>Neurological: headaches, seizures, weakness, sensory changes, speech or vision changes.</li>
+          <li>GU: dysuria, haematuria, frequency, retention, incontinence, vaginal or urethral discharge.</li>
+          <li>General: fever, weight loss, night sweats, fatigue.</li>
+        </ul>
+      </section>
 
-          
-    </main>
+      <section class="section">
+        <h2 class="subheading">Past Medical and Co-Morbid History</h2>
+        <p>
+          Summarise major past illnesses, surgeries, hospitalisations and chronic conditions.
+        </p>
+        <ul>
+          <li>Ask about chronic diseases commonly seen in ED: hypertension, diabetes, HIV, TB, asthma/COPD, heart disease, epilepsy, psychiatric illness.</li>
+          <li>Include any previous similar episodes or admissions for the same issue.</li>
+        </ul>
+        <p>
+          For a more comprehensive look at this aspect please go to this
+          <a href="/adult/coMorbid.html" class="emphasis-link"><em>Section</em></a>
+          dedicated to its discussion.
+        </p>
+      </section>
 
-      
-      
-   
+      <section class="section">
+        <h2 class="subheading">Medications</h2>
+        <p>
+          Document all current medications, including over-the-counter and traditional remedies.
+        </p>
+        <ul>
+          <li>Note chronic medications (names if possible), dose and frequency.</li>
+          <li>Ask about medication changes, recent new drugs and reasons for stopping any chronic medications.</li>
+          <li>Try to clarify what each medication is for – it helps confirm co-morbid conditions.</li>
+          <li>If the patient has brought medication boxes, prescriptions or a list, thank them – it builds rapport and improves accuracy.</li>
+        </ul>
+        <p>
+          Go to this <a href="/adult/commonMeds.html" class="emphasis-link"><em>Page</em></a>
+          for a list of commonly used medications and typical dosages.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Allergies and Adverse Reactions</h2>
+        <p>
+          Document any known allergies and serious adverse drug reactions.
+        </p>
+        <ul>
+          <li>Common important allergies in the ED:
+            <ul>
+              <li>Penicillins and other beta-lactams (note difference between mild rash and anaphylaxis).</li>
+              <li>Cephalosporins.</li>
+              <li>Sulfonamides.</li>
+              <li>Anaesthetic reactions (especially relevant if theatre is likely).</li>
+              <li>ACE inhibitors (angio-oedema, cough).</li>
+              <li>Food and latex allergies (e.g. eggs, nuts, shellfish if relevant).</li>
+            </ul>
+          </li>
+          <li>Clarify <strong>what happened</strong> – rash, swelling, anaphylaxis, GI upset, etc.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Family History</h2>
+        <p>
+          Ask about significant illnesses in immediate family members, especially conditions
+          that start young or cause disability/death.
+        </p>
+        <ul>
+          <li>Focus on first-degree relatives with heart disease, stroke, diabetes, hypertension, cancers, clotting disorders or sudden deaths.</li>
+          <li>Relate it to the current problem – for example, a patient with a breast lump and two sisters treated for breast cancer.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Social History</h2>
+        <p>
+          Social context often explains why the patient presents in a particular way and
+          influences your management plan.
+        </p>
+        <ul>
+          <li>Occupation and daily activities (e.g. heavy lifting, night shifts, high stress).</li>
+          <li>Living situation and support – who is at home, caring responsibilities, safety concerns.</li>
+          <li>Substance use: smoking, alcohol, recreational drugs.
+            <ul>
+              <li>For smoking, see the <a href="/adult/packYears.html" class="emphasis-link"><em>Pack Years</em></a> calculator.</li>
+            </ul>
+          </li>
+          <li>Financial and transport issues that may affect follow-up or medication adherence.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Events Preceding Illness or Injury</h2>
+        <p>
+          This is particularly important where the mechanism of injury is unclear or suspicious,
+          or when you suspect another illness triggered the current problem.
+        </p>
+        <ul>
+          <li>Clarify exactly what happened before and during the event (collapse, loss of consciousness, seizure activity, chest pain, headache, etc.).</li>
+          <li>Look for red flags for non-accidental injury:
+            <ul>
+              <li>Injuries inconsistent with the history (e.g. spiral femur fracture in a child said to have “fallen off the bed”).</li>
+              <li>Multiple injuries in different stages of healing.</li>
+              <li>Delays in presentation or changing stories.</li>
+            </ul>
+          </li>
+          <li>Document these details clearly – they may be vital if the case goes to court or to child-protection services.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Last Meal (Time of Last Oral Intake)</h2>
+        <p>
+          Especially important if the patient may need anaesthesia or emergency surgery.
+        </p>
+        <ul>
+          <li>Ask when they last ate or drank anything (including water, chewing gum, milk, alcohol).</li>
+          <li>Record the approximate time and type of intake in the notes.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Summarising and Closing the History</h2>
+        <p>
+          At the end of the history:
+        </p>
+        <ul>
+          <li>Briefly summarise the main points back to the patient to check you have understood correctly.</li>
+          <li>Ask if there is <strong>anything else</strong> worrying them that you have not yet discussed.</li>
+          <li>Explain your next steps (examination, tests, possible treatments) and obtain consent.</li>
+        </ul>
+        <p class="note">
+          It is impossible to cover every nuance of history taking on a single page. Use this as
+          a basic structure, and continue to learn from your texts, seniors and your own
+          experience. With practice, a good ED history becomes focused, efficient and
+          patient-centred. <i class="fa-solid fa-face-smile"></i>
+        </p>
+      </section>
+
+    </div>
+  </main>
 </body>
 </html>

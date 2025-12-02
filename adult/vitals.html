@@ -8,127 +8,301 @@
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/thermometer.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/thermometer.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 1rem 1.25rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+    }
+
+    .section {
+      margin-bottom: 1.75rem;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #003366;
+      text-decoration: underline;
+    }
+
+    p {
+      font-weight: normal;
+      margin-bottom: 0.4rem;
+    }
+
+    ul {
+      margin: 0.4rem 0 0.4rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      font-weight: normal;
+      margin-bottom: 0.3rem;
+    }
+
+    em.grade-title {
+      font-size: 1rem;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .grade-normal { color: #2e7d32; }
+    .grade-warn { color: #b71c1c; }
+    .grade-cool { color: #1565c0; }
+
+    .inline-note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 0.75rem;
+        padding: 0.75rem;
       }
+
+      .subheading {
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
 <body class="vitals-page">
-    <header>
+  <header>
     <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Vitals</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-container">
+        <h1 class="main-header">Vitals</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home">
+            <i class="fa-solid fa-house" alt="House icon"></i>
+          </a>
         </div>
-      </nav>
-    </header>
-    <body>
-        <main>
-            <section class="section">
-                <h2 class="subheading">Body Temperature</h2>
-                <p>The normal body temperature range for an adult human in degrees Celsius is typically between 36.1°C (97°F) and 37.2°C (99°F) when measured orally. However, it is important to note that individual body temperature can vary depending on factors such as age, gender, time of day, physical activity, and overall health.</p>
-                <p>A body temperature above or below this range can indicate a potential health concern, such as fever or hypothermia.</p>
-                <ul><em style="font-size: larger;font-weight:bolder ;color: black">Temperature Grading</em></ul>
-                <li><em style="font-size: larger; color:green">Normal body temperature:</em> A normal body temperature is generally considered to be around 37°C, although normal body temperature can vary slightly from person to person.</li>
-                <li><em style="font-size: larger; color:#8B0000">Low-grade fever:</em> A low-grade fever is usually defined as a body temperature between 38°C and 39°C. Low-grade fevers are often caused by viral infections, such as the common cold or flu.</li>
-                <li><em style="font-size: larger; color:#DC143C">Moderate fever:</em> A moderate fever is usually defined as a body temperature between 39°C and 40°C. Moderate fevers can be caused by a variety of conditions, including bacterial infections, autoimmune diseases, and some medications.</li>
-                <li><em style="font-size: larger; color:#FF1818">High fever:</em></li> A high fever is usually defined as a body temperature above 40°C. High fevers can be caused by serious infections or medical conditions, and may require medical attention.
-                <li><em style="font-size: larger; color:#4F6C8B">Mild hypothermia:</em></li> Mild hypothermia is usually defined as a body temperature between 32°C and 35°C. At this level, the patient may experience symptoms such as shivering, numbness, and confusion.
-                <li><em style="font-size: larger; color:#4169E1">Moderate hypothermia:</em></li> Moderate hypothermia is usually defined as a body temperature between 28°C and 32°C. At this level, the patient may experience more severe symptoms, such as slurred speech, loss of coordination, and difficulty breathing.
-                <li><em style="font-size: larger; color: #0047AB">Severe hypothermia:</em></li> Severe hypothermia is usually defined as a body temperature below 28°C. At this level, the patient may experience life-threatening symptoms, such as a slow heart rate, shallow breathing, and loss of consciousness.
-            </section>
-            <section class="section">
-                <h2 class="subheading">Blood pressure</h2>
-                <p>Normal blood pressure range: A normal blood pressure reading for adults is generally considered to be below 120/80 mmHg.</p>
-                <p> <em style="font-size: larger; color:red">Hypertension:</em>  Hypertension, or high blood pressure, is a medical condition where the force of blood against the walls of the arteries is consistently elevated. The American Heart Association classifies hypertension as follows:</p>
-                <ul>
-                    <li><em style="font-size: larger; color:green">Stage 1 hypertension:</em> Systolic blood pressure (the top number) is between 130-139 mmHg, or diastolic blood pressure (the bottom number) is between 80-89 mmHg.</li>
-                    <li><em style="font-size: larger;color:green">Stage 2 hypertension:</em> Systolic blood pressure is 140 mmHg or higher, or diastolic blood pressure is 90 mmHg or higher.</li>
-                </ul>
-                <p> <em style="font-size: larger; color:red">Hypertensive urgency:</em> Hypertensive urgency refers to severely elevated blood pressure (usually systolic blood pressure of 180 mmHg or higher and/or diastolic blood pressure of 110 mmHg or higher) without any acute target organ damage. While there is a need for prompt intervention to lower blood pressure, there is no immediate risk of organ damage.</p>
-                <p> <em style="font-size: larger;color:red">Hypertensive emergency: </em>Hypertensive emergency is a medical emergency that occurs when severely elevated blood pressure causes acute target organ damage, such as damage to the brain, heart, kidneys, or other organs. This is defined as blood pressure of 180/120 mmHg or higher with evidence of organ damage.</p>
-            </section>
-            <section class="section">
-                <h2 class="subheading">Pulse or Heart Rate</h2>
-                <p>This is measured using a pulse oximeter or by palpating the radial artery at the wrist. It provides information about the heart's functioning and can help to identify any arrhythmias.</p>
-                <p>The normal resting heart rate for adults is typically between 60 and 100 beats per minute (bpm). However, individual heart rates can vary depending on factors such as age, gender, fitness level, and overall health.</p>
-                <ul>
-                    <li><em style="font-size: larger; color:red">Tachycardia:</em> This is a condition where the heart rate is consistently above 100 bpm at rest. Tachycardia can be caused by factors such as stress, anxiety, medication, or underlying health conditions such as heart disease, thyroid problems, or anemia.</li>
-                        <ul>
-                            <li><em style="font-size: larger; color:green">Sinus Tachycardia:</em> This is a normal response to exercise, stress, or other factors that increase the body's demand for oxygen. In sinus tachycardia, the heart rate is elevated, but the heart's rhythm is regular.</li>
-                            <li><em style="font-size: larger; color:green">Supraventricular Tachycardia:</em>  This is an abnormal rhythm that originates from the atria or the atrioventricular node. SVT can cause the heart to beat rapidly and irregularly.</li>
-                            <li><em style="font-size: larger; color:green">Ventricular Tachycardia:</em>  This is an abnormal rhythm that originates from the ventricles. Ventricular tachycardia can be life-threatening and can lead to ventricular fibrillation and sudden cardiac arrest.</li>
-                        </ul>
-                    <li><em style="font-size: larger; color:red">Bradycardia:</em> This is a condition where the heart rate is consistently below 60 bpm at rest. Bradycardia can be caused by factors such as aging, medication, or underlying health conditions such as heart disease or an electrolyte imbalance.</li>
-                        <ul>
-                            <li><em style="font-size: larger; color:green">Sinus Bradycardia:</em>  This is a normal rhythm where the heart rate is slower than normal but the rhythm is regular. Sinus bradycardia can be a result of being physically fit, certain medications, or underlying medical conditions.</li>
-                            <li><em style="font-size: larger; color:green">Atrioventricular Block:</em>  This is a condition where there is a delay or blockage in the electrical signals that control the heart's rhythm. Atrioventricular block can cause the heart rate to slow down or become irregular.</li>
-                        </ul>
-                    <li><em style="font-size: larger; color:red">Arrhythmias:</em> Arrhythmias are abnormal heart rhythms that can cause the heart to beat too fast, too slow, or irregularly. Arrhythmias can be caused by factors such as heart disease, high blood pressure, or electrolyte imbalances.</li>
-                        <ul>
-                            <li><em style="font-size: larger; color:green">Ventricular fibrillation:</em> This is a life-threatening rhythm where the ventricles quiver instead of contracting properly, which can lead to sudden cardiac arrest and death.</li>
-                            <li><em style="font-size: larger; color:green">Supraventricular arrhythmias:</em>  These are abnormal rhythms that originate from the atria or the atrioventricular node. Supraventricular arrhythmias can cause the heart to beat rapidly and irregularly.</li>
-                        </ul>
-                    <li><em style="font-size: larger; color:red">Premature ventricular contractions:</em> Premature ventricular contractions (PVCs) are extra heartbeats that originate in the ventricles. They can be caused by factors such as stress, caffeine, or underlying heart disease.</li>
-                        <ul>
-                            <li><em style="font-size: larger; color:green">Isolated PVCs:</em> These are single PVCs that occur occasionally and do not require treatment.</li>
-                            <li><em style="font-size: larger; color:green">Frequent PVCs: </em> These occur more often and can be a sign of underlying heart disease or other health conditions.</li>
-                            <li><em style="font-size: larger; color:green">PVCs in runs:</em>  These are clusters of PVCs that occur in a row and can be a sign of underlying heart disease or other health conditions.</li>
-                        </ul>
-                </ul>
-            </section>
-            <section class="section">
-                <h2 class="subheading">Respiratory Rate</h2>
-                <p>This is measured by counting the number of breaths an individual takes per minute. </p>
-                <p>It helps to identify any breathing difficulties or respiratory distress.</p>
-                <p>The normal respiratory rate for adults is typically between 12 to 20 breaths per minute at rest. However, individual respiratory rates can vary depending on factors such as age, gender, physical activity, and overall health.</p>
-                <p>Respiratory distress is a condition where an individual is having difficulty breathing or is experiencing a decrease in the amount of oxygen in their blood. Respiratory distress can be classified into three categories based on severity:</p>
-                <ul>
-                    <li><em style="font-size: larger; color:green">Mild respiratory distress:</em> In mild respiratory distress, an individual may have difficulty breathing, but they can still speak in full sentences. They may exhibit symptoms such as shortness of breath, rapid breathing, or shallow breathing.</li>
-                    <li><em style="font-size: larger; color:green">Moderate respiratory distress:</em> In moderate respiratory distress, an individual may be able to speak in short phrases, but they are likely to have difficulty breathing. They may exhibit symptoms such as rapid and shallow breathing, wheezing, or use of accessory muscles to breathe.</li>
-                    <li><em style="font-size: larger; color:green">Severe respiratory distress:</em> In severe respiratory distress, an individual may not be able to speak at all and may exhibit symptoms such as gasping for air, flaring of the nostrils, and retractions (pulling in of the muscles between the ribs or in the neck). They may have a bluish tint to their skin, indicating that they are not getting enough oxygen.</li>
-                </ul>
-            </section>
-            <section class="section">
-                <h2 class="subheading">Oxygen Saturation (02 SATS)</h2>
-                <p> A normal oxygen saturation level is usually between 95-100%, but this can vary depending on your health status and other factors. </p>
-                <p>Oxygen saturation is a measure of the amount of oxygen that is bound to hemoglobin molecules in your blood, expressed as a percentage. Hemoglobin is the protein in red blood cells that carries oxygen from the lungs to the rest of the body. When you breathe in air, oxygen enters your lungs and diffuses into your bloodstream, where it binds to hemoglobin molecules. The oxygenated hemoglobin then travels to your body's tissues, where it releases the oxygen so that it can be used for energy production.</p>
-                <p>TA pulse oximeter is normally used to measure 02 Saturation levels, it will also display heart rate</p>
-                <p>It's important to note that pulse oximeters have some limitations. They may not work well if there is poor circulation to the area being monitored, or if the sensor is placed on an area with a lot of movement or motion. They can also be affected by bright light, such as sunlight or fluorescent lights, which can interfere with the accuracy of the readings. In addition, pulse oximeters may not be as accurate in people with certain medical conditions, such as anemia, hypotension, or peripheral vascular disease, which can affect the amount of light that is absorbed by the blood.</p>
-                <p>A normal oxygen saturation level is typically between 95-100%. If your oxygen saturation level falls below 90%, it is considered low and may indicate that you are not getting enough oxygen to your body's tissues. This can be caused by a variety of factors, such as lung disease, heart disease, anemia, or high altitude.</p>
-                <ul><em style="font-size: larger; color:red">Hypoxia Grading</em></ul>
-                    <li><em style="font-size: larger; color:green">Normal oxygen saturation:</em> Oxygen saturation levels of 95-100% are considered normal.</li>
-                    <p>No specific treatment is necessary.</p>
-                    <p>Please note that a lot of patients with <em style="font-size: larger; font-weight:bolder;color:#FF8C00">COPD</em>  will have a normal saturation between <em style="font-size: larger; font-weight:bolder;color:#FF8C00">88-92%</em>, and you shouldn't try to elevate it above 92%</p>
-                    <p>Doing so will result in the suppression of their carbon-dioxide feedback mechanism that stimulates them to breathe, leading to<em style="font-size: larger; font-weight:bolder;color:#FF8C00">respiratory arrest!!</em> </p>
-                    <li><em style="font-size: larger; color:#4F6C8B">Mild hypoxia:</em> Oxygen saturation levels of 91-94% are considered mild hypoxia. At this level, the body is still able to function normally, but the patient may experience symptoms such as shortness of breath, fatigue, or confusion.</li>
-                    <p>In most cases, supplemental oxygen therapy is recommended to increase the patient's oxygen saturation level. This may be administered via a nasal cannula or a face mask. The underlying cause of hypoxia should also be evaluated and treated, if possible.</p>
-                    <li><em style="font-size: larger; color: #00BFFF">Moderate hypoxia:</em> Oxygen saturation levels of 86-90% are considered moderate hypoxia. At this level, the body may start to experience more serious symptoms, such as rapid heart rate, respiratory distress, or chest pain.</li>
-                    <p> Supplemental oxygen therapy is usually necessary to raise the patient's oxygen saturation level. Depending on the severity of the hypoxia, high-flow oxygen therapy or mechanical ventilation may be necessary. The underlying cause of hypoxia should be evaluated and treated, if possible.</p>
-                    <li><em style="font-size: larger; color:#4169E1">Severe hypoxia:</em> Oxygen saturation levels of less than 85% are considered severe hypoxia. At this level, the body is not getting enough oxygen to function properly, and the patient may experience symptoms such as cyanosis (bluish discoloration of the skin), confusion, or loss of consciousness.</li>
-                    <p>This is a medical emergency and requires immediate treatment. Supplemental oxygen therapy, high-flow oxygen therapy, or mechanical ventilation may be necessary to increase the patient's oxygen saturation level. In some cases, medications such as bronchodilators or corticosteroids may also be used to help open the airways or reduce inflammation in the lungs. The underlying cause of hypoxia should be evaluated and treated as quickly as possible.</p>
-                </section>
-                <section class="section">
-                    <h2 class="subheading">Blood Glucose levels</h2>
-                    <ul><em style="font-size: larger; color:red">Blood Glucose Grading</em></ul>
-                        <li><em style="font-size: larger; color:green">Hypoglycaemia:</em></li>
-                        <p>Levels below 3.9 mmol/L are regarded as hypoglycaemia</p>
-                        <p>patients will become symptomatic at levels below 3.2 mmol/L</p>
-                        <li><em style="font-size: larger; color:green">Normal blood glucose levels: </em>Fasting blood glucose levels between 3.9-5.5 mmol/L are considered normal.</li>
-                        <li><em style="font-size: larger; color:green">Pre-diabetes:</em>Pre-diabetes: Fasting blood glucose levels between 5.6-6.9 mmol/L are considered pre-diabetic or at risk for developing diabetes.</li>
-                        <li><em style="font-size: larger; color:green">Diabetes:</em> Fasting blood glucose levels of 7.0 mmol/L or higher are considered diabetic. In addition, a blood glucose level of 11.1 mmol/L or higher after 2 hours of a glucose tolerance test or a random blood glucose level of 11.1 mmol/L or higher in a person with classic symptoms of hyperglycemia (such as frequent urination, increased thirst, and fatigue) is also considered diabetic.</li>
-                </section>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
 
-        </main>
-    </body>
+  <main>
+    <!-- Temperature -->
+    <section class="section">
+      <h2 class="subheading">Body Temperature</h2>
+      <p>
+        Normal adult oral temperature is usually between <strong>36.1&nbsp;°C and 37.2&nbsp;°C</strong>.
+        Individual values vary with time of day, age, activity and baseline health.
+      </p>
+      <p>A temperature outside this range may indicate fever or hypothermia and must be interpreted in context.</p>
+
+      <p><em class="grade-title grade-normal">Temperature grading:</em></p>
+      <ul>
+        <li>
+          <em class="grade-title grade-normal">Normal:</em>
+          around 37&nbsp;°C (roughly 36.1–37.2&nbsp;°C).
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Low-grade fever:</em>
+          38–39&nbsp;°C – often viral infection, early infection or mild inflammatory process.
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Moderate fever:</em>
+          39–40&nbsp;°C – common with bacterial infections, some inflammatory or autoimmune conditions.
+        </li>
+        <li>
+          <em class="grade-title grade-warn">High fever:</em>
+          &gt;40&nbsp;°C – red flag; think serious infection (sepsis, meningitis, malaria), drug reactions or heat stroke. Needs urgent evaluation.
+        </li>
+        <li>
+          <em class="grade-title grade-cool">Mild hypothermia:</em>
+          32–35&nbsp;°C – shivering, numbness, confusion, tachycardia.
+        </li>
+        <li>
+          <em class="grade-title grade-cool">Moderate hypothermia:</em>
+          28–32&nbsp;°C – slurred speech, reduced GCS, bradycardia, slow respirations.
+        </li>
+        <li>
+          <em class="grade-title grade-cool">Severe hypothermia:</em>
+          &lt;28&nbsp;°C – high risk of arrhythmias, very slow pulse and respirations, decreased or absent consciousness. Handle gently.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Blood Pressure -->
+    <section class="section">
+      <h2 class="subheading">Blood Pressure</h2>
+      <p>
+        For most adults, a <strong>normal BP</strong> is roughly <strong>&lt;120/80&nbsp;mmHg</strong>.
+        Always interpret in the clinical context (pain, anxiety, pregnancy, sepsis, etc.).
+      </p>
+
+      <p><em class="grade-title grade-warn">Hypertension categories:</em></p>
+      <ul>
+        <li>
+          <em class="grade-title grade-normal">Stage 1 hypertension:</em>
+          SBP 130–139&nbsp;mmHg or DBP 80–89&nbsp;mmHg.
+        </li>
+        <li>
+          <em class="grade-title grade-normal">Stage 2 hypertension:</em>
+          SBP ≥140&nbsp;mmHg or DBP ≥90&nbsp;mmHg.
+        </li>
+      </ul>
+
+      <p><em class="grade-title grade-warn">Severe hypertension in the ED:</em></p>
+      <ul>
+        <li>
+          <em class="grade-title grade-warn">Hypertensive urgency:</em>
+          BP usually ≥180 systolic and/or ≥110 diastolic, <strong>without</strong> acute target organ damage.<br>
+          – Needs BP reduction over hours–days and close follow-up, not rapid IV lowering.
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Hypertensive emergency:</em>
+          BP ≥180/120&nbsp;mmHg <strong>with</strong> acute organ damage (neurological, cardiac, renal, aortic, etc.).<br>
+          – Treat as an emergency with IV antihypertensives and monitored setting.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Pulse / HR -->
+    <section class="section">
+      <h2 class="subheading">Pulse / Heart Rate</h2>
+      <p>
+        Normal resting adult heart rate is typically <strong>60–100&nbsp;bpm</strong>.
+        Check rate, rhythm, volume and compare with monitor/ECG if available.
+      </p>
+
+      <ul>
+        <li>
+          <em class="grade-title grade-warn">Tachycardia (&gt;100&nbsp;bpm):</em>
+          pain, fever, anxiety, hypovolaemia, sepsis, PE, arrhythmias, drugs, thyroid disease, anaemia, etc.
+          <ul>
+            <li><em class="grade-title grade-normal">Sinus tachycardia:</em> regular rhythm, usually appropriate to a trigger (pain, fever, hypoxia).</li>
+            <li><em class="grade-title grade-normal">Supraventricular tachycardia (SVT):</em> fast, often regular, narrow-complex; may need vagal manoeuvres / adenosine.</li>
+            <li><em class="grade-title grade-normal">Ventricular tachycardia:</em> wide-complex, potentially unstable or pulseless – treat per ACLS, can deteriorate into VF.</li>
+          </ul>
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Bradycardia (&lt;60&nbsp;bpm):</em>
+          can be normal (fit young adult) or due to drugs, conduction disease, raised ICP, hypothermia, etc.
+          <ul>
+            <li><em class="grade-title grade-normal">Sinus bradycardia:</em> regular, often benign if patient well perfused.</li>
+            <li><em class="grade-title grade-normal">AV block:</em> 1°, 2°, 3° block – risk of syncope / low output; manage according to degree and symptoms.</li>
+          </ul>
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Arrhythmias:</em>
+          irregular or abnormal rhythm; think AF, atrial flutter, SVT, VT, PVCs, etc.
+          <ul>
+            <li><em class="grade-title grade-normal">PVCs:</em> occasional isolated beats often benign; frequent, multifocal, or “runs” need evaluation.</li>
+            <li><em class="grade-title grade-normal">Ventricular fibrillation:</em> immediately life-threatening – requires defibrillation and ALS.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Respiratory Rate -->
+    <section class="section">
+      <h2 class="subheading">Respiratory Rate</h2>
+      <p>
+        Count breaths for a full minute wherever possible.
+        Normal adult resting RR is about <strong>12–20 breaths/min</strong>.
+      </p>
+      <p>RR is one of the earliest markers of deterioration and should never be ignored.</p>
+
+      <p><em class="grade-title grade-warn">Respiratory distress grading (bedside):</em></p>
+      <ul>
+        <li>
+          <em class="grade-title grade-normal">Mild:</em>
+          RR raised but can speak full sentences; may have mild accessory muscle use.
+        </li>
+        <li>
+          <em class="grade-title grade-normal">Moderate:</em>
+          RR clearly increased, speaking only phrases, using accessory muscles, may have wheeze, recession or nasal flaring.
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Severe:</em>
+          unable to speak full words, gasping, marked recession, cyanosis or agitation/“air hunger”.<br>
+          – Treat as high-priority; prepare for escalation (NIV/intubation) as indicated.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Oxygen Saturation -->
+    <section class="section">
+      <h2 class="subheading">Oxygen Saturation (SpO₂)</h2>
+      <p>
+        Normal SpO₂ in most adults is about <strong>95–100&nbsp;%</strong> on room air at sea level.
+        Always interpret together with RR, work of breathing and GCS.
+      </p>
+      <p class="inline-note">
+        Pulse oximetry can be unreliable in poor perfusion, movement, dark nail polish, high ambient light,
+        CO poisoning, anaemia, some haemoglobinopathies and severe hypotension.
+      </p>
+
+      <p><em class="grade-title grade-warn">Hypoxia grading (approximate):</em></p>
+      <ul>
+        <li>
+          <em class="grade-title grade-normal">Normal:</em> 95–100&nbsp;%.<br>
+          – No specific treatment if asymptomatic and clinically well.
+        </li>
+        <li>
+          <em class="grade-title grade-cool">Mild hypoxia:</em> 91–94&nbsp;%.<br>
+          – Assess cause; often give low-flow oxygen and investigate.
+        </li>
+        <li>
+          <em class="grade-title grade-cool">Moderate hypoxia:</em> 86–90&nbsp;%.<br>
+          – Usually requires supplemental oxygen, close monitoring and investigation (CXR, ABG, etc.).
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Severe hypoxia:</em> &lt;85&nbsp;%.<br>
+          – Medical emergency; high-flow oxygen / advanced airway, consider NIV/intubation; treat underlying cause urgently.
+        </li>
+      </ul>
+
+      <p class="inline-note">
+        <strong>COPD note:</strong> Many COPD patients are chronically hypoxic and may sit safely around
+        <strong>88–92&nbsp;%</strong>. In known CO₂ retainers, aim for a target range (often 88–92&nbsp;%) per local
+        protocol and monitor CO₂ (VBG/ABG). Over-oxygenation can worsen CO₂ retention and mental status.
+      </p>
+    </section>
+
+    <!-- Blood Glucose -->
+    <section class="section">
+      <h2 class="subheading">Blood Glucose (Capillary or Venous)</h2>
+      <p><em class="grade-title grade-warn">Blood glucose grading (fasting, mmol/L):</em></p>
+      <ul>
+        <li>
+          <em class="grade-title grade-warn">Hypoglycaemia:</em>
+          &lt;3.9&nbsp;mmol/L (symptoms often &lt;3.2&nbsp;mmol/L).<br>
+          – Treat promptly with oral / IV glucose depending on GCS; search for cause.
+        </li>
+        <li>
+          <em class="grade-title grade-normal">Normal fasting:</em>
+          3.9–5.5&nbsp;mmol/L.
+        </li>
+        <li>
+          <em class="grade-title grade-normal">Pre-diabetes:</em>
+          5.6–6.9&nbsp;mmol/L (impaired fasting glucose).
+        </li>
+        <li>
+          <em class="grade-title grade-warn">Diabetes:</em>
+          ≥7.0&nbsp;mmol/L (fasting) or ≥11.1&nbsp;mmol/L with classic symptoms, or ≥11.1&nbsp;mmol/L at 2&nbsp;h on OGTT.<br>
+          – In the ED, think of hyperglycaemic emergencies (DKA/HHS) when high glucose + illness / acidosis / dehydration are present.
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

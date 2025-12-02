@@ -1,203 +1,403 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Full blood count and Differential Guide</title>
   <meta charset="UTF-8">
+  <title>Full Blood Count and Differential Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/bloodTestGuides.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/bloodTestGuides.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    h2 {
-      font-size: 20px;
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .container h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
       color: #003366;
-      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .intro-text {
+      font-weight: normal;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      color: #003366;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
-      margin-bottom: 20px;
+      min-width: 640px; /* allows horizontal scroll on small screens */
+      margin-bottom: 0.5rem;
+      font-weight: normal;
+      font-size: 0.9rem;
     }
 
     th, td {
       border: 1px solid #ccc;
       text-align: left;
-      padding: 8px;
+      padding: 6px 8px;
+      vertical-align: top;
     }
 
     th {
       background-color: navy;
       color: whitesmoke;
+      font-weight: bold;
     }
 
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    .fullscreen-image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      cursor: zoom-out;
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 0.75rem;
     }
-    
-  
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
-<header>
-  <div class="logo-container">
-      <h1 style="color: antiquewhite;">Full blood count and Differential Guide</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>Full Blood Count & Differential Guide</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
-<div class="section">
-    <h2 class="subheading">Full Blood Count and Differential Count</h2>
-    <table>
-      <tr>
-        <th>Parameter</th>
-        <th>Terminology for Increase</th>
-        <th>Terminology for Decrease</th>
-        <th>Differential Diagnosis for Increase</th>
-        <th>Differential Diagnosis for Decrease</th>
-      </tr>
-      <tr>
-        <td>Haemoglobin (Hb)</td>
-        <td>Polycythaemia</td>
-        <td>Anaemia</td>
-        <td>Dehydration, hypoxia, smoking, erythrocytosis</td>
-        <td>Haemorrhage, haemolysis, chronic disease, renal failure, malnutrition</td>
-      </tr>
-      <tr>
-        <td>White Blood Count (WBC)</td>
-        <td>Leukocytosis</td>
-        <td>Leukopenia</td>
-        <td>Infection, inflammation, stress, leukemia, lymphoma</td>
-        <td>Viral infection, bone marrow suppression, autoimmune disease, medication side effects</td>
-      </tr>
-      <tr>
-        <td>Platelet Count (Plt)</td>
-        <td>Thrombocytosis</td>
-        <td>Thrombocytopenia</td>
-        <td>Tuberculosis,Acute infection, surgery, trauma, malignancy, myeloproliferative disorder</td>
-        <td>Bone marrow suppression, autoimmune disease, viral infection, medication side effects</td>
-      </tr>
-      <tr>
-        <td>Red Cell Count (RBC)</td>
-        <td>Polycythaemia</td>
-        <td>Anaemia</td>
-        <td>Dehydration, hypoxia, smoking, erythrocytosis</td>
-        <td>Haemorrhage, haemolysis, chronic disease, renal failure, malnutrition</td>
-      </tr>
-      <tr>
-        <td>Haematocrit (HCT)</td>
-        <td>Polycythaemia</td>
-        <td>Anaemia</td>
-        <td>Dehydration, hypoxia, smoking, erythrocytosis</td>
-        <td>Haemorrhage, haemolysis, chronic disease, renal failure, malnutrition</td>
-      </tr>
-      <tr>
-        <td>Mean Cell Volume - Red cell (MCV)</td>
-        <td>Macrocytosis</td>
-        <td>Microcytosis</td>
-        <td>B12/folate deficiency, alcoholism, liver disease, hypothyroidism</td>
-        <td>Iron-deficiency anemia, thalassemia, chronic disease, lead poisoning</td>
-      </tr>
-      <tr>
-        <td>Mean Cell Haemoglobin (MCH)</td>
-        <td>Macrocytosis</td>
-        <td>Microcytosis</td>
-        <td>B12/folate deficiency, alcoholism, liver disease, hypothyroidism</td>
-        <td>Iron-deficiency anemia, thalassemia, chronic disease, lead poisoning</td>
-      </tr>
-    </table>
-    <div class="section">
-    <h2>The Differential count</h2>
-    
 
-      <table>
-        <tr>
-          <th>Parameter</th>
-          <th>Terminology for High Values</th>
-          <th>Differential Diagnosis for High Values</th>
-          <th>Terminology for Low Values</th>
-          <th>Differential Diagnosis for Low Values</th>
-        </tr>
-        <tr>
-          <td>Neutrophils</td>
-          <td>Neutrophilia</td>
-          <td>Bacterial infections, inflammatory disorders, tissue necrosis, stress, medications (e.g. steroids)</td>
-          <td>Neutropenia</td>
-          <td>Viral infections, bone marrow disorders, autoimmune disorders, medications (e.g. chemotherapy)</td>
-        </tr>
-        <tr>
-          <td>Lymphocytes</td>
-          <td>Lymphocytosis</td>
-          <td>Viral infections, autoimmune disorders, lymphoid malignancies</td>
-          <td>Lymphopenia</td>
-          <td>Immunodeficiency disorders, bone marrow disorders, infections (e.g. HIV)</td>
-        </tr>
-        <tr>
-          <td>Monocytes</td>
-          <td>Monocytosis</td>
-          <td>Chronic infections, autoimmune disorders, malignancies</td>
-          <td>Monocytopenia</td>
-          <td>Not clinically significant</td>
-        </tr>
-        <tr>
-          <td>Eosinophils</td>
-          <td>Eosinophilia</td>
-          <td>Allergic reactions, parasitic infections, malignancies, autoimmune disorders</td>
-          <td>Eosinopenia</td>
-          <td>Not clinically significant</td>
-        </tr>
-        <tr>
-          <td>Basophils</td>
-          <td>Basophilia</td>
-          <td>Chronic myeloid leukemia, myeloproliferative disorders, allergic reactions</td>
-          <td>Basopenia</td>
-          <td>Not clinically significant</td>
-        </tr>
-      </table>
+  <main class="page-wrapper">
+    <div class="container">
+      <h2>Full Blood Count and Differential Count</h2>
+      <p class="intro-text">
+        Quick ED guide to common patterns on the FBC. Always interpret in
+        context of the patient, smear / film report, and local reference ranges.
+      </p>
+
+      <div class="section">
+        <h3 class="section-title">Red Cells, White Cells and Platelets</h3>
+        <p class="note">
+          Hb, RBC and HCT usually move together. Start by asking:
+          “Is there anaemia or polycythaemia? What is the MCV?”
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Terminology for Increase</th>
+              <th>Terminology for Decrease</th>
+              <th>Differential Diagnosis for Increase</th>
+              <th>Differential Diagnosis for Decrease</th>
+            </tr>
+            <tr>
+              <td>Haemoglobin (Hb)</td>
+              <td>Polycythaemia</td>
+              <td>Anaemia</td>
+              <td>
+                Dehydration (relative), chronic hypoxia (COPD, cyanotic heart disease),
+                smoking, high altitude, erythrocytosis/polycythaemia vera
+              </td>
+              <td>
+                Acute or chronic blood loss, haemolysis, iron deficiency,
+                B12/folate deficiency, anaemia of chronic disease, renal failure
+              </td>
+            </tr>
+            <tr>
+              <td>Red Cell Count (RBC)</td>
+              <td>Polycythaemia</td>
+              <td>Anaemia</td>
+              <td>
+                Same patterns as raised Hb: dehydration, hypoxia, polycythaemia vera,
+                smoking
+              </td>
+              <td>
+                Same patterns as low Hb: blood loss, haemolysis, chronic disease,
+                nutritional deficiency
+              </td>
+            </tr>
+            <tr>
+              <td>Haematocrit (HCT)</td>
+              <td>Polycythaemia</td>
+              <td>Anaemia</td>
+              <td>
+                Dehydration, hypoxia, smoking, polycythaemia vera
+              </td>
+              <td>
+                Blood loss, haemolysis, chronic disease, renal failure, pregnancy
+              </td>
+            </tr>
+            <tr>
+              <td>White Blood Count (WBC)</td>
+              <td>Leukocytosis</td>
+              <td>Leukopenia</td>
+              <td>
+                Bacterial infection, inflammation, stress, tissue necrosis,
+                corticosteroids, myeloproliferative disease, acute/chronic leukaemia
+              </td>
+              <td>
+                Viral infection, severe sepsis, bone marrow suppression or infiltration,
+                autoimmune disease, chemotherapy/other myelotoxic drugs
+              </td>
+            </tr>
+            <tr>
+              <td>Platelet Count (Plt)</td>
+              <td>Thrombocytosis</td>
+              <td>Thrombocytopenia</td>
+              <td>
+                Reactive (infection including TB, inflammation, iron deficiency,
+                recent surgery/trauma), postsplenectomy, myeloproliferative disorders
+              </td>
+              <td>
+                Bone marrow failure or infiltration, sepsis/DIC, hypersplenism,
+                immune thrombocytopenia (ITP), drugs (e.g. heparin, chemotherapy),
+                viral infections (including HIV, hepatitis)
+              </td>
+            </tr>
+            <tr>
+              <td>Mean Cell Volume (MCV)</td>
+              <td>Macrocytosis</td>
+              <td>Microcytosis</td>
+              <td>
+                B12/folate deficiency, alcoholism, chronic liver disease,
+                hypothyroidism, some drugs (e.g. hydroxyurea, zidovudine),
+                myelodysplastic syndromes
+              </td>
+              <td>
+                Iron deficiency anaemia, thalassaemia, anaemia of chronic disease,
+                sideroblastic anaemia, lead poisoning
+              </td>
+            </tr>
+            <tr>
+              <td>Mean Cell Haemoglobin (MCH)</td>
+              <td>Hyperchromia (rare)</td>
+              <td>Hypochromia</td>
+              <td>
+                Often parallels macrocytosis (e.g. B12/folate deficiency),
+                hereditary spherocytosis
+              </td>
+              <td>
+                Usually parallels microcytosis: iron deficiency anaemia,
+                thalassaemia, anaemia of chronic disease
+              </td>
+            </tr>
+            <tr>
+              <td>Red Cell Distribution Width (RDW)</td>
+              <td>High RDW</td>
+              <td>—</td>
+              <td>
+                Mixed population of red cells (e.g. early iron deficiency,
+                recent transfusion, combined deficiency states). High RDW with
+                low MCV suggests iron deficiency rather than thalassaemia trait.
+              </td>
+              <td>
+                Usually not clinically significant when low or normal. Normal RDW
+                with microcytosis suggests thalassaemia trait.
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Differential White Cell Count</h3>
+        <p class="note">
+          Always correlate with smear/film comments (left shift, blasts, atypical
+          lymphocytes, toxic granulation, etc.).
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Terminology for High Values</th>
+              <th>Differential Diagnosis for High Values</th>
+              <th>Terminology for Low Values</th>
+              <th>Differential Diagnosis for Low Values</th>
+            </tr>
+            <tr>
+              <td>Neutrophils</td>
+              <td>Neutrophilia</td>
+              <td>
+                Bacterial infections, acute inflammation, tissue necrosis
+                (MI, burns), stress, corticosteroids, smoking, myeloproliferative disease
+              </td>
+              <td>Neutropenia</td>
+              <td>
+                Viral infections, severe sepsis, bone marrow failure/infiltration,
+                autoimmune neutropenia, chemotherapy and other myelotoxic drugs,
+                hypersplenism
+              </td>
+            </tr>
+            <tr>
+              <td>Lymphocytes</td>
+              <td>Lymphocytosis</td>
+              <td>
+                Viral infections (EBV, CMV, hepatitis, HIV seroconversion),
+                pertussis, chronic lymphocytic leukaemia and other lymphoid malignancies,
+                some autoimmune diseases
+              </td>
+              <td>Lymphopenia</td>
+              <td>
+                Immunodeficiency (including advanced HIV), high-dose steroids,
+                chemotherapy, severe sepsis, autoimmune disease, malnutrition
+              </td>
+            </tr>
+            <tr>
+              <td>Monocytes</td>
+              <td>Monocytosis</td>
+              <td>
+                Chronic infections (TB, endocarditis), autoimmune/connective tissue
+                disease, recovery phase after neutropenia, myelodysplastic and
+                myeloproliferative disorders
+              </td>
+              <td>Monocytopenia</td>
+              <td>
+                Often not clinically significant; can be seen with bone marrow
+                suppression, high-dose steroids or severe sepsis
+              </td>
+            </tr>
+            <tr>
+              <td>Eosinophils</td>
+              <td>Eosinophilia</td>
+              <td>
+                Allergic disease (asthma, eczema, drug reactions), parasitic infections,
+                some autoimmune diseases, Hodgkin lymphoma and other malignancies,
+                hypereosinophilic syndromes
+              </td>
+              <td>Eosinopenia</td>
+              <td>
+                Often not clinically significant; may occur in acute infection,
+                stress response and with corticosteroid therapy
+              </td>
+            </tr>
+            <tr>
+              <td>Basophils</td>
+              <td>Basophilia</td>
+              <td>
+                Chronic myeloid leukaemia and other myeloproliferative neoplasms,
+                chronic inflammation, hypersensitivity reactions, hypothyroidism
+              </td>
+              <td>Basopenia</td>
+              <td>
+                Usually not clinically significant; may be seen with hyperthyroidism,
+                pregnancy, stress and corticosteroids
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <p class="note">
+        This guide is for education and rapid reference in the emergency department.
+        Always correlate with clinical findings, peripheral smear/morphology and
+        local haematology advice.
+      </p>
     </div>
-    </div>
+  </main>
 </body>
 </html>
-      
-      
-      
-      
-      
-      
-  
-  
-  
-  
-  

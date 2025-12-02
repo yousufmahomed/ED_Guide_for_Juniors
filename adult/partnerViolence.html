@@ -1,134 +1,328 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Spousal/Partner Physical Abuse</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/checklistBackground.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-           
-          }
-          p {
-            text-decoration: underline;
-            line-height: 1.5;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #333;
-          }
-          
-          ul {
-            margin-top: 20px;
-          }
-          
-          ul li {
-            margin-bottom: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: #333;
-            line-height: 1.5rem;
-          }
-          
-          ul ul li {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #333;
-          }
-          ul li em{
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: red;
-              font-size: larger;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-              text-decoration: underline;
-            }
-            ul ul li em{
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: green;
-              font-size: larger;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-              text-decoration: underline;
-            }
-            ol {
-              margin-top: 20px;
-            }
-            ol li {
-              margin-bottom: 10px;
-              font-family: Arial, sans-serif;
-              font-size: 16px;
-              color: #333;
-              line-height: 1.5rem;
-            }
-    </style>
+  <meta charset="UTF-8">
+  <title>Spousal / Partner Physical Abuse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .section {
+      margin-bottom: 1.25rem;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0.25rem 0 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    ul, ol {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    ul ul {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    ul ul li {
+      font-size: 0.9rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .emphasis-link {
+      color: #005daa;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <h1>Spousal/Partner Physical Abuse</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-    </header>
-    
-    <div class="section">
-        <h2 class="subheading">Emergency Department Markers for Suspected or Confirmed Spousal/Partner Physical Abuse</h2>
-        <ul>
-            <li>Patients presenting with unexplained injuries, such as bruises, cuts, fractures, or burns.</li>
-            <li>Injuries inconsistent with the patient's explanation or mechanism of injury.</li>
-            <li>Repeated visits to the ED for injuries with varying explanations.</li>
-            <li>Signs of emotional distress, fear, or anxiety in the patient.</li>
-            <li>History of previous injuries or abuse documented in medical records.</li>
-            <li>Disclosure of abuse by the patient.</li>
-            <li>Reluctance to speak openly due to fear or intimidation from the partner/spouse.</li>
-            <li>Presence of a controlling or overbearing partner/spouse during the visit.</li>
-        </ul>
+  <header>
+    <div class="logo-container">
+      <h1>Spousal / Partner Physical Abuse</h1>
     </div>
-    
-    <div class="section">
-        <h2 class="subheading">Atypical Features</h2>
-        <ul>
-            <li>Inconsistencies between the patient's explanation and the injuries.</li>
-            <li>Delay in seeking medical care for injuries.</li>
-            <li>Reluctance to answer questions openly due to fear of retaliation.</li>
-            <li>Patient's fear of leaving the partner/spouse or seeking help.</li>
-            <li>Attempts by the partner/spouse to control the medical examination or treatment.</li>
-        </ul>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
-    
-    <div class="section">
-        <h2 class="subheading">Steps to Follow</h2>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <section class="section">
+        <h2 class="subheading">Emergency Department Red Flags</h2>
+        <p>
+          Consider possible intimate partner / spousal abuse in any adult with injuries where the
+          history does not fully fit. The following features should increase your level of concern:
+        </p>
+        <ul>
+          <li>Unexplained or poorly explained injuries (bruises, cuts, fractures, burns, strangulation marks).</li>
+          <li>Injuries inconsistent with the described mechanism.</li>
+          <li>Repeated ED visits for injuries, often with varying explanations.</li>
+          <li>Signs of emotional distress, fear, shame or marked anxiety.</li>
+          <li>History of prior injuries, “falls” or accidents documented in the record.</li>
+          <li>Direct or indirect disclosure of physical, emotional, or sexual abuse.</li>
+          <li>Reluctance to speak, especially when the partner is present.</li>
+          <li>Controlling or overbearing partner (insists on answering for the patient, refuses to leave the room, monitors conversations).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Atypical or Subtle Features</h2>
+        <p>Abuse may be present even when injuries are minor or absent.</p>
+        <ul>
+          <li>Inconsistencies between history and clinical findings (e.g. pattern bruising, repeated “accidents”).</li>
+          <li>Delay in seeking care for significant injuries.</li>
+          <li>Reluctance to answer questions openly, frequent glances at the partner.</li>
+          <li>Patient verbalises feeling unsafe at home but is hesitant to act.</li>
+          <li>Partner attempts to control examination, refuses separation, or becomes angry when you ask about safety.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Key Steps in the ED</h2>
         <ol>
-            <li><strong>Ensure Patient Safety:</strong> If the patient is in immediate danger, involve security personnel, law enforcement, or protective services to ensure their safety.</li>
-            <li><strong>Document Injuries:</strong> Carefully document all physical injuries, including location, size, shape, and color. Use accurate descriptions and photographs when appropriate.</li>
-            <li><strong>Private Environment:</strong> Create a safe and private environment for the patient to speak openly, away from the partner/spouse.</li>
-            <li><strong>Interview Sensitively:</strong> Interview the patient sensitively, using open-ended and non-judgmental questions. Listen carefully to their account of the incident and their concerns.</li>
-            <li><strong>Medical Examination:</strong> Conduct a thorough medical examination, focusing on any injuries. Collect forensic evidence if applicable and ensure proper documentation.</li>
-            <li><strong>Safety Assessment:</strong> Assess the patient's immediate safety and discuss options for safety planning. This may involve shelter services, restraining orders, or other protective measures.</li>
-            <li><strong>Medical Treatment:</strong> Provide necessary medical treatment for injuries and any immediate health concerns.</li>
-            <li><strong>Psychological Support:</strong> Offer emotional support to the patient and consider involving a social worker or counselor.</li>
-            <li><strong>Reporting:</strong> In cases of suspected or confirmed spousal/partner physical abuse, provide support and resources. However, the decision to report to law enforcement should be based on the patient's consent and best interests.</li>
-            <li><strong>Provide Resources:</strong> Give the patient information about local support services, shelters, counseling, legal aid, and helplines for victims of domestic violence.</li>
-            <li><strong>Counseling:</strong> Encourage the patient to seek counseling or support groups for victims of domestic violence to address the emotional impact of abuse.</li>
-            <li><strong>Medical Records:</strong> Document all findings, injuries, conversations, and assessments accurately and thoroughly in the patient's medical record.</li>
-            <li><strong>Preserve Evidence:</strong> If the patient chooses to report to law enforcement, work closely to collect and preserve any necessary evidence.</li>
-            <li><strong>Follow-Up Care:</strong> Arrange follow-up care and support, and provide the patient with a safety plan.</li>
-            <li><strong>Legal Support:</strong> If the patient decides to pursue legal action, offer information about legal options and resources.</li>
-            <li><strong>Empower Patient Choice:</strong> Respect the patient's decisions regarding reporting and legal action. Empower them to make choices prioritizing their safety and well-being.</li>
+          <li>
+            <strong>Immediate Safety</strong><br>
+            If there is an imminent threat to life or serious harm:
+            <ul>
+              <li>Involve hospital security and, where appropriate, law enforcement.</li>
+              <li>Move the patient to a safe area if possible.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Private, Respectful Environment</strong><br>
+            <ul>
+              <li>Politely request that the partner waits outside for at least part of the consultation.</li>
+              <li>Explain that you always speak to adult patients alone about sensitive health issues.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Trauma-Informed Interview</strong><br>
+            <ul>
+              <li>Use open, non-judgmental questions (e.g. “Do you feel safe at home?”).</li>
+              <li>Acknowledge the difficulty of talking about violence (“Many people find this hard to talk about, but you are not alone.”).</li>
+              <li>Avoid blaming language; validate the patient’s experience.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Thorough Medical Examination</strong><br>
+            <ul>
+              <li>Assess and treat all injuries and medical conditions.</li>
+              <li>Document injuries clearly (location, size, shape, colour, pattern, and whether they are tender).</li>
+              <li>Take photographs if local policy allows and with informed consent, following protocol.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Documentation</strong><br>
+            <ul>
+              <li>Record the patient’s own words in quotation marks where possible.</li>
+              <li>Document any threats, weapons used, and whether children witnessed the abuse.</li>
+              <li>Note who accompanied the patient and any concerning behaviour by the partner.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Safety Assessment & Planning</strong><br>
+            <ul>
+              <li>Ask if the patient feels safe to return home.</li>
+              <li>Discuss options such as shelters, staying with trusted family/friends, or other safe accommodation.</li>
+              <li>Help develop a basic safety plan (important contacts, safe escape routes, where documents/medications are kept).</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Medical Treatment</strong><br>
+            <ul>
+              <li>Provide analgesia, wound care, fracture management and any other indicated treatment.</li>
+              <li>Consider prophylaxis (e.g. tetanus, where applicable) and mental health support.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Psychosocial Support</strong><br>
+            <ul>
+              <li>Offer to involve a social worker, psychologist, or counsellor if available.</li>
+              <li>Normalise help-seeking and emphasise that abuse is never the patient’s fault.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Reporting and Legal Considerations</strong><br>
+            <ul>
+              <li>Explain your local legal obligations and limits of confidentiality in simple language.</li>
+              <li>For competent adults, reporting to law enforcement is often guided by patient choice; follow your national law and hospital protocol.</li>
+              <li>If children, older persons, or other vulnerable individuals are at risk, mandatory reporting may apply – follow local regulations.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Provide Information & Resources</strong><br>
+            <ul>
+              <li>Give details of local shelters, helplines, social services, counselling and legal aid (ideally in written form the partner cannot easily see).</li>
+              <li>Where safe, encourage the patient to store key numbers under neutral names on their phone.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Follow-Up and Continuity of Care</strong><br>
+            <ul>
+              <li>Arrange follow-up appointments (medical and psychosocial) where possible.</li>
+              <li>Ensure clear handover to primary care or another service if ongoing support is needed.</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Empower Patient Choice</strong><br>
+            <ul>
+              <li>Respect the patient’s decisions about reporting and next steps, provided there is no immediate legal obligation to act differently.</li>
+              <li>Emphasise that support remains available, even if they are not ready to leave the relationship or press charges now.</li>
+            </ul>
+          </li>
         </ol>
-        <p>Remember that your primary responsibility is the well-being of the patient. If there is an immediate threat to the patient's safety, prioritize their safety and involve appropriate authorities. Always approach cases of spousal/partner physical abuse with empathy, sensitivity, and a commitment to providing support and resources.</p>
+
+        <p class="note">
+          Always follow your hospital’s gender-based violence / domestic violence protocol and
+          national legislation. When in doubt, seek advice from a senior clinician, social worker
+          or legal department.
+        </p>
+
+        <p>
+          Remember: your primary responsibility is the safety and well-being of the patient.
+          Approach all suspected cases of spousal or partner abuse with empathy, sensitivity,
+          and a commitment to providing safe, confidential support.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>
+          Download the
+          <a href="/pdfs/GBV child abuse and adult or partner abuse protocol.pdf"
+             class="emphasis-link"
+             target="_blank">
+            Full Protocol here
+          </a>
+        </h3>
+      </section>
+
     </div>
-    <h3>Download the <a href="/pdfs/GBV child abuse and adult or partner abuse protocol.pdf" class="emphasis-link" target="_blank">Full Protocol here</a></h3>
+  </main>
 </body>
 </html>

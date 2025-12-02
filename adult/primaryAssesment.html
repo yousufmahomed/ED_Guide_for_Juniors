@@ -2,112 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Primary Assessment J-A-C-C-O-L-D</title>
+  <title>Primary Assessment – JACCOL(D)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/primaryAssessment.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/primaryAssessment.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .intro {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-bottom: 1.5rem;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0.25rem 0 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #c85000;
+    }
+
+    .image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
       }
-      strong {
-        font-weight: bold;
-        font-size: 1.2em;
-        color: orangered;
+
+      .logo-container h1 {
+        font-size: 0.95rem;
       }
-      
-    
-      
-      
+    }
   </style>
 </head>
-<html>
-<body class="vitals-page">
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Primary Assessment J-A-C-C-O-L-D</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <body>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Primary Assessment – JACCOL(D)</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" alt="House icon" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <p class="intro">
+        JACCOL(D) is a quick primary assessment screen for systemic signs: 
+        <strong>J</strong>aundice, <strong>A</strong>naemia, <strong>C</strong>yanosis, 
+        <strong>C</strong>lubbing, <strong>O</strong>edema, <strong>L</strong>ymphadenopathy, 
+        and <strong>D</strong>ehydration. It is useful at the bedside to identify serious underlying disease early.
+      </p>
+
       <section class="section">
-      <h2 class="subheading">Jaundice</h2>
-      <p><strong>Clinical features:</strong> Yellowing of the skin and eyes, dark urine, pale stools</p>
-      <p><strong>Symptoms:</strong> Fatigue, weakness, abdominal pain, itching</p>
-      <p><strong>Causes:</strong> Liver disease, hemolytic anemia, bile duct obstruction</p>
-      <p><strong>Relevant investigations:</strong> Liver function tests, bilirubin levels, ultrasound, CT scan</p>
-      <img src="/images/Causes-of-jaundice.png" alt="causes of jaundice" class="image">
-    </section>
-    <section class="section">
-    <h2 class="subheading">Anaemia</h2>
-    <p><strong>Clinical features:</strong> Pallor, fatigue, shortness of breath, tachycardia</p>
-    <p><strong>Symptoms:</strong> Weakness, dizziness, headache, chest pain</p>
-    <p><strong>Causes:</strong> Iron deficiency, vitamin deficiency, chronic disease, blood loss</p>
-    <p><strong>Relevant investigations:</strong> Complete blood count, iron studies, vitamin levels, stool occult blood test</p>
-    <img src="/images/anemia_causes_symptoms_risks-1.png" alt="Causes of anaemia" class="image">
-  </section>
-  <section class="section">
-    <h2 class="subheading">Cyanosis</h2>
-    <p><strong>Clinical features:</strong> Blueish discoloration of the skin, lips, and mucous membranes</p>
-    <p><strong>Symptoms:</strong> Shortness of breath, confusion, chest pain</p>
-    <p><strong>Causes:</strong> Hypoxia, heart or lung disease, cold exposure</p>
-    <p><strong>Relevant investigations:</strong> Pulse oximetry, arterial blood gas analysis, chest X-ray, echocardiogram</p>
-    <img src="/images/cyanosis.jpg" alt="Causes of cyanosis" class="image">
-  </section>
+        <h2 class="subheading">J – Jaundice</h2>
+        <p><strong>Clinical features:</strong> Yellowing of the skin and sclera, dark urine, pale stools.</p>
+        <p><strong>Symptoms:</strong> Fatigue, weakness, abdominal pain, pruritus (itching), nausea.</p>
+        <p><strong>Causes:</strong> Hepatocellular disease (e.g. viral hepatitis, cirrhosis), hemolytic anaemia, biliary obstruction (stones, strictures, malignancy), drug-induced liver injury.</p>
+        <p><strong>Relevant investigations:</strong> Liver function tests (ALT, AST, ALP, GGT), bilirubin (total and conjugated), full blood count, ultrasound abdomen ± CT scan, viral hepatitis screen as indicated.</p>
+        <img src="/images/Causes-of-jaundice.png" alt="Causes of jaundice" class="image">
+      </section>
 
-  <section class="section">
-    <h2 class="subheading">Clubbing</h2>
-    <p><strong>Clinical features:</strong> Enlargement of the fingertips, nail bed softening, curved nails</p>
-    <p><strong>Symptoms:</strong> Shortness of breath, chest pain, coughing up blood</p>
-    <p><strong>Causes:</strong> Lung disease, heart disease, liver disease</p>
-    <p><strong>Relevant investigations:</strong> Chest X-ray, CT scan, pulmonary function tests, echocardiogram</p>
-    <img src="/images/clubbing.jpg" alt="Causes of clubbing" class="image">
-    <img src="/images/clubbing2.jpg" alt="Causes of clubbing" class="image">
-  </section>
-  <section class="section">
-    <h2 class="subheading">Oedema</h2>
-    <p><strong>Clinical features:</strong> Swelling of the feet, ankles, legs, or abdomen</p>
-    <p><strong>Symptoms:</strong> Shortness of breath, fatigue, weight gain</p>
-    <p><strong>Causes:</strong> Heart failure, kidney disease, liver disease, lymphatic obstruction</p>
-    <p><strong>Relevant investigations:</strong> Blood tests, urine tests, chest X-ray, echocardiogram</p>
-    <img src="/images/oedema.jpg" alt="Causes of oedema" class="image">
-  </section>
-  <section class="section">
-    <h2 class="subheading">Lymphadenopathy</h2>
-    <p><strong>Clinical features:</strong> Enlarged lymph nodes, often in the neck, armpits, or groin</p>
-    <p><strong>Symptoms:</strong> Fatigue, fever, night sweats, weight loss</p>
-    <p><strong>Causes:</strong> Infection, inflammation, cancer</p>
-    <p><strong>Relevant investigations:</strong> Blood tests, imaging studies (CT scan, MRI), lymph node biopsy</p>
-    <img src="/images/Causes-of-Localized-Lymphadenopathy.png" alt="Causes of lymphadenopathy" class="image">
-    <img src="/images/cervical_lymphadenopathy_2.jpg" alt="Cervical lymphadenopathy" class="image">
-  </section>
-  <section class="section">
-    <h2 class="subheading">Dehydration</h2>
-    <p><strong>Clinical features:</strong> Dry mouth, decreased urine output, thirst, dry skin, sunken eyes, cool extremities, low blood pressure</p>
-    <p><strong>Symptoms:</strong> Fatigue, dizziness, confusion, rapid heartbeat, headache</p>
-    <p><strong>Causes:</strong> Excessive sweating, diarrhea, vomiting, fever, decreased fluid intake, diabetes, certain medications</p>
-    <p><strong>Relevant investigations:</strong> Blood tests (electrolyte levels, kidney function tests), urine tests (specific gravity, urine osmolality), physical examination</p>
-    <img src="/images/Clin feat dehydration.jpg" alt="clinical features of dehydration" class="image">
-  </section>
-  
+      <section class="section">
+        <h2 class="subheading">A – Anaemia</h2>
+        <p><strong>Clinical features:</strong> Pallor (conjunctiva, palms, nail beds), tachycardia, postural hypotension.</p>
+        <p><strong>Symptoms:</strong> Fatigue, exertional dyspnoea, dizziness, headache, chest pain or angina in high-risk patients.</p>
+        <p><strong>Causes:</strong> Iron deficiency (chronic blood loss, poor intake), vitamin B12/folate deficiency, chronic disease, haemolysis, acute blood loss.</p>
+        <p><strong>Relevant investigations:</strong> Full blood count and indices, reticulocyte count, iron studies, B12/folate, stool occult blood test or endoscopy where indicated.</p>
+        <img src="/images/anemia_causes_symptoms_risks-1.png" alt="Causes of anaemia" class="image">
+      </section>
 
+      <section class="section">
+        <h2 class="subheading">C – Cyanosis</h2>
+        <p><strong>Clinical features:</strong> Bluish discolouration of lips, tongue, nail beds or extremities.</p>
+        <p><strong>Symptoms:</strong> Shortness of breath, chest pain, confusion, headache.</p>
+        <p><strong>Causes:</strong> Hypoxia from respiratory disease (e.g. pneumonia, PE, COPD, asthma), congenital or acquired heart disease, shock, cold exposure, abnormal haemoglobin (e.g. methaemoglobinaemia).</p>
+        <p><strong>Relevant investigations:</strong> Pulse oximetry, arterial blood gas, chest X-ray, ECG, echocardiogram, D-dimer / CT pulmonary angiogram if PE suspected.</p>
+        <img src="/images/cyanosis.jpg" alt="Cyanosis" class="image">
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">C – Clubbing</h2>
+        <p><strong>Clinical features:</strong> Loss of nail-bed angle, spongy nail beds, bulbous enlargement of distal phalanges; may be unilateral or bilateral.</p>
+        <p><strong>Symptoms:</strong> Often asymptomatic; may coexist with chronic cough, dyspnoea, weight loss or gastrointestinal symptoms.</p>
+        <p><strong>Causes:</strong> Chronic lung disease (bronchiectasis, lung abscess, lung cancer, cystic fibrosis), cyanotic heart disease, inflammatory bowel disease, liver disease (e.g. cirrhosis).</p>
+        <p><strong>Relevant investigations:</strong> Chest X-ray, CT chest, pulmonary function tests, echocardiogram, liver function tests, abdominal imaging as indicated.</p>
+        <img src="/images/clubbing.jpg" alt="Finger clubbing" class="image">
+        <img src="/images/clubbing2.jpg" alt="Finger clubbing examples" class="image">
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">O – Oedema</h2>
+        <p><strong>Clinical features:</strong> Pitting swelling of feet, ankles, legs or sacrum; may involve abdomen (ascites) or generalised anasarca.</p>
+        <p><strong>Symptoms:</strong> Dyspnoea, orthopnoea, fatigue, rapid weight gain, reduced exercise tolerance.</p>
+        <p><strong>Causes:</strong> Heart failure, nephrotic syndrome or renal failure, chronic liver disease/portal hypertension, lymphatic obstruction, venous insufficiency, some medications.</p>
+        <p><strong>Relevant investigations:</strong> Urea/creatinine and electrolytes, liver function tests, urinalysis (protein), BNP where available, chest X-ray, echocardiogram, Doppler studies if DVT or venous disease suspected.</p>
+        <img src="/images/oedema.jpg" alt="Oedema" class="image">
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">L – Lymphadenopathy</h2>
+        <p><strong>Clinical features:</strong> Enlarged lymph nodes (cervical, axillary, inguinal or generalised); may be tender or non-tender, discrete or matted.</p>
+        <p><strong>Symptoms:</strong> Fever, night sweats, weight loss, local infective symptoms (sore throat, dental sepsis, skin lesions).</p>
+        <p><strong>Causes:</strong> Local or systemic infection (bacterial, viral, TB), inflammatory or autoimmune disease, haematological malignancy (lymphoma, leukaemia), metastatic cancer.</p>
+        <p><strong>Relevant investigations:</strong> Full blood count, inflammatory markers, HIV/TB serology where indicated, ultrasound, CT/MRI; fine needle aspiration or lymph node biopsy if malignancy is suspected.</p>
+        <img src="/images/Causes-of-Localized-Lymphadenopathy.png" alt="Causes of lymphadenopathy" class="image">
+        <img src="/images/cervical_lymphadenopathy_2.jpg" alt="Cervical lymphadenopathy" class="image">
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">D – Dehydration</h2>
+        <p><strong>Clinical features:</strong> Dry mucous membranes, poor skin turgor, sunken eyes (especially in children), reduced urine output, tachycardia, hypotension, cool peripheries, delayed capillary refill.</p>
+        <p><strong>Symptoms:</strong> Thirst, fatigue, dizziness or presyncope, confusion, headache.</p>
+        <p><strong>Causes:</strong> Vomiting, diarrhoea, polyuria (e.g. uncontrolled diabetes, diuretics), fever, excessive sweating, poor oral intake, sepsis.</p>
+        <p><strong>Relevant investigations:</strong> Electrolytes and renal function, capillary or venous glucose, lactate if sepsis suspected, urine dipstick and specific gravity, bedside weight in paediatrics if available.</p>
+        <img src="/images/Clin feat dehydration.jpg" alt="Clinical features of dehydration" class="image">
+      </section>
+    </div>
+  </main>
 </body>
 </html>
-    
-    
-    
-    

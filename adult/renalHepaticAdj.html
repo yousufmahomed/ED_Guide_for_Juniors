@@ -1,129 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Renal &amp; Hepatic adjustment for medications</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            
-          }
-      table {
-        border-collapse: collapse;
-        width: 100%;
+<head>
+  <meta charset="UTF-8" />
+  <title>Renal & Hepatic Adjustment for Medications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 8px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #004a7c;
+      margin-top: 0.5rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.25rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      margin: 0.3rem 0 0.6rem;
+    }
+
+    ul,
+    ol {
+      margin: 0.3rem 0 0.8rem 1.4rem;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight {
+      font-weight: 700;
+      color: #c0392b;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #555;
+      border-left: 4px solid #f39c12;
+      padding-left: 0.6rem;
+      margin: 0.6rem 0;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 0.8rem 0 1.4rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #005daa;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f7f9fb;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: #ecf0f1;
+      margin-left: 0.2rem;
+    }
+
+    .tag-renal {
+      background-color: #d6eaf8;
+      color: #1b4f72;
+    }
+
+    .tag-hepatic {
+      background-color: #fdebd0;
+      color: #7e5109;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin: 0.5rem;
+        padding: 0.75rem;
       }
-      
-      th, td {
-        text-align: left;
-        padding: 8px;
+
+      h1 {
+        font-size: 1.3rem;
       }
-      
-      th {
-        background-color: #4CAF50;
-        color: white;
+
+      h2 {
+        font-size: 1.15rem;
       }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
+
+      body {
+        font-size: 15px;
+        line-height: 1.5;
       }
-    </style>
+    }
+  </style>
+</head>
+<body>
   <header>
     <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Renal &amp; Hepatic adjustment for medications</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-container">
+        <h1 class="main-header">Renal &amp; Hepatic Adjustment for Medications</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
         </div>
-      </nav>
-    </header>
-  <body>
-    <div class="section">
-    <h1>Medication Adjustment for Renal and Hepatic Impairment</h1>
-    <p>Patients with renal or hepatic impairment may require adjustment of medication dosages in order to avoid adverse effects or toxicity. Dosage adjustment is typically calculated based on the degree of impairment, as measured by laboratory values such as creatinine clearance or liver function tests.</p>
-    <h2>Commonly Adjusted Medications</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Medication</th>
-          <th>Adjustment for Renal Impairment</th>
-          <th>Adjustment for Hepatic Impairment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Metformin</td>
-          <td>Reduce dose or avoid use in severe renal impairment (GFR < 30 mL/min)</td>
-          <td>Avoid use in severe hepatic impairment</td>
-        </tr>
-        <tr>
-          <td>Warfarin</td>
-          <td>Reduce dose or avoid use in moderate to severe renal impairment (GFR < 50 mL/min)</td>
-          <td>Reduce dose in mild to moderate hepatic impairment (Child-Pugh A or B)</td>
-        </tr>
-        <tr>
-          <td>Lisinopril</td>
-          <td>Reduce dose or avoid use in severe renal impairment (GFR < 30 mL/min)</td>
-          <td>No dosage adjustment necessary</td>
-        </tr>
-        <tr>
-            <td>Ceftriaxone</td>
-            <td>Reduce dose or prolong dosing interval in renal impairment</td>
-            <td>No dosage adjustment necessary</td>
-          </tr>
-          <tr>
-            <td>Vancomycin</td>
-            <td>Adjust dose based on renal function (CrCl or GFR)</td>
-            <td>Adjust dose based on liver function tests (AST, ALT, bilirubin)</td>
-          </tr>
-          <tr>
-            <td>Azithromycin</td>
-            <td>No dosage adjustment necessary</td>
-            <td>Avoid use in severe hepatic impairment</td>
-          </tr>
-      </tbody>
-    </table>
-</div>
-    <div class="section">
-    <h2 class="subheading">Formulas for Medication Dosage Adjustment</h2>
-    <p>Doctors can use the following formulas to adjust medication dosages based on renal or hepatic function:</p>
-    <ul>
-      <li>Creatinine clearance (CrCl) = (140 - age) x weight (kg) / (72 x serum creatinine (mg/dL))</li>
-      <li>Child-Pugh score = (1.0 x bilirubin (mg/dL)) + (0.7 x INR) + (1.8 x ascites) + (3.0 x encephalopathy)</li>
-    </ul>
-    <p>To adjust medication dosages using the CrCl value:</p>
-    <ol>
-      <li>Determine the target dose of the medication based on the patient's condition and other factors.</li>
-      <li>Calculate the patient's estimated CrCl value using the formula.</li>
-      <li>Use a drug-specific dosing algorithm or table to determine the appropriate dose adjustment based on the estimated CrCl value.</li>
-      <li>Administer the medication at the adjusted dose.</li>
-    </ol>
-    <p>To adjust medication dosages using the Child-Pugh score:</p>
-    <ol>
-      <li>Determine the target dose of the medication based on the patient's condition and other factors.</li>
-      <li>Calculate the patient's Child-Pugh score using the formula.</li>
-      <li>Use a drug-specific dosing algorithm or table to determine the appropriate dose adjustment based on the patient's Child-Pugh score.</li>
-      <li>Administer the medication at the adjusted dose.</li>
-    </ol>
-    </div>
-    <div class="section">
-    <p>It's important to note that medication adjustment based on renal and hepatic function is typically done in consultation with a Senior Colleague or Pharmacist, as many other factors may need to be taken into account when adjusting medication dosages.</p>
-    <p>As it is a difficult thing to work out until you are more experienced I would advise working out the renal or hepatic scores as above and then discussing with a senior</p>
-</div>  
-</body>
-</html>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
 
-  </body>
+  <main>
+    <section class="section">
+      <h1>Medication Adjustment in Renal &amp; Hepatic Impairment</h1>
+      <p>
+        Many commonly used drugs in the Emergency Department are renally and/or hepatically cleared.
+        In patients with kidney or liver dysfunction, doses or dosing intervals often need to be
+        adjusted to avoid toxicity or under-dosing.
+      </p>
+      <p class="note">
+        <span class="highlight">Always:</span> calculate kidney and liver function first,
+        then confirm doses in an up-to-date formulary (e.g. local hospital guidelines, BNF,
+        SAMF, UpToDate, Lexicomp) and discuss with a senior or pharmacist.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>1. Assessing Renal Function (for Dosing)</h2>
+      <p>
+        In adults, drug dosing is usually adjusted according to creatinine clearance (CrCl) or
+        estimated GFR (eGFR).
+      </p>
+
+      <h3>Creatinine Clearance – Cockcroft–Gault (Adults)</h3>
+      <p>Use actual body weight unless morbidly obese; use ideal/adjusted weight if very obese.</p>
+      <ul>
+        <li>
+          <strong>Male:</strong><br />
+          CrCl (mL/min) =
+          <code>(140 − age [years]) × weight [kg] / (0.814 × serum creatinine [µmol/L])</code>
+        </li>
+        <li>
+          <strong>Female:</strong><br />
+          CrCl (mL/min) = above value × <strong>0.85</strong>
+        </li>
+      </ul>
+      <p class="note">
+        As a quick rule of thumb for dosing: dose-adjustment is usually needed when
+        <strong>CrCl &lt; 60 mL/min</strong>, and becomes critical when
+        <strong>CrCl &lt; 30 mL/min</strong>, but always follow the drug-specific table.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>2. Assessing Hepatic Function (Child–Pugh)</h2>
+      <p>
+        The <strong>Child–Pugh score</strong> is commonly used to stage chronic liver disease
+        and guide cautious use of hepatically-metabolised drugs.
+      </p>
+
+      <h3>Child–Pugh Components</h3>
+      <ul>
+        <li>Bilirubin</li>
+        <li>Albumin</li>
+        <li>INR (or Prothrombin time)</li>
+        <li>Ascites (none / mild / moderate–severe)</li>
+        <li>Encephalopathy (none / grade I–II / grade III–IV)</li>
+      </ul>
+      <p>
+        Each parameter scores 1–3 points. Total score:
+        <strong>A = 5–6</strong> (mild), <strong>B = 7–9</strong> (moderate),
+        <strong>C = 10–15</strong> (severe).
+      </p>
+      <p class="note">
+        In general: avoid or greatly reduce hepatically cleared drugs in
+        <strong>Child–Pugh C</strong>; use reduced doses and longer intervals in
+        <strong>B</strong>; standard doses or slight reduction in <strong>A</strong>
+        unless otherwise stated in guidelines.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>3. Examples – Common ED Medications</h2>
+      <p>
+        These are <strong>principles</strong> for commonly used drugs. They are not a substitute
+        for a full dosing table.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Medication</th>
+              <th>Renal Impairment (CrCl / eGFR)</th>
+              <th>Hepatic Impairment (Child–Pugh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Metformin
+                <span class="tag tag-renal">Renal</span>
+              </td>
+              <td>
+                • Avoid if <strong>eGFR &lt; 30 mL/min</strong>.<br />
+                • Consider dose reduction and close monitoring if eGFR 30–45 mL/min.<br />
+                • Monitor for lactic acidosis in any acute illness (sepsis, shock, hypoxia).
+              </td>
+              <td>
+                • Avoid in clinically significant liver disease with hypoxia or risk of lactic acidosis.<br />
+                • Use cautiously in Child–Pugh B; generally avoid in C.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Warfarin
+                <span class="tag tag-hepatic">Hepatic</span>
+              </td>
+              <td>
+                • No formal dose adjustment for mild–moderate renal impairment, but bleeding risk is higher in CKD.<br />
+                • Monitor INR more frequently in advanced CKD.
+              </td>
+              <td>
+                • Metabolised in liver; effect amplified in liver failure.<br />
+                • Use lower starting doses in Child–Pugh B/C with very close INR monitoring, or consider alternatives per specialist advice.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Lisinopril (ACE-I)
+                <span class="tag tag-renal">Renal</span>
+              </td>
+              <td>
+                • Start with lower doses in eGFR &lt; 60 mL/min.<br />
+                • Avoid dose escalation if creatinine rises &gt; 30% from baseline or K⁺ &gt; 5.5 mmol/L.<br />
+                • Often avoided or used very cautiously in eGFR &lt; 30 mL/min without specialist input.
+              </td>
+              <td>
+                • No routine adjustment in mild–moderate hepatic impairment, but start low in advanced cirrhosis due to risk of hypotension/renal hypoperfusion.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Ceftriaxone
+                <span class="tag tag-renal">Renal</span>
+                <span class="tag tag-hepatic">Hepatic</span>
+              </td>
+              <td>
+                • Mostly biliary excretion; standard once-daily dosing usually acceptable in mild–moderate renal impairment.<br />
+                • In severe renal impairment (CrCl &lt; 10–15 mL/min), consider reducing total daily dose
+                or extending interval as per local antibiotic guideline.
+              </td>
+              <td>
+                • Use with caution in severe cholestasis/hepatic failure.<br />
+                • Avoid very high doses in combined severe renal + hepatic impairment; follow local guidelines.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Vancomycin (IV)
+                <span class="tag tag-renal">Renal – major</span>
+              </td>
+              <td>
+                • <strong>Renally cleared.</strong> Dose entirely based on CrCl/eGFR and
+                measured levels (trough or AUC depending on local protocol).<br />
+                • In ED: give loading dose if severe sepsis, then follow hospital vancomycin
+                nomogram.
+              </td>
+              <td>
+                • No standard dose change in isolated hepatic impairment, but monitor closely in multi-organ failure.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Azithromycin
+                <span class="tag tag-hepatic">Hepatic</span>
+              </td>
+              <td>
+                • No adjustment for mild–moderate renal impairment; use caution in CrCl &lt; 10 mL/min.
+              </td>
+              <td>
+                • Mainly hepatically cleared.<br />
+                • Avoid or use with great caution in clinically significant hepatic impairment or
+                  active cholestatic hepatitis; consider alternative antibiotic.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        Values and thresholds above are deliberately conservative for teaching. Always check your
+        local renal-dosing guideline and antibiogram (e.g. “Renal Drug Handbook”, local antibiotic
+        book, BNF, SAMF).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>4. Practical Step-by-Step Approach in the ED</h2>
+      <ol>
+        <li>
+          <strong>Check labs:</strong> urea, creatinine, eGFR, LFTs (ALT/AST, ALP, GGT, bilirubin),
+          albumin, INR.
+        </li>
+        <li>
+          <strong>Estimate function:</strong> calculate CrCl (Cockcroft–Gault) and estimate Child–Pugh
+          class if cirrhosis is suspected/known.
+        </li>
+        <li>
+          <strong>Identify high-risk drugs:</strong> renally cleared antibiotics (e.g. gentamicin,
+          vancomycin), metformin, DOACs, opioids, sedatives, ACE-Is/ARBs, LMWH, etc.
+        </li>
+        <li>
+          <strong>Check a trusted dosing reference:</strong> local guideline, BNF/SAMF, or electronic
+          prescribing system, and adjust dose/interval accordingly.
+        </li>
+        <li>
+          <strong>Document clearly:</strong> “Dose adjusted for renal/hepatic impairment – CrCl XX mL/min,
+          Child–Pugh B”, and review once labs or clinical state change.
+        </li>
+      </ol>
+      <p class="note">
+        When unsure, it is safer to give a <strong>reduced dose with planned review</strong> than a full
+        dose that may cause toxicity – but in life-threatening sepsis, loading doses should not be
+        omitted. Discuss with ICU/senior/clinical pharmacist where available.
+      </p>
+    </section>
+  </main>
+</body>
 </html>

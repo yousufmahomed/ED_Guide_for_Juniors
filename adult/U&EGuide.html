@@ -1,218 +1,371 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>U&amp;E Guide</title>
   <meta charset="UTF-8">
+  <title>U&E / Electrolytes Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/bloodTestGuides.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/bloodTestGuides.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    h2 {
-      font-size: 20px;
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 10px;
+    }
+
+    h1.main-header {
+      font-size: 1.6rem;
+    }
+
+    h2.subheading {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
       color: #003366;
-      margin-bottom: 10px;
+      text-decoration: underline;
+    }
+
+    p {
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .inline-note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 0.75rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      -webkit-overflow-scrolling: touch;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
-      margin-bottom: 20px;
+      min-width: 650px; /* forces horizontal scroll on very small screens */
+      margin-bottom: 0;
+      font-weight: normal;
     }
 
     th, td {
       border: 1px solid #ccc;
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
 
     th {
       background-color: navy;
       color: whitesmoke;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    .fullscreen-image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      cursor: zoom-out;
+
+    .param-name {
+      font-weight: 600;
     }
-    
-  
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 0.25rem;
+    }
+
+    .tag-red {
+      background: #b71c1c;
+      color: #fff;
+    }
+
+    .tag-blue {
+      background: #1565c0;
+      color: #fff;
+    }
+
+    .tag-amber {
+      background: #ffb300;
+      color: #000;
+    }
+
+    .section {
+      margin-bottom: 1.5rem;
+    }
+
+    .small-text {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 0.75rem;
+        padding: 0.75rem;
+      }
+
+      h1.main-header {
+        font-size: 1.35rem;
+      }
+
+      h2.subheading {
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
-<header>
-  <div class="logo-container">
-      <h1 style="color: antiquewhite;">U&amp;E Guide</h1>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">U&amp;E / Electrolytes &amp; Renal Guide</h1>
       <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
-    <div class="section">
-        <h2 class="subheading">U&amp;E Guide (including CMP)</h2>
+
+  <main>
+    <section class="section">
+      <h2 class="subheading">How to Use This Page</h2>
+      <p class="inline-note">
+        Use this as a quick guide for interpreting U&amp;Es and related electrolytes at the bedside.
+        Always interpret results with the clinical picture and local lab reference ranges.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Electrolytes &amp; Renal Panel (including Ca / Mg / Phosphate)</h2>
+      <div class="table-wrapper">
         <table>
+          <thead>
             <tr>
               <th>Parameter</th>
-              <th>Terminology for Increase</th>
-              <th>Terminology for Decrease</th>
-              <th>Differential Diagnosis for Increase</th>
-              <th>Differential Diagnosis for Decrease</th>
+              <th>High Value</th>
+              <th>Low Value</th>
+              <th>Common Causes of High</th>
+              <th>Common Causes of Low</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-              <td>Sodium (Na+)</td>
+              <td class="param-name">Sodium (Na⁺)</td>
               <td>Hypernatremia</td>
               <td>Hyponatremia</td>
-              <td>Dehydration, diabetes insipidus, excessive sweating, vomiting, diarrhea, hyperaldosteronism</td>
-              <td>Excess fluid intake, syndrome of inappropriate antidiuretic hormone (SIADH), heart failure, liver disease, kidney disease</td>
+              <td>
+                Dehydration, diabetes insipidus, osmotic diuresis,<br>
+                excessive salt intake, hyperaldosteronism.
+              </td>
+              <td>
+                SIADH, heart failure, liver cirrhosis, nephrotic syndrome,<br>
+                excess free water, thiazides, adrenal insufficiency.
+              </td>
             </tr>
             <tr>
-              <td>Potassium (K+)</td>
-              <td>Hyperkalemia</td>
-              <td>Hypokalemia</td>
-              <td>Renal failure, Addison's disease, medication side effects, tissue damage, acidosis</td>
-              <td>Excessive sweating, vomiting, diarrhea, diuretic use, hyperaldosteronism, alkalosis</td>
+              <td class="param-name">Potassium (K⁺)</td>
+              <td>Hyperkalemia <span class="tag tag-red">ECG risk</span></td>
+              <td>Hypokalemia <span class="tag tag-red">ECG risk</span></td>
+              <td>
+                Renal failure, ACEi/ARB, spironolactone, potassium supplements,<br>
+                acidosis, cell lysis (rhabdo, tumour lysis), Addison's disease.
+              </td>
+              <td>
+                Diuretics, vomiting/diarrhoea, insulin + glucose, β-agonists,<br>
+                hyperaldosteronism, alkalosis, poor intake.
+              </td>
             </tr>
             <tr>
-              <td>Chloride (Cl-)</td>
+              <td class="param-name">Chloride (Cl⁻)</td>
               <td>Hyperchloremia</td>
               <td>Hypochloremia</td>
-              <td>Dehydration, kidney disease, metabolic acidosis, excess intake of salt</td>
-              <td>Vomiting, diarrhea, heart failure, metabolic alkalosis</td>
+              <td>
+                Normal saline overload, dehydration, renal tubular acidosis,<br>
+                diarrhoea, metabolic acidosis.
+              </td>
+              <td>
+                Vomiting, gastric losses, diuretics, metabolic alkalosis,<br>
+                heart failure.
+              </td>
             </tr>
             <tr>
-              <td>Bicarbonate (HCO3-)</td>
-              <td>Hyperbicarbonatemia</td>
-              <td>Hypobicarbonatemia</td>
-              <td>Chronic obstructive pulmonary disease (COPD), metabolic alkalosis, respiratory alkalosis, kidney disease</td>
-              <td>Metabolic acidosis, diarrhea, renal failure, diabetic ketoacidosis</td>
+              <td class="param-name">Bicarbonate (HCO₃⁻)</td>
+              <td>High HCO₃⁻</td>
+              <td>Low HCO₃⁻</td>
+              <td>
+                Metabolic alkalosis (vomiting, diuretics), chronic CO₂ retention (COPD),<br>
+                volume depletion with contraction alkalosis.
+              </td>
+              <td>
+                Metabolic acidosis (DKA, sepsis, renal failure, lactic acidosis),<br>
+                diarrhoea, renal tubular acidosis.
+              </td>
             </tr>
             <tr>
-              <td>Blood Urea Nitrogen (BUN)</td>
-              <td>Increased BUN</td>
-              <td>Decreased BUN</td>
-              <td>Dehydration, kidney disease, urinary tract obstruction, gastrointestinal bleeding, heart failure, shock</td>
-              <td>Liver disease, overhydration, malnutrition, low protein diet, pregnancy</td>
+              <td class="param-name">Urea / BUN</td>
+              <td>Increased urea (BUN)</td>
+              <td>Decreased urea</td>
+              <td>
+                Pre-renal azotaemia: dehydration, shock, GI bleed;<br>
+                renal failure; high protein intake; catabolic states.
+              </td>
+              <td>
+                Severe liver disease, low protein intake, overhydration,<br>
+                late pregnancy.
+              </td>
             </tr>
             <tr>
-              <td>Creatinine</td>
+              <td class="param-name">Creatinine</td>
               <td>Increased creatinine</td>
               <td>Decreased creatinine</td>
-              <td>Kidney disease, dehydration, urinary tract obstruction, rhabdomyolysis, shock, medication side effects</td>
-              <td>Muscle wasting, pregnancy, reduced muscle mass due to aging, low protein diet</td>
+              <td>
+                Acute or chronic kidney disease, obstruction, nephrotoxins,<br>
+                rhabdomyolysis, hypotension/shock.
+              </td>
+              <td>
+                Low muscle mass (elderly, cachexia), pregnancy,<br>
+                amputations, malnutrition.
+              </td>
             </tr>
             <tr>
-                <td>Urea</td>
-                <td>Increased urea</td>
-                <td>Decreased urea</td>
-                <td>Dehydration, kidney disease, urinary tract obstruction, gastrointestinal bleeding, heart failure, shock</td>
-                <td>Liver disease, overhydration, malnutrition, low protein diet, pregnancy</td>
-              </tr>
-            <tr>
-                <td>Calcium (Ca2+)</td>
-                <td>Hypercalcemia</td>
-                <td>Hypocalcemia</td>
-                <td>Hyperparathyroidism, cancer (e.g., multiple myeloma), excess vitamin D, prolonged immobilization, thiazide diuretics</td>
-                <td>Hypoparathyroidism, vitamin D deficiency, chronic renal failure, pancreatitis</td>
-              </tr>
-              <tr>
-                <td>Magnesium (Mg2+)</td>
-                <td>Hypermagnesemia</td>
-                <td>Hypomagnesemia</td>
-                <td>Kidney failure, excessive use of magnesium-containing antacids, laxatives, or supplements, adrenal insufficiency, hypothyroidism</td>
-                <td>Malnutrition, chronic diarrhea, alcoholism, diabetes, hyperthyroidism, excessive sweating, diuretic use, burns</td>
-              </tr>
-              <tr>
-                <td>Phosphate (PO43-)</td>
-                <td>Hyperphosphatemia</td>
-                <td>Hypophosphatemia</td>
-                <td>Kidney failure, hypoparathyroidism, tumor lysis syndrome, excess vitamin D, hypothyroidism</td>
-                <td>Malnutrition, alcoholism, chronic diarrhea, hyperparathyroidism, diuretic use, burns</td>
+              <td class="param-name">Calcium (Ca²⁺)</td>
+              <td>Hypercalcemia</td>
+              <td>Hypocalcemia</td>
+              <td>
+                Primary hyperparathyroidism, malignancy (bone mets, myeloma, PTHrP),<br>
+                vitamin D excess, thiazides, prolonged immobilisation.
+              </td>
+              <td>
+                Hypoparathyroidism, vitamin D deficiency, chronic kidney disease,<br>
+                pancreatitis, massive transfusion (citrate).
+              </td>
             </tr>
-          </div>
-<div class="section">
-    
-    <table>
-        <tr>
-          <th>Stage of Renal Failure</th>
-          <th>Glomerular Filtration Rate (GFR) - British Units (ml/min/1.73m<sup>2</sup>)</th>
-          <th>Glomerular Filtration Rate (GFR) - American Units (ml/min)</th>
-          <th>Creatinine - British Units (&mu;mol/L)</th>
-          <th>Creatinine - American Units (mg/dL)</th>
-        </tr>
-        <tr>
-          <td>Stage 1</td>
-          <td>&gt; 90</td>
-          <td>&gt; 90</td>
-          <td>&lt; 104</td>
-          <td>&lt; 1.2</td>
-        </tr>
-        <tr>
-          <td>Stage 2</td>
-          <td>60-89</td>
-          <td>60-89</td>
-          <td>104-159</td>
-          <td>1.2-1.8</td>
-        </tr>
-        <tr>
-          <td>Stage 3A</td>
-          <td>45-59</td>
-          <td>45-59</td>
-          <td>159-200</td>
-          <td>1.8-2.3</td>
-        </tr>
-        <tr>
-          <td>Stage 3B</td>
-          <td>30-44</td>
-          <td>30-44</td>
-          <td>200-309</td>
-          <td>2.3-3.5</td>
-        </tr>
-        <tr>
-          <td>Stage 4</td>
-          <td>15-29</td>
-          <td>15-29</td>
-          <td>309-440</td>
-          <td>3.5-5.0</td>
-        </tr>
-        <tr>
-          <td>Stage 5</td>
-          <td>&lt; 15</td>
-          <td>&lt; 15</td>
-          <td>&gt; 440</td>
-          <td>&gt; 5.0</td>
-        </tr>
-      </table>
-      
-</div>
+            <tr>
+              <td class="param-name">Magnesium (Mg²⁺)</td>
+              <td>Hypermagnesemia</td>
+              <td>Hypomagnesemia</td>
+              <td>
+                Renal failure, excess Mg-containing antacids/laxatives,<br>
+                iatrogenic over-replacement.
+              </td>
+              <td>
+                Malnutrition, alcoholism, chronic diarrhoea, diuretics,<br>
+                diabetes, PPIs, burns.
+              </td>
+            </tr>
+            <tr>
+              <td class="param-name">Phosphate (PO₄³⁻)</td>
+              <td>Hyperphosphatemia</td>
+              <td>Hypophosphatemia</td>
+              <td>
+                Chronic kidney disease, tumour lysis, rhabdomyolysis,<br>
+                hypoparathyroidism, vitamin D excess.
+              </td>
+              <td>
+                Malnutrition/refeeding, alcoholism, DKA treatment,<br>
+                hyperparathyroidism, diarrhoea, diuretics.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small-text">
+        <strong>Tip:</strong> Always look at trends, not single values, and correlate with the ABG, fluid balance,
+        and ECG (especially for K⁺, Ca²⁺, Mg²⁺).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Chronic Kidney Disease – GFR-Based Staging</h2>
+      <p class="inline-note">
+        Staging is based on estimated GFR (eGFR). Creatinine values below are rough guides and will vary with lab,
+        muscle mass, sex, and age. Use your lab’s eGFR where available.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>eGFR (ml/min/1.73 m²)</th>
+              <th>Typical Description</th>
+              <th>Approx. Creatinine (&micro;mol/L)</th>
+              <th>Approx. Creatinine (mg/dL)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G1</td>
+              <td>&gt; 90</td>
+              <td>Normal or high GFR (with other markers of kidney damage)</td>
+              <td>&lt; ~104</td>
+              <td>&lt; ~1.2</td>
+            </tr>
+            <tr>
+              <td>G2</td>
+              <td>60–89</td>
+              <td>Mildly decreased GFR</td>
+              <td>~104–159</td>
+              <td>~1.2–1.8</td>
+            </tr>
+            <tr>
+              <td>G3a</td>
+              <td>45–59</td>
+              <td>Mild–moderate decrease</td>
+              <td>~159–200</td>
+              <td>~1.8–2.3</td>
+            </tr>
+            <tr>
+              <td>G3b</td>
+              <td>30–44</td>
+              <td>Moderate–severe decrease</td>
+              <td>~200–309</td>
+              <td>~2.3–3.5</td>
+            </tr>
+            <tr>
+              <td>G4</td>
+              <td>15–29</td>
+              <td>Severely decreased</td>
+              <td>~309–440</td>
+              <td>~3.5–5.0</td>
+            </tr>
+            <tr>
+              <td>G5</td>
+              <td>&lt; 15</td>
+              <td>Kidney failure (end-stage)</td>
+              <td>&gt; ~440</td>
+              <td>&gt; ~5.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small-text">
+        <strong>Practical ED use:</strong> Think “GFR &lt; 30” (G4–G5) as a red flag for: dose-adjustment or avoidance
+        of renally-cleared drugs, risk of volume overload, and need for urgent senior/nephrology input.
+      </p>
+    </section>
+  </main>
 </body>
 </html>

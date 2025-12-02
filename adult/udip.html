@@ -1,147 +1,273 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Urine Dipstick Test Guide</title>
   <meta charset="UTF-8">
+  <title>Urine Dipstick Test Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/udip.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/udip.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
-h1 {
-  font-size: 24px;
-  color: #003366;
-  margin-bottom: 10px;
-}
 
-h2 {
-  font-size: 20px;
-  color: #003366;
-  margin-bottom: 10px;
-}
+    header .logo-container h1 {
+      font-size: 1.6rem;
+    }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-}
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+    }
 
-th, td {
-  border: 1px solid #ccc;
-  text-align: left;
-  padding: 8px;
-}
+    h2.subheading {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: #003366;
+      text-decoration: underline;
+    }
 
-th {
-  background-color: navy;
-  color: whitesmoke;
-}
+    .section {
+      margin-bottom: 1.5rem;
+    }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+    p {
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .inline-note {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 0.75rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 650px; /* forces horizontal scroll on small screens */
+      font-weight: normal;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      text-align: left;
+      padding: 8px;
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background-color: navy;
+      color: whitesmoke;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .param-name {
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 0.3rem;
+    }
+
+    .tag-uti {
+      background: #1565c0;
+      color: #fff;
+    }
+
+    .small-text {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 0.75rem;
+        padding: 0.75rem;
+      }
+
+      header .logo-container h1 {
+        font-size: 1.35rem;
+      }
+
+      h2.subheading {
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
-<header>
-  <div class="logo-container">
-      <h1 style="color: antiquewhite;">Urine Dipstick Test Guide</h1>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Urine Dipstick Test Guide</h1>
       <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
-    <div class="section">
-        <h2 class="subheading">Urine Dipstick Test Parameters and Interpretation</h2>
+
+  <main>
+    <section class="section">
+      <h2 class="subheading">How to Use This Guide</h2>
+      <p class="inline-note">
+        Use this as a quick interpretation aid for ward / ED dipsticks. Always correlate with history,
+        exam and microscopy/culture. “Red flags” like blood, protein and bilirubin often need formal follow-up.
+      </p>
+      <p class="small-text">
+        <strong>Classic UTI pattern:</strong> leukocytes <em>and</em> nitrites positive
+        <span class="tag tag-uti">UTI likely</span> – send urine for MC&amp;S and treat according to local protocol.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Urine Dipstick Parameters &amp; Interpretation</h2>
+
+      <div class="table-wrapper">
         <table>
+          <thead>
             <tr>
               <th>Parameter</th>
-              <th>Normal Value</th>
-              <th>Possible Abnormalities</th>
-              <th>Common Causes and Further Investigations</th>
+              <th>Normal</th>
+              <th>Abnormal Finding</th>
+              <th>Common Causes / Next Steps</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-              <td>Leukocytes</td>
+              <td class="param-name">Leukocytes</td>
               <td>Negative</td>
               <td>Positive</td>
-              <td>Infection (e.g., urinary tract infection), inflammation, kidney stones; Consider urine culture, microscopy, and sensitivity</td>
+              <td>
+                UTI, contamination, inflammation anywhere in urinary tract.<br>
+                &raquo; Check nitrites, symptoms, pregnancy status.<br>
+                &raquo; Send urine for MC&amp;S if symptomatic or high-risk.
+              </td>
             </tr>
             <tr>
-              <td>Nitrite</td>
+              <td class="param-name">Nitrites</td>
               <td>Negative</td>
               <td>Positive</td>
-              <td>Bacterial infection (e.g., urinary tract infection); Consider urine culture, microscopy, and sensitivity</td>
+              <td>
+                Gram-negative bacteriuria (e.g. E. coli).<br>
+                &raquo; Strongly supports UTI if leukocytes/symptoms present.<br>
+                &raquo; Send MC&amp;S; consider empiric antibiotics per local guideline.
+              </td>
             </tr>
             <tr>
-              <td>Urobilinogen</td>
-              <td>0.2 - 1.0 mg/dL</td>
-              <td>Increased or Decreased</td>
-              <td>Increased: hemolysis, liver disease; Decreased: biliary obstruction; Consider liver function tests, hemoglobin, and imaging (e.g., ultrasound)</td>
+              <td class="param-name">Urobilinogen</td>
+              <td>~0.2–1.0&nbsp;mg/dL</td>
+              <td>Increased / Decreased</td>
+              <td>
+                Increased: hemolysis, hepatocellular disease.<br>
+                Decreased/absent: possible obstructive jaundice.<br>
+                &raquo; Check LFTs, FBC, bilirubin; consider abdominal US.
+              </td>
             </tr>
             <tr>
-              <td>Protein</td>
-              <td>Negative to trace</td>
-              <td>Positive</td>
-              <td>Renal disease (e.g., glomerulonephritis), urinary tract infection, dehydration, diabetes, hypertension, pre-eclampsia in pregnancy; Consider renal function tests, urine protein-to-creatinine ratio, 24-hour urine protein, and kidney ultrasound</td>
+              <td class="param-name">Protein</td>
+              <td>Negative / trace</td>
+              <td>+ to +++</td>
+              <td>
+                Glomerular disease, UTI, fever, strenuous exercise, pre-eclampsia, HTN, diabetes.<br>
+                &raquo; If persistent: U&amp;E, ACR/PCR or 24-hr protein; consider renal US and referral.
+              </td>
             </tr>
             <tr>
-              <td>pH</td>
-              <td>4.5 - 8.0</td>
-              <td>Increased or Decreased</td>
-              <td>Increased: urinary tract infection, renal tubular acidosis, chronic vomiting; Decreased: metabolic acidosis, uncontrolled diabetes, diarrhea; Consider arterial blood gas, blood glucose, and electrolyte tests</td>
+              <td class="param-name">pH</td>
+              <td>4.5–8.0</td>
+              <td>High or low</td>
+              <td>
+                Alkaline: urea-splitting UTI, vomiting, RTA, vegetarian diet.<br>
+                Acidic: metabolic acidosis, DKA, diarrhoea, high-protein diet.<br>
+                &raquo; Correlate with ABG, electrolytes, clinical picture.
+              </td>
             </tr>
             <tr>
-              <td>Blood</td>
+              <td class="param-name">Blood / Hb</td>
+              <td>Negative</td>
+              <td>Trace to +++</td>
+              <td>
+                Stones, UTI, trauma, malignancy, GN; can also pick up myoglobin (rhabdo) or haemolysis.<br>
+                &raquo; Confirm with microscopy (RBCs), consider imaging and urology/renal follow-up.
+              </td>
+            </tr>
+            <tr>
+              <td class="param-name">Specific Gravity</td>
+              <td>1.005–1.030</td>
+              <td>High or low</td>
+              <td>
+                High (&gt;1.020): dehydration, SIADH, HF, concentrated urine.<br>
+                Low (&lt;1.010): overhydration, DI, impaired concentrating ability (CKD).<br>
+                &raquo; Check fluid status, U&amp;E, consider serum/urine osmolality if unclear.
+              </td>
+            </tr>
+            <tr>
+              <td class="param-name">Ketones</td>
               <td>Negative</td>
               <td>Positive</td>
-              <td>Infection, kidney stones, urinary tract injury, bladder or kidney cancer, medications; Consider urine microscopy, imaging (e.g., ultrasound, CT), and cystoscopy</td>
+              <td>
+                DKA, starvation, low-carb diet, prolonged vomiting, pregnancy hyperemesis.<br>
+                &raquo; Check capillary glucose, VBG/ABG, β-hydroxybutyrate, pregnancy test where relevant.
+              </td>
             </tr>
             <tr>
-              <td>Specific Gravity</td>
-              <td>1.005 - 1.030</td>
-              <td>Increased or Decreased</td>
-              <td>Increased: dehydration, heart failure, liver disease; Decreased: overhydration, diabetes insipidus, renal failure; Consider renal function tests, fluid balance assessment, and imaging (e.g., ultrasound)</td>
-            </tr>
-            <tr>
-              <td>Ketones</td>
+              <td class="param-name">Glucose</td>
               <td>Negative</td>
               <td>Positive</td>
-              <td>Diabetes, starvation, prolonged vomiting, low carbohydrate diet; Consider blood glucose, HbA1c, and blood ketone tests</td>
+              <td>
+                Diabetes, stress hyperglycaemia, renal glycosuria.<br>
+                &raquo; Check random/fasting glucose, HbA1c; consider OGTT if unclear.
+              </td>
             </tr>
             <tr>
-              <td>Glucose</td>
+              <td class="param-name">Bilirubin</td>
               <td>Negative</td>
               <td>Positive</td>
-              <td>Diabetes, stress, certain medications; Consider blood glucose, HbA1c, and oral glucose tolerance test</td>
+              <td>
+                Conjugated hyperbilirubinaemia: hepatocellular disease, cholestasis/obstruction, some drugs.<br>
+                &raquo; Check LFTs, ultrasound; review for jaundice, pruritus, pale stools, dark urine.
+              </td>
             </tr>
-            <tr>
-              <td>Bilirubin</td>
-              <td>Negative</td>
-              <td>Positive</td>
-              <td>Liver disease, biliary obstruction, hemolysis; Consider liver function tests, imaging (e.g., ultrasound), and hemoglobin test</td>
-            </tr>
+          </tbody>
         </table>
-    </div>
+      </div>
+
+      <p class="small-text">
+        <strong>Remember:</strong> Dipsticks are a screening tool. False positives/negatives are common. In the ED,
+        abnormal results that don’t fit the story should prompt repeat testing, microscopy or formal lab workup.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

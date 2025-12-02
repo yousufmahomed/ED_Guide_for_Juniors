@@ -1,134 +1,325 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Guide For Medical Officers: Gender-Based Violence and Sexual Assault</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/checklistBackground.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-           
-          }
-          p {
-            text-decoration: underline;
-            line-height: 1.5;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #333;
-          }
-          
-          ul {
-            margin-top: 20px;
-          }
-          
-          ul li {
-            margin-bottom: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: #333;
-            line-height: 1.5rem;
-          }
-          
-          ul ul li {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #333;
-          }
-          ul li em{
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: red;
-              font-size: larger;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-              text-decoration: underline;
-            }
-            ul ul li em{
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: green;
-              font-size: larger;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-              text-decoration: underline;
-            }
-            ol {
-              margin-top: 20px;
-            }
-            ol li {
-              margin-bottom: 10px;
-              font-family: Arial, sans-serif;
-              font-size: 16px;
-              color: #333;
-              line-height: 1.5rem;
-            }
-    </style>
+  <meta charset="UTF-8">
+  <title>Guide For Medical Officers: Gender-Based Violence and Sexual Assault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-weight: normal;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    ul, ol {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+
+    ul li,
+    ol li {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5rem;
+      margin-bottom: 0.35rem;
+      font-weight: normal;
+    }
+
+    ul ul,
+    ol ul {
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    ul ul li {
+      font-size: 0.9rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      font-weight: normal;
+    }
+
+    .emphasis-link {
+      color: #005daa;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #003366;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <h1> Gender-Based Violence and Sexual Assault</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-    </header>
-    
-    <div class="section">
-        <h2 class="subheading">Emergency Department Markers for Suspected or Confirmed Gender-Based Violence and Sexual Assault</h2>
-        <ul>
-            <li>Patients presenting with physical injuries, including bruises, cuts, abrasions, or strangulation marks.</li>
-            <li>Patients who appear distressed, anxious, or traumatized.</li>
-            <li>Disclosure of sexual assault by the patient.</li>
-            <li>Signs of recent struggle, torn clothing, or disheveled appearance.</li>
-            <li>Presence of genital or anal injuries.</li>
-            <li>Evidence of forced sexual contact, such as semen or other bodily fluids on clothing or body.</li>
-            <li>Inconsistent or vague explanations for injuries.</li>
-            <li>Delay in seeking medical care after the assault.</li>
-        </ul>
+  <header>
+    <div class="logo-container">
+      <h1>Gender-Based Violence and Sexual Assault</h1>
     </div>
-    
-    <div class="section">
-        <h2 class="subheading">Atypical Features</h2>
-        <ul>
-            <li>Denial or minimization of the assault due to shame, fear, or stigma.</li>
-            <li>Inconsistent history or reluctance to share details due to trauma.</li>
-            <li>Absence of physical injuries despite allegations of sexual assault.</li>
-            <li>Reluctance to undergo a forensic medical examination.</li>
-            <li>Patient expressing fear of retaliation from the perpetrator.</li>
-        </ul>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
-    
-    <div class="section">
-        <h2 class="subheading">Steps to Follow</h2>
-        <ol>
-            <li><strong>Ensure Patient Safety:</strong> Ensure the patient's safety and well-being. If they are in immediate danger or experiencing medical distress, provide necessary medical attention and consider involving law enforcement or protective services.</li>
-            <li><strong>Private Environment:</strong> Create a safe and private environment for the patient to speak openly about their experience.</li>
-            <li><strong>Trauma-Informed Care:</strong> Approach the patient with sensitivity and empathy, recognizing the potential trauma they have experienced. Use open-ended and non-judgmental questions.</li>
-            <li><strong>Medical Examination:</strong> Conduct a thorough medical examination, documenting all physical injuries and forensic evidence. Preserve any clothing or items the patient provides as evidence.</li>
-            <li><strong>Forensic Evidence Collection:</strong> If the assault occurred within the past 72 hours, discuss the option of collecting forensic evidence, such as swabs and samples. Ensure the patient understands the process and their rights.</li>
-            <li><strong>Psychological Support:</strong> Offer immediate psychological support to the patient. Consider involving a social worker or counselor experienced in trauma support.</li>
-            <li><strong>Medical Treatment:</strong> Provide necessary medical treatment for injuries and any immediate health concerns. Offer prophylactic treatment for sexually transmitted infections (STIs) and pregnancy prevention if applicable.</li>
-            <li><strong>Reporting:</strong> In cases of sexual assault, explain the option of reporting to law enforcement. If the patient consents to reporting, assist in contacting the police or providing a rape kit examination.</li>
-            <li><strong>Legal Support:</strong> Inform the patient about legal options, including reporting to law enforcement, obtaining a protection order, and pursuing legal action against the perpetrator.</li>
-            <li><strong>Support Services:</strong> Provide information about local support services, such as counseling, shelters, and helplines for survivors of sexual assault and gender-based violence.</li>
-            <li><strong>Follow-Up Care:</strong> Arrange for follow-up care, including medical and psychological follow-up appointments.</li>
-            <li><strong>Documentation:</strong> Thoroughly document all findings, injuries, conversations, and assessments in the patient's medical record.</li>
-            <li><strong>Empower Choice:</strong> Respect the patient's autonomy and decisions regarding reporting and legal action. Empower them to make choices prioritizing their well-being.</li>
-            <li><strong>Preserve Evidence:</strong> If the patient decides to report the assault, work closely with law enforcement to collect and preserve necessary evidence.</li>
-            <li><strong>Patient Education:</strong> Educate the patient about the importance of preserving evidence and maintaining their own well-being.</li>
-            <li><strong>Cultural Sensitivity:</strong> Be culturally sensitive and aware of the patient's background and potential barriers to seeking help.</li>
-        </ol>
-        <p>Remember, survivors of gender-based violence and sexual assault may be experiencing extreme emotional distress. Your role is to provide compassionate care, support their choices, and offer resources to help them on their path to healing and justice.</p>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <h2 class="subheading">Purpose of this Guide</h2>
+      <p>
+        This guide is for medical officers working in the Emergency Department to help
+        identify, manage and appropriately refer patients affected by gender-based violence
+        (GBV) and sexual assault. It complements the full hospital protocol and does not
+        replace local policies, national legislation or specialist forensic guidance.
+      </p>
+
+      <h2 class="subheading">General Principles</h2>
+      <ul>
+        <li>Provide <strong>trauma-informed, non-judgmental care</strong> at all times.</li>
+        <li>Introduce yourself, explain your role and what will happen next.</li>
+        <li>Ensure <strong>privacy, dignity and safety</strong> – separate the patient from any person who may be the perpetrator.</li>
+        <li>Explain the limits of <strong>confidentiality</strong>, including mandatory reporting for children and vulnerable persons.</li>
+        <li>Always obtain <strong>informed consent</strong> for examination, investigations, forensic evidence collection and treatment.</li>
+        <li>Document carefully and objectively; avoid blaming language or speculation.</li>
+      </ul>
+
+      <h2 class="subheading">Emergency Department Markers for Possible GBV / Sexual Assault</h2>
+      <ul>
+        <li>Physical injuries: bruises, cuts, abrasions, burns, strangulation marks, defensive injuries.</li>
+        <li>Genital or anal pain, bleeding or evidence of trauma.</li>
+        <li>Signs of recent struggle, torn or bloodstained clothing, dishevelled appearance.</li>
+        <li>Disclosure of sexual assault or intimate partner violence by the patient.</li>
+        <li>Inconsistent, vague or changing explanations for injuries.</li>
+        <li>Delay in seeking care after a significant injury or assault.</li>
+        <li>Repeated ED visits with non-specific complaints, chronic pain, self-harm or overdose.</li>
+        <li>Patient appears highly distressed, anxious, withdrawn, fearful or dissociated.</li>
+        <li>Partner or family member who is overly controlling, refuses to leave the room or speaks for the patient.</li>
+        <li>Pregnancy in a child or adolescent, especially where the history is unclear or concerning.</li>
+      </ul>
+
+      <h2 class="subheading">Atypical Features (Do Not Exclude Assault)</h2>
+      <ul>
+        <li>Denial or minimisation of violence due to fear, shame, dependence or stigma.</li>
+        <li>Reluctance to share details, fragmented history or “poor recall” in the context of trauma.</li>
+        <li>No visible injuries despite a clear allegation of sexual assault.</li>
+        <li>Patient declines or is unsure about forensic examination.</li>
+        <li>Patient expresses fear of retaliation or pressure not to report.</li>
+      </ul>
+
+      <h2 class="subheading">Practical Steps in the ED</h2>
+      <ol>
+        <li>
+          <strong>Stabilise and Ensure Immediate Safety</strong><br>
+          Manage airway, breathing and circulation first. Treat life-threatening injuries and assess
+          for strangulation, head trauma, internal injuries or suicidal ideation.
+        </li>
+        <li>
+          <strong>Create a Private, Safe Space</strong><br>
+          Move the patient to a private cubicle where discussions cannot be overheard. Ask any
+          accompanying person to step out if appropriate and safe to do so.
+        </li>
+        <li>
+          <strong>Trauma-Informed History</strong><br>
+          Use open-ended, non-leading questions. Allow the patient to describe events in their
+          own words. Avoid repetitive questioning. Ask about:
+          <ul>
+            <li>Time and nature of assault (including type of contact and condom use).</li>
+            <li>Use of alcohol, drugs or loss of consciousness.</li>
+            <li>Any washing, changing of clothes, urination or defecation since the assault.</li>
+            <li>Previous episodes of violence, children or others at risk in the home.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Explain Consent, Options and Confidentiality</strong><br>
+          Clearly explain available options:
+          <ul>
+            <li>Medical examination and treatment (injuries, pregnancy, infections).</li>
+            <li>Forensic evidence collection and completion of medico-legal forms.</li>
+            <li>Reporting to SAPS or delaying that decision while still receiving care.</li>
+          </ul>
+          Explain the limits of confidentiality, including mandatory reporting for children and
+          certain vulnerable adults, according to South African law.
+        </li>
+        <li>
+          <strong>Forensic Examination and Evidence (If Indicated and Consented)</strong><br>
+          If within an appropriate time window, and if the patient consents:
+          <ul>
+            <li>Follow your local protocol and sexual assault evidence collection kit instructions.</li>
+            <li>Document injuries carefully (size, colour, site) and emotional state.</li>
+            <li>Preserve clothing or other items in dry, labelled bags as evidence.</li>
+            <li>Complete required medico-legal forms (e.g. J88) when a case is reported.</li>
+            <li>Maintain chain of custody for all specimens and evidence.</li>
+          </ul>
+          If the patient is not yet ready to report, you may still collect and store evidence where
+          local policy allows.
+        </li>
+        <li>
+          <strong>Medical Treatment</strong><br>
+          Provide appropriate treatment, including:
+          <ul>
+            <li>Treatment of physical injuries and pain control.</li>
+            <li>Emergency contraception where pregnancy is possible, ideally within 72 hours (some methods up to 120 hours).</li>
+            <li>HIV post-exposure prophylaxis (PEP) as soon as possible and within 72 hours of exposure.</li>
+            <li>Empiric STI prophylaxis and hepatitis B vaccination ± immunoglobulin as per protocol.</li>
+            <li>Baseline tests (HIV, pregnancy, syphilis and others according to local guidelines).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Psychological and Social Support</strong><br>
+          Provide empathic listening and validation. Where available, involve:
+          <ul>
+            <li>Social worker or psychologist experienced in trauma.</li>
+            <li>Local GBV/sexual assault services, shelters or crisis centres.</li>
+            <li>Trusted support persons identified by the patient.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Reporting and Legal Options</strong><br>
+          <ul>
+            <li>For <strong>adults with capacity</strong>, explain options for reporting to SAPS; support but do not coerce.</li>
+            <li>For <strong>children (&lt;18 years)</strong> and certain vulnerable adults, there is a legal duty to report suspected abuse to the authorities according to national law and hospital policy.</li>
+            <li>Clarify that medical care, PEP and other treatments are not dependent on laying a charge.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Documentation</strong><br>
+          Record:
+          <ul>
+            <li>Date and time of arrival, examination and any treatments given.</li>
+            <li>History in the patient’s own words where possible (use quotation marks).</li>
+            <li>Full physical findings, including negative findings (e.g. “no bruising noted on…”, etc.).</li>
+            <li>Emotional state, expressed fears and safety concerns.</li>
+            <li>Advice given, referrals offered and whether the patient agreed or declined.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Follow-Up and Safety Planning</strong><br>
+          Arrange or advise follow-up for:
+          <ul>
+            <li>PEP review, HIV and pregnancy testing at recommended intervals.</li>
+            <li>Review of injuries, mental health follow-up and social work support.</li>
+            <li>Safety planning, including shelters or alternate safe accommodation if needed.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p class="note">
+        Survivors may be experiencing intense fear, shame and confusion. Your role is to
+        provide compassionate, competent care; safeguard their rights; and support their
+        choices while ensuring protection for children and other vulnerable persons at risk.
+      </p>
+
+      <h3>
+        Download the
+        <a href="/pdfs/GBV child abuse and adult or partner abuse protocol.pdf"
+           class="emphasis-link"
+           target="_blank">
+          full protocol here
+        </a>
+      </h3>
     </div>
-    <h3>Download the <a href="/pdfs/GBV child abuse and adult or partner abuse protocol.pdf" class="emphasis-link" target="_blank">Full Protocol here</a></h3>
+  </main>
 </body>
 </html>

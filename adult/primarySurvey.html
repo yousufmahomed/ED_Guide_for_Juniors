@@ -3,129 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <title>Primary Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/primarySurvey.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/primarySurvey.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2.subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    h1.page-title {
+      font-size: 1.3rem;
+      margin: 0 0 0.75rem;
+      color: #003366;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #c85000;
+    }
+
+    .section {
+      margin-bottom: 1.3rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: navy;
+      color: whitesmoke;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
       }
-      strong {
-        font-weight: bold;
-        font-size: 1.2em;
-        color: orangered;
+
+      .logo-container h1 {
+        font-size: 0.95rem;
       }
-      
-    
-      
-      
+
+      table {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
-<html>
 <body class="vitals-page">
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Primary Survey</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Primary Survey</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" alt="House icon" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-        <h1>Primary Survey of an Emergency Patient</h1>
-         <section class="section">
+  <main class="page-wrapper">
+    <div class="container">
+      <h1 class="page-title">Primary Survey of the Emergency Patient</h1>
+
+      <section class="section">
         <h2 class="subheading">Introduction</h2>
-        <p>The primary survey is the initial assessment of an emergency patient to identify and address any life-threatening conditions. The primary survey follows the ABCDE approach:</p>
+        <p>
+          The primary survey is the first, rapid assessment to identify and treat
+          <strong>immediately life-threatening problems</strong>. It follows the
+          standard <strong>ABCDE</strong> approach:
+        </p>
         <ul>
-            <li><strong>A:</strong> Airway</li>
-            <li><strong>B:</strong> Breathing</li>
-            <li><strong>C:</strong> Circulation</li>
-            <li><strong>D:</strong> Disability</li>
-            <li><strong>E:</strong> Exposure/Environment</li>
+          <li><strong>A – Airway</strong> with cervical spine protection</li>
+          <li><strong>B – Breathing</strong> and ventilation</li>
+          <li><strong>C – Circulation</strong> with haemorrhage control</li>
+          <li><strong>D – Disability</strong> (neurological status)</li>
+          <li><strong>E – Exposure / Environment</strong> (undress but prevent hypothermia)</li>
         </ul>
-    </section>
-    <section class="section">
-        <h2 class="subheading">Airway</h2>
-        <p><strong>Clinical features:</strong> Inability to speak, stridor, gurgling, cyanosis</p>
-        <p><strong>Symptoms:</strong> Shortness of breath, difficulty breathing, hoarseness</p>
-        <p><strong>Causes:</strong> Obstruction, injury, infection, inflammation</p>
-        <p><strong>Relevant interventions:</strong> Head tilt-chin lift, jaw thrust, suction, intubation</p>
-    </section>
-    <section class="section">
-      <table>
-        <thead>
-          <tr>
-            <th>Indications for Intubation</th>
-            <th>Confirmatory Tests for Placement</th>
-            <th>Reasons for Desaturation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Severe respiratory distress</td>
-            <td>End-tidal CO2 monitoring, chest x-ray</td>
-            <td>Airway obstruction, hypoventilation</td>
-          </tr>
-          <tr>
-            <td>Apnea or impending respiratory failure</td>
-            <td>Direct laryngoscopy, bronchoscopy</td>
-            <td>Inadequate oxygenation or ventilation</td>
-          </tr>
-          <tr>
-            <td>Protecting the airway in unconscious or sedated patients</td>
-            <td>Capnography, ultrasound</td>
-            <td>Pneumothorax, aspiration, tube dislodgement</td>
-          </tr>
-          <tr>
-            <td>Facilitating mechanical ventilation</td>
-            <td>Auscultation, chest rise and fall, pulse oximetry</td>
-            <td>Tension pneumothorax, equipment malfunction</td>
-          </tr>
-        </tbody>
-      </table>
-      
-    </section>
-    <section class="section">
-        <h2 class="subheading">Breathing</h2>
-        <p><strong>Clinical features:</strong> Rapid breathing, shallow breathing, noisy breathing, chest wall injury</p>
-        <p><strong>Symptoms:</strong> Shortness of breath, wheezing, coughing, chest pain</p>
-        <p><strong>Causes:</strong> Obstruction, injury, infection, inflammation, lung disease</p>
-        <p><strong>Relevant interventions:</strong> Oxygen therapy, ventilation, chest tube insertion, needle decompression</p>
-    </section>
-    <section class="section">
-        <h2 class="subheading">Circulation</h2>
-        <p><strong>Clinical features:</strong> Rapid heart rate, low blood pressure, pallor, cyanosis</p>
-        <p><strong>Symptoms:</strong> Weakness, dizziness, confusion, chest pain</p>
-        <p><strong>Causes:</strong> Hypovolemia, shock, cardiac arrest, arrhythmia</p>
-        <p><strong>Relevant interventions:</strong> Fluid resuscitation, blood transfusion, medication (e.g. epinephrine)</p>
-    </section>
-    <section class="section">
-        <h2 class="subheading">Disability</h2>
-        <p><strong>Clinical features:</strong> Altered mental status, focal neurologic deficits, pupil abnormalities</p>
-        <p><strong>Symptoms:</strong> Headache, weakness, numbness, tingling</p>
-        <p><strong>Causes:</strong> Trauma, stroke, seizure, drug overdose, hypoglycemia</p>
-        <p><strong>Relevant interventions:</strong> Glasgow Coma Scale assessment, neurological exam, treatment of underlying cause</p>
-    </section>
-    <section class="section">
-        <h2 class="subheading">Exposure/Environment</h2>
-        <p><strong>Clinical features:</strong> Hypothermia, hyperthermia, burns, frostbite</p>
-        <p><strong>Symptoms:</strong> Shivering, sweating, pain, numbness</p>
-        <p><strong>Causes:</strong> Environmental exposure, chemical exposure, radiation exposure</p>
-        <p><strong>Relevant interventions:</strong> Temperature management, decontamination, removal from source of exposure</p>
-    </section>
-    
-    </body>
-    </html>
+        <p class="note">
+          Treat life-threatening problems as you find them. Do not wait to “finish”
+          the survey before intervening.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">A – Airway</h2>
+        <p><strong>Clinical features of airway compromise:</strong> inability to speak in full sentences, stridor, gurgling, snoring, use of accessory muscles, cyanosis.</p>
+        <p><strong>Symptoms:</strong> shortness of breath, sensation of obstruction, hoarseness, choking.</p>
+        <p><strong>Common causes:</strong> foreign body, trauma (facial/neck), decreased level of consciousness, anaphylaxis, infection (epiglottitis, abscess), inhalation injury.</p>
+        <p><strong>Immediate interventions:</strong></p>
+        <ul>
+          <li>Manual manoeuvres: head tilt–chin lift or jaw thrust (if C-spine concern, jaw thrust only).</li>
+          <li>Suction of secretions or vomitus.</li>
+          <li>Airway adjuncts: oropharyngeal or nasopharyngeal airway if appropriate.</li>
+          <li>Prepare for <strong>definitive airway</strong> (intubation) if ongoing compromise.</li>
+        </ul>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Indications for Intubation</th>
+                <th>Confirming Tube Placement</th>
+                <th>Common Reasons for Desaturation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Severe respiratory distress; inability to maintain airway or protect against aspiration.</td>
+                <td>Continuous waveform capnography (ETCO<sub>2</sub>), bilateral chest rise.</td>
+                <td>Airway obstruction, aspiration, laryngospasm.</td>
+              </tr>
+              <tr>
+                <td>Apnoea or impending respiratory failure (rising CO<sub>2</sub>, tiring patient).</td>
+                <td>ETCO<sub>2</sub>, chest X-ray (tip 3–5 cm above carina).</td>
+                <td>Hypoventilation, incorrect tube depth (mainstem or oesophageal).</td>
+              </tr>
+              <tr>
+                <td>Need to protect airway in decreased GCS (e.g. GCS ≤ 8, major head injury, overdose).</td>
+                <td>Direct visualisation of tube between vocal cords at intubation.</td>
+                <td>Pneumothorax / tension pneumothorax, tube dislodgement, kinked or blocked tube.</td>
+              </tr>
+              <tr>
+                <td>To facilitate mechanical ventilation or control of oxygenation/ventilation in severe illness.</td>
+                <td>Auscultation (bilateral breath sounds, no gastric sounds), SpO<sub>2</sub> trend.</td>
+                <td>Equipment failure (oxygen supply, ventilator), inadequate pre-oxygenation.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Always have a clear back-up plan (e.g. supraglottic airway, emergency surgical airway)
+          before attempting intubation in a difficult airway.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">B – Breathing</h2>
+        <p><strong>Clinical features:</strong> tachypnoea or bradypnoea, shallow or laboured respirations, asymmetrical chest movement, use of accessory muscles, audible wheeze/stridor, cyanosis.</p>
+        <p><strong>Symptoms:</strong> shortness of breath, chest pain, tight chest, cough, inability to speak full sentences.</p>
+        <p><strong>Common causes:</strong> asthma/COPD, pneumonia, pneumothorax, flail chest, pulmonary embolism, pulmonary oedema.</p>
+        <p><strong>Key interventions:</strong></p>
+        <ul>
+          <li>High-flow oxygen (or titrated O<sub>2</sub> if CO<sub>2</sub> retainers).</li>
+          <li>Bag-valve-mask ventilation if inadequate respirations.</li>
+          <li>Needle decompression or chest drain for tension/simple pneumothorax as indicated.</li>
+          <li>Nebulised bronchodilators, steroids and other condition-specific treatments.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">C – Circulation</h2>
+        <p><strong>Clinical features:</strong> tachycardia or bradycardia, hypotension, weak or thready pulses, cool clammy peripheries, delayed capillary refill, obvious external bleeding.</p>
+        <p><strong>Symptoms:</strong> weakness, dizziness or syncope, chest pain, shortness of breath, altered mental state.</p>
+        <p><strong>Common causes:</strong> hypovolaemia (haemorrhage, dehydration), cardiogenic shock (MI, arrhythmia), obstructive shock (tamponade, PE, tension pneumothorax), distributive shock (sepsis, anaphylaxis).</p>
+        <p><strong>Key interventions:</strong></p>
+        <ul>
+          <li>Control external haemorrhage (direct pressure, tourniquet where appropriate).</li>
+          <li>Establish IV/IO access; send urgent bloods including cross-match.</li>
+          <li>Fluid resuscitation (balanced crystalloids; blood products if haemorrhagic shock).</li>
+          <li>Condition-specific therapy: vasopressors, inotropes, antiarrhythmics, antibiotics, etc.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">D – Disability (Neurological)</h2>
+        <p><strong>Clinical features:</strong> altered level of consciousness, confusion, agitation, seizures, abnormal pupil size or reactivity, focal neuro-deficits.</p>
+        <p><strong>Symptoms:</strong> headache, limb weakness, numbness or tingling, visual changes, speech difficulty.</p>
+        <p><strong>Common causes:</strong> head injury, stroke, seizures/post-ictal state, hypoglycaemia, intoxication/overdose, metabolic disturbances.</p>
+        <p><strong>Key interventions:</strong></p>
+        <ul>
+          <li>Rapid <strong>AVPU</strong> or <strong>GCS</strong> assessment and pupil examination.</li>
+          <li>Check bedside glucose and correct hypoglycaemia immediately.</li>
+          <li>Protect airway in patients with depressed consciousness or seizures.</li>
+          <li>Arrange urgent imaging (e.g. CT brain) when indicated.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">E – Exposure / Environment</h2>
+        <p><strong>Clinical features:</strong> hidden injuries revealed on full exposure (rashes, wounds, burns, deformities), temperature abnormalities (hypo/hyperthermia).</p>
+        <p><strong>Symptoms:</strong> pain, numbness, shivering, feeling very hot or cold.</p>
+        <p><strong>Common causes:</strong> environmental exposure (heat/cold), burns, chemical or radiation exposure, concealed trauma.</p>
+        <p><strong>Key interventions:</strong></p>
+        <ul>
+          <li>Fully expose the patient to examine front and back, maintaining dignity as far as possible.</li>
+          <li>Prevent heat loss: warm blankets, warmed IV fluids, increase ambient room temperature.</li>
+          <li>Remove wet clothing or contaminated materials (chemicals, etc.).</li>
+          <li>Initiate burn care or decontamination as per local protocols.</li>
+        </ul>
+        <p class="note">
+          After the primary survey and resuscitation, proceed to a structured
+          <strong>secondary survey</strong> (head-to-toe examination and detailed history).
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

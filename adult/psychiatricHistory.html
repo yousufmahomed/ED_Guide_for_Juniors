@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Psychiatric History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -10,314 +11,381 @@
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      font-weight: normal;
+      line-height: 1.8;
       color: #333;
-      background-image: url("/images/psychiatry.jpg");
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.94),
+        rgba(255, 255, 255, 0.94)
+      ), url("/images/psychiatry.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-     
     }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h1.page-title {
+      font-size: 1.3rem;
+      margin: 0 0 0.75rem;
+      color: #003366;
+    }
+
+    .section {
+      margin-bottom: 1.4rem;
+    }
+
+    .subheading {
+      font-size: 1.15rem;
+      color: #003366;
+      margin: 0.4rem 0 0.4rem;
+    }
+
     p {
-      text-decoration: underline;
-      line-height: 1.5;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      color: #333;
+      font-size: 0.94rem;
+      margin: 0.25rem 0 0.6rem;
     }
-    
-    ul {
-      margin-top: 20px;
+
+    ul, ol {
+      margin: 0.25rem 0 0.6rem 1.1rem;
+      padding: 0;
     }
-    
-    ul li {
-      margin-bottom: 10px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      color: #333;
-      line-height: 1.5rem;
+
+    li {
+      font-size: 0.94rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.6;
     }
-    
-    ul ul li {
-      margin-bottom: 5px;
-      font-size: 14px;
-      color: #333;
+
+    strong {
+      font-weight: 600;
+      color: #c85000;
     }
-    ul li em{
-        margin-bottom: 5px;
-        font-size: 14px;
-        color: red;
-        font-size: larger;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-decoration: underline;
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    .warning {
+      padding: 0.6rem 0.75rem;
+      border-left: 4px solid #c00000;
+      background-color: #fff3f3;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    .links-list li {
+      margin-bottom: 0.35rem;
+      word-wrap: break-word;
+    }
+
+    .links-list a {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
       }
-      ul ul li em{
-        margin-bottom: 5px;
-        font-size: 14px;
-        color: green;
-        font-size: larger;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-decoration: underline;
+
+      .logo-container h1 {
+        font-size: 0.95rem;
       }
-      ol {
-        margin-top: 20px;
-      }
-      ol li {
-        margin-bottom: 10px;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        color: #333;
-        line-height: 1.5rem;
-      }
+    }
   </style>
 </head>
 <body>
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Psychiatric History</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Psychiatric History</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" alt="House icon" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <h1 class="page-title">Psychiatric History in the Emergency Department</h1>
+
+      <section class="section">
+        <h2 class="subheading">Presenting Complaint / Main Problem</h2>
+        <p>
+          Begin with the patient’s own words: <strong>“What brought you here today?”</strong>
+          If the patient is incoherent, severely disorganised or psychotic, obtain
+          collateral information from family, EMS or other staff.
+        </p>
+        <ul>
+          <li>Clarify the <strong>main symptom clusters</strong>: mood, anxiety, psychosis, behaviour, substance use, cognitive change.</li>
+          <li>Ask about the <strong>onset</strong>, <strong>time course</strong>, and <strong>precipitating events</strong> (loss, conflict, trauma, substances, medical illness).</li>
+          <li>Explore context: social, cultural and economic factors that may be driving the current crisis.</li>
+          <li>Identify any **immediate safety concerns**: suicidality, aggression, inability to care for self, vulnerability.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Presenting Symptoms – Key Domains</h2>
+        <p>Screen systematically across the main symptom areas:</p>
+        <ul>
+          <li><strong>Depression:</strong> low mood, anhedonia, low energy, sleep and appetite change, guilt, poor concentration, suicidal thoughts or plans.</li>
+          <li><strong>Anxiety:</strong> excessive worry, panic attacks, restlessness, muscle tension, avoidance, physical symptoms (palpitations, SOB, tremor).</li>
+          <li><strong>Agitation:</strong> pacing, motor restlessness, irritability, aggression, inability to sit still.</li>
+          <li><strong>Psychosis:</strong> hallucinations (especially auditory), delusions (paranoid, grandiose, guilt, reference), disorganised behaviour, thought disorder.</li>
+          <li><strong>Mania / Hypomania:</strong> elevated or irritable mood, decreased need for sleep, increased energy, pressured speech, racing thoughts, risk-taking behaviour, grandiosity.</li>
+          <li><strong>Substance use:</strong> type, amount, route and frequency; recent binges or withdrawals; impact on functioning.</li>
+          <li><strong>Risk symptoms:</strong> suicidal ideation, plans, previous attempts; homicidal or violent thoughts; self-harm behaviour.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Past Psychiatric History</h2>
+        <p>Obtain a concise but clear psychiatric history:</p>
+        <ul>
+          <li>Previous diagnoses, episodes and typical pattern of illness.</li>
+          <li>Previous admissions (dates, duration, voluntary/involuntary).</li>
+          <li>Past self-harm or suicide attempts: method, severity, triggers, intent.</li>
+          <li>Previous episodes of aggression or violence and what helped.</li>
+          <li>Past medications, doses, response and side-effects; ECT or other treatments.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Medical, Family & Social History</h2>
+        <p><strong>Medical history:</strong></p>
+        <ul>
+          <li>Chronic illnesses (epilepsy, HIV, endocrine, neurological disease, head injury).</li>
+          <li>Current medications, including over-the-counter and traditional medicines.</li>
+          <li>Alcohol and substance history (if not already detailed above).</li>
+        </ul>
+
+        <p><strong>Family history:</strong></p>
+        <ul>
+          <li>Psychiatric disorders in first-degree relatives (mood, psychosis, substance use).</li>
+          <li>History of suicide, self-harm or violence in family.</li>
+        </ul>
+
+        <p><strong>Social history:</strong></p>
+        <ul>
+          <li>Living circumstances, support system, finances, dependants, caregiving roles.</li>
+          <li>Work or school functioning, recent losses or stressors.</li>
+          <li>History of trauma, abuse or neglect (as far as safely explored in ED context).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Mental Status Examination (MSE)</h2>
+        <p>
+          The MSE is a structured, “snapshot” assessment of current mental state.
+          In the ED, focus on high-yield features that affect <strong>risk, capacity and diagnosis</strong>.
+        </p>
+
+        <h3 class="subheading" style="font-size:1.05rem;">1. Appearance & Behaviour</h3>
+        <ul>
+          <li>Grooming, hygiene, dress, posture, eye contact.</li>
+          <li>Level of cooperation, agitation or retardation, bizarre or disinhibited behaviour.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">2. Speech</h3>
+        <ul>
+          <li>Rate, volume, tone and fluency (e.g. normal, pressured, slow, whispered).</li>
+          <li>Abnormal patterns: flight of ideas, tangentiality, neologisms, mutism, thought blocking.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">3. Mood & Affect</h3>
+        <ul>
+          <li><strong>Mood:</strong> the patient’s subjective emotional state (e.g. depressed, anxious, euphoric, irritable).</li>
+          <li><strong>Affect:</strong> observed emotional expression – range (restricted/flat/labile), appropriateness to content, reactivity.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">4. Thought Form (Process)</h3>
+        <ul>
+          <li>Logical, coherent and goal-directed vs disorganised, circumstantial, tangential, loose associations, flight of ideas.</li>
+          <li>Any thought-blocking or perseveration.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">5. Thought Content</h3>
+        <ul>
+          <li>Delusions (persecutory, grandiose, guilt, nihilistic, referential, somatic).</li>
+          <li>Obsessions, compulsions, ruminations, phobias, preoccupations.</li>
+          <li>Suicidal or homicidal ideation: frequency, intent, plan, access to means.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">6. Perception</h3>
+        <ul>
+          <li>Hallucinations (auditory, visual, tactile, olfactory, gustatory).</li>
+          <li>Illusions, depersonalisation, derealisation if present.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">7. Cognition</h3>
+        <ul>
+          <li>Level of consciousness, orientation (person, place, time, situation).</li>
+          <li>Attention and concentration (e.g. serial 7s, WORLD backwards).</li>
+          <li>Memory and obvious language or visuospatial deficits.</li>
+        </ul>
+
+        <h3 class="subheading" style="font-size:1.05rem;">8. Insight & Judgement</h3>
+        <ul>
+          <li>Insight into illness (does the patient see a problem, accept need for treatment?).</li>
+          <li>Judgement and impulse control: recent risky choices, aggression, disinhibition.</li>
+        </ul>
+
+        <p class="note">
+          Document key MSE findings clearly – they are crucial for medico-legal
+          decisions and future reviews.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Risk Assessment & Managing Aggression</h2>
+        <p>
+          Every ED psychiatric assessment must include a clear <strong>risk assessment</strong>
+          (self-harm, harm to others, vulnerability, absconding, neglect).
+        </p>
+
+        <p><strong>Managing a violent, highly aggressive or armed patient:</strong></p>
+        <ol>
+          <li><strong>Safety first:</strong> call for help, alert security; remove unnecessary staff and patients. If weapons are involved, involve security and law enforcement immediately.</li>
+          <li><strong>Environmental control:</strong> ensure an open exit for staff, minimise stimuli, remove potential weapons from the room.</li>
+          <li><strong>Rapid assessment:</strong> try to identify likely drivers (substances, psychosis, delirium, severe agitation, pain).</li>
+          <li><strong>Verbal de-escalation:</strong> calm, non-threatening stance, simple language, active listening, offer choices where possible. Avoid arguing, shouting or sudden movements.</li>
+          <li><strong>Medication:</strong> if verbal de-escalation fails and risk remains high, use appropriate rapid-tranquilisation as per local protocols and with monitoring.</li>
+          <li><strong>Restraint:</strong> physical restraints are a <strong>last resort</strong>; use only if the patient is an immediate danger to self or others, with appropriate orders, documentation, monitoring and regular review.</li>
+          <li><strong>Ongoing review:</strong> once calm, reassess mental state, diagnosis and ongoing risk; plan disposition (psychiatric admission, medical stay, safe discharge with follow-up).</li>
+        </ol>
+
+        <p class="note">
+          All staff should receive regular training in de-escalation and safe restraint
+          techniques. Follow your hospital’s mental health and restraint policies.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Treatment Plan</h2>
+        <p>
+          Develop a plan tailored to the patient’s diagnosis, risk and social context:
+        </p>
+        <ul>
+          <li>Immediate ED management (e.g. sedation, antipsychotics, antidepressants, mood stabilisers, anxiolytics, management of medical comorbidity).</li>
+          <li>Need for admission (medical vs psychiatric; voluntary vs involuntary according to local legislation).</li>
+          <li>Psychosocial interventions: psychoeducation, safety planning, family involvement, social work support.</li>
+          <li>Follow-up: outpatient psychiatry, counselling, substance use services, community resources.</li>
+        </ul>
+        <p class="note">
+          Document clearly: working diagnosis, risk level, capacity, legal status, and agreed plan.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Assessment Aids & Tools</h2>
+        <p>
+          The following tools can help quantify symptom severity and support your
+          clinical judgement. In the ED they are adjuncts – they do <strong>not</strong>
+          replace a full clinical assessment.
+        </p>
+
+        <div class="warning">
+          Any child or adolescent <strong>younger than 16 years</strong> with significant
+          psychiatric symptoms should be referred for specialist psychiatric assessment,
+          in line with local child and adolescent mental health policies.
         </div>
-      </nav>
-    </header>
-    <main>
-        <section class="section">
-            <h2 class="subheading">Main Complaint</h2>
-            <p>This is a brief statement by the patient that describes the reason for seeking psychiatric attention. It is important to document the patient's own words as this will help you with evaluation. <br> If the patient is incoherent or disorganized, this will be obtained from the co-lateral. </p>
-            <ul>
-              <li>Try and elicit as many symptoms as you can, as this will help you in diagnosis</li>
-              <li>Be open to listening, the patient is not a health professional generally,and may often be suffering severe or serious mental and you may have to read between the lines, consider social and cultural aspects, and socio-economic impacts, to fully understand why the person is in front of you for this consultation</li>
-              <li>This may sound intimidating, but as you take more histories and practice, it can be accomplished in a very short time</li>
-              <li>It is also important to understand the circumstances surrounding the current symptoms, for example</li>
-                <ul>
-                  <li>The patient is a known mental health care user, but lost her husband earlier in the day, and is now showing severe mania</li>
-                  <li>Compare this to a patient who is non-compliant with medications and is using recreational drugs.</li>
-                  <li>Both of these patients will need treatment of their mania, but the approach to each in terms of sedation and immediate anti-psychotic use may be different</li>
-                </ul>
-            </ul>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Presenting Symptoms</h2>
-            <p>Describe the specific symptoms the patient is experiencing</p>
-            <ul>
-                <li> <em>Depression:</em>  feeling sad or hopeless, loss of interest or pleasure, decreased energy or fatigue, difficulty sleeping or oversleeping, changes in appetite or weight, feelings of worthlessness or guilt, difficulty concentrating or making decisions, and thoughts of death or suicide</li>
-                <li><em>Anxiety:</em>  excessive worry or fear, restlessness or agitation, difficulty concentrating, muscle tension, sleep disturbances, and avoidance of situations or objects that trigger anxiety.</li>
-                <li> <em>Agitation:</em> Agitation: motor restlessness, pacing, fidgeting, and irritability.</li>
-                <li> <em>Delusions:</em>  fixed false beliefs that are not based in reality.</li>
-                <li><em>Hallucinations:</em> seeing, hearing, feeling, tasting, or smelling things that are not actually present.</li>
-                <li><em>Mania:</em> elevated or irritable mood, increased energy, decreased need for sleep, racing thoughts, grandiosity, and reckless behavior.</li>
-                <li><em>Psychosis:</em> a loss of contact with reality, often manifested through delusions and/or hallucinations.</li>
-                <li><em>Suicidal ideation:</em> thoughts of harming or killing oneself.</li>
-                <li><em>Homicidal ideation:</em> thoughts of harming or killing others.</li>
-                <li><em>Substance use:</em> use of drugs or alcohol that causes significant impairment in functioning or social relationships.</li>
 
-            </ul>
-            
-          </section>
-          <section class="section">
-            <h2 class="subheading">Past Psychiatric History</h2>
-            <p style="text-decoration: none;">Obtain a comprehensive psychiatric history, including the patient's past diagnoses, treatments, and hospitalizations, as well as any history of suicide attempts or self-harm.</p>
-          </section>
-         <section class="section">
-            <h2 class="subheading">Medical History</h2>
-            <p style="text-decoration: none;">Obtain a complete medical history, including current medical conditions, medications, and any history of drug or alcohol use.</p>
-         </section>
-         <section class="section">
-            <h2 class="subheading">Family History</h2>
-            <p style="text-decoration: none;">Inquire about a family history of psychiatric illness, substance abuse, or suicide.</p>
-         </section>
-         <section class="section">
-            <h2 class="subheading">Social History</h2>
-            <p style="text-decoration: none;">Obtain information about the patient's living situation, occupation, and relationships, as well as any history of trauma, abuse, or neglect.</p>
-         </section>
-         <section class="section">
-            <h2 class="subheading">Mental Status Examination History</h2>
-            <p>The Mental Status Exam (MSE) is a structured assessment of an individual's cognitive and emotional functioning. It is a critical tool used in psychiatric evaluations, including those conducted in emergency departments. Here are the components of the MSE, along with their relevance to the emergency department setting:</p>
-            <ul>
-                <li><em>Appearance:</em> The clinician assesses the patient's overall physical appearance, including their grooming, clothing, and hygiene. In the emergency department, this component can provide initial information about the patient's level of self-care and alert the clinician to the possibility of underlying medical issues. <br>
-                    In psychiatric assessment, the term "appearance" refers to a patient's overall physical appearance, including grooming, dress, posture, and any physical signs of illness. It can provide valuable information about the patient's general health, self-care, and possible underlying medical issues. However, "abnormal appearances" is not commonly used as a diagnostic category in psychiatry. <br>
-                    It's important to note that a person's appearance alone is not enough to make a psychiatric diagnosis. A comprehensive assessment also includes evaluation of behavior, affect, thought processes, and other clinical signs and symptoms. Therefore, it's important to seek help from a qualified mental health professional if you or a loved one are experiencing symptoms of mental illness.</li>
-                <li><em>Behavior:</em> The clinician observes the patient's movements and behavior, including motor activity, gestures, and facial expressions. In the emergency department, this component can reveal the patient's level of agitation, restlessness, or psychomotor retardation, which may indicate an acute psychiatric crisis.</li>
-                    <ul>
-                        <li><em>Agitation:</em> excessive motor activity, restlessness, pacing, and fidgeting.</li>
-                        <li><em>Apathy:</em> lack of interest or motivation in activities that are usually enjoyable or rewarding.</li>
-                        <li><em>Catatonia:</em> a state of unresponsiveness to external stimuli, often accompanied by motor immobility or extreme rigidity.</li>
-                        <li><em>Delusions:</em> fixed, false beliefs that are not based in reality.</li>
-                        <li><em>Disorganized behavior:</em> difficulty with daily activities and routines, poor personal hygiene, and inability to maintain a conversation.</li>
-                        <li><em>Hallucinations:</em> sensory experiences that are not actually present, such as seeing, hearing, smelling, or feeling things that are not there.</li>
-                        <li><em>Impulsivity:</em> acting without forethought or consideration of consequences.</li>
-                        <li><em>Mania:</em> a state of elevated or irritable mood, increased energy, decreased need for sleep, racing thoughts, grandiosity, and reckless behavior.</li>
-                        <li><em>Paranoia:</em> a belief that others are conspiring against or trying to harm the individual.</li>
-                        <li><em>Psychomotor retardation:</em> slowed movements and speech, as well as a decreased range of emotional expression.</li>
-                        <li><em>Psychosis:</em> a state of loss of contact with reality, often manifested through delusions and/or hallucinations.</li>
-                        <li><em>Suicidal behavior:</em> self-harming or suicidal thoughts, gestures, or attempts.</li>
-                        <li>These behaviors are often indicative of underlying psychiatric disorders and can be a signal that the individual requires intervention and treatment. It's worth noting that these behaviors can manifest in a variety of ways and with varying degrees of severity, and that it is important for healthcare providers to conduct a thorough assessment and evaluation to determine the appropriate course of action.</li>
-                    </ul>
-                <li><em>Speech:</em> The clinician evaluates the patient's rate, tone,volume and content of speech. In the emergency department, this component can provide insight into the patient's level of coherence and thought organization, which can aid in differential diagnosis.</li>
-                    <ul>
-                        <li><em>Flight of ideas:</em> rapid, unconnected, and sometimes incoherent speech that is difficult to follow.</li>
-                        <li> <em>Clanging: </em> speech characterized by the use of words based on sound rather than meaning, such as rhyming or alliteration.</li>
-                        <li><em>Neologisms:</em> the use of made-up or nonsensical words that are not part of common language.</li>
-                        <li><em>Pressured speech:</em> speech that is rapid, loud, and difficult to interrupt or control.</li>
-                        <li><em>Circumstantial speech:</em> speech that is overly detailed and goes off on tangents before finally returning to the original point.</li>
-                        <li><em>Tangential speech:</em> speech that goes off on tangents and never returns to the original point.</li>
-                        <li><em>Echolalia:</em> the repetition of words or phrases spoken by others.</li>
-                        <li><em>Mutism:</em> the absence of speech, or a refusal to speak.</li>
-                        <li><em>Thought blocking:</em> a sudden interruption in speech, often due to the inability to recall a word or phrase.</li>
-                        <li><em>Stuttering:</em> a speech disorder characterized by the repetition or prolongation of sounds, words, or syllables.</li>
-                        <li>It's worth noting that these speech patterns can be indicative of underlying psychiatric or neurological disorders, and it's important to conduct a thorough assessment and evaluation to determine the appropriate course of treatment. In some cases, speech patterns may be related to other medical conditions, such as stroke or traumatic brain injury, and may require different interventions.</li>
+        <h3 class="subheading" style="font-size:1.05rem; margin-top:0.9rem;">Disorder-Specific Severity Measures – Adults</h3>
+        <ul class="links-list">
+          <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-Level2DepressionAdult.pdf" target="_blank" class="emphasis-link">LEVEL 2—Depression—Adult (PROMIS Emotional Distress—Depression—Short Form)</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/538a62c3-2e1e-4bc3-bafd-7a02efad4937/APA-DSM5TR-SeverityMeasureForSeparationAnxietyDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Separation Anxiety Disorder—Adult</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/b281daed-b8a9-4d45-8d6f-6315ce8f784b/APA-DSM5TR-SeverityMeasureForSpecificPhobiaAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Specific Phobia—Adult</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/69c11866-906c-4262-bfe3-753ac4ad2780/APA-DSM5TR-SeverityMeasureForSocialAnxietyDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Social Anxiety Disorder—Adult</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/6ab8ea4f-e810-4c0c-b41c-16838293506d/APA-DSM5TR-SeverityMeasureForPanicDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Panic Disorder—Adult</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/3345c156-1aac-4e29-ac61-1c6541cb39be/APA-DSM5TR-SeverityMeasureForAgoraphobiaAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Agoraphobia—Adult</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/b1a256c4-1304-4610-8aca-0cc70b46ff53/APA-DSM5TR-SeverityMeasureForGeneralizedAnxietyDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Generalized Anxiety Disorder—Adult</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/1af5dc37-6370-4e72-94d8-e0224d8495f8/APA-DSM5TR-SeverityOfPosttraumaticStressSymptomsAdult.pdf" target="_blank" class="emphasis-link">Severity of Posttraumatic Stress Symptoms—Adult (NSESS)</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/364c20fa-25a5-43cb-b6ad-a4b230ef5b70/APA-DSM5TR-SeverityOfAcuteStressSymptomsAdult.pdf" target="_blank" class="emphasis-link">Severity of Acute Stress Symptoms—Adult (NSESS)</a></li>
+          <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-SeverityOfDissociativeSymptomsAdult.pdf" target="_blank" class="emphasis-link">Severity of Dissociative Symptoms—Adult (DES-B)</a></li>
+        </ul>
 
-                    </ul>
-                <li><em>Mood:</em> The clinician assesses the patient's reported emotional state, including any apparent fluctuations or changes. In the emergency department, this component can help identify patients who may require immediate intervention for suicidality, severe depression, or mania.</li>
-                    <ul>
-                        <li><em>Euphoria: </em>  an elevated or exaggerated mood that is not consistent with the individual's circumstances.</li>
-                        <li><em>Dysphoria:</em> a state of feeling sad, dissatisfied, or unhappy.</li>
-                        <li><em>Anxiety:</em> a state of feeling worried, nervous, or apprehensive, often accompanied by physical symptoms such as sweating or rapid heart rate.</li>
-                        <li><em>Depression:</em> a state of feeling sad, hopeless, or despondent, often accompanied by changes in appetite, sleep, and energy levels.</li>
-                        <li><em>Irritability:</em> a state of feeling easily annoyed, angry, or frustrated.</li>
-                        <li><em>Apathy: </em>  a lack of interest or motivation in activities that are usually enjoyable or rewarding.</li>
-                        <li><em>Anhedonia:</em>  attempts the inability to feel pleasure or enjoy activities that are usually pleasurable or enjoyable.</li>
-                        <li><em>Mania:</em> a state of elevated or irritable mood, increased energy, decreased need for sleep, racing thoughts, grandiosity, and reckless behavior.</li>
-                        <li><em>Hypomania:</em> a milder form of mania, characterized by elevated or irritable mood and increased energy.</li>
-                        <li><em>Mixed states:</em> a state of having both manic and depressive symptoms at the same time.</li>
-                        <li>It's worth noting that these mood patterns can be indicative of underlying psychiatric disorders, and it's important to conduct a thorough assessment and evaluation to determine the appropriate course of treatment. In some cases, mood patterns may be related to other medical conditions, such as thyroid disorders or hormonal imbalances, and may require different interventions.</li>
+        <h3 class="subheading" style="font-size:1.05rem; margin-top:0.9rem;">Disorder-Specific Severity Measures – Children (11–17)</h3>
+        <ul class="links-list">
+          <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-SeverityMeasureForDepressionChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Depression—Child 11–17 (PHQ-A Adapted)</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/b7a64e97-7bb5-46d7-9e75-69a16de1049d/APA-DSM5TR-SeverityMeasureForSeparationAnxietyDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Separation Anxiety Disorder—Child 11–17</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/d7db0c92-8f11-445a-936e-cd6bc9f45480/APA-DSM5TR-SeverityMeasureForSpecificPhobiaChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Specific Phobia—Child 11–17</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/3b328005-dc9a-4c3a-8b8d-56f8017af73b/APA-DSM5TR-SeverityMeasureForSocialAnxietyDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Social Anxiety Disorder—Child 11–17</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/bdf5a1a6-1357-4bb6-9c37-0ca93d7e062e/APA-DSM5TR-SeverityMeasureForPanicDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Panic Disorder—Child 11–17</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/3060504d-1660-4176-a12f-fd6bd979b804/APA-DSM5TR-SeverityMeasureForAgoraphobiaChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Agoraphobia—Child 11–17</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/73e293d0-6355-4258-9cd3-2fc8a5c5b830/APA-DSM5TR-SeverityMeasureForGeneralizedAnxietyDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Generalized Anxiety Disorder—Child 11–17</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/19964a66-5074-4f00-9138-81d85577f107/APA-DSM5TR-SeverityOfPostTraumaticStressSymptomsChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity of Posttraumatic Stress Symptoms—Child (NSESS)</a></li>
+          <li><a href="https://www.psychiatry.org/getmedia/8cb69e1d-5d73-4797-85af-48024bd1df44/APA-DSM5TR-SeverityOfAcuteStressSymptomsChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity of Acute Stress Symptoms—Child (NSESS)</a></li>
+          <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-SeverityofDissociativeSymptomsChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity of Dissociative Symptoms—Child (DES-B)</a></li>
+        </ul>
 
-                    </ul>
-                <li><em>Affect:</em> The clinician observes the patient's emotional expression, including facial expressions and body language. In the emergency department, this component can provide clues about the patient's overall emotional state and may help with differentiating between various psychiatric disorders.</li>
-                    <ul>
-                        <li><em>Flat affect:</em> a lack of emotional expression, where the face and voice appear flat and monotone.</li>
-                        <li><em>Blunted affect:</em> a reduced range and intensity of emotional expression, where the person appears to be in a persistent state of mild emotion.</li>
-                        <li><em>Labile affect</em>: rapid and frequent changes in mood and emotional expression, often seen in bipolar disorder and other mood disorders.</li>
-                        <li><em>Inappropriate affect:</em> emotional expression that is not appropriate to the situation or context, such as laughing at a funeral or crying during a comedy show.</li>
-                        <li><em>Restricted affect:</em> limited emotional expression, where the person appears unresponsive or indifferent to emotional stimuli.</li>
-                        <li><em>Euphoric affect:</em> an elevated and exaggerated mood, often seen in manic episodes of bipolar disorder.</li>
-                        <li><em>Dysphoric affect: </em> a negative and unpleasant mood, often seen in depression and anxiety disorders.</li>
-                        <li><em>Anxious affect:</em> a state of heightened apprehension, worry, and tension, often seen in anxiety disorders.</li>
-                        <li><em>Irritable affect:</em> a state of persistent anger, irritability, and hostility, often seen in mood disorders and personality disorders.</li>
-                        <li><em>Agitated affect:</em> a state of restlessness and heightened arousal, often seen in anxiety disorders, bipolar disorder, and schizophrenia.</li>
-                        <li>These are just a few examples, and there can be significant overlap between different affect patterns. A comprehensive psychiatric assessment would involve observing and assessing a person's affect over time, and in different situations.</li>
-                    </ul>
-                <li><em>Thought process:</em> The clinician evaluates the patient's pattern of thinking, including whether their thoughts are organized, logical, or circumstantial. In the emergency department, this component can provide information about the patient's level of insight, thought content, and any delusional or paranoid ideation.</li>
-                    <ul>
-                        <li><em>Delusions:</em> fixed, false beliefs that are not based in reality.</li>
-                        <li><em>Hallucinations:</em> sensory experiences that are not actually present, such as seeing, hearing, smelling, or feeling things that are not there.</li>
-                        <li><em>Disorganized thinking:</em> difficulty with organizing thoughts, leading to difficulty with communication and a lack of coherence in speech and behavior.</li>
-                        <li><em>Tangential thinking:</em> difficulty staying on topic or sticking to a particular line of thought.</li>
-                        <li><em>Circumstantial thinking:</em> excessive and unnecessary detail in conversation or speech, leading to a delay in getting to the point.</li>
-                        <li><em>Loose associations:</em> the connection between thoughts and ideas may be tenuous, leading to disorganized or incoherent speech.</li>
-                        <li><em>Flight of ideas:</em> rapidly shifting from one topic to another without any logical connection.</li>
-                        <li><em>Perseveration:</em> repetition of words or ideas, even when they are no longer relevant to the conversation.</li>
-                        <li><em>Thought blocking:</em> sudden cessation of thought or speech, often associated with anxiety or intense emotion.</li>
-                        <li><em>Thought insertion:</em> the belief that thoughts or ideas are being inserted into one's mind from an external source.</li>
-                        <li>These are just a few examples, and there can be significant overlap between different thought processes. A comprehensive psychiatric assessment would involve observing and assessing a person's thought processes over time, and in different situations.</li>
-
-                    </ul>
-                <li><em>Thought content:</em> The clinician assesses the patient's beliefs and thought content, including delusions, obsessions, and compulsions. In the emergency department, this component can help identify the presence of severe psychiatric disorders, such as schizophrenia.</li>
-                    <ul>
-                        <li><em>Obsessions:</em> persistent, intrusive, and unwanted thoughts or urges that can lead to anxiety, distress, and compulsive behaviors.</li>
-                        <li><em>Compulsions:</em> repetitive behaviors or mental acts that are performed in response to obsessions, often in an attempt to alleviate anxiety or distress.</li>
-                        <li><em>Preoccupations:</em> excessive and persistent focus on a particular topic or idea, which can lead to neglect of other important activities or interests.</li>
-                        <li><em>Overvalued ideas:</em> beliefs or convictions that are exaggerated in intensity or focus, but not necessarily false.</li>
-                        <li><em>Phobias:</em> intense and irrational fears of specific objects, situations, or activities.</li>
-                        <li><em>Paranoia:</em> the belief that others are conspiring against or trying to harm the individual.</li>
-                        <li><em>Grandiosity:</em> an unrealistic and exaggerated sense of self-importance or abilities, often seen in manic episodes of bipolar disorder.</li>
-                        <li><em>Hypochondriasis:</em> preoccupation with fears of having a serious illness or medical condition, despite reassurance from medical professionals.</li>
-                        <li><em>Suicidal and homicidal ideation:</em> thoughts of harming oneself or others, which can indicate significant distress and risk of harm.</li>
-                        <li>These are just a few examples, and there can be significant overlap between different thought contents. A comprehensive psychiatric assessment would involve observing and assessing a person's thought content over time, and in different situations.</li>
-                    </ul>
-                <li><em>Perception:</em> The clinician assesses the patient's ability to perceive sensory stimuli, including hallucinations or illusions. In the emergency department, this component can help differentiate between psychiatric and medical causes of the patient's symptoms.</li>
-                    <ul>
-                        <li><em>Hallucinations:</em> sensory experiences that are not actually present, such as seeing, hearing, smelling, or feeling things that are not there.</li>
-                        <li><em>Illusions:</em> misperceptions of real sensory stimuli, such as misinterpreting a shadow as a threatening figure.</li>
-                        <li><em>Depersonalization:</em> feeling detached from oneself or one's surroundings, as if in a dream or disconnected from reality.</li>
-                        <li><em>Derealization:</em> feeling that the external world is unreal or distorted, as if in a dream or disconnected from reality.</li>
-                        <li><em>Agnosia:</em> difficulty recognizing or identifying objects, people, or sounds despite having normal sensory function.</li>
-                        <li><em>Hyposensitivity:</em> decreased or reduced perception of sensory stimuli.</li>
-                        <li><em>Hypersensitivity:</em> increased or heightened perception of sensory stimuli.</li>
-                        <li><em>Micropsia/macropsia:</em> distortion in the perception of object size, such as perceiving objects as much smaller or larger than they actually are.</li>
-                        <li>These are just a few examples, and there can be significant overlap between different types of abnormal perceptions. A comprehensive psychiatric assessment would involve observing and assessing a person's perceptions over time, and in different situations.</li>
-                    </ul>
-                <li><em>Cognition:</em> The clinician evaluates the patient's level of cognitive functioning, including memory, attention, concentration, and orientation. In the emergency department, this component can help identify the presence of cognitive impairment, which may indicate underlying neurological or medical issues.</li>
-                    <ul>
-                        <li><em>Delirium:</em> a disturbance in consciousness and attention that develops over a short period of time and can fluctuate throughout the day, often due to an underlying medical condition or medication use.</li>
-                        <li><em>Dementia:</em> a progressive decline in cognitive function, including memory, language, and problem-solving skills, often due to neurodegenerative diseases such as Alzheimer's.</li>
-                        <li><em>Amnesia:</em> a loss of memory or inability to form new memories, often due to head injury, disease, or substance abuse.</li>
-                        <li><em>Confabulation:</em> a disturbance in memory, characterized by the production of fabricated, distorted, or misinterpreted memories.</li>
-                        <li><em>Disorientation:</em> confusion about time, place, or person, often due to acute medical or psychiatric illness.</li>
-                        <li><em>Agnosia:</em> difficulty recognizing or identifying objects, people, or sounds despite having normal sensory function.</li>
-                        <li><em>Apraxia:</em> difficulty with motor planning or executing purposeful movements, despite having normal motor function.</li>
-                        <li><em>Acalculia:</em> difficulty with mathematical calculations, often due to brain injury or disease.</li>
-                        <li><em>Alexia:</em> difficulty reading or comprehending written language, often due to brain injury or disease.</li>
-                        <li><em>Agraphia:</em> difficulty writing or expressing thoughts in writing, often due to brain injury or disease.</li>
-                        <li>These are just a few examples, and there can be significant overlap between different types of cognitive disorders. A comprehensive psychiatric assessment would involve observing and assessing a person's cognitive function over time, and in different situations.</li>
-                    </ul>
-            </ul>
-            <p>In addition to these components, the clinician may also assess the patient's judgment, insight, and impulse control. In the emergency department, these components can help the clinician determine the patient's capacity for self-care and identify any potential safety concerns.</p>
-            <p>It's worth noting that the MSE is not a definitive diagnostic tool but rather a structured method of evaluating and documenting an individual's mental status. It can help guide the clinician's evaluation and aid in diagnosis, treatment planning, and ongoing care.</p>
-         </section>
-         <section class="section">
-            <h2 class="subheading">Risk Assessment</h2>
-            <p>Assess the patient's level of risk for self-harm or harm to others, and develop a safety plan if necessary.</p>
-            <p>How do I manage a violent, highly aggressive or armed Psychiatric Patient!!</p>
-                <ol>
-                    <li>Ensure the safety of all staff and patients in the area: Immediately call for assistance and clear the area of any unnecessary staff or patients who are not essential to the patient's care. If the patient is armed, notify security and law enforcement.</li>
-                    <li>Assess the situation and the patient's mental status: Determine the nature and severity of the patient's symptoms, level of agitation or aggression, and any potential triggers or stressors.</li>
-                    <li>Establish a rapport and engage the patient: Try to establish a positive and supportive rapport with the patient, and use clear and direct communication to de-escalate the situation. Validate the patient's feelings and acknowledge their perspective, and encourage them to express their concerns and needs.</li>
-                    <li>Use verbal and nonverbal de-escalation techniques: Use a calm and assertive tone of voice, maintain eye contact, and use nonthreatening body language. Avoid challenging or confrontational statements, and use active listening skills to demonstrate empathy and understanding.</li>
-                    <li>Consider medication: If the patient is not responding to verbal de-escalation techniques and poses an imminent threat to themselves or others, consider using medications to control their agitation and aggression. This should only be done by a qualified healthcare professional, and with appropriate informed consent and documentation.</li>
-                    <li>Use physical restraints as a last resort: If the patient continues to pose a danger to themselves or others, or if they are at risk of leaving the Emergency Department, consider using physical restraints. This should only be done as a last resort, and with appropriate informed consent, documentation, and monitoring.</li>
-                    <li>Continue to monitor and re-evaluate the patient's condition: Once the patient has been stabilized, continue to monitor their condition and re-evaluate their mental status and treatment plan. Ensure that appropriate follow-up care and referrals are arranged, and that the patient is discharged in a safe and appropriate manner.</li>
-                    <li>It's important to note that the management of aggressive or violent patients requires specialized training and expertise. Emergency Department staff should receive regular training in de-escalation techniques and the use of physical restraints, and have access to appropriate resources and support. Additionally, each patient's situation is unique and requires an individualized approach, so the above action plan should be considered as a general guideline and modified as needed based on the specific circumstances of the patient and the Emergency Department.</li>
-                </ol>
-
-         </section>
-         <section class="section">
-            <h2 class="subheading">Treatment Plan</h2>
-            <p style="text-decoration: none;">Develop a treatment plan that may include medication, therapy, or referral to a mental health professional or social services agency</p>
-            <p style="text-decoration: none;">It's important to note that the treatment plan should be tailored to the individual patient's needs and circumstances, and that emergency department psychiatric treatment can vary widely based on the specific condition and severity of the patient's symptoms. </p>
-         </section>
-         <section class="section">
-          <h2 class="subheading">Assessment Aids</h2>
-          <p style="text-decoration:none">You can click on the links below to use and view the various psychiatric assessment tools available, even though all may not be applicable to the ED, <br> these are tolls that you can use in general and Psychiatric practice. </p>
-          <p>Any child less than <em style="color: red; font-weight:bolder;font-size:larger">16 years old</em> with psychiatric symptoms <em style="color: red; font-weight:bolder;font-size:larger">MUST</em> be treated by a specialist psychiatrist!!</p>
-          <h4 style="color:orangered; text-decoration:underline">Disorder-Specific Severity Measures</h4>
-            <h5 style="color:orangered; text-decoration:underline">For Adults</h5>
-          <ul>
-            <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-Level2DepressionAdult.pdf" target="_blank" class="emphasis-link">LEVEL 2—Depression—Adult (PROMIS Emotional Distress—Depression— Short Form)</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/538a62c3-2e1e-4bc3-bafd-7a02efad4937/APA-DSM5TR-SeverityMeasureForSeparationAnxietyDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity measure for separation anxiety disorder - adult</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/b281daed-b8a9-4d45-8d6f-6315ce8f784b/APA-DSM5TR-SeverityMeasureForSpecificPhobiaAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Specific Phobia—Adult</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/69c11866-906c-4262-bfe3-753ac4ad2780/APA-DSM5TR-SeverityMeasureForSocialAnxietyDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Social Anxiety Disorder (Social Phobia)—Adult</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/6ab8ea4f-e810-4c0c-b41c-16838293506d/APA-DSM5TR-SeverityMeasureForPanicDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Panic Disorder—Adult</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/3345c156-1aac-4e29-ac61-1c6541cb39be/APA-DSM5TR-SeverityMeasureForAgoraphobiaAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Agoraphobia—Adult</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/b1a256c4-1304-4610-8aca-0cc70b46ff53/APA-DSM5TR-SeverityMeasureForGeneralizedAnxietyDisorderAdult.pdf" target="_blank" class="emphasis-link">Severity Measure for Generalized Anxiety Disorder—Adult</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/1af5dc37-6370-4e72-94d8-e0224d8495f8/APA-DSM5TR-SeverityOfPosttraumaticStressSymptomsAdult.pdf" target="_blank" class="emphasis-link">Severity of Posttraumatic Stress Symptoms—Adult (National Stressful Events Survey PTSD Short Scale [NSESS])</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/364c20fa-25a5-43cb-b6ad-a4b230ef5b70/APA-DSM5TR-SeverityOfAcuteStressSymptomsAdult.pdf" target="_blank" class="emphasis-link">Severity of Acute Stress Symptoms—Adult (National Stressful Events Survey Acute Stress Disorder Short Scale [NSESS])</a></li>
-            <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-SeverityOfDissociativeSymptomsAdult.pdf" target="_blank" class="emphasis-link">Severity of Dissociative Symptoms—Adult (Brief Dissociative Experiences Scale [DES-B])</a></li>
-          </ul>
-
-          <h5 style="color:orangered; text-decoration:underline">For Children Ages 11 to 17</h5>
-          <ul>
-            <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-SeverityMeasureForDepressionChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Depression—Child Age 11 to 17 (PHQ-9 modified for Adolescents [PHQ-A]—Adapted)</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/b7a64e97-7bb5-46d7-9e75-69a16de1049d/APA-DSM5TR-SeverityMeasureForSeparationAnxietyDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Separation Anxiety Disorder—Child Age 11 to 17</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/d7db0c92-8f11-445a-936e-cd6bc9f45480/APA-DSM5TR-SeverityMeasureForSpecificPhobiaChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Specific Phobia—Child </a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/3b328005-dc9a-4c3a-8b8d-56f8017af73b/APA-DSM5TR-SeverityMeasureForSocialAnxietyDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Social Anxiety Disorder (Social Phobia)—Child Age 11 to 17</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/bdf5a1a6-1357-4bb6-9c37-0ca93d7e062e/APA-DSM5TR-SeverityMeasureForPanicDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Panic Disorder—Child</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/3060504d-1660-4176-a12f-fd6bd979b804/APA-DSM5TR-SeverityMeasureForAgoraphobiaChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Agoraphobia—Child</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/73e293d0-6355-4258-9cd3-2fc8a5c5b830/APA-DSM5TR-SeverityMeasureForGeneralizedAnxietyDisorderChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity Measure for Generalized Anxiety Disorder—Child</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/19964a66-5074-4f00-9138-81d85577f107/APA-DSM5TR-SeverityOfPostTraumaticStressSymptomsChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity of Posttraumatic Stress Symptoms—Child (National Stressful Events Survey PTSD Short Scale [NSESS])</a></li>
-            <li><a href="https://www.psychiatry.org/getmedia/8cb69e1d-5d73-4797-85af-48024bd1df44/APA-DSM5TR-SeverityOfAcuteStressSymptomsChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity of Acute Stress Symptoms—Child (National Stressful Events Survey Acute Stress Disorder Short Scale [NSESS])</a></li>
-            <li><a href="https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-SeverityofDissociativeSymptomsChildAge11To17.pdf" target="_blank" class="emphasis-link">Severity of Dissociative Symptoms—Child (Brief Dissociative Experiences Scale [DES-B])</a></li>
-          </ul>
-
-          <p style="text-decoration:none">Each of the tools has a score attached to it. While you are still learning or working in an ED setting, I would suggest using the tool, adding up the score, and then discussing with a senior to understand the intricacies of its use. <br> It can get <em>VERY</em> complicated! </p>
-          
-          
-       </section>
-        
-    </main>
-    </body>
+        <p class="note">
+          While you are still learning or working in a busy ED, you can use these
+          tools, calculate a score, and then discuss the interpretation with a senior.
+          The scoring and clinical nuance can become complex.
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
 </html>

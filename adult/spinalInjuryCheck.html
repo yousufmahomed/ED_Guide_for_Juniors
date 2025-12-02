@@ -1,73 +1,366 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Spinal Injury Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/checklistBackground.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-        .fullscreen-image-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
-          cursor: zoom-out;
-        }
-        
-        .fullscreen-image-overlay img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Spinal Injury Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+    }
+
+    h1.main-header {
+      font-size: 1.6rem;
+    }
+
+    h2.subheading {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-decoration: underline;
+    }
+
+    p {
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    ul, ol {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+      font-weight: normal;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 0.25rem;
+    }
+
+    .tag-red {
+      background: #b71c1c;
+      color: #fff;
+    }
+
+    .tag-amber {
+      background: #ffb300;
+      color: #000;
+    }
+
+    .tag-green {
+      background: #2e7d32;
+      color: #fff;
+    }
+
+    .checklist-section {
+      border-left: 4px solid #005daa;
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .inline-note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #444;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #c62828;
+    }
+
+    details {
+      margin: 0.5rem 0 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      background: #f5f5f5;
+      font-weight: normal;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .image-wrapper {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .image-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      cursor: zoom-in;
+    }
+
+    .caption {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 0.75rem;
+        padding: 0.75rem;
+      }
+
+      h1.main-header {
+        font-size: 1.3rem;
+      }
+
+      h2.subheading {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
     <div class="logo-container">
-        <h1 style="color: black;">Spinal Injury Checklist</h1>
-        <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+      <h1 class="main-header">Spinal Injury Checklist</h1>
+      <a href="/index.html" title="Home" alt="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section checklist-section">
+      <h2 class="subheading">1. When to Suspect Spinal Injury</h2>
+      <p class="inline-note">If in doubt, immobilise and image – especially with high-energy mechanisms.</p>
+      <ul>
+        <li>High-risk mechanism:
+          <ul>
+            <li>High-speed RTC, rollover, ejection</li>
+            <li>Pedestrian/cyclist struck by vehicle</li>
+            <li>Fall &gt; 1 m / &gt; 5 stairs</li>
+            <li>Axial load to head (e.g. diving injury)</li>
+          </ul>
+        </li>
+        <li>Neurological symptoms:
+          <ul>
+            <li>Paraesthesia, weakness, paralysis</li>
+            <li>Loss of anal tone, urinary retention or incontinence</li>
+          </ul>
+        </li>
+        <li>Midline spinal tenderness on palpation</li>
+        <li>Distracting injuries (e.g. long bone fracture, major chest/abdominal trauma)</li>
+        <li>Intoxication or reduced level of consciousness (GCS &lt; 15)</li>
+        <li>Known vertebral disease (e.g. ankylosing spondylitis, severe osteoporosis)</li>
+      </ul>
+    </section>
+
+    <section class="section checklist-section">
+      <h2 class="subheading">2. Immediate Actions in ED</h2>
+      <ul>
+        <li>Maintain <strong>spinal motion restriction</strong>:
+          <ul>
+            <li>Manual in-line stabilisation initially</li>
+            <li>Rigid collar, blocks and tape (or in-line hands) as per local protocol</li>
+            <li>Avoid log-rolling without adequate team and control</li>
+          </ul>
+        </li>
+        <li>Follow <strong>ATLS A–B–C–D–E</strong> – do not delay life-saving interventions for imaging.</li>
+        <li>Document time spinal precautions applied and by whom.</li>
+      </ul>
+    </section>
+
+    <section class="section checklist-section">
+      <h2 class="subheading">3. Clearing the Cervical Spine (Adult)</h2>
+      <p class="inline-note">Use a validated rule (Canadian C-Spine or NEXUS) and local protocols.</p>
+
+      <details>
+        <summary>Canadian C-Spine Rule (simplified)</summary>
+        <ul>
+          <li><span class="highlight">High-risk factors → Image C-spine</span>
+            <ul>
+              <li>Age ≥ 65 years</li>
+              <li>Dangerous mechanism (high-speed RTC, fall &gt; 1 m/5 stairs, axial load, etc.)</li>
+              <li>Paraesthesia in extremities</li>
+            </ul>
+          </li>
+          <li>If NO high-risk factors, check <span class="highlight">low-risk factors</span>:
+            <ul>
+              <li>Simple rear-end MVC</li>
+              <li>Patient sitting in ED; ambulatory at any time</li>
+              <li>Delayed onset neck pain</li>
+              <li>No midline cervical tenderness</li>
+            </ul>
+          </li>
+          <li>If low-risk factors present → patient can actively rotate neck 45° left and right?
+            <ul>
+              <li><strong>Yes:</strong> C-spine can be clinically cleared</li>
+              <li><strong>No:</strong> Image C-spine (CT preferred in trauma)</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>NEXUS Low-Risk Criteria</summary>
+        <p>C-spine can be cleared clinically if ALL of the following are true:</p>
+        <ul>
+          <li>No posterior midline cervical tenderness</li>
+          <li>No focal neurological deficit</li>
+          <li>Normal level of alertness (GCS 15)</li>
+          <li>No intoxication</li>
+          <li>No painful distracting injury</li>
+        </ul>
+      </details>
+
+      <p class="inline-note">
+        If patient is <strong>intubated, confused, intoxicated or poly-trauma</strong> →
+        assume spinal injury until CT and specialist review.
+      </p>
+    </section>
+
+    <section class="section checklist-section">
+      <h2 class="subheading">4. Focused Examination</h2>
+      <ul>
+        <li><strong>Inspect:</strong> deformity, bruising, step-offs, wounds along the spine.</li>
+        <li><strong>Palpate:</strong> midline tenderness, gaps/steps; paraspinal muscle spasm.</li>
+        <li><strong>Motor:</strong> power in all major muscle groups (upper and lower limbs).</li>
+        <li><strong>Sensation:</strong> light touch and pain in all dermatomes; perianal sensation.</li>
+        <li><strong>Reflexes:</strong> deep tendon reflexes, Babinski.</li>
+        <li><strong>ASIA classification</strong> if time/setting allows (particularly for SCI).</li>
+      </ul>
+    </section>
+
+    <section class="section checklist-section">
+      <h2 class="subheading">5. Red Flag Features – Spinal Cord / Cauda Equina</h2>
+      <p class="inline-note">These are emergencies – discuss with neurosurgery/orthopaedics urgently.</p>
+      <ul>
+        <li>Bilateral leg weakness or rapidly progressive weakness <span class="tag tag-red">RED FLAG</span></li>
+        <li>Loss of anal tone or saddle anaesthesia <span class="tag tag-red">RED FLAG</span></li>
+        <li>Urinary retention, overflow incontinence, or faecal incontinence <span class="tag tag-red">RED FLAG</span></li>
+        <li>Severe midline back pain with neurological deficit <span class="tag tag-red">RED FLAG</span></li>
+        <li>High thoracic/cervical injuries with hypotension + bradycardia (neurogenic shock)</li>
+      </ul>
+    </section>
+
+    <section class="section checklist-section">
+      <h2 class="subheading">6. Imaging – When and What</h2>
+      <ul>
+        <li><strong>CT spine</strong>:
+          <ul>
+            <li>Preferred modality in moderate / severe trauma</li>
+            <li>Any failed clinical clearance (Canadian/NEXUS)</li>
+            <li>GCS &lt; 15, intoxicated, or distracting injuries</li>
+          </ul>
+        </li>
+        <li><strong>Plain X-rays</strong>:
+          <ul>
+            <li>Low-resource settings / low-risk patients only</li>
+            <li>Must visualise all relevant vertebrae and junctions</li>
+          </ul>
+        </li>
+        <li><strong>MRI</strong>:
+          <ul>
+            <li>Neurological deficit with normal CT</li>
+            <li>Suspected cord injury, epidural haematoma, disc prolapse</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section checklist-section">
+      <h2 class="subheading">7. Ongoing Management in ED</h2>
+      <ul>
+        <li>Maintain spinal precautions until cleared by appropriate imaging and senior review.</li>
+        <li>Aggressive treatment of <strong>hypotension and hypoxia</strong> – spinal cord is very vulnerable.</li>
+        <li>Adequate analgesia and anti-spasm measures.</li>
+        <li>Pressure care: regular checks to avoid pressure sores in immobilised patients.</li>
+        <li>Early discussion with:
+          <ul>
+            <li>Orthopaedics / neurosurgery</li>
+            <li>ICU for high cervical injuries or respiratory compromise</li>
+          </ul>
+        </li>
+        <li>Clear documentation:
+          <ul>
+            <li>Mechanism, exam findings, neurological status</li>
+            <li>Time of collar application and clearance</li>
+            <li>Imaging performed and specialist plans</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section image-wrapper">
+      <img src="/images/spinal injury checklist final.png"
+           alt="Spinal Injury Checklist Poster"
+           onclick="toggleFullscreenImage('/images/spinal injury checklist final.png')">
+      <div class="caption">
+        Original Spinal Injury Checklist poster
+        <span style="font-size: x-small;">(Tap to enlarge)</span>
       </div>
-    </header>
-<main>
-    <div class="section">
-        <img src="/images/spinal injury checklist final.png" alt="Spinal Injury Checklist" class="image" onclick="toggleFullscreenImage('/images/spinal injury checklist final.png')">
-      <caption>Spinal Injury Checklist<span style="font-size: x-small;">(Click to enlarge)</span></caption>
-      </div>
-</main>
-<script>
+    </section>
+  </main>
+
+  <script>
     function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
-    } else {
-      document.body.removeChild(overlay);
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
+      }
     }
-  }
   </script>
 </body>
 </html>

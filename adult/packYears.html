@@ -2,326 +2,247 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>History Structure</title>
-  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <title>Pack Year Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
-    /* Styling for laptop screens */
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      font-weight: normal;
+      line-height: 1.8;
       color: #333;
-      background-image: url("/images/packYears.jpg");
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/packYears.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      
     }
-header {
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .logo-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-  }
-  
-  .logo-container h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .fa-syringe {
-    font-size: 2rem;
-    margin: 0 1rem;
-  }
-  
-  .fa-house {
-    font-size: 2rem;
-  }
-  
-  main {
-    margin: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin: 0 0 1rem;
-  }
-  
-  .links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .links li {
-    margin: 0 0 1rem;
-  }
-  
-  .links a {
-    display: block;
-    background-color: #fff;
-    color: #000;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-  }
 
-  .navbar {
-    background-color: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .navbar-container {
-    max-width: 1000px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .main-header {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .navbar-icons {
-    display: flex;
-  }
-  
-  .navbar-icons i {
-    font-size: 24px;
-    margin-right: 12px;
-  }
-  
-  .back-button {
-    background-color: #2196F3;
-    border: none;
-    color: #FFFFFF;
-    font-size: 16px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .back-button:hover {
-    background-color: #0D47A1;
-  }
-  .subheading {
-    font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: underline;
-  }
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
 
-  .section {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  .section p {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-    text-indent: 1.5em;
-    
-  }
-  .section p::before {
-    content: "•"; 
-  display: inline-block;
-  margin-right: 8px; 
-  }
-  strong{
-    font-size: large;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    color: orangered;
-  }
-
-
-  
-  
-  /* Alternate link colors */
-  .links a:nth-child(even) {
-    background-color: #6fa8dc;
-    color: #fff;
-  }
-  
-  .links a:nth-child(odd) {
-    background-color: #f7cac9;
-    color: #000;
-  }
-  
-  .links a:hover {
-    transform: translateY(-3px);
-  }
-  .emphasis-link {
-    font-weight: bold;
-    color: #0070C0;
-    font-size: larger;
-  }
-  
-  
-  /* Styling for mobile screens */
-  @media only screen and (max-width: 600px) {
     .logo-container {
-      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-  
-    .fa-syringe {
-      font-size: 1.5rem;
-      margin: 0 0.5rem;
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
     }
-  
-    .fa-house {
-      font-size: 1.5rem;
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-  
-    h1 {
-      font-size: 1.5rem;
-      margin: 0 0 0.5rem;
-    }
-  
-    .links li {
-      margin: 0 0 0.5rem;
-    }
-  
-    .links a {
-      padding: 0.75rem;
-      font-size: 0.9rem;
-    }
-    .navbar {
-      height: 50px;
-    }
-  
-    .main-header {
-      font-size: 20px;
-    }
-  
-    .navbar-icons i {
-      font-size: 20px;
-    }
-  
+
     .back-button {
-      font-size: 14px;
-      padding: 6px 12px;
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
     }
-    .subheading {
-      font-size: 20px;
-      margin-top: 16px;
-      margin-bottom: 8px;
+
+    .back-button:hover {
+      background-color: #e6e6e6;
     }
-  
-    .section {
-      margin-top: 24px;
-      margin-bottom: 24px;
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
     }
-  
-  }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #003366;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
     .form-group {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.9rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    input[type="number"],
+    output {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+
+    input[readonly] {
+      background-color: #f5f5f5;
+    }
+
+    output {
+      display: block;
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.35rem;
+    }
+
+    #interpretation {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
       }
-      
-      label {
-        font-weight: bold;
-        margin-bottom: 8px;
+
+      .logo-container h1 {
+        font-size: 1rem;
       }
-      
-      input[type="number"], output {
-        padding: 8px;
-        font-size: 16px;
-      }
-      
-      output {
-        border: 1px solid #ddd;
-        background-color: #f5f5f5;
-        font-weight: bold;
-      }
-      
+    }
   </style>
 </head>
 <body>
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Pack Year Calculator</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <main>
-        <h1 style="font-size: large; text-decoration:underline; color: grey">Only Enter in number of cigarettes-per-day <strong>(1)</strong> and years smoked <strong>(3)</strong> , the calculator will automatically fill in the number of packs per day <strong>(2)</strong></h1>
-        <div class="form-group">
-            <label for="cigarettes-per-day">(1)Number of cigarettes smoked per day:</label>
-            <input type="number" id="cigarettes-per-day" min="0" step="0.01">
-          </div>
-          
-          <div class="form-group">
-            <label for="packs-per-day">(2)Number of packs smoked per day:</label>
-            <input type="number" id="packs-per-day" min="0" step="0.01" >
-          </div>
-          
-          <div class="form-group">
-            <label for="years-smoked">(3)Number of years smoked:</label>
-            <input type="number" id="years-smoked" min="0" step="0.01">
-          </div>
-          
-          <div class="form-group">
-            <label for="pack-years">(4)Pack years:</label>
-            <output id="pack-years">0</output>
-          </div>
-          
-          <script>
-            const cigarettesPerDayInput = document.getElementById("cigarettes-per-day");
-                const packsPerDayInput = document.getElementById("packs-per-day");
-                const yearsSmokedInput = document.getElementById("years-smoked");
-                const packYearsOutput = document.getElementById("pack-years");
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Pack Year Calculator</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" alt="House icon" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-                const cigarettesPerPack = 20; // Assuming a pack contains 20 cigarettes
+  <main class="page-wrapper">
+    <div class="container">
+      <h2>Pack Years (Smoking Exposure)</h2>
+      <p class="intro">
+        Enter the <strong>number of cigarettes smoked per day</strong> and the
+        <strong>number of years smoked</strong>. The calculator will estimate
+        packs per day and total pack years (assuming 20 cigarettes per pack).
+      </p>
 
-                function calculatePackYears() {
-                const cigarettesPerDay = parseFloat(cigarettesPerDayInput.value);
-                const yearsSmoked = parseFloat(yearsSmokedInput.value);
+      <div class="form-group">
+        <label for="cigarettes-per-day">Number of cigarettes per day:</label>
+        <input type="number" id="cigarettes-per-day" min="0" step="0.1" inputmode="decimal">
+      </div>
 
-                if (isNaN(cigarettesPerDay) || isNaN(yearsSmoked)) {
-                    packYearsOutput.textContent = "N/A";
-                    return;
-                }
+      <div class="form-group">
+        <label for="years-smoked">Number of years smoked:</label>
+        <input type="number" id="years-smoked" min="0" step="0.1" inputmode="decimal">
+      </div>
 
-                const packsPerDay = Math.floor(cigarettesPerDay / cigarettesPerPack * 100) / 100;
-                packsPerDayInput.value = packsPerDay;
-                const packYears = packsPerDay * yearsSmoked;
-                packYearsOutput.textContent = packYears.toFixed(2);
-                }
+      <div class="form-group">
+        <label for="packs-per-day">Estimated packs per day (20 cigarettes/pack):</label>
+        <input type="number" id="packs-per-day" readonly>
+      </div>
 
-                cigarettesPerDayInput.addEventListener("input", calculatePackYears);
-                packsPerDayInput.addEventListener("input", calculatePackYears);
-                yearsSmokedInput.addEventListener("input", calculatePackYears);
+      <div class="form-group">
+        <label for="pack-years">Pack years:</label>
+        <output id="pack-years">0</output>
+      </div>
 
+      <p id="interpretation"></p>
 
+      <p class="note">
+        Pack years = (cigarettes per day ÷ 20) × years smoked.
+        This is an estimate and should be interpreted in context with the patient's
+        overall risk profile and other exposures.
+      </p>
+    </div>
+  </main>
 
-        </script>
-          
-    </main>
+  <script>
+    const cigarettesPerDayInput = document.getElementById("cigarettes-per-day");
+    const yearsSmokedInput = document.getElementById("years-smoked");
+    const packsPerDayInput = document.getElementById("packs-per-day");
+    const packYearsOutput = document.getElementById("pack-years");
+    const interpretationEl = document.getElementById("interpretation");
+
+    const CIGARETTES_PER_PACK = 20; // standard assumption
+
+    function calculatePackYears() {
+      const cigarettesPerDay = parseFloat(cigarettesPerDayInput.value);
+      const yearsSmoked = parseFloat(yearsSmokedInput.value);
+
+      if (isNaN(cigarettesPerDay) || isNaN(yearsSmoked)) {
+        packsPerDayInput.value = "";
+        packYearsOutput.textContent = "N/A";
+        interpretationEl.textContent = "";
+        return;
+      }
+
+      const packsPerDay = cigarettesPerDay / CIGARETTES_PER_PACK;
+      const packYears = packsPerDay * yearsSmoked;
+
+      packsPerDayInput.value = packsPerDay.toFixed(2);
+      packYearsOutput.textContent = packYears.toFixed(2);
+
+      // Simple, non-absolute interpretation
+      let message = "";
+      if (packYears === 0) {
+        message = "";
+      } else if (packYears < 10) {
+        message = "Exposure: relatively low pack-year history (risk still higher than non-smoker).";
+      } else if (packYears < 20) {
+        message = "Exposure: moderate pack-year history. Smoking-related risk is clinically significant.";
+      } else {
+        message = "Exposure: high pack-year history. Strongly associated with smoking-related disease.";
+      }
+      interpretationEl.textContent = message;
+    }
+
+    cigarettesPerDayInput.addEventListener("input", calculatePackYears);
+    yearsSmokedInput.addEventListener("input", calculatePackYears);
+  </script>
+</body>
+</html>

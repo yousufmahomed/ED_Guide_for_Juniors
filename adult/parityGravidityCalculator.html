@@ -2,98 +2,296 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Parity &amp; Gravidity Calculator</title>
+  <title>Parity & Gravidity Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
-    /* Styling for laptop screens */
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      font-weight: normal;
+      line-height: 1.8;
       color: #333;
-      background-image: url("/images/parityGravidity.jpg");
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/parityGravidity.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center; 
+      background-position: center;
     }
-    div {
-        margin: 10px;
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #003366;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.9rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.15rem;
+    }
+
+    input[type="number"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 0.4rem;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+
+    button#calculate-btn {
+      margin-top: 0.5rem;
+      background-color: #005daa;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button#calculate-btn:hover {
+      background-color: #003b72;
+    }
+
+    #result {
+      margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 8px;
+      background-color: #f5f7fb;
+      font-size: 0.95rem;
+    }
+
+    #result p {
+      margin: 0.25rem 0;
+    }
+
+    .result-label {
+      font-weight: bold;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
       }
-      label {
-        display: inline-block;
-        width: 150px;
+
+      .logo-container h1 {
+        font-size: 1rem;
       }
-      input[type="number"] {
-        width: 100px;
+
+      button#calculate-btn {
+        width: 100%;
+        text-align: center;
       }
-      #calculate-btn {
-        margin-top: 20px;
-        padding: 5px 10px;
-      }
-      
-</style>
+    }
+  </style>
 </head>
 <body>
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Parity &amp; Gravidity Calculator</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <main>
-        <div>
-            <label>Live Births:</label>
-            <input type="number" id="live-births">
-        </div>
-        <div>
-            <label>Currently Pregnant:</label>
-            <label><input type="checkbox" id="pregnant" value="yes">Yes</label>
-        </div>
-        <div>
-            <label>Full Term Pregnancies:</label>
-            <input type="number" id="full-term-pregnancies">
-        </div>
-        <div>
-            <label>Pre-term Pregnancies:</label>
-            <input type="number" id="pre-term-pregnancies">
-        </div>
-        <div>
-            <label>Abortions/Stillbirths:</label>
-            <input type="number" id="abortions-stillbirths">
-        </div>
-        <button id="calculate-btn">Calculate</button>
-        <div id="result"></div>
-    </main>
-    <script>
-        const calculateBtn = document.getElementById('calculate-btn');
-        const resultDiv = document.getElementById('result');
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Parity &amp; Gravidity Calculator</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" alt="House icon" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-        calculateBtn.addEventListener('click', () => {
-            const liveBirths = Number(document.getElementById('live-births').value);
-            const isCurrentlyPregnant = document.getElementById('pregnant').checked;
-            const fullTermPregnancies = Number(document.getElementById('full-term-pregnancies').value);
-            const preTermPregnancies = Number(document.getElementById('pre-term-pregnancies').value);
-            const abortionsStillbirths = Number(document.getElementById('abortions-stillbirths').value);
+  <main class="page-wrapper">
+    <div class="container">
+      <h2>Parity &amp; Gravidity (Obstetric History)</h2>
+      <p>
+        Use this tool to summarise a patient’s obstetric history. Enter previous
+        pregnancies by outcome and indicate if the patient is currently pregnant.
+      </p>
 
-            // Calculate parity
-            const parity = `P${liveBirths}`;
+      <div class="form-group">
+        <label for="full-term-pregnancies">Full-term births (≥ 37 weeks):</label>
+        <input type="number" id="full-term-pregnancies" min="0" step="1" inputmode="numeric">
+        <div class="hint">Include stillbirths at term.</div>
+      </div>
 
-            // Calculate gravidity
-            const gravidity = `G${(isCurrentlyPregnant ? 1 : 0) + fullTermPregnancies + preTermPregnancies + abortionsStillbirths}`;
-            const gravidityDetails = `${fullTermPregnancies}-${preTermPregnancies}-${abortionsStillbirths}`;
+      <div class="form-group">
+        <label for="pre-term-pregnancies">Preterm births (24–36+6 weeks):</label>
+        <input type="number" id="pre-term-pregnancies" min="0" step="1" inputmode="numeric">
+        <div class="hint">Include stillbirths &gt;= 24 weeks.</div>
+      </div>
 
-            // Display result
-            resultDiv.textContent = `Parity: ${parity}, Gravidity: ${gravidity} (${gravidityDetails})`;
-        });
-    </script>
-      
+      <div class="form-group">
+        <label for="abortions-stillbirths">Abortions / ectopics / losses &lt; 24 weeks:</label>
+        <input type="number" id="abortions-stillbirths" min="0" step="1" inputmode="numeric">
+        <div class="hint">Include spontaneous miscarriages and terminations.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="living-children">Living children:</label>
+        <input type="number" id="living-children" min="0" step="1" inputmode="numeric">
+        <div class="hint">Number of children currently alive.</div>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="pregnant" value="yes">
+        <label for="pregnant" style="font-weight: normal; margin: 0;">
+          Patient is currently pregnant
+        </label>
+      </div>
+
+      <button id="calculate-btn">Calculate</button>
+
+      <div id="result"></div>
+
+      <p class="note">
+        Definitions used here:
+        <br>- <strong>Gravidity (G)</strong> = total number of pregnancies (including current).
+        <br>- <strong>Parity (P)</strong> = number of pregnancies reaching ≥ 24 weeks (alive or stillborn).
+        <br>- <strong>T–P–A–L</strong> = Term births, Preterm births, Abortions (&lt; 24 weeks), Living children.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const calculateBtn = document.getElementById('calculate-btn');
+    const resultDiv = document.getElementById('result');
+
+    calculateBtn.addEventListener('click', () => {
+      const fullTerm = Number(document.getElementById('full-term-pregnancies').value) || 0;
+      const preTerm = Number(document.getElementById('pre-term-pregnancies').value) || 0;
+      const abortions = Number(document.getElementById('abortions-stillbirths').value) || 0;
+      const living = Number(document.getElementById('living-children').value) || 0;
+      const isCurrentlyPregnant = document.getElementById('pregnant').checked;
+
+      // Parity = births >= 24 weeks (term + preterm)
+      const parityNumber = fullTerm + preTerm;
+
+      // Gravidity = all pregnancies including current if pregnant
+      const gravidityNumber = fullTerm + preTerm + abortions + (isCurrentlyPregnant ? 1 : 0);
+
+      const gravidityStr = `G${gravidityNumber}`;
+      const parityStr = `P${parityNumber}`;
+
+      // T–P–A–L notation
+      const tpalStr = `${fullTerm}-${preTerm}-${abortions}-${living}`;
+
+      // Build explanation text
+      let pregnantText = "";
+      if (isCurrentlyPregnant) {
+        pregnantText = "Patient is currently pregnant, so this pregnancy is included in G but not yet in P.";
+      } else {
+        pregnantText = "Patient is not currently pregnant (G reflects completed pregnancies only).";
+      }
+
+      resultDiv.innerHTML = `
+        <p><span class="result-label">Summary:</span> ${gravidityStr} ${parityStr}</p>
+        <p><span class="result-label">T–P–A–L notation:</span> (${tpalStr})</p>
+        <p><span class="result-label">Expanded:</span> Term births: ${fullTerm}, Preterm births: ${preTerm}, Abortions &lt; 24 weeks: ${abortions}, Living children: ${living}.</p>
+        <p>${pregnantText}</p>
+        <p class="note">
+          Example of documentation: <br>
+          “${gravidityStr} ${parityStr} (${tpalStr}) – ${fullTerm} term, ${preTerm} preterm, ${abortions} abortions, ${living} living.”
+        </p>
+      `;
+    });
+  </script>
 </body>
 </html>

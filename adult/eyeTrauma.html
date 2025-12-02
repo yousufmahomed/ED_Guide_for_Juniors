@@ -1,75 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Eye Trauma Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/checklistBackground.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-        .fullscreen-image-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
-          cursor: zoom-out;
-        }
-        
-        .fullscreen-image-overlay img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Eye Trauma Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .container h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #005daa;
+      font-size: 1.4rem;
+    }
+
+    .helper-text {
+      font-weight: normal;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .image-wrapper {
+      margin: 0;
+      text-align: center;
+    }
+
+    .image-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      cursor: zoom-in;
+    }
+
+    .image-wrapper figcaption {
+      font-weight: normal;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
     <div class="logo-container">
-        <h1 style="color: black;">Eye Trauma Checklist</h1>
-        <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-      </div>
-    </header>
-<main>
-    
-    <div class="section">
-        <img src="/images/eye trauma checklist img.png" alt="Eye Trauma Checklist" class="image" onclick="toggleFullscreenImage('/images/eye trauma checklist img.png')">
-      <caption>Eye Trauma Checklist <span style="font-size: x-small;">(Click to enlarge)</span></caption>
-      
-      </div>
-</main>
-<script>
+      <h1>Eye Trauma Checklist</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <h2>Eye Trauma Checklist</h2>
+      <p class="helper-text">
+        Quick reference for eye trauma assessment in the emergency department.
+        Tap the checklist image to view it in full-screen.
+      </p>
+
+      <figure class="image-wrapper">
+        <img
+          src="/images/eye trauma checklist img.png"
+          alt="Eye Trauma Checklist"
+          onclick="toggleFullscreenImage('/images/eye trauma checklist img.png')"
+        >
+        <figcaption>
+          Eye Trauma Checklist <span style="font-size: 0.8rem;">(tap to enlarge)</span>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <script>
     function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
-    } else {
-      document.body.removeChild(overlay);
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = '<img src="' + src + '" alt="Full-size Eye Trauma Checklist" />';
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
+      }
     }
-  }
   </script>
 </body>
 </html>

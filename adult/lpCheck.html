@@ -1,124 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Lumbar Puncture Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-<style>
+  <meta charset="UTF-8">
+  <title>Lumbar Puncture Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+      ), url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
     h2 {
-        color: #0066cc;
+      color: #005daa;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
     }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f2f2f2;
-        color: navy;
-    }
-
-    input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 10px;
+    p {
+      margin: 0.25rem 0 0.75rem;
+      font-size: 0.95rem;
     }
 
     ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
     }
 
     li {
-        margin-bottom: 5px;
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
     }
-</style>
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Lumbar Puncture Checklist</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Lumbar Puncture Checklist</h1>
-	<h2>Indications for Lumbar Puncture</h2>
-	<ul>
-		<li>Diagnostic evaluation of meningitis, encephalitis, or other central nervous system infections</li>
-		<li>Diagnostic evaluation of subarachnoid hemorrhage</li>
-		<li>Diagnostic evaluation of demyelinating or inflammatory central nervous system disorders (e.g., multiple sclerosis, neurosarcoidosis)</li>
-		<li>Diagnostic evaluation of idiopathic intracranial hypertension (pseudotumor cerebri)</li>
-		<li>Therapeutic drainage of cerebrospinal fluid in cases of idiopathic intracranial hypertension or other disorders</li>
-		<li>Administration of intrathecal medications (e.g., chemotherapy, antibiotics, spinal anesthesia)</li>
-	</ul>
-    <h2>Contraindications for Lumbar Puncture</h2>
-<ul>
-	<li>Increased intracranial pressure (risk of brain herniation)</li>
-	<li>Suspected spinal cord compression or spinal epidural abscess</li>
-	<li>Coagulopathy or ongoing anticoagulation therapy (increased risk of spinal hematoma)</li>
-	<li>Infection at the puncture site</li>
-	<li>Uncorrected hypovolemia or shock</li>
-</ul>
+  <header>
+    <div class="logo-container">
+      <h1>Lumbar Puncture Checklist</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-<h2>Equipment and Supplies</h2>
-<ol>
-	<li>Personal protective equipment (gloves, mask, gown)</li>
-	<li>Sterile drape</li>
-	<li>Local anesthetic (e.g., lidocaine)</li>
+  <main class="page-wrapper">
+    <div class="container">
 
-    <li>Skin disinfectant (e.g., chlorhexidine or povidone-iodine)</li>
-	<li>Syringe and needle for administering local anesthetic</li>
-	<li>Spinal needle (22-25 gauge) with stylet</li>
-	<li>Manometer for measuring cerebrospinal fluid (CSF) opening pressure</li>
-	<li>Sterile specimen tubes for collecting CSF</li>
-	<li>Bandage or sterile dressing to cover the puncture site</li>
-</ol>
+      <h2>Indications for Lumbar Puncture</h2>
+      <ul>
+        <li>Diagnostic evaluation of suspected meningitis or encephalitis.</li>
+        <li>Diagnostic evaluation of suspected subarachnoid haemorrhage when CT brain is normal but suspicion remains.</li>
+        <li>Diagnostic evaluation of demyelinating / inflammatory CNS disorders
+          (e.g. multiple sclerosis, neurosarcoidosis, CNS vasculitis) – usually in consultation with neurology.</li>
+        <li>Diagnostic and therapeutic evaluation of idiopathic intracranial hypertension (pseudotumour cerebri) – usually after neuroimaging.</li>
+        <li>Therapeutic drainage of CSF in specific conditions (e.g. idiopathic intracranial hypertension) when advised by a specialist.</li>
+        <li>Administration of intrathecal medications (e.g. chemotherapy, antibiotics, spinal anaesthesia) in appropriate settings.</li>
+      </ul>
 
-<h2>Lumbar Puncture Procedure Steps</h2>
-<ol>
-	<li>Verify the indications and review contraindications for lumbar puncture</li>
-	<li>Obtain informed consent from the patient or their legal guardian</li>
-	<li>Position the patient correctly (usually sitting or lying on their side with knees drawn up to the chest and chin tucked in)</li>
-	<li>Identify the appropriate intervertebral space (usually L3-L4 or L4-L5)</li>
-	<li>Prepare the puncture site using a skin disinfectant and sterile draping</li>
-	<li>Administer local anesthetic to the puncture site</li>
-	<li>Insert the spinal needle with the bevel parallel to the longitudinal axis of the spine, and advance it through the skin, subcutaneous tissue, and ligaments until the subarachnoid space is entered</li>
-	<li>Remove the stylet and attach the manometer to measure the CSF opening pressure (if indicated)</li>
-	<li>Collect CSF samples in sterile specimen tubes</li>
-	<li>Measure the CSF closing pressure (if indicated) and remove the spinal needle</li>
-	<li>Apply a bandage or sterile dressing to the puncture site</li>
-	<li>Monitor the patient for any immediate complications (e.g., headache, infection, bleeding)</li>
-	<li>Send the CSF samples to the laboratory for appropriate analysis</li>
-</ol>
+      <h2>Contraindications (Assess Before LP)</h2>
+      <p><strong>Absolute / major contraindications:</strong></p>
+      <ul>
+        <li>Signs of raised intracranial pressure due to mass lesion:
+          <ul>
+            <li>Focal neurological deficit not explained by previous stroke.</li>
+            <li>New-onset seizures.</li>
+            <li>Reduced level of consciousness or rapidly deteriorating GCS.</li>
+            <li>Papilloedema (if fundoscopy available).</li>
+          </ul>
+          <span class="note">In these cases, CT brain is usually required before LP.</span>
+        </li>
+        <li>Local skin infection at the puncture site.</li>
+        <li>Known or suspected spinal cord mass or spinal epidural abscess at the intended level.</li>
+        <li>Significant coagulopathy or high bleeding risk:
+          <ul>
+            <li>Thrombocytopenia or known platelet dysfunction.</li>
+            <li>Therapeutic anticoagulation (warfarin, DOACs, therapeutic LMWH) or very abnormal INR.</li>
+          </ul>
+        </li>
+        <li>Severe haemodynamic or respiratory instability – stabilise first.</li>
+      </ul>
 
-<script>
-	function goBack() {
-		window.history.back();
-	}
-</script>
+      <p><strong>Relative contraindications (discuss with senior / specialist):</strong></p>
+      <ul>
+        <li>Severe agitation or inability to maintain position safely.</li>
+        <li>Marked spinal deformity or prior spinal surgery at the intended level.</li>
+      </ul>
+
+      <h2>Pre–Procedure Checklist</h2>
+      <ul>
+        <li>Confirm indication and ensure LP will change management.</li>
+        <li>Review history, examination and any neuroimaging done.</li>
+        <li>Check for contraindications (see above), including medications and any known coagulopathy.</li>
+        <li>Arrange relevant blood tests if indicated (platelets, INR, FBC, glucose).</li>
+        <li>Explain the procedure, benefits, risks and alternatives; obtain informed consent from the patient or legal guardian.</li>
+        <li>Check baseline observations (BP, pulse, respiratory rate, SpO₂, temperature).</li>
+        <li>Ensure appropriate monitoring and resuscitation equipment are available.</li>
+        <li>Consider analgesia and/or light sedation in discussion with a senior, especially in children.</li>
+      </ul>
+
+      <h2>Equipment and Supplies</h2>
+      <ol>
+        <li>Personal protective equipment: gloves (sterile for the procedure), mask ± gown.</li>
+        <li>Sterile drapes and sterile gauze.</li>
+        <li>Skin disinfectant (e.g. chlorhexidine or povidone–iodine).</li>
+        <li>Local anaesthetic (e.g. lidocaine) with appropriate syringe and needle for infiltration.</li>
+        <li>Spinal needle with stylet (commonly 22–25G; shorter needles for children).</li>
+        <li>Manometer and three-way tap for measuring opening pressure (if available and indicated).</li>
+        <li>At least 3–4 sterile labelled specimen tubes for CSF (cell count, chemistry, microbiology, additional tests as needed).</li>
+        <li>Adhesive dressing or sterile plaster to cover the puncture site.</li>
+        <li>Request forms with clearly written tests and clinical details.</li>
+      </ol>
+
+      <h2>Lumbar Puncture Procedure Steps</h2>
+      <ol>
+        <li>Verify indication, check contraindications, confirm consent and identity of the patient.</li>
+        <li>Position the patient:
+          <ul>
+            <li>Either lateral decubitus (lying on side with knees drawn up and chin tucked) or sitting, leaning slightly forward.</li>
+            <li>Lateral position is preferred if you plan to measure opening pressure.</li>
+          </ul>
+        </li>
+        <li>Identify the puncture level:
+          <ul>
+            <li>Usually L3–L4 or L4–L5 (line across the iliac crests approximates L4).</li>
+          </ul>
+        </li>
+        <li>Clean the skin with antiseptic in widening circles, allow to dry and apply sterile drapes.</li>
+        <li>Infiltrate the skin and deeper tissues with local anaesthetic along the planned track.</li>
+        <li>Insert the spinal needle with stylet in the midline, bevel parallel to the longitudinal axis of the spine (i.e. bevel facing sideways in lateral position), aiming slightly cephalad.</li>
+        <li>Advance slowly. A “give” may be felt as you pass the ligamentum flavum and enter the subarachnoid space.</li>
+        <li>Remove the stylet:
+          <ul>
+            <li>If CSF flows, attach the manometer (if indicated) and measure opening pressure with the patient relaxed.</li>
+            <li>If no CSF appears, replace the stylet and adjust angle or depth carefully.</li>
+          </ul>
+        </li>
+        <li>Collect CSF into labelled tubes in the order recommended by your lab (e.g. cell count, chemistry, microbiology, additional tests).</li>
+        <li>If needed, measure closing pressure, then replace the stylet and withdraw the needle steadily.</li>
+        <li>Apply gentle pressure with sterile gauze and cover with a dressing.</li>
+      </ol>
+
+      <h2>Post–Procedure Care and Complications</h2>
+      <ul>
+        <li>Observe the patient for at least a short period for:
+          <ul>
+            <li>Headache, back pain, radicular symptoms.</li>
+            <li>Signs of bleeding (new neurological deficit, severe pain) or infection.</li>
+          </ul>
+        </li>
+        <li>Encourage oral fluids as tolerated; routine prolonged bed rest is not strictly required but brief rest is reasonable if symptomatic.</li>
+        <li>Manage post–dural puncture headache with simple analgesia initially; follow local protocols for severe or persistent headache (e.g. consideration of epidural blood patch in appropriate settings).</li>
+        <li>Send CSF (and paired blood samples where needed) promptly to the laboratory with clear clinical information.</li>
+        <li>Review results as soon as available and escalate care (e.g. start or adjust antibiotics, antivirals, admission to high care/ICU) according to findings.</li>
+      </ul>
+
+      <p class="note">
+        Always align your practice with local hospital / national guidelines. When in doubt,
+        discuss with a senior or specialist before proceeding with LP in high-risk patients.
+      </p>
+
+    </div>
+  </main>
 </body>
 </html>

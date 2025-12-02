@@ -3,93 +3,382 @@
 <head>
   <meta charset="UTF-8">
   <title>Obgyn History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
-  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script></head>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      font-weight: normal;
+      line-height: 1.8;
       color: #333;
-      background-image: url("/images/pregnancy.jpg");
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/pregnancy.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      
+    }
+
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .section {
+      margin-bottom: 1.25rem;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: #003366;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      margin: 0.25rem 0 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    ul ul {
+      margin-top: 0.15rem;
+      margin-bottom: 0.15rem;
+    }
+
+    ul ul li {
+      font-size: 0.9rem;
+    }
+
+    .emphasis-link {
+      color: #005daa;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .example {
+      font-size: 0.9rem;
+      background-color: #f5f7fb;
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .red-strong {
+      color: red;
+      font-weight: bolder;
+      font-size: larger;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
     }
   </style>
-  
-  <body>
-      <header>
-      <nav class="logo-container">
-          <div class="logo-container">
-            <h1 class="main-header">Obgyn History</h1>
-            <div class="navbar-icons">
-              <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-            </div>
-            <button class="back-button" onclick="goBack()">Back</button>
-          </div>
-        </nav>
-      </header>
-      <main>
-          <section class="section">
-              <h2 class="subheading">Menstrual history</h2>
-              <p>This includes the age at which the patient started menstruating, the length of their menstrual cycle, and the duration and flow of their periods. <br> It is also important to ask about any irregularities or changes in the patient's menstrual cycle.</p>
-              
-            </section>
-            <section class="section">
-                <h2 class="subheading">Obstetric history</h2>
-                <p>This includes the number of pregnancies and live births, as well as any miscarriages, abortions, or stillbirths. <br> It is also important to ask about any complications during pregnancy, labor, or delivery.</p>
-                <section class="section">
-                  <h3>Parity</h3>
-                  <p>Parity is the number of live births beyond <em style="color:red; font-weight:bolder; font-size:larger">24</em> weeks gestations.</p>
-                </section>
-                
-                <section class="section">
-                  <h3>Gravidity</h3>
-                  <p>Gravidity is the number of <em style="color:red; font-weight:bolder; font-size:larger">pregnancies</em> in total with the number of abortions and stillbirths displayed separately.</p>
-                </section>
-                
-                <section class="section">
-                  <h3>Example</h3>
-                  <p>For example, if a woman has had <em style="color:red; font-weight:bolder; font-size:larger">2</em>  live births but <em style="color:red; font-weight:bolder; font-size:larger">4</em>  total pregnancies we could write it as <em style="color:red; font-weight:bolder; font-size:larger">P2 G4</em> , and because 2 of the pregnancies did not result in live births <br> it would be better to write it as <em style="color:red; font-weight:bolder; font-size:larger">P2 G 2 + 2 </em> </p>
-                  <p>If the patient is currently pregnant with her <em style="color:red; font-weight:bolder; font-size:larger">First</em> child we write it as <br> <em style="color:red; font-weight:bolder; font-size:larger">2</em>  live births but <em style="color:red; font-weight:bolder; font-size:larger">P0 G1</em></p>
-                  <p>But if she is currently pregnant but has been pregnant before <em style="color:red; font-weight:bolder; font-size:larger">without</em> a live birth, but had an abortion or stillbirths, it would be her second pregnancy so we would then write <br> <em style="color:red; font-weight:bolder; font-size:larger">P0 G 1 + 1</em> or  <em style="color:red; font-weight:bolder; font-size:larger">P0 G2</em>.</p>
-                  <p>The + sign just indicates the number of abortions or stillbirths, and provides clarity</p>
-                  <p>You can even divide it up further, For example, if a woman has had <em style="color:red; font-weight:bolder; font-size:larger">2</em> live births and <em style="color:red; font-weight:bolder; font-size:larger">2</em> spontaneous abortions, it may be written as <em style="color:red; font-weight:bolder; font-size:larger">"P2 G4 (2-0-2-0)"</em> </p>
-                  <p>Where the numbers in parentheses indicate the number of full-term pregnancies, preterm pregnancies, abortions, and living children, respectively.</p>
-                  <p>As a final, more Illustrative example of this, <br>A patient with <em style="color:red; font-weight:bolder; font-size:larger">6</em> previous pregnancies.She is Currently Pregnant. So &#40;<em style="color:red; font-weight:bolder; font-size:larger">6 + 1</em>&#41; <br> Has had <em style="color:red; font-weight:bolder; font-size:larger">3</em> full-term pregnancies, <br> <em style="color:red; font-weight:bolder; font-size:larger">1</em> Preterm pregnancy ,<br>  &amp; <em style="color:red; font-weight:bolder; font-size:larger">2</em> spontaneous abortions, <br> &amp; only <em style="color:red; font-weight:bolder; font-size:larger">2</em> of her children are alive, would be written as <br><em style="color:red; font-weight:bolder; font-size:larger">P3 G7 &#40; 3-1-2-2 &#41;</em></p> 
-                  <p>You can also use the Parity and Gravidity calculator by clicking <a href="/adult/parityGravidityCalculator.html" class="emphasis-link">here</a>.</p>
-                </section>
-              </section>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Obgyn History</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;" alt="House icon"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-              <section class="section">
-                <h2 class="subheading">Contraceptive  history</h2>
-                <p>This includes the type of contraception used by the patient, including hormonal methods, barrier methods, or intrauterine devices (IUDs). <br> It is also important to ask about any prior contraceptive failures or side effects.</p>
-              </section>
+  <main class="page-wrapper">
+    <div class="container">
 
-              <section class="section">
-                <h2 class="subheading">Sexual history</h2>
-                <p>This includes the patient's sexual orientation, number of partners, and any history of sexually transmitted infections (STIs). <br> It is also important to ask about any pain, discomfort, or changes in sexual function.</p>
-              </section>
+      <section class="section">
+        <h2 class="subheading">Menstrual History</h2>
+        <p>
+          Ask about the onset and pattern of menstruation, and any recent changes. This
+          helps with cycle timing, fertility, and many gynaecological diagnoses.
+        </p>
+        <ul>
+          <li>Age at menarche (first period).</li>
+          <li>Cycle length (e.g. 28 days), regular vs irregular.</li>
+          <li>Duration of bleeding (e.g. 4–5 days per cycle).</li>
+          <li>Flow: light / normal / heavy, presence of clots, flooding, need to change pads frequently.</li>
+          <li>Intermenstrual or postcoital bleeding.</li>
+          <li>Dysmenorrhoea: severity, timing, response to analgesia.</li>
+          <li>Any recent change in cycle pattern or symptoms.</li>
+        </ul>
+      </section>
 
-              <section class="section">
-                <h2 class="subheading">Gynecological history</h2>
-                <p>This includes any prior gynecologic conditions, such as infections, fibroids, polyps, or endometriosis. <br> It is also important to ask about any surgeries or procedures related to the reproductive system.</p>
-              </section>
+      <section class="section">
+        <h2 class="subheading">Obstetric History</h2>
+        <p>
+          Document previous pregnancies and outcomes. This is vital for risk assessment in
+          the current pregnancy.
+        </p>
+        <ul>
+          <li>Number of previous pregnancies, including miscarriages, ectopics and terminations.</li>
+          <li>Number of live births and living children.</li>
+          <li>Gestation of each birth (term / preterm) and mode of delivery (SVD, assisted, LSCS).</li>
+          <li>Any complications in pregnancy, labour or postpartum (e.g. PET, PPH, sepsis, neonatal ICU admission).</li>
+        </ul>
 
-              <section class="section">
-                <h2 class="subheading">Family history</h2>
-                <p>This includes any history of gynecologic or breast cancer in the patient's immediate family.</p>
-              </section>
+        <h3>Gravidity</h3>
+        <p>
+          Gravidity is the total number of <span class="red-strong">pregnancies</span>,
+          regardless of outcome (including current pregnancy and miscarriages/ectopics/terminations).
+        </p>
 
-              <section class="section">
-                <h2 class="subheading">Expected Delivery Date Calculator</h2>
-                <p>Yes, the expected delivery date (EDD) calculated based on the first day of the last menstrual period (LMP) can be used to estimate the expected symphysis-fundal height (SFH).</p>
-                <p>The SFH measurement is a non-invasive method used to assess fetal growth during pregnancy. It is measured from the top of the pubic bone (symphysis pubis) to the top of the uterus (fundus) and is usually expressed in centimeters. The measurement is taken regularly during prenatal care appointments to monitor fetal growth and ensure that it is consistent with the gestational age.</p>
-                <p>Typically, the SFH measurement is expected to correspond to the gestational age of the fetus. For example, if the EDD calculated based on the LMP is January 8, 2023, then the expected gestational age on August 1, 2022, would be approximately 24 weeks. Therefore, the expected SFH measurement for a 24-week gestational age would be around 24 cm, although this can vary based on factors such as maternal body habitus, fetal position, and amniotic fluid volume.</p>
-                <p>Go to this <a href="/adult/expectedDeliveryDate.html" class="emphasis-link">Page</a> to use the EDD Calculator.</p>
-              </section>
+        <h3>Parity</h3>
+        <p>
+          Parity is the number of pregnancies that reached
+          <span class="red-strong">viable gestation (e.g. ≥ 24&nbsp;weeks)</span>,
+          usually counted as births (alive or stillborn).
+        </p>
 
+        <h3>Common Notation (G and P)</h3>
+        <p>
+          There are different styles. The important thing is to be consistent with your
+          department. A simple system:
+        </p>
+        <ul>
+          <li><strong>Gx Py+z</strong> where:
+            <ul>
+              <li><strong>G</strong> = total pregnancies.</li>
+              <li><strong>P</strong> = number of births ≥ 24 weeks.</li>
+              <li><strong>y+z</strong> = number of abortions / early losses (optional extra detail).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="example">
+          <p>
+            <strong>Example 1:</strong><br>
+            A woman has had <span class="red-strong">2</span> live births at term and
+            <span class="red-strong">2</span> early miscarriages (all pregnancies completed).
+          </p>
+          <p>
+            Total pregnancies = <span class="red-strong">4</span> → <strong>G4</strong><br>
+            Births ≥ 24 weeks = <span class="red-strong">2</span> → <strong>P2</strong><br>
+            Two losses &lt; 24 weeks → often written as <strong>G4 P2+2</strong>.
+          </p>
+        </div>
+
+        <div class="example">
+          <p>
+            <strong>Example 2:</strong><br>
+            Currently pregnant for the <span class="red-strong">first</span> time, no prior
+            pregnancies.
+          </p>
+          <p>
+            Total pregnancies (including this one) = <span class="red-strong">1</span><br>
+            No previous births ≥ 24 weeks → <strong>G1 P0</strong>.
+          </p>
+        </div>
+
+        <div class="example">
+          <p>
+            <strong>Example 3:</strong><br>
+            A patient has had <span class="red-strong">6</span> previous pregnancies and is now
+            pregnant again (total = 7). Past outcomes:
+          </p>
+          <ul>
+            <li>3 full-term births.</li>
+            <li>1 preterm birth.</li>
+            <li>2 early miscarriages (&lt; 24 weeks).</li>
+            <li>2 living children.</li>
+          </ul>
+          <p>
+            Total pregnancies = <strong>G7</strong> (including current).<br>
+            Births ≥ 24 weeks = 4 (3 term + 1 preterm) → <strong>P4</strong>.
+          </p>
+          <p>
+            In the 4-number notation (Term–Preterm–Abortions–Living):<br>
+            <strong>P (3–1–2–2)</strong>.
+          </p>
+        </div>
+
+        <p>
+          You can also use the Parity and Gravidity calculator by clicking
+          <a href="/adult/parityGravidityCalculator.html" class="emphasis-link">here</a>.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Contraceptive History</h2>
+        <p>
+          Ask about current and previous contraception, and any problems or failures.
+        </p>
+        <ul>
+          <li>Current method (e.g. pill, injection, implant, IUD, condoms, none).</li>
+          <li>Duration of use, adherence, and satisfaction with current method.</li>
+          <li>Previous methods and reasons for stopping (side effects, bleeding changes, access issues).</li>
+          <li>Any history of contraceptive failure and resulting pregnancy.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Sexual History</h2>
+        <p>
+          Take a respectful, non-judgmental sexual history. Explain why you are asking and
+          reassure about confidentiality (within legal limits).
+        </p>
+        <ul>
+          <li>Current sexual activity and partners (e.g. single partner, multiple partners).</li>
+          <li>Use of condoms or other protection against STIs.</li>
+          <li>Past or current sexually transmitted infections (STIs) and treatments.</li>
+          <li>Dyspareunia (pain with intercourse), vaginal dryness, postcoital bleeding.</li>
+          <li>Any history of sexual trauma, coercion or concern about safety (handle with care and follow GBV protocols where relevant).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Gynaecological History</h2>
+        <p>
+          Ask about previous diagnoses, symptoms and interventions involving the female
+          reproductive system.
+        </p>
+        <ul>
+          <li>Previous pelvic infections (e.g. PID), STIs, or chronic vaginal discharge.</li>
+          <li>Known fibroids, ovarian cysts, endometriosis or polyps.</li>
+          <li>Abnormal cervical smears and follow-up (if available).</li>
+          <li>Any gynaecological operations (e.g. LSCS, myomectomy, hysterectomy, LEEP, oophorectomy).</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Family History</h2>
+        <p>
+          Focus on conditions that increase risk in pregnancy or suggest genetic risk.
+        </p>
+        <ul>
+          <li>Breast, ovarian, uterine or colon cancer in first-degree relatives.</li>
+          <li>Diabetes, hypertension, pre-eclampsia or eclampsia in close relatives.</li>
+          <li>Recurrent miscarriages, stillbirths, or known genetic disorders.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="subheading">Expected Delivery Date (EDD) and Symphysis–Fundal Height (SFH)</h2>
+        <p>
+          The EDD is usually calculated from the first day of the last menstrual period
+          (LMP), assuming a regular 28-day cycle, or from an early ultrasound. Once
+          gestational age is known, SFH can help assess fetal growth.
+        </p>
+        <ul>
+          <li>
+            SFH is measured from the symphysis pubis to the top of the uterine fundus,
+            in centimetres.
+          </li>
+          <li>
+            From about 20 to 36 weeks, the SFH in centimetres usually approximates
+            gestational age in weeks (± 2&nbsp;cm).
+          </li>
+          <li>
+            Deviations (too small or too large for dates) may suggest growth restriction,
+            multiple pregnancy, polyhydramnios, oligohydramnios or incorrect dates, and
+            should be correlated with ultrasound where available.
+          </li>
+        </ul>
+        <p>
+          Go to this <a href="/adult/expectedDeliveryDate.html" class="emphasis-link">Page</a>
+          to use the EDD Calculator.
+        </p>
+      </section>
+
+      <section class="section">
+        <p class="note">
+          This page is a guide to structure your Obgyn history in the ED. Always adapt
+          your questions to the clinical context and to the patient in front of you, and
+          follow local protocols and senior advice.
+        </p>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>

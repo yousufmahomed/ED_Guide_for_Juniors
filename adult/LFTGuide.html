@@ -1,195 +1,477 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>LFT Guide</title>
   <meta charset="UTF-8">
+  <title>LFT Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/bloodTestGuides.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ), url("/images/bloodTestGuides.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    h2 {
-      font-size: 20px;
+    header {
+      background-color: #005daa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .back-button {
+      background-color: #ffffff;
+      color: #005daa;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2.heading {
+      margin-top: 0;
+      font-size: 1.4rem;
       color: #003366;
-      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #003366;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-weight: normal;
+      font-size: 0.95rem;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      font-style: italic;
+      font-weight: normal;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.75rem 1.25rem;
+      padding: 0;
+    }
+
+    ul li {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5rem;
+      margin-bottom: 0.3rem;
+      font-weight: normal;
+    }
+
+    .section {
+      margin-bottom: 1.25rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
-      margin-bottom: 20px;
+      min-width: 640px; /* allow horizontal scroll on small screens */
+      margin-bottom: 0.5rem;
+      font-weight: normal;
+      font-size: 0.9rem;
     }
 
     th, td {
       border: 1px solid #ccc;
       text-align: left;
-      padding: 8px;
+      padding: 6px 8px;
+      vertical-align: top;
     }
 
     th {
       background-color: navy;
       color: whitesmoke;
+      font-weight: bold;
     }
 
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    .fullscreen-image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      cursor: zoom-out;
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
     }
-    
-  
   </style>
 </head>
-<header>
-  <div class="logo-container">
-      <h1 style="color: antiquewhite;">LFT Guide</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>LFT Guide</h1>
+    </div>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" style="color: whitesmoke;"></i>
+      </a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-<body>
-        <div class="section">
-            <h2 class="heading">Liver Function Tests</h2>
-            <p>Liver function tests (LFTs) are a group of blood tests that are used to assess the liver's overall health and function. These tests can help identify liver damage or disease, monitor the effectiveness of treatment, and detect the presence of liver cancer.</p>
-            <h2 class="subheading">Types of Liver Function Tests</h2>
-            <p>There are several types of liver function tests that may be ordered by a doctor:</p>
-            <ul>
-              <li><strong>Alanine aminotransferase (ALT):</strong> measures the level of ALT, an enzyme found primarily in the liver. Elevated levels may indicate liver damage or disease, such as hepatitis or cirrhosis.</li>
-              <li><strong>Aspartate aminotransferase (AST):</strong> measures the level of AST, an enzyme found in the liver, heart, muscles, and other tissues. Elevated levels may indicate liver damage or disease, but may also be caused by heart disease or muscle damage.</li>
-              <li><strong>Alkaline phosphatase (ALP):</strong> measures the level of ALP, an enzyme found in the liver, bile ducts, and bones. Elevated levels may indicate liver or bone disease, or blockage of the bile ducts.</li>
-              <li><strong>Total bilirubin (TBIL):</strong> measures the level of bilirubin, a yellowish substance produced when red blood cells break down. Elevated levels may indicate liver damage or disease, or obstruction of the bile ducts.</li>
-              <li><strong>Albumin:</strong> measures the level of albumin, a protein produced by the liver. Low levels may indicate liver damage or disease, malnutrition, or kidney disease.</li>
-              <li><strong>Prothrombin time (PT):</strong> measures the time it takes for blood to clot. Elevated levels may indicate liver damage or disease, as the liver produces many of the proteins necessary for blood clotting.</li>
-              <li><strong>Gamma-glutamyl transferase (GGT):</strong> measures the level of GGT, an enzyme found in the liver and other tissues. Elevated levels may indicate liver damage or disease, or excessive alcohol consumption.</li>
-            </ul>
-            <h2 class="subheading">Interpreting Liver Function Tests</h2>
-            <p>Interpreting liver function test results can be complex, and requires careful consideration of multiple factors, such as the patient's medical history, current symptoms, and other diagnostic tests. However, here are some general guidelines for interpreting LFTs:</p>
+
+  <main class="page-wrapper">
+    <div class="container">
+      <div class="section">
+        <h2 class="heading">Liver Function Tests</h2>
+        <p>
+          “Liver function tests” (LFTs) are a group of blood tests that reflect different
+          aspects of liver and biliary tract health. In practice they help you:
+        </p>
+        <ul>
+          <li>Detect and characterise liver injury (hepatocellular vs cholestatic vs mixed).</li>
+          <li>Assess synthetic function (albumin, clotting factors).</li>
+          <li>Monitor progression or resolution of liver disease and the effect of treatment.</li>
+        </ul>
+        <p class="note">
+          Always interpret LFTs in context of the patient’s history, examination, medicines
+          and local reference ranges.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="subheading">Common LFT Components</h2>
+        <p>
+          The table below summarises what each main test reflects and typical causes of
+          abnormal results.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Predominantly Reflects</th>
+              <th>Common Causes of Elevation</th>
+              <th>Comments / Low Values</th>
+            </tr>
+            <tr>
+              <td>Alanine aminotransferase (ALT)</td>
+              <td>
+                Hepatocellular injury (enzyme mainly in liver cells).
+              </td>
+              <td>
+                Acute viral hepatitis, drug-induced liver injury (e.g. paracetamol),
+                ischaemic hepatitis (“shock liver”), non-alcoholic fatty liver disease,
+                autoimmune hepatitis, chronic viral hepatitis.
+              </td>
+              <td>
+                Very low ALT is rarely clinically significant. Mild elevations can occur
+                with metabolic syndrome or medications.
+              </td>
+            </tr>
+            <tr>
+              <td>Aspartate aminotransferase (AST)</td>
+              <td>
+                Hepatocellular injury, but also present in muscle and heart.
+              </td>
+              <td>
+                Similar to ALT. AST:ALT ratio &gt; 2 suggests alcoholic liver disease;
+                marked rises (&gt; 1000 IU/L) can be seen in acute viral or ischaemic injury.
+                Elevation can also be from muscle injury (myositis, rhabdomyolysis).
+              </td>
+              <td>
+                Low AST is usually not significant. Always consider muscle or cardiac
+                sources if CK or troponins are abnormal.
+              </td>
+            </tr>
+            <tr>
+              <td>Alkaline phosphatase (ALP)</td>
+              <td>
+                Cholestasis (bile ducts) and bone turnover.
+              </td>
+              <td>
+                Cholestatic liver disease and biliary obstruction (stones, strictures,
+                tumours), infiltrative liver disease (metastases, granulomas), pregnancy,
+                bone disease (Paget’s disease, bone metastases, healing fractures).
+              </td>
+              <td>
+                Low ALP is uncommon; may be seen in severe malnutrition,
+                zinc or magnesium deficiency, hypothyroidism, or rare conditions such
+                as hypophosphatasia.
+              </td>
+            </tr>
+            <tr>
+              <td>Gamma-glutamyl transferase (GGT)</td>
+              <td>
+                Biliary enzyme; sensitive but not specific.
+              </td>
+              <td>
+                Cholestasis, alcohol use, many hepatotoxic drugs, non-alcoholic fatty liver
+                disease, pancreatic or biliary disease.
+              </td>
+              <td>
+                Often used together with ALP – a raised ALP with raised GGT suggests
+                hepatobiliary origin. Low GGT is usually not clinically significant.
+              </td>
+            </tr>
+            <tr>
+              <td>Bilirubin (total)</td>
+              <td>
+                Haem breakdown and hepatic excretion.
+              </td>
+              <td>
+                Pre-hepatic: haemolysis, large haematomas.<br>
+                Hepatic: hepatitis, cirrhosis, drugs, sepsis.<br>
+                Post-hepatic: biliary obstruction (stones, tumours, strictures).
+              </td>
+              <td>
+                Low bilirubin is not usually clinically relevant. An isolated mild
+                unconjugated rise with normal other tests may suggest Gilbert’s syndrome.
+              </td>
+            </tr>
+            <tr>
+              <td>Albumin</td>
+              <td>
+                Liver synthetic function and chronic disease (long half-life).
+              </td>
+              <td>
+                “High” albumin is usually due to haemoconcentration/dehydration.
+              </td>
+              <td>
+                Low albumin suggests chronic liver disease, malnutrition, nephrotic
+                syndrome, protein-losing enteropathy or chronic inflammation. It changes
+                slowly and is less useful in acute illness.
+              </td>
+            </tr>
+            <tr>
+              <td>Prothrombin time / INR</td>
+              <td>
+                Liver synthesis of clotting factors (short half-life).
+              </td>
+              <td>
+                Prolonged PT/INR indicates impaired hepatic synthetic function
+                (e.g. acute severe hepatitis, decompensated cirrhosis), vitamin K
+                deficiency, warfarin therapy or DIC.
+              </td>
+              <td>
+                This is a key marker of severity in acute liver failure and chronic
+                liver disease. Correction with vitamin K helps distinguish synthetic
+                failure from vitamin K deficiency.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <p class="note">
+          Reference ranges vary between laboratories. Always check your local lab
+          values rather than relying on fixed cut-offs.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="subheading">Interpreting LFT Patterns</h2>
+        <p>
+          Instead of looking at each value in isolation, look for overall patterns:
+          hepatocellular, cholestatic (“surgical-type” jaundice), mixed or isolated
+          abnormalities.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <tr>
+              <th>Pattern</th>
+              <th>ALT / AST</th>
+              <th>ALP / GGT</th>
+              <th>Bilirubin</th>
+              <th>Albumin / PT (synthetic)</th>
+              <th>Typical Causes</th>
+            </tr>
+            <tr>
+              <td>Normal</td>
+              <td>Within reference range</td>
+              <td>Within reference range</td>
+              <td>Normal (&lt; ~20 μmol/L)</td>
+              <td>Normal</td>
+              <td>
+                No biochemical evidence of liver disease, but does not exclude early or
+                mild disease.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Predominantly hepatocellular<br>
+                (“medical jaundice” pattern)
+              </td>
+              <td>
+                Markedly raised (often &gt; 10× normal), usually &gt; ALP
+              </td>
+              <td>
+                Normal or mildly raised (up to ~2–3×)
+              </td>
+              <td>
+                Normal or raised (depending on severity and duration)
+              </td>
+              <td>
+                May be normal early; can be impaired in severe or chronic disease
+                (low albumin, prolonged PT/INR).
+              </td>
+              <td>
+                Acute viral hepatitis, drug-induced liver injury (e.g. paracetamol),
+                ischaemic hepatitis, autoimmune hepatitis, acute alcoholic hepatitis.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Predominantly cholestatic<br>
+                (“surgical jaundice” pattern)
+              </td>
+              <td>
+                Normal or mildly elevated (often &lt; 5× normal)
+              </td>
+              <td>
+                Markedly raised ALP and GGT (often &gt; 3× normal)
+              </td>
+              <td>
+                Raised conjugated bilirubin
+              </td>
+              <td>
+                Usually preserved early; may fall or PT may rise in prolonged obstruction
+                or underlying chronic liver disease.
+              </td>
+              <td>
+                Extra-hepatic biliary obstruction (stones, strictures, pancreatic or
+                biliary tumours), primary sclerosing cholangitis, primary biliary
+                cholangitis, drug-induced cholestasis.
+              </td>
+            </tr>
+            <tr>
+              <td>Mixed hepatocellular &amp; cholestatic</td>
+              <td>
+                Both ALT/AST and ALP/GGT raised significantly
+              </td>
+              <td>
+                Both sets of enzymes raised
+              </td>
+              <td>
+                Often raised
+              </td>
+              <td>
+                May be normal or impaired depending on severity
+              </td>
+              <td>
+                Many drug reactions, advanced biliary disease, infiltrative liver disease,
+                severe alcoholic hepatitis, sepsis-associated liver dysfunction.
+              </td>
+            </tr>
+            <tr>
+              <td>Isolated hyperbilirubinaemia</td>
+              <td>Normal</td>
+              <td>Normal</td>
+              <td>
+                Raised (unconjugated or conjugated)
+              </td>
+              <td>Usually normal</td>
+              <td>
+                Unconjugated: haemolysis, Gilbert’s syndrome, resorbing haematoma.<br>
+                Conjugated: early obstruction or hepatocellular disease before
+                enzymes rise.
+              </td>
+            </tr>
+            <tr>
+              <td>Synthetic failure (advanced disease)</td>
+              <td>
+                May be only mildly elevated or even normal
+              </td>
+              <td>
+                Normal, high or low depending on cause
+              </td>
+              <td>
+                Often raised
+              </td>
+              <td>
+                Low albumin and prolonged PT/INR – key markers of poor prognosis
+              </td>
+              <td>
+                Decompensated cirrhosis, acute liver failure, severe sepsis with
+                hepatic dysfunction.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <p class="note">
+          In the ED, the most urgent questions are: “Is this acute severe liver injury?”,
+          “Is there biliary obstruction needing imaging/surgical input?” and “Is
+          synthetic function impaired?”. The pattern and the PT/INR will usually guide you.
+        </p>
+      </div>
     </div>
-    <div class="section">
-<table>
-    <tr>
-      <th>Parameter</th>
-      <th>Terminology for Increase</th>
-      <th>Terminology for Decrease</th>
-      <th>Differential Diagnosis for Increase</th>
-      <th>Differential Diagnosis for Decrease</th>
-    </tr>
-    <tr>
-      <td>Alanine Aminotransferase (ALT)</td>
-      <td>Elevated ALT (&gt; 50 U/L)</td>
-      <td>Low ALT (&lt; 7 U/L)</td>
-      <td>Hepatitis, liver injury, liver disease, alcohol abuse, drug toxicity</td>
-      <td>Malnutrition, low protein diet, vitamin B6 deficiency</td>
-    </tr>
-    <tr>
-      <td>Aspartate Aminotransferase (AST)</td>
-      <td>Elevated AST (&gt; 40 U/L)</td>
-      <td>Low AST (&lt; 5 U/L)</td>
-      <td>Hepatitis, liver injury, liver disease, alcohol abuse, drug toxicity</td>
-      <td>Malnutrition, low protein diet</td>
-    </tr>
-    <tr>
-      <td>Alkaline Phosphatase (ALP)</td>
-      <td>Elevated ALP (&gt; 130 U/L)</td>
-      <td>Low ALP (&lt; 20 U/L)</td>
-      <td>Liver disease, biliary obstruction, bone disease, healing fractures, pregnancy</td>
-      <td>Vitamin D deficiency, malnutrition, hypothyroidism</td>
-    </tr>
-    <tr>
-      <td>Bilirubin</td>
-      <td>Elevated bilirubin (&gt; 20 &micro;mol/L)</td>
-      <td>Low bilirubin (&lt; 4 &micro;mol/L)</td>
-      <td>Liver disease, bile duct obstruction, hemolytic anemia, gallstones, hepatitis, cirrhosis</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Gamma-Glutamyl Transferase (GGT)</td>
-      <td>Elevated GGT (&gt; 60 U/L)</td>
-      <td>Low GGT (&lt; 5 U/L)</td>
-      <td>Alcohol abuse, liver disease, bile duct obstruction, drug toxicity, heart failure</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Albumin</td>
-      <td>Low albumin (&lt; 35 g/L)</td>
-      <td>High albumin (&gt; 50 g/L)</td>
-      <td>Liver disease, malnutrition, kidney disease, inflammation, cancer, heart failure</td>
-      <td>Dehydration, overhydration, pregnancy</td>
-    </tr>
-  </table>
-</div>
-<div class="section">
-    <h2 class="subheading">Medical Vs Surgical Jaundice</h2>
-    <table>
-        <tr>
-          <th>Liver Pathology</th>
-          <th>Bilirubin (μmol/L)</th>
-          <th>ALP (IU/L)</th>
-          <th>AST (IU/L)</th>
-          <th>ALT (IU/L)</th>
-          <th>Albumin (g/L)</th>
-        </tr>
-        <tr>
-          <td>Normal</td>
-          <td>3.4-17.1</td>
-          <td>30-120</td>
-          <td>10-40</td>
-          <td>10-40</td>
-          <td>35-50</td>
-        </tr>
-        <tr>
-          <td>Medical Jaundice</td>
-          <td>≥34</td>
-          <td>≤150</td>
-          <td>≤300</td>
-          <td>≤300</td>
-          <td>≤35</td>
-        </tr>
-        <tr>
-          <td>Surgical Jaundice</td>
-          <td>≥51</td>
-          <td>≥200</td>
-          <td>≥150</td>
-          <td>≥150</td>
-          <td>≤30</td>
-        </tr>
-    </table>
-</div>
+  </main>
 </body>
 </html>
-  
-  
-  
-  
-  
-  

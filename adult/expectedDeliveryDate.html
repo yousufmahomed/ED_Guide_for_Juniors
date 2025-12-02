@@ -7,123 +7,315 @@
     <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <style>
-        body {
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 16px;
-          font-weight: bold;
-          line-height: 2;
-          color: #333;
-          background-image: url("/images/delivery.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-        header {
-          background-color: #005daa;
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 1rem;
-        }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        min-height: 100vh;
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.9)
+        ), url("/images/delivery.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      header {
+        background-color: #005daa;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .navbar-icons {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .back-button {
+        background-color: #ffffff;
+        color: #005daa;
+        border: none;
+        border-radius: 4px;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      .back-button:hover {
+        background-color: #e6e6e6;
+      }
+
+      .page-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 600px;
+        background-color: rgba(255, 255, 255, 0.98);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .container h2 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: #005daa;
+        font-size: 1.4rem;
+      }
+
+      .helper-text {
+        font-weight: normal;
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      label {
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      input[type="date"],
+      input[type="number"] {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      button[type="button"] {
+        background-color: #005daa;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        flex: 1 1 200px;
+      }
+
+      button[type="button"]:hover {
+        background-color: #003b72;
+      }
+
+      p#result {
+        margin-top: 1.25rem;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      .error {
+        color: #b3261e;
+      }
+
+      @media (max-width: 600px) {
         header h1 {
-          font-size: 1.5rem;
-          margin: 0;
-        }
-        .container {
-          max-width: 800px;
-          margin: 2rem auto;
-          padding: 0 1rem;
-        }
-        form {
-          display: flex;
-          flex-direction: column;
-          margin: 2rem 0;
-        }
-        label {
-          margin-bottom: 0.5rem;
           font-size: 1.1rem;
         }
-        input[type="date"],
-        input[type="number"] {
-          padding: 0.5rem;
-          font-size: 1rem;
-          border: 1px solid #ddd;
-          border-radius: 5px;
-          margin-bottom: 1rem;
+
+        .container {
+          padding: 1rem;
+          border-radius: 10px;
         }
+
         button[type="button"] {
-          background-color: #005daa;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          padding: 0.5rem 1rem;
-          font-size: 1rem;
-          cursor: pointer;
+          font-size: 0.95rem;
         }
-        button[type="button"]:hover {
-          background-color: #003b72;
-        }
-        p#result {
-          margin-top: 1rem;
-          font-size: 1.2rem;
-        }
-      </style>
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav class="logo-container">
         <div class="logo-container">
           <h1 class="main-header">Expected Delivery Date Calculator</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i style="color: whitesmoke;" class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
         </div>
       </nav>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i style="color: whitesmoke;" class="fa-solid fa-house" alt="House icon"></i>
+        </a>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
     </header>
-    <h1>Expected Delivery Date Calculator</h1>
-    <form>
-      <label for="lastPeriodDate">First Day of Last Menstrual Period:</label>
-      <input type="date" id="lastPeriodDate" name="lastPeriodDate">
-      <br>
-      <button type="button" onclick="calculateExpectedDeliveryDate()">Calculate Expected Delivery Date</button>
-      <br>
-      <br>
-      <label for="currentDate">Current Date:</label>
-      <input type="date" id="currentDate" name="currentDate">
-      <br>
-      <button type="button" onclick="calculateGestationalAge()">Calculate Gestational Age</button>
-    </form>
-    <p id="result"></p>
+
+    <main class="page-wrapper">
+      <div class="container">
+        <h2>Expected Delivery Date & Gestational Age</h2>
+        <p class="helper-text">
+          Based on the first day of the last menstrual period (LMP).
+          This is an estimate and does not replace clinical assessment.
+        </p>
+
+        <form id="eddForm" onsubmit="event.preventDefault();">
+          <div>
+            <label for="lastPeriodDate">First Day of Last Menstrual Period (LMP):</label>
+            <input type="date" id="lastPeriodDate" name="lastPeriodDate">
+          </div>
+
+          <div>
+            <label for="currentDate">
+              Current Date:
+              <span style="font-weight: normal; font-size: 0.9rem;">
+                (leave blank to use today's date)
+              </span>
+            </label>
+            <input type="date" id="currentDate" name="currentDate">
+          </div>
+
+          <div class="button-group">
+            <button type="button" onclick="calculateExpectedDeliveryDate()">
+              Calculate Expected Delivery Date
+            </button>
+            <button type="button" onclick="calculateGestationalAge()">
+              Calculate Gestational Age
+            </button>
+          </div>
+        </form>
+
+        <p id="result"></p>
+      </div>
+    </main>
+
     <script>
-      function calculateExpectedDeliveryDate() {
-        // Get input value
-        const lastPeriodDate = new Date(document.getElementById("lastPeriodDate").value);
-        
-        // Calculate expected delivery date
-        const expectedDeliveryDate = new Date(lastPeriodDate.getTime() - 7 * 86400000 + 280 * 86400000);
-    
-        // Display result
-        const resultElement = document.getElementById("result");
-        const formattedExpectedDeliveryDate = expectedDeliveryDate.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
-        resultElement.innerHTML = `Your expected delivery date is ${formattedExpectedDeliveryDate}.`;
+      const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+      function getDateFromInput(id) {
+        const value = document.getElementById(id).value;
+        if (!value) return null;
+
+        // Force local midnight to avoid timezone oddities
+        const date = new Date(value + "T00:00:00");
+        return isNaN(date.getTime()) ? null : date;
       }
-      
-      function calculateGestationalAge() {
-        // Get input values
-        const lastPeriodDate = new Date(document.getElementById("lastPeriodDate").value);
-        const currentDate = new Date(document.getElementById("currentDate").value);
-    
-        // Calculate gestational age
-        const gestationalAge = Math.floor((currentDate.getTime() - lastPeriodDate.getTime() + 2419200000) / 604800000);
-    
-        // Display result
+
+      function showError(message) {
         const resultElement = document.getElementById("result");
-        resultElement.innerHTML = `Your gestational age is ${gestationalAge} weeks.`;
+        resultElement.classList.add("error");
+        resultElement.textContent = message;
+      }
+
+      function clearError() {
+        const resultElement = document.getElementById("result");
+        resultElement.classList.remove("error");
+        resultElement.textContent = "";
+      }
+
+      // Naegele’s rule: LMP + 280 days (40 weeks)
+      function calculateExpectedDeliveryDate() {
+        clearError();
+
+        const lastPeriodDate = getDateFromInput("lastPeriodDate");
+        if (!lastPeriodDate) {
+          showError("Please enter the first day of the last menstrual period (LMP).");
+          return;
+        }
+
+        const expectedDeliveryDate = new Date(
+          lastPeriodDate.getTime() + 280 * MS_PER_DAY
+        );
+
+        const formattedEDD = expectedDeliveryDate.toLocaleDateString("en-GB", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = `The estimated delivery date (EDD) is ${formattedEDD}.`;
+      }
+
+      // Gestational age from LMP: difference between current date and LMP
+      function calculateGestationalAge() {
+        clearError();
+
+        const lastPeriodDate = getDateFromInput("lastPeriodDate");
+        if (!lastPeriodDate) {
+          showError("Please enter the first day of the last menstrual period (LMP).");
+          return;
+        }
+
+        let currentDate = getDateFromInput("currentDate");
+        if (!currentDate) {
+          // Use today's date if none provided
+          const today = new Date();
+          currentDate = new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            today.getDate()
+          );
+        }
+
+        if (currentDate < lastPeriodDate) {
+          showError("Current date cannot be before the last menstrual period.");
+          return;
+        }
+
+        const diffDays = Math.floor(
+          (currentDate.getTime() - lastPeriodDate.getTime()) / MS_PER_DAY
+        );
+
+        const weeks = Math.floor(diffDays / 7);
+        const days = diffDays % 7;
+
+        const formattedCurrent = currentDate.toLocaleDateString("en-GB", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        const resultElement = document.getElementById("result");
+        if (days === 0) {
+          resultElement.textContent =
+            `The gestational age on ${formattedCurrent} is approximately ${weeks} weeks.`;
+        } else {
+          resultElement.textContent =
+            `The gestational age on ${formattedCurrent} is approximately ` +
+            `${weeks} weeks and ${days} days.`;
+        }
       }
     </script>
   </body>
 </html>
+
 
 

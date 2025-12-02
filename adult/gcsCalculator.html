@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/genralPages.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glasgow Coma Scale Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
     <style>
@@ -12,121 +12,289 @@
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 16px;
         font-weight: bold;
-        line-height: 2;
+        line-height: 1.8;
         color: #333;
-        background-image: url("/images/gcs.svg");
+        margin: 0;
+        min-height: 100vh;
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.9)
+        ), url("/images/gcs.svg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
       }
-        h1 {
-            text-align: center;
-          }
-          
-          form {
-            margin: 0 auto;
-            max-width: 600px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-          }
-          
-          h2 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-          }
-          
-          label {
-            display: block;
-            margin-bottom: 10px;
-          }
-          
-          select {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-          }
-          
-          button {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-          }
-          
-          button:hover {
-            background-color: #3e8e41;
-          }
-          
-          #gcs-score {
-            font-size: 24px;
-            text-align: center;
-            margin-top: 20px;
-          }
-          
+
+      header {
+        background-color: #005daa;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .logo-container h1 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      .navbar-icons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .back-button {
+        background-color: #ffffff;
+        color: #005daa;
+        border: none;
+        border-radius: 4px;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      .back-button:hover {
+        background-color: #e6e6e6;
+      }
+
+      .page-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 650px;
+        background-color: rgba(255, 255, 255, 0.98);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .container h2 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        color: #003366;
+        font-size: 1.3rem;
+      }
+
+      .intro-text {
+        font-weight: normal;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .field-group {
+        margin-bottom: 0.5rem;
+      }
+
+      .field-group h3 {
+        margin: 0 0 0.25rem;
+        font-size: 1.05rem;
+        color: #003366;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+        font-weight: bold;
+      }
+
+      select {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+        font-size: 0.95rem;
+        font-weight: normal;
+      }
+
+      .button-row {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+      }
+
+      button[type="button"] {
+        padding: 0.5rem 1.25rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #005daa;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      button[type="button"]:hover {
+        background-color: #003b72;
+      }
+
+      .results {
+        margin-top: 1rem;
+        border-top: 1px solid #ddd;
+        padding-top: 0.75rem;
+      }
+
+      .results h3 {
+        margin: 0 0 0.25rem;
+        font-size: 1.05rem;
+        color: #003366;
+      }
+
+      #gcs-score,
+      #gcs-detail,
+      #gcs-interpretation {
+        font-weight: normal;
+        font-size: 0.95rem;
+        margin: 0.25rem 0;
+      }
+
+      .note {
+        font-size: 0.85rem;
+        font-style: italic;
+        font-weight: normal;
+        color: #555;
+        margin-top: 0.75rem;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 1rem;
+          border-radius: 10px;
+        }
+
+        .logo-container h1 {
+          font-size: 1rem;
+        }
+
+        button[type="button"] {
+          width: 100%;
+          text-align: center;
+        }
+      }
     </style>
   </head>
-  <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Glasgow Coma Scale Calculator</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
+  <body>
+    <header>
+      <div class="logo-container">
+        <h1 class="main-header">Glasgow Coma Scale Calculator</h1>
+      </div>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" alt="House icon" style="color: whitesmoke;"></i>
+        </a>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
     </header>
-  <body class="vitals-page">
-    <h1>Glasgow Coma Scale Calculator</h1>
-    <p>The Glasgow Coma Scale is a tool used to assess a patient's level of consciousness. It evaluates three parameters: eye opening response, best verbal response, and best motor response.</p>
-    <form>
-      <h2>Eye Opening Response</h2>
-      <label for="eye-response">Choose an eye opening response:</label>
-      <select id="eye-response" name="eye-response">
-        <option value="4">Spontaneous</option>
-        <option value="3">To speech</option>
-        <option value="2">To pain</option>
-        <option value="1">None</option>
-      </select>
-      <h2>Best Verbal Response</h2>
-      <label for="verbal-response">Choose a best verbal response:</label>
-      <select id="verbal-response" name="verbal-response">
-        <option value="5">Oriented</option>
-        <option value="4">Confused conversation</option>
-        <option value="3">Inappropriate words</option>
-        <option value="2">Incomprehensible sounds</option>
-        <option value="1">None</option>
-      </select>
-      <h2>Best Motor Response</h2>
-      <label for="motor-response">Choose a best motor response:</label>
-      <select id="motor-response" name="motor-response">
-        <option value="6">Obeys commands</option>
-        <option value="5">Localizes pain</option>
-        <option value="4">Withdraws from pain</option>
-        <option value="3">Flexion to pain (decorticate)</option>
-        <option value="2">Extension to pain (decerebrate)</option>
-        <option value="1">None</option>
-      </select>
-      <br>
-      <button type="button" onclick="calculateGCS()">Calculate GCS</button>
-      <br>
-      <h2>Total GCS Score</h2>
-      <p id="gcs-score"></p>
-    </form>
+
+    <main class="page-wrapper">
+      <div class="container">
+        <h2>Glasgow Coma Scale (Adult)</h2>
+        <p class="intro-text">
+          Select the best eye, verbal and motor responses. The calculator will show
+          the total score and the E / V / M breakdown. Always interpret in clinical context.
+        </p>
+
+        <form onsubmit="event.preventDefault();">
+          <div class="field-group">
+            <h3>Eye Opening Response (E)</h3>
+            <label for="eye-response">Best eye opening:</label>
+            <select id="eye-response" name="eye-response">
+              <option value="4">4 – Spontaneous</option>
+              <option value="3">3 – To speech</option>
+              <option value="2">2 – To pain</option>
+              <option value="1">1 – None</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <h3>Best Verbal Response (V)</h3>
+            <label for="verbal-response">Best verbal response:</label>
+            <select id="verbal-response" name="verbal-response">
+              <option value="5">5 – Oriented</option>
+              <option value="4">4 – Confused conversation</option>
+              <option value="3">3 – Inappropriate words</option>
+              <option value="2">2 – Incomprehensible sounds</option>
+              <option value="1">1 – None</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <h3>Best Motor Response (M)</h3>
+            <label for="motor-response">Best motor response:</label>
+            <select id="motor-response" name="motor-response">
+              <option value="6">6 – Obeys commands</option>
+              <option value="5">5 – Localizes pain</option>
+              <option value="4">4 – Withdraws from pain</option>
+              <option value="3">3 – Abnormal flexion to pain (decorticate)</option>
+              <option value="2">2 – Extension to pain (decerebrate)</option>
+              <option value="1">1 – None</option>
+            </select>
+          </div>
+
+          <div class="button-row">
+            <button type="button" onclick="calculateGCS()">Calculate GCS</button>
+          </div>
+
+          <div class="results">
+            <h3>Total GCS Score</h3>
+            <p id="gcs-score">Total GCS: –</p>
+            <p id="gcs-detail">Components (E / V / M): –</p>
+            <p id="gcs-interpretation">Interpretation: –</p>
+            <p class="note">
+              GCS 13–15: mild | 9–12: moderate | ≤ 8: severe (often requires airway protection).
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+
     <script>
       function calculateGCS() {
-        const eyeResponse = parseInt(document.getElementById("eye-response").value);
-        const verbalResponse = parseInt(document.getElementById("verbal-response").value);
-        const motorResponse = parseInt(document.getElementById("motor-response").value);
-        const totalScore = eyeResponse + verbalResponse + motorResponse;
-        document.getElementById("gcs-score").innerHTML = `Total GCS Score: ${totalScore}`;
+        const eyeValue = parseInt(document.getElementById("eye-response").value);
+        const verbalValue = parseInt(document.getElementById("verbal-response").value);
+        const motorValue = parseInt(document.getElementById("motor-response").value);
+
+        const totalScore = eyeValue + verbalValue + motorValue;
+
+        // Build detail string e.g. "E4 V5 M6"
+        const detailString = `E${eyeValue} V${verbalValue} M${motorValue}`;
+
+        // Basic severity interpretation
+        let interpretation = "";
+        if (totalScore >= 13) {
+          interpretation = "Mild brain injury / impairment (GCS 13–15).";
+        } else if (totalScore >= 9) {
+          interpretation = "Moderate brain injury (GCS 9–12).";
+        } else {
+          interpretation = "Severe brain injury (GCS ≤ 8) – consider airway protection and urgent imaging.";
+        }
+
+        document.getElementById("gcs-score").textContent =
+          `Total GCS: ${totalScore}`;
+        document.getElementById("gcs-detail").textContent =
+          `Components (E / V / M): ${detailString}`;
+        document.getElementById("gcs-interpretation").textContent =
+          `Interpretation: ${interpretation}`;
       }
     </script>
   </body>

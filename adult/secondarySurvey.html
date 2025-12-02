@@ -1,88 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Secondary Survey</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/secondarySurvey.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        
-        }  
+  <meta charset="UTF-8" />
+  <title>Secondary Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/secondarySurvey.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 1rem 1.25rem;
+      background-color: rgba(255, 255, 255, 0.94);
+      border-radius: 8px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #004a7c;
+      margin-top: 0.5rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 1.4rem;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.25rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      margin: 0.35rem 0 0.6rem;
+    }
+
+    ul,
+    ol {
+      margin: 0.3rem 0 0.8rem 1.4rem;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #555;
+      border-left: 4px solid #f39c12;
+      padding-left: 0.6rem;
+      margin: 0.5rem 0 0.9rem;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto 1.5rem;
+      padding: 0.75rem 1.25rem;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin: 0.5rem;
+        padding: 0.75rem;
+      }
+
+      footer {
+        margin: 0.5rem;
+        padding: 0.75rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+      }
+
+      body {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
   </style>
 </head>
-<header>
-  <div class="logo-container">
-    <h1 class="main-header">Secondary Survey</h1>
-    <div class="navbar-icons">
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Secondary Survey</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
-    <button class="back-button" onclick="goBack()">Back</button>
-  </div>
-</header>
-  <body>
-    <h1>Trauma Secondary Survey</h1>
-    <p>The trauma secondary survey is a systematic assessment of a patient who has experienced trauma. It is performed after the primary survey, which focuses on identifying and addressing any life-threatening injuries.</p>
+  </header>
+
+  <main>
     <section class="section">
-        <h2 class="subheading">General</h2>
-        <p>During the general examination, observe the patient's appearance, level of consciousness, and any visible signs of trauma. Pay attention to the following:</p>
-        <ul>
-            <li>General appearance and level of consciousness</li>
-            <li>Skin examination for bruising, lacerations, and signs of trauma</li>
-            <li>Head and neck examination for signs of injury, including skull and facial fractures, and cervical spine injury</li>
-            <li>Chest examination for signs of injury, including flail chest, pneumothorax, and hemothorax</li>
-            <li>Abdominal examination for signs of injury, including distension, guarding, and rebound tenderness</li>
-            <li>Pelvic examination for signs of injury, including instability or pain with palpation</li>
-            <li>Extremity examination for signs of injury, including fractures, dislocations, and soft tissue injuries</li>
-        </ul>
+      <h1>Trauma Secondary Survey</h1>
+      <p>
+        The secondary survey is a structured, head-to-toe evaluation performed
+        <strong>after</strong> the primary survey and initial resuscitation (ABCDE) are complete
+        and the patient is stable enough for a more detailed assessment.
+      </p>
+      <p class="note">
+        The goal is to identify all important injuries, obtain a focused trauma history, and plan
+        appropriate investigations and definitive management.
+      </p>
     </section>
+
     <section class="section">
-        <h2>Neurological</h2>
-        <p>Evaluate the patient's neurological status, including level of consciousness, orientation, memory, pupillary response, and movement and sensation in all extremities. Use the Glasgow Coma Scale (GCS) to assess the patient's level of consciousness:</p>
-        <ul>
-            <li>Level of consciousness, orientation, and memory</li>
-            <li>Pupillary response and size</li>
-            <li>Movement and sensation in all extremities</li>
-            <li>Glasgow Coma Scale score (use the calculator by clicking <a href="/adult/gcsCalculator.html" class="emphasis-link">here</a>)</li>
-        </ul>
+      <h2>1. Trauma History – &ldquo;AMPLE&rdquo;</h2>
+      <p>Obtain a concise trauma history using the ATLS AMPLE mnemonic:</p>
+      <ul>
+        <li><strong>A – Allergies:</strong> drugs, latex, food.</li>
+        <li><strong>M – Medications:</strong> chronic meds, anticoagulants/antiplatelets, insulin, etc.</li>
+        <li><strong>P – Past medical history:</strong> co-morbidities, previous surgery, pregnancy, prior trauma.</li>
+        <li><strong>L – Last meal:</strong> time and nature of last oral intake (important for theatre).</li>
+        <li><strong>E – Events / Environment:</strong> mechanism of injury, speed, height of fall, penetrating vs blunt, use of restraints/helmet, alcohol or drugs, time since injury.</li>
+      </ul>
     </section>
+
     <section class="section">
-        <h2>Other Tests</h2>
-        <p>In addition to the general and neurological assessments, the trauma secondary survey may involve several other tests and diagnostic tools to further evaluate the patient's condition and identify potential injuries. Some of these tests include:</p>
-        <ul>
-            <li>Diagnostic imaging, such as X-rays, CT scans, and ultrasound, to visualize internal injuries and fractures</li>
-            <li>Lab tests, including complete blood count (CBC), blood typing and crossmatching, coagulation studies, and arterial blood gas (ABG) analysis, to assess the patient's overall health and identify potential complications</li>
-            <li>Electrocardiogram (ECG) to evaluate the patient's heart function and identify any cardiac abnormalities or arrhythmias</li>
-            <li>Urinalysis to screen for urinary tract injuries, infection, or other issues</li>
-            <li>Serial vital signs monitoring to track the patient's response to interventions and detect any changes in their condition</li>
-        </ul>
+      <h2>2. General Examination</h2>
+      <p>Perform a rapid general inspection before the detailed head-to-toe exam:</p>
+      <ul>
+        <li>Overall appearance, distress, posture and <strong>level of consciousness</strong>.</li>
+        <li>Skin colour, temperature, bruising, abrasions, lacerations and obvious deformities.</li>
+        <li>Look for clues to mechanism (seat belt marks, steering wheel imprint, tyre marks, etc.).</li>
+      </ul>
     </section>
+
     <section class="section">
-        <h2>Documentation and Monitoring</h2>
-        <p>Documenting the findings from the trauma secondary survey is essential for maintaining accurate records of the patient's condition, treatment, and progress. Ensure that all assessments, interventions, and outcomes are thoroughly documented in the patient's medical record. Consider using a standardized documentation form or electronic medical record (EMR) template to ensure consistency and completeness.</p>
-        <p>After completing the secondary survey, continue to monitor the patient's condition closely, and reevaluate them as needed. If the patient's condition changes, notify the appropriate healthcare team members and modify the treatment plan accordingly.</p>
+      <h2>3. Systematic Head–to–Toe Examination</h2>
+
+      <h3>Head and Face</h3>
+      <ul>
+        <li>Scalp: lacerations, boggy swellings, step-offs, foreign bodies.</li>
+        <li>Skull and face: deformities, tenderness, mid-face instability, peri-orbital bruising, CSF leak from nose/ears.</li>
+        <li>Eyes: pupils (size, equality, reactivity), visual acuity if possible, subconjunctival haemorrhage, hyphema.</li>
+        <li>Mouth: loose teeth, blood, foreign bodies, mandible/maxilla instability.</li>
+      </ul>
+
+      <h3>Neck</h3>
+      <ul>
+        <li>Maintain <strong>C-spine protection</strong> throughout.</li>
+        <li>Inspect for wounds, bruising, swelling, seatbelt marks, tracheal deviation.</li>
+        <li>Palpate cervical spine for tenderness or step-offs (if cleared as per local protocol).</li>
+        <li>Assess for neck vein distention or flattening (suggestive of shock or tension pneumothorax).</li>
+      </ul>
+
+      <h3>Chest</h3>
+      <ul>
+        <li>Inspect chest wall movement, symmetry, bruising, deformity, penetrating wounds.</li>
+        <li>Palpate for tenderness, crepitus, rib or sternal fractures, flail segments.</li>
+        <li>Percuss for dullness or hyper-resonance.</li>
+        <li>Auscultate breath sounds bilaterally and heart sounds (muffled, added sounds).</li>
+      </ul>
+
+      <h3>Abdomen</h3>
+      <ul>
+        <li>Inspect for distension, bruising (Cullen, Grey-Turner), wounds or seatbelt marks.</li>
+        <li>Palpate for tenderness, guarding, rigidity, masses.</li>
+        <li>Assess for rebound tenderness and peritonitis (if not contraindicated).</li>
+        <li>Consider rectal exam and vaginal exam when indicated (per local protocol and chaperone policy).</li>
+      </ul>
+
+      <h3>Pelvis and Perineum</h3>
+      <ul>
+        <li>Inspect for bruising, deformity, blood at urethral meatus, perineal or scrotal haematoma.</li>
+        <li>Assess pelvic stability gently once only if not already done; do <strong>not</strong> repeatedly rock the pelvis.</li>
+        <li>Look for limb length discrepancy or rotational deformity suggesting pelvic/hip injury.</li>
+      </ul>
+
+      <h3>Extremities</h3>
+      <ul>
+        <li>Inspect all limbs for deformity, swelling, bruising, wounds, and obvious fractures/dislocations.</li>
+        <li>Palpate bones and joints for tenderness and instability.</li>
+        <li>Assess pulses, capillary refill, warmth and colour (neurovascular status).</li>
+        <li>Check motor function and sensation in each limb.</li>
+      </ul>
+
+      <h3>Back and Posterior Surfaces</h3>
+      <p>
+        Log-roll the patient with spinal precautions, only when safe and enough staff are available.
+      </p>
+      <ul>
+        <li>Inspect entire back for bruising, abrasions, lacerations, penetrating injuries.</li>
+        <li>Palpate spine for tenderness, step-offs, deformity.</li>
+        <li>Assess sacrum, buttocks and posterior thighs.</li>
+      </ul>
     </section>
+
     <section class="section">
-        <h2>Summary</h2>
-        <p>The trauma secondary survey is a crucial component of evaluating and managing patients who have experienced trauma. By performing a systematic assessment that includes general, neurological, and other tests, healthcare providers can identify and treat potential injuries, monitor the patient's condition, and ensure appropriate documentation and communication among the healthcare team. Remember that the secondary survey should be performed only after the primary survey has been completed and any life-threatening injuries have been addressed.</p>
+      <h2>4. Neurological Assessment</h2>
+      <p>Reassess the nervous system in more detail (beyond the primary survey’s quick AVPU/GCS):</p>
+      <ul>
+        <li>Level of consciousness, orientation (person, place, time, event).</li>
+        <li>Pupil size and reactivity, eye movements.</li>
+        <li>Motor power and tone in all four limbs.</li>
+        <li>Sensation (light touch, pain) in all limbs and dermatomes if feasible.</li>
+        <li>Glasgow Coma Scale – use the GCS calculator by clicking
+          <a href="/adult/gcsCalculator.html" class="emphasis-link">here</a>.
+        </li>
+      </ul>
+      <p class="note">
+        Any deterioration in GCS, new focal deficit, or worsening headache/vomiting should prompt urgent
+        reassessment and consideration of imaging or neurosurgical referral.
+      </p>
     </section>
-    <div class="section">
-        <h2 class="subheading">ATLS Manual</h2>
-        <a href="/pdfs/ATLS_9thEd_Student_Manual.pdf" target="_blank" class="emphasis-link">View ATLS Manual (PDF)</a>
-    
-    </div>
-    <footer>
-        <p>For more information on trauma management and assessment, visit the <a href="https://www.trauma.org" class="emphasis-link">Trauma.org</a> website or consult your local trauma guidelines.</p>
-    </footer>
+
+    <section class="section">
+      <h2>5. Adjuncts &amp; Additional Tests</h2>
+      <p>Adjuncts support the clinical exam and are guided by mechanism and local protocols:</p>
+      <ul>
+        <li><strong>Imaging:</strong> X-rays (C-spine, chest, pelvis, limbs), CT trauma (head/neck/chest/abdomen/pelvis), FAST/extended FAST ultrasound.</li>
+        <li><strong>Laboratory tests:</strong> FBC, U&amp;E, creatinine, glucose, coagulation, group and cross-match, lactate, ABG/VBG.</li>
+        <li><strong>ECG:</strong> to assess for blunt cardiac injury, arrhythmias, ischemia, electrolyte disturbance.</li>
+        <li><strong>Urinalysis:</strong> blood, protein, infection, myoglobin; screen for urinary tract or pelvic injuries.</li>
+        <li><strong>Toxicology or alcohol levels</strong> when clinically indicated.</li>
+        <li><strong>Serial vitals &amp; observations:</strong> monitor response to fluids, blood products and interventions.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>6. Documentation and Ongoing Monitoring</h2>
+      <p>
+        Thorough documentation is critical for continuity of care, handover, and medico-legal protection.
+      </p>
+      <ul>
+        <li>Record findings from the head-to-toe examination, neurological assessment and adjunct tests.</li>
+        <li>Document all interventions, medications, fluids and blood products given, with times.</li>
+        <li>Use a standard trauma sheet or EMR template where available for consistency.</li>
+        <li>Reassess the patient regularly and document trends in vitals and clinical status.</li>
+        <li>Update the team and hand over clearly if the patient goes to theatre, ICU, or another facility.</li>
+      </ul>
+      <p class="note">
+        The secondary survey is not a once-off event &mdash; repeat elements whenever there is a change
+        in the patient’s condition or after major interventions.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>7. Summary</h2>
+      <p>
+        The trauma secondary survey is a structured, complete assessment performed after immediate threats
+        to life have been addressed in the primary survey. By combining a focused trauma history,
+        systematic head-to-toe examination, detailed neurological assessment and appropriate adjuncts,
+        you can identify occult injuries early, prioritise management, and improve outcomes.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">ATLS Manual</h2>
+      <p>
+        For a detailed, guideline-based description of primary and secondary survey, consult the ATLS manual:
+      </p>
+      <p>
+        <a href="/pdfs/ATLS_9thEd_Student_Manual.pdf" target="_blank" class="emphasis-link">
+          View ATLS Manual (PDF)
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      For additional trauma resources, refer to your local trauma guidelines or national protocols.
+    </p>
+  </footer>
 </body>
-</html>    
+</html>
