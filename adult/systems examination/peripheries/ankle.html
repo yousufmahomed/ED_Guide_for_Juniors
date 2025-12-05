@@ -1,183 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Ankle Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
+  <title>Emergency Department Ankle Exam</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    /* Image + figure styling (like ENT page) */
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Condition"; }
+      td:nth-of-type(2)::before { content: "Key Findings"; }
+      td:nth-of-type(3)::before { content: "ED Pearls"; }
+    }
+  </style>
 </head>
-<header>
-    <div class="logo-container">
-        <h1>Ankle Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
-
 <body>
-	
+  <header>
+    <div class="logo-container">
+      <h1>Ankle Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-	<div class="section">
-		<h2 class="subheading">Introduction</h2>
-		<p>An ankle examination is a physical examination performed by a healthcare provider to evaluate the function and health of the ankle joint. The ankle joint is a complex joint that connects the foot and leg bones and allows for a wide range of motion, so it is essential to perform a thorough examination to identify any injuries or abnormalities that may be present.</p>
-	</div>
+  <main class="page-wrapper">
+    <!-- Overview -->
+    <div class="section">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The ankle examination in the Emergency Department focuses on rapidly identifying
+        fractures, ligament injuries, tendon ruptures and neurovascular compromise. A
+        structured approach helps you decide who needs imaging, who can be safely discharged
+        and who requires urgent orthopaedic or vascular referral.
+      </p>
+      <p>
+        Always examine the ankle in the context of the entire limb and mechanism of injury.
+        Missed ankle and midfoot injuries (e.g. syndesmosis, Lisfranc, calcaneal fractures)
+        can cause lifelong disability.
+      </p>
 
-	<div class="section">
-		<h2 class="subheading">Examination Technique</h2>
-		<p>The ankle examination involves the following steps:</p>
-		<ol>
-			<li>Inspect the ankle and foot for any visible signs of injury or swelling, such as bruising, redness, or deformities.</li>
-			<li>Palpate the ankle joint, checking for tenderness or swelling in the bones, ligaments, and tendons surrounding the joint.</li>
-			<li>Assess the range of motion of the ankle joint, including dorsiflexion, plantarflexion, inversion, and eversion. Ask the patient to move their ankle in each direction, observing for any limitations or pain.</li>
-			<li>Perform specific tests to assess for specific injuries or conditions, such as the anterior drawer test for anterior talofibular ligament (ATFL) injuries, the talar tilt test for lateral ankle sprains, or the squeeze test for high ankle sprains.</li>
-			<li>Perform a neurovascular examination, assessing for any signs of nerve or blood vessel injury. Test the patient's sensation and reflexes in the affected foot and toes, and check for any abnormalities in pulse or blood pressure.</li>
-            <li>Check for any swelling, redness, or discoloration around the ankle joint. Palpate the area for any tenderness or pain.</li>
-            <li>Assess the range of motion of the ankle, including dorsiflexion, plantarflexion, inversion, and eversion. Ask the patient to move their foot in each direction, observing for any limitations or pain.</li>
-            <li>Perform specific tests to assess for specific injuries or conditions, such as the Thompson test for Achilles tendon rupture, or the anterior drawer test for ankle instability.</li>
-            <li>Assess for any signs of ankle instability or ligament injuries, such as pain or weakness when standing or walking on uneven surfaces.</li>
-            <li>Evaluate the patient's gait and walking pattern, checking for any limping or abnormal movements.</li>
-            <li>Check for any signs of arthritis, tendonitis, or other inflammatory conditions in the ankle joint. Assess for any signs of swelling, stiffness, or pain in the joint.</li>
-            <li>Perform any additional tests or maneuvers as indicated by the patient's symptoms or medical history. This may include provocative testing for specific conditions, such as peroneal tendonitis or tarsal tunnel syndrome.</li>
-            </ol>
-            <p>Imaging studies, such as X-rays or MRI, may be ordered if the examination reveals any abnormalities or if further evaluation is needed.</p>
-            </div>
+      <!-- Illustration inserted here -->
+      <figure>
+        <img src="/adult/systems examination/peripheries/images/ankle-exam-overview.png"
+             alt="Illustrated guide to ankle surface anatomy and basic examination steps"
+             class="image">
+        <figcaption>
+          Surface anatomy and key steps in ankle examination: inspection, palpation, range of
+          motion and special tests.
+        </figcaption>
+      </figure>
+    </div>
 
-            <div class="section">
-                <h2 class="subheading">Common Ankle Injuries and Conditions</h2>
-                <p>Some common ankle injuries and conditions that may be detected during an ankle examination include:</p>
-                <table>
-                    <tr>
-                        <th>Injury/Condition</th>
-                        <th>Signs and Symptoms</th>
-                        <th>Differential Diagnosis</th>
-                        <th>Treatment</th>
-                    </tr>
-                    <tr>
-                        <td>Ankle sprain</td>
-                        <td>Pain, swelling, tenderness, limited range of motion</td>
-                        <td>Fracture, ligament tear, tendonitis, arthritis</td>
-                        <td>Rest, ice, compression, elevation, physical therapy, pain management</td>
-                    </tr>
-                    <tr>
-                        <td>Achilles tendonitis</td>
-                        <td>Pain and stiffness in the back of the ankle, swelling, tenderness</td>
-                        <td>Achilles tendon rupture, plantar fasciitis, bursitis</td>
-                        <td>Rest, ice, compression, physical therapy, pain management</td>
-                    </tr>
-                    <tr>
-                        <td>Ankle impingement</td>
-                        <td>Pain and tenderness in the ankle joint, limited range of motion</td>
-                        <td>Arthritis, bone spur, ligament injury</td>
-                        <td>Rest, physical therapy, pain management, surgery</td>
-                    </tr>
-                    <tr>
-                        <td>Peroneal tendonitis</td>
-                        <td>Pain, swelling, tenderness, and warmth in the affected area, weakness or instability, snapping or popping sensation, limited range of motion</td>
-                        <td>Rest, ice, compression, and elevation (RICE), non-steroidal anti-inflammatory drugs (NSAIDs), physical therapy, bracing, corticosteroid injections</td>
-                    </tr>
-                    <tr>
-                        <td>Achilles tendinopathy</td>
-                        <td>Pain and stiffness in the Achilles tendon, swelling, tenderness, limited range of motion, thickening of the tendon, difficulty walking or running</td>
-                        <td>Rest, ice, compression, and elevation (RICE), physical therapy, orthotics, stretching and strengthening exercises, NSAIDs, corticosteroid injections, shockwave therapy, surgery in severe cases</td>
-                    </tr>
-                    <tr>
-                        <td>Plantar fasciitis</td>
-                        <td>Heel pain, especially in the morning or after long periods of sitting or standing, tenderness, swelling, limited range of motion, stiffness</td>
-                        <td>Rest, ice, compression, and elevation (RICE), physical therapy, orthotics, stretching and strengthening exercises, NSAIDs, corticosteroid injections, shockwave therapy, surgery in severe cases</td>
-                    </tr>
-                    <tr>
-                        <td>Tarsal tunnel syndrome</td>
-                        <td>Pain, burning, tingling, and numbness in the ankle and foot, weakness or atrophy of the muscles in the foot, difficulty walking or standing for long periods of time</td>
-                        <td>Rest, physical therapy, orthotics, stretching exercises, NSAIDs, corticosteroid injections, surgery in severe cases</td>
-                    </tr>
-                    <tr>
-                        <td>Posterior tibial tendonitis</td>
-                        <td>Pain, swelling, and tenderness in the inner ankle, difficulty walking or standing, flatfoot, heel pain, arch pain</td>
-                        <td>Rest, physical therapy, orthotics, bracing, stretching and strengthening exercises, NSAIDs, corticosteroid injections, surgery in severe cases</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="section">
-                <p>Treatment for ankle conditions may also involve immobilization with a brace or cast, depending on the severity of the injury or condition. Surgery may be necessary in severe cases, such as fractures or severe ligament tears. In any case, early diagnosis and treatment can help improve outcomes and prevent long-term complications.</p>
-                <h3>Preventing Ankle Injuries</h3>
-                <p>While not all ankle injuries can be prevented, there are some steps you can take to reduce your risk:</p>
-                <ul>
-                    <li>Wear proper footwear with good support, especially during physical activity</li>
-                    <li>Stretch and warm up before exercise or physical activity</li>
-                    <li>Avoid uneven surfaces and obstacles when possible</li>
-                    <li>Avoid high-impact activities or sports that involve a lot of jumping or sudden changes in direction</li>
-                    <li>Gradually increase the intensity and duration of physical activity</li>
-                    <li>Take breaks when needed to avoid overuse injuries</li>
-                    <li>Maintain a healthy weight to reduce stress on the ankles and feet</li>
-                    <li>Seek medical attention for any ankle pain or injury, and follow a rehabilitation program as directed by a healthcare professional performing a comprehensive ankle examination and identifying the underlying cause of symptoms, healthcare providers can develop an appropriate treatment plan for their patients.</li>
-                </ul>
-            </div> 
-            <div class="section">
-                </p> Treatment options for ankle conditions may include:</p>
+    <!-- Red flags -->
+    <div class="section">
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>Begin with ABC and a quick global trauma assessment. For the limb, look for:</p>
+      <ul>
+        <li><span class="red-flag">Open fractures or gross deformity</span> of the ankle or foot.</li>
+        <li><span class="red-flag">Pale, cold, pulseless or mottled foot</span> – limb ischaemia until proven otherwise.</li>
+        <li><span class="red-flag">Severe pain out of proportion</span>, especially with tense compartments – consider compartment syndrome.</li>
+        <li><span class="red-flag">Inability to move toes or loss of sensation</span> – possible nerve injury or spinal lesion.</li>
+        <li><span class="red-flag">Suspected septic arthritis or cellulitis</span> – hot, swollen joint with fever or systemic toxicity.</li>
+        <li><span class="red-flag">High-energy mechanism</span> (fall from height, MVC) – think of associated tibial, calcaneal and midfoot injuries.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag should prompt immediate senior review and early involvement of orthopaedics/vascular surgery.
+      </p>
+    </div>
 
-                <ul>
-                    <li><strong>Rest and immobilization:</strong> Reducing or avoiding weight-bearing activities and immobilizing the ankle with a brace or cast may be necessary for some conditions.</li>
-                    <li><strong>Pain management:</strong> Over-the-counter or prescription pain medications, as well as icing and elevation, may help reduce pain and swelling.</li>
-                    <li><strong>Physical therapy:</strong> Strengthening and stretching exercises can improve ankle function and reduce the risk of future injury.</li>
-                    <li><strong>Injections:</strong> In some cases, corticosteroid injections may be used to reduce inflammation and pain in the ankle joint.</li>
-                    <li><strong>Surgery:</strong> In severe cases or when other treatments have been unsuccessful, surgical procedures such as ankle arthroscopy, ankle fusion, or ankle replacement may be recommended.</li>
-                </ul>
-            </div>
-                <div class="section">
-               <p> <strong> Prevention </strong>is also an important aspect of ankle care. Simple steps that individuals can take to reduce their risk of ankle injury include:</p> 
-                
-                <ul>
-                    <li>Wearing appropriate footwear for activities, such as shoes with good support and cushioning for running or hiking.</li>
-                    <li>Performing stretching and strengthening exercises for the ankle and surrounding muscles.</li>
-                    <li>Avoiding uneven or unstable surfaces that may increase the risk of ankle sprains or twists.</li>
-                    <li>Using appropriate protective gear, such as ankle braces or guards, during sports or activities that may increase the risk of ankle injury.</li>
-                </ul>
-            </div>
+    <!-- History -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> inversion, eversion, axial load, fall from height, twisting, direct blow, sporting injury, road traffic collision.</li>
+        <li><strong>Onset:</strong> immediate vs delayed swelling, ability to continue activity or weight-bearing.</li>
+        <li><strong>Location of pain:</strong> lateral malleolus, medial malleolus, Achilles region, heel, midfoot, base of 5th metatarsal.</li>
+        <li><strong>Previous ankle injuries/surgery:</strong> chronic instability, previous fractures, tendon pathology.</li>
+        <li><strong>Systemic symptoms:</strong> fever, night pain, weight loss, inflammatory arthropathy, diabetes, immunosuppression.</li>
+        <li><strong>Functional impact:</strong> ability to weight-bear immediately and on presentation, stairs, distance walked.</li>
+        <li><strong>Red flag questions:</strong> paraesthesia, weakness, severe unrelenting pain, history of anticoagulation.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>Examine the patient standing if able, then seated or lying with the ankle exposed from knee to toes, comparing both sides.</p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>General: gait, antalgic posture, reluctance to weight-bear.</li>
+        <li>Swelling, bruising and deformity around malleoli, Achilles tendon, heel and midfoot.</li>
+        <li>Skin integrity: wounds, blisters, abrasions, open fractures.</li>
+        <li>Alignment: hindfoot varus/valgus, flatfoot deformity, high arch (pes cavus).</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <p>Palpate systematically, watching the patient’s face:</p>
+      <ul>
+        <li><strong>Bone points:</strong> distal tibia and fibula, medial and lateral malleolus, posterior edge of malleoli,
+          base of 5th metatarsal, navicular, calcaneus, talus and midfoot joints.</li>
+        <li><strong>Ligaments:</strong> ATFL and CFL (lateral), deltoid ligament (medial), syndesmosis (anterior tibiofibular region).</li>
+        <li><strong>Tendons:</strong> Achilles tendon (gap, tenderness), peroneal tendons, posterior tibial tendon, plantar fascia origin at calcaneus.</li>
+        <li><strong>Temperature and tenderness:</strong> compare both sides; note focal warmth or exquisite point tenderness.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Move</h3>
+      <p>Assess both active and passive range of motion:</p>
+      <ul>
+        <li><strong>Dorsiflexion and plantarflexion</strong> at the ankle joint.</li>
+        <li><strong>Inversion and eversion</strong> (subtalar joint).</li>
+        <li>Note pain, crepitus, restriction or apprehension.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Special Tests</h3>
+      <ul>
+        <li><strong>Anterior drawer test:</strong> tests ATFL integrity (lateral instability).</li>
+        <li><strong>Talar tilt test:</strong> lateral or medial ligament instability.</li>
+        <li><strong>Squeeze test:</strong> compress tibia and fibula proximally – pain at syndesmosis suggests high ankle sprain.</li>
+        <li><strong>External rotation stress test:</strong> pain at distal tibiofibular joint suggests syndesmotic injury.</li>
+        <li><strong>Thompson test (Simmonds):</strong> squeeze calf; absent plantarflexion suggests Achilles tendon rupture.</li>
+        <li><strong>Calcaneal squeeze:</strong> heel pain and tenderness may suggest calcaneal fracture or stress injury following axial load.</li>
+      </ul>
+
+      <h3 class="subheading-small">5. Neurovascular Examination</h3>
+      <p>Always document neurovascular status before and after any manipulation, reduction or splinting.</p>
+      <ul>
+        <li><strong>Pulses:</strong> dorsalis pedis and posterior tibial pulses; capillary refill in toes (&lt;2 seconds).</li>
+        <li><strong>Colour and temperature:</strong> pink, warm foot vs pale, mottled or cold.</li>
+        <li><strong>Sensation:</strong>
+          <ul>
+            <li>Superficial peroneal nerve – dorsum of foot.</li>
+            <li>Deep peroneal nerve – web space between 1st and 2nd toes.</li>
+            <li>Tibial nerve – sole of foot.</li>
+            <li>Sural and saphenous nerves – lateral and medial borders of foot.</li>
+          </ul>
+        </li>
+        <li><strong>Motor:</strong> ankle dorsiflexion and plantarflexion, big toe extension and flexion.</li>
+      </ul>
+    </div>
+
+    <!-- Ottawa ankle and foot rules -->
+    <div class="section">
+      <h2 class="subheading">When to X-ray: Ottawa Ankle & Foot Rules</h2>
+      <p class="key-point">
+        Use the Ottawa rules to decide who needs plain radiographs – they are highly sensitive for clinically significant fractures.
+      </p>
+      <ul>
+        <li><strong>Ankle X-ray is indicated if:</strong>
+          <ul>
+            <li>Pain in the malleolar zone <em>and</em></li>
+            <li>Bone tenderness at the posterior edge or tip of the lateral malleolus <em>or</em> medial malleolus, <em>or</em></li>
+            <li>Inability to weight-bear both immediately and in the ED (four steps).</li>
+          </ul>
+        </li>
+        <li><strong>Foot X-ray is indicated if:</strong>
+          <ul>
+            <li>Pain in the midfoot zone <em>and</em></li>
+            <li>Bone tenderness at the base of the 5th metatarsal or navicular, <em>or</em></li>
+            <li>Inability to weight-bear both immediately and in the ED.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        These rules are for patients with acute blunt trauma and a normal level of consciousness. Use clinical judgement
+        in children, the elderly, high-energy trauma and patients with multiple injuries or intoxication.
+      </p>
+    </div>
+
+    <!-- Common ED ankle and foot conditions -->
+    <div class="section">
+      <h2 class="subheading">Common ED Ankle & Foot Conditions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Key Findings</th>
+            <th>ED Pearls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lateral ankle sprain</td>
+            <td>
+              Inversion mechanism, tenderness over ATFL/CFL, swelling and bruising laterally, stable joint, normal X-ray.
+            </td>
+            <td>
+              Exclude fracture using Ottawa rules. Early protected mobilisation, RICE, analgesia. Recurrent sprains need
+              physio and possible ortho follow-up.
+            </td>
+          </tr>
+          <tr>
+            <td>Medial or bimalleolar fracture</td>
+            <td>
+              Medial pain or tenderness, often with deformity; may be associated with fibular fracture higher up.
+            </td>
+            <td>
+              Check syndesmosis and proximal fibula (Maisonneuve fracture). Unstable fractures or talar shift require
+              urgent ortho review and likely operative management.
+            </td>
+          </tr>
+          <tr>
+            <td>Syndesmosis (high ankle) sprain</td>
+            <td>
+              Pain above ankle joint, positive squeeze or external rotation stress test, difficulty with push-off.
+            </td>
+            <td>
+              Often missed. Low threshold for X-ray and ortho referral if suspected, especially in athletes or high-demand patients.
+            </td>
+          </tr>
+          <tr>
+            <td>Achilles tendon rupture</td>
+            <td>
+              Sudden pain in posterior ankle, sometimes a “pop”, difficulty with plantarflexion, positive Thompson test,
+              palpable gap in tendon.
+            </td>
+            <td>
+              Can be subtle and misdiagnosed as “sprain”. Urgent ortho referral. Place in equinus splint and keep non-weight-bearing.
+            </td>
+          </tr>
+          <tr>
+            <td>Calcaneal fracture</td>
+            <td>
+              Heel pain after axial load (fall from height), difficulty weight-bearing, heel swelling and bruising.
+            </td>
+            <td>
+              Often associated with spinal or other lower limb fractures. Obtain appropriate X-ray views; CT may be required.
+              Early ortho involvement is essential.
+            </td>
+          </tr>
+          <tr>
+            <td>Lisfranc (midfoot) injury</td>
+            <td>
+              Midfoot pain and swelling, plantar ecchymosis, pain with forefoot stress, difficulty weight-bearing.
+            </td>
+            <td>
+              High risk of chronic disability if missed. Obtain weight-bearing foot X-rays if possible and refer ortho early.
+            </td>
+          </tr>
+          <tr>
+            <td>Septic arthritis / severe cellulitis</td>
+            <td>
+              Hot, very painful ankle, reduced movement, systemic features (fever, tachycardia), surrounding cellulitis.
+            </td>
+            <td>
+              Treat as a limb-threatening emergency. Blood tests, cultures, early antibiotics and urgent ortho review for
+              possible washout.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ED Management -->
+    <div class="section">
+      <h2 class="subheading">General ED Management Principles</h2>
+      <p>Management depends on the diagnosis, stability of the joint and presence of red flags.</p>
+      <ul>
+        <li><strong>Analgesia:</strong> oral or IV; consider regional block in severe injuries if skilled and appropriate.</li>
+        <li><strong>Immobilisation:</strong> functional brace or bandage for simple sprains; backslab or cast for fractures or significant instability.</li>
+        <li><strong>Weight-bearing status:</strong> from full weight-bearing with support to non-weight-bearing with crutches, depending on injury severity.</li>
+        <li><strong>RICE principles:</strong> rest, ice, compression and elevation for most soft-tissue injuries.</li>
+        <li><strong>Thromboprophylaxis:</strong> consider in high-risk patients with prolonged immobilisation, according to local guidelines.</li>
+        <li><strong>Physiotherapy and rehab:</strong> essential for ankle sprains, Achilles injuries and post-fracture recovery.</li>
+      </ul>
+
+      <p class="key-point">Urgent orthopaedic referral is required for:</p>
+      <ul>
+        <li>Open fractures or fracture-dislocations.</li>
+        <li>Neurovascular compromise or suspected compartment syndrome.</li>
+        <li>Unstable ankle fractures (bimalleolar, trimalleolar, talar shift on X-ray).</li>
+        <li>Achilles tendon rupture, suspected Lisfranc or complex midfoot fractures.</li>
+        <li>Septic arthritis and rapidly spreading infection.</li>
+      </ul>
+    </div>
+
+    <!-- Documentation & summary -->
+    <div class="section">
+      <h2 class="subheading">Documentation & Summary</h2>
+      <p>
+        Carefully document:
+      </p>
+      <ul>
+        <li>Mechanism of injury and weight-bearing ability.</li>
+        <li>Exact location of tenderness and swelling.</li>
+        <li>Special tests performed (e.g. Thompson, anterior drawer) and results.</li>
+        <li>Neurovascular status <em>before and after</em> any manipulation or splinting.</li>
+        <li>Imaging findings and discussions with orthopaedics.</li>
+        <li>Weight-bearing instructions, follow-up plan and safety-net advice.</li>
+      </ul>
+      <p>
+        A structured ankle examination helps you safely distinguish simple sprains from occult fractures,
+        tendon ruptures and limb-threatening pathology. Always think beyond “just a sprain” in the Emergency Department.
+      </p>
+    </div>
+  </main>
 </body>
 </html>
-

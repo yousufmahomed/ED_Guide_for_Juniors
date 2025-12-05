@@ -1,167 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Hand Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
-    <head>
-<header>
-    <div class="logo-container">
-        <h1>Hand Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
+  <title>Hand Examination in the Emergency Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Condition"; }
+      td:nth-of-type(2)::before { content: "Key Findings"; }
+      td:nth-of-type(3)::before { content: "ED Pearls / Management"; }
+    }
+  </style>
+</head>
+
 <body>
-    <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>A hand examination is performed in the medical setting to assess for any injuries or abnormalities in the hand, including the palm, dorsum of hand, fingers, and thumb. This examination is typically done on patients who have sustained a hand injury or are experiencing hand pain or dysfunction, and is essential for identifying any potential fractures, ligament injuries, or nerve damage.</p>
+  <header>
+    <div class="logo-container">
+      <h1>Hand Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
+  </header>
+
+  <main class="page-wrapper">
+    <!-- Overview -->
     <div class="section">
-        <h2 class="subheading">Examination Technique</h2>
-        <p>The hand examination involves the following steps:</p>
-        <ol>
-            <li>Inspect the hand for any obvious abnormalities or deformities, such as swelling, bruising, or lacerations. Check for any penetrating injuries or foreign objects that may have entered the hand.</li>
-            <li>Palpate the hand, assessing for tenderness, warmth, and swelling. Check for any bony abnormalities or crepitus.</li>
-            <li>Assess the range of motion of the hand, including flexion, extension, abduction, and adduction of the wrist, fingers, and thumb. Ask the patient to move their hand in each direction, observing for any limitations or pain.</li>
-            <li>Perform specific tests to assess for specific injuries or conditions, such as the Finkelstein's test for De Quervain's tenosynovitis, or the Tinel's sign for carpal tunnel syndrome.</li>
-            <li>Perform a neurovascular examination, assessing for any signs of nerve or blood vessel injury. Test the patient's sensation and reflexes, as well as their pulse and blood pressure in the affected hand or fingers.</li>
-            <li>Assess for any deformities or abnormalities in the hand and fingers, such as swelling, bruising, or discoloration. Check for any penetrating injuries or foreign objects that may have entered the hand.</li>
-            <li>Assess the range of motion of the fingers and thumb, including flexion, extension, abduction, and adduction. Ask the patient to move their fingers and thumb in each direction, observing for any limitations or pain.</li>
-            <li>Perform specific tests to assess for specific injuries or conditions, such as the Allen's test for arterial insufficiency or the Froment's sign for ulnar nerve palsy.</li>
-            <li>Assess for any signs of tendonitis, such as pain, swelling, tenderness, and limited range of motion. Check for any clicking or popping sensations that may be present.</li>
-            <li>Check for any signs of arthritis, such as pain, swelling, stiffness, and limited range of motion. Ask the patient about any history of autoimmune disease or family history of arthritis.</li>
-            <li>Evaluate the grip strength of the hand, asking the patient to squeeze your hand as tightly as possible. This can help assess for any weakness or motor deficits.</li>
-            <li>Perform any additional tests or maneuvers as indicated by the patient's symptoms or medical history. This may include provocative testing for specific conditions, such as De Quervain's tenosynovitis or trigger finger.</li>
-            </ol>
-            <p>Imaging studies, such as X-rays or MRI, may be ordered if the examination reveals any abnormalities or if further evaluation is needed.</p>
-            </div>
-            <div class="section">
-                <h2 class="subheading">Common Hand and Finger Injuries and Conditions</h2>
-                <p>Some common hand and finger injuries and conditions that may be detected during an examination include:</p>
-                <table>
-                    <tr>
-                        <th>Injury/Condition</th>
-                        <th>Signs and Symptoms</th>
-                        <th>Differential Diagnosis</th>
-                        <th>Treatment</th>
-                    </tr>
-                    <tr>
-                        <td>Fracture</td>
-                        <td>Pain, swelling, tenderness, deformity</td>
-                        <td>Sprain, dislocation, tendonitis, arthritis</td>
-                        <td>Immobilization, surgery, pain management</td>
-                    </tr>
-                    <tr>
-                        <td>Sprain</td>
-                        <td>Pain, swelling, tenderness, limited range of motion</td>
-                        <td>Fracture, dislocation, tendonitis, arthritis</td>
-                        <td>Immobilization, rest, ice, compression, elevation, pain management</td>
-                    </tr>
-                    <tr>
-                        <td>Tendonitis</td>
-                        <td>Pain, swelling, tenderness, limited range of motion, clicking or popping sensation</td>
-                        <td>Fracture, sprain, arthritis, ganglion cyst</td>
-                        <td>Rest, ice, compression, elevation, physical therapy, pain management</td>
-                    </tr>
-                    <tr>
-                        <td>Arthritis</td>
-                        <td>Pain, swelling, stiffness, limited range of motion</td>
-                        <td>Rheumatoid arthritis, osteoarthritis, gout, infection</td>
-                        <td>Medications, physical therapy, surgery</td>
-                        </tr>
-                        <tr>
-                        <td>De Quervain's tenosynovitis</td>
-                        <td>Pain and swelling on the thumb side of the wrist, difficulty gripping or making a fist</td>
-                        <td>Tendonitis, ganglion cyst, arthritis</td>
-                        <td>Rest, ice, compression, physical therapy, corticosteroid injection</td>
-                        </tr>
-                        <tr>
-                        <td>Trigger finger</td>
-                        <td>Finger or thumb locks in a bent position, clicking</td>
-                        <td>The diagnosis of trigger finger is usually made based on a physical examination by a healthcare provider. Imaging studies such as X-rays or MRI may be ordered in some cases to rule out other conditions, such as arthritis or tendonitis.</td>
-                        <td>The treatment of trigger finger depends on the severity of the condition and the patient's symptoms.</td>
-                        </tr>
-                        </table>
-                    </div>
-                    <div class="section">
-                        <h2 class="subheading">Diagnosis</h2>
-                        <p>The diagnosis of hand injuries and conditions is usually made based on a physical examination by a healthcare provider. Imaging studies such as X-rays, MRI, or CT scans may be ordered in some cases to rule out fractures, dislocations, or ligament injuries.</p>
-                    </div>
-                    <div class="section">
-                        <h2 class="subheading">Treatment</h2>
-                        <p>The treatment of hand injuries and conditions depends on the severity of the injury or condition and the patient's symptoms. Treatment options may include:</p>
-                        <ul>
-                            <li><strong>Rest:</strong> Resting the affected hand and avoiding activities that may aggravate the injury or condition</li>
-                            <li><strong>Immobilization:</strong> Wearing a cast or splint to immobilize the hand and allow it to rest and heal</li>
-                            <li><strong>Physical therapy:</strong> Performing exercises to improve hand and finger strength and flexibility and promote healing</li>
-                            <li><strong>Medications:</strong> Nonsteroidal anti-inflammatory drugs (NSAIDs) or corticosteroid injections may be prescribed to reduce inflammation and pain</li>
-                            <li><strong>Surgery:</strong> In severe cases, surgery may be necessary to repair fractures, dislocations, or torn ligaments</li>
-                        </ul>
-                    </div>
-                    <div class="section">
-                        <h2 class="subheading">Prevention</h2>
-                        <p>There are several measures that can be taken to prevent hand injuries and conditions:</p>
-                        <ul>
-                            <li>Using proper ergonomics and technique when performing activities that involve hand and finger use</li>
-                            <li>Taking frequent breaks during activities that involve prolonged hand and finger use</li>
-                            <li>Performing stretching exercises to improve hand and finger flexibility</li>
-                            <li>Wearing hand and finger guards or protective gear during activities that carry a risk of hand or finger injury</li>
-                        </ul>
-                    </div>
-                    </body>
-                    </html>
-            
-            
-    
-            
-            
-            
-            
-    
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The hand examination in the Emergency Department aims to detect fractures, dislocations,
+        tendon and nerve injuries, vascular compromise and infection. Small wounds can hide major
+        damage, so a systematic approach and meticulous documentation are essential.
+      </p>
+      <p>
+        Always examine the hand in the context of the entire upper limb and mechanism of injury,
+        and remember that missed tendon or nerve injuries can lead to lifelong disability.
+      </p>
+    </div>
+
+    <!-- Red flags -->
+    <div class="section">
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>Identify and act urgently if any of the following are present:</p>
+      <ul>
+        <li><span class="red-flag">Ischaemia:</span> pale, cold hand with delayed capillary refill, absent pulses.</li>
+        <li><span class="red-flag">Compartment syndrome:</span> severe pain out of proportion, pain on passive stretch, tense compartments, altered sensation.</li>
+        <li><span class="red-flag">Open fractures</span> or gross contamination (farm injuries, machinery).</li>
+        <li><span class="red-flag">Fight bites / clenched fist injuries:</span> lacerations over MCP joints after punching a mouth.</li>
+        <li><span class="red-flag">Flexor tendon sheath infection (flexor tenosynovitis):</span> Kanavel’s signs – fusiform swelling, pain on passive extension, finger held in flexion, tenderness along flexor sheath.</li>
+        <li><span class="red-flag">High-pressure injection injuries</span> (paint, grease, etc.).</li>
+        <li><span class="red-flag">Suspected major nerve injury</span> with loss of motor function or dense anaesthesia.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag should prompt early hand surgery / orthopaedic consultation and urgent antibiotics if infection is suspected.
+      </p>
+    </div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> crush, laceration (glass, knife), saw injury, bite, fall, sports, industrial machinery, injection injury.</li>
+        <li><strong>Timing:</strong> time of injury, delay to presentation, any first aid given.</li>
+        <li><strong>Dominant hand</strong> and occupation/hobbies (instrumental for function and medico-legal implications).</li>
+        <li><strong>Symptoms:</strong> pain, weakness, numbness or tingling, loss of function, locking or triggering.</li>
+        <li><strong>Wound specifics:</strong> depth, contamination (soil, saliva), foreign body, glove use.</li>
+        <li><strong>Past history:</strong> diabetes, peripheral vascular disease, immunosuppression, previous hand surgery.</li>
+        <li><strong>Tetanus status</strong> and allergies.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Examine both hands where possible, comparing with the uninjured side. Remove rings early
+        if swelling is anticipated.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Inspect the <strong>skin, nails and alignment</strong> of fingers and thumb.</li>
+        <li>Look for <strong>swelling, bruising, deformity, lacerations</strong> and nail bed injuries.</li>
+        <li>Assess finger posture at rest; a flexed or dropped digit may indicate tendon rupture.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <ul>
+        <li>Palpate along the <strong>bones</strong> (phalanges, metacarpals, carpal region) for tenderness and crepitus.</li>
+        <li>Palpate <strong>over joints and along tendons</strong>, especially flexor and extensor surfaces.</li>
+        <li>Assess temperature, localised tenderness and fluctuance in suspected infection.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Move – Joints and Tendons</h3>
+      <p>Test each joint in isolation where possible, checking both active and passive motion.</p>
+      <ul>
+        <li><strong>Wrist:</strong> flexion, extension, radial and ulnar deviation.</li>
+        <li><strong>MCP, PIP, DIP joints:</strong> flexion and extension of each finger; compare with the opposite hand.</li>
+        <li><strong>Thumb:</strong> flexion/extension, abduction/adduction, opposition to little finger.</li>
+        <li>Note any <strong>lag, inability to fully extend/flex</strong>, or painful restriction.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Specific Functional Tests</h3>
+      <ul>
+        <li><strong>Flexor tendons:</strong>
+          <ul>
+            <li>FDP – hold PIP in extension, ask patient to flex DIP.</li>
+            <li>FDS – hold adjacent fingers in extension, ask patient to flex PIP of the finger being tested.</li>
+          </ul>
+        </li>
+        <li><strong>Extensor tendons:</strong> ask patient to extend each joint against resistance; look for extensor lag or mallet deformity.</li>
+        <li><strong>De Quervain’s tenosynovitis:</strong> Finkelstein’s test (thumb in fist, ulnar deviation of wrist).</li>
+        <li><strong>Trigger finger:</strong> palpable nodule and catching/locking during flexion–extension.</li>
+        <li><strong>Carpal tunnel (median nerve):</strong> Tinel’s sign at carpal tunnel, Phalen’s test (optional for ED teaching context).</li>
+      </ul>
+
+      <h3 class="subheading-small">5. Neurovascular Examination</h3>
+      <p>Document sensory and motor function before and after any procedure.</p>
+      <ul>
+        <li><strong>Sensation:</strong>
+          <ul>
+            <li>Median nerve – palmar aspect of thumb, index, middle and radial half of ring finger.</li>
+            <li>Ulnar nerve – little finger and ulnar half of ring finger, dorsal ulnar hand.</li>
+            <li>Radial nerve – dorsum of hand over first web space.</li>
+          </ul>
+        </li>
+        <li><strong>Motor:</strong>
+          <ul>
+            <li>Median – “OK” sign (FPL and FDP to index), thumb opposition.</li>
+            <li>Ulnar – finger abduction/adduction (interossei), Froment’s sign (paper between thumb and index).</li>
+            <li>Radial – wrist and MCP extension (“thumbs up”).</li>
+          </ul>
+        </li>
+        <li><strong>Circulation:</strong> radial and ulnar pulses, capillary refill in each finger, hand temperature and colour.</li>
+      </ul>
+    </div>
+
+    <!-- Common ED hand conditions -->
+    <div class="section">
+      <h2 class="subheading">Common ED Hand Injuries and Conditions</h2>
+      <p>
+        The table below highlights key ED-relevant conditions. Many require urgent or early hand surgery review.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Key Findings</th>
+            <th>ED Pearls / Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Phalangeal / metacarpal fractures</td>
+            <td>
+              Pain, swelling, deformity, rotational malalignment (fingers cross when making a fist),
+              tenderness over bone.
+            </td>
+            <td>
+              Check rotation carefully. Immobilise in safe hand position (MCP flexed, IP joints straight) and
+              refer to orthopaedics/hand surgery. Open or intra-articular fractures need urgent review.
+            </td>
+          </tr>
+          <tr>
+            <td>Dislocations (e.g. PIP, MCP)</td>
+            <td>
+              Obvious deformity, inability to move joint, usually after hyperextension or axial load.
+            </td>
+            <td>
+              Neurovascular assessment before and after reduction. Post-reduction X-ray to exclude fracture.
+              Splint in functional position and arrange follow-up.
+            </td>
+          </tr>
+          <tr>
+            <td>Flexor tendon laceration</td>
+            <td>
+              Deep palmar wound, inability to flex DIP/PIP of affected finger, painful or weak flexion.
+            </td>
+            <td>
+              High risk of missed injury. Do not ignore small wounds in flexor zones. Irrigate, splint, give
+              antibiotics and tetanus as indicated, and refer urgently to hand surgery.
+            </td>
+          </tr>
+          <tr>
+            <td>Extensor tendon injury</td>
+            <td>
+              Inability to actively extend finger or thumb (e.g. mallet finger, boutonnière), dorsal laceration.
+            </td>
+            <td>
+              Splint in appropriate position (e.g. DIP in extension for mallet). Many require hand clinic follow-up;
+              some need surgical repair.
+            </td>
+          </tr>
+          <tr>
+            <td>Flexor tenosynovitis</td>
+            <td>
+              Kanavel’s signs: fusiform swelling, finger held in flexion, tenderness along flexor sheath, pain on
+              passive extension; often systemic features.
+            </td>
+            <td>
+              Orthopaedic emergency. Start IV antibiotics, elevate limb and obtain urgent hand surgery review for
+              possible surgical washout.
+            </td>
+          </tr>
+          <tr>
+            <td>Human bite / “fight bite”</td>
+            <td>
+              Small laceration over MCP joint (often 3rd/4th), usually after punching someone in the mouth; may
+              look innocuous.
+            </td>
+            <td>
+              High infection risk with joint involvement. Irrigate thoroughly, give broad-spectrum antibiotics and
+              tetanus, avoid primary closure, and refer to hand surgery.
+            </td>
+          </tr>
+          <tr>
+            <td>De Quervain’s tenosynovitis</td>
+            <td>
+              Pain and swelling over radial styloid, worse with thumb movement, positive Finkelstein’s test.
+            </td>
+            <td>
+              ED role is exclusion of other pathology, basic analgesia, splinting and outpatient follow-up for
+              steroid injection / physio if needed.
+            </td>
+          </tr>
+          <tr>
+            <td>Carpal tunnel syndrome (acute flare)</td>
+            <td>
+              Numbness/tingling in radial 3½ fingers, nocturnal symptoms, positive Tinel’s/Phalen’s; in acute setting
+              may follow trauma or swelling.
+            </td>
+            <td>
+              Exclude compartment syndrome. Splint wrist in neutral, analgesia and arrange follow-up. Acute severe
+              cases with weakness or trauma may need urgent surgical review.
+            </td>
+          </tr>
+          <tr>
+            <td>Trigger finger</td>
+            <td>
+              Finger catches or locks during flexion–extension, palpable nodule at A1 pulley, often painful.
+            </td>
+            <td>
+              ED role mainly reassurance, analgesia and splinting if needed. Arrange outpatient follow-up for
+              steroid injection or surgical release.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Diagnosis / Imaging -->
+    <div class="section">
+      <h2 class="subheading">Diagnosis & Imaging</h2>
+      <ul>
+        <li><strong>Plain X-rays:</strong> essential for suspected fractures or dislocations; obtain at least two views and consider special views for scaphoid or specific injuries.</li>
+        <li><strong>Ultrasound:</strong> may help with tendon injuries or superficial foreign bodies where available.</li>
+        <li><strong>MRI / CT:</strong> usually not ED tests; arranged via orthopaedics/hand surgery for complex or occult injuries.</li>
+        <li><strong>Blood tests:</strong> FBC, CRP, cultures if significant infection suspected (e.g. tenosynovitis, deep-space infection, bite wounds with systemic features).</li>
+      </ul>
+    </div>
+
+    <!-- Treatment -->
+    <div class="section">
+      <h2 class="subheading">Treatment Principles in the ED</h2>
+      <ul>
+        <li><strong>Analgesia:</strong> oral or IV; consider regional blocks or digital nerve blocks for painful procedures.</li>
+        <li><strong>Irrigation and debridement:</strong> especially for contaminated wounds and bites.</li>
+        <li><strong>Immobilisation:</strong> splints or casts in a safe hand position; elevate the hand to reduce swelling.</li>
+        <li><strong>Antibiotics:</strong> for bites, open fractures, flexor sheath infections, contaminated wounds and high-risk patients.</li>
+        <li><strong>Tetanus prophylaxis:</strong> update as indicated.</li>
+        <li><strong>Referral and follow-up:</strong> low threshold for hand surgery review in tendon, nerve, complex fracture or infection cases; provide clear written instructions and safety-net advice.</li>
+      </ul>
+    </div>
+
+    <!-- Prevention -->
+    <div class="section">
+      <h2 class="subheading">Prevention & Patient Education</h2>
+      <ul>
+        <li>Encourage use of appropriate protective equipment at work and during sports.</li>
+        <li>Promote safe tool and machinery use, with adherence to occupational safety standards.</li>
+        <li>Explain the importance of early review if pain, swelling, numbness or loss of function worsens.</li>
+        <li>In chronic overuse conditions, discuss basic ergonomics, rest and gradual return to activity.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

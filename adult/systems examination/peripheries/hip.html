@@ -1,186 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Hip Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
-    </head>
-<header>
-    <div class="logo-container">
-        <h1>Hip Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
+  <title>Emergency Department Hip Exam</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    /* image + figure styling */
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Condition"; }
+      td:nth-of-type(2)::before { content: "Key Findings"; }
+      td:nth-of-type(3)::before { content: "ED Pearls"; }
+    }
+  </style>
+</head>
 <body>
-    <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>The hip examination is a standard assessment performed in the emergency department to evaluate the hip joint and surrounding structures. This examination is performed on patients who present with hip pain, injury, or other related complaints. The examination is essential for identifying any potential injuries or conditions that may require further evaluation or treatment.</p>
+  <header>
+    <div class="logo-container">
+      <h1>Hip Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
+  </header>
+
+  <main class="page-wrapper">
+    <!-- Overview -->
     <div class="section">
-        <h2 class="subheading">Examination Technique</h2>
-        <p>The hip examination involves the following steps:</p>
-        <ol>
-            <li>Inspect the hip and surrounding area for any visible abnormalities, such as swelling, bruising, or deformity. Check for any lacerations, puncture wounds, or other injuries.</li>
-            <li>Palpate the hip, including the bony structures, soft tissues, and any tender areas. Check for any signs of crepitus, bursitis, or joint effusion.</li>
-            <li>Assess the range of motion of the hip joint, including flexion, extension, abduction, and adduction. Ask the patient to move their hip in each direction, observing for any limitations or pain.</li>
-            <li>Perform specific tests to assess for specific injuries or conditions, such as the Thomas test for hip flexor tightness or the Trendelenburg test for hip abductor weakness.</li>
-            <li>Perform a neurovascular examination, assessing for any signs of nerve or blood vessel injury. Test the patient's sensation and reflexes in the affected leg, as well as their pulse and blood pressure.</li>
-            <li>Evaluate for any signs of joint instability, such as the presence of a hip dislocation. </li>
-            <li>Assess for any signs of osteoarthritis, rheumatoid arthritis, or other inflammatory conditions.</li>
-            <li>Perform any additional tests or maneuvers as indicated by the patient's symptoms or medical history. This may include provocative testing for specific conditions, such as labral tears or femoroacetabular impingement.</li>
-        </ol>
-        <p>Imaging studies, such as X-rays or MRI, may be ordered if the examination reveals any abnormalities or if further evaluation is needed.</p>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The hip examination in the Emergency Department focuses on recognising neck of femur fractures,
+        hip dislocations, septic arthritis and referred pain from the lumbar spine or pelvis. A structured
+        approach helps distinguish patients who need urgent orthopaedic intervention from those who can be
+        investigated and managed more conservatively.
+      </p>
+      <p>
+        Always consider the hip in the context of the whole lower limb and mechanism of injury, especially
+        in the elderly (low-energy falls) and in high-energy trauma.
+      </p>
+
+      <!-- Composite hip illustration -->
+      <figure>
+        <img src="/adult/systems examination/peripheries/images/hip examination.png"
+             alt="Composite illustration of hip surface anatomy, examination positions and key special tests"
+             class="image">
+        <figcaption>
+          Key surface anatomy, examination positions and special tests relevant to hip examination in the Emergency Department.
+        </figcaption>
+      </figure>
     </div>
-    
+
+    <!-- Red flags -->
     <div class="section">
-        <h2 class="subheading">Common Hip Injuries and Conditions</h2>
-        <p>Some common hip injuries and conditions that may be detected during a hip examination include:</p>
-        <table>
-            <tr>
-                <th>Injury/Condition</th>
-                <th>Signs and Symptoms</th>
-                <th>Differential Diagnosis</th>
-                <th>Treatment</th>
-            </tr>
-            <tr>
-                <td>Fracture</td>
-                <td>Pain, swelling, deformity, limited range of motion</td>
-                <td>Dislocation, sprain, tendonitis, bursitis</td>
-                <td>Immobilization, surgery, pain management</td>
-            </tr>
-            <tr>
-                <td>Dislocation</td>
-                <td>Pain, deformity, limited range of motion</td>
-                <td>Fracture, sprain, tendonitis, bursitis</td>
-                <td>Reduction, immobilization, pain management</td>
-            </tr>
-            <tr>
-                <td>Tendonitis</td>
-                <td>Pain, swelling, tenderness, limited range of motion, clicking or popping sensation</td>
-                <td>Fracture, sprain, arthritis, ganglion cyst</td>
-                <td>Rest, ice, compression, elevation, physical therapy, pain management</td>
-              </tr>
-              <tr>
-                <td>Arthritis</td>
-                <td>Pain, stiffness, limited range of motion, difficulty walking</td>
-                <td>Osteoarthritis, rheumatoid arthritis, psoriatic arthritis, infectious arthritis</td>
-                <td>Medications, physical therapy, surgery</td>
-              </tr>
-              <tr>
-                <td>Labral Tear</td>
-                <td>Pain in the groin or hip, stiffness, clicking or locking sensation, decreased range of motion</td>
-                <td>Femoroacetabular impingement (FAI), osteoarthritis, hip dysplasia, snapping hip syndrome</td>
-                <td>Physical therapy, anti-inflammatory medications, arthroscopy, hip replacement surgery</td>
-              </tr>
-              <tr>
-                <td>Snapping Hip Syndrome</td>
-                <td>Audible snapping or popping sound in the hip during movement, pain, stiffness, instability</td>
-                <td>Iliopsoas tendonitis, IT band syndrome, hip bursitis, labral tear</td>
-                <td>Rest, physical therapy, anti-inflammatory medications, corticosteroid injections, surgery in severe cases</td>
-              </tr>
-              <tr>
-                <td>Osteonecrosis</td>
-                <td>Pain in the hip or groin, stiffness, limited range of motion, limping</td>
-                <td>Trauma, alcohol abuse, corticosteroid use, sickle cell disease, radiation therapy</td>
-                <td>Physical therapy, anti-inflammatory medications, osteotomy, joint replacement surgery</td>
-              </tr>
-              <tr>
-                <td>Hip Fracture</td>
-                <td>Sudden onset of severe pain in the hip or groin, inability to bear weight on affected side, swelling, bruising</td>
-                <td>Other fractures, dislocations, labral tear, osteoarthritis</td>
-                <td>Immobilization, surgery, pain management, physical therapy</td>
-              </tr>
-            </table>
-          </div>
-          <div class="section">
-            <h2 class="subheading">Diagnosis</h2>
-            <p>Diagnosis of hip injuries and conditions is based on physical examination, medical history, and imaging tests. Common imaging tests used for hip examination include X-ray, MRI, and CT scan.</p>
-          </div>
-          <div class="section">
-            <h2 class="subheading">Treatment</h2>
-            <p>Treatment of hip injuries and conditions depends on the severity of the condition, underlying cause, and the patient's symptoms. Common treatment options include:</p>
-            <ul>
-              <li><strong>Rest:</strong> Resting the affected hip and avoiding activities that may aggravate the condition.</li>
-              <li><strong>Physical therapy:</strong> Strengthening and stretching exercises to improve hip joint mobility and function.</li>
-              <li><strong>Medications:</strong> Nonsteroidal anti-inflammatory drugs (NSAIDs) and painkillers to manage pain and inflammation.</li>
-              <li><strong>Injections:</strong> Corticosteroid injections and hyaluronic acid injections to reduce pain and inflammation.</li>
-              <li><strong>Surgery:</strong> In severe cases, surgical procedures such as arthroscopy</li>
-            </ul>
-            <p>In severe cases where conservative treatment options have failed, surgery may be recommended to address hip conditions. The type of surgical procedure recommended depends on the specific condition and severity of symptoms, and may include:</p>
-
-            <ul>
-                <li><strong>Arthroscopy:</strong> A minimally invasive surgical procedure in which a small camera and instruments are inserted into the hip joint through small incisions to repair or remove damaged tissue.</li>
-                <li><strong>Joint replacement:</strong> In severe cases of hip arthritis, a total hip replacement surgery may be recommended, in which the damaged joint is removed and replaced with an artificial joint made of metal, plastic, or ceramic.</li>
-                <li><strong>Osteotomy:</strong> A surgical procedure in which the hip bone is cut and realigned to improve joint function and relieve pain.</li>
-            </ul>
-
-            <p>Following surgery, a rehabilitation program is typically recommended to help the patient regain strength and mobility in the hip joint. This may include physical therapy, exercises, and other techniques to promote healing and recovery.</p>
-        </div>
-
-        <div class="section">
-            <h2 class="subheading">Prevention</h2>
-            <p>There are several measures that can be taken to prevent hip injuries and maintain optimal hip health:</p>
-            <ul>
-                <li>Engage in regular exercise and physical activity to maintain strength and flexibility in the hip joint.</li>
-                <li>Use proper form and technique when engaging in physical activities, such as running or weightlifting, to prevent injury.</li>
-                <li>Gradually increase the intensity and duration of physical activity to avoid overuse injuries.</li>
-                <li>Wear appropriate footwear when engaging in physical activity to provide proper support and cushioning for the feet and hips.</li>
-                <li>Maintain a healthy weight to reduce stress on the hips and other weight-bearing joints.</li>
-                <li>Avoid smoking, which can weaken bones and increase the risk of hip fractures.</li>
-                <li>Consult with a healthcare provider or physical therapist to develop a personalized plan for maintaining optimal hip health.</li>
-            </ul>
-        </div>
-
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>After ABC and a brief trauma survey, look for:</p>
+      <ul>
+        <li><span class="red-flag">Inability to weight-bear</span> after a fall, especially in an older patient.</li>
+        <li><span class="red-flag">Shortened, externally rotated leg</span> – classic for neck of femur fracture.</li>
+        <li><span class="red-flag">Severe pain with minimal movement</span> of the hip, especially with fever or systemic toxicity – think septic arthritis.</li>
+        <li><span class="red-flag">Hip dislocation</span> (often posterior after high-energy trauma) – limb shortened, adducted and internally rotated; sciatic nerve at risk.</li>
+        <li><span class="red-flag">High-energy mechanism</span> (MVC, fall from height) – consider acetabular fractures and associated injuries.</li>
+        <li><span class="red-flag">Children with atraumatic limp, fever or inability to bear weight</span> – consider septic arthritis or slipped upper femoral epiphysis (SUFE).</li>
+      </ul>
+      <p class="key-point">
+        Any suspected neck of femur fracture, septic arthritis or hip dislocation requires urgent orthopaedic review.
+      </p>
     </div>
-</div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> fall from standing, fall from height, direct blow, twisting injury, high-speed trauma, sports injury.</li>
+        <li><strong>Onset and course:</strong> sudden vs gradual, acute trauma vs insidious pain, ability to walk immediately after injury.</li>
+        <li><strong>Pain characteristics:</strong> groin, lateral hip, buttock or referred knee pain; constant vs movement-related.</li>
+        <li><strong>Systemic features:</strong> fever, rigors, weight loss, night sweats, history of malignancy or infection.</li>
+        <li><strong>Risk factors:</strong> osteoporosis, previous fragility fractures, chronic steroid use, alcohol excess, sickle cell disease, HIV, TB, inflammatory arthritis.</li>
+        <li><strong>Functional status:</strong> baseline mobility and level of independence – important for disposition planning.</li>
+        <li><strong>Red flag questions in children:</strong> recent infection, trauma, night pain, weight loss, systemic symptoms.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Examine the patient supine if possible, with pelvis straight and both legs exposed from umbilicus to feet.
+        Observe before moving the limb.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>General: posture, distress, ability to move in bed or stand.</li>
+        <li>Leg alignment: <strong>shortening, external or internal rotation</strong>, abduction or adduction.</li>
+        <li>Swelling, bruising or deformity over the hip, groin, lateral thigh or buttock.</li>
+        <li>Surgical scars, skin changes or previous wounds.</li>
+      </ul>
+
+     
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <p>Palpate gently, watching the patient’s face:</p>
+      <ul>
+        <li><strong>Bony landmarks:</strong> anterior superior iliac spine (ASIS), iliac crest, greater trochanter, pubic symphysis, sacroiliac joints.</li>
+        <li><strong>Soft tissues:</strong> trochanteric region (bursitis), groin, adductor origin, lateral thigh musculature.</li>
+        <li>Check for <strong>crepitus, warmth, effusion</strong> or obvious step deformity.</li>
+      </ul>
+
+     
+
+      <h3 class="subheading-small">3. Move</h3>
+      <p>
+        If fracture or dislocation is suspected, keep movement to a minimum and wait for X-rays and orthopaedic input.
+        Otherwise, assess range of motion:
+      </p>
+      <ul>
+        <li><strong>Flexion and extension:</strong> flex hip with knee bent; assess any pain or restriction.</li>
+        <li><strong>Internal and external rotation:</strong> with hip flexed to 90°, rotate leg in and out; pain in the groin may indicate intra-articular pathology.</li>
+        <li><strong>Abduction and adduction:</strong> move the leg away from and towards midline, comparing sides.</li>
+      </ul>
+
+      <!-- Illustration: hip ROM positions -->
+     
+
+      <h3 class="subheading-small">4. Special Tests</h3>
+      <ul>
+        <li><strong>Log roll test:</strong> gently roll the relaxed leg internally and externally; pain suggests intra-articular pathology or fracture.</li>
+        <li><strong>Axial load / heel strike:</strong> gentle axial compression through the heel or flexed knee; pain in the hip raises suspicion of femoral neck or acetabular fracture.</li>
+        <li><strong>FABER (Patrick’s) test:</strong> Flexion, ABduction, External Rotation – pain in groin suggests hip pathology; pain in SI area suggests sacroiliac disease.</li>
+        <li><strong>FADIR test:</strong> Flexion, ADduction, Internal Rotation – may reproduce pain in femoroacetabular impingement or labral tears.</li>
+        <li><strong>Trendelenburg test:</strong> patient stands on one leg; failure of the pelvis to stay level or rise on the contralateral side suggests hip abductor weakness.</li>
+      </ul>
+
+      <!-- Illustration: FABER / Trendelenburg tests -->
+     
+    </div>
+
+    <!-- Neurovascular exam (proximal) -->
+    <div class="section">
+      <h2 class="subheading">Neurovascular Examination of the Lower Limb</h2>
+      <p>
+        A neurovascular assessment must be documented in all significant hip injuries, particularly
+        dislocations and high-energy trauma.
+      </p>
+
+      <h3 class="subheading-small">1. Circulation</h3>
+      <ul>
+        <li><strong>Femoral pulse:</strong> in the groin, midway between ASIS and pubic symphysis.</li>
+        <li><strong>Popliteal, dorsalis pedis and posterior tibial pulses:</strong> compare both sides for presence and symmetry.</li>
+        <li><strong>Capillary refill:</strong> toes &lt; 2 seconds; check colour and temperature of the foot.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Sensation</h3>
+      <ul>
+        <li><strong>Femoral nerve:</strong> anterior thigh and medial leg (via saphenous branch).</li>
+        <li><strong>Obturator nerve:</strong> medial thigh (often subtle, test with adductor squeeze).</li>
+        <li><strong>Sciatic nerve:</strong> posterior thigh, leg and most of the foot (tibial and peroneal branches).</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Motor Function</h3>
+      <ul>
+        <li><strong>Femoral nerve:</strong> knee extension (quadriceps) – ask patient to straighten the knee against resistance.</li>
+        <li><strong>Sciatic nerve / peroneal branch:</strong> ankle dorsiflexion and toe extension.</li>
+        <li><strong>Sciatic nerve / tibial branch:</strong> ankle plantarflexion and toe flexion.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Red Flags</h3>
+      <ul>
+        <li>Absent or diminished distal pulses following hip dislocation or fracture.</li>
+        <li>New foot drop (common peroneal nerve involvement) or global sciatic deficit.</li>
+        <li>Progressive numbness or weakness after reduction or manipulation.</li>
+      </ul>
+      <p class="key-point">
+        Any neurovascular deficit associated with a hip injury is an emergency – urgently involve orthopaedics
+        and vascular surgery where available.
+      </p>
+    </div>
+
+    <!-- Common hip conditions (ED-focused) -->
+    <div class="section">
+      <h2 class="subheading">Common ED Hip Conditions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Key Findings</th>
+            <th>ED Pearls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Neck of femur fracture</td>
+            <td>
+              Elderly patient after a low-energy fall, inability to weight-bear, shortened and externally
+              rotated leg, hip and groin tenderness.
+            </td>
+            <td>
+              X-ray AP pelvis and lateral hip. Consider occult fracture if pain with log roll/axial load but
+              normal X-ray – may need CT or MRI. Early surgery improves outcomes.
+            </td>
+          </tr>
+          <tr>
+            <td>Hip dislocation (usually posterior)</td>
+            <td>
+              High-energy trauma, leg flexed, adducted and internally rotated; severe pain and inability to move.
+              Possible sciatic nerve deficit.
+            </td>
+            <td>
+              True orthopaedic emergency – reduction ideally within 6 hours. Obtain X-ray before and after reduction.
+              Perform full neurovascular exam and document carefully.
+            </td>
+          </tr>
+          <tr>
+            <td>Septic arthritis</td>
+            <td>
+              Acute onset severe hip pain, inability to move the joint, fever, systemic illness, often holds hip
+              flexed and externally rotated.
+            </td>
+            <td>
+              Do not delay antibiotics and orthopaedic review. Requires urgent aspiration and often surgical washout.
+              Particularly important in children and immunocompromised patients.
+            </td>
+          </tr>
+          <tr>
+            <td>Greater trochanteric pain syndrome / bursitis</td>
+            <td>
+              Lateral hip pain, point tenderness over greater trochanter, pain lying on that side, normal range of motion.
+            </td>
+            <td>
+              Exclude fracture in older patients with trauma or inability to weight-bear. Often managed conservatively
+              with analgesia and physiotherapy.
+            </td>
+          </tr>
+          <tr>
+            <td>Labral tear / FAI</td>
+            <td>
+              Young or middle-aged adult with groin pain, clicking or catching, pain on FADIR/FABER, often worse with
+              flexion/rotation.
+            </td>
+            <td>
+              ED role is exclusion of fracture/infection, analgesia and referral to orthopaedics or sports medicine
+              for further imaging and management.
+            </td>
+          </tr>
+          <tr>
+            <td>Osteoarthritis of the hip</td>
+            <td>
+              Chronic groin or buttock pain, stiffness, reduced range of motion, difficulty with putting on shoes or
+              getting in/out of car.
+            </td>
+            <td>
+              Manage pain and mobility issues acutely; arrange follow-up for long-term management and potential joint replacement.
+            </td>
+          </tr>
+          <tr>
+            <td>Osteonecrosis (avascular necrosis)</td>
+            <td>
+              Groin or buttock pain, often in younger adults with steroid use, alcohol excess or sickle cell disease;
+              may have normal early X-rays.
+            </td>
+            <td>
+              Maintain suspicion in at-risk patients with persistent hip pain. ED role is recognising risk and referring
+              for further imaging and specialist review.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Investigations -->
+    <div class="section">
+      <h2 class="subheading">Investigations</h2>
+      <ul>
+        <li><strong>X-ray:</strong> AP pelvis and lateral hip for suspected fracture or dislocation.</li>
+        <li><strong>CT:</strong> better assessment of acetabular fractures, complex fractures or occult fractures not seen on X-ray.</li>
+        <li><strong>MRI:</strong> useful for occult fractures, labral tears and osteonecrosis; usually arranged as outpatient unless urgent.</li>
+        <li><strong>Blood tests:</strong> FBC, CRP, ESR, blood cultures if septic arthritis or osteomyelitis suspected.</li>
+      </ul>
+    </div>
+
+    <!-- Management & prevention -->
+    <div class="section">
+      <h2 class="subheading">Management & Prevention</h2>
+      <p>
+        Treatment depends on the underlying diagnosis and patient factors:
+      </p>
+      <ul>
+        <li><strong>Analgesia:</strong> regular oral analgesics; consider regional blocks (e.g. femoral nerve block) in hip fractures if skilled.</li>
+        <li><strong>Immobilisation and weight-bearing:</strong> non-weight-bearing and bed rest for suspected fractures until cleared; early mobilisation when safe.</li>
+        <li><strong>Surgery:</strong> early operative management for most hip fractures and dislocations, selected labral tears and advanced osteoarthritis.</li>
+        <li><strong>Physiotherapy and rehabilitation:</strong> crucial post-operatively and for chronic conditions.</li>
+        <li><strong>Bone health and falls prevention:</strong> calcium/vitamin D, osteoporosis treatment, home safety assessment and vision review in the elderly.</li>
+      </ul>
+      <p>
+        Prevention of hip injuries includes regular weight-bearing exercise, attention to bone health,
+        safe environments to reduce falls, and appropriate protective equipment in high-impact sports.
+      </p>
+    </div>
+  </main>
 </body>
 </html>
-    
-    

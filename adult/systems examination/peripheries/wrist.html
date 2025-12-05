@@ -1,181 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Wrist Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-		
-		.subheading {
-			font-size: 24px;
-			margin-bottom: 10px;
-		}
-		
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-	</style>
+  <title>Wrist Examination in the Emergency Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Condition"; }
+      td:nth-of-type(2)::before { content: "Key Findings"; }
+      td:nth-of-type(3)::before { content: "ED Pearls / Management"; }
+      td:nth-of-type(4)::before { content: "Notes"; }
+    }
+  </style>
 </head>
 
-<header>
-    <div class="logo-container">
-        <h1>Wrist Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
-
 <body>
+  <header>
+    <div class="logo-container">
+      <h1>Wrist Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <!-- Overview -->
     <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>A wrist examination is performed in the emergency department to assess for any injuries or abnormalities in the wrist and hand. This examination is typically done on patients who have sustained a wrist injury or are experiencing wrist pain, and is essential for identifying any potential fractures or ligament injuries.</p>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The wrist examination in the Emergency Department aims to detect distal radius and ulna
+        fractures, carpal fractures (especially scaphoid), ligament injuries, distal radioulnar
+        joint (DRUJ) instability, tendon injuries and acute nerve compression. Many apparently
+        “minor” wrist injuries can have important functional consequences if missed.
+      </p>
+      <p>
+        Mechanisms are often falls onto an outstretched hand (FOOSH), sports trauma, road traffic
+        collisions or work-related injuries. Always examine the <strong>entire upper limb</strong> and consider
+        associated elbow or hand injuries.
+      </p>
     </div>
 
+    <!-- Red flags -->
     <div class="section">
-        <h2 class="subheading">Examination Technique</h2>
-        <p>The wrist examination involves the following steps:</p>
-        <ol>
-            <li>Inspect the wrist for any obvious abnormalities or deformities, such as swelling, bruising, or lacerations. Check for any penetrating injuries or foreign objects that may have entered the wrist.</li>
-            <li>Palpate the wrist, assessing for tenderness, warmth, and swelling. Check for any bony abnormalities or crepitus.</li>
-            <li>Assess the range of motion of the wrist, including flexion, extension, abduction, and adduction. Ask the patient to move their wrist in each direction, observing for any limitations or pain.</li>
-            <li>Perform specific tests to assess for specific injuries or conditions, such as the Finkelstein's test for De Quervain's tenosynovitis, or the Tinel's sign for carpal tunnel syndrome.</li>
-            <li>Perform a neurovascular examination, assessing for any signs of nerve or blood vessel injury. Test the patient's sensation and reflexes, as well as their pulse and blood pressure in the affected hand or fingers.</li>
-            <li>Assess for any signs of carpal tunnel syndrome, such as tingling or numbness in the thumb, index, and middle fingers. This may be done using the Phalen's test, Tinel's sign, or other diagnostic maneuvers.</li>
-            <li>Check for any deformities or abnormalities in the wrist or hand, such as swelling, bruising, or discoloration. Assess for any signs of arthritis, tendonitis, or other inflammatory conditions.</li>
-            <li>Evaluate the range of motion of the wrist and fingers, including flexion, extension, and rotation. Ask the patient to make a fist, touch their fingers to their palm, and spread their fingers apart, observing for any limitations or pain.</li>
-            <li>Perform any additional tests or maneuvers as indicated by the patient's symptoms or medical history. This may include provocative testing for specific conditions, such as De Quervain's tenosynovitis or trigger finger.</li>
-            </ol>
-            <p>Imaging studies, such as X-rays or MRI, may be ordered if the examination reveals any abnormalities or if further evaluation is needed.</p>
-            
-              </div>
-              <div class="section">
-                <h2 class="subheading">Common Wrist Injuries and Conditions</h2>
-                <p>Some common wrist injuries and conditions that may be detected during a wrist examination include:</p>
-                <table>
-                  <tr>
-                    <th>Injury/Condition</th>
-                    <th>Signs and Symptoms</th>
-                    <th>Differential Diagnosis</th>
-                    <th>Treatment</th>
-                  </tr>
-                  <tr>
-                    <td>Fracture</td>
-                    <td>Pain, swelling, tenderness, deformity</td>
-                    <td>Sprain, dislocation, tendonitis, arthritis</td>
-                    <td>Immobilization, surgery, pain management</td>
-                  </tr>
-                  <tr>
-                    <td>Sprain</td>
-                    <td>Pain, swelling, tenderness, limited range of motion</td>
-                    <td>Fracture, dislocation, tendonitis, arthritis</td>
-                    <td>Immobilization, rest, ice, compression, elevation, pain management</td>
-                  </tr>
-                  <tr>
-                    <td>Tendonitis</td>
-                    <td>Pain, swelling, tenderness, limited range of motion, clicking or popping sensation</td>
-                    <td>Fracture, sprain, arthritis, ganglion cyst</td>
-                    <td>Rest, ice, compression, elevation, physical therapy, pain management</td>
-                  </tr>
-                  <tr>
-                    <td>Arthritis</td>
-                    <td>Pain, swelling, stiffness, limited range of motion</td>
-                    <td>Rheumatoid arthritis, osteoarthritis, gout, infection</td>
-                    <td>Medications, physical therapy, surgery</td>
-                  </tr>
-                  <tr>
-                    <td>De Quervain's tenosynovitis</td>
-                    <td>Pain and swelling on the thumb side of the wrist, difficulty gripping or making a fist</td>
-                    <td>Tendonitis, ganglion cyst, arthritis</td>
-                    <td>Rest, ice, compression, physical therapy, corticosteroid injection</td>
-                  </tr>
-                  <tr>
-                    <td>Trigger finger</td>
-                    <td>Finger or thumb locks in a bent position, clicking</td>
-                    <td>The diagnosis of trigger finger is usually made based on a physical examination by a healthcare provider. Imaging studies such as X-rays or MRI may be ordered in some cases to rule out other conditions, such as arthritis or tendonitis.</td>
-                    <td>The treatment of trigger finger depends on the severity of the condition and the patient's symptoms.</td>
-                  </tr>
-                </table>
-                    
-                
-            </div>
-            <div class="section">
-                <h2 class="subheading">Diagnosis</h2>
-                <p>The diagnosis of wrist injuries is usually made based on a physical examination by a healthcare provider. Imaging studies such as X-rays, MRI, or CT scans may be ordered in some cases to rule out fractures, dislocations, or ligament injuries.</p>
-            </div>
-            <div class="section">
-                <h2 class="subheading">Treatment</h2>
-                <p>The treatment of wrist injuries depends on the severity of the injury and the patient's symptoms. Treatment options may include:</p>
-                <ul>
-                    <li><strong>Rest:</strong> Resting the affected wrist and avoiding activities that may aggravate the injury</li>
-                    <li><strong>Immobilization:</strong> Wearing a cast or splint to immobilize the wrist and allow it to rest and heal</li>
-                    <li><strong>Physical therapy:</strong> Performing exercises to improve wrist and hand strength and flexibility and promote healing</li>
-                    <li><strong>Medications:</strong> Nonsteroidal anti-inflammatory drugs (NSAIDs) or corticosteroid injections may be prescribed to reduce inflammation and pain</li>
-                    <li><strong>Surgery:</strong> In severe cases, surgery may be necessary to repair fractures, dislocations, or torn ligaments</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2 class="subheading">Prevention</h2>
-                <p>There are several measures that can be taken to prevent wrist injuries:</p>
-                <ul>
-                    <li>Using proper ergonomics and technique when performing activities that involve wrist and hand use</li>
-                    <li>Taking frequent breaks during activities that involve prolonged wrist and hand use</li>
-                    <li>Performing stretching exercises to improve wrist and hand flexibility</li>
-                    <li>Wearing wrist guards or protective gear during activities that carry a risk of wrist injury</li>
-                </ul>
-            </div>
-            </body>
-            </html>
-            
-            
-            
-            
-           
-            
-                  
-                  
-                  
-                  
-                
-                  
-            
-            
-            
-            
-            
-            
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>Identify these early and escalate:</p>
+      <ul>
+        <li><span class="red-flag">Neurovascular compromise:</span> pale, cool hand, reduced capillary refill, absent or weak radial/ulnar pulses, new motor or sensory deficit.</li>
+        <li><span class="red-flag">Open fractures</span> or high-energy crush injuries.</li>
+        <li><span class="red-flag">Compartment syndrome:</span> severe pain out of proportion, pain on passive finger stretch, tense forearm compartments, altered sensation.</li>
+        <li><span class="red-flag">High-force perilunate / lunate injuries:</span> marked swelling, severe pain, median nerve symptoms, reduced wrist motion.</li>
+        <li><span class="red-flag">Suspicion of scaphoid fracture</span> (snuffbox tenderness) with normal initial X-rays.</li>
+        <li><span class="red-flag">Bite injuries</span> or heavily contaminated wounds near joints or tendon sheaths.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag warrants early orthopaedic/hand surgery consultation and careful
+        documentation of neurovascular status.
+      </p>
+    </div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> FOOSH, direct blow, twisting injury, crush, machinery, sports, assault, bite, high-pressure injection.</li>
+        <li><strong>Timing:</strong> onset, progression of pain and swelling, previous injuries or surgery to wrist/hand.</li>
+        <li><strong>Symptoms:</strong> pain location (radial, ulnar, dorsal, volar), stiffness, locking, clicking, weakness or loss of grip strength.</li>
+        <li><strong>Neurological symptoms:</strong> numbness, tingling, burning in fingers (median, ulnar or radial distributions).</li>
+        <li><strong>Functional impact:</strong> ability to use the hand at work, drive, perform activities of daily living.</li>
+        <li><strong>Medical background:</strong> diabetes, peripheral vascular disease, anticoagulation, osteopenia/osteoporosis, immunosuppression.</li>
+        <li><strong>Tetanus status</strong> in open injuries.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Examine both wrists and hands, comparing to the uninjured side. Remove rings early if swelling is anticipated.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Inspect for <strong>swelling, bruising, deformity, scars or wounds</strong>.</li>
+        <li>Note wrist alignment and resting posture of the hand and fingers.</li>
+        <li>Look for obvious <strong>dorsal angulation</strong> of distal radius (Colles-type deformity) or volar deformity (Smith’s fracture).</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <p>Palpate gently, starting away from the painful area:</p>
+      <ul>
+        <li><strong>Distal radius and ulna:</strong> dorsal and volar aspects, radial styloid, ulnar styloid.</li>
+        <li><strong>Carpal bones:</strong>
+          <ul>
+            <li>Scaphoid: anatomic snuffbox, scaphoid tubercle volarly, pain on axial thumb loading.</li>
+            <li>Lunate and capitate region dorsally.</li>
+            <li>Triquetrum, pisiform ulnarly.</li>
+          </ul>
+        </li>
+        <li><strong>DRUJ:</strong> palpate dorsal and volar aspects while pronating/supinating for instability or tenderness.</li>
+        <li>Assess for crepitus, step deformities or focal tenderness over ligaments.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Move – Range of Motion</h3>
+      <ul>
+        <li><strong>Wrist flexion and extension.</strong></li>
+        <li><strong>Radial and ulnar deviation.</strong></li>
+        <li><strong>Forearm pronation and supination</strong> (with elbow at 90°).</li>
+        <li>Observe where pain occurs and whether movement is mechanically blocked.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Special Tests (Selected ED-Relevant)</h3>
+      <ul>
+        <li><strong>Scaphoid suspicion:</strong> snuffbox tenderness, scaphoid tubercle tenderness, pain on axial loading of thumb.</li>
+        <li><strong>De Quervain’s tenosynovitis:</strong> Finkelstein’s test (thumb in fist, ulnar deviation of wrist).</li>
+        <li><strong>Carpal tunnel:</strong> Tinel’s sign at carpal tunnel, Phalen’s test (for teaching context – not always necessary acutely).</li>
+        <li><strong>DRUJ instability:</strong> pain or “clunk” on pronation/supination with hand in neutral; compare with other side.</li>
+      </ul>
+
+      <h3 class="subheading-small">5. Neurovascular Examination</h3>
+      <p>Document before and after any manipulation or splinting.</p>
+      <ul>
+        <li><strong>Sensation:</strong>
+          <ul>
+            <li>Median nerve – palmar thumb, index, middle and radial half of ring finger.</li>
+            <li>Ulnar nerve – little finger and ulnar half of ring finger.</li>
+            <li>Radial nerve – dorsum of hand over first web space.</li>
+          </ul>
+        </li>
+        <li><strong>Motor:</strong>
+          <ul>
+            <li>Median – thumb opposition, “OK” sign.</li>
+            <li>Ulnar – finger abduction/adduction.</li>
+            <li>Radial – wrist and finger extension, thumb extension.</li>
+          </ul>
+        </li>
+        <li><strong>Circulation:</strong> radial and ulnar pulses, capillary refill in each finger, hand temperature and colour.</li>
+      </ul>
+    </div>
+
+    <!-- Common wrist conditions table -->
+    <div class="section">
+      <h2 class="subheading">Common ED Wrist Injuries and Conditions</h2>
+      <p>
+        The table below focuses on conditions most relevant to ED practice. Many require early
+        orthopaedic/hand surgery follow-up even if apparently minor.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Key Findings</th>
+            <th>ED Pearls / Management</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Distal radius fracture (e.g. Colles)</td>
+            <td>
+              FOOSH, pain and swelling over distal radius, possible “dinner-fork” deformity, reduced
+              wrist motion.
+            </td>
+            <td>
+              Analgesia, immobilise in appropriate splint/backslab, check and document neurovascular
+              status. Many stable fractures can be managed with outpatient ortho follow-up; unstable or
+              significantly displaced fractures need urgent ortho review.
+            </td>
+            <td>
+              Consider associated ulnar styloid fracture and DRUJ injury. Elderly patients may need falls
+              and bone health assessment.
+            </td>
+          </tr>
+          <tr>
+            <td>Suspected scaphoid fracture</td>
+            <td>
+              Snuffbox tenderness, scaphoid tubercle tenderness, pain on axial thumb loading, often
+              normal initial X-ray.
+            </td>
+            <td>
+              Treat as a fracture if suspicion is high: thumb spica or scaphoid cast/splint, analgesia and
+              early fracture clinic follow-up for repeat imaging (X-ray or MRI as per local protocol).
+            </td>
+            <td>
+              High risk of non-union and AVN if missed. State clearly in notes that X-ray may be normal
+              and that scaphoid injury is suspected.
+            </td>
+          </tr>
+          <tr>
+            <td>Perilunate / lunate dislocation</td>
+            <td>
+              High-energy trauma, marked pain and swelling, decreased range of motion, median nerve
+              symptoms; subtle or gross carpal malalignment on X-ray.
+            </td>
+            <td>
+              Orthopaedic emergency. Prompt recognition, splinting, analgesia, urgent ortho/hand surgery
+              review; often requires urgent reduction and surgery.
+            </td>
+            <td>
+              Look for “spilled teacup” sign or disruption of Gilula’s arcs on lateral X-ray. Easily missed.
+            </td>
+          </tr>
+          <tr>
+            <td>Wrist sprain / ligamentous injury</td>
+            <td>
+              Pain and swelling without obvious fracture on X-ray, often following twisting or FOOSH.
+            </td>
+            <td>
+              Exclude fractures (particularly scaphoid and carpal). Provide splint, analgesia and clear
+              return advice. Persisting pain warrants re-evaluation and possible advanced imaging.
+            </td>
+            <td>
+              Consider scapholunate injury if dorsal wrist pain, clicking or widening of scapholunate gap
+              on X-ray.
+            </td>
+          </tr>
+          <tr>
+            <td>De Quervain’s tenosynovitis</td>
+            <td>
+              Radial-sided wrist pain, worse with thumb movement and gripping, positive Finkelstein’s test.
+            </td>
+            <td>
+              Analgesia, thumb spica splint, activity modification. Arrange outpatient follow-up (GP/ortho)
+              for potential steroid injection or physio.
+            </td>
+            <td>
+              Often related to repetitive thumb/wrist use; more chronic than acute trauma in many cases.
+            </td>
+          </tr>
+          <tr>
+            <td>Carpal tunnel syndrome (acute exacerbation)</td>
+            <td>
+              Numbness/tingling in radial 3½ fingers, nocturnal symptoms, weakness of thumb abduction;
+              in acute trauma may present after fracture or swelling.
+            </td>
+            <td>
+              Exclude compartment syndrome. Splint wrist in neutral, analgesia and arrange follow-up. Acute
+              severe neuropathy after fracture may need urgent orthopaedic review for decompression.
+            </td>
+            <td>
+              Consider systemic contributors (diabetes, hypothyroidism, pregnancy, fluid overload).
+            </td>
+          </tr>
+          <tr>
+            <td>Ganglion cyst</td>
+            <td>
+              Smooth, fluctuant swelling typically on dorsal wrist; may be asymptomatic or cause ache/weakness.
+            </td>
+            <td>
+              ED role is reassurance and exclusion of more serious pathology. Analgesia if needed, and
+              outpatient follow-up if symptomatic or functionally limiting.
+            </td>
+            <td>
+              No emergency treatment usually required; aspiration or surgery is elective.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Diagnosis & Imaging -->
+    <div class="section">
+      <h2 class="subheading">Diagnosis & Imaging</h2>
+      <ul>
+        <li><strong>Plain X-rays:</strong> standard PA and lateral views; consider scaphoid views when scaphoid injury suspected.</li>
+        <li>Look carefully for subtle signs: cortical breaks, carpal alignment, scapholunate gap, lunate position on lateral film.</li>
+        <li><strong>CT:</strong> useful for complex intra-articular fractures or when X-rays are equivocal.</li>
+        <li><strong>MRI:</strong> best for occult fractures and soft tissue/ligament injury; usually arranged via orthopaedics.</li>
+        <li><strong>Ultrasound:</strong> may assist with tendon injuries or detecting fluid collections where available.</li>
+      </ul>
+    </div>
+
+    <!-- Treatment -->
+    <div class="section">
+      <h2 class="subheading">Treatment Principles in the ED</h2>
+      <ul>
+        <li><strong>Analgesia:</strong> oral or IV; consider regional blocks (e.g. haematoma block for fractures) where skilled and appropriate.</li>
+        <li><strong>Immobilisation:</strong> splints or casts tailored to injury (e.g. volar forearm splint, thumb spica, sugar-tong); elevate the limb to reduce swelling.</li>
+        <li><strong>Wound care:</strong> irrigate, debride, assess for foreign bodies; antibiotics for bites, open fractures and contaminated wounds.</li>
+        <li><strong>Tetanus prophylaxis:</strong> update as indicated.</li>
+        <li><strong>Reduction:</strong> for selected distal radius fractures and wrist dislocations as per local guidelines, with appropriate analgesia/sedation and post-reduction X-rays.</li>
+        <li><strong>Documentation:</strong> carefully record neurovascular status before and after procedures or splinting.</li>
+        <li><strong>Follow-up:</strong> arrange fracture or orthopaedic clinic review as appropriate; provide clear written return precautions (increasing pain, numbness, swelling, colour change or loss of function).</li>
+      </ul>
+    </div>
+
+    <!-- Prevention & education -->
+    <div class="section">
+      <h2 class="subheading">Prevention & Patient Education</h2>
+      <ul>
+        <li>Encourage use of wrist guards in high-risk sports (skateboarding, rollerblading, snowboarding).</li>
+        <li>Promote safe workplace practices and appropriate protective equipment.</li>
+        <li>Advise on ergonomics and regular breaks for repetitive wrist tasks.</li>
+        <li>Emphasise the need for re-assessment if pain or dysfunction persists despite normal initial X-rays.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

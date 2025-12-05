@@ -1,145 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Foot Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
+  <title>Emergency Department Foot Exam</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    /* image + figure styling */
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      display: block;
+    }
+
+    figure {
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Condition"; }
+      td:nth-of-type(2)::before { content: "Key Findings"; }
+      td:nth-of-type(3)::before { content: "ED Pearls"; }
+    }
+  </style>
 </head>
-<header>
-    <div class="logo-container">
-        <h1>Foot Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
 <body>
-    <section class="section">
-		<h2 class="subheading">Introduction</h2>
-		<p>A thorough foot examination is important in the emergency department to evaluate any injury or pathology that can affect a patient's mobility and quality of life. The exam should include an assessment of the plantar and dorsal aspects of the foot and toes, as well as the surrounding soft tissue and neurovascular structures. In this guide, we will discuss the key components of a foot examination and the common conditions that can be identified through this assessment.</p>
-	</section>
-	
-	<section class="section">
-		<h2 class="subheading">Components of a Foot Examination</h2>
-		<p>The following components should be included in a comprehensive foot examination:</p>
-		<ul>
-			<li><strong>History:</strong> Start by asking the patient about their current symptoms, as well as any relevant medical history and recent changes in their activity level. This information can provide valuable clues to guide your examination.</li>
-			<li><strong>Visual inspection:</strong> Observe the patient's gait and posture, and inspect the foot for any swelling, deformities, or discoloration. Pay particular attention to the plantar and dorsal aspects of the foot, as well as the toes.</li>
-			<li><strong>Palpation:</strong> Use your hands to feel for any areas of tenderness, swelling, or bony prominences. Check for any masses, such as ganglion cysts, and assess the temperature of the foot to rule out any signs of infection or neurological issues.
-            </li>
-            <li>Check for any deformities or abnormalities in the foot, including bunions, hammertoes, or flat feet.</li>
-            <li>Assess the patient's gait and balance, looking for any abnormalities or difficulties in walking.</li>
-            <li>Perform range of motion exercises on the foot and toes to assess flexibility and detect any limitations in movement.</li>
-            <li>Palpate the foot and toes, checking for any areas of tenderness, swelling, or nodules, which may indicate the presence of a mass or tumor.</li>
-            <li>Perform a neurological exam of the foot and toes, assessing for any signs of neuropathy, such as loss of sensation or reflexes.</li>
-            <li>Check the patient's vascular status by evaluating the pulses in the foot and checking for any signs of poor circulation, such as coolness, discoloration, or slow healing wounds.</li>
-            <li>Perform specific tests for certain conditions, such as the Mulder's sign for Morton's neuroma or the Thompson test for Achilles tendon rupture.</li>
-            </ul>
-            <h2>Common Foot Conditions</h2>
-            <p>There are many different foot conditions that can affect patients. Some of the most common conditions that are encountered during a foot examination in the emergency department include:</p>
-            </section>
-            <section class="section">
-            <table>
-            <thead>
-            <tr>
+  <header>
+    <div class="logo-container">
+      <h1>Foot Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <!-- Overview -->
+    <div class="section">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        A careful foot examination in the Emergency Department is essential to detect fractures,
+        soft-tissue injuries, neurovascular compromise and diabetic or infective pathology that can
+        threaten mobility and limb viability. Always examine both the plantar and dorsal aspects of
+        the foot and toes, and consider the foot in the context of the entire lower limb and mechanism
+        of injury.
+      </p>
+
+      <!-- Illustration: dorsal/plantar surface anatomy -->
+      <figure>
+        <img src="/adult/systems examination/peripheries/images/foot examination.png"
+             alt="Diagram showing dorsal and plantar surface anatomy of the foot with key landmarks labelled"
+             class="image">
+        <figcaption>
+          Foot examination techniques.
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Red flags -->
+    <div class="section">
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>Address ABC first, then focus on the limb. For the foot, be alert for:</p>
+      <ul>
+        <li><span class="red-flag">Open fractures</span> or obvious deformity of the forefoot, midfoot or hindfoot.</li>
+        <li><span class="red-flag">A pale, cool, pulseless or mottled foot</span> – acute limb ischaemia until proven otherwise.</li>
+        <li><span class="red-flag">Severe pain out of proportion to findings</span>, especially with tense compartments or pain on passive toe stretch – consider compartment syndrome.</li>
+        <li><span class="red-flag">Diabetic foot with deep ulcers, necrosis, crepitus or systemic features</span> – possible necrotising infection or osteomyelitis.</li>
+        <li><span class="red-flag">Hot, swollen, very painful joint with reduced movement and fever</span> – septic arthritis until proven otherwise.</li>
+        <li><span class="red-flag">High-energy mechanism</span> (fall from height, crush injury, MVC) – think of calcaneal, talar and Lisfranc injuries.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag requires urgent senior review and early orthopaedic +/- vascular involvement.
+      </p>
+    </div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> twisting, inversion/eversion, direct blow, crush, fall from height, repetitive overuse, foreign body, burn, puncture wound.</li>
+        <li><strong>Onset and course:</strong> sudden vs gradual, acute trauma vs insidious pain, ability to continue walking or weight-bearing.</li>
+        <li><strong>Site of pain:</strong> heel, arch, midfoot, forefoot, toes, plantar vs dorsal surface.</li>
+        <li><strong>Systemic features:</strong> fever, rigors, malaise (infection); night pain, weight loss (malignancy or inflammatory disease).</li>
+        <li><strong>Risk factors:</strong> diabetes, peripheral vascular disease, neuropathy, immunosuppression, gout, inflammatory arthritis, anticoagulation.</li>
+        <li><strong>Functional impact:</strong> distance able to walk, ability to stand, work, wear shoes.</li>
+        <li><strong>Previous problems:</strong> recurrent ulcers, previous fractures or surgery, prior foot deformities.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Expose both feet fully. Examine the patient standing (if able) and then seated or supine with the
+        foot supported at a comfortable height.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Observe <strong>gait</strong>, ability to weight-bear and stance (antalgic gait, toe-walking, avoiding heel strike).</li>
+        <li>Inspect skin for <strong>ulcers, callosities, blisters, colour change, scars, deformity</strong> and nail changes.</li>
+        <li>Check for <strong>swelling, bruising or deformity</strong> of toes, forefoot, midfoot and hindfoot.</li>
+        <li>Assess alignment: <strong>flatfoot, pes cavus, hallux valgus, claw toes, hammertoes.</strong></li>
+        <li>Inspect the plantar surface carefully in diabetics and neuropathic patients.</li>
+      </ul>
+
+     
+        
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <p>Palpate systematically, from proximal to distal, comparing both feet:</p>
+      <ul>
+        <li><strong>Bony landmarks:</strong> calcaneus, plantar fascia origin, talus, navicular, cuboid, cuneiforms, metatarsal shafts and heads, bases of metatarsals, phalanges.</li>
+        <li><strong>Special attention to:</strong>
+          <ul>
+            <li>Base of the 5th metatarsal and navicular (Ottawa foot rule sites).</li>
+            <li>Lisfranc joint region (tarsometatarsal joints) – tenderness suggests Lisfranc injury.</li>
+            <li>Metatarsal heads and interdigital spaces (Morton’s neuroma).</li>
+          </ul>
+        </li>
+        <li><strong>Soft tissues:</strong> plantar fascia, Achilles insertion, peroneal tendons, posterior tibial tendon, interdigital spaces for neuroma.</li>
+        <li>Assess <strong>temperature</strong> and compare sides – increased warmth may suggest infection, gout or inflammatory arthritis.</li>
+      </ul>
+
+      
+
+      <h3 class="subheading-small">3. Move</h3>
+      <p>Assess both active and passive range of motion:</p>
+      <ul>
+        <li><strong>Ankle movements:</strong> dorsiflexion and plantarflexion (also covered on the ankle page).</li>
+        <li><strong>Subtalar joint:</strong> inversion and eversion.</li>
+        <li><strong>Midfoot and forefoot:</strong> flexion/extension of toes, movement at metatarsophalangeal joints.</li>
+        <li>Note pain, restriction or crepitus with any movement.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Special Tests</h3>
+      <ul>
+        <li><strong>Mulder’s sign:</strong> squeeze forefoot while pressing the web space (usually 3rd–4th); a click and pain suggests Morton’s neuroma.</li>
+        <li><strong>Calcaneal squeeze:</strong> squeeze calcaneus from both sides; pain suggests calcaneal fracture or severe plantar fasciitis.</li>
+        <li><strong>Plantar fascia tenderness:</strong> localised pain at the medial calcaneal tubercle and along the plantar fascia, often worse with first steps in the morning.</li>
+        <li><strong>Toe stress and axial loading:</strong> pain with axial load may suggest phalangeal or metatarsal fracture.</li>
+        <li><strong>Ankle and Achilles tests:</strong> Thomas/Thompson test for Achilles rupture (see ankle page for detail).</li>
+      </ul>
+
+      <!-- Illustration: Mulder’s sign / special tests schematic -->
+      
+      
+    </div>
+
+    <!-- Neurovascular exam of lower limb -->
+    <div class="section">
+      <h2 class="subheading">Neurovascular Examination of the Lower Limb</h2>
+      <p>
+        A focused neurovascular assessment must be performed and documented for <strong>all</strong> significant
+        foot and ankle injuries, and <em>before and after</em> any manipulation, reduction or splinting.
+      </p>
+
+      <h3 class="subheading-small">1. Circulation</h3>
+      <ul>
+        <li><strong>Inspection:</strong> colour (pink vs pale, mottled or cyanosed), swelling, visible wounds or haematoma.</li>
+        <li><strong>Temperature:</strong> compare both limbs with the back of your hand – a cool foot is concerning.</li>
+        <li><strong>Pulses:</strong>
+          <ul>
+            <li><strong>Dorsalis pedis:</strong> dorsum of the foot between the 1st and 2nd metatarsals.</li>
+            <li><strong>Posterior tibial:</strong> behind the medial malleolus.</li>
+          </ul>
+          Comment on presence, symmetry and quality (strong/weak, absent).
+        </li>
+        <li><strong>Capillary refill:</strong> press a toe nail bed – normal refill is &lt; 2 seconds.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Sensation</h3>
+      <p>Test light touch or pin-prick, comparing with the uninjured side:</p>
+      <ul>
+        <li><strong>Superficial peroneal nerve:</strong> dorsum of the foot.</li>
+        <li><strong>Deep peroneal nerve:</strong> first web space between the 1st and 2nd toes.</li>
+        <li><strong>Tibial nerve:</strong> sole of the foot.</li>
+        <li><strong>Sural nerve:</strong> lateral border of the foot.</li>
+        <li><strong>Saphenous nerve:</strong> medial ankle and medial leg.</li>
+      </ul>
+      <p>
+        Note any <strong>numbness, tingling or altered sensation</strong> and whether it is new since the injury or any procedure.
+      </p>
+
+      <!-- Illustration: sensory nerve map -->
+     
+
+      <h3 class="subheading-small">3. Motor Function</h3>
+      <ul>
+        <li><strong>Deep peroneal nerve:</strong> ankle dorsiflexion and big toe extension (“point toes up, lift the big toe”).</li>
+        <li><strong>Tibial nerve:</strong> plantarflexion (“press down like a car pedal”) and toe flexion.</li>
+        <li>Check proximal function (knee and hip movements) if you suspect more proximal injury or nerve root involvement.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Red Flags</h3>
+      <ul>
+        <li>Pale, cool, pulseless or mottled foot.</li>
+        <li>Rapidly increasing pain, especially with passive toe stretch (possible compartment syndrome).</li>
+        <li>New or progressive motor weakness or loss of sensation.</li>
+      </ul>
+      <p class="key-point">
+        Any neurovascular abnormality after trauma or reduction is an <strong>emergency</strong> – urgently involve orthopaedics and
+        vascular surgery where available.
+      </p>
+
+      <h3 class="subheading-small">5. Documentation</h3>
+      <p>Document clearly:</p>
+      <ul>
+        <li>Pulses (present/absent, Doppler if used) and capillary refill.</li>
+        <li>Sensory findings in named nerve distributions.</li>
+        <li>Motor power (e.g. ankle dorsiflexion/plantarflexion, big toe extension).</li>
+        <li>Status <em>before and after</em> any procedure (manipulation, plaster, traction, etc.).</li>
+      </ul>
+    </div>
+
+    <!-- Common ED foot conditions -->
+    <div class="section">
+      <h2 class="subheading">Common ED Foot Conditions</h2>
+      <table>
+        <thead>
+          <tr>
             <th>Condition</th>
-            <th>Symptoms</th>
-            <th>Treatment</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
+            <th>Key Findings</th>
+            <th>ED Pearls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
             <td>Plantar fasciitis</td>
-            <td>Pain on the bottom of the foot, particularly in the heel; stiffness or tenderness in the arch of the foot</td>
-            <td>Rest, ice, stretching exercises, physical therapy, orthotics, corticosteroid injections, surgery (in severe cases)</td>
-            </tr>
-            <tr>
-            <td>Morton's neuroma</td>
-            <td>Sharp, burning pain in the ball of the foot; tingling or numbness in the toes</td>
-            <td>Rest, ice, padding or arch supports, corticosteroid injections, surgery (in severe cases)</td>
-            </tr>
-            <tr>
-            <td>Plantar warts</td>
-            <td>Small, fleshy growths on the bottom of the foot; tenderness or pain when walking or standing</td>
-            <td>Topical medications, cryotherapy, laser therapy, surgery (in severe cases)</td>
-            </tr>
-            <tr>
-            <td>Ingrown toenails</td>
-            <td>Tenderness, swelling, or redness in the toe; pain or discomfort when pressure is applied</td>
-            <td>Soaking the foot, wearing comfortable shoes, trimming toenails properly, antibiotics (if infected), surgery (in severe cases)</td>
-            </tr>
-            <tr>
-            <td>Plantar fascia rupture</td>
-            <td>Sudden onset of pain and swelling in the bottom of the foot; difficulty walking or standing</td>
-            <td>Rest, ice, immobilization, physical therapy, surgery (in severe cases)</td>
-            </tr>
-            <tr>
-                <td>Achilles tendonitis</td>
-                <td>Pain and stiffness in the Achilles tendon; swelling, redness, or warmth in the area</td>
-                <td>Rest, ice, compression, elevation, physical therapy, orthotics, nonsteroidal anti-inflammatory drugs, corticosteroid injections, surgery (rare)</td>
-              </tr>
-            </tbody>
-          </table>
-            </section>
-            <div class="section">
-            <h2 class="subheading">Prevention</h2>
-                <p>There are several measures that can be taken to prevent foot injuries:</p>
-                <ul>
-                    <li>Wear properly fitting shoes that provide adequate support and cushioning.</li>
-                    <li>Wear appropriate footwear for the activity being performed.</li>
-                    <li>Gradually increase the intensity and duration of physical activity to avoid overuse injuries.</li>
-                    <li>Stretch and warm up properly before exercise or physical activity.</li>
-                    <li>Maintain a healthy weight to reduce the risk of stress on the feet and lower extremities.</li>
-                    <li>Avoid walking barefoot in public areas to prevent cuts, scrapes, and infections.</li>
-                    <li>Inspect your feet regularly for any signs of injury or infection.</li>
-                    <li>Keep toenails trimmed properly to avoid ingrown toenails.</li>
-                    <li>Avoid smoking, as it can reduce blood flow to the feet and increase the risk of peripheral artery disease.</li>
-                </ul>
-            </div>
+            <td>
+              Heel and arch pain, often worse with first steps in the morning, tenderness at the medial
+              calcaneal tubercle and along plantar fascia, normal neurovascular exam.
+            </td>
+            <td>
+              Usually an outpatient diagnosis; exclude fracture or infection if atypical. Provide
+              analgesia, stretching advice and appropriate follow-up rather than extensive ED imaging.
+            </td>
+          </tr>
+          <tr>
+            <td>Metatarsal / phalangeal fractures</td>
+            <td>
+              Localised bony tenderness, swelling, bruising, pain on axial loading, sometimes deformity.
+            </td>
+            <td>
+              Obtain X-rays when indicated. Assess alignment and joint involvement. Buddy strapping or
+              stiff-soled shoe for stable fractures; refer displaced or intra-articular fractures to ortho.
+            </td>
+          </tr>
+          <tr>
+            <td>Lisfranc (tarsometatarsal) injury</td>
+            <td>
+              Midfoot pain and swelling, plantar bruising, pain with forefoot stress, difficulty
+              weight-bearing; may have subtle X-ray changes.
+            </td>
+            <td>
+              High risk of chronic disability if missed. Get weight-bearing foot X-rays if possible.
+              Low threshold for CT and early orthopaedic referral.
+            </td>
+          </tr>
+          <tr>
+            <td>Morton’s neuroma</td>
+            <td>
+              Burning or shooting pain in forefoot, often between 3rd and 4th toes; positive Mulder’s sign,
+              may report “pebble in the shoe” sensation.
+            </td>
+            <td>
+              Usually managed electively. ED role is exclusion of acute injury and providing analgesia,
+              footwear advice and outpatient referral.
+            </td>
+          </tr>
+          <tr>
+            <td>Diabetic foot infection</td>
+            <td>
+              Ulcers, surrounding cellulitis, callus, foul discharge, reduced sensation, may have
+              systemic signs of sepsis.
+            </td>
+            <td>
+              Treat as limb- and life-threatening if deep or spreading. Early antibiotics, blood tests,
+              X-ray to exclude osteomyelitis, vascular assessment and multidisciplinary input.
+            </td>
+          </tr>
+          <tr>
+            <td>Gout / inflammatory arthritis</td>
+            <td>
+              Acute onset red, hot, very tender joint (often 1st MTP), reduced range of motion, may
+              have history of similar attacks.
+            </td>
+            <td>
+              Exclude septic arthritis in high-risk patients (fever, immunosuppression, marked systemic
+              features). Treat pain and arrange follow-up for long-term management.
+            </td>
+          </tr>
+          <tr>
+            <td>Septic arthritis</td>
+            <td>
+              Intensely painful, swollen joint with severe restriction of movement, often febrile and
+              systemically unwell.
+            </td>
+            <td>
+              Orthopaedic emergency. Urgent blood tests, cultures, antibiotics and ortho referral for
+              possible surgical washout.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Prevention / patient education -->
+    <div class="section">
+      <h2 class="subheading">Prevention & Patient Education</h2>
+      <p>
+        Many foot problems are preventable or can be minimised with simple measures. Reinforce the following,
+        especially in diabetic or high-risk patients:
+      </p>
+      <ul>
+        <li>Wear <strong>well-fitting shoes</strong> with adequate support and cushioning; avoid tight or high-heeled shoes for long periods.</li>
+        <li>Use appropriate footwear for sport or work, and avoid walking barefoot in unsafe environments.</li>
+        <li>Gradually increase activity levels and training intensity to reduce overuse injuries.</li>
+        <li>Stretch calf muscles and plantar fascia regularly, particularly in runners and people on their feet all day.</li>
+        <li>Maintain a healthy weight to reduce load on feet and lower limbs.</li>
+        <li>For diabetics: daily self-inspection of feet, careful nail care, avoid barefoot walking, and early presentation for any blister, ulcer or break in the skin.</li>
+        <li>Avoid smoking, which worsens peripheral vascular disease and delays healing.</li>
+      </ul>
+      <p>
+        Provide written discharge instructions and clear safety-net advice on when to return (e.g. worsening pain,
+        spreading redness, fever, new numbness or difficulty weight-bearing).
+      </p>
+    </div>
+  </main>
 </body>
 </html>

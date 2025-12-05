@@ -1,111 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Pelvic Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
-    <head>
-<header>
-    <div class="logo-container">
-        <h1>Pelvic Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
+  <title>Pelvic Examination in the Emergency Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    figure {
+      margin: 18px 0;
+      text-align: center;
+    }
+
+    figcaption {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
 <body>
-    <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>A pelvic examination is a physical examination of the female reproductive organs, including the vagina, cervix, uterus, fallopian tubes, and ovaries. This examination is typically done to screen for gynecologic conditions such as infections, abnormalities, or cancer.</p>
+  <header>
+    <div class="logo-container">
+      <h1>Pelvic Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
     </div>
+  </header>
+
+  <main class="page-wrapper">
+    <!-- Overview -->
     <div class="section">
-        <h2 class="subheading">Examination Technique</h2>
-        <p>The pelvic examination involves the following steps:</p>
-        <ol>
-            <li>Have the patient empty their bladder before the examination.</li>
-            <li>Ask the patient to undress from the waist down and drape a sheet over their lower body for privacy.</li>
-            <li>Inspect the external genitalia for any signs of inflammation, infection, or lesions.</li>
-            <li>Use a speculum to visualize the cervix and collect any necessary samples for testing, such as a Pap smear.</li>
-            <li>Perform a bimanual examination to assess the size, shape, and mobility of the uterus and ovaries. This involves inserting two fingers into the vagina and placing the other hand on the lower abdomen to palpate the pelvic organs.</li>
-            <li>Perform a rectovaginal examination, if necessary, to assess for any abnormalities in the rectovaginal septum, such as nodules or masses.</li>
-            <li>Perform a visual examination of the anus and rectum, checking for any hemorrhoids, anal fissures, or other abnormalities. Use a lubricated gloved finger to perform a digital rectal examination, assessing for any tenderness, masses, or other signs of injury or disease.</li>
-            <li>Perform a pelvic examination to assess the pelvic organs, including the uterus, ovaries, and fallopian tubes in females and the prostate gland in males. Use a speculum to examine the cervix and perform a Pap smear in females, if indicated.</li>
-            <li>Assess for any signs of infection, such as discharge, inflammation, or redness. Collect samples for laboratory testing, if indicated.</li>
-            <li>Perform any additional tests or procedures as indicated by the patient's symptoms or medical history. This may include a biopsy of abnormal tissue, imaging studies such as CT scans or MRI, or other diagnostic tests.</li>
-            <li>Provide appropriate treatment based on the diagnosis. This may include medications, such as antibiotics or antivirals, surgical procedures, or lifestyle modifications. In some cases, referral to a specialist may be necessary.</li>
-            <li>Provide patient education on proper hygiene and self-care practices to prevent future conditions or complications. This may include proper wiping techniques, the use of barrier protection during sexual activity, and the importance of regular pelvic exams.</li>
-            <li>Follow up with the patient as needed to monitor their condition and assess the effectiveness of treatment. Adjust treatment as necessary based on changes in symptoms or test results.</li>
-           </ol>
-           <p> Overall, a comprehensive pelvic examination is an important tool for identifying and treating a wide range of conditions affecting the pelvic area. By performing a thorough examination and providing appropriate treatment and education, healthcare providers can help patients maintain optimal pelvic health and prevent future complications.</p>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        In the Emergency Department, a pelvic examination primarily aims to identify
+        <strong>pelvic fractures, haemorrhage and associated urogenital or abdominal injury</strong>.
+        The pelvis is a major potential source of life-threatening bleeding after trauma, and
+        examination must be systematic but gentle, integrated into the primary and secondary survey.
+      </p>
+      <p>
+        A separate, focused genital or gynaecological examination may be required depending on
+        the presentation (e.g. vaginal bleeding, suspected sexual assault, lower abdominal pain),
+        and should follow local protocols with appropriate chaperoning and consent.
+      </p>
     </div>
+
+   
+
+    <!-- Red flags -->
     <div class="section">
-        <h2 class="subheading">Prevention and Management</h2>
-        <p>There are several measures that can be taken to prevent and manage pelvic floor disorders:</p>
-        <ul>
-          <li><strong>Regular pelvic floor exercises:</strong> Kegel exercises, which involve contracting and relaxing the pelvic floor muscles, can help strengthen and maintain muscle tone in the pelvic floor.</li>
-          <li><strong>Healthy diet:</strong> A diet high in fiber can help prevent constipation and reduce pressure on the pelvic floor.</li>
-          <li><strong>Healthy bowel habits:</strong> Avoid straining during bowel movements and establish a regular bowel routine to prevent constipation.</li>
-          <li><strong>Weight management:</strong> Maintaining a healthy weight can reduce pressure on the pelvic floor.</li>
-          <li><strong>Smoking cessation:</strong> Smoking can weaken the pelvic floor muscles and increase the risk of pelvic floor disorders.</li>
-          <li><strong>Pelvic floor physical therapy:</strong> A specialized physical therapy program can help strengthen and rehabilitate the pelvic floor muscles.</li>
-          <li><strong>Behavioral therapy:</strong> Behavioral therapy, such as biofeedback and relaxation techniques, can help retrain the pelvic floor muscles and reduce symptoms of pelvic floor dysfunction.</li>
-          <li><strong>Surgery:</strong> In severe cases, surgery may be necessary to repair damaged or weakened pelvic floor muscles.</li>
-        </ul>
-        </div>
-        <div class="section">
-        <h2 class="subheading">Conclusion</h2>
-        <p>The pelvic floor is a complex network of muscles and tissues that play a crucial role in maintaining bowel and bladder control, supporting the pelvic organs, and facilitating sexual function. Pelvic floor disorders can cause a range of uncomfortable and sometimes debilitating symptoms, but with proper diagnosis and treatment, most people can experience significant relief. If you are experiencing any symptoms of pelvic floor dysfunction, it is important to speak with your healthcare provider to determine the underlying cause and develop a personalized treatment plan.</p>
-        </div>
-        </body>
-        </html>
-        
-        
-        
-        
-    
-    
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>Consider the pelvis early in any significant trauma. Red flags include:</p>
+      <ul>
+        <li><span class="red-flag">Haemodynamic instability</span> (tachycardia, hypotension) with suspected pelvic injury.</li>
+        <li><span class="red-flag">Pelvic pain or deformity</span> after high-energy mechanism (MVC, pedestrian struck, fall from height, crush injury).</li>
+        <li><span class="red-flag">Shortened or externally rotated limb</span> without obvious hip fracture.</li>
+        <li><span class="red-flag">Perineal, scrotal, labial or flank bruising</span>, or expanding haematoma.</li>
+        <li><span class="red-flag">Blood at urethral meatus</span>, inability to pass urine, high-riding or non-palpable prostate on DRE.</li>
+        <li><span class="red-flag">Vaginal or rectal bleeding</span> following trauma.</li>
+        <li><span class="red-flag">Open pelvic fractures</span> or visible bone in perineum, vagina or rectum.</li>
+      </ul>
+      <p class="key-point">
+        Any haemodynamically unstable patient with suspected pelvic fracture should have a pelvic
+        binder applied early and be managed according to massive haemorrhage protocols.
+      </p>
+    </div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism of injury:</strong> high-speed collision, fall from height, crush, motorcycle or pedestrian vs vehicle, blast injury.</li>
+        <li><strong>Pain:</strong> location (groin, buttock, lower back, suprapubic, hip), onset and severity.</li>
+        <li><strong>Associated symptoms:</strong> inability to stand or walk, haematuria, vaginal/rectal bleeding, abdominal pain.</li>
+        <li><strong>Past history:</strong> previous pelvic or spinal surgery, anticoagulation, bleeding disorders, pregnancy.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        The pelvic examination forms part of the <strong>secondary survey</strong>. Handle the pelvis gently to
+        avoid dislodging clots and worsening bleeding.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Inspect the <strong>abdomen, pelvis, perineum and proximal thighs</strong> for bruising, deformity, wounds, swelling or step deformity.</li>
+        <li>Look for <strong>perineal, scrotal or labial haematoma</strong>, blood at the urethral meatus, and any vaginal or rectal bleeding.</li>
+        <li>Check limb position: external rotation, apparent shortening, or asymmetry may suggest pelvic ring injury.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel (Pelvic Stability)</h3>
+      <p>
+        Assess pelvic stability only <strong>once</strong> if it has not yet been done and only in relatively stable
+        patients. Avoid repeated “rocking” of the pelvis.
+      </p>
+      <ul>
+        <li>Place hands over the <strong>anterior superior iliac spines (ASIS)</strong>.</li>
+        <li>Apply gentle <strong>medial–lateral compression</strong> and, if needed, gentle <strong>antero-posterior compression</strong> over the iliac crests.</li>
+        <li>Stop immediately if this reproduces pain or obvious movement, and apply a pelvic binder if not already in place.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Perineal, Genital and Rectal Examination</h3>
+      <p>
+        These components are performed where indicated by mechanism and findings, with consent and a chaperone:
+      </p>
+      <ul>
+        <li><strong>Perineum and external genitalia:</strong> look for lacerations, haematoma, bleeding or urethral injury.</li>
+        <li><strong>Digital rectal examination (DRE):</strong> check for high-riding or non-palpable prostate, gross blood, abnormal tone or bony fragments.</li>
+        <li><strong>Vaginal examination (where indicated):</strong> assess for lacerations, bleeding or open fracture communication; usually performed with senior supervision.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Neurovascular Assessment</h3>
+      <ul>
+        <li>Check <strong>femoral, popliteal and distal pulses</strong>, limb temperature and capillary refill.</li>
+        <li>Assess lower limb <strong>motor and sensory function</strong> (femoral, sciatic and peroneal distributions).</li>
+      </ul>
+    </div>
+
+    <!-- Pelvic binder & initial management -->
+    <div class="section">
+      <h2 class="subheading">Pelvic Binder & Early Management</h2>
+      <p>
+        In haemodynamically unstable trauma patients with suspected pelvic fractures:
+      </p>
+      <ul>
+        <li>Apply a <strong>pelvic binder</strong> at the level of the greater trochanters (not the iliac crests).</li>
+        <li>Initiate <strong>massive transfusion protocol</strong> where appropriate (balanced blood products rather than crystalloids).</li>
+        <li>Avoid unnecessary log-rolling or repeated manipulation of the pelvis.</li>
+        <li>Consider <strong>REBOA, angio-embolisation or pelvic packing</strong> in centres where available, in conjunction with surgical teams.</li>
+      </ul>
+      <p class="key-point">
+        Early mechanical stabilisation, haemorrhage control and rapid imaging are key to improving survival
+        in major pelvic trauma.
+      </p>
+    </div>
+
+    <!-- Investigations -->
+    <div class="section">
+      <h2 class="subheading">Investigations</h2>
+      <ul>
+        <li><strong>X-ray pelvis (AP view):</strong> rapid screening in trauma; may show pelvic ring disruption, sacral fractures or hip dislocation.</li>
+        <li><strong>CT scan with contrast:</strong> gold standard for evaluating pelvic fractures and associated injuries in stable or stabilised patients.</li>
+        <li><strong>FAST / eFAST:</strong> identify intraperitoneal bleeding; remember major pelvic bleeding may be retroperitoneal and not visible on FAST.</li>
+        <li><strong>Retrograde urethrogram:</strong> indicated if urethral injury is suspected (blood at meatus, high-riding prostate, perineal haematoma).</li>
+        <li><strong>Laboratory tests:</strong> full blood count, coagulation profile, cross-match, lactate, arterial blood gas in major trauma.</li>
+      </ul>
+    </div>
+
+    <!-- Prevention & broader pelvic floor note -->
+    <div class="section">
+      <h2 class="subheading">Prevention & Longer-Term Considerations</h2>
+      <p>
+        Many pelvic injuries are not preventable at individual level, but risk can be reduced through:
+      </p>
+      <ul>
+        <li>Seatbelt use, appropriate child restraints and road safety measures.</li>
+        <li>Occupational safety in high-risk environments (mining, construction, industry).</li>
+        <li>Falls-prevention strategies in older adults (bone health, home safety, vision care).</li>
+      </ul>
+      <p>
+        Survivors of significant pelvic trauma often require <strong>multidisciplinary follow-up</strong> including
+        orthopaedics, physiotherapy, urology, gynaecology and sometimes pelvic floor physiotherapy for
+        long-term pain, mobility and continence issues.
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>

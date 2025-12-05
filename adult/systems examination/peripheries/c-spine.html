@@ -1,121 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<title>Cervical spine Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-		
-		.subheading {
-			font-size: 24px;
-			margin-bottom: 10px;
-		}
-		
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-          table {
-            border-collapse: collapse;
-          }
-          
-          th, td {
-            border: 1px solid black;
-            padding: 8px;
-          }
-          
-	</style>
+  <title>Cervical Spine Examination in the Emergency Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    /* Mobile-friendly table */
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      .responsive-table,
+      .responsive-table thead,
+      .responsive-table tbody,
+      .responsive-table th,
+      .responsive-table td,
+      .responsive-table tr {
+        display: block;
+      }
+
+      .responsive-table thead {
+        display: none;
+      }
+
+      .responsive-table tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      .responsive-table td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      .responsive-table td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .responsive-table td:nth-of-type(1)::before { content: "Indication"; }
+      .responsive-table td:nth-of-type(2)::before { content: "Imaging Study"; }
+    }
+  </style>
 </head>
-<header>
-<div class="logo-container">
-    <h1>Cervical Spine Exam</h1>
-    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-    <button class="back-button" onclick="goBack()">Back</button>
-  </div>
-</header>
+
 <body>
+  <header>
+    <div class="logo-container">
+      <h1>Cervical Spine Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-  <div class="section">
-    <h2 class="subheading">Introduction</h2>
-    <p>A cervical spine examination is performed in the emergency department to assess for any injuries or abnormalities in the neck and spinal cord. This examination is typically done on patients who have been involved in a traumatic event or have neck pain, and is essential for identifying any potential spinal cord injuries.</p>
-  </div>
+  <main class="page-wrapper">
+    <!-- Overview -->
+    <div class="section">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The cervical spine examination in the Emergency Department focuses on identifying
+        clinically important cervical spine injuries and spinal cord compromise following trauma,
+        as well as non-traumatic pathology such as infection, malignancy and degenerative disease.
+      </p>
+      <p>
+        A key principle is that <span class="key-point">you should not move the neck or test range of motion
+        until it has been clinically cleared or adequately imaged</span>. Maintain spinal precautions in
+        any patient with suspected cervical injury.
+      </p>
+    </div>
 
-  <div class="section">
-    <h2 class="subheading">Examination Technique</h2>
-    <p>The cervical spine examination involves the following steps:</p>
-    <ol>
-        <li>Inspect the neck for any obvious abnormalities or deformities, such as swelling, bruising, or lacerations. Check for any penetrating injuries or foreign objects that may have entered the neck.</li>
-        <li>Palpate the cervical spine, assessing for tenderness, muscle spasm, and bony abnormalities. Apply gentle pressure to the spinous processes of each vertebra, checking for any pain or discomfort.</li>
-        <li>Assess the range of motion of the cervical spine, including flexion, extension, rotation, and lateral bending. Ask the patient to move their head in each direction, observing for any limitations or pain.</li>
-        <li>Perform a neurologic examination, assessing for any motor or sensory deficits, reflexes, and signs of spinal cord injury. Check for any weakness or loss of sensation in the arms or legs, abnormal reflexes, or bowel or bladder dysfunction.</li>
-        <li>Consider imaging studies, such as X-rays or CT scans, to further evaluate any suspected injuries or abnormalities. Imaging may be particularly important in patients with suspected spinal cord injury or those who are unable to move their neck due to pain or spasm.</li>
-      </ol>
-      <p>It's worth noting that in cases of suspected cervical spine injury, it's important to immobilize the neck using a cervical collar or other device to prevent further damage until imaging studies can be performed.</p> 
-  </div>
+    <!-- Initial priorities & red flags -->
+    <div class="section">
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>After primary survey (ABC), identify the following red flags:</p>
+      <ul>
+        <li><span class="red-flag">High-risk mechanism:</span> high-speed RTC, axial load (diving), fall from height, ejection from vehicle, pedestrian vs vehicle.</li>
+        <li><span class="red-flag">Neurological deficit:</span> weakness, paraesthesia, sensory level, sphincter disturbance, priapism after trauma.</li>
+        <li><span class="red-flag">Midline cervical tenderness</span> on palpation.</li>
+        <li><span class="red-flag">Altered mental status:</span> GCS &lt;15, confusion, agitation, intoxication.</li>
+        <li><span class="red-flag">Distracting injuries:</span> major limb fractures, thoracoabdominal trauma, severe facial injuries.</li>
+        <li><span class="red-flag">Signs of spinal cord injury:</span> hypotension with bradycardia (neurogenic shock), flaccid weakness, sensory loss, abnormal reflexes.</li>
+        <li><span class="red-flag">Non-traumatic red flags:</span> fever, weight loss, known malignancy, severe night pain, immunosuppression, IV drug use, inflammatory arthritis.</li>
+      </ul>
+      <p class="key-point">
+        If any red flag is present, maintain full spinal immobilisation and obtain urgent senior and
+        orthopaedic/neurosurgical input.
+      </p>
+    </div>
 
-  <div class="section">
-    <h2 class="subheading">Indications for Imaging Studies</h2>
-    <p>Imaging studies may be indicated for the following patients:</p>
-    <table>
-      <tr>
-        <th>Indication</th>
-        <th>Imaging Study</th>
-      </tr>
-      <tr>
-        <td>High-risk mechanism of injury</td>
-        <td>Cervical spine X-rays, CT scan</td>
-      </tr>
-      <tr>
-        <td>Neurologic symptoms or deficits</td>
-        <td>Cervical spine X-rays, CT scan, MRI</td>
-      </tr>
-      <tr>
-        <td>Age &gt;65 years old</td>
-        <td>Cervical spine X-rays, CT scan</td>
-      </tr>
-      <tr>
-        <td>Intoxication or altered mental status</td>
-        <td>Cervical spine X-rays, CT scan</td>
-      </tr>
-    </table>
-  </div>
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism of injury:</strong> exact mechanism, speed, height, direct blow vs axial load, associated head injury or loss of consciousness.</li>
+        <li><strong>Onset of symptoms:</strong> immediate vs delayed neck pain, any initial paraesthesia or weakness.</li>
+        <li><strong>Neurological symptoms:</strong> limb weakness, numbness, tingling, gait disturbance, bowel or bladder dysfunction.</li>
+        <li><strong>Pain features:</strong> location (midline vs paraspinal), severity, radiation to shoulders or arms.</li>
+        <li><strong>Associated injuries:</strong> head, facial, chest, abdominal or limb injuries that may distract from neck pain.</li>
+        <li><strong>Non-traumatic context:</strong> fevers, weight loss, known cancer, RA, ankylosing spondylitis, IV drug use.</li>
+        <li><strong>Medications & background:</strong> anticoagulants/antiplatelets, osteoporosis, previous cervical surgery or known cervical disease.</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2 class="subheading">Management of Cervical Spine Injuries</h2>
-    <p>The management of cervical spine injuries depends on the severity and location of the injury. In general, management strategies may include:</p>
-    <ul>
-      <li>Immobilization: Immobilization of the cervical spine using a cervical collar, backboard, or other devices to prevent further injury</li>
-      <li>Pain management: Medications such as nonsteroidal anti-inflammatory drugs (NSAIDs), opioids, or muscle relaxants may be used to manage pain</li>
-      <li>Surgery: Surgery may be necessary in some cases, such as for spinal cord compression or instability</li>
-      <li>Physical therapy: Once the injury has stabilized, physical therapy may be recommended to improve range of motion and strength</li>
-      <li>Monitoring: Regular monitoring and imaging may be necessary to ensure that the injury is healing properly and to detect any complications</li>
-    </ul>
-  </div>
+    <!-- Clinical decision rules -->
+    <div class="section">
+      <h2 class="subheading">Cervical Spine Clearance (Clinical Decision Rules)</h2>
+      <p>
+        In alert, stable adults, validated decision rules (e.g. NEXUS, Canadian C-Spine Rule) help
+        determine whether imaging is required. Local protocols may vary; always follow your hospital
+        guideline.
+      </p>
+      <p><span class="key-point">In general, imaging is usually required if any of the following apply:</span></p>
+      <ul>
+        <li>Midline cervical tenderness.</li>
+        <li>Focal neurological deficit.</li>
+        <li>Altered level of consciousness or intoxication.</li>
+        <li>Painful distracting injury.</li>
+        <li>High-risk mechanism or age &ge;65 years (depending on the rule used).</li>
+      </ul>
+      <p>
+        Only when the cervical spine is clinically cleared using a validated rule and the patient
+        demonstrates full, painless active range of motion is it safe to remove spinal precautions
+        without imaging (per local policy).
+      </p>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        <span class="key-point">Important:</span> In any patient with suspected cervical spine injury,
+        maintain in-line stabilisation and do <strong>not</strong> assess active range of motion until the
+        neck is cleared clinically or radiologically.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Inspect for deformity, step-off, bruising, wounds, or swelling along the neck.</li>
+        <li>Note position of the head and neck, use of cervical collar, and presence of any torticollis.</li>
+        <li>Look for associated head/facial injuries and signs of trauma to the shoulders or thorax.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <ul>
+        <li>With in-line stabilisation, palpate the <strong>spinous processes</strong> from the occiput to T1 for midline tenderness or step deformities.</li>
+        <li>Palpate paraspinal muscles for spasm or tenderness.</li>
+        <li>Do not force movement; keep the neck in neutral alignment.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Neurological Examination</h3>
+      <p>Perform and document a focused neurological exam of all four limbs:</p>
+      <ul>
+        <li><strong>Motor:</strong> test power in key myotomes (shoulder abduction, elbow flexion/extension, wrist extension, finger abduction, hip and knee movements, ankle dorsiflexion/plantarflexion).</li>
+        <li><strong>Sensation:</strong> assess light touch and pinprick in dermatomal distribution from C2–S1.</li>
+        <li><strong>Reflexes:</strong> biceps, brachioradialis, triceps, knee and ankle jerks; note hyperreflexia or clonus.</li>
+        <li><strong>Upper motor neuron signs:</strong> Babinski, Hoffman’s sign, tone and coordination if spinal cord injury suspected.</li>
+        <li><strong>Sphincter function:</strong> ask about urinary retention, incontinence, or loss of anal tone in severe or high lesions (usually with senior involvement).</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Range of Motion (Only When Safe)</h3>
+      <p>
+        Assess active range of motion <strong>only if the cervical spine has been cleared</strong> by decision rules or
+        imaging, and the patient has:
+      </p>
+      <ul>
+        <li>No midline tenderness.</li>
+        <li>No neurological deficits.</li>
+        <li>No intoxication or distracting injuries.</li>
+      </ul>
+      <p>Then ask the patient to:</p>
+      <ul>
+        <li>Flex and extend the neck (“chin to chest”, “look at the ceiling”).</li>
+        <li>Rotate to left and right (usually &ge;45° to each side if using Canadian C-Spine criteria).</li>
+        <li>Laterally tilt ears towards shoulders.</li>
+      </ul>
+      <p>Stop if any movement causes severe pain, dizziness, or new neurological symptoms.</p>
+    </div>
+
+    <!-- Imaging indications -->
+    <div class="section">
+      <h2 class="subheading">Indications for Imaging Studies</h2>
+      <p>
+        CT has largely replaced plain X-rays for cervical spine assessment in many centres, particularly
+        for moderate-to-high risk trauma. Follow your local imaging protocol.
+      </p>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Indication</th>
+            <th>Imaging Study</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High-risk mechanism of injury or age &ge;65 years</td>
+            <td>
+              CT cervical spine (preferred in most trauma protocols). Plain X-rays may be used where CT is not available, but must adequately visualise C1–T1.
+            </td>
+          </tr>
+          <tr>
+            <td>Midline cervical tenderness</td>
+            <td>CT cervical spine or plain X-rays (per local guideline).</td>
+          </tr>
+          <tr>
+            <td>Any focal neurological deficit or suspected spinal cord injury</td>
+            <td>
+              CT cervical spine urgently; MRI for cord, ligamentous injury or epidural lesion as advised by neurosurgery/orthopaedics.
+            </td>
+          </tr>
+          <tr>
+            <td>Altered mental status, intoxication, or distracting injuries</td>
+            <td>CT cervical spine if the neck cannot be clinically cleared.</td>
+          </tr>
+          <tr>
+            <td>Non-traumatic red flags (infection, malignancy, inflammatory disease)</td>
+            <td>
+              MRI cervical spine (often after initial plain films or CT), guided by specialist advice.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Management -->
+    <div class="section">
+      <h2 class="subheading">Management of Cervical Spine Injuries</h2>
+      <p>
+        Management depends on the nature and severity of injury, but several ED principles apply:
+      </p>
+      <ul>
+        <li><strong>Immobilisation:</strong> maintain in-line stabilisation and appropriate spinal precautions (collar, blocks, tape or vacuum mattress) until the cervical spine is cleared.</li>
+        <li><strong>Pain management:</strong> multimodal analgesia (paracetamol, NSAIDs if appropriate, opioids), muscle relaxants when safe and after serious injury is excluded.</li>
+        <li><strong>Neuroprotection:</strong> maintain adequate blood pressure and oxygenation; avoid hypotension and hypoxia, which worsen spinal cord outcomes.</li>
+        <li><strong>Surgical management:</strong> unstable fractures, dislocations, cord compression or progressive neurology require urgent orthopaedic/neurosurgical review and often surgical stabilisation or decompression.</li>
+        <li><strong>Conservative management:</strong> stable fractures or soft tissue injuries may be managed with collars, analgesia and outpatient follow-up, as guided by specialists.</li>
+        <li><strong>Rehabilitation:</strong> early involvement of physiotherapy and rehabilitation teams is crucial once the injury is stabilised.</li>
+      </ul>
+    </div>
+
+    <!-- Patient advice -->
+    <div class="section">
+      <h2 class="subheading">Patient Advice & Follow-Up</h2>
+      <ul>
+        <li>Explain the diagnosis (or lack of structural injury if cleared) and expected recovery.</li>
+        <li>Provide advice on collar use where appropriate, and gentle mobilisation exercises if safe.</li>
+        <li>Give clear return precautions: increasing neck pain, new weakness, numbness, gait disturbance, or bladder/bowel symptoms.</li>
+        <li>Arrange follow-up with orthopaedics, neurosurgery or primary care as indicated by imaging and clinical findings.</li>
+      </ul>
+    </div>
+  </main>
 </body>
 </html>

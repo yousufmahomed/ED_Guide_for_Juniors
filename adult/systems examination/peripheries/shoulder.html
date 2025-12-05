@@ -1,128 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoulder Examination in the Emergency Department</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+  <meta charset="UTF-8">
+  <title>Shoulder Examination in the Emergency Department</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .section {
-            margin-bottom: 30px;
-        }
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
 
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
 
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
 
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
+    .section {
+      margin-bottom: 32px;
+    }
 
-        table {
-            border-collapse: collapse;
-        }
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
 
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
 
-    </style>
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Indication"; }
+      td:nth-of-type(2)::before { content: "Imaging Study"; }
+    }
+  </style>
 </head>
-<header>
-    <div class="logo-container">
-        <h1>Shoulder Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
+
 <body>
+  <header>
+    <div class="logo-container">
+      <h1>Shoulder Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
+  <main class="page-wrapper">
+    <!-- Overview -->
     <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>A shoulder examination is performed in the emergency department to evaluate for injuries or abnormalities in the shoulder joint and surrounding structures. This examination is typically done on patients who have pain or swelling in the shoulder, and is essential for identifying any potential joint dislocations or fractures.</p>
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The shoulder examination in the Emergency Department focuses on identifying dislocations,
+        fractures, rotator cuff injuries, acromioclavicular (AC) joint injuries and referred pain
+        (e.g. from the neck or chest). A structured approach helps distinguish time-critical
+        pathology from conditions suitable for outpatient management.
+      </p>
+      <p>
+        Always consider the shoulder in the context of the entire upper limb and mechanism of
+        injury, and remember that elderly patients may sustain significant fractures from low
+        energy falls.
+      </p>
     </div>
 
+    <!-- Red flags -->
     <div class="section">
-        <h2 class="subheading">Examination Technique</h2>
-        <p>The shoulder examination involves the following steps:</p>
-        <ol>
-            <li>Inspect the shoulder for any obvious deformities, such as swelling, bruising, or lacerations. Check for any penetrating injuries or foreign objects that may have entered the shoulder joint.</li>
-            <li>Palpate the shoulder joint, assessing for tenderness, muscle spasm, and bony abnormalities. Apply gentle pressure to the bones and muscles surrounding the shoulder joint, checking for any pain or discomfort.</li>
-            <li>Assess the range of motion of the shoulder joint, including forward flexion, abduction, internal and external rotation, and adduction. Ask the patient to move their arm in each direction, observing for any limitations or pain.</li>
-            <li>Perform a neurologic examination, assessing for any motor or sensory deficits, reflexes, and signs of nerve damage. Check for any weakness or loss of sensation in the arm, abnormal reflexes, or abnormal muscle tone.</li>
-            <li>Consider imaging studies, such as X-rays, CT scans, MRI, or ultrasound, to further evaluate any suspected injuries or abnormalities. Imaging may be particularly important in patients with suspected fractures, dislocations, or rotator cuff tears.</li>
-        </ol>
-    </div>
-    <div class="section">
-      <h2 class="subheading">Indications for Imaging Studies</h2>
-      <p>Imaging studies may be indicated for the following patients:</p>
-      <table>
-        <tr>
-          <th>Indication</th>
-          <th>Imaging Study</th>
-        </tr>
-        <tr>
-          <td>Suspected fracture or dislocation</td>
-          <td>X-rays, CT scan</td>
-        </tr>
-        <tr>
-          <td>Suspected rotator cuff tear</td>
-          <td>X-rays, MRI, ultrasound</td>
-        </tr>
-        <tr>
-          <td>Unexplained shoulder pain or weakness</td>
-          <td>X-rays, MRI, ultrasound</td>
-        </tr>
-        <tr>
-          <td>History of previous shoulder injury</td>
-          <td>X-rays, MRI, ultrasound</td>
-        </tr>
-      </table>
-    </div>
-    <div class="section">
-      <h2 class="subheading">Management of Shoulder Injuries</h2>
-      <p>The management of shoulder injuries depends on the severity and type of injury. In general, management strategies may include:</p>
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>After ABC, assess for shoulder-specific red flags:</p>
       <ul>
-        <li>Rest: Resting the affected shoulder and avoiding activities that aggravate the injury</li>
-        <li>Ice and heat therapy: Applying ice or heat to the shoulder can help relieve pain and inflammation</li>
-        <li>Pain management: Over-the-counter pain relievers or prescription medications may be used to manage pain</li>
-        <li>Physical therapy: Once the injury has stabilized, physical therapy may be recommended to improve range of motion and strength</li>
-        <li>Surgery: Surgery may be necessary in some cases, such as for severe rotator cuff tears or dislocations that do not respond to other treatments</li>
-        <li>Monitoring: Regular monitoring and imaging may be necessary to ensure that the injury is healing properly and to detect any complications</li>
+        <li><span class="red-flag">Obvious deformity</span> with suspected shoulder dislocation or proximal humerus fracture.</li>
+        <li><span class="red-flag">Neurovascular compromise:</span> absent/weak radial pulse, cool hand, reduced capillary refill, new motor or sensory deficit (especially axillary nerve).</li>
+        <li><span class="red-flag">Open fractures</span> or dislocations, or skin tenting threatening to open.</li>
+        <li><span class="red-flag">Suspected septic arthritis:</span> acute hot, swollen shoulder with severe pain on movement, often febrile.</li>
+        <li><span class="red-flag">Referred pain:</span> shoulder pain with chest pain, dyspnoea, or diaphoresis – consider cardiac or aortic causes.</li>
+        <li><span class="red-flag">Multiple injuries / high-energy trauma</span> – consider associated thoracic, spinal and scapular injuries.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag warrants early senior review and often urgent orthopaedic and/or medical input.
+      </p>
+    </div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> fall onto outstretched hand, direct blow, seizure, electric shock, traction injury, overhead sports, high-energy trauma.</li>
+        <li><strong>Onset and character of pain:</strong> sudden vs gradual, constant vs movement-related, night pain.</li>
+        <li><strong>Functional impact:</strong> ability to move the arm, dress, reach overhead, or lie on that side.</li>
+        <li><strong>Previous shoulder history:</strong> recurrent dislocations, surgery, chronic rotator cuff disease.</li>
+        <li><strong>Associated symptoms:</strong> neck pain, distal paraesthesiae, weakness, chest pain, dyspnoea.</li>
+        <li><strong>Systemic features:</strong> fevers, weight loss, malignancy, IV drug use (for infection or metastasis).</li>
       </ul>
     </div>
-  </body>
-  </html>
-  
-  
-  
-  
-  
-  
-      
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Examine both shoulders where possible, comparing with the unaffected side. Expose the
+        shoulder and upper chest while preserving dignity.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Inspect from front, side and back for <strong>asymmetry, swelling, bruising or deformity</strong>.</li>
+        <li>Note any <strong>loss of normal deltoid contour</strong> (suggesting anterior dislocation) or prominent acromion.</li>
+        <li>Look for <strong>scapular winging</strong>, muscle wasting (chronic cuff tears or nerve injury) and surgical scars.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <ul>
+        <li>Palpate the <strong>clavicle, AC joint, acromion, scapular spine, humeral head and bicipital groove</strong>.</li>
+        <li>Assess for point tenderness, step deformities and crepitus.</li>
+        <li>Check for warmth or effusion in suspected infection or inflammatory disease.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Move – Range of Motion</h3>
+      <p>
+        Assess active movement first; if limited, cautiously assess passive movement (unless fracture/dislocation suspected).
+      </p>
+      <ul>
+        <li><strong>Forward flexion:</strong> raising arm in front.</li>
+        <li><strong>Abduction:</strong> lifting arm sideways to 90° and above (glenohumeral and scapulothoracic contribution).</li>
+        <li><strong>External rotation:</strong> with elbow at side, forearm forward.</li>
+        <li><strong>Internal rotation:</strong> “hand behind back” and note highest vertebral level reached.</li>
+      </ul>
+      <p>
+        In an acute setting, limited active elevation with preserved passive motion suggests a
+        <strong>rotator cuff tear</strong>, whereas both active and passive movements are restricted in
+        <strong>adhesive capsulitis</strong> or significant joint pathology.
+      </p>
+
+      <h3 class="subheading-small">4. Special Tests (Selected ED-Relevant)</h3>
+      <ul>
+        <li><strong>Rotator cuff:</strong>
+          <ul>
+            <li><strong>Supraspinatus (Jobe’s “empty can”):</strong> resisted elevation in scapular plane.</li>
+            <li><strong>Infraspinatus/teres minor:</strong> resisted external rotation with elbow at side.</li>
+            <li><strong>Subscapularis:</strong> lift-off or belly-press tests.</li>
+          </ul>
+        </li>
+        <li><strong>AC joint:</strong> focal tenderness over ACJ, pain on cross-body adduction.</li>
+        <li><strong>Impingement signs:</strong> painful arc (60–120° of abduction), Hawkins–Kennedy test.</li>
+        <li><strong>Instability (usually for recurrent cases, not acute dislocation pre-reduction):</strong> apprehension test in abduction–external rotation.</li>
+      </ul>
+
+      <h3 class="subheading-small">5. Neurovascular Examination</h3>
+      <p>Document neurovascular status in all significant shoulder injuries, especially dislocations.</p>
+      <ul>
+        <li><strong>Axillary nerve:</strong> sensation over “regimental badge” area (lateral deltoid), deltoid power (shoulder abduction).</li>
+        <li><strong>Radial, median, ulnar nerves:</strong> motor and sensory function distally in the hand.</li>
+        <li><strong>Circulation:</strong> radial pulse, capillary refill, limb temperature and colour.</li>
+      </ul>
+    </div>
+
+    <!-- Imaging -->
+    <div class="section">
+      <h2 class="subheading">Indications for Imaging</h2>
+      <p>
+        Imaging is guided by mechanism, age, examination findings and local protocols (e.g. Ottawa shoulder rules if used).
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Indication</th>
+            <th>Imaging Study</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suspected fracture or dislocation</td>
+            <td>
+              <strong>Plain X-rays</strong> (AP, scapular Y, axillary or modified axillary views). CT for complex
+              proximal humerus or glenoid fractures, or pre-operative planning.
+            </td>
+          </tr>
+          <tr>
+            <td>Post-reduction assessment</td>
+            <td>
+              X-rays to confirm successful relocation and exclude associated fractures (e.g. greater tuberosity).
+            </td>
+          </tr>
+          <tr>
+            <td>Suspected rotator cuff tear (especially traumatic in older patients)</td>
+            <td>
+              Initial X-rays to exclude fracture; <strong>ultrasound or MRI</strong> often arranged on an outpatient basis via orthopaedics.
+            </td>
+          </tr>
+          <tr>
+            <td>Suspected infection or malignancy</td>
+            <td>
+              X-ray and further imaging (MRI, CT, ultrasound) guided by orthopaedics/medical teams.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Management -->
+    <div class="section">
+      <h2 class="subheading">Management of Common Shoulder Injuries</h2>
+      <p>
+        Management depends on the underlying pathology, patient age, functional demands and comorbidities. Core ED principles include analgesia, reduction where indicated, immobilisation and appropriate follow-up.
+      </p>
+      <ul>
+        <li><strong>Anterior shoulder dislocation:</strong>
+          <ul>
+            <li>Prompt reduction using an appropriate technique with adequate analgesia/sedation.</li>
+            <li>Check and document neurovascular status pre- and post-reduction.</li>
+            <li>Post-reduction X-rays and immobilisation in a sling; early orthopaedic follow-up (especially in young, active patients). </li>
+          </ul>
+        </li>
+        <li><strong>Proximal humerus fracture:</strong>
+          <ul>
+            <li>Analgesia, sling or collar-and-cuff for most minimally displaced fractures.</li>
+            <li>Urgent ortho review for displaced fractures, fracture–dislocations, open injuries or neurovascular compromise.</li>
+          </ul>
+        </li>
+        <li><strong>AC joint injury:</strong>
+          <ul>
+            <li>Sling, ice, analgesia for low-grade injuries.</li>
+            <li>Higher grade separations or those with major deformity may require orthopaedic assessment.</li>
+          </ul>
+        </li>
+        <li><strong>Suspected septic arthritis:</strong>
+          <ul>
+            <li>Urgent orthopaedic review, bloods and cultures, IV antibiotics and likely surgical washout.</li>
+          </ul>
+        </li>
+        <li><strong>Rotator cuff tears (especially acute traumatic):</strong>
+          <ul>
+            <li>Analgesia, sling for comfort, encourage early pendulum exercises if stable.</li>
+            <li>Arrange orthopaedic or shoulder clinic follow-up – early recognition in older patients is important.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Patient advice -->
+    <div class="section">
+      <h2 class="subheading">Patient Advice & Follow-Up</h2>
+      <ul>
+        <li>Explain the likely diagnosis and expected recovery timeline.</li>
+        <li>Encourage gentle range of motion exercises as advised (to reduce stiffness) once safe.</li>
+        <li>Provide clear return precautions: increasing pain, fever, redness, new swelling, numbness or weakness.</li>
+        <li>Arrange appropriate fracture or orthopaedic clinic follow-up, especially for dislocations, fractures or suspected cuff tears.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

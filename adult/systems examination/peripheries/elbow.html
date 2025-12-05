@@ -1,128 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elbow Examination in the Emergency Department</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+  <meta charset="UTF-8">
+  <title>Elbow Examination in the Emergency Department</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .section {
-            margin-bottom: 30px;
-        }
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
 
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
 
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
 
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
+    .section {
+      margin-bottom: 32px;
+    }
 
-        table {
-            border-collapse: collapse;
-        }
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
 
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
 
-    </style>
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      td:nth-of-type(1)::before { content: "Condition"; }
+      td:nth-of-type(2)::before { content: "Key Findings"; }
+      td:nth-of-type(3)::before { content: "ED Pearls"; }
+    }
+  </style>
 </head>
-<header>
-    <div class="logo-container">
-        <h1>Elbow Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
+
 <body>
+  <header>
+    <div class="logo-container">
+      <h1>Elbow Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-<div class="section">
-    <h2 class="subheading">Introduction</h2>
-    <p>An elbow examination is a physical examination used to assess the function and condition of the elbow joint. It can help identify various conditions or injuries, including fractures, dislocations, and arthritis.</p>
-</div>
+  <main class="page-wrapper">
+    <!-- Overview -->
+    <div class="section">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The elbow examination in the Emergency Department focuses on identifying fractures,
+        dislocations, ligamentous injuries, tendon ruptures and neurovascular compromise. A
+        structured approach helps distinguish injuries needing urgent orthopaedic management
+        from those suitable for conservative treatment and outpatient follow-up.
+      </p>
+      <p>
+        Always examine the elbow in the context of the entire upper limb and mechanism of
+        injury, and remember that children may have subtle supracondylar or radial head
+        fractures with minimal visible deformity.
+      </p>
+    </div>
 
-<div class="section">
-    <h2 class="subheading">Examination Technique</h2>
-    <p>The elbow examination involves the following steps:</p>
-    <ol>
-        <li>Inspection: Inspect the elbow for any swelling, redness, deformity, or skin changes. Note any visible abnormalities or injuries.</li>
-        <li>Palpation: Palpate the elbow joint and surrounding tissues, noting any areas of tenderness, swelling, or warmth. Check for the presence of any fluid collection or masses.</li>
-        <li>Range of motion: Assess the elbow's range of motion by asking the patient to bend and straighten the arm, as well as to rotate the forearm. Note any limitations or pain.</li>
-        <li>Strength: Test the strength of the patient's elbow by asking them to flex and extend their arm against resistance, as well as to grip and release objects.</li>
-        <li>Neurovascular examination: Perform a neurovascular examination of the arm, checking for any signs of nerve or blood vessel injury. Test the patient's sensation and reflexes, as well as their pulse and blood pressure in the affected arm.</li>
-    </ol>
-</div>
+    <!-- Red flags -->
+    <div class="section">
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>After ABC, assess the injured limb for the following:</p>
+      <ul>
+        <li><span class="red-flag">Gross deformity</span> with suspected fracture–dislocation.</li>
+        <li><span class="red-flag">Open fractures</span> or skin tenting.</li>
+        <li><span class="red-flag">Severe pain with passive stretch</span> of fingers/forearm and tense compartments – possible compartment syndrome.</li>
+        <li><span class="red-flag">Neurovascular compromise:</span> absent radial pulse, cool hand, reduced capillary refill, new motor or sensory deficit.</li>
+        <li><span class="red-flag">Suspected supracondylar fracture</span> in a child (fall onto outstretched hand with elbow pain and swelling).</li>
+        <li><span class="red-flag">Systemic signs</span> (fever, toxicity) with a hot, swollen joint – consider septic arthritis.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag warrants immediate senior review and early orthopaedic involvement.
+      </p>
+    </div>
 
-<div class="section">
-    <h2 class="subheading">Indications for Imaging Studies</h2>
-    <p>Imaging studies may be indicated for the following patients:</p>
-    <table>
-      <tr>
-        <th>Indication</th>
-        <th>Imaging Study</th>
-      </tr>
-      <tr>
-        <td>Suspected fracture</td>
-        <td>X-ray</td>
-      </tr>
-      <tr>
-        <td>Suspected dislocation</td>
-        <td>X-ray</td>
-      </tr>
-      <tr>
-        <td>Suspected ligament or tendon injury</td>
-        <td>MRI</td>
-      </tr>
-      <tr>
-        <td>Chronic pain or instability</td>
-        <td>CT scan or MRI</td>
-      </tr>
-    </table>
-  </div>
-  <div class="section">
-    <h2 class="subheading">Management of Elbow Injuries</h2>
-    <p>The management of elbow injuries depends on the severity and location of the injury. In general, management strategies may include:</p>
-    <ul>
-      <li>Rest and ice: Resting the affected arm and applying ice to the area can help reduce pain and swelling</li>
-      <li>Pain management: Medications such as nonsteroidal anti-inflammatory drugs (NSAIDs), opioids, or muscle relaxants may be used to manage pain</li>
-      <li>Physical therapy: Once the injury has stabilized, physical therapy may be recommended to improve range of motion and strength</li>
-      <li>Surgery: Surgery may be necessary in some cases, such as for fractures, dislocations, or severe ligament or tendon injuries</li>
-      <li>Bracing or casting: Bracing or casting may be used to immobilize the elbow and promote healing</li>
-      <li>Monitoring: Regular monitoring and imaging may be necessary to ensure that the injury is healing properly and to detect any complications</li>
-    </ul>
-  </div>
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Mechanism:</strong> fall onto outstretched hand (FOOSH), direct blow, twisting, crush, sporting injury, high-energy trauma.</li>
+        <li><strong>Onset and severity:</strong> sudden vs gradual, ability to continue using the arm or bear weight through it.</li>
+        <li><strong>Pain location:</strong> lateral (radial head), medial (MCL/epicondyle), posterior (olecranon), anterior (supracondylar region).</li>
+        <li><strong>Mechanical symptoms:</strong> locking, catching, giving way, or inability to fully extend the elbow.</li>
+        <li><strong>Associated symptoms:</strong> numbness or tingling in hand/fingers, weakness, shoulder or wrist pain.</li>
+        <li><strong>Past history:</strong> previous fractures, surgery, inflammatory arthritis, gout.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Examine the entire upper limb, comparing with the opposite side. Remove jewellery early
+        if swelling is anticipated.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Observe <strong>posture and carrying angle</strong> of both elbows.</li>
+        <li>Inspect for <strong>swelling, bruising, deformity, wounds</strong> or scars.</li>
+        <li>Note ability to <strong>actively move</strong> the elbow and forearm.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <p>Palpate gently, starting away from the point of maximal tenderness:</p>
+      <ul>
+        <li><strong>Bony landmarks:</strong> medial and lateral epicondyles, olecranon, radial head and neck, supracondylar region.</li>
+        <li><strong>Joint line and soft tissues:</strong> assess for effusion, warmth, crepitus or focal tenderness.</li>
+        <li>Check for <strong>step deformities</strong> and assess the relationship of the three bony points: medial epicondyle, lateral epicondyle and olecranon (triangle/line test).</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Move</h3>
+      <p>Assess both active and gentle passive range of motion:</p>
+      <ul>
+        <li><strong>Flexion and extension</strong> at the elbow.</li>
+        <li><strong>Pronation and supination</strong> of the forearm with elbow flexed at 90°.</li>
+        <li>Note where in the range pain occurs and whether motion is blocked.</li>
+      </ul>
+
+      <h3 class="subheading-small">4. Special Tests (selected examples)</h3>
+      <ul>
+        <li><strong>Valgus/varus stress tests:</strong> assess medial and lateral collateral ligament stability (performed cautiously and usually after X-ray if fracture suspected).</li>
+        <li><strong>Chair or resisted extension tests:</strong> may reproduce pain in triceps tendon or olecranon processes.</li>
+        <li><strong>Resisted wrist extension/flexion:</strong> pain over lateral epicondyle (tennis elbow) or medial epicondyle (golfer’s elbow) in chronic presentations.</li>
+      </ul>
+
+      <h3 class="subheading-small">5. Neurovascular Examination</h3>
+      <p>Document neurovascular status <em>before and after</em> any manipulation, reduction or splinting.</p>
+      <ul>
+        <li><strong>Circulation:</strong> radial and ulnar pulses, capillary refill, hand temperature and colour.</li>
+        <li><strong>Sensation:</strong>
+          <ul>
+            <li>Median nerve – palmar aspect of thumb, index and middle fingers.</li>
+            <li>Ulnar nerve – little finger and ulnar border of hand.</li>
+            <li>Radial nerve – dorsum of hand over first web space.</li>
+          </ul>
+        </li>
+        <li><strong>Motor:</strong>
+          <ul>
+            <li>Median nerve – thumb opposition, finger flexion.</li>
+            <li>Ulnar nerve – finger abduction/adduction.</li>
+            <li>Radial nerve – wrist and finger extension, thumb extension.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Common ED elbow conditions -->
+    <div class="section">
+      <h2 class="subheading">Common ED Elbow Conditions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Key Findings</th>
+            <th>ED Pearls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supracondylar fracture (children)</td>
+            <td>
+              Usually FOOSH, swollen painful elbow, reluctance to move; may have subtle deformity. High risk of
+              brachial artery and nerve injury.
+            </td>
+            <td>
+              Always check and document pulses and nerves. Look for posterior fat pad / sail sign on X-ray.
+              Urgent orthopaedic referral for displaced fractures.
+            </td>
+          </tr>
+          <tr>
+            <td>Radial head / neck fracture</td>
+            <td>
+              Pain and tenderness over radial head, pain with forearm rotation, sometimes minimal swelling.
+            </td>
+            <td>
+              Frequently missed. Suspect if patient cannot fully pronate/supinate. Consider elbow and forearm X-rays.
+            </td>
+          </tr>
+          <tr>
+            <td>Elbow dislocation</td>
+            <td>
+              Obvious deformity, severe pain, often after fall or sports injury. May be associated with fractures
+              (terrible triad).
+            </td>
+            <td>
+              Check neurovascular status carefully. Reduction under sedation per local protocol, followed by X-ray.
+              Early ortho input recommended.
+            </td>
+          </tr>
+          <tr>
+            <td>Nursemaid’s elbow (pulled elbow)</td>
+            <td>
+              Young child, arm held flexed and pronated, refuses to use arm after a sudden pull. Minimal swelling.
+            </td>
+            <td>
+              Clinical diagnosis; usually no X-ray required if classical. Reduction by gentle supination–flexion or
+              hyperpronation. Document return of function.
+            </td>
+          </tr>
+          <tr>
+            <td>Olecranon fracture</td>
+            <td>
+              Posterior elbow pain and swelling, difficulty actively extending elbow.
+            </td>
+            <td>
+              Check triceps function. Many require ortho review; beware open injuries in high-energy trauma.
+            </td>
+          </tr>
+          <tr>
+            <td>Septic arthritis</td>
+            <td>
+              Hot, swollen, very painful elbow with reduced range of motion, often with fever and systemic signs.
+            </td>
+            <td>
+              Orthopaedic emergency. Bloods, cultures, antibiotics, and urgent orthopaedic assessment for aspiration
+              and possible washout.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Imaging -->
+    <div class="section">
+      <h2 class="subheading">Imaging in the ED</h2>
+      <ul>
+        <li><strong>Plain radiographs:</strong> AP and lateral elbow views are first line for trauma.</li>
+        <li>In children, look carefully for <strong>fat pad signs</strong> and alignment (anterior humeral line, radiocapitellar line).</li>
+        <li><strong>CT:</strong> for complex intra-articular fractures or pre-operative planning.</li>
+        <li><strong>MRI or ultrasound:</strong> usually outpatient for suspected ligamentous or tendon injuries in stable patients.</li>
+      </ul>
+    </div>
+
+    <!-- Management -->
+    <div class="section">
+      <h2 class="subheading">Management Principles</h2>
+      <ul>
+        <li><strong>Analgesia:</strong> oral or IV; consider regional blocks where appropriate and skilled.</li>
+        <li><strong>Immobilisation:</strong> sling, backslab or cast depending on injury and stability; immobilise joints above and below for fractures.</li>
+        <li><strong>Reduction:</strong> for dislocations and some fractures, following local protocols and with adequate sedation/analgesia.</li>
+        <li><strong>Neurovascular reassessment:</strong> always repeat after reduction or splinting and document clearly.</li>
+        <li><strong>Follow-up:</strong> arrange orthopaedic clinic or fracture clinic review where indicated; provide clear written instructions and return precautions.</li>
+      </ul>
+      <p class="key-point">
+        Early recognition of serious injury, proper immobilisation and meticulous documentation of
+        neurovascular status are central to safe elbow management in the ED.
+      </p>
+    </div>
+  </main>
 </body>
 </html>
-
-
-
-
-
-

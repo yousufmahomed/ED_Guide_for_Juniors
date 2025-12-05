@@ -1,182 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Knee Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-        .subheading {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .image {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        strong {
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-        }
-        
-        table {
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
+  <title>Knee Examination in the Emergency Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.7;
+      color: #333;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 34px;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    figure {
+      margin: 18px 0;
+      text-align: center;
+    }
+
+    figcaption {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid #bbb;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #efefef;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
-<header>
-    <div class="logo-container">
-        <h1>Knee Exam</h1>
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-</header>
 
 <body>
-  
+  <header>
+    <div class="logo-container">
+      <h1>Knee Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
 
     <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>A knee examination is performed in the emergency department to evaluate any injuries or abnormalities in the knee joint. The examination is typically done on patients who have sustained a knee injury or are experiencing knee pain, and is important for identifying potential ligament, tendon, or cartilage injuries.</p>
+      <h2 class="subheading">Introduction</h2>
+      <p>
+        A knee examination is performed in the emergency department to evaluate injuries or abnormalities involving the knee joint. This assessment is crucial for identifying ligament, tendon, cartilage, or bony injuries and directing appropriate imaging and management.
+      </p>
+    </div>
+
+    <!-- 🔽 IMAGE PLACEHOLDER FOR COMPOSITE KNEE ILLUSTRATION -->
+    <figure>
+      <img src="/adult/systems examination/peripheries/images/knee_examination.png" alt="Knee Examination Overview" class="image">
+      <figcaption>Overview of knee anatomy, surface landmarks, range of motion, and special tests.</figcaption>
+    </figure>
+    <!-- 🔼 END PLACEHOLDER -->
+
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>The knee examination involves the following steps:</p>
+
+      <ol>
+        <li>Inspect the knee for swelling, bruising, deformity, wounds, or penetrating injuries.</li>
+        <li>Palpate for tenderness, warmth, effusion, crepitus, and bony step-offs.</li>
+        <li>Assess range of motion: flexion, extension, and patellar tracking.</li>
+        <li>Perform ligamentous tests: Lachman (ACL), valgus/varus stress tests (MCL/LCL), posterior sag (PCL), and pivot shift (ACL).</li>
+        <li>Perform meniscal tests: McMurray, Thessaly, joint line tenderness.</li>
+        <li>Perform a neurovascular exam: sensation, motor, distal pulses.</li>
+        <li>Observe gait for limping, instability, inability to fully extend, or quadriceps avoidance.</li>
+      </ol>
     </div>
 
     <div class="section">
-        <h2 class="subheading">Examination Technique</h2>
-        <p>The knee examination involves the following steps:</p>
-        <ol>
-            <li>Inspect the knee for any obvious abnormalities, such as swelling, bruising, or lacerations. Check for any penetrating injuries or foreign objects that may have entered the knee.</li>
-            <li>Palpate the knee, assessing for tenderness, warmth, and swelling. Check for any bony abnormalities or crepitus.</li>
-            <li>Assess the range of motion of the knee, including flexion, extension, abduction, and adduction. Ask the patient to move their knee in each direction, observing for any limitations or pain.</li>
-            <li>Perform specific tests to assess for specific injuries or conditions, such as the Lachman test for anterior cruciate ligament (ACL) injuries or the McMurray test for meniscus tears.</li>
-            <li>Perform a neurovascular examination, assessing for any signs of nerve or blood vessel injury. Test the patient's sensation and reflexes in the affected limb.</li>
-            <li>Assess the patient's gait by observing their walking pattern, looking for any abnormalities or limping. Ask the patient to perform heel-to-toe walking, tandem walking, and squatting to evaluate their balance and coordination.</li>
-            <li>Assess the stability of the knee joint by performing tests such as the Lachman test, pivot shift test, and anterior drawer test. These tests can help identify any ligamentous injuries, such as an anterior cruciate ligament (ACL) tear.</li>
-            <li>Assess the range of motion of the knee, including flexion and extension. Observe for any limitations or pain during movement.</li>
-            <li>Palpate the knee joint, checking for any tenderness, swelling, or bony deformities. Pay particular attention to the medial and lateral joint lines, the patellar tendon, and the collateral ligaments.</li>
-            <li>Perform additional tests as necessary based on the patient's symptoms and medical history, such as the McMurray test for meniscal injuries or the Thessaly test for meniscal and collateral ligament injuries.</li>
-            </ol>
-            </div>
-            <div class="section">
-                <h2 class="subheading">Common Knee Injuries and Conditions</h2>
-                <p>Some common knee injuries and conditions that may be detected during a knee examination include:</p>
-                <table>
-                    <tr>
-                        <th>Injury/Condition</th>
-                        <th>Signs and Symptoms</th>
-                        <th>Differential Diagnosis</th>
-                        <th>Treatment</th>
-                    </tr>
-                    <tr>
-                        <td>Anterior Cruciate Ligament (ACL) Tear</td>
-                        <td>Pain, swelling, instability, popping sensation, inability to bear weight</td>
-                        <td>Medial collateral ligament (MCL) tear, meniscal tear, osteoarthritis</td>
-                        <td>Rest, ice, compression, elevation, physical therapy, surgery</td>
-                    </tr>
-                    <tr>
-                        <td>Medial Collateral Ligament (MCL) Tear</td>
-                        <td>Pain and tenderness on the inner side of the knee, swelling, instability</td>
-                        <td>Lateral collateral ligament (LCL) tear, meniscal tear, osteoarthritis</td>
-                        <td>Rest, ice, compression, elevation, physical therapy, surgery</td>
-                    </tr>
-                    <tr>
-                        <td>Lateral Collateral Ligament (LCL) Tear</td>
-                        <td>Pain and tenderness on the outer side of the knee, instability, swelling</td>
-                        <td>Medial collateral ligament (MCL) tear, meniscal tear, osteoarthritis</td>
-                        <td>Rest, ice, compression, elevation, physical therapy, surgery</td>
-                    </tr>
-                    <tr>
-                        <td>Meniscal Tear</td>
-                        <td>Pain, swelling, locking or catching sensation, limited range of motion</td>
-                        <td>ACL tear, MCL tear, LCL tear, osteoarthritis</td>
-                        <td>Rest, ice, compression, elevation, physical therapy, surgery</td>
-                    </tr>
-                    <tr>
-                        <td>Patellar Tendinitis</td>
-                        <td>Pain and tenderness at the base of the patella, swelling, limited range of motion</td>
-                        <td>Patellofemoral pain syndrome, chondromalacia patella, osteoarthritis</td>
-                        <tr>
-                            <td>Baker's cyst</td>
-                            <td>Swelling, pain, stiffness in the knee, especially when bending or straightening the leg</td>
-                            <td>Arthritis, injury, tumor</td>
-                            <td>Rest, ice, compression, elevation, medications, drainage, surgery</td>
-                          </tr>
-                          <tr>
-                            <td>Ligament sprains</td>
-                            <td>Pain, swelling, instability, reduced range of motion, difficulty bearing weight on the affected leg</td>
-                            <td>Anterior cruciate ligament (ACL) tear, medial collateral ligament (MCL) tear, posterior cruciate ligament (PCL) tear, lateral collateral ligament (LCL) tear</td>
-                            <td>Rest, ice, compression, elevation, physical therapy, bracing, surgery</td>
-                          </tr>
-                          <tr>
-                            <td>Meniscus tears</td>
-                            <td>Pain, swelling, stiffness, catching or locking sensation in the knee joint</td>
-                            <td>Ligament sprains, arthritis, tendonitis</td>
-                            <td>Rest, ice, compression, elevation, physical therapy, medications, arthroscopic surgery</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="section">
-                        <h2 class="subheading">Diagnosis</h2>
-                        <p>The diagnosis of knee injuries and conditions is usually made based on a combination of a physical examination, medical history, imaging studies, and laboratory tests. Imaging studies such as X-rays, MRI, or CT scans may be ordered to confirm the diagnosis and assess the extent of the injury or damage.</p>
-                      </div>
-                      <div class="section">
-                        <h2 class="subheading">Treatment</h2>
-                        <p>The treatment of knee injuries and conditions depends on the severity of the injury, the underlying cause, and the patient's symptoms. Treatment options may include:</p>
-                        <ul>
-                          <li><strong>Rest:</strong> Resting the affected knee and avoiding activities that may aggravate the injury</li>
-                          <li><strong>Ice:</strong> Applying ice packs to the knee to reduce swelling and pain</li>
-                          <li><strong>Compression:</strong> Wearing a compression bandage or knee brace to support the knee and reduce swelling</li>
-                          <li><strong>Elevation:</strong> Elevating the affected leg to reduce swelling and improve circulation</li>
-                          <li><strong>Medications:</strong> Nonsteroidal anti-inflammatory drugs (NSAIDs) or corticosteroid injections may be prescribed to reduce inflammation and pain</li>
-                          <li><strong>Physical therapy:</strong> Performing exercises to improve knee strength, flexibility, and range of motion and promote healing</li>
-                          <li><strong>Surgery:</strong> In severe cases, surgery may be necessary to repair fractures, tears, or other damage to the knee joint</li>
-                        </ul>
-                      </div>
-                      <div class="section">
-                        <h2 class="subheading">Prevention</h2>
-                        <p>There are several measures that can be taken to prevent knee injuries:</p>
-                        <ul>
-                          <li>Wearing proper footwear and protective gear during physical activity</li>
-                          <li>Using proper technique when performing activities that involve the knees, such as running, jumping, or lifting weights</li>
-                          <li>Taking frequent breaks during activities that involve prolonged knee use</li>
-                          <li>Performing stretching and strengthening exercises to improve knee joint flexibility and strength</li>
-                          <li>Using assistive devices such as braces, crutches, or walkers to support the knee and reduce stress on the joint</li>
-                          <li>Taking over-the-counter pain relievers such as acetaminophen or nonsteroidal anti-inflammatory drugs (NSAIDs) to manage pain and inflammation</li>
-                          <li>Prescribing stronger pain medications or corticosteroid injections for more severe pain or inflammation</li>
-                          <li>Referring patients to physical therapy for supervised exercise programs or other treatments such as ultrasound therapy or electrical stimulation</li>
-                          <li>Performing surgical procedures such as arthroscopy, osteotomy, or knee replacement in severe cases of knee injuries or degenerative conditions like osteoarthritis</li>
-                          </ul>
-                      </div>
-                         
-                  
+      <h2 class="subheading">Common Knee Injuries and Conditions</h2>
+      <p>Some common knee injuries and conditions include:</p>
+
+      <table>
+        <tr>
+          <th>Injury/Condition</th>
+          <th>Signs and Symptoms</th>
+          <th>Differential Diagnosis</th>
+          <th>Treatment</th>
+        </tr>
+
+        <tr>
+          <td>ACL Tear</td>
+          <td>Swelling, instability, popping sensation, difficulty weight-bearing</td>
+          <td>MCL tear, meniscal tear, patellar dislocation</td>
+          <td>RICE, physio, bracing, surgical reconstruction</td>
+        </tr>
+
+        <tr>
+          <td>MCL Tear</td>
+          <td>Medial knee pain, valgus instability</td>
+          <td>LCL tear, medial meniscus tear</td>
+          <td>RICE, physio, hinged brace; surgery if severe</td>
+        </tr>
+
+        <tr>
+          <td>Meniscal Tear</td>
+          <td>Locking, clicking, joint line tenderness</td>
+          <td>ACL tear, OA flare</td>
+          <td>RICE, physio, arthroscopy</td>
+        </tr>
+
+        <tr>
+          <td>Patellar Tendinopathy</td>
+          <td>Inferior patellar pain, pain on jumping</td>
+          <td>Patellofemoral syndrome</td>
+          <td>Rest, eccentric loading rehab</td>
+        </tr>
+
+        <tr>
+          <td>Baker's Cyst</td>
+          <td>Posterior swelling, tightness, pain</td>
+          <td>DVT, meniscal tear</td>
+          <td>Conservative management, aspiration</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Diagnosis</h2>
+      <p>
+        Diagnosis relies on history, examination, and imaging—often X-ray for trauma and MRI for ligament or meniscal injuries.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Treatment</h2>
+      <p>
+        Management is based on severity and underlying pathology. Options include:
+      </p>
+      <ul>
+        <li>Rest, ice, compression, elevation (RICE)</li>
+        <li>NSAIDs and analgesia</li>
+        <li>Physiotherapy and gradual strengthening</li>
+        <li>Bracing for ligament injuries</li>
+        <li>Surgical repair or reconstruction when indicated</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Prevention</h2>
+      <p>Preventive measures include:</p>
+      <ul>
+        <li>Strengthening quadriceps and hamstrings</li>
+        <li>Proper footwear</li>
+        <li>Warm-up and stretching</li>
+        <li>Good landing mechanics for jumping sports</li>
+      </ul>
+    </div>
+
+  </main>
 </body>
 </html>
-                
-                
-            

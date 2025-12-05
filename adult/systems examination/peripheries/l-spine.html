@@ -1,124 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<title>Lumbar Spine Examination in the Emergency Department</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/peripheries.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-		
-		.subheading {
-			font-size: 24px;
-			margin-bottom: 10px;
-		}
-		
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-          table {
-            border-collapse: collapse;
-          }
-          
-          th, td {
-            border: 1px solid black;
-            padding: 8px;
-          }
-          
-	</style>
+  <title>Lumbar Spine Examination in the Emergency Department</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/peripheries.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: normal;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 90px auto 40px;
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    h3.subheading-small {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: none;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b30000;
+    }
+
+    .key-point {
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+
+    /* Mobile-friendly table */
+    @media (max-width: 768px) {
+      .page-wrapper {
+        margin: 80px 12px 24px;
+        padding: 16px;
+      }
+
+      .responsive-table,
+      .responsive-table thead,
+      .responsive-table tbody,
+      .responsive-table th,
+      .responsive-table td,
+      .responsive-table tr {
+        display: block;
+      }
+
+      .responsive-table thead {
+        display: none;
+      }
+
+      .responsive-table tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      .responsive-table td {
+        border: none;
+        padding: 4px 6px;
+      }
+
+      .responsive-table td::before {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .responsive-table td:nth-of-type(1)::before { content: "Indication"; }
+      .responsive-table td:nth-of-type(2)::before { content: "Imaging Study"; }
+    }
+  </style>
 </head>
-<header>
-<div class="logo-container">
-    <h1>Lumbar Spine Exam</h1>
-    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-    <button class="back-button" onclick="goBack()">Back</button>
-  </div>
-</header>
+
 <body>
+  <header>
+    <div class="logo-container">
+      <h1>Lumbar Spine Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-  <div class="section">
-    <h2 class="subheading">Introduction</h2>
-    <p>A lumbar spine examination is performed in the emergency department to assess for any injuries or abnormalities in the lower back and spinal cord. This examination is typically done on patients who have been involved in a traumatic event or have back pain, and is essential for identifying any potential spinal cord injuries.</p>
-  </div>
+  <main class="page-wrapper">
+    <!-- Overview -->
+    <div class="section">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        The lumbar spine examination in the Emergency Department aims to differentiate
+        benign mechanical back pain from serious pathology such as cauda equina syndrome,
+        spinal fractures, infection, malignancy and significant radiculopathy.
+      </p>
+      <p>
+        In trauma, treat the lumbar spine as part of the whole spine and maintain spinal
+        precautions until serious injury is excluded. In non-traumatic back pain, a focused
+        history and examination help identify red flags that warrant urgent imaging or
+        specialist input.
+      </p>
+    </div>
 
-  <div class="section">
-    <h2 class="subheading">Examination Technique</h2>
-    <p>The lumbar spine examination involves the following steps:</p>
-    <ol>
-        <li>Inspect the lower back for any obvious abnormalities or deformities, such as swelling, bruising, or lacerations. Check for any penetrating injuries or foreign objects that may have entered the back.</li>
-        <li>Palpate the lumbar spine, assessing for tenderness, muscle spasm, and bony abnormalities. Apply gentle pressure to the spinous processes of each vertebra, checking for any pain or discomfort.</li>
-        <li>Assess the range of motion of the lumbar spine, including flexion, extension, rotation, and lateral bending. Ask the patient to move their back in each direction, observing for any limitations or pain.</li>
-        <li>Perform a neurologic examination, assessing for any motor or sensory deficits, reflexes, and signs of spinal cord injury. Check for any weakness or loss of sensation in the legs, abnormal reflexes, or bowel or bladder dysfunction. Use the following steps:</li>
-        <ol type="a">
-        <li><strong>Muscle Strength:</strong> Assess muscle strength of the legs by having the patient flex and extend their knees and ankles against resistance. Evaluate for any weakness, tremors, or spasms.</li>
-        <li><strong>Sensory Exam:</strong> Check for any sensory deficits in the legs. Test for light touch sensation using a cotton swab, and pinprick sensation using a sharp object.</li>
-        <li><strong>Reflexes:</strong> Test for patellar and Achilles reflexes. Tap the patellar tendon with a reflex hammer while the patient's leg is hanging freely, and observe for a reflexive extension of the leg. Similarly, strike the Achilles tendon with the hammer while the patient's foot is dorsiflexed, and observe for plantar flexion of the foot.</li>
-        <li><strong>Bowel and Bladder Function:</strong> Ask the patient if they have had any changes in their bowel or bladder function, such as incontinence or difficulty emptying their bladder. These symptoms may indicate spinal cord injury or compression.</li>
-        </ol>
-        </div>
-        <div class="section">
-            <h2 class="subheading">Indications for Imaging Studies</h2>
-            <p>Imaging studies may be indicated for the following patients:</p>
-            <table>
-                <tr>
-                    <th>Indication</th>
-                    <th>Imaging Study</th>
-                </tr>
-                <tr>
-                    <td>Signs or symptoms of spinal cord injury</td>
-                    <td>MRI of the lumbar spine</td>
-                </tr>
-                <tr>
-                    <td>Progressive or severe neurologic symptoms</td>
-                    <td>MRI of the lumbar spine</td>
-                </tr>
-                <tr>
-                    <td>Suspected infection or tumor</td>
-                    <td>MRI of the lumbar spine</td>
-                </tr>
-                <tr>
-                    <td>Severe or persistent back pain</td>
-                    <td>X-ray or CT scan of the lumbar spine</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="section">
-            <h2 class="subheading">Management of Lumbar Spine Injuries</h2>
-            <p>The management of lumbar spine injuries depends on the severity and underlying cause of the injury. In general, management strategies may include:</p>
-            <ul>
-                <li>Rest and activity modification: Rest and avoiding activities that worsen the pain or symptoms may be recommended initially. Bed rest is generally not recommended beyond a day or two as it can delay recovery.</li>
-                <li>Pain management: Pain medications such as nonsteroidal anti-inflammatory drugs (NSAIDs), acetaminophen, or opioids may be used to manage pain.</li>
-                <li>Physical therapy: Once the acute symptoms have subsided, physical therapy may be recommended to improve strength, flexibility, and function.</li>
-                <li>Injections: Epidural steroid injections may be used to reduce inflammation and pain in the lumbar spine.</li>
-                <li>Surgery: Surgery may be necessary in cases of severe or progressive neurologic deficits or spinal instability.</li>
-            </ul>
-        </div>
+    <!-- Initial priorities & red flags -->
+    <div class="section">
+      <h2 class="subheading">Initial Priorities & Red Flags</h2>
+      <p>After ABC stabilisation, screen for serious pathology:</p>
+      <ul>
+        <li><span class="red-flag">Trauma with high-risk mechanism:</span> fall from height, high-speed RTC, axial load, direct blow to back.</li>
+        <li><span class="red-flag">Cauda equina features:</span> urinary retention or incontinence, faecal incontinence, saddle anaesthesia, bilateral leg weakness or numbness.</li>
+        <li><span class="red-flag">Severe or progressive neurological deficit:</span> motor weakness, foot drop, widespread sensory loss, gait disturbance.</li>
+        <li><span class="red-flag">Infection red flags:</span> fever, rigors, recent systemic infection, IV drug use, immunosuppression, spinal tenderness.</li>
+        <li><span class="red-flag">Malignancy red flags:</span> known cancer, unexplained weight loss, night pain, age &gt;50 with new severe back pain.</li>
+        <li><span class="red-flag">Inflammatory or structural disease:</span> known ankylosing spondylitis or other spondyloarthropathy, minor trauma with disproportionate pain.</li>
+        <li><span class="red-flag">Systemic illness:</span> malaise, night sweats, generalised weakness.</li>
+      </ul>
+      <p class="key-point">
+        Any red flag should prompt early senior review and consideration of urgent MRI or CT,
+        according to local pathways.
+      </p>
+    </div>
+
+    <!-- Focused history -->
+    <div class="section">
+      <h2 class="subheading">Focused History</h2>
+      <ul>
+        <li><strong>Onset & mechanism:</strong> sudden vs gradual; traumatic vs non-traumatic; heavy lifting, twisting, direct blow, fall.</li>
+        <li><strong>Pain characteristics:</strong> location (midline vs paraspinal), radiation (buttock, posterior thigh, below knee), severity and pattern (night pain, constant vs mechanical).</li>
+        <li><strong>Neurological symptoms:</strong> numbness, tingling, weakness, falls, gait disturbance, difficulty climbing stairs.</li>
+        <li><strong>Bowel and bladder function:</strong> retention, incontinence, change in urinary stream, loss of urge, constipation or faecal incontinence.</li>
+        <li><strong>Saddle region symptoms:</strong> altered sensation around perineum, genitalia, inner thighs.</li>
+        <li><strong>Red flag context:</strong> history of cancer, TB, HIV, recent infection, weight loss, IV drug use, immunosuppression.</li>
+        <li><strong>Past history:</strong> previous back problems, surgery, fractures, osteoporosis, steroid use.</li>
+        <li><strong>Function:</strong> ability to mobilise, work, perform activities of daily living.</li>
+      </ul>
+    </div>
+
+    <!-- Examination technique -->
+    <div class="section">
+      <h2 class="subheading">Examination Technique</h2>
+      <p>
+        Examine the spine in the context of the whole patient. In trauma, maintain spinal
+        precautions until serious injury is excluded. In non-traumatic back pain, encourage
+        patient-led movement as tolerated.
+      </p>
+
+      <h3 class="subheading-small">1. Look</h3>
+      <ul>
+        <li>Inspect the lumbar region for deformity, swelling, bruising, scars or step-offs.</li>
+        <li>Observe posture and gait (if safe): antalgic gait, stooping, difficulty standing upright.</li>
+        <li>Look for muscle wasting or asymmetry in buttocks and lower limbs.</li>
+      </ul>
+
+      <h3 class="subheading-small">2. Feel</h3>
+      <ul>
+        <li>Palpate spinous processes from lower thoracic to sacrum for midline tenderness or deformity.</li>
+        <li>Palpate paraspinal muscles for spasm or trigger points.</li>
+        <li>Assess sacroiliac joint region for tenderness if inflammatory or sacroiliac pathology suspected.</li>
+      </ul>
+
+      <h3 class="subheading-small">3. Range of Motion (non-traumatic cases)</h3>
+      <p>
+        In non-traumatic back pain without red flags, assess active movement:
+      </p>
+      <ul>
+        <li><strong>Flexion:</strong> ask patient to bend forward, noting range and pain.</li>
+        <li><strong>Extension:</strong> lean back gently, noting restriction or pain.</li>
+        <li><strong>Lateral flexion:</strong> side-bending left and right.</li>
+        <li><strong>Rotation:</strong> rotated trunk with pelvis stabilised.</li>
+      </ul>
+      <p>Stop if movement triggers severe pain, weakness, or neurological symptoms.</p>
+
+      <h3 class="subheading-small">4. Neurological Examination of Lower Limbs</h3>
+      <p>Assess both legs and compare sides:</p>
+      <ul>
+        <li><strong>Motor strength:</strong>
+          <ul>
+            <li>Hip flexion/extension.</li>
+            <li>Knee extension (L3–L4) and flexion.</li>
+            <li>Ankle dorsiflexion (L4–L5) and plantarflexion (S1).</li>
+            <li>Great toe dorsiflexion (L5).</li>
+          </ul>
+        </li>
+        <li><strong>Sensation:</strong> light touch and pinprick across dermatomes L1–S2 (anterior thigh, medial leg, lateral leg, dorsum of foot, sole, heel, perineum).</li>
+        <li><strong>Reflexes:</strong> patellar (L3–L4) and Achilles (S1); note reduced or brisk responses and clonus.</li>
+        <li><strong>Upper motor neuron signs:</strong> Babinski, tone and coordination if cord involvement suspected.</li>
+        <li><strong>Perineal sensation & anal tone:</strong> assess gently if cauda equina suspected (usually with chaperone and senior help).</li>
+      </ul>
+
+      <h3 class="subheading-small">5. Nerve Root / Radicular Tests (where appropriate)</h3>
+      <ul>
+        <li><strong>Straight Leg Raise (SLR):</strong> with patient supine, raise the straight leg; radicular pain radiating below the knee between ~30–70° suggests nerve root irritation (commonly L5/S1).</li>
+        <li><strong>Crossed SLR:</strong> radicular pain in the symptomatic leg when the opposite leg is raised is highly specific for disc prolapse.</li>
+        <li><strong>Femoral stretch test:</strong> prone or side-lying, flex the knee and extend the hip; anterior thigh pain suggests higher lumbar root involvement (L2–L4).</li>
+      </ul>
+      <p class="key-point">
+        Perform these tests only if safe, and stop if they cause severe pain or neurological deterioration.
+      </p>
+    </div>
+
+    <!-- Imaging -->
+    <div class="section">
+      <h2 class="subheading">Indications for Imaging Studies</h2>
+      <p>
+        Most acute, non-specific low back pain without red flags does <strong>not</strong> require immediate
+        imaging. Imaging is reserved for trauma, red flags or persistent/progressive symptoms.
+      </p>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Indication</th>
+            <th>Imaging Study</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suspected cauda equina syndrome</td>
+            <td>Urgent MRI of the lumbar spine (or CT myelogram if MRI unavailable), with immediate neurosurgical/orthopaedic consultation.</td>
+          </tr>
+          <tr>
+            <td>Progressive or severe neurological deficit</td>
+            <td>MRI lumbar spine to assess for disc herniation, stenosis, tumour, or abscess.</td>
+          </tr>
+          <tr>
+            <td>Suspected infection (e.g. discitis, epidural abscess)</td>
+            <td>MRI lumbar spine; consider blood cultures and inflammatory markers.</td>
+          </tr>
+          <tr>
+            <td>Known malignancy or strong suspicion of spinal metastases</td>
+            <td>MRI lumbar spine (and further imaging as guided by oncology/surgery).</td>
+          </tr>
+          <tr>
+            <td>Trauma with suspected lumbar fracture</td>
+            <td>CT lumbar spine (often as part of CT trauma series); plain X-rays where CT is not available.</td>
+          </tr>
+          <tr>
+            <td>Persistent severe back pain without red flags, not improving with conservative care</td>
+            <td>
+              Usually arranged as outpatient imaging (X-ray or MRI) according to local guidelines rather than in the ED.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Management -->
+    <div class="section">
+      <h2 class="subheading">Management of Lumbar Spine Conditions in the ED</h2>
+      <p>Management depends on the underlying cause, but general principles include:</p>
+      <ul>
+        <li><strong>Analgesia:</strong> stepwise approach with paracetamol, NSAIDs (if not contraindicated), short-term opioids for severe pain, and muscle relaxants where appropriate.</li>
+        <li><strong>Activity guidance:</strong> encourage early gentle mobilisation in simple mechanical back pain; avoid prolonged bed rest.</li>
+        <li><strong>Spinal precautions:</strong> in trauma or suspected serious pathology, maintain spinal precautions until imaging and specialist review.</li>
+        <li><strong>Specific emergencies:</strong>
+          <ul>
+            <li>Cauda equina syndrome – urgent MRI and emergency surgical decompression.</li>
+            <li>Spinal infection – early antibiotics after appropriate cultures and urgent specialist input.</li>
+            <li>Malignant cord compression – urgent imaging, steroids as per local protocol and oncology/neurosurgical involvement.</li>
+            <li>Unstable fractures – immobilisation and operative or bracing management guided by specialists.</li>
+          </ul>
+        </li>
+        <li><strong>Non-specific mechanical back pain:</strong> analgesia, advice to remain active within limits, short period off heavy duties if needed, and GP/physio follow-up.</li>
+      </ul>
+    </div>
+
+    <!-- Patient advice & follow-up -->
+    <div class="section">
+      <h2 class="subheading">Patient Advice & Follow-Up</h2>
+      <ul>
+        <li>Explain the likely diagnosis (mechanical vs serious cause) and expected course.</li>
+        <li>Encourage gradual return to normal activity, avoidance of prolonged bed rest, and use of simple analgesia.</li>
+        <li>Provide clear <strong>return precautions</strong>:
+          new or worsening leg weakness, numbness, saddle anaesthesia, difficulty passing urine, loss of urinary or faecal control, fever, night sweats, or rapidly escalating pain.</li>
+        <li>Arrange follow-up with primary care, physiotherapy, orthopaedics, neurosurgery or pain clinic as indicated.</li>
+      </ul>
+    </div>
+  </main>
 </body>
 </html>
-        
