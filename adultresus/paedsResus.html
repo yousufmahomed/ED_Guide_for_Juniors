@@ -1,140 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pediatric Resuscitation Algorithms</title>
   <meta charset="UTF-8">
+  <title>Paediatric & Neonatal Resuscitation Algorithms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/adultresus/images/paedsResusBack.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      background-image: url("/adultresus/images/paedsResusBack.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    h2 {
-      font-size: 20px;
-      color: #003366;
-      margin-bottom: 10px;
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
     }
 
-   
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0 0 0.4rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #003366;
+      margin-bottom: 1.2rem;
+    }
+
+    .algo-card {
+      background: rgba(255, 255, 255, 0.94);
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .algo-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      cursor: zoom-in;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .algo-caption {
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #555;
+      font-style: italic;
+      margin-top: 0.3rem;
+      text-align: center;
+    }
+
     .fullscreen-image-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        cursor: zoom-out;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem;
       }
-      
-      .fullscreen-image-overlay img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
+
+      .algo-card {
+        padding: 0.8rem;
       }
-      
-    
-  
+
+      .page-title {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Pediatric  &amp Neonatal Resuscitation Algorithms</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-<div class="section">
-  <h2 class="subheading">Please click on the images to enlarge them</h2>
-  <strong>All the algorithms below were taken from the <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms" class="empahsis-link" target="_blank">American Heart Association</a> website</strong>
-</div>
-  <div class="section">
-  <img  src="/adultresus/images/Ped_BLS_Lay_Rescuers_200511.jpg" alt="Basic Life Support" class="image" onclick="toggleFullscreenImage('/adultresus/images/Ped_BLS_Lay_Rescuers_200511.jpg')">
-<caption>Basic Life Support</caption>
-</div>
-<div class="section">
-<img src="/adultresus/images/AlgorithmPALS_CA_200707.jpg" alt="Cardiac Arrest Algorithm pediatric" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmPALS_CA_200707.jpg')">
-<caption>Cardiac Arrest Algorithm Pediatric</caption>
-</div>
-  <div class="section">
-    <img src="/adultresus/images/AlgorithmBLS_Ped_Single_Rescuer_200624.jpg" alt="Pediatric Resuscitation Single provider" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Ped_Single_Rescuer_200624.jpg')">
-<caption>Pediatric Resuscitation Single provider</caption>
+<header>
+  <div class="logo-container">
+    <h1 style="color: antiquewhite;">Paediatric &amp; Neonatal Resuscitation Algorithms</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main>
+  <h2 class="page-title">Paediatric &amp; Neonatal Resuscitation Algorithms</h2>
+  <p class="page-subtitle">
+    Tap an algorithm to enlarge it full-screen for bedside viewing.
+  </p>
+  <p class="note-text">
+    All core algorithms below are adapted from the
+    <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms"
+       class="emphasis-link" target="_blank">
+      American Heart Association
+    </a>.
+  </p>
+
+  <!-- ALGORITHM GALLERY -->
+
+  <div class="algo-card">
+    <img src="/adultresus/images/Ped_BLS_Lay_Rescuers_200511.jpg"
+         alt="Paediatric Basic Life Support – Lay Rescuers"
+         onclick="toggleFullscreenImage('/adultresus/images/Ped_BLS_Lay_Rescuers_200511.jpg')">
+    <div class="algo-caption">Paediatric Basic Life Support – Lay Rescuers</div>
   </div>
 
-  <div class="section">
-    <img src="/adultresus/images/AlgorithmBLS_Ped_2_Rescuers_200624.jpg" alt="Pediatric Resuscitation Two providers" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Ped_2_Rescuers_200624.jpg')">
-<caption>Pediatric Resuscitation Two providers</caption>
-  </div>
- 
-  <div class="section">
-  <img src="/adultresus/images/Neonatal_Resuscitation_Algorithm.jpg" alt="Neonatal Resuscitation" class="image" onclick="toggleFullscreenImage('/adultresus/images/Neonatal_Resuscitation_Algorithm.jpg')">
-<caption>Neonatal Resuscitation</caption>
-</div>
-
- 
-  <div class="section">
-    <img src="/adultresus/images/AlgorithmPALS_Tachycardia_200618.jpg"   alt="Tachycardia (with pulse) Management" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmPALS_Tachycardia_200618.jpg')">
-<caption>Tachycardia (with pulse) Management</caption>
-  </div>
-  <div class="section">
-<img src="/adultresus/images/AlgorithmPALS_Bradycardia_200707.jpg"   alt="Bradycardia Management" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmPALS_Bradycardia_200707.jpg')">
-<caption>Bradycardia Management</caption>
-  </div> 
-  
-    <div class="section">
-      <img src="/adultresus/images/paeds_status_epi.png"   alt="Status Epilepticus" class="image" onclick="toggleFullscreenImage('/adultresus/images/paeds_status_epi.png')">
-  <caption>Status Epilepticus</caption>
-    </div>
-    <div class="section">
-      <img src="/adultresus/images/paeds_choking.jpg"   alt="Choking Management" class="image" onclick="toggleFullscreenImage('/adultresus/images/paeds_choking.jpg')">
-  <caption>Choking Management</caption>
-    </div>
-    <div class="section">
-      <img src="/adultresus/images/aspiration-of-a-foreign-body-guideline.png"   alt="Foreign Body Aspiration" class="image" onclick="toggleFullscreenImage('/adultresus/images/aspiration-of-a-foreign-body-guideline.png')">
-  <caption>Foreign Body Aspiration</caption>
-    </div>
-   
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmPALS_CA_200707.jpg"
+         alt="Paediatric Cardiac Arrest Algorithm (PALS)"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmPALS_CA_200707.jpg')">
+    <div class="algo-caption">Paediatric Cardiac Arrest Algorithm (PALS)</div>
   </div>
 
- 
-  <script>
-    function toggleFullscreenImage(src) {
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmBLS_Ped_Single_Rescuer_200624.jpg"
+         alt="Paediatric BLS – Single Rescuer"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Ped_Single_Rescuer_200624.jpg')">
+    <div class="algo-caption">Paediatric BLS – Single Rescuer</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmBLS_Ped_2_Rescuers_200624.jpg"
+         alt="Paediatric BLS – Two Rescuers"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Ped_2_Rescuers_200624.jpg')">
+    <div class="algo-caption">Paediatric BLS – Two Rescuers</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/Neonatal_Resuscitation_Algorithm.jpg"
+         alt="Neonatal Resuscitation Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/Neonatal_Resuscitation_Algorithm.jpg')">
+    <div class="algo-caption">Neonatal Resuscitation Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmPALS_Tachycardia_200618.jpg"
+         alt="Paediatric Tachycardia (with Pulse) Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmPALS_Tachycardia_200618.jpg')">
+    <div class="algo-caption">Paediatric Tachycardia (With Pulse)</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmPALS_Bradycardia_200707.jpg"
+         alt="Paediatric Bradycardia Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmPALS_Bradycardia_200707.jpg')">
+    <div class="algo-caption">Paediatric Bradycardia Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/paeds_status_epi.png"
+         alt="Paediatric Status Epilepticus Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/paeds_status_epi.png')">
+    <div class="algo-caption">Paediatric Status Epilepticus</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/paeds_choking.jpg"
+         alt="Paediatric Choking Management"
+         onclick="toggleFullscreenImage('/adultresus/images/paeds_choking.jpg')">
+    <div class="algo-caption">Choking Management (Infant &amp; Child)</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/aspiration-of-a-foreign-body-guideline.png"
+         alt="Foreign Body Aspiration Guideline"
+         onclick="toggleFullscreenImage('/adultresus/images/aspiration-of-a-foreign-body-guideline.png')">
+    <div class="algo-caption">Foreign Body Aspiration</div>
+  </div>
+
+</main>
+
+<script>
+  function toggleFullscreenImage(src) {
     let overlay = document.getElementById('fullscreen-image-overlay');
-  
+
     if (!overlay) {
       overlay = document.createElement('div');
       overlay.id = 'fullscreen-image-overlay';
       overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+      overlay.innerHTML = `<img src="${src}" alt="Full-size resuscitation algorithm" />`;
       overlay.onclick = () => toggleFullscreenImage(null);
       document.body.appendChild(overlay);
     } else {
-      document.body.removeChild(overlay);
+      overlay.remove();
     }
   }
-  </script>
+</script>
+
 </body>
 </html>

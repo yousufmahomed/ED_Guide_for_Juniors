@@ -3,116 +3,432 @@
 <head>
   <meta charset="UTF-8">
   <title>Toxins and Antidotes: Emergency Department Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/adultresus/images/toxins.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      background-image: url("/adultresus/images/toxins.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
-    table, th, td {
-      border: 1px solid black;
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0 0 0.4rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #0066cc;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+      color: #004c99;
+    }
+
+    p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+
+    ul, ol {
+      margin: 0.4rem 0;
+      padding-left: 1.3rem;
+      font-weight: normal;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    .danger-box {
+      background-color: #fff5f5;
+      border-left: 4px solid #cc0000;
+      padding: 10px 12px;
+      margin-top: 0.4rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .danger-box ul {
+      margin-top: 0.3rem;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b22222;
+    }
+
+    /* Table */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 0.3rem;
+    }
+
+    table {
       border-collapse: collapse;
-      padding: 5px;
-      text-align: left;
+      width: 100%;
+      min-width: 360px;
+      font-size: 0.85rem;
     }
+
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+      vertical-align: top;
+      font-weight: normal;
+    }
+
     th {
-      background-color: #ddd;
+      background-color: #f2f2f2;
+      color: #003366;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* QUICK LINKS STRIP */
+    .quick-links-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .quick-link-btn {
+      flex: 1 1 46%;
+      min-width: 130px;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.4rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #c5d7f2;
+      background: #e9f1ff;
+      font-size: 0.85rem;
+      color: #003366;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .quick-link-btn i {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .quick-link-btn:hover,
+    .quick-link-btn:focus {
+      background: #d7e6ff;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem;
+      }
+
+      .section-card {
+        padding: 0.8rem 0.85rem;
+      }
+
+      .page-title {
+        font-size: 1.3rem;
+      }
+
+      th, td {
+        padding: 7px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="logo-container">
-      <div class="logo-container">
-        <h1 class="main-header">Toxins and Antidotes: Emergency Department Management</h1>
-        <div class="navbar-icons">
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-        </div>
-        <button class="back-button" onclick="goBack()">Back</button>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Toxins and Antidotes: ED Management</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
       </div>
-    </nav>
-  </header>
-  <section class="section">
-    <h2>Common Toxins and Their Antidotes</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Toxin</th>
-      <th>Signs and Symptoms</th>
-      <th>Antidote</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Acetaminophen</td>
-      <td>Nausea, vomiting, abdominal pain, confusion, liver failure</td>
-      <td>N-acetylcysteine (NAC)</td>
-    </tr>
-    <tr>
-      <td>Aspirin</td>
-      <td>Tinnitus, confusion, nausea, vomiting, metabolic acidosis</td>
-      <td>Sodium bicarbonate, activated charcoal, hemodialysis</td>
-    </tr>
-    <tr>
-      <td>Benzodiazepines</td>
-      <td>Sedation, respiratory depression, coma</td>
-      <td>Flumazenil</td>
-    </tr>
-    <tr>
-      <td>Carbon Monoxide</td>
-      <td>Headache, nausea, dizziness, confusion, loss of consciousness</td>
-      <td>Oxygen therapy, hyperbaric oxygen therapy</td>
-    </tr>
-    <tr>
-      <td>Cyanide</td>
-      <td>Anxiety, confusion, coma, seizures, cardiac arrest</td>
-      <td>Sodium nitrite, sodium thiosulfate, hydroxocobalamin</td>
-    </tr>
-    <tr>
-      <td>Lead</td>
-      <td>Abdominal pain, anemia, confusion, seizures</td>
-      <td>Dimercaprol (BAL), EDTA, succimer</td>
-    </tr>
-    <tr>
-      <td>Organophosphates</td>
-      <td>Sweating, miosis, bradycardia, respiratory depression, coma</td>
-      <td>Atropine</td>
-    </tr>
-    <tr>
-        <td>Tricyclic antidepressants</td>
-        <td>Confusion, tachycardia, hypotension, seizures, coma</td>
-        <td>Sodium bicarbonate</td>
-      </tr>
-  </tbody>
-</table>
-<h2>Emergency Department Management of Toxins</h2>
-<p>When managing a patient with a suspected toxin exposure, it is important to:</p>
-<ul>
-  <li>Obtain a thorough history and physical exam to identify the toxin and the severity of symptoms</li>
-  <li>Remove the patient from the source of the toxin, if possible</li>
-  <li>Perform appropriate decontamination measures, such as removing contaminated clothing and washing the skin or eyes with water</li>
-  <li>Administer antidotes as appropriate</li>
-  <li>Provide supportive care, such as oxygen, intravenous fluids, and monitoring of vital signs and cardiac rhythm</li>
-  <li>Consider consultation with a toxicologist or poison control center for further management guidance</li>
-  <li>Observe the patient for delayed or recurrent symptoms and potential complications, such as multi-organ failure or electrolyte imbalances</li>
-</ul>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
 
-<div class="section">
-    <h2 class="subheading">Toxicology Protocols</h2>
-    <a href="/pdfs/tox_protocols.pdf" target="_blank" class="emphasis-link">View Toxicology Protocols (PDF)</a>
+<main>
 
-</div>
-  
+  <!-- INTRO -->
+  <section class="section-card">
+    <h2 class="page-title">Toxins &amp; Antidotes – ED Guide</h2>
+    <p class="page-subtitle">
+      Use this as a bedside framework. Always combine with your local toxicology protocols and senior input.
+    </p>
+    <span class="pill-note">Senior approach</span>
+    <p class="note-text">
+      Aim to stabilise first (ABCDE), then identify toxidrome &amp; likely agent, then decide whether a specific antidote will
+      meaningfully change outcome.
+    </p>
 
+    <!-- QUICK LINK STRIP -->
+    <div class="quick-links-strip">
+      <a href="/adultresus/hyperkalaemia.html" class="quick-link-btn">
+        <i class="fa-solid fa-bolt"></i>
+        Hyperkalaemia Emergency
+      </a>
+      <a href="/adultresus/antidoteQuickRef.html#hiet" class="quick-link-btn">
+        <i class="fa-solid fa-syringe"></i>
+        HIET Quick Dosing
+      </a>
+      <a href="/adultresus/antidoteQuickRef.html#lipid" class="quick-link-btn">
+        <i class="fa-solid fa-oil-can"></i>
+        Intralipid Rescue
+      </a>
+      <a href="/adultresus/antidoteQuickRef.html" class="quick-link-btn">
+        <i class="fa-solid fa-table-list"></i>
+        Antidote Dosing Table
+      </a>
+    </div>
+  </section>
 
+  <!-- INITIAL ED APPROACH -->
+  <section class="section-card">
+    <h2>1. Initial ED Approach to Suspected Poisoning</h2>
+    <ol>
+      <li><strong>Stabilise – ABCDE</strong>
+        <ul>
+          <li>Airway: protect early if reduced GCS, seizures, or risk of aspiration.</li>
+          <li>Breathing: oxygen, support ventilation; beware respiratory depression (opioids, benzos, sedatives).</li>
+          <li>Circulation: IV access, fluids as needed, monitor BP, HR, rhythm.</li>
+          <li>Disability: GCS, pupils, capillary glucose (hypoglycaemia can mimic overdose).</li>
+          <li>Exposure: temperature, check for patches, injection sites, containers in pockets/bag.</li>
+        </ul>
+      </li>
 
+      <li><strong>Decontamination (only if safe &amp; appropriate)</strong>
+        <ul>
+          <li>Remove contaminated clothing, wash exposed skin/eyes with copious water.</li>
+          <li>Activated charcoal: only under senior/toxicology guidance (usually within 1 hour, protected airway).</li>
+        </ul>
+      </li>
 
+      <li><strong>Look for a toxidrome</strong>
+        <ul>
+          <li>Opioid: CNS depression, pin-point pupils, hypoventilation.</li>
+          <li>Sympathomimetic: agitation, tachycardia, hypertension, dilated pupils, sweating.</li>
+          <li>Anticholinergic: tachycardia, hyperthermia, dry skin, dilated pupils, urinary retention, delirium.</li>
+          <li>Cholinergic (organophosphates): SLUDGE/DUMBELS, bronchorrhoea, bronchospasm.</li>
+        </ul>
+      </li>
+
+      <li><strong>Early investigations</strong>
+        <ul>
+          <li>VBG/ABG, U&amp;E, LFTs, glucose, FBC, ECG.</li>
+          <li>Drug-specific levels where relevant &amp; available (e.g. paracetamol).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="danger-box">
+      <strong>Red flags – call senior/toxicology and consider ICU:</strong>
+      <ul>
+        <li class="red-flag">Airway compromise or persistent hypoxia</li>
+        <li class="red-flag">Shock, arrhythmia, or significant ECG changes</li>
+        <li class="red-flag">Recurrent seizures or reduced GCS not improving</li>
+        <li class="red-flag">Severe metabolic acidosis or rising lactate</li>
+        <li class="red-flag">Suspected massive ingestion of cardiotoxic drugs (e.g. TCAs, beta-blockers, CCBs)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMMON TOXINS TABLE -->
+  <section class="section-card">
+    <h2>2. Common Toxins and Their Antidotes</h2>
+    <p class="note-text">
+      This table highlights key ED toxins. Always confirm doses with local protocol / toxicology service.
+    </p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+        <tr>
+          <th>Toxin / Group</th>
+          <th>Key Features</th>
+          <th>Antidote / Key Therapy</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Paracetamol (Acetaminophen)</td>
+          <td>Nausea, vomiting, RUQ pain; initially well then hepatic failure 24–72 h later.</td>
+          <td>
+            <strong>N-acetylcysteine (NAC)</strong> – start early, do not wait for LFT derangement. Use nomogram if time of ingestion known.
+          </td>
+        </tr>
+        <tr>
+          <td>Aspirin / Salicylates</td>
+          <td>Tinnitus, vomiting, tachypnoea, metabolic acidosis, mixed respiratory alkalosis.</td>
+          <td>
+            <strong>Sodium bicarbonate</strong> infusion (alkalinise serum &amp; urine), activated charcoal (if appropriate), <strong>haemodialysis</strong> in severe cases.
+          </td>
+        </tr>
+        <tr>
+          <td>Opioids</td>
+          <td>CNS depression, pin-point pupils, hypoventilation, bradycardia.</td>
+          <td>
+            <strong>Naloxone</strong> IV/IM/IN – titrate to adequate ventilation, not full arousal. Beware short half-life vs long-acting opioids.
+          </td>
+        </tr>
+        <tr>
+          <td>Benzodiazepines</td>
+          <td>Drowsiness, ataxia, respiratory depression (especially with co-ingestants).</td>
+          <td>
+            Supportive care, airway protection as needed.<br>
+            <strong>Flumazenil is generally avoided</strong> in mixed overdoses or chronic users due to seizure risk – specialist decision only.
+          </td>
+        </tr>
+        <tr>
+          <td>Tricyclic antidepressants (TCAs)</td>
+          <td>Confusion, seizures, hypotension, wide QRS, arrhythmias.</td>
+          <td>
+            <strong>Sodium bicarbonate</strong> boluses/infusion for QRS widening/hypotension; early intubation in severe cases, continuous ECG monitoring.
+          </td>
+        </tr>
+        <tr>
+          <td>Organophosphates / Carbamates</td>
+          <td>Cholinergic toxidrome: salivation, lacrimation, urination, diarrhoea, vomiting, bronchorrhoea, bronchospasm, bradycardia.</td>
+          <td>
+            <strong>Atropine</strong> (large, repeated doses) for secretions &amp; bronchospasm;<br>
+            <strong>Oximes</strong> (e.g. pralidoxime) if available and indicated; early airway control.
+          </td>
+        </tr>
+        <tr>
+          <td>Carbon Monoxide</td>
+          <td>Headache, nausea, dizziness, confusion, collapse; normal SpO₂ on pulse oximetry.</td>
+          <td>
+            <strong>High-flow oxygen</strong> (non-rebreather); consider <strong>hyperbaric oxygen</strong> in selected severe cases according to protocol.
+          </td>
+        </tr>
+        <tr>
+          <td>Cyanide</td>
+          <td>Rapid collapse, seizures, lactic acidosis, cardiovascular collapse (often in fire victims or industrial exposures).</td>
+          <td>
+            <strong>Hydroxocobalamin</strong> (if available) or cyanide antidote kit (e.g. nitrites + thiosulfate) as per local guidelines, plus aggressive supportive care.
+          </td>
+        </tr>
+        <tr>
+          <td>Lead &amp; Heavy metals</td>
+          <td>Abdominal pain, neuropathy, anaemia, encephalopathy (chronic exposures).</td>
+          <td>
+            Chelation therapy: <strong>Dimercaprol (BAL)</strong>, EDTA, or <strong>succimer</strong> – specialist/toxicology guided.
+          </td>
+        </tr>
+        <tr>
+          <td>Beta-blockers</td>
+          <td>Bradycardia, hypotension, hypoglycaemia, shock.</td>
+          <td>
+            Supportive care, atropine, fluids; consider <strong>glucagon</strong>, high-dose insulin euglycaemic therapy (HIET) per protocol, vasopressors; early senior input.
+          </td>
+        </tr>
+        <tr>
+          <td>Calcium Channel Blockers</td>
+          <td>Hypotension, bradycardia, hyperglycaemia, shock.</td>
+          <td>
+            <strong>Calcium</strong> (chloride/gluconate), HIET, vasopressors, lipid emulsion in selected cases – ICU-level management.
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- GENERAL ED MANAGEMENT SUMMARY -->
+  <section class="section-card">
+    <h2>3. General ED Management Principles</h2>
+    <ul>
+      <li>Take a focused history: time and amount of ingestion, co-ingestants, intent (accidental vs deliberate self-harm), past medical history and meds.</li>
+      <li>Search for evidence: pill bottles, blister packs, chemical containers, family/witness information.</li>
+      <li>Provide supportive care: oxygen, IV fluids, temperature control, seizure control, anti-emetics.</li>
+      <li>Repeat clinical assessment frequently – many overdoses evolve over hours.</li>
+      <li>Safety first: protect staff from contaminated patients (PPE, decontamination area where possible).</li>
+    </ul>
+
+    <p class="note-text">
+      Senior tip: antidotes are powerful but limited – most toxicology is supportive care, good observation, and early recognition of deterioration.
+    </p>
+  </section>
+
+  <!-- PROTOCOLS LINK -->
+  <section class="section-card">
+    <h2>Toxicology Protocols</h2>
+    <p>
+      For detailed dosing, infusion regimes, and local pathways, refer to your hospital / provincial protocols:
+    </p>
+    <p>
+      <a href="/pdfs/tox_protocols.pdf" target="_blank" class="emphasis-link">
+        View Toxicology Protocols (PDF)
+      </a>
+    </p>
+  </section>
+
+</main>
+</body>
+</html>

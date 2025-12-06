@@ -1,147 +1,416 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Crush Syndrome Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crush Syndrome Checklist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f7;
+        }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
-    }
+        .content {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+        }
 
-    h2 {
-        color: #0066cc;
-    }
+        .page-title {
+            font-size: 1.5rem;
+            margin: 0 0 0.75rem 0;
+            color: #003366;
+            text-align: center;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+        .section-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
 
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
+        .section-card h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #0066cc;
+        }
 
-    th {
-        background-color: #f2f2f2;
-        color: navy;
-    }
+        .section-card p {
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
 
-    input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 10px;
-    }
+        .section-card ul,
+        .section-card ol {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
 
-    ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
+        .section-card li {
+            margin-bottom: 0.35rem;
+            font-size: 0.9rem;
+        }
 
-    li {
-        margin-bottom: 5px;
-    }
-</style>
+        .pill-note {
+            display: inline-block;
+            background: #e6f2ff;
+            color: #003366;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-text {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #444;
+        }
+
+        .red-flag {
+            font-weight: 600;
+            color: #b22222;
+        }
+
+        /* Table */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 320px;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: navy;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.4);
+            margin-right: 6px;
+        }
+
+        .warning {
+            color: #b22222;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 0.75rem;
+            }
+
+            .page-title {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 0.85rem 0.9rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Crush Syndrome Checklist</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Crush Syndrome Checklist</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>YES</th>
-				<th>NO</th>
-				<th>Recommendations/ Suggestions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Compressive force or prolonged immobilization</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Pain and swelling of the affected area</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Restricted movement of the affected area</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Numbness or tingling sensation in the affected area</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Dark-colored urine (myoglobinuria)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Rhabdomyolysis (elevated creatine kinase and potassium levels)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Acute kidney injury (elevated BUN and creatinine levels)</td>
+<header>
+    <div class="logo-container">
+        <h1 style="color: antiquewhite;">Crush Syndrome Checklist</h1>
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+
+<main class="content">
+
+    <!-- Title & Intro -->
+    <section class="section-card">
+        <h2 class="page-title">Crush Syndrome – ED Checklist</h2>
+        <span class="pill-note">For patients with prolonged compression, entrapment, or severe muscle injury</span>
+        <p>
+            Aim: <strong>anticipate rhabdomyolysis and hyperkalaemia</strong>, start early fluids (ideally before
+            release), protect kidneys, and treat life-threatening electrolyte disturbances.
+        </p>
+        <p class="warning">
+            High-risk in disasters, building collapses, prolonged “found down” patients, and severe limb trauma.
+        </p>
+    </section>
+
+    <!-- Clinical Features Checklist -->
+    <section class="section-card">
+        <h2>Key Clinical & Laboratory Features</h2>
+        <p class="tip-text">
+            Use this during initial assessment. Any combination of prolonged compression + dark urine + hyperkalaemia
+            should trigger aggressive management and senior involvement.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>YES</th>
+                    <th>NO</th>
+                    <th>Feature</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>History of prolonged compression (&gt;1–2 hours) or being trapped</td>
                 </tr>
                 <tr>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Hyperkalemia (high potassium levels)</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Pain, swelling, tense/firm compartment in affected limb</td>
                 </tr>
                 <tr>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Hypocalcemia (low calcium levels)</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Restricted movement, weakness, or inability to move limb</td>
                 </tr>
                 <tr>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Metabolic acidosis (low blood pH)</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Numbness or paraesthesia in affected area (possible compartment syndrome)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Shock (hypotension, tachycardia, cool peripheries)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Dark, tea-coloured urine (suspected myoglobinuria)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Elevated CK (rhabdomyolysis)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Rising creatinine / urea (acute kidney injury)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Hyperkalaemia on labs (K⁺ elevated)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Hypocalcaemia (low Ca²⁺) on labs</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Metabolic acidosis on ABG/VBG</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>ECG changes of hyperkalaemia (peaked T waves, wide QRS, sine wave)</td>
                 </tr>
                 </tbody>
-                </table>
-                <h2>Management of Crush Syndrome</h2>
-<ol>
-	<li>Stabilize the patient (airway, breathing, circulation)</li>
-	<li>Remove the compressive force or release the trapped limb</li>
-	<li>Administer intravenous fluids (isotonic saline) to prevent kidney injury</li>
-	<li>Administer pain relief medications (e.g., analgesics, anti-inflammatory drugs)</li>
-	<li>Administer diuretics if needed, to increase urine output and remove myoglobin</li>
-	<li>Monitor electrolyte levels and correct any imbalances (e.g., hyperkalemia, hypocalcemia)</li>
-	<li>Administer bicarbonate for metabolic acidosis if necessary</li>
-	<li>Regularly monitor vital signs, kidney function, and laboratory tests</li>
-	<li>Consult a nephrologist for advanced management of acute kidney injury</li>
-	<li>Consider dialysis if kidney function does not improve or worsens</li>
-</ol>
+            </table>
+        </div>
+    </section>
 
+    <!-- Red Flags -->
+    <section class="section-card">
+        <h2>Red Flags – Treat as Time-Critical</h2>
+        <ul>
+            <li class="red-flag">ECG changes of hyperkalaemia</li>
+            <li class="red-flag">Shock, hypotension, or arrhythmia</li>
+            <li class="red-flag">Anuric/oliguric with dark urine and rising creatinine</li>
+            <li class="red-flag">Tense, painful compartments with pain out of proportion</li>
+            <li class="red-flag">Severe metabolic acidosis</li>
+        </ul>
+        <p class="tip-text">
+            If present → <strong>call senior early</strong>, start hyperkalaemia protocol, and discuss with ICU/nephrology.
+        </p>
+    </section>
 
+    <!-- Management -->
+    <section class="section-card">
+        <h2>Initial ED Management</h2>
+        <ol>
+            <li><strong>ABCDE & Monitoring</strong>
+                <ul>
+                    <li>Airway: protect if decreased consciousness or severe acidosis/shock.</li>
+                    <li>Breathing: oxygen, treat associated chest trauma.</li>
+                    <li>Circulation: establish IV access (preferably 2 large-bore lines).</li>
+                    <li>Attach cardiac monitor, BP, pulse oximeter; get a 12-lead ECG.</li>
+                </ul>
+            </li>
+
+            <li><strong>Before / At Release of Compression</strong>
+                <ul>
+                    <li>If patient is still trapped: <strong>start IV fluids before extrication</strong> if possible.</li>
+                    <li>Have hyperkalaemia treatment and defib available at the time of release.</li>
+                </ul>
+            </li>
+
+            <li><strong>Fluid Resuscitation</strong>
+                <ul>
+                    <li>Begin <strong>vigorous IV isotonic saline</strong> – avoid potassium or lactate-containing
+                        fluids initially.
+                    </li>
+                    <li>Typical starting point: 1–1.5 L bolus, then 250–500 mL/h, titrated to BP and urine output.</li>
+                    <li>Target urine output ~1–2 mL/kg/h (if not oliguric/anuric from established AKI).</li>
+                </ul>
+            </li>
+
+            <li><strong>Treat Hyperkalaemia Early (if present or strongly suspected)</strong>
+                <ul>
+                    <li>ECG first; if changes or K⁺ high → start hyperkalaemia protocol (see drug quick reference).</li>
+                    <li>Continuous cardiac monitoring during treatment.</li>
+                </ul>
+            </li>
+
+            <li><strong>Analgesia & Limb Care</strong>
+                <ul>
+                    <li>Give strong IV analgesia (e.g. opioids); consider ketamine in trauma setting.</li>
+                    <li>Elevate affected limbs if possible.</li>
+                    <li>Watch for signs of <strong>compartment syndrome</strong> and involve orthopaedics early.</li>
+                </ul>
+            </li>
+
+            <li><strong>Investigations</strong>
+                <ul>
+                    <li>Bloods: FBC, U&amp;E, CK, LFTs, CRP, coagulation, VBG/ABG (lactate, pH, K⁺).</li>
+                    <li>Urinalysis: colour, dipstick (blood without RBCs suggests myoglobin).</li>
+                    <li>Baseline CXR if indicated; imaging for associated trauma.</li>
+                </ul>
+            </li>
+
+            <li><strong>Nephrology / ICU Involvement</strong>
+                <ul>
+                    <li>Early discussion if:
+                        <ul>
+                            <li>Rising creatinine / oliguria / anuria</li>
+                            <li>Severe hyperkalaemia or acidosis</li>
+                            <li>Haemodynamic instability despite fluids</li>
+                        </ul>
+                    </li>
+                    <li>Consider dialysis if AKI progresses or refractory hyperkalaemia/acidosis develops.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Practical Do &amp; Don’t</h3>
+        <ul>
+            <li><strong>DO</strong> start fluids as early as possible (ideally pre-release) and repeat ECGs / K⁺ checks.</li>
+            <li><strong>DO</strong> call senior / ICU / nephrology early if there is any concern about deterioration.</li>
+            <li><strong>DON’T</strong> give potassium-containing fluids in the acute phase.</li>
+            <li><strong>DON’T</strong> delay treatment while “waiting for all the bloods” if hyperkalaemia is strongly suspected.</li>
+            <li><strong>DON’T</strong> routinely correct asymptomatic hypocalcaemia early – it often self-corrects once rhabdomyolysis is controlled. Reserve IV calcium for hyperkalaemia with ECG changes or symptomatic hypocalcaemia.</li>
+        </ul>
+    </section>
+
+    <!-- Drug Quick Reference -->
+    <section class="section-card">
+        <h2>Drug Quick Reference – Crush Syndrome (Adults)</h2>
+        <p class="tip-text">
+            Typical ED adult doses – always confirm with your local protocol, particularly for hyperkalaemia management.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Drug</th>
+                    <th>Typical Dose</th>
+                    <th>Notes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Normal Saline (0.9%)</strong></td>
+                    <td>1–1.5 L bolus, then 250–500 mL/h (adjust to BP &amp; U/O)</td>
+                    <td>Aim to start before/at release of compression. Avoid K⁺ and lactate-containing fluids initially.</td>
+                </tr>
+                <tr>
+                    <td><strong>Calcium Gluconate 10%</strong></td>
+                    <td>10 mL IV over 5–10 min</td>
+                    <td>Cardiac membrane stabilisation in hyperkalaemia with ECG changes. Repeat as needed per protocol.</td>
+                </tr>
+                <tr>
+                    <td><strong>Insulin + Dextrose</strong></td>
+                    <td>10 units regular insulin IV + 50 mL 50% dextrose (or equivalent)</td>
+                    <td>Shifts K⁺ intracellularly. Check glucose and K⁺ regularly afterwards.</td>
+                </tr>
+                <tr>
+                    <td><strong>Nebulised Salbutamol</strong></td>
+                    <td>5 mg nebulised</td>
+                    <td>Adjunctive treatment to shift K⁺ into cells; monitor heart rate.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sodium Bicarbonate</strong></td>
+                    <td>e.g. 50 mmol IV over 30 min (per protocol)</td>
+                    <td>Consider in severe metabolic acidosis or hyperkalaemia; avoid causing alkalosis/volume overload.</td>
+                </tr>
+                <tr>
+                    <td><strong>Analgesia (e.g. Morphine)</strong></td>
+                    <td>2–5 mg IV, titrated q5–10 min</td>
+                    <td>Severe pain is common; titrate slowly, monitor BP and consciousness.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="tip-text">
+            Senior tip: fluids and hyperkalaemia management save lives in crush – start early and reassess frequently.
+            Dialysis is not a failure; it is a treatment.
+        </p>
+    </section>
+
+    <!-- Ongoing Monitoring -->
+    <section class="section-card">
+        <h2>Ongoing Monitoring</h2>
+        <ul>
+            <li>Vitals: BP, HR, RR, SpO₂, temperature, mental status.</li>
+            <li>Urine output: aim for adequate diuresis; catheterise if indicated.</li>
+            <li>ECG: continuous monitoring if K⁺ abnormal or at high risk.</li>
+            <li>Repeat U&amp;E, CK, lactate, and acid-base status as clinically indicated.</li>
+            <li>Observe for evolving compartment syndrome – escalating pain, paraesthesia, pallor, paralysis.</li>
+        </ul>
+        <p class="tip-text">
+            Document times of extrication, fluids given, and key lab results clearly – this information is vital for the
+            receiving ICU/nephrology team.
+        </p>
+    </section>
+
+</main>
 </body>
 </html>

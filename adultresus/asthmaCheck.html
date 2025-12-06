@@ -1,178 +1,449 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Acute Severe Asthma Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acute Severe Asthma Checklist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
-    }
+        .content {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+        }
 
-    h2 {
-        color: #0066cc;
-    }
+        .page-title {
+            font-size: 1.5rem;
+            margin: 0 0 0.75rem 0;
+            color: #003366;
+            text-align: center;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+        .section-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
 
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
+        .section-card h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #0066cc;
+        }
 
-    th {
-        background-color: #f2f2f2;
-		color: navy;
-    }
+        .section-card p {
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
 
-    input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 10px;
-    }
+        .section-card ul,
+        .section-card ol {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
 
-    ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
+        .section-card li {
+            margin-bottom: 0.35rem;
+        }
 
-    li {
-        margin-bottom: 5px;
-    }
-</style>
+        .pill-note {
+            display: inline-block;
+            background: #e6f2ff;
+            color: #003366;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-text {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #444;
+        }
+
+        .red-flag {
+            font-weight: 600;
+        }
+
+        /* Checklist & drug tables */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 320px;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: navy;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.4);
+            margin-right: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 0.75rem;
+            }
+
+            .page-title {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 0.85rem 0.9rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Acute Severe Asthma Checklist</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Acute Severe Asthma Checklist</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>YES</th>
-				<th>NO</th>
-				<th>Reccomendations/ Suggestions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Level of consciousness decreased</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Patient in tripod position</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Severe respiratory distress</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Hypotension</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Bradycardia</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Unable to speak</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Only speaks in single words</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Pulsus paradoxus</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Central cyanosis</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Stridor</td>
-				<td>Consider Upper Airway Obstruction</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Inspiratory and expiratory wheezes</td>
-				<td>Suggests severe inflammation and obstruction</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Silent Chest</td>
-				<td>Suggests Mucus Plugging (Sign of severity)</td>
-			</tr>
-		</tbody>
-	</table>
-	<h2>Emergency Interventions</h2>
-	<ul>
-		<li>Nebulizations started</li>
-		<li>ipratroprium nebs</li>
-		<li>Solucortef 200mg IVI</li>
-		<li>Adrenalin 0.3-0.5mg subcut</ul>
-            <h2>Emergency Interventions</h2>
-            <ul>
-                <li>Nebulizations started</li>
-                <li>ipratroprium nebs</li>
-                <li>Solucortef 200mg IVI</li>
-                <li>Adrenalin 0.3-0.5mg subcut</li>
-                <li>Magnesium Sulphate 200 mg in 200ml crystalloid over 30min (At this stage medicine must be involved)</li>
-            </ul>
-            <h2>Important Considerations</h2>
-            <ol>
-                <li>Don't delay intubation in a patient with multiple danger signs</li>
-                <li>Intubate with the largest diameter ET Tube you can</li>
-                <li>These patients decompensate quickly</li>
-                <li>Repeated nebs will drop your K+ levels</li>
-                <li>Most of these patients will do better in ICU, decide quickly on admission</li>
-            </ol>
-            <h2>Emergency Investigations</h2>
-            <ul>
-                <li>Bedside CXR: These Patients Must not leave A&amp;E</li>
-                <li>Baseline bloods</li>
-                <li>ABG:</li>
+<header>
+    <div class="logo-container">
+        <h1 style="color: antiquewhite;">Acute Severe Asthma Checklist</h1>
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+
+<main class="content">
+
+    <!-- Title & Intro -->
+    <section class="section-card">
+        <h2 class="page-title">Acute Severe Asthma – ED Checklist</h2>
+        <span class="pill-note">Use for adults with moderate–life-threatening asthma</span>
+        <p>
+            Aim: <strong>recognise life-threatening features early</strong>, start aggressive bronchodilation and
+            steroids, support oxygenation/ventilation, and decide early on ICU/intubation with senior help.
+        </p>
+    </section>
+
+    <!-- Danger Signs -->
+    <section class="section-card">
+        <h2>Danger Signs / Life-Threatening Features</h2>
+        <p class="tip-text">
+            Any of the following should trigger <strong>immediate senior review</strong> and preparation for intubation.
+        </p>
+        <ul>
+            <li class="red-flag">Decreased level of consciousness, agitation, confusion, or drowsiness</li>
+            <li class="red-flag">Silent chest or markedly reduced air entry</li>
+            <li class="red-flag">Exhaustion (unable to speak, or only single words)</li>
+            <li class="red-flag">Bradycardia, hypotension, or arrhythmias</li>
+            <li class="red-flag">Rising or high PaCO<sub>2</sub> on ABG / VBG despite tachypnoea</li>
+            <li class="red-flag">Pulsus paradoxus, cyanosis, or saturations not improving with oxygen</li>
+        </ul>
+    </section>
+
+    <!-- Clinical Features Checklist -->
+    <section class="section-card">
+        <h2>Clinical Features Checklist</h2>
+        <p class="tip-text">
+            Tick as you assess. Use in conjunction with vitals and ABG/VBG to grade severity.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>YES</th>
+                    <th>NO</th>
+                    <th>Feature</th>
+                    <th>Comment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Level of consciousness decreased</td>
+                    <td>Impending respiratory failure – call senior, prepare for intubation</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Patient in tripod position / using accessory muscles</td>
+                    <td>Severe work of breathing</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Severe respiratory distress (RR &gt; 30/min)</td>
+                    <td>Life-threatening if tiring or associated with rising CO<sub>2</sub></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Hypotension</td>
+                    <td>Consider tension pneumothorax, dynamic hyperinflation, sepsis</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Bradycardia</td>
+                    <td>Pre-terminal sign in severe asthma – act urgently</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Unable to speak full sentences</td>
+                    <td>Severe; single words only = life-threatening</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Only speaks in single words</td>
+                    <td>Life-threatening asthma – senior and ICU involvement</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Pulsus paradoxus</td>
+                    <td>Sign of severe dynamic airway obstruction</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Central cyanosis</td>
+                    <td>Late and ominous sign – treat as peri-arrest</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Stridor</td>
+                    <td>Consider upper airway obstruction, anaphylaxis, or vocal cord pathology</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Inspiratory and expiratory wheezes</td>
+                    <td>Severe inflammation and obstruction; air entry still present</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Silent chest</td>
+                    <td>Very severe obstruction / mucus plugging – red flag</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Immediate ED Management -->
+    <section class="section-card">
+        <h2>Immediate ED Management</h2>
+        <ol>
+            <li><strong>ABC &amp; Monitoring</strong>
                 <ul>
-                    <li>Normal to low ph: Indicates Severity</li>
-                    <li>Lactate levels rising: Ominous sign</li>
-                    <li>PCO2 Levels: If &gt; 9, intubate</li>
+                    <li>High flow oxygen to maintain SpO<sub>2</sub> ≥ 94% (or 88–92% if CO<sub>2</sub> retainers/COPD overlap).</li>
+                    <li>Attach cardiac monitor, BP, and continuous pulse oximetry.</li>
+                    <li>Establish IV access; consider second line if very unwell.</li>
                 </ul>
-            </ul>
-        </body>
-        </html>
+            </li>
+
+            <li><strong>Bronchodilation – First Line</strong>
+                <ul>
+                    <li>Start continuous or back-to-back <strong>nebulised β<sub>2</sub>-agonist</strong> (e.g. salbutamol).</li>
+                    <li>Add <strong>ipratropium bromide nebs</strong> in moderate–severe attacks.</li>
+                    <li>Use oxygen-driven nebulisers in hypoxic patients if available.</li>
+                </ul>
+            </li>
+
+            <li><strong>Systemic Steroids – Give Early</strong>
+                <ul>
+                    <li>Give systemic steroids as soon as possible (e.g. IV hydrocortisone or oral prednisone, per local protocol).</li>
+                    <li>Steroids will not work immediately but are essential to prevent relapse and ongoing inflammation.</li>
+                </ul>
+            </li>
+
+            <li><strong>Magnesium Sulphate</strong>
+                <ul>
+                    <li>Give IV magnesium sulphate in adults with severe/life-threatening asthma not responding to initial therapy.</li>
+                    <li>Example: 2 g IV over 20–30 minutes (check local guideline for exact dose and dilution).</li>
+                    <li>Involve a senior/medicine early once escalating to IV magnesium or beyond.</li>
+                </ul>
+            </li>
+
+            <li><strong>Adrenaline (Epinephrine)</strong>
+                <ul>
+                    <li>Consider IM adrenaline in:
+                        <ul>
+                            <li>Suspected anaphylaxis, or</li>
+                            <li>Life-threatening asthma not responding to maximal therapy (per local protocol).</li>
+                        </ul>
+                    </li>
+                    <li>Use standard IM doses according to local resuscitation guidelines.</li>
+                </ul>
+            </li>
+
+            <li><strong>Fluids &amp; Support</strong>
+                <ul>
+                    <li>Give IV fluids if hypotensive or dehydrated, but avoid fluid overload.</li>
+                    <li>Consider early ICU referral for persistent hypoxia, hypercapnia, or exhaustion.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <!-- NEW: Drug Quick Reference -->
+    <section class="section-card">
+        <h2>Drug Quick Reference – Acute Asthma (Adults in ED)</h2>
+        <p class="tip-text">
+            Doses below are typical ED adult doses – always check your local protocol and adjust for weight,
+            comorbidities, and renal function.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Drug</th>
+                    <th>Typical ED Dose</th>
+                    <th>Route &amp; Notes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Salbutamol</strong> (β<sub>2</sub>-agonist)</td>
+                    <td>2.5–5 mg nebulised, repeat q20 min or continuous as needed</td>
+                    <td>
+                        Nebulise in 2–3 mL 0.9% saline, ideally with oxygen driver. Watch for tachycardia,
+                        tremor, and hypokalaemia.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Ipratropium bromide</strong></td>
+                    <td>0.5 mg nebulised, q4–6 hourly in first 3 doses</td>
+                    <td>
+                        Combine with salbutamol in moderate–severe attacks. Particularly useful in severe
+                        bronchospasm or COPD overlap.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Systemic steroids</strong></td>
+                    <td>
+                        Prednisone 40–50 mg PO stat<br>
+                        or Hydrocortisone 100–200 mg IV
+                    </td>
+                    <td>
+                        Give early – within the first hour. Oral route if able to swallow; IV if vomiting or
+                        severely unwell. Follow local steroid regimen.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Magnesium sulphate</strong></td>
+                    <td>2 g IV over 20–30 min</td>
+                    <td>
+                        Use in severe/life-threatening asthma not responding to initial nebs and steroids.
+                        Monitor BP and reflexes; avoid rapid push.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Adrenaline (epinephrine)</strong></td>
+                    <td>0.5 mg IM (0.5 mL of 1:1000) in anterolateral thigh</td>
+                    <td>
+                        Indicated in anaphylaxis or near-fatal asthma as per guideline. Can repeat every
+                        5–15 min if needed. Continuous cardiac monitoring advised.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Potassium replacement</strong></td>
+                    <td>As per local K<sup>+</sup> replacement protocol</td>
+                    <td>
+                        Check K<sup>+</sup> if multiple β<sub>2</sub>-agonist nebs given or on diuretics.
+                        Replace cautiously, particularly if renal impairment or on digoxin.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="tip-text">
+            Senior tip: if you are escalating beyond nebs + steroids (e.g. magnesium, adrenaline, NIV/intubation),
+            <strong>involve ICU/medicine early</strong> – don’t wait for the patient to tire.
+        </p>
+    </section>
+
+    <!-- Important Considerations / Senior Tips -->
+    <section class="section-card">
+        <h2>Important Considerations &amp; Senior Tips</h2>
+        <ol>
+            <li><strong>Do not delay intubation</strong> in a patient with multiple danger signs (↓ LOC, silent chest, rising CO<sub>2</sub>, bradycardia, hypotension).</li>
+            <li><strong>Use the largest appropriate endotracheal tube</strong> you can safely pass – reduces airway resistance and allows suction of mucus plugs.</li>
+            <li>These patients can <strong>deteriorate rapidly</strong>. Reassess every few minutes, not hours.</li>
+            <li><strong>Repeated β<sub>2</sub>-agonist nebs can lower potassium</strong> – check U&amp;E and supplement if significantly low.</li>
+            <li>Most patients with life-threatening features will <strong>do better in ICU</strong> – decide early and start the referral process.</li>
+            <li>In ventilated patients, allow longer expiratory time, low respiratory rates, and accept some permissive hypercapnia to avoid barotrauma.</li>
+        </ol>
+    </section>
+
+    <!-- Emergency Investigations & ABG -->
+    <section class="section-card">
+        <h2>Emergency Investigations</h2>
+        <ul>
+            <li><strong>Bedside CXR</strong>
+                <ul>
+                    <li>Do in the resus area – these patients should <strong>not go off monitor</strong> to X-ray if unstable.</li>
+                    <li>Look for pneumothorax, consolidation, collapse, lobar collapse, or alternative diagnoses.</li>
+                </ul>
+            </li>
+            <li><strong>Bloods</strong>
+                <ul>
+                    <li>Baseline FBC, U&amp;E, CRP, glucose; consider troponin if chest pain or older patient.</li>
+                    <li>Check potassium (K<sup>+</sup>) if multiple nebs or on diuretics.</li>
+                </ul>
+            </li>
+            <li><strong>ABG or VBG</strong>
+                <ul>
+                    <li><strong>pH:</strong> Normal or low pH in a working-of-breath asthmatic suggests severity and fatigue.</li>
+                    <li><strong>PaCO<sub>2</sub> (kPa):</strong> 
+                        <ul>
+                            <li>Low PaCO<sub>2</sub> is expected early due to hyperventilation.</li>
+                            <li>Normal or rising PaCO<sub>2</sub> despite high RR is an <strong>ominous sign</strong> – think impending respiratory failure.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Lactate:</strong> Rising lactate suggests poor perfusion and/or β-agonist effect – reassess circulation and treatment.</li>
+                </ul>
+            </li>
+        </ul>
+        <p class="tip-text">
+            Rule of thumb: a tired asthmatic with a “normal” PaCO<sub>2</sub> is far sicker than a tachypnoeic asthmatic with low PaCO<sub>2</sub>. Call a senior early.
+        </p>
+    </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ECG Patterns Not to Miss – ED</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .content {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.97);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #0066cc;
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+
+    .section-card ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .pattern-title {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+
+    .tip-text {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo-container">
+    <h1 style="color:black;">ECG Patterns Not to Miss</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main class="content">
+  <h2 class="page-title">ECG Patterns Not to Miss</h2>
+  <p class="tip-text" style="text-align:center;">
+    Aimed at juniors: these patterns may look subtle but carry big consequences.
+  </p>
+
+  <!-- Wellens -->
+  <section class="section-card">
+    <h2>1. Wellens Syndrome – Critical LAD</h2>
+    <ul>
+      <li><span class="pattern-title">Pattern:</span> Deeply inverted or biphasic T waves in V2–V3 (sometimes V1–V4) in a pain-free patient.</li>
+      <li><span class="pattern-title">Context:</span> Recent chest pain that has resolved.</li>
+      <li><span class="pattern-title">Why it matters:</span> Critical proximal LAD stenosis – high risk of large anterior MI within days.</li>
+      <li><span class="pattern-title">ED action:</span> Treat as high-risk ACS, <span class="red-flag">no stress testing</span>, early cardiology and angiography.</li>
+    </ul>
+  </section>
+
+  <!-- de Winter -->
+  <section class="section-card">
+    <h2>2. de Winter T-Waves – STEMI Equivalent</h2>
+    <ul>
+      <li><span class="pattern-title">Pattern:</span> Up-sloping ST depression in V1–V6 with tall, peaked symmetric T waves; slight ST elevation in aVR.</li>
+      <li><span class="pattern-title">Why it matters:</span> Equivalent to acute anterior STEMI (proximal LAD occlusion).</li>
+      <li><span class="pattern-title">ED action:</span> Activate STEMI pathway – needs emergent reperfusion (PCI).</li>
+    </ul>
+  </section>
+
+  <!-- Posterior MI -->
+  <section class="section-card">
+    <h2>3. Posterior MI</h2>
+    <ul>
+      <li><span class="pattern-title">Pattern:</span> Horizontal ST depression in V1–V3 ± tall R waves and upright T waves.</li>
+      <li><span class="pattern-title">Why it matters:</span> Represents ST elevation in the posterior leads – often missed.</li>
+      <li><span class="pattern-title">ED action:</span> Do posterior leads (V7–V9). If STE present, treat as STEMI.</li>
+    </ul>
+  </section>
+
+  <!-- aVR STE -->
+  <section class="section-card">
+    <h2>4. aVR ST Elevation with Widespread ST Depression</h2>
+    <ul>
+      <li><span class="pattern-title">Pattern:</span> ST elevation in aVR (≥ 1 mm) with widespread ST depression in multiple leads.</li>
+      <li><span class="pattern-title">Differential:</span> Left main / triple vessel disease, severe proximal LAD, diffuse subendocardial ischaemia.</li>
+      <li><span class="pattern-title">ED action:</span> Treat as high-risk ACS; urgent cardiology discussion and often early angiography.</li>
+    </ul>
+  </section>
+
+  <!-- Hyperacute T -->
+  <section class="section-card">
+    <h2>5. Hyperacute T Waves</h2>
+    <ul>
+      <li><span class="pattern-title">Pattern:</span> Tall, broad-based T waves that are disproportionate to QRS in a regional distribution.</li>
+      <li><span class="pattern-title">Why it matters:</span> Very early sign of STEMI, often before ST elevation.</li>
+      <li><span class="pattern-title">ED action:</span> Serial ECGs; treat as evolving MI if symptoms consistent.</li>
+    </ul>
+  </section>
+
+  <!-- Brugada etc could be added later if you like -->
+  <section class="section-card">
+    <h2>6. Extras to Be Aware Of</h2>
+    <ul>
+      <li><span class="pattern-title">Brugada pattern:</span> Coved ST elevation in V1–V3 with RBBB-like pattern – risk of sudden death.</li>
+      <li><span class="pattern-title">Long QT:</span> Risk of torsades de pointes (check drug lists, electrolytes).</li>
+      <li><span class="pattern-title">Massive PE pattern:</span> Sinus tachycardia, S1Q3T3, RBBB, right axis, or T inversion V1–V4.</li>
+    </ul>
+    <p class="tip-text">When in doubt, save the ECG, get a second pair of eyes (senior / cardiology), and always correlate with the patient, not just the tracing.</p>
+  </section>
+</main>
+</body>
+</html>

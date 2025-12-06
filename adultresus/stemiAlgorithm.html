@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STEMI – ED Algorithm (Poster)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .content {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 0.4rem;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .algo-card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-left: 5px solid #0066cc;
+    }
+
+    .algo-card h2 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.05rem;
+      color: #0066cc;
+    }
+
+    .algo-card p {
+      margin: 0.2rem 0;
+      font-size: 0.9rem;
+    }
+
+    .algo-card ul {
+      margin: 0.3rem 0 0.2rem 1rem;
+      padding-left: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 1.4rem;
+      margin: 0.2rem 0;
+      color: #555;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+
+    .tip-text {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .content { padding: 0.8rem; }
+      .page-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo-container">
+    <h1 style="color:black;">STEMI – ED Algorithm</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main class="content">
+  <h2 class="page-title">STEMI – ED Algorithm</h2>
+  <div style="text-align:center;">
+    <span class="pill-note">Door-to-ECG &lt; 10 min • Door-to-Balloon &lt; 90 min</span>
+  </div>
+
+  <!-- Step 1 -->
+  <section class="algo-card">
+    <h2>1. Triage & First 10 Minutes</h2>
+    <ul>
+      <li>Any chest pain / dyspnoea / syncope → <strong>treat as possible ACS</strong>.</li>
+      <li>Attach monitor, BP, SpO₂, IV line, 12-lead ECG within 10 minutes.</li>
+      <li>Take focused history (onset, character, risk factors, meds).</li>
+    </ul>
+    <p class="tip-text">Do not delay ECG for bloods, cannula, or X-ray.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 2 -->
+  <section class="algo-card">
+    <h2>2. ECG Interpretation – Is this STEMI?</h2>
+    <ul>
+      <li>ST elevation in 2+ contiguous leads meeting STEMI criteria OR</li>
+      <li>New/presumed new LBBB with typical symptoms OR</li>
+      <li>STEMI equivalents:
+        <ul>
+          <li>Posterior MI: ST depression V1–V3 → do V7–V9</li>
+          <li>De Winter T-waves, Wellens, aVR STE pattern</li>
+        </ul>
+      </li>
+    </ul>
+    <p>If yes → <span class="red-flag">activate STEMI pathway</span>.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 3 -->
+  <section class="algo-card">
+    <h2>3. Immediate ED Treatment (Do Now)</h2>
+    <ul>
+      <li>Aspirin 300 mg chewed (if not already given).</li>
+      <li>Consider P2Y<sub>12</sub> loading (clopidogrel / ticagrelor) as per local protocol.</li>
+      <li>Oxygen only if SpO₂ &lt; 90% or in respiratory distress.</li>
+      <li>GTN SL if SBP ≥ 90 and no RV infarct or recent PDE-5 inhibitor.</li>
+      <li>Analgesia (low-dose morphine IV) if pain severe.</li>
+      <li>Take bloods (troponin, FBC, U&amp;E, coagulation, glucose).</li>
+    </ul>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 4 -->
+  <section class="algo-card">
+    <h2>4. Decide Reperfusion Strategy</h2>
+    <ul>
+      <li><strong>Primary PCI preferred</strong> if:
+        <ul>
+          <li>PCI available and can be done within 120 min of first medical contact.</li>
+        </ul>
+      </li>
+      <li><strong>Thrombolysis</strong> if:
+        <ul>
+          <li>PCI delay &gt; 120 min AND</li>
+          <li>No absolute contraindications to lysis AND</li>
+          <li>Within 12 hours of symptom onset (best &lt; 3 hours).</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="tip-text">Call cardiology / STEMI line early – let them say no.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 5 -->
+  <section class="algo-card">
+    <h2>5A. If Primary PCI Chosen</h2>
+    <ul>
+      <li>Give DAPT + anticoagulation per local protocol.</li>
+      <li>Arrange immediate transfer to cath lab.</li>
+      <li>Continue monitoring: rhythm, BP, pain, complications.</li>
+    </ul>
+    <p class="tip-text">Door-to-balloon target: &lt; 90 minutes.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 5B -->
+  <section class="algo-card">
+    <h2>5B. If Thrombolysis Chosen</h2>
+    <ul>
+      <li>Check absolute and relative contraindications carefully.</li>
+      <li>Administer thrombolytic (e.g. tenecteplase/alteplase) per protocol.</li>
+      <li>Give anticoagulation (e.g. enoxaparin/heparin) per protocol.</li>
+      <li>Monitor for:
+        <ul>
+          <li>Resolution of pain and ST elevation (≥ 50% in lead with max STE).</li>
+          <li>Bleeding, stroke, arrhythmias, hypotension.</li>
+        </ul>
+      </li>
+      <li>If failed lysis → plan rescue PCI.</li>
+    </ul>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 6 -->
+  <section class="algo-card">
+    <h2>6. Ongoing Care & Disposition</h2>
+    <ul>
+      <li>Admit to CCU/ICU where possible.</li>
+      <li>Start secondary prevention once stable:
+        <ul>
+          <li>Beta-blocker, ACEi/ARB, statin, DAPT, +/- MRA.</li>
+        </ul>
+      </li>
+      <li>Assess LV function, complications (MR, VSD, HF, arrhythmias).</li>
+    </ul>
+    <p class="tip-text">Document times: symptom onset, first medical contact, ECG, needle/balloon.</p>
+  </section>
+</main>
+</body>
+</html>

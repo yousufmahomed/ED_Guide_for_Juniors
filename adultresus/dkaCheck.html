@@ -1,80 +1,366 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Penetrating Neck Trauma Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>DKA Emergency Management & Checklist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
+
     <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
+            margin: 0;
+            padding: 0;
             background-image: url("/images/checklistBackground.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-          }
-        .fullscreen-image-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
-          cursor: zoom-out;
         }
-        
+
+        .content {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #003366;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-card {
+            background: rgba(255,255,255,0.96);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-card h2 {
+            color: #0066cc;
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+
+        .section-card ul, .section-card ol {
+            padding-left: 1.25rem;
+        }
+
+        .section-card li {
+            margin-bottom: 0.45rem;
+        }
+
+        .pill-note {
+            display: inline-block;
+            background: #e6f2ff;
+            color: #003366;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 340px;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        th {
+            background: #f3f3f3;
+            color: #003366;
+            font-weight: 600;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.4);
+            margin-right: 8px;
+        }
+
+        .tip-text {
+            font-size: 0.85rem;
+            color: #444;
+            font-style: italic;
+        }
+
+        .red-flag {
+            font-weight: 600;
+            color: #b22222;
+        }
+
+        .image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        caption {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .fullscreen-image-overlay {
+            position: fixed;
+            top:0; left:0;
+            width:100%; height:100%;
+            background:rgba(0,0,0,0.85);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            z-index:9999;
+        }
+
         .fullscreen-image-overlay img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
+            max-width:90%;
+            max-height:90%;
+        }
+
+        @media(max-width:600px){
+            .content{padding:0.8rem;}
+            .page-title{font-size:1.4rem;}
         }
     </style>
 </head>
+
 <body>
+<header>
     <div class="logo-container">
-        <h1 style="color: black;">Penetrating Neck Trauma Checklist</h1>
-        <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-      </div>
-    </header>
-<main>
-    
-    <div class="section">
-        <img src="/images/DKA CHECKLIST 1.png" alt="DKA Checklist (1)" class="image" onclick="toggleFullscreenImage('/images/DKA CHECKLIST 1.png')">
-      <caption>DKA Checklist (1) <span style="font-size: x-small;">(Click to enlarge)</span></caption>
-      
-      </div>
-      <div class="section">
-        <img src="/images/DKA CHECKLIST 2.png" alt="DKA Checklist (2)" class="image" onclick="toggleFullscreenImage('/images/DKA CHECKLIST 2.png')">
-      <caption>DKA Checklist (2) <span style="font-size: x-small;">(Click to enlarge)</span></caption>
-      
-      </div>
+        <h1 style="color:black;">Diabetic Ketoacidosis (DKA) – ED Checklist</h1>
+        <a href="/index.html"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+
+<main class="content">
+
+    <!-- Intro -->
+    <section class="section-card">
+        <h2 class="page-title">Diabetic Ketoacidosis – Emergency Checklist</h2>
+        <div class="pill-note">Applies to both new-onset & known diabetics</div>
+        <p>DKA is a life-threatening metabolic emergency. Priorities are:</p>
+        <ul>
+            <li>Volume resuscitation</li>
+            <li>Correction of electrolytes (especially K⁺)</li>
+            <li>Insulin therapy</li>
+            <li>Identify & treat precipitant</li>
+        </ul>
+        <p class="tip-text">Insulin without checking potassium can be fatal.</p>
+    </section>
+
+    <!-- Diagnosis -->
+    <section class="section-card">
+        <h2>Diagnostic Criteria for DKA</h2>
+        <ul>
+            <li>Hyperglycaemia: glucose &gt; 11 mmol/L (or known diabetes)</li>
+            <li>Ketonemia: β-hydroxybutyrate ≥ 3.0 mmol/L or ketonuria ≥ 2+</li>
+            <li>Metabolic acidosis:
+                <ul>
+                    <li>pH &lt; 7.3 OR bicarbonate &lt; 15 mmol/L</li>
+                    <li>Anion gap elevated</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Checklist -->
+    <section class="section-card">
+        <h2>DKA Checklist</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>ABC assessment & full set of vitals</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>IV access x2 & bloods (FBC, U&E, VBG/ABG, β-HB, lactate, ketones)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Urinalysis (ketones, infection)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Start IV fluids – 0.9% saline bolus if shocked</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Check potassium BEFORE insulin</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Start IV insulin infusion (after K⁺ checked)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Add dextrose when glucose &lt; 14 mmol/L</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Search for precipitating cause (infection, MI, missed insulin, pregnancy, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>Hourly glucose, ketones, vitals</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td><input type="checkbox"></td>
+                        <td>2-hourly U&E and VBG</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Red Flags -->
+    <section class="section-card">
+        <h2>Red Flags Requiring Senior / ICU Review</h2>
+        <ul>
+            <li class="red-flag">pH &lt; 7.1</li>
+            <li class="red-flag">K⁺ &lt; 3.3 or &gt; 6.0 mmol/L</li>
+            <li class="red-flag">Altered mental state</li>
+            <li class="red-flag">Signs of cerebral oedema (headache, bradycardia, decreased GCS)</li>
+            <li class="red-flag">Refractory shock</li>
+            <li class="red-flag">Severe renal dysfunction</li>
+        </ul>
+    </section>
+
+    <!-- Management -->
+    <section class="section-card">
+        <h2>Management Overview (ED)</h2>
+        <ol>
+            <li><strong>Fluids</strong>
+                <ul>
+                    <li>0.9% saline: 1 L in first hour if hypotensive.</li>
+                    <li>Then 250–500 mL/h depending on hydration status.</li>
+                </ul>
+            </li>
+            <li><strong>Insulin infusion</strong>
+                <ul>
+                    <li>Regular insulin 0.1 units/kg/hr (no bolus in most guidelines).</li>
+                    <li>Aim: glucose drop 3–4 mmol/L per hour.</li>
+                </ul>
+            </li>
+            <li><strong>Potassium replacement</strong>
+                <ul>
+                    <li>K⁺ &lt; 3.3 → hold insulin, replace K⁺ first.</li>
+                    <li>K⁺ 3.3–5.5 → add 20–40 mmol KCl/L to fluids.</li>
+                    <li>K⁺ &gt; 5.5 → no K⁺ yet; recheck in 1 hour.</li>
+                </ul>
+            </li>
+            <li><strong>Dextrose switch</strong>
+                <ul>
+                    <li>Add 5–10% dextrose when glucose &lt; 14 mmol/L but continue insulin until ketoacidosis resolves.</li>
+                </ul>
+            </li>
+            <li><strong>Search for trigger</strong></li>
+        </ol>
+    </section>
+
+    <!-- Drug Quick Reference -->
+    <section class="section-card">
+        <h2>Drug Quick Reference – DKA (Adults)</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Dose</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>0.9% Saline</strong></td>
+                        <td>1 L in 1st hour (if shocked), then 250–500 mL/h</td>
+                        <td>Avoid lactated fluids initially if K⁺ high.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Insulin infusion</strong></td>
+                        <td>0.1 units/kg/hr</td>
+                        <td>No bolus needed in most adults. Keep glucose drop modest.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Potassium chloride</strong></td>
+                        <td>20–40 mmol per L (depending on serum K⁺)</td>
+                        <td>NEVER give insulin with K⁺ &lt; 3.3 mmol/L.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dextrose 5–10%</strong></td>
+                        <td>Switch when glucose &lt; 14 mmol/L</td>
+                        <td>Continue insulin until acidosis resolves.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sodium Bicarbonate</strong></td>
+                        <td>Only if pH &lt; 6.9 (per protocol)</td>
+                        <td>Discuss with ICU before giving.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="tip-text">Senior tip: ketosis, not glucose, determines when insulin can stop.</p>
+    </section>
+
+    <!-- Optional: old images if you want to keep them -->
+    <section class="section-card">
+        <h2>Checklist Images (Optional)</h2>
+
+        <img src="/images/DKA CHECKLIST 1.png" class="image" onclick="toggleImage('/images/DKA CHECKLIST 1.png')">
+        <caption>DKA Checklist (1)</caption>
+
+        <img src="/images/DKA CHECKLIST 2.png" class="image" onclick="toggleImage('/images/DKA CHECKLIST 2.png')">
+        <caption>DKA Checklist (2)</caption>
+    </section>
+
 </main>
+
 <script>
-    function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
+function toggleImage(src) {
+    let overlay = document.getElementById('fullscreen-overlay');
+
     if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-overlay';
+        overlay.className = 'fullscreen-image-overlay';
+        overlay.innerHTML = `<img src="${src}">`;
+        overlay.onclick = () => overlay.remove();
+        document.body.appendChild(overlay);
     } else {
-      document.body.removeChild(overlay);
+        overlay.remove();
     }
-  }
-  </script>
+}
+</script>
+
 </body>
 </html>

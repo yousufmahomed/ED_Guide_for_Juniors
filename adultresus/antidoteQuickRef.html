@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ED Antidote & Toxin Dosing Quick Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      margin: 0;
+      background-color: #eef2f7;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0 0 0.4rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #0066cc;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-top: 0.7rem;
+      margin-bottom: 0.35rem;
+      color: #004c99;
+    }
+
+    p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 0.3rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 380px;
+      font-size: 0.85rem;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+      vertical-align: top;
+      font-weight: normal;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #003366;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.05rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: #fff;
+      margin-right: 0.2rem;
+    }
+
+    .tag-critical { background: #cc0000; }
+    .tag-important { background: #0066cc; }
+    .tag-caution { background: #ff8c00; }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem;
+      }
+
+      .section-card {
+        padding: 0.85rem 0.9rem;
+      }
+
+      .page-title {
+        font-size: 1.3rem;
+      }
+
+      th, td {
+        padding: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <h1 style="color: antiquewhite;">ED Antidote &amp; Toxin Dosing Quick Reference</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- INTRO -->
+  <section class="section-card">
+    <h2 class="page-title">Antidote &amp; Toxin Dosing – Quick Ref</h2>
+    <p class="page-subtitle">
+      Adult dosing guide for time-critical toxicology situations in the ED.
+    </p>
+    <span class="pill-note">Always confirm with local protocol</span>
+    <p class="note-text">
+      Doses below are typical adult starting regimens. Adjust for local guidelines, renal/hepatic impairment,
+      and patient factors. When in doubt, contact toxicology or a senior.
+    </p>
+  </section>
+
+  <!-- CORE ANTIDOTES TABLE -->
+  <section class="section-card">
+    <h2>Key ED Antidotes &amp; Therapies</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+        <tr>
+          <th>Drug / Therapy</th>
+          <th>Indication</th>
+          <th>Typical Adult Regimen</th>
+          <th>Comments</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><span class="tag tag-critical">Critical</span> N-acetylcysteine (NAC)</td>
+          <td>Paracetamol (acetaminophen) overdose</td>
+          <td>
+            Follow local IV NAC protocol (e.g. staged infusion over 21 h or simplified 2-bag regimen).
+          </td>
+          <td>
+            Start as soon as overdose suspected; use nomogram if time of ingestion known. Watch for anaphylactoid reactions.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-critical">Critical</span> Naloxone</td>
+          <td>Suspected opioid toxicity with respiratory depression</td>
+          <td>
+            0.04–0.1 mg IV, titrate every 2–3 min to adequate ventilation (up to 2 mg).  
+            If no IV access: IM/IN alternatives as per protocol.
+          </td>
+          <td>
+            Aim for adequate respiratory effort, not full wakefulness. Short half-life – consider infusion for long-acting opioids.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-important">Important</span> Sodium bicarbonate</td>
+          <td>TCA toxicity (QRS widening, hypotension), significant salicylate poisoning</td>
+          <td>
+            TCA: 1–2 mmol/kg IV bolus, repeat as needed, then infusion (e.g. 150 mmol in 1 L D5W).  
+            Salicylate: infusion to alkalinise serum &amp; urine.
+          </td>
+          <td>
+            Requires monitoring of pH, sodium, fluid status. Use with senior input.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-important">Important</span> Atropine</td>
+          <td>Organophosphate / carbamate poisoning (cholinergic toxidrome)</td>
+          <td>
+            1–3 mg IV bolus, then double every 3–5 min until secretions dry &amp; ventilation adequate.  
+            May require very large total doses.
+          </td>
+          <td>
+            Target is drying of bronchial secretions, not heart rate alone. Often combined with oxime therapy.
+          </td>
+        </tr>
+        <tr>
+          <td>Pralidoxime (2-PAM)</td>
+          <td>Organophosphate poisoning (if available)</td>
+          <td>
+            Example: 30 mg/kg IV over 30 min, then infusion (e.g. 8–10 mg/kg/h), as per local protocol.
+          </td>
+          <td>
+            Works best when given early. Availability varies; follow national guidance.
+          </td>
+        </tr>
+        <tr>
+          <td>Hydroxocobalamin</td>
+          <td>Suspected cyanide toxicity</td>
+          <td>
+            5 g IV over 15 min; a second 5 g dose may be given if needed.
+          </td>
+          <td>
+            Can cause red discolouration of skin/urine and interfere with some lab tests.
+          </td>
+        </tr>
+        <tr>
+          <td>Calcium gluconate 10% / Calcium chloride</td>
+          <td>Hyperkalaemia with ECG changes, CCB toxicity</td>
+          <td>
+            Hyperkalaemia: 10 mL of 10% calcium gluconate IV over 5–10 min, repeat as needed.  
+            CCB toxicity: higher / repeated doses as per protocol, often via central line if calcium chloride used.
+          </td>
+          <td>
+            Stabilises myocardium. Monitor ECG. Avoid extravasation, especially with calcium chloride.
+          </td>
+        </tr>
+        <tr id="hiet">
+          <td><span class="tag tag-critical">Critical</span> HIET (High-dose insulin euglycaemic therapy)</td>
+          <td>Severe beta-blocker or calcium channel blocker toxicity with shock</td>
+          <td>
+            Example regimen (confirm locally):  
+            • Bolus: 1 unit/kg IV insulin with 25 g IV dextrose (50 mL of 50%)  
+            • Infusion: start at 0.5–1 unit/kg/h IV, titrate up (often up to 10 units/kg/h)  
+            • Concurrent dextrose infusion to maintain euglycaemia.
+          </td>
+          <td>
+            ICU-level therapy. Requires frequent glucose and potassium monitoring. Combine with vasopressors and calcium as needed.
+          </td>
+        </tr>
+        <tr id="lipid">
+          <td><span class="tag tag-important">Important</span> Intravenous lipid emulsion (Intralipid)</td>
+          <td>Lipophilic drug toxicity (e.g. local anaesthetic systemic toxicity, some cardio-toxic overdoses)</td>
+          <td>
+            Example regimen (20% lipid, confirm protocol):  
+            • Bolus: 1.5 mL/kg IV over 1 min  
+            • Infusion: 0.25 mL/kg/min for 30–60 min  
+            • May repeat bolus and increase infusion rate if cardiovascular collapse persists.
+          </td>
+          <td>
+            Reserve for life-threatening toxicity or cardiac arrest due to lipophilic agents. Follow local toxicology guidance.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-caution">Caution</span> Flumazenil</td>
+          <td>Reversal of isolated benzodiazepine sedation in carefully selected patients</td>
+          <td>
+            0.2 mg IV over 15 s, then 0.1 mg every 60 s as needed (max 1 mg), if used.
+          </td>
+          <td>
+            Avoid in mixed overdoses, seizure disorders, chronic benzo users, or co-ingestion of proconvulsant drugs. Usually specialist-only.
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note-text">
+      Senior tip: for any complex dosing (NAC, HIET, lipid, cyanide kits), use a calculator or printed protocol at the bedside – these are not drugs to “eyeball”.
+    </p>
+  </section>
+
+  <!-- LINKS BACK TO MAIN PAGES -->
+  <section class="section-card">
+    <h2>Related ED Tools</h2>
+    <ul>
+      <li><a href="/adultresus/toxin.html" class="emphasis-link">Toxins &amp; Antidotes – ED Management</a></li>
+      <li><a href="/adultresus/hyperkalaemia.html" class="emphasis-link">Hyperkalaemia Emergency Management</a></li>
+    </ul>
+  </section>
+
+</main>
+
+</body>
+</html>

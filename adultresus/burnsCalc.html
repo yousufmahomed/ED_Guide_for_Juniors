@@ -1,118 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/genralPages.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burn Fluid Replacement Calculator</title>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-      body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/adultresus/images/burnsbackground.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      h1 {
-        text-align: center;
-      }
-      form {
-        margin: 0 auto;
-        max-width: 600px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-      }
-      h2 {
-        margin-top: 20px;
-        margin-bottom: 10px;
-      }
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-      input, select {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f8f8f8;
-      }
-      button {
-        margin-top: 20px;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: #3e8e41;
-      }
-      #fluid-result {
-        font-size: 24px;
-        text-align: center;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <header>
-    <nav class="logo-container">
-      <div class="logo-container">
-        <h1 class="main-header">Burn Fluid Replacement Calculator</h1>
-        <div class="navbar-icons">
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-        </div>
-        <button class="back-button" onclick="goBack()">Back</button>
-      </div>
-    </nav>
-  </header>
-  <body class="vitals-page">
-    <h1>Burn Fluid Replacement Calculator</h1>
-    <p>Calculate the fluid replacement needed for a burns victim per hour based on the percentage burn and patient weight.</p>
-    <form>
-      <h2>Patient Weight</h2>
-      <label for="patient-weight">Enter patient weight in kg:</label>
-      <input id="patient-weight" name="patient-weight" type="number" step="0.01" min="0">
+<head>
+  <meta charset="UTF-8">
+  <title>Burn Fluid Replacement Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h2>Percentage Burn</h2>
-  <label for="percentage-burn">Enter the percentage of total body surface area (TBSA) burned:</label>
-  <input id="percentage-burn" name="percentage-burn" type="number" step="0.01" min="0" max="100">
-  <br>
-  <button type="button" onclick="calculateFluidReplacement()">Calculate Fluid Replacement</button>
-  <br>
-  <h5>Check Below for Results</h5>
-  <br>
-  <h2>Fluid Replacement Per Hour</h2>
-  <p id="fluid-result"></p>
-</form>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-image: url("/adultresus/images/burnsbackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .page-wrapper {
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      padding: 1rem;
+    }
+
+    .calculator-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 12px;
+      padding: 1rem 1.25rem 1.5rem 1.25rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 0.5rem 0 0.3rem 0;
+      color: #003366;
+    }
+
+    .intro-text {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 0.8rem;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      color: #0066cc;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.9rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.45rem 0.5rem;
+      margin-bottom: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f8f8f8;
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 0.5rem;
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      font-weight: normal;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+
+    .warning {
+      font-size: 0.85rem;
+      color: #b22222;
+      font-weight: normal;
+      margin-top: 0.4rem;
+    }
+
+    #fluid-result {
+      font-size: 0.95rem;
+      font-weight: normal;
+      margin-top: 1rem;
+      line-height: 1.4;
+    }
+
+    #fluid-result strong {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .page-wrapper {
+        padding: 0.75rem;
+      }
+
+      .calculator-card {
+        padding: 0.9rem 0.9rem 1.3rem 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo-container">
+    <h1 class="main-header">Burn Fluid Replacement Calculator</h1>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+    </div>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main class="page-wrapper">
+  <div class="calculator-card">
+    <h1>Burn Fluid Replacement Calculator</h1>
+    <p class="intro-text">
+      Uses the Parkland formula: <strong>4&nbsp;mL × weight (kg) × %TBSA</strong> over the first 24 hours from the time of burn.
+      This tool is for <strong>major burns</strong> – always adjust to the clinical picture and urine output.
+    </p>
+
+    <form onsubmit="event.preventDefault(); calculateFluidReplacement();">
+      <h2>Patient Weight</h2>
+      <label for="patient-weight">Weight (kg):</label>
+      <input id="patient-weight" name="patient-weight" type="number" step="0.1" min="1" placeholder="e.g. 70">
+
+      <h2>Percentage Burn (TBSA)</h2>
+      <label for="percentage-burn">%TBSA burned:</label>
+      <input id="percentage-burn" name="percentage-burn" type="number" step="0.5" min="1" max="100" placeholder="e.g. 20">
+      <p class="note">
+        Parkland resuscitation usually applies to ≥15–20% TBSA in adults (≥10% in children). Smaller burns often need analgesia, dressings, and maintenance fluids only.
+      </p>
+
+      <h2>Time Since Burn</h2>
+      <label for="hours-since-burn">Hours since burn occurred:</label>
+      <input id="hours-since-burn" name="hours-since-burn" type="number" step="0.1" min="0" placeholder="e.g. 2 (from time of burn, not arrival)">
+      <p class="note">
+        The first 8 hours are counted from the <strong>time of burn</strong>, not from ED arrival. Leave blank or 0 if unsure.
+      </p>
+
+      <h2>Pre-hospital Fluids (Optional)</h2>
+      <label for="prehosp-fluid">Fluids already given (mL):</label>
+      <input id="prehosp-fluid" name="prehosp-fluid" type="number" step="10" min="0" placeholder="e.g. 1000">
+      <p class="note">
+        If you know how much fluid has already been given, enter it here to adjust the remaining volume.
+      </p>
+
+      <button type="submit">Calculate Fluid Replacement</button>
+
+      <div id="fluid-result"></div>
+    </form>
+
+    <p class="note" style="margin-top: 1rem;">
+      <strong>Important:</strong> This calculator estimates initial fluid volumes only. Always titrate to clinical response and urine output
+      (e.g. ~0.5&nbsp;mL/kg/h in adults). In children, <strong>add maintenance fluids separately</strong> and follow paediatric burn protocols.
+    </p>
+  </div>
+</main>
+
 <script>
   function calculateFluidReplacement() {
     const weight = parseFloat(document.getElementById("patient-weight").value);
     const burnPercentage = parseFloat(document.getElementById("percentage-burn").value);
-    
-    if (weight <= 0 || burnPercentage <= 0) {
-      document.getElementById("fluid-result").innerHTML = "Please enter valid weight and burn percentage.";
+    const hoursSinceBurnInput = document.getElementById("hours-since-burn").value;
+    const prehospFluidInput = document.getElementById("prehosp-fluid").value;
+
+    const hoursSinceBurn = hoursSinceBurnInput === "" ? 0 : parseFloat(hoursSinceBurnInput);
+    const prehospFluid = prehospFluidInput === "" ? 0 : parseFloat(prehospFluidInput);
+
+    const resultDiv = document.getElementById("fluid-result");
+
+    if (isNaN(weight) || weight <= 0 || isNaN(burnPercentage) || burnPercentage <= 0 || burnPercentage > 100) {
+      resultDiv.innerHTML = '<span class="warning">Please enter a valid weight and %TBSA (1–100%).</span>';
       return;
     }
 
-    // Calculate fluid replacement using the Parkland formula
-    const totalFluid = 4 * weight * burnPercentage;
-    const first8HoursFluid = totalFluid / 2;
-    const next16HoursFluid = totalFluid / 2;
-    const hourlyFluid8Hours = first8HoursFluid / 8;
-    const hourlyFluid16Hours = next16HoursFluid / 16;
+    if (hoursSinceBurn < 0 || isNaN(hoursSinceBurn)) {
+      resultDiv.innerHTML = '<span class="warning">Please enter a valid time since burn (0 or more hours).</span>';
+      return;
+    }
 
-    document.getElementById("fluid-result").innerHTML = `First 8 hours: ${hourlyFluid8Hours.toFixed(2)} mL/hour <br> Next 16 hours: ${hourlyFluid16Hours.toFixed(2)} mL/hour`;
+    if (prehospFluid < 0 || isNaN(prehospFluid)) {
+      resultDiv.innerHTML = '<span class="warning">Pre-hospital fluid cannot be negative.</span>';
+      return;
+    }
+
+    // Parkland formula: 4 mL × kg × %TBSA
+    const totalFluid = 4 * weight * burnPercentage; // mL over 24 hours
+    let adjustedTotal = totalFluid - prehospFluid;
+
+    if (adjustedTotal < 0) {
+      adjustedTotal = 0;
+    }
+
+    const first8Total = adjustedTotal / 2;
+    const next16Total = adjustedTotal / 2;
+
+    let firstPhaseHourly = 0;
+    let remainingFirstPhaseHours = 0;
+    let firstPhaseText = "";
+    let timingNote = "";
+
+    // Handle timing for first 8 hours
+    if (hoursSinceBurn <= 0) {
+      remainingFirstPhaseHours = 8;
+      firstPhaseHourly = remainingFirstPhaseHours > 0 ? first8Total / remainingFirstPhaseHours : 0;
+      firstPhaseText = `First 8 hours (from time of burn): approx <strong>${firstPhaseHourly.toFixed(0)} mL/hour</strong>.`;
+      timingNote = "If the burn occurred some time ago, re-calculate using the actual hours since burn.";
+    } else if (hoursSinceBurn > 0 && hoursSinceBurn < 8) {
+      remainingFirstPhaseHours = 8 - hoursSinceBurn;
+      const remainingFirstPhaseVolume = first8Total; // assuming little or unknown volume given so far
+      firstPhaseHourly = remainingFirstPhaseHours > 0 ? remainingFirstPhaseVolume / remainingFirstPhaseHours : 0;
+      firstPhaseText = `Remaining first phase (next ${remainingFirstPhaseHours.toFixed(1)} hours up to 8 hours post-burn): approx <strong>${firstPhaseHourly.toFixed(0)} mL/hour</strong>.`;
+      timingNote = "This assumes pre-hospital fluids entered above. Always adjust to urine output and clinical status.";
+    } else {
+      // First 8 hours period has passed
+      remainingFirstPhaseHours = 0;
+      firstPhaseHourly = 0;
+      firstPhaseText = "Initial 8-hour resuscitation period has passed. Continue with second phase below and reassess fluid needs.";
+      timingNote = "If significant under-resuscitation is suspected, discuss with a senior/burns centre about catch-up fluids.";
+    }
+
+    const secondPhaseHourly = next16Total / 16;
+
+    let sizeWarning = "";
+    if (burnPercentage < 15) {
+      sizeWarning = "<span class='warning'>Note: For adults with &lt;15–20% TBSA, full Parkland resuscitation may not be required. Focus on analgesia, dressings, and maintenance fluids unless clinically shocked.</span><br>";
+    }
+
+    resultDiv.innerHTML = `
+      ${sizeWarning}
+      <strong>Estimated total fluid (first 24 hours):</strong> ${adjustedTotal.toFixed(0)} mL<br>
+      - First 8 hours total (from time of burn): ${first8Total.toFixed(0)} mL<br>
+      - Next 16 hours total: ${next16Total.toFixed(0)} mL<br><br>
+      ${firstPhaseText}<br>
+      Second phase (hours 8–24): approx <strong>${secondPhaseHourly.toFixed(0)} mL/hour</strong>.<br><br>
+      <span class="note">${timingNote}</span>
+    `;
   }
 </script>
-  </body>
+
+</body>
 </html>

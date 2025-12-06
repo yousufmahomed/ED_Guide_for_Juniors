@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NSTEMI / High-Risk ACS – ED Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .content {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.97);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #0066cc;
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 340px;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    th {
+      background: #f3f3f3;
+      color: navy;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.4);
+      margin-right: 6px;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      color: #003366;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+
+    .tip-text {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo-container">
+    <h1 style="color:black;">NSTEMI / High-Risk ACS – ED Checklist</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main class="content">
+  <h2 class="page-title">NSTEMI / High-Risk ACS</h2>
+  <div style="text-align:center;">
+    <span class="pill-note">Dynamic troponin • Ischaemic ECG • Ongoing pain</span>
+  </div>
+
+  <!-- Diagnostic Features -->
+  <section class="section-card">
+    <h2>Diagnostic Features</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Yes</th>
+            <th>No</th>
+            <th>Feature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><input type="checkbox"></td><td><input type="checkbox"></td><td>Typical or atypical chest pain compatible with ACS</td></tr>
+          <tr><td><input type="checkbox"></td><td><input type="checkbox"></td><td>Ischaemic ECG changes (ST depression / T wave inversion)</td></tr>
+          <tr><td><input type="checkbox"></td><td><input type="checkbox"></td><td>Dynamic troponin rise or fall above 99th percentile</td></tr>
+          <tr><td><input type="checkbox"></td><td><input type="checkbox"></td><td>Haemodynamic instability or arrhythmia</td></tr>
+          <tr><td><input type="checkbox"></td><td><input type="checkbox"></td><td>Diabetes, CKD, prior MI, known CAD</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tip-text">NSTEMI = non-ST elevation MI (troponin positive) with ischaemic symptoms/ECG.</p>
+  </section>
+
+  <!-- Risk Stratification -->
+  <section class="section-card">
+    <h2>Risk Stratification (Conceptual)</h2>
+    <ul>
+      <li><strong>Very high risk (needs urgent angiography):</strong>
+        <ul>
+          <li>Ongoing chest pain despite treatment</li>
+          <li>Haemodynamic instability, shock, or life-threatening arrhythmia</li>
+          <li>Dynamic ST changes (widespread ST depression with aVR STE)</li>
+        </ul>
+      </li>
+      <li><strong>High risk:</strong> elevated troponin + ischaemic ECG changes, diabetes, prior MI/CABG, reduced EF.</li>
+      <li><strong>Low–Intermediate risk:</strong> non-diagnostic ECG, borderline troponin, no red flags.</li>
+    </ul>
+  </section>
+
+  <!-- ED Management -->
+  <section class="section-card">
+    <h2>ED Management</h2>
+    <ol>
+      <li><strong>Initial measures</strong>
+        <ul>
+          <li>Monitor, IV access, ECG, bloods, CXR (if indicated).</li>
+          <li>Aspirin 300 mg chewed (if not already given).</li>
+        </ul>
+      </li>
+      <li><strong>Anti-ischaemic therapy</strong>
+        <ul>
+          <li>GTN SL/IV if pain + hypertension, provided no RV infarct / hypotension.</li>
+          <li>Beta-blocker if hypertensive/tachycardic and no contraindications.</li>
+        </ul>
+      </li>
+      <li><strong>Antiplatelet therapy</strong>
+        <ul>
+          <li>Add second antiplatelet (clopidogrel/ticagrelor) as per local protocol & cardiology advice.</li>
+        </ul>
+      </li>
+      <li><strong>Anticoagulation</strong>
+        <ul>
+          <li>LMWH or fondaparinux/heparin per NSTEMI protocol.</li>
+        </ul>
+      </li>
+      <li><strong>Analgesia & symptom control</strong></li>
+      <li><strong>Decide disposition:</strong> CCU / high care / monitored ward vs short-stay with serial biomarkers and stress testing.</li>
+    </ol>
+  </section>
+
+  <!-- Red Flags -->
+  <section class="section-card">
+    <h2>Red Flags – Treat as Very High Risk ACS</h2>
+    <ul>
+      <li class="red-flag">Ongoing chest pain despite GTN and analgesia</li>
+      <li class="red-flag">Haemodynamic instability (SBP &lt; 90, signs of shock)</li>
+      <li class="red-flag">Recurrent VT/VF, high-degree AV block</li>
+      <li class="red-flag">Dynamic ST depression / transient ST elevation</li>
+      <li class="red-flag">Acute heart failure / pulmonary oedema</li>
+    </ul>
+    <p class="tip-text">These patients often need urgent angiography (within hours), not days.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,155 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Resuscitation Algorithms</title>
   <meta charset="UTF-8">
+  <title>Resuscitation Algorithms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
+
+  <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/cardiac.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    
-
-    h1 {
-      font-size: 24px;
-      color: #003366;
-      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      background-image: url("/images/cardiac.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    h2 {
-      font-size: 20px;
-      color: #003366;
-      margin-bottom: 10px;
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-   
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #003366;
+      margin-bottom: 1.2rem;
+    }
+
+    .algo-card {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .algo-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      cursor: zoom-in;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .algo-caption {
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+      color: #003366;
+      font-weight: bold;
+    }
+
     .fullscreen-image-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        cursor: zoom-out;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      .algo-card {
+        padding: 0.8rem;
       }
-      
-      .fullscreen-image-overlay img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-      
-    
-  
+    }
   </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Resuscitation Algorithms</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-<div class="section">
-  <h2 class="subheading">Please click on the images to enlarge them</h2>
-  <strong>All the algorithms below were taken from the <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms" class="empahsis-link" target="_blank">American Heart Association</a> website</strong>
-</div>
-  <div class="section">
-  <img  src="/adultresus/images/AlgorithmBLS_Adult_200624.jpg" alt="Basic Life Support" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Adult_200624.jpg')">
-<caption>Basic Life Support</caption>
-</div>
-<div class="section">
-<img src="/adultresus/images/AlgorithmACLS_CA_200731.jpg" alt="Cardiac Arrest Algorithm" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_CA_200731.jpg')">
-<caption>Cardiac Arrest Algorithm</caption>
-</div>
-  <div class="section">
-    <img src="/adultresus/images/AlgorithmACLS_CA_Circular_200612.jpg" alt="Cardiac Arrest Circular Algorithm" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_CA_Circular_200612.jpg')">
-<caption>Cardiac Arrest Circular Algorithm</caption>
+
+<header>
+  <div class="logo-container">
+    <h1 style="color: antiquewhite;">Resuscitation Algorithms</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main>
+
+  <p class="page-subtitle">
+    Click any algorithm to enlarge it.  
+    *All images credited to the <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/algorithms" target="_blank">American Heart Association</a>.*
+  </p>
+
+  <!-- ALGORITHM GALLERY -->
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmBLS_Adult_200624.jpg"
+         alt="Basic Life Support"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Adult_200624.jpg')">
+    <div class="algo-caption">Basic Life Support</div>
   </div>
 
-  <div class="section">
-    <img src="/adultresus/images/AlgorithmACLS_CA_in_Pregnancy_InHospital_200612.jpg" alt="Cardiac Arrest in Pregnancy" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_CA_in_Pregnancy_InHospital_200612.jpg')">
-<caption>Cardiac Arrest in Pregnancy</caption>
-  </div>
- 
-  <div class="section">
-  <img src="/adultresus/images/AlgorithmACLS_PCAC_200809.jpg" alt="Post Cardiac Arrest Care" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_PCAC_200809.jpg')">
-<caption>Post Cardiac Arrest Care</caption>
-</div>
-
- 
-  <div class="section">
-    <img src="/adultresus/images/Adult_Tachycardia_With_a_Pulse_Algorithm.jpg"   alt="Tachycardia (with pulse) Management" class="image" onclick="toggleFullscreenImage('/adultresus/images/Adult_Tachycardia_With_a_Pulse_Algorithm.jpg')">
-<caption>Tachycardia (with pulse) Management</caption>
-  </div>
-  <div class="section">
-<img src="/adultresus/images/Adult_Bradycardia_Algorithm.jpg"   alt="Bradycardia Management" class="image" onclick="toggleFullscreenImage('/adultresus/images/Adult_Bradycardia_Algorithm.jpg')">
-<caption>Bradycardia Management</caption>
-  </div> 
-  
-    <div class="section">
-      <img src="/adultresus/images/AlgorithmBLS_Termination_of_Resusc_200612.jpg"   alt="Termination of Resuscitation (BLS)" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Termination_of_Resusc_200612.jpg')">
-  <caption>Termination of Resuscitation (BLS)</caption>
-    </div>
-    <div class="section">
-      <img src="/adultresus/images/AlgorithmACLS_Termination_of_Resusc_200612.jpg"   alt="Termination of Resuscitation (ACLS)" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_Termination_of_Resusc_200612.jpg')">
-  <caption>Termination of Resuscitation (ACLS)</caption>
-    </div>
-    <div class="section">
-      <img src="/adultresus/images/Schematic_ALS_recommendations_advanced_airways.jpg"   alt="Advanced Airway Algorithm" class="image" onclick="toggleFullscreenImage('/adultresus/images/Schematic_ALS_recommendations_advanced_airways.jpg')">
-  <caption>Advanced Airway Algorithm</caption>
-  <div class="section">
-    <img src="/adultresus/images/status_epilepticus.png"   alt="Status Epilepticus Algorithm " class="image" onclick="toggleFullscreenImage('/adultresus/images/status_epilepticus.png')">
-<caption>Status Epilepticus Algorithm </caption>
-  </div>
-  <div class="section">
-    <img src="/adultresus/images/APPROACH-TO-HTN-EMERGENCY.png"   alt="Hypertensive Emergency Algorithm " class="image" onclick="toggleFullscreenImage('/adultresus/images/APPROACH-TO-HTN-EMERGENCY.png')">
-<caption>Hypertensive Emergency Algorithm </caption>
-  </div>
-    </div>
-    <div class="section">
-      <img src="/adultresus/images/AlgorithmOpioidLay_Responder_200615.jpg"   alt="Opioid resuscitation lay responder" class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmOpioidLay_Responder_200615.jpg')">
-  <caption>Opioid resuscitation lay responder</caption>
-    </div>
-    <div class="section">
-      <img src="/adultresus/images/AlgorithmOpioidHC_Provider_200615.jpg"   alt="Opioid resuscitation Health Care Provider " class="image" onclick="toggleFullscreenImage('/adultresus/images/AlgorithmOpioidHC_Provider_200615.jpg')">
-  <caption>Opioid resuscitation Health Care Provider</caption>
-    </div>
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmACLS_CA_200731.jpg"
+         alt="Cardiac Arrest Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_CA_200731.jpg')">
+    <div class="algo-caption">Cardiac Arrest Algorithm</div>
   </div>
 
- 
-  <script>
-    function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
-    } else {
-      document.body.removeChild(overlay);
-    }
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmACLS_CA_Circular_200612.jpg"
+         alt="Cardiac Arrest Circular Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_CA_Circular_200612.jpg')">
+    <div class="algo-caption">Cardiac Arrest Circular Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmACLS_CA_in_Pregnancy_InHospital_200612.jpg"
+         alt="Cardiac Arrest in Pregnancy"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_CA_in_Pregnancy_InHospital_200612.jpg')">
+    <div class="algo-caption">Cardiac Arrest in Pregnancy</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmACLS_PCAC_200809.jpg"
+         alt="Post Cardiac Arrest Care"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_PCAC_200809.jpg')">
+    <div class="algo-caption">Post Cardiac Arrest Care</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/Adult_Tachycardia_With_a_Pulse_Algorithm.jpg"
+         alt="Tachycardia with Pulse Management"
+         onclick="toggleFullscreenImage('/adultresus/images/Adult_Tachycardia_With_a_Pulse_Algorithm.jpg')">
+    <div class="algo-caption">Tachycardia (With Pulse)</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/Adult_Bradycardia_Algorithm.jpg"
+         alt="Bradycardia Management"
+         onclick="toggleFullscreenImage('/adultresus/images/Adult_Bradycardia_Algorithm.jpg')">
+    <div class="algo-caption">Bradycardia Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmBLS_Termination_of_Resusc_200612.jpg"
+         alt="Termination of Resuscitation BLS"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmBLS_Termination_of_Resusc_200612.jpg')">
+    <div class="algo-caption">Termination of Resuscitation (BLS)</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmACLS_Termination_of_Resusc_200612.jpg"
+         alt="Termination of Resuscitation ACLS"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmACLS_Termination_of_Resusc_200612.jpg')">
+    <div class="algo-caption">Termination of Resuscitation (ACLS)</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/Schematic_ALS_recommendations_advanced_airways.jpg"
+         alt="Advanced Airway Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/Schematic_ALS_recommendations_advanced_airways.jpg')">
+    <div class="algo-caption">Advanced Airway Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/status_epilepticus.png"
+         alt="Status Epilepticus Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/status_epilepticus.png')">
+    <div class="algo-caption">Status Epilepticus Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/APPROACH-TO-HTN-EMERGENCY.png"
+         alt="Hypertensive Emergency Algorithm"
+         onclick="toggleFullscreenImage('/adultresus/images/APPROACH-TO-HTN-EMERGENCY.png')">
+    <div class="algo-caption">Hypertensive Emergency Algorithm</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmOpioidLay_Responder_200615.jpg"
+         alt="Opioid Overdose – Lay Responder"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmOpioidLay_Responder_200615.jpg')">
+    <div class="algo-caption">Opioid Overdose (Lay Responder)</div>
+  </div>
+
+  <div class="algo-card">
+    <img src="/adultresus/images/AlgorithmOpioidHC_Provider_200615.jpg"
+         alt="Opioid Overdose – Health Care Provider"
+         onclick="toggleFullscreenImage('/adultresus/images/AlgorithmOpioidHC_Provider_200615.jpg')">
+    <div class="algo-caption">Opioid Overdose (Health Care Provider)</div>
+  </div>
+
+</main>
+
+<script>
+function toggleFullscreenImage(src) {
+  let overlay = document.getElementById('fullscreen-image-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'fullscreen-image-overlay';
+    overlay.classList.add('fullscreen-image-overlay');
+    overlay.innerHTML = `<img src="${src}">`;
+    overlay.onclick = () => toggleFullscreenImage(null);
+    document.body.appendChild(overlay);
+  } else {
+    overlay.remove();
   }
-  </script>
+}
+</script>
+
 </body>
 </html>

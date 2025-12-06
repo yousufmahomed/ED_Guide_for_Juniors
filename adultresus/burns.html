@@ -2,164 +2,415 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Burns and Emergency Department Management</title>
+  <title>Burns – Emergency Department Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/adultresus/images/burnsbackground.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f1f1f1;
     }
-    table, th, td {
-      border: 1px solid black;
+
+    .content {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 0.5rem;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 0 auto 1rem auto;
+      text-align: center;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .section-card h2 {
+      color: #0066cc;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .section-card ul,
+    .section-card ol {
+      padding-left: 1.25rem;
+    }
+
+    .section-card li {
+      margin-bottom: 0.35rem;
+      line-height: 1.4rem;
+    }
+
+    /* TABLES */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
       border-collapse: collapse;
-      padding: 5px;
-      text-align: left;
+      min-width: 360px;
+      font-size: 0.9rem;
     }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      vertical-align: top;
+      line-height: 1.4;
+    }
+
     th {
-      background-color: #f2f2f2;
+      background: #f2f2f2;
+      color: #003366;
+    }
+
+    /* IMAGES */
+    .image-section {
+      margin-bottom: 1.2rem;
+    }
+
+    .image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      margin-bottom: 0.3rem;
+    }
+
+    caption {
+      display: block;
+      font-size: 0.85rem;
+      color: #444;
+      margin-bottom: 0.7rem;
+      text-align: center;
+    }
+
+    /* FULLSCREEN OVERLAY */
+    .fullscreen-image-overlay {
+      position: fixed;
+      background: rgba(0,0,0,0.85);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    .fullscreen-image-overlay img {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .content { padding: 0.8rem; }
+      .page-title { font-size: 1.4rem; }
     }
   </style>
 </head>
-<body>
-  <header>
-    <nav class="logo-container">
-      <div class="logo-container">
-        <h1 class="main-header">Burns and Emergency Department Management</h1>
-        <div class="navbar-icons">
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-        </div>
-        <button class="back-button" onclick="goBack()">Back</button>
-      </div>
-    </nav>
-  </header>
-  <section class="section">
-    <h2>Burn Classification</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Type of Burn</th>
-      <th>Description</th>
-      <th>Treatment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>First-degree (Superficial)</td>
-      <td>Affects only the epidermis; redness, mild swelling, and pain; no blisters</td>
-      <td>Cool the burn, apply aloe or moisturizing cream, and use over-the-counter pain relief</td>
-    </tr>
-    <tr>
-      <td>Second-degree (Partial Thickness)</td>
-      <td>Affects the epidermis and dermis; redness, blisters, and severe pain; may appear wet or shiny</td>
-      <td>Cover the burn with a sterile, non-adherent dressing, elevate the affected area, and consider pain relief and antibiotics</td>
-    </tr>
-    <tr>
-      <td>Third-degree (Full Thickness)</td>
-      <td>Destroys all layers of the skin; may appear white, black, or charred; often painless due to nerve damage</td>
-      <td>Requires immediate medical attention; cover with a sterile, non-adherent dressing and elevate the affected area; fluid resuscitation and pain management</td>
-    </tr>
-    <tr>
-      <td>Fourth-degree</td>
-      <td>Extends beyond the skin layers to underlying tissue, muscle, and bone; black or charred appearance; often painless due to nerve damage</td>
-      <td>Requires immediate medical attention; may need surgical intervention, including debridement or amputation</td>
-    </tr>
-  </tbody>
-</table>
 
-<h2>Additional Considerations</h2>
-<ul>
-  <li>Chemical burns: Remove the chemical by flushing the area with copious amounts of water, while taking care not to contaminate other body areas or caregivers. Follow specific protocols for the chemical involved.</li>
-  <li>Electrical burns: Disconnect the power source, if possible, and treat any associated injuries, such as fractures or dislocations. Be aware of potential cardiac complications from electrical injuries.</li>
-  <li>Smoke inhalation: Monitor for signs of airway compromise, such as stridor or wheezing, and be aware of potential carbon monoxide or cyanide poisoning.</li>
-</ul>
+<body>
+<header>
+  <div class="logo-container">
+    <h1 class="main-header">Burns – Emergency Department Management</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- PAGE HEADER -->
+  <h2 class="page-title">Burns Management – Emergency Department</h2>
+  <div class="pill-note">Adult & Paediatric Initial ED Assessment</div>
+
+  <!-- CLASSIFICATION -->
+  <section class="section-card">
+    <h2>Burn Classification (Depth)</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>ED Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Superficial (1st degree)</td>
+            <td>Red, painful, no blisters; epidermis only</td>
+            <td>Cool water 20 min, aloe/cream, oral analgesia</td>
+          </tr>
+          <tr>
+            <td>Partial Thickness – Superficial</td>
+            <td>Red, blistered, moist; very painful</td>
+            <td>Non-adherent dressing, elevate, analgesia</td>
+          </tr>
+          <tr>
+            <td>Partial Thickness – Deep</td>
+            <td>Waxy, mottled, reduced pain</td>
+            <td>Specialist referral; dressing + analgesia</td>
+          </tr>
+          <tr>
+            <td>Full Thickness (3rd degree)</td>
+            <td>White/charred; painless; no cap refill</td>
+            <td>Urgent referral; fluids; dressings; analgesia</td>
+          </tr>
+          <tr>
+            <td>Fourth degree</td>
+            <td>Extends to muscle/bone</td>
+            <td>Immediate surgical referral; may require amputation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   </section>
-  <section class="section">
-    <h2>Emergency Department Management of Burns</h2>
+
+  <!-- ADDITIONAL BURN TYPES -->
+  <section class="section-card">
+    <h2>Special Burn Types</h2>
     <ul>
-      <li>Assess airway, breathing, and circulation (ABCs)</li>
-      <li>Administer supplemental oxygen if needed</li>
-      <li>Monitor vital signs and provide pain relief</li>
-      <li>Assess burn extent and depth using the burn classification system</li>
-      <li>Initiate fluid resuscitation if necessary based on burn size and patient's weight</li>
-      <li>Remove any constricting clothing or jewelry near the burn area</li>
-      <li>Cover the burn with a sterile, non-adherent dressing or clean cloth</li>
-      <li>Consider tetanus prophylaxis and antibiotic administration based on severity and potential for infection</li>
-      <li>Arrange for appropriate transfer or referral to a specialized burn center if needed</li>
+      <li><strong>Chemical burns:</strong> Remove contaminated clothing; irrigate copiously for ≥20 min. Brush off dry powder first.</li>
+      <li><strong>Electrical burns:</strong> Look for hidden deep tissue damage. ECG + cardiac monitoring mandatory.</li>
+      <li><strong>Inhalation injury:</strong> Singed hair, hoarse voice, soot, enclosed-space fire → early intubation.</li>
+      <li><strong>Tar/bitumen:</strong> Cool the tar, do NOT peel; allow later debridement.</li>
+      <li><strong>Paediatric burns:</strong> Suspect NAT (non-accidental trauma) with immersion lines or inconsistent history.</li>
     </ul>
   </section>
-  <div class="section">
-    <h2 class="subheading">Click to Enlarge</h2>
-    <img src="/adultresus/images/burns table.jpg"   alt="Burns Assessment Table " class="image" onclick="toggleFullscreenImage('/adultresus/images/burns table.jpg')">
-<caption>Burns Assessment Table</caption>
-  </div>
-  <div class="section">
-    <img src="/adultresus/images/rule-of-nines-chart-diagram.png"   alt="Burns Assessment Rule-of-Nines Adult " class="image" onclick="toggleFullscreenImage('/adultresus/images/rule-of-nines-chart-diagram.png')">
-<caption>Burns Assessment Rule-of-Nines Adult </caption>
-  </div>
-  <div class="section">
-    <img src="/adultresus/images/paeds_burns.jpg"   alt="Burns Assessment Rule-of-Nines Child " class="image" onclick="toggleFullscreenImage('/adultresus/images/paeds_burns.jpg')">
-<caption>Burns Assessment Rule-of-Nines Child </caption>
-  </div>
-  <div class="section">
-    <img src="/adultresus/images/rule-of-nines-child-infant.png"   alt="Burns Assessment Rule-of-Nines Infant " class="image" onclick="toggleFullscreenImage('/adultresus/images/rule-of-nines-child-infant.png')">
-<caption>Burns Assessment Rule-of-Nines Infant </caption>
-  </div>
-  <div class="section">
-    <img src="/images/superficial_burns.png"   alt="Superficial Burns " class="image" onclick="toggleFullscreenImage('/images/superficial_burns.png')">
-<caption>Superficial Burns </caption>
-  </div>
-  <div class="section">
-    <img src="/images/sup_part_thick_burns.png"   alt="Superficial Partial Thickness Burns " class="image" onclick="toggleFullscreenImage('/images/sup_part_thick_burns.png')">
-<caption>Superficial Partial Thickness Burns </caption>
-  </div>
-  <div class="section">
-    <img src="/images/deep_partial_thickness_burns.png"   alt="Deep Partial Thickness Burns " class="image" onclick="toggleFullscreenImage('/images/deep_partial_thickness_burns.png')">
-<caption>Deep Partial Thickness Burns </caption>
-  </div>
-  <div class="section">
-    <img src="/images/full_thickness_burns.png"   alt="Full Thickness Burns " class="image" onclick="toggleFullscreenImage('/images/full_thickness_burns.png')">
-<caption>Full Thickness Burns </caption>
-  </div>
-</div>
-<div class="section">
-  <img src="/images/inhalation_burns_1.png"   alt="Clinical Signs of Inhalation Burns " class="image" onclick="toggleFullscreenImage('/images/inhalation_burns_1.png')">
-<caption>Clinical Signs of Inhalation Burns</caption>
-</div>
-<div class="section">
-  <img src="/images/inhalation_burns_2.png"   alt="Indications for Intubation in Inhalation Burns " class="image" onclick="toggleFullscreenImage('/images/inhalation_burns_2.png')">
-<caption>Indications for Intubation in Inhalation Burns</caption>
-</div>
-<div class="section">
-    <h2 class="subheading">Advanced Burns Life-Support Guidelines</h2>
-    <a href="/pdfs/2018-abls-providermanual.pdf" target="_blank" class="emphasis-link">View Burns Guidelines (PDF)</a>
 
-</div>
-  </div>
-  <script>
-    function toggleFullscreenImage(src) {
-        let overlay = document.getElementById('fullscreen-image-overlay');
-      
-        if (!overlay) {
-          overlay = document.createElement('div');
-          overlay.id = 'fullscreen-image-overlay';
-          overlay.classList.add('fullscreen-image-overlay');
-          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-          overlay.onclick = () => toggleFullscreenImage(null);
-          document.body.appendChild(overlay);
-        } else {
-          document.body.removeChild(overlay);
-        }
-      }
-  </script>
+  <!-- ED MANAGEMENT -->
+  <section class="section-card">
+    <h2>Emergency Department Management</h2>
+    <ol>
+      <li><strong>ABCDE First</strong> – burns are trauma until proven otherwise.</li>
+      <li><strong>Airway</strong> – Consider early intubation for:
+        <ul>
+          <li>Enclosed-space burns</li>
+          <li>Carbonaceous sputum</li>
+          <li>Hoarse voice / stridor</li>
+          <li>Facial burns</li>
+        </ul>
+      </li>
+      <li><strong>Breathing</strong> – 100% oxygen; consider CO/Cyanide toxicity.</li>
+      <li><strong>Circulation</strong> – Establish IV access in unburnt skin if possible.</li>
+      <li><strong>Cool the burn</strong> for 20 minutes (not ice).</li>
+      <li>Remove jewellery; cut around adhered clothing.</li>
+      <li><strong>Analgesia</strong> – prompt and adequate.</li>
+      <li><strong>Fluid resuscitation</strong> using Parkland formula if:
+        <ul><li>≥10% TBSA in children</li><li>≥15–20% TBSA in adults</li></ul>
+      </li>
+      <li>Dress with sterile, non-adherent layer.</li>
+      <li><strong>Tetanus status</strong> – update if needed.</li>
+      <li>Document TBSA (%), depth, mechanism, photos if possible.</li>
+    </ol>
+  </section>
+
+  <!-- DRUG QUICK REFERENCE -->
+  <section class="section-card">
+    <h2>Burns Drug Quick Reference (Adults)</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Drug</th>
+            <th>Typical ED Dose</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><strong>Analgesia – Morphine</strong></td>
+            <td>2–5 mg IV q5–10 min titrated</td>
+            <td>Burns are extremely painful; titrate to effect.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Ketamine (analgesic)</strong></td>
+            <td>0.2–0.3 mg/kg IV</td>
+            <td>Useful for large burns or debridement.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Fluid Resuscitation</strong><br>Parkland Formula</td>
+            <td>4 mL × kg × %TBSA</td>
+            <td>
+              Give ½ in first 8 hours from time of burn, not ED arrival.<br>
+              Avoid over-resuscitation (“fluid creep”).
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Antibiotics</strong></td>
+            <td><em>Not routinely indicated</em></td>
+            <td>Only for clear infection—not prophylaxis.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Tetanus Toxoid</strong></td>
+            <td>Per protocol</td>
+            <td>Major burns = tetanus-prone wounds.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Cyanide toxicity treatment</strong></td>
+            <td>Hydroxocobalamin 5 g IV</td>
+            <td>Consider in enclosed-space fires with metabolic acidosis.</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <p class="tip-text">
+      Senior tip: Under-resuscitation worsens shock; over-resuscitation causes compartment syndrome and pulmonary oedema.
+    </p>
+  </section>
+
+  <!-- REFERRAL CRITERIA -->
+  <section class="section-card">
+    <h2>When to Refer to a Burns Centre</h2>
+    <ul>
+      <li>Full-thickness burns ≥5% TBSA</li>
+      <li>Partial-thickness burns ≥10% TBSA</li>
+      <li>Burns to face, hands, feet, genitalia, perineum, major joints</li>
+      <li>Chemical, electrical, lightning burns</li>
+      <li>Inhalation injury</li>
+      <li>Paediatric burns beyond local capability</li>
+      <li>Suspicion of non-accidental injury</li>
+    </ul>
+
+    <p class="tip-text">
+      If you are unsure — call early. Burns centres prefer early involvement over late transfers.
+    </p>
+  </section>
+
+  <!-- IMAGE SECTIONS -->
+  <section class="image-section">
+    <img src="/adultresus/images/burns table.jpg"
+         class="image"
+         onclick="toggleImage('/adultresus/images/burns table.jpg')">
+    <caption>Burns Assessment Table</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/adultresus/images/rule-of-nines-chart-diagram.png"
+         class="image"
+         onclick="toggleImage('/adultresus/images/rule-of-nines-chart-diagram.png')">
+    <caption>Rule of Nines – Adult</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/adultresus/images/paeds_burns.jpg"
+         class="image"
+         onclick="toggleImage('/adultresus/images/paeds_burns.jpg')">
+    <caption>Rule of Nines – Child</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/adultresus/images/rule-of-nines-child-infant.png"
+         class="image"
+         onclick="toggleImage('/adultresus/images/rule-of-nines-child-infant.png')">
+    <caption>Rule of Nines – Infant</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/images/superficial_burns.png"
+         class="image"
+         onclick="toggleImage('/images/superficial_burns.png')">
+    <caption>Superficial Burns</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/images/sup_part_thick_burns.png"
+         class="image"
+         onclick="toggleImage('/images/sup_part_thick_burns.png')">
+    <caption>Superficial Partial Thickness Burns</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/images/deep_partial_thickness_burns.png"
+         class="image"
+         onclick="toggleImage('/images/deep_partial_thickness_burns.png')">
+    <caption>Deep Partial Thickness Burns</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/images/full_thickness_burns.png"
+         class="image"
+         onclick="toggleImage('/images/full_thickness_burns.png')">
+    <caption>Full Thickness Burn</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/images/inhalation_burns_1.png"
+         class="image"
+         onclick="toggleImage('/images/inhalation_burns_1.png')">
+    <caption>Clinical Signs of Inhalation Injury</caption>
+  </section>
+
+  <section class="image-section">
+    <img src="/images/inhalation_burns_2.png"
+         class="image"
+         onclick="toggleImage('/images/inhalation_burns_2.png')">
+    <caption>Indications for Intubation – Burn Airway Injury</caption>
+  </section>
+
+  <section class="section-card">
+    <h2>Advanced Burns Life Support (ABLS) Guidelines</h2>
+    <a class="emphasis-link" href="/pdfs/2018-abls-providermanual.pdf" target="_blank">
+      View Burns Guidelines (PDF)
+    </a>
+  </section>
+
+</main>
+
+<script>
+  function toggleImage(src) {
+    let overlay = document.getElementById("full-img-overlay");
+
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "full-img-overlay";
+      overlay.classList.add("fullscreen-image-overlay");
+      overlay.innerHTML = `<img src="${src}" />`;
+      overlay.onclick = () => overlay.remove();
+      document.body.appendChild(overlay);
+    } else {
+      overlay.remove();
+    }
+  }
+</script>
+
 </body>
 </html>

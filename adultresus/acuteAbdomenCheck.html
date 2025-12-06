@@ -1,148 +1,451 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Acute Abdomen Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acute Abdomen Checklist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    h2 {
-        color: #0066cc;
-    }
+        .content {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+        .page-title {
+            font-size: 1.5rem;
+            margin: 0 0 0.75rem 0;
+            color: #003366;
+            text-align: center;
+        }
 
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    
-    }
+        .section-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
 
-    th {
-        background-color: #f2f2f2;
-        color: navy;
-    }
+        .section-card h2 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #0066cc;
+        }
 
-    input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 10px;
-    }
+        .section-card p {
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
 
-    ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
+        .section-card ul,
+        .section-card ol {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
 
-    li {
-        margin-bottom: 5px;
-    }
-</style>
+        .section-card li {
+            margin-bottom: 0.35rem;
+        }
+
+        .pill-note {
+            display: inline-block;
+            background: #e6f2ff;
+            color: #003366;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Checklist table */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 320px;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: navy;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.4);
+            margin-right: 6px;
+        }
+
+        .red-flag {
+            font-weight: 600;
+        }
+
+        .tip-text {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #444;
+        }
+
+        /* Differential mini-cards */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .diff-card {
+            background: #f8fbff;
+            border-radius: 10px;
+            padding: 0.6rem 0.75rem;
+            border: 1px solid #dde7f5;
+        }
+
+        .diff-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            color: #004c99;
+        }
+
+        .diff-card ul {
+            margin: 0.25rem 0 0.1rem 0;
+            padding-left: 1rem;
+        }
+
+        .diff-card li {
+            font-size: 0.85rem;
+            margin-bottom: 0.15rem;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 0.75rem;
+            }
+
+            .page-title {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 0.85rem 0.9rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Acute Abdomen Checklist</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Acute Abdomen Checklist</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>YES</th>
-				<th>NO</th>
-				<th>Recommendations/ Suggestions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Sudden onset of severe abdominal pain</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Localized or generalized tenderness in the abdomen</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Rebound tenderness or guarding</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Signs of peritonitis (rigid abdomen, severe tenderness)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Nausea, vomiting, or diarrhea</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Loss of appetite</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-                <td>Fever or chills</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Abdominal distension</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Signs of dehydration (e.g., dry mucous membranes, decreased urine output)</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td>Altered bowel habits (constipation or diarrhea)</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <h2>Management of Acute Abdomen</h2>
-    <ol>
-        <li>Stabilize the patient (airway, breathing, circulation)</li>
-        <li>Perform a thorough physical examination, including auscultation of bowel sounds</li>
-        <li>Obtain a detailed history, including the onset, location, and intensity of pain</li>
-        <li>Order appropriate laboratory tests (e.g., complete blood count, electrolytes, liver function tests, amylase, lipase)</li>
-        <li>Consider imaging studies (e.g., X-ray, ultrasound, CT scan) to identify the cause</li>
-        <li>Administer pain relief medications (e.g., analgesics, anti-inflammatory drugs) cautiously, as they may mask symptoms</li>
-        <li>Administer intravenous fluids if dehydration is present</li>
-        <li>Consider nasogastric tube insertion for bowel decompression if needed</li>
-        <li>Consult a surgeon for further evaluation and potential surgical intervention</li>
-        <li>Monitor the patient's vital signs and symptoms closely, and adjust management accordingly</li>
-    </ol>
-    
+<header>
+    <div class="logo-container">
+        <h1 style="color: antiquewhite;">Acute Abdomen Checklist</h1>
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+
+<main class="content">
+
+    <!-- Title & Intro -->
+    <section class="section-card">
+        <h2 class="page-title">Acute Abdomen – ED Checklist</h2>
+        <span class="pill-note">Use for adults with significant abdominal pain</span>
+        <p>
+            Aim: <strong>recognise surgical abdomen early</strong>, resuscitate, investigate appropriately,
+            and refer timeously. Always start with <strong>ABCDE</strong>.
+        </p>
+    </section>
+
+    <!-- Symptom & Sign Checklist -->
+    <section class="section-card">
+        <h2>Key Symptoms & Signs</h2>
+        <p class="tip-text">
+            Tick as you assess. A cluster of positives, especially with abnormal vitals, should trigger
+            <strong>early senior/surgical review</strong>.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>YES</th>
+                    <th>NO</th>
+                    <th>Feature</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Sudden onset of severe abdominal pain</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Localised or generalised abdominal tenderness</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Rebound tenderness or guarding</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Signs of peritonitis (rigid abdomen, severe tenderness, “board-like” abdomen)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Nausea and/or vomiting</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Loss of appetite (anorexia)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Fever or chills</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Abdominal distension / bloating</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Signs of dehydration (dry mucosa, poor skin turgor, ↓ urine output)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Altered bowel habit (constipation, obstipation, or diarrhoea)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>Haemodynamic instability (tachycardia, hypotension, cool peripheries)</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td>History of previous abdominal surgery / hernia / known AAA</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Red Flags -->
+    <section class="section-card">
+        <h2>Red Flags – Treat as Surgical Emergency</h2>
+        <ul>
+            <li class="red-flag">Shock or persistent tachycardia, hypotension, or rising lactate</li>
+            <li class="red-flag">Rigid, board-like abdomen or marked rebound/guarding</li>
+            <li class="red-flag">Severe, sudden onset pain (e.g. ruptured aneurysm, perforation)</li>
+            <li class="red-flag">Pain out of proportion to findings (consider mesenteric ischaemia)</li>
+            <li class="red-flag">Bile/faeculent vomiting or complete obstipation with distension</li>
+            <li class="red-flag">Haematemesis, melaena, or fresh PR bleeding with abdominal pain</li>
+            <li class="red-flag">Positive pregnancy test with abdominal pain and/or collapse</li>
+        </ul>
+        <p class="tip-text">
+            Any red flag + abnormal vitals = <strong>early call to senior and surgeon</strong>.
+        </p>
+    </section>
+
+    <!-- Management Overview -->
+    <section class="section-card">
+        <h2>Initial ED Management</h2>
+        <ol>
+            <li><strong>Resuscitate – ABCDE first</strong>
+                <ul>
+                    <li>Give oxygen if hypoxic; monitor sats and cardiac rhythm.</li>
+                    <li>Establish IV access (2 × large bore if shocked); take bloods at the same time.</li>
+                    <li>Assess for sepsis and treat according to sepsis/shock protocols.</li>
+                </ul>
+            </li>
+            <li><strong>Analgesia & Symptom Control</strong>
+                <ul>
+                    <li>Give adequate analgesia – <strong>do not withhold analgesia</strong> for fear of “masking” the diagnosis.</li>
+                    <li>Options: titrated IV opioids, IV paracetamol; add anti-emetic (e.g. ondansetron).</li>
+                    <li>Keep patient <strong>nil by mouth (NBM)</strong> until cause is clear.</li>
+                </ul>
+            </li>
+            <li><strong>Fluid Resuscitation</strong>
+                <ul>
+                    <li>Start IV fluids if dehydrated or in shock (e.g. isotonic crystalloid boluses).</li>
+                    <li>Insert urinary catheter if concerned about shock or for strict fluid balance.</li>
+                </ul>
+            </li>
+            <li><strong>Focused History & Examination</strong>
+                <ul>
+                    <li>Onset, site, character, radiation, associated symptoms, previous surgery, meds.</li>
+                    <li>Examine: general appearance, vitals, abdomen (inspection, auscultation,
+                        percussion, palpation), hernial orifices, PR and, when appropriate, pelvic exam.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Investigations -->
+    <section class="section-card">
+        <h2>Key Investigations</h2>
+        <ul>
+            <li><strong>Bloods:</strong> FBC, U&E, LFTs, CRP, amylase/lipase, lactate, glucose, clotting.</li>
+            <li><strong>Group & save / crossmatch</strong> in any potentially surgical or unstable patient.</li>
+            <li><strong>β-hCG</strong> in all women of child-bearing potential.</li>
+            <li><strong>Urine:</strong> dipstick, microscopy, culture as indicated.</li>
+            <li><strong>Imaging:</strong>
+                <ul>
+                    <li>Plain X-ray if perforation/obstruction suspected (depending on local practice).</li>
+                    <li>Ultrasound for biliary pathology, AAA, free fluid, gynaecological causes.</li>
+                    <li>CT abdomen/pelvis (with contrast if not contraindicated) where available for unclear or high-risk cases.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- NEW: Differentials by region -->
+    <section class="section-card">
+        <h2>Common Differentials by Pain Location (Adults)</h2>
+        <p class="tip-text">
+            Use as a quick mental checklist – not exhaustive. Always interpret in the context of vitals and risk factors.
+        </p>
+
+        <div class="diff-grid">
+            <div class="diff-card">
+                <div class="diff-title">Epigastric</div>
+                <ul>
+                    <li>Peptic ulcer disease / perforation</li>
+                    <li>Gastritis</li>
+                    <li>Pancreatitis</li>
+                    <li>MI / ACS (especially diabetics, elderly)</li>
+                    <li>Oesophageal pathology (reflux, rupture)</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Right Upper Quadrant (RUQ)</div>
+                <ul>
+                    <li>Biliary colic / cholecystitis</li>
+                    <li>Cholangitis</li>
+                    <li>Hepatitis / liver pathology</li>
+                    <li>Right lower lobe pneumonia</li>
+                    <li>Duodenal ulcer</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Left Upper Quadrant (LUQ)</div>
+                <ul>
+                    <li>Splenic infarct / rupture</li>
+                    <li>Gastritis / gastric ulcer</li>
+                    <li>Pancreatitis</li>
+                    <li>Left lower lobe pneumonia</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Periumbilical / Central</div>
+                <ul>
+                    <li>Early appendicitis</li>
+                    <li>Small bowel obstruction</li>
+                    <li>Mesenteric ischaemia</li>
+                    <li>Aortic aneurysm pain</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Right Lower Quadrant (RLQ)</div>
+                <ul>
+                    <li>Appendicitis</li>
+                    <li>Right-sided renal colic</li>
+                    <li>Right ovarian torsion / cyst / ectopic</li>
+                    <li>PID / tubo-ovarian abscess</li>
+                    <li>Crohn’s disease / terminal ileitis</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Left Lower Quadrant (LLQ)</div>
+                <ul>
+                    <li>Diverticulitis</li>
+                    <li>Left-sided renal colic</li>
+                    <li>Left ovarian torsion / cyst / ectopic</li>
+                    <li>PID</li>
+                    <li>Constipation / colitis</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Suprapubic / Lower Central</div>
+                <ul>
+                    <li>UTI / cystitis</li>
+                    <li>Urinary retention</li>
+                    <li>Pelvic inflammatory disease</li>
+                    <li>Early pregnancy problems (threatened / ectopic)</li>
+                    <li>Bladder pathology</li>
+                </ul>
+            </div>
+
+            <div class="diff-card">
+                <div class="diff-title">Generalised / Diffuse</div>
+                <ul>
+                    <li>Peritonitis from perforation</li>
+                    <li>Generalised sepsis / shock</li>
+                    <li>Mesenteric ischaemia</li>
+                    <li>Diabetic ketoacidosis (abdominal pain)</li>
+                    <li>Bowel obstruction</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Senior / Surgical Referral -->
+    <section class="section-card">
+        <h2>When to Call the Surgeon / Senior Early</h2>
+        <ul>
+            <li>Any <strong>red flag</strong> features or peritonitis.</li>
+            <li>Haemodynamic instability or shock despite initial fluids.</li>
+            <li>Suspected perforation, strangulated hernia, bowel ischaemia, or AAA.</li>
+            <li>Obstruction with persistent vomiting, severe pain, or systemic toxicity.</li>
+            <li>Unclear diagnosis but <strong>very unwell patient</strong> or rising lactate/CRP.</li>
+        </ul>
+        <p class="tip-text">
+            Junior rule of thumb: if you are worried enough to ask, you should <strong>call early</strong> –
+            stabilise, start basic workup, then involve a senior.
+        </p>
+    </section>
+
+</main>
 </body>
 </html>
-    

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Management of Hyperkalaemia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f7;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .section-card h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #0066cc;
+    }
+
+    .section-card h3 {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+      color: #004c99;
+    }
+
+    .section-card p {
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      font-size: 0.9rem;
+    }
+
+    .section-card ul,
+    .section-card ol {
+      margin: 0.5rem 0;
+      padding-left: 1.25rem;
+    }
+
+    .section-card li {
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .danger-box {
+      background-color: #fff5f5;
+      border-left: 4px solid #cc0000;
+      padding: 10px 12px;
+      margin: 0.5rem 0 0.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    .red-flag {
+      font-weight: 600;
+      color: #b22222;
+    }
+
+    /* Table */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 320px;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: navy;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem;
+      }
+
+      .page-title {
+        font-size: 1.3rem;
+      }
+
+      .section-card {
+        padding: 0.85rem 0.9rem;
+      }
+
+      th, td {
+        padding: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <h1 style="color: antiquewhite;">Emergency Hyperkalaemia</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main>
+  <!-- Title -->
+  <section class="section-card">
+    <h2 class="page-title">Emergency Management of Hyperkalaemia</h2>
+    <p class="page-subtitle">
+      For use in adults in the ED. Always follow your local drug doses and protocols and involve a senior early.
+    </p>
+    <span class="pill-note">K⁺ emergency pathway</span>
+    <div class="danger-box">
+      <strong>Treat as an emergency if:</strong>
+      <ul>
+        <li class="red-flag">K⁺ ≥ 6.5 mmol/L (or rapidly rising)</li>
+        <li class="red-flag">Any K⁺ level with ECG changes compatible with hyperkalaemia</li>
+        <li class="red-flag">Weakness, arrhythmia, or haemodynamic instability</li>
+      </ul>
+      <p class="note-text">
+        Senior tip: You don’t need to wait for the “perfect” lab result if the ECG is screaming hyperkalaemia.
+        Treat the ECG, not just the number.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stepwise algorithm (poster style) -->
+  <section class="section-card">
+    <span class="pill-note">One-screen algorithm</span>
+    <h2>Stepwise ED Approach</h2>
+    <ol>
+      <li><strong>Confirm & Monitor</strong>
+        <ul>
+          <li>ABC assessment, attach monitor (BP, pulse oximeter, ECG).</li>
+          <li>Obtain IV access (preferably 2 lines), consider arterial / VBG for quick K⁺.</li>
+          <li>If sample is clearly haemolysed and patient is well with a normal ECG → repeat first, but keep a high index of suspicion.</li>
+        </ul>
+      </li>
+
+      <li><strong>Stabilise the Myocardium – Calcium</strong>
+        <ul>
+          <li><strong>Indications:</strong> ECG changes of hyperkalaemia or severe K⁺ elevation.</li>
+          <li>Give IV calcium (e.g. calcium gluconate 10% – see drug table below) as per local protocol.</li>
+          <li>Re-check ECG after 5–10 minutes; repeat dose if changes persist.</li>
+        </ul>
+      </li>
+
+      <li><strong>Shift K⁺ into Cells</strong>
+        <ul>
+          <li><strong>Insulin + dextrose:</strong> standard first-line to shift K⁺ intracellularly.</li>
+          <li><strong>Nebulised salbutamol:</strong> adjunct, especially useful if IV access is delayed.</li>
+          <li><strong>Sodium bicarbonate:</strong> consider if there is significant metabolic acidosis or refractory hyperkalaemia, following local guidance.</li>
+        </ul>
+      </li>
+
+      <li><strong>Remove K⁺ from the Body</strong>
+        <ul>
+          <li>Optimise <strong>circulation and urine output</strong> – IV fluids if hypovolaemic.</li>
+          <li>Consider loop diuretics (e.g. furosemide) if overloaded and kidneys still producing urine.</li>
+          <li>Discuss K⁺ binders / resins if available, as per local protocol (slower onset).</li>
+          <li>Involve nephrology/ICU early if there is <strong>AKI, anuria, or refractory hyperkalaemia</strong> – dialysis may be required.</li>
+        </ul>
+      </li>
+
+      <li><strong>Identify & Treat the Underlying Cause</strong>
+        <ul>
+          <li>Renal failure, crush injury/rhabdomyolysis, DKA, medications (ACEi, ARBs, spironolactone, NSAIDs, trimethoprim, etc.).</li>
+          <li>Stop offending drugs where possible and treat precipitating conditions.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ECG & Red flags -->
+  <section class="section-card">
+    <h2>ECG & Red Flag Features</h2>
+    <p>Typical ECG changes (often progressive as K⁺ rises):</p>
+    <ul>
+      <li>Peaked, narrow-based T waves</li>
+      <li>Shortened QT interval</li>
+      <li>Widened QRS, prolonged PR, loss of P waves</li>
+      <li>Sine-wave pattern → pre-arrest</li>
+    </ul>
+    <p class="note-text">
+      Senior tip: changes can be subtle. If there is any doubt, treat and repeat the ECG rather than ignoring a
+      suspicious tracing.
+    </p>
+  </section>
+
+  <!-- Drug quick reference -->
+  <section class="section-card">
+    <span class="pill-note">Drug quick reference – Adults</span>
+    <h2>Emergency Hyperkalaemia Drugs (Typical Doses)</h2>
+    <p class="note-text">
+      These are common ED adult doses; always cross-check with your local protocol, especially in renal failure, pregnancy,
+      and extremes of age or weight.
+    </p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+        <tr>
+          <th>Drug</th>
+          <th>Typical Dose</th>
+          <th>Purpose / Notes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Calcium Gluconate 10%</strong></td>
+          <td>10 mL IV over 5–10 min</td>
+          <td>
+            Stabilises cardiac membrane. Indicated if ECG changes or very high K⁺.
+            May repeat after 5–10 min if ECG changes persist.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Insulin + Dextrose</strong></td>
+          <td>
+            10 units short-acting insulin IV<br>
+            + 50 mL 50% dextrose IV (or equivalent 25 g glucose)
+          </td>
+          <td>
+            Shifts K⁺ into cells. Check glucose before and at 30–60 min and monitor for hypoglycaemia.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Nebulised Salbutamol</strong></td>
+          <td>5–10 mg via nebuliser over 10–15 min</td>
+          <td>
+            Adjunct to insulin/dextrose. Use with caution in tachyarrhythmias or severe ischaemic heart disease.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Sodium Bicarbonate</strong></td>
+          <td>e.g. 50 mmol IV over 30 min (as per protocol)</td>
+          <td>
+            Consider in metabolic acidosis and severe hyperkalaemia; avoid overcorrection/volume overload.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Loop Diuretic (e.g. Furosemide)</strong></td>
+          <td>20–40 mg IV (titrate as needed)</td>
+          <td>
+            Use if volume overloaded and kidneys are producing urine. Avoid in severe hypovolaemia or anuric AKI.
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note-text">
+      Senior tip: Calcium buys you time, insulin/dextrose and salbutamol shift K⁺, and dialysis/removal fixes the problem.
+      Don’t rely on a single intervention.
+    </p>
+  </section>
+
+  <!-- Monitoring & Disposition -->
+  <section class="section-card">
+    <h2>Monitoring & Disposition</h2>
+    <ul>
+      <li>Continuous cardiac monitoring until K⁺ is safely reduced and ECG normalises.</li>
+      <li>Repeat K⁺ and glucose at 1 hour (sooner if very unstable) and then as per response.</li>
+      <li>Admit to ICU/HDU if:
+        <ul>
+          <li>Refractory hyperkalaemia or need for dialysis</li>
+          <li>Significant ECG changes or arrhythmias</li>
+          <li>Associated shock, severe acidosis, or multi-organ failure</li>
+        </ul>
+      </li>
+      <li>Consider ward admission for monitoring even after apparent resolution if there is underlying renal failure or high recurrence risk.</li>
+    </ul>
+    <p class="note-text">
+      Document times and doses of all K⁺-lowering therapies, repeat lab results, ECG changes and discussions with seniors/ICU.
+    </p>
+  </section>
+</main>
+</body>
+</html>

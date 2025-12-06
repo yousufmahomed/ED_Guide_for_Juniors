@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chest Pain – Rapid Assessment & Rule-Out</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .content {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.97);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #0066cc;
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 1.4rem;
+      margin: 0.2rem 0;
+      color: #555;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      color: #003366;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .tip-text {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo-container">
+    <h1 style="color:black;">Chest Pain – Rapid Assessment</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
+
+<main class="content">
+  <h2 class="page-title">Chest Pain – Rapid Assessment & Rule-Out</h2>
+  <div style="text-align:center;">
+    <span class="pill-note">Rule out the killers first</span>
+  </div>
+
+  <!-- Step 1 -->
+  <section class="section-card">
+    <h2>1. Triage & Immediate Threats</h2>
+    <ul>
+      <li>Assess ABC, attach monitor, obtain vitals, oxygen if needed.</li>
+      <li>Look for red flags:
+        <ul>
+          <li class="red-flag">Hypotension, tachycardia or bradycardia</li>
+          <li class="red-flag">Severe distress, diaphoresis, syncope</li>
+          <li class="red-flag">Features of PE, aortic dissection, tension pneumothorax, tamponade</li>
+        </ul>
+      </li>
+    </ul>
+    <p class="tip-text">If unstable → resus bay and senior review immediately.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 2 -->
+  <section class="section-card">
+    <h2>2. 12-Lead ECG & Bedside Tests (within 10 min)</h2>
+    <ul>
+      <li>12-lead ECG: look for STEMI, NSTEMI changes, arrhythmias.</li>
+      <li>Repeat ECGs if pain persists or recurs.</li>
+      <li>Point-of-care tests:
+        <ul>
+          <li>Glucose, troponin (high-sensitivity if available), ABG/VBG if unwell.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 3 -->
+  <section class="section-card">
+    <h2>3. Consider Life-Threatening Diagnoses</h2>
+    <ul>
+      <li><strong>ACS / MI</strong></li>
+      <li><strong>Pulmonary embolism</strong></li>
+      <li><strong>Aortic dissection</strong></li>
+      <li><strong>Tension pneumothorax</strong></li>
+      <li><strong>Pericardial tamponade</strong></li>
+      <li><strong>Oesophageal rupture</strong></li>
+    </ul>
+    <p class="tip-text">Do not anchor on “musculoskeletal” without a proper exclusion of the serious causes.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 4 -->
+  <section class="section-card">
+    <h2>4. Chest Pain Risk Stratification (Conceptual)</h2>
+    <ul>
+      <li><strong>High risk:</strong> ischaemic ECG, troponin rise, haemodynamic instability, known CAD.</li>
+      <li><strong>Intermediate risk:</strong> concerning history, risk factors, but non-diagnostic ECG / first troponin negative.</li>
+      <li><strong>Low risk:</strong> atypical pain, normal ECG, normal serial troponins, no major risk factors.</li>
+    </ul>
+    <p class="tip-text">You can map this to HEART/TIMI scores if you want to formalise it later.</p>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 5 -->
+  <section class="section-card">
+    <h2>5. Troponin Strategy (High-Sensitivity or Conventional)</h2>
+    <ul>
+      <li>0-hour troponin on arrival.</li>
+      <li>Repeat at 1–3 hours (depending on assay and local protocol).</li>
+      <li>Rule-out generally requires:
+        <ul>
+          <li>Non-ischaemic ECG AND</li>
+          <li>Low baseline troponin AND</li>
+          <li>No significant delta change between serial samples.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <div class="arrow">⬇</div>
+
+  <!-- Step 6 -->
+  <section class="section-card">
+    <h2>6. Disposition</h2>
+    <ul>
+      <li><strong>High risk / confirmed ACS:</strong> admit to CCU/high care; involve cardiology.</li>
+      <li><strong>Intermediate risk:</strong> admit/observe with serial troponins, possible stress imaging/CTCA.</li>
+      <li><strong>Low risk:</strong> consider discharge with clear safety-net advice and outpatient follow-up.</li>
+    </ul>
+    <p class="tip-text">Write safety-net advice clearly: when to come back, red-flag symptoms, and who to contact.</p>
+  </section>
+</main>
+</body>
+</html>

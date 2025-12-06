@@ -1,75 +1,405 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Penetrating Neck Trauma Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/checklistBackground.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-        .fullscreen-image-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
-          cursor: zoom-out;
-        }
-        
-        .fullscreen-image-overlay img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-    </style>
-</head>
-<body>
-    <div class="logo-container">
-        <h1 style="color: black;">Penetrating Neck Trauma Checklist</h1>
-        <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-        <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-      </div>
-    </header>
-<main>
-    
-    <div class="section">
-        <img src="/images/penetrating neck trauma checklist img.png" alt="Penetrating Neck Trauma Checklist" class="image" onclick="toggleFullscreenImage('/images/penetrating neck trauma checklist img.png')">
-      <caption>Penetrating Neck Trauma Checklist <span style="font-size: x-small;">(Click to enlarge)</span></caption>
-      
-      </div>
-</main>
-<script>
-    function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
-    } else {
-      document.body.removeChild(overlay);
+  <meta charset="UTF-8">
+  <title>Penetrating Neck Trauma Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/checklistBackground.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
     }
-  }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0.8rem 0 0.3rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      font-size: 1.05rem;
+      margin: 0 0 0.4rem 0;
+      color: #0066cc;
+    }
+
+    .section-card p,
+    .section-card li {
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 360px;
+      font-weight: normal;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      font-size: 0.85rem;
+      vertical-align: middle;
+      background: rgba(255,255,255,0.94);
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: navy;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.4);
+      margin-right: 6px;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    .section {
+      margin-bottom: 1rem;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      cursor: zoom-in;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    caption {
+      display: block;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      color: #222;
+      font-weight: normal;
+    }
+
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem;
+      }
+      .page-title {
+        font-size: 1.3rem;
+      }
+      table {
+        min-width: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 style="color: black;">Penetrating Neck Trauma Checklist</h1>
+      <a href="/index.html" title="Home" alt="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-title">Penetrating Neck Trauma</h2>
+    <p class="page-subtitle">
+      Focus on airway, major bleeding, and vascular/aerodigestive injury. Do <strong>not</strong> probe wounds or remove impaled objects in A&amp;E.
+    </p>
+
+    <!-- 1. Hard & Soft Signs Checklist -->
+    <section class="section-card">
+      <span class="pill-note">Step 1 – Do they need immediate theatre?</span>
+      <h2>Hard &amp; Soft Signs of Serious Neck Injury</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>YES</th>
+              <th>NO</th>
+              <th>Finding</th>
+              <th>Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- HARD SIGNS -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td class="red-flag">Expanding / pulsatile haematoma</td>
+              <td class="red-flag">Likely major vascular injury – urgent theatre / vascular consult</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td class="red-flag">Massive external haemorrhage</td>
+              <td class="red-flag">Immediate pressure + theatre, consider REBOA / damage control (major centre)</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td class="red-flag">Airway compromise (stridor, gurgling, obvious airway distortion)</td>
+              <td class="red-flag">Immediate airway control (preferably in theatre with ENT/anaesthetics)</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td class="red-flag">Massive subcutaneous emphysema / air bubbling from wound</td>
+              <td class="red-flag">Suspected laryngotracheal or pharyngo-oesophageal injury – theatre</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td class="red-flag">Shock not explained by other injuries</td>
+              <td class="red-flag">Consider major vascular injury – urgent surgical control</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td class="red-flag">Neurological deficit compatible with carotid/vertebral injury</td>
+              <td class="red-flag">High suspicion of arterial injury – urgent imaging / surgery</td>
+            </tr>
+
+            <!-- SOFT SIGNS -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Non-expanding but significant haematoma</td>
+              <td>Requires CT angiography and ENT/vascular review</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Hoarseness, dysphonia, dysphagia, odynophagia</td>
+              <td>Possible laryngeal or oesophageal injury</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Haemoptysis or haematemesis</td>
+              <td>Possible airway or aerodigestive tract injury</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Focal neck tenderness along major vessels</td>
+              <td>Consider vascular imaging</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Subcutaneous emphysema limited in extent</td>
+              <td>Suggests contained airway/aerodigestive injury – image &amp; observe closely</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note-text">
+        If any <span class="red-flag">hard sign</span> is present: treat as a surgical emergency – airway, haemorrhage control and rapid theatre / transfer.
+      </p>
+    </section>
+
+    <!-- 2. ED Priorities -->
+    <section class="section-card">
+      <span class="pill-note">Step 2 – ED priorities</span>
+      <h2>ED Priorities – What to Do Immediately</h2>
+      <ul>
+        <li><strong>Airway</strong> – early senior involvement (anaesthetics / ENT / surgery).
+          <ul>
+            <li>Prepare for a difficult airway; avoid multiple attempts.</li>
+            <li>If airway is clearly threatened, aim for controlled intubation in theatre where possible.</li>
+            <li>If airway is lost or cannot be secured from above → emergency surgical airway (front-of-neck access).</li>
+          </ul>
+        </li>
+        <li><strong>Breathing</strong>
+          <ul>
+            <li>High-flow oxygen, monitor SpO₂ continuously.</li>
+            <li>Look for associated chest injuries (pneumothorax, haemothorax) and treat per ATLS.</li>
+          </ul>
+        </li>
+        <li><strong>Circulation</strong>
+          <ul>
+            <li>Direct pressure to bleeding sites; use haemostatic dressings if available.</li>
+            <li>Do <strong>not</strong> blindly clamp vessels (risk of nerve/tracheal/oesophageal damage).</li>
+            <li>Large-bore IV access, bloods, group &amp; save / crossmatch. Activate massive transfusion if needed.</li>
+          </ul>
+        </li>
+        <li><strong>Cervical spine</strong>
+          <ul>
+            <li>Maintain manual inline stabilisation if mechanism suggests C-spine injury.</li>
+            <li>Rigid collar may obscure wounds – prioritise airway and haemorrhage control; use blocks/tape if needed.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 3. Imaging & Definitive Work-Up -->
+    <section class="section-card">
+      <span class="pill-note">Step 3 – Stable patient work-up</span>
+      <h2>Imaging &amp; Definitive Assessment (Stable Patients)</h2>
+      <ul>
+        <li><strong>Haemodynamically stable and airway safe</strong>:
+          <ul>
+            <li><strong>CT angiography neck +/- CT chest</strong> – evaluate carotid, vertebral, and major venous injury.</li>
+            <li>Consider contrast swallow / endoscopy if oesophageal injury suspected (local protocols).</li>
+            <li>Laryngoscopy / bronchoscopy where airway injury suspected (ENT / anaesthetics).</li>
+          </ul>
+        </li>
+        <li><strong>Important:</strong> Penetrating injury that breaches the platysma should generally be imaged or explored – do not treat as “minor”.</li>
+        <li><strong>Document</strong>:
+          <ul>
+            <li>Wound location (distance from landmarks), size, direction (if known).</li>
+            <li>Presence of impaled objects – <strong>do not remove in ED</strong>, stabilise in situ.</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="note-text">
+        Senior tip: In a stable patient with soft signs, CT angiography is usually the investigation of choice – it guides whether you can safely observe versus refer for surgery.
+      </p>
+    </section>
+
+    <!-- 4. Practical Do / Don't -->
+    <section class="section-card">
+      <span class="pill-note">Step 4 – Pitfalls to avoid</span>
+      <h2>Practical Do &amp; Don’t in Penetrating Neck Trauma</h2>
+      <ul>
+        <li><strong>DO</strong>
+          <ul>
+            <li>Resuscitate using ATLS principles (ABCDE, trauma call if available).</li>
+            <li>Control haemorrhage with direct pressure / packing while preparing for theatre.</li>
+            <li>Get early help: surgery, ENT, anaesthetics, ICU as appropriate.</li>
+            <li>Give tetanus prophylaxis and broad-spectrum antibiotics as per local protocol.</li>
+          </ul>
+        </li>
+        <li><strong>DO NOT</strong>
+          <ul>
+            <li>Probe wound tracks or blindly insert instruments into the wound.</li>
+            <li>Remove impaled objects in A&amp;E (unless they directly obstruct the airway and you are forced to intervene).</li>
+            <li>Delay airway control in a deteriorating patient while waiting for imaging.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 5. Image / Poster -->
+    <section class="section-card">
+      <h2>Printable Checklist Poster</h2>
+      <p style="font-size:0.9rem; font-weight:normal;">
+        You can use the poster below as a visual prompt in resus. Click to enlarge for bedside viewing.
+      </p>
+      <div class="section">
+        <img
+          src="/images/penetrating neck trauma checklist img.png"
+          alt="Penetrating Neck Trauma Checklist Poster"
+          class="image"
+          onclick="toggleFullscreenImage('/images/penetrating neck trauma checklist img.png')"
+        >
+        <caption>
+          Penetrating Neck Trauma Checklist Poster
+          <span style="font-size:x-small;">(Click to enlarge)</span>
+        </caption>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleFullscreenImage(src) {
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = '<img src="' + src + '" alt="Full-size image" />';
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
+      }
+    }
   </script>
 </body>
 </html>

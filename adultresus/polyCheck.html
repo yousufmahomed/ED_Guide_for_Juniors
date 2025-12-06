@@ -1,160 +1,407 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Polytrauma Checklist</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
+  <meta charset="UTF-8">
+  <title>Polytrauma Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f7;
     }
 
-    h1 {
-        background-color: #0066cc;
-        color: #ffffff;
-        padding: 20px;
-        margin: 0;
+    header h1 {
+      background-color: #0066cc;
+      color: #ffffff;
+      padding: 16px 20px;
+      margin: 0;
+      font-size: 1.6rem;
     }
 
-    h2 {
-        color: #0066cc;
+    main {
+      padding: 0.75rem 1rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.4rem;
+      margin: 0.8rem 0 0.3rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .section-card h2 {
+      color: #0066cc;
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .section-card p,
+    .section-card li {
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .danger-box {
+      background-color: #fff5f5;
+      border-left: 4px solid #cc0000;
+      padding: 10px 12px;
+      margin: 10px 0 15px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      font-weight: normal;
+      margin-top: 0.3rem;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
     }
 
     table {
-        border-collapse: collapse;
-        width: 100%;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      font-weight: normal;
     }
 
     th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.85rem;
+      vertical-align: top;
     }
 
     th {
-        background-color: #f2f2f2;
-		color: navy;
+      background-color: #f2f2f2;
+      color: navy;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
     input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 10px;
+      transform: scale(1.4);
+      margin-right: 8px;
     }
 
     ul, ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 20px;
+      margin-top: 6px;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      font-weight: normal;
     }
 
     li {
-        margin-bottom: 5px;
+      margin-bottom: 4px;
     }
-</style>
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem 0.6rem 2rem;
+      }
+
+      header h1 {
+        font-size: 1.3rem;
+        padding: 12px 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <h1 style="color: antiquewhite;">Polytrauma Checklist</h1>
-            <a href="/index.html" title="Home" alt="Home"><i class="fa-solid fa-house"></i></a>
-            <button class="back-button" onclick="goBack()" alt="Back">Back</button>
-          </div>
-        </header>
-	<h1>Polytrauma Checklist</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>YES</th>
-				<th>NO</th>
-				<th>Reccomendations/ Suggestions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Multiple injuries in one or more anatomical regions (excluding isolated limb injuries)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Injury severity score (ISS) > 15</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Head injury (Glasgow Coma Scale < 13)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Spinal cord injury (motor or sensory deficit)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Chest injury (flail chest, tension pneumothorax, hemothorax, or significant pulmonary contusion)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-                <td>Abdominal injury (intra-abdominal hemorrhage or organ injury)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Pelvic injury (open or unstable fractures, diastasis of pubic symphysis or sacroiliac joint)</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Extremity injury with ischemia or compartment syndrome</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>History of anticoagulation or antiplatelet therapy</td>
-				<td>Consider reversal of anticoagulation or antiplatelet therapy if needed</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><input type="checkbox"></td>
-				<td>Suspected or confirmed pregnancy</td>
-				<td>Consider fetal monitoring and obstetric consultation</td>
-			</tr>
-		</tbody>
-	</table>
-	<h2>Initial Management</h2>
-	<ul>
-		<li>Primary survey and resuscitation as per Advanced Trauma Life Support (ATLS) protocol</li>
-		<li>Control external bleeding and hemorrhage</li>
-		<li>Assess airway, breathing, and circulation (ABCs)</li>
-		<li>Obtain intravenous access and administer crystalloid fluids</li>
-		<li>Consider tranexamic acid for significant bleeding</li>
-		<li>Consider early intubation for airway protection or respiratory distress</li>
-		<li>Consider pelvic stabilization for pelvic fractures</li>
-		<li>Consider imaging studies (CT scan, X-rays) as needed</li>
-	</ul>
-	<h2>Secondary Management</h2>
-	<ul>
-		<li>Consult appropriate specialists (e.g. trauma surgeon, neurosurgeon, orthopedic surgeon)</li>
-		<li>Consider early transfer to a trauma center if available</li>
-		<li>Consider analgesia and sedation as needed</li>
-		<li>Consider prophylaxis for deep vein thrombosis (DVT) and stress ulceration</li>
-		<li>Consider tetanus prophylaxis if indicated</li>
-	</ul>
-	<h2>Tertiary Management</h2>
-	<ul>
-		<li>Arrange for follow-up and rehabilitation</li>
-		<li>Consider psychosocial support for patient and family</li>
-	</ul>
+  <header>
+    <div class="logo-container">
+      <h1>Polytrauma Checklist</h1>
+      <a href="/index.html" title="Home" alt="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <button class="back-button" onclick="goBack()" alt="Back">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-title">Polytrauma in the Emergency Department</h2>
+    <p class="page-subtitle">
+      Think in terms of <strong>ATLS (ABCDE)</strong>, haemorrhage control, and early transfer / theatre.
+      Use this checklist to avoid missing time–critical injuries.
+    </p>
+
+    <!-- RED FLAGS / TRAUMA CALL -->
+    <section class="section-card">
+      <span class="pill-note">Step 0 – Immediate red flags</span>
+      <h2>When to Call a Trauma Alert / Theatre Early</h2>
+      <div class="danger-box">
+        <strong>Red flags that should trigger immediate senior / trauma team involvement:</strong>
+        <ul>
+          <li class="red-flag">SBP &lt; 90 mmHg or MAP &lt; 65 mmHg despite fluids</li>
+          <li class="red-flag">GCS ≤ 8 or rapid neurological deterioration</li>
+          <li class="red-flag">Respiratory distress, saturations &lt; 90% despite oxygen, or obvious chest wall instability</li>
+          <li class="red-flag">Massive external haemorrhage or pelvic instability</li>
+          <li class="red-flag">Penetrating trauma to head, neck, chest, abdomen, or pelvis</li>
+          <li class="red-flag">Need for massive transfusion (suspected major haemorrhage)</li>
+        </ul>
+        <p class="note-text">
+          Senior tip: Don’t wait for all investigations. If your gut says “this patient looks too sick”, call for help and activate the trauma pathway.
+        </p>
+      </div>
+    </section>
+
+    <!-- POLYTRAUMA CHECKLIST -->
+    <section class="section-card">
+      <span class="pill-note">Step 1 – Does this meet “polytrauma”?</span>
+      <h2>Polytrauma Definition & Triggers Checklist</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>YES</th>
+              <th>NO</th>
+              <th>Finding</th>
+              <th>Clinical Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Multiple injuries in ≥ 2 anatomical regions (excluding isolated limb injuries)</td>
+              <td>Higher risk of occult injuries and physiological collapse – treat as polytrauma.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Estimated Injury Severity Score (ISS) &gt; 15 (or clearly severe mechanism)</td>
+              <td>Severe trauma – early referral / transfer to trauma centre recommended.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Head injury (GCS &lt; 13, focal neurology, seizures)</td>
+              <td>Consider early CT brain and neurosurgical discussion.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Spinal cord injury (motor or sensory deficit)</td>
+              <td>Strict spinal precautions, early imaging, and neurosurgical/orthopaedic input.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Chest injury (flail chest, tension pneumothorax, haemothorax, pulmonary contusion)</td>
+              <td>High risk of hypoxia and decompensation – chest drains, analgesia, ventilatory support.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Abdominal injury (suspected intra-abdominal haemorrhage or organ injury)</td>
+              <td>FAST / CT abdomen, early surgical input; low threshold for laparotomy in unstable patients.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Pelvic injury (open or unstable fractures, pubic symphysis / SI joint diastasis)</td>
+              <td>Apply pelvic binder early; consider massive haemorrhage and interventional radiology / theatre.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Extremity injury with ischaemia or compartment syndrome</td>
+              <td>Limb-threatening – urgent orthopaedic / vascular input; fasciotomy if compartment syndrome.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>History of anticoagulation or antiplatelet therapy</td>
+              <td>Consider reversal agents and early CT imaging for head / torso injuries.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td>Suspected or confirmed pregnancy</td>
+              <td>Positioning (left lateral tilt), fetal monitoring, and obstetric consultation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note-text">
+        If several boxes are ticked, treat as polytrauma with a low threshold for trauma team activation and transfer to a higher-level centre if available.
+      </p>
+    </section>
+
+    <!-- INITIAL MANAGEMENT (PRIMARY SURVEY) -->
+    <section class="section-card">
+      <span class="pill-note">Step 2 – Primary survey & resuscitation (ATLS)</span>
+      <h2>Initial Management – Primary Survey</h2>
+      <ul>
+        <li><strong>A – Airway with C-spine control</strong>
+          <ul>
+            <li>Clear airway, suction as needed, insert airway adjuncts.</li>
+            <li>Maintain in-line cervical spine immobilisation where indicated.</li>
+            <li>Prepare for early intubation if compromised GCS, airway burns, or major facial trauma.</li>
+          </ul>
+        </li>
+        <li><strong>B – Breathing & ventilation</strong>
+          <ul>
+            <li>High-flow oxygen; monitor SpO₂ and respiratory effort.</li>
+            <li>Look for tension pneumothorax, open pneumothorax, flail chest, haemothorax – treat immediately (needle decompression, chest drains, occlusive dressings).</li>
+          </ul>
+        </li>
+        <li><strong>C – Circulation with haemorrhage control</strong>
+          <ul>
+            <li>Control external bleeding (direct pressure, haemostatic dressings, tourniquets where appropriate).</li>
+            <li>Large-bore IV access; consider IO if IV difficult.</li>
+            <li>Draw baseline bloods: FBC, U&E, clotting, crossmatch, lactate.</li>
+            <li>Start warmed crystalloid judiciously; move early to blood products if ongoing shock (massive transfusion protocol if available).</li>
+            <li>Consider <strong>tranexamic acid</strong> (if within time window and no contra-indications).</li>
+            <li>Apply pelvic binder for suspected pelvic fractures.</li>
+          </ul>
+        </li>
+        <li><strong>D – Disability (neurological)</strong>
+          <ul>
+            <li>Check GCS, pupils, limb movements, blood glucose.</li>
+            <li>Look for lateralising signs; consider early CT brain if indicated.</li>
+          </ul>
+        </li>
+        <li><strong>E – Exposure & environment</strong>
+          <ul>
+            <li>Fully expose the patient to look for other injuries, while preventing hypothermia (warmed fluids, blankets, warm room if possible).</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- RESUS ROOM SETUP / SECONDARY MANAGEMENT -->
+    <section class="section-card">
+      <span class="pill-note">Step 3 – Resus room checklist & secondary survey</span>
+      <h2>Secondary Management (Within the First Hour)</h2>
+      <ul>
+        <li><strong>Resus room setup</strong>
+          <ul>
+            <li>Continuous monitoring: ECG, BP, SpO₂, respiratory rate, temperature.</li>
+            <li>Analgesia (IV opioids, ketamine where appropriate) – pain control improves breathing and cooperation.</li>
+            <li>Antiemetics, tetanus prophylaxis, and antibiotics for open fractures / penetrating injuries as per protocol.</li>
+          </ul>
+        </li>
+        <li><strong>Secondary survey</strong>
+          <ul>
+            <li>Head-to-toe examination once life-threatening issues are addressed.</li>
+            <li>Log-roll with spinal precautions to examine the back.</li>
+            <li>Check for missed wounds (scalp, perineum, axillae, skin folds).</li>
+          </ul>
+        </li>
+        <li><strong>Imaging strategy</strong>
+          <ul>
+            <li><strong>Unstable patients:</strong> bedside CXR, pelvic X-ray, and FAST / E-FAST to identify immediate surgical pathology.</li>
+            <li><strong>Stable patients:</strong> CT “pan-scan” (head/neck/chest/abdomen/pelvis) depending on resources and local practice.</li>
+            <li>Reassess after imaging – injuries evolve.</li>
+          </ul>
+        </li>
+        <li><strong>Specialist involvement</strong>
+          <ul>
+            <li>Trauma surgeon / general surgeon, orthopaedics, neurosurgery, anaesthetics / ICU, and obstetrics (if pregnant).</li>
+            <li>Consider early transfer to a higher-level trauma centre if needed and feasible.</li>
+          </ul>
+        </li>
+        <li><strong>Prophylaxis</strong>
+          <ul>
+            <li>DVT prophylaxis (mechanical initially, pharmacologic when bleeding risk acceptable).</li>
+            <li>Stress-ulcer prophylaxis in patients likely to require ICU / ventilatory support.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TERTIARY MANAGEMENT -->
+    <section class="section-card">
+      <span class="pill-note">Step 4 – After the dust settles</span>
+      <h2>Tertiary Survey & Ongoing Care</h2>
+      <ul>
+        <li><strong>Tertiary survey</strong> (usually within 24 hours)
+          <ul>
+            <li>Repeat full examination and review all imaging to detect missed injuries.</li>
+            <li>Re-evaluate pain, function, and neuro status.</li>
+          </ul>
+        </li>
+        <li><strong>Rehabilitation & follow-up</strong>
+          <ul>
+            <li>Early involvement of physiotherapy, occupational therapy, and social work.</li>
+            <li>Plan outpatient follow-up with relevant surgical and rehab services.</li>
+          </ul>
+        </li>
+        <li><strong>Psychosocial support</strong>
+          <ul>
+            <li>Psychological support for patient and family (trauma, PTSD risk, grief in fatal collisions etc.).</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="note-text">
+        Senior tip: Polytrauma is a team sport. Clear leadership, closed-loop communication, and structured handovers
+        (ATMIST / SBAR) dramatically reduce errors and missed injuries.
+      </p>
+    </section>
+
+    <!-- DOCUMENTATION & HANDOVER -->
+    <section class="section-card">
+      <span class="pill-note">Step 5 – Documentation & handover</span>
+      <h2>Documentation & Handover Essentials</h2>
+      <ul>
+        <li>Record time of arrival, mechanism of injury, pre-hospital interventions, and vital trends.</li>
+        <li>Document primary and secondary survey findings clearly (including negatives).</li>
+        <li>List all procedures (lines, intubation, chest drains, reductions) with times and operators.</li>
+        <li>Use a structured handover (e.g. <strong>ATMIST</strong>: Age, Time, Mechanism, Injuries, Signs, Treatment).</li>
+        <li>Ensure copies of imaging reports and key blood results go with the patient if transferred.</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
-
-				

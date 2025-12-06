@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pulmonary Embolism Risk Scores (Wells & Geneva)</title>
+  <title>Pulmonary Embolism – Wells, Geneva & ED Approach</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -14,28 +14,46 @@
       font-weight: bold;
       line-height: 1.8;
       color: #333;
-      background-image: url("/images/resp.svg"); /* adjust if needed */
+      background-image: url("/images/resp.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      margin: 0;
     }
 
     main {
       padding: 0 1rem 2rem;
-      background-color: rgba(255, 255, 255, 0.92);
+      background-color: rgba(255, 255, 255, 0.94);
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     h1.page-title {
       background-color: #0066cc;
       color: #ffffff;
       padding: 15px 20px;
-      margin: 0 0 15px;
+      margin: 0 0 10px;
       font-size: 1.6rem;
     }
 
     h2 {
       color: #0066cc;
-      margin-top: 1.5rem;
+      margin-top: 1.4rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    h3 {
+      color: #004c99;
+      margin-top: 0.8rem;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.92rem;
+      font-weight: normal;
+      margin-bottom: 0.4rem;
     }
 
     table {
@@ -43,33 +61,43 @@
       width: 100%;
       margin-top: 10px;
       margin-bottom: 15px;
+      font-weight: normal;
     }
 
     th, td {
-      padding: 10px;
+      padding: 8px 10px;
       text-align: left;
       border-bottom: 1px solid #ddd;
       vertical-align: top;
+      font-size: 0.85rem;
     }
 
     th {
       background-color: #f2f6ff;
       color: #003366;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
     }
 
     input[type="checkbox"] {
-      transform: scale(1.1);
-      margin-right: 8px;
+      transform: scale(1.2);
+      margin-right: 6px;
     }
 
     ul, ol {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 6px;
+      margin-bottom: 8px;
       padding-left: 20px;
+      font-weight: normal;
     }
 
     li {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
     }
 
     .score-box {
@@ -78,7 +106,8 @@
       padding: 10px 12px;
       margin: 10px 0 15px;
       border-radius: 4px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      font-weight: normal;
     }
 
     .danger-box {
@@ -87,23 +116,46 @@
       padding: 10px 12px;
       margin: 10px 0 15px;
       border-radius: 4px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 0.3rem;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 8px;
       padding: 8px 14px;
       border-radius: 4px;
       border: none;
       background-color: #0066cc;
       color: #fff;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
     }
 
     .btn:hover {
       background-color: #004c99;
+    }
+
+    .red-flag {
+      color: #a00000;
+      font-weight: bold;
+    }
+
+    .note-text {
+      font-size: 0.82rem;
+      color: #555;
+      font-style: italic;
+      font-weight: normal;
     }
 
     @media (max-width: 768px) {
@@ -123,77 +175,93 @@
   <header>
     <div class="logo-container">
       <h1>Pulmonary Embolism Risk Scores</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
 
   <main>
-    <h1 class="page-title">Wells & Geneva Scores for Suspected Pulmonary Embolism</h1>
+    <h1 class="page-title">Pulmonary Embolism – Wells, Geneva & ED Approach</h1>
 
     <div class="score-box">
-      <strong>Important:</strong> This page is designed for teaching and bedside support only.
-      Always use your clinical judgement and follow your local / national PE protocols.
-      Discuss uncertain or high-risk cases with a senior.
+      <strong>Purpose:</strong> Teaching and bedside support for risk stratification in <strong>suspected PE</strong>.<br>
+      Always use your clinical judgement and local protocols. In unstable patients, do <strong>not</strong> waste time on scores – treat and escalate.
+    </div>
+
+    <div class="danger-box">
+      <strong>Do not rely on scores if any of these are present:</strong>
+      <ul>
+        <li class="red-flag">Shock or sustained hypotension</li>
+        <li class="red-flag">Severe hypoxia with a clear or near-normal CXR</li>
+        <li class="red-flag">Syncope / pre-syncope with high suspicion of PE</li>
+        <li class="red-flag">Clear right-heart strain (ECG / bedside echo where available)</li>
+      </ul>
+      <span class="note-text">
+        These are “treat first, calculate later” situations – urgent senior input, imaging, and consideration of thrombolysis if appropriate.
+      </span>
     </div>
 
     <!-- WELLS SCORE FOR PE -->
     <section>
+      <span class="pill-note">Step 1 – Estimate pre-test probability</span>
       <h2>1. Wells Score for Pulmonary Embolism</h2>
       <p>The Wells score helps stratify the pre-test probability of PE.</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Include?</th>
-            <th>Criterion</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="3"></td>
-            <td>Clinical signs and symptoms of DVT (minimum of leg swelling and pain with palpation of deep veins)</td>
-            <td>+3.0</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="3"></td>
-            <td>PE is the most likely diagnosis (more likely than alternative diagnoses)</td>
-            <td>+3.0</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="1.5"></td>
-            <td>Heart rate &gt; 100 beats per minute</td>
-            <td>+1.5</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="1.5"></td>
-            <td>Immobilisation for ≥3 days or surgery in the previous 4 weeks</td>
-            <td>+1.5</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="1.5"></td>
-            <td>Previous DVT or PE</td>
-            <td>+1.5</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="1"></td>
-            <td>Haemoptysis</td>
-            <td>+1.0</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="wells-pe-item" data-points="1"></td>
-            <td>Malignancy (on treatment, treated in the last 6 months, or palliative)</td>
-            <td>+1.0</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Include?</th>
+              <th>Criterion</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="3"></td>
+              <td>Clinical signs and symptoms of DVT (leg swelling + pain on deep venous palpation)</td>
+              <td>+3.0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="3"></td>
+              <td>PE is the most likely diagnosis (more likely than alternatives)</td>
+              <td>+3.0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="1.5"></td>
+              <td>Heart rate &gt; 100 beats per minute</td>
+              <td>+1.5</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="1.5"></td>
+              <td>Immobilisation ≥ 3 days or surgery in the previous 4 weeks</td>
+              <td>+1.5</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="1.5"></td>
+              <td>Previous DVT or PE</td>
+              <td>+1.5</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="1"></td>
+              <td>Haemoptysis</td>
+              <td>+1.0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="wells-pe-item" data-points="1"></td>
+              <td>Malignancy (on treatment, treated in last 6 months, or palliative)</td>
+              <td>+1.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <button class="btn" type="button" onclick="calculateWellsPE()">Calculate Wells PE Score</button>
-
       <div id="wells-pe-result" class="score-box" style="display:none;"></div>
 
-      <h3>Wells PE Interpretation</h3>
+      <h3>Wells Interpretation</h3>
       <ul>
         <li><strong>Traditional bands:</strong>
           <ul>
@@ -202,7 +270,7 @@
             <li>High: &gt; 6</li>
           </ul>
         </li>
-        <li><strong>Simplified:</strong>  
+        <li><strong>Simplified:</strong>
           <ul>
             <li>PE unlikely: ≤ 4</li>
             <li>PE likely: &gt; 4</li>
@@ -214,67 +282,68 @@
     <!-- GENEVA SCORE -->
     <section>
       <h2>2. Revised Geneva Score</h2>
-      <p>The revised Geneva score is an alternative, fully objective PE risk score (no “PE most likely” item).</p>
+      <p>The revised Geneva score is fully objective (no “PE most likely” item).</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Include?</th>
-            <th>Criterion</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="1"></td>
-            <td>Age &gt; 65 years</td>
-            <td>+1</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="3"></td>
-            <td>Previous DVT or PE</td>
-            <td>+3</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="2"></td>
-            <td>Surgery or fracture within 1 month</td>
-            <td>+2</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="2"></td>
-            <td>Active malignancy</td>
-            <td>+2</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="3"></td>
-            <td>Unilateral lower limb pain</td>
-            <td>+3</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="2"></td>
-            <td>Haemoptysis</td>
-            <td>+2</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="3"></td>
-            <td>Heart rate 75–94 bpm</td>
-            <td>+3</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="5"></td>
-            <td>Heart rate ≥ 95 bpm</td>
-            <td>+5</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="geneva-item" data-points="4"></td>
-            <td>Pain on deep venous palpation of lower limb and unilateral oedema</td>
-            <td>+4</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Include?</th>
+              <th>Criterion</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="1"></td>
+              <td>Age &gt; 65 years</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="3"></td>
+              <td>Previous DVT or PE</td>
+              <td>+3</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="2"></td>
+              <td>Surgery or fracture within 1 month</td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="2"></td>
+              <td>Active malignancy</td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="3"></td>
+              <td>Unilateral lower limb pain</td>
+              <td>+3</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="2"></td>
+              <td>Haemoptysis</td>
+              <td>+2</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="3"></td>
+              <td>Heart rate 75–94 bpm</td>
+              <td>+3</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="5"></td>
+              <td>Heart rate ≥ 95 bpm</td>
+              <td>+5</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="geneva-item" data-points="4"></td>
+              <td>Pain on deep venous palpation of lower limb and unilateral oedema</td>
+              <td>+4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <button class="btn" type="button" onclick="calculateGeneva()">Calculate Geneva Score</button>
-
       <div id="geneva-result" class="score-box" style="display:none;"></div>
 
       <h3>Geneva Interpretation</h3>
@@ -285,49 +354,115 @@
       </ul>
     </section>
 
+    <!-- PERC RULE -->
+    <section>
+      <span class="pill-note">Optional – For very low-risk patients</span>
+      <h2>3. PERC Rule (Pulmonary Embolism Rule-Out Criteria)</h2>
+      <p>
+        The PERC rule is used in patients with <strong>low clinical suspicion</strong> to decide whether a D-dimer
+        is needed. It should <strong>not</strong> be used in moderate/high-risk patients or in the presence of red flags.
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>PERC Criterion</th>
+              <th>Tick if present</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Age ≥ 50 years</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>Heart rate ≥ 100 bpm</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>SpO₂ &lt; 95% on room air</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>Unilateral leg swelling</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>Haemoptysis</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>Recent trauma or surgery (≤ 4 weeks)</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>Prior DVT or PE</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+            <tr>
+              <td>Hormone use (oestrogen)</td>
+              <td><input type="checkbox" class="perc-item"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn" type="button" onclick="interpretPERC()">Interpret PERC</button>
+      <div id="perc-result" class="score-box" style="display:none;"></div>
+    </section>
+
     <!-- ED APPROACH SUMMARY -->
     <section>
-      <h2>3. Suggested ED Approach (Framework)</h2>
+      <span class="pill-note">Step 4 – ED decision-making framework</span>
+      <h2>4. Suggested ED Approach (Framework)</h2>
       <ol>
         <li>
-          <strong>Stratify pre-test probability</strong> using Wells or Geneva (or both) together with your clinical judgement.
+          <strong>Step 1 – Is the patient unstable / high risk?</strong><br>
+          If shock, severe hypoxia, syncope, or clear RV strain: treat as high-risk PE, call for senior help, urgent imaging, and consider thrombolysis (as per local protocol).
         </li>
         <li>
-          <strong>Low pre-test probability + normal vitals:</strong>
+          <strong>Step 2 – Estimate pre-test probability</strong> using Wells or Geneva combined with your clinical impression.
+        </li>
+        <li>
+          <strong>Low pre-test probability, stable vitals:</strong>
           <ul>
-            <li>Consider D-dimer (age-adjusted cut-off if used in your setting).</li>
-            <li>Negative D-dimer → PE very unlikely; look for alternative diagnoses.</li>
-            <li>Positive D-dimer → arrange CTPA or V/Q scan (as per local policy and availability).</li>
+            <li>Optionally apply PERC. If <strong>all PERC negative</strong> and you truly consider the patient low-risk, PE may be safely excluded without further testing in some settings.</li>
+            <li>If PERC not satisfied: do a D-dimer (age-adjusted cut-off if used in your setting).</li>
+            <li>Negative D-dimer → PE very unlikely; consider alternative diagnoses.</li>
+            <li>Positive D-dimer → arrange CTPA or V/Q scan (as per availability and local policy).</li>
           </ul>
         </li>
         <li>
           <strong>Intermediate / High pre-test probability:</strong>
           <ul>
-            <li>Arrange urgent CTPA (or V/Q scan if CTPA contraindicated/unavailable).</li>
-            <li>Consider empiric anticoagulation if PE is strongly suspected and bleeding risk acceptable, especially if there will be a delay to imaging (follow local protocols).</li>
+            <li>Arrange <strong>urgent CTPA</strong> (or V/Q scan if CTPA is contraindicated/unavailable).</li>
+            <li>Consider starting empiric anticoagulation if PE is strongly suspected and bleeding risk is acceptable, especially if imaging will be delayed (follow local protocols).</li>
           </ul>
         </li>
         <li>
           <strong>If PE confirmed:</strong>
           <ul>
-            <li>Risk stratify (e.g. shock/hypotension, RV strain, troponin, PESI/sPESI if used locally).</li>
-            <li>Start appropriate anticoagulation (LMWH, DOAC, or warfarin-based regimens as per protocol).</li>
-            <li>Discuss massive or high-risk PE (hypotension/shock) urgently with seniors and consider thrombolysis or advanced therapies where indicated.</li>
+            <li>Assess severity (shock/hypotension, RV strain on echo/CT, troponin/BNP, PESI/sPESI where used).</li>
+            <li>Start appropriate anticoagulation (LMWH, DOAC, or warfarin-based regimens as per local guidance).</li>
+            <li>Discuss massive / high-risk PE urgently with seniors and consider thrombolysis or catheter-directed/interventional options where available.</li>
           </ul>
         </li>
         <li>
-          <strong>Always assess:</strong> pregnancy, renal function, active bleeding, recent surgery, and drug interactions before selecting an anticoagulant.
+          <strong>Always check:</strong> pregnancy status, renal function, active bleeding, recent surgery, platelet count,
+          and potential drug interactions before choosing imaging and anticoagulation strategies.
         </li>
       </ol>
 
       <div class="danger-box">
-        <strong>Red flags – treat as an emergency and escalate immediately:</strong>
+        <strong>Red flags – escalate immediately:</strong>
         <ul>
-          <li>Shock or persistent hypotension</li>
-          <li>Severe hypoxia out of proportion to CXR</li>
-          <li>Syncope or pre-syncope with suspected PE</li>
-          <li>Signs of right heart strain (ECG, bedside echo where available)</li>
+          <li>Shock or persistent hypotension (SBP &lt; 90mmHg or drop ≥ 40mmHg from baseline)</li>
+          <li>Severe or worsening hypoxia despite oxygen</li>
+          <li>Syncope, pre-syncope, chest pain with collapse</li>
+          <li>New right bundle branch block, S1Q3T3 pattern, or marked RV strain on ECG or bedside echo</li>
         </ul>
+        <span class="note-text">
+          Senior tip: If you are thinking “this patient looks too sick for a simple pneumonia”, take PE seriously and call for help early.
+        </span>
       </div>
     </section>
   </main>
@@ -358,7 +493,7 @@
 
       if (score <= 4) {
         simplified = 'PE unlikely (simplified interpretation).';
-        summary = 'Consider D-dimer if appropriate. If D-dimer negative and no red flags, PE is unlikely.';
+        summary = 'Consider D-dimer (and PERC if used in your setting). If D-dimer is negative and no red flags, PE is unlikely.';
       } else {
         simplified = 'PE likely (simplified interpretation).';
         summary = 'Arrange urgent imaging (CTPA/VQ) and consider empiric anticoagulation if not contraindicated.';
@@ -390,7 +525,7 @@
 
       if (score <= 3) {
         category = 'Low probability';
-        summary = 'Consider D-dimer if appropriate. If negative and the patient is stable with no red flags, PE is unlikely.';
+        summary = 'Consider D-dimer if appropriate. If D-dimer is negative and the patient is stable with no red flags, PE is unlikely.';
       } else if (score >= 4 && score <= 10) {
         category = 'Intermediate probability';
         summary = 'Arrange imaging (CTPA/VQ) and consider empiric anticoagulation depending on bleeding risk and delay to imaging.';
@@ -406,6 +541,36 @@
         <strong>Risk category:</strong> ${category}<br>
         <span style="font-size:0.9rem;">${summary}</span>
       `;
+    }
+
+    function interpretPERC() {
+      const items = document.querySelectorAll('.perc-item');
+      let anyPositive = false;
+
+      items.forEach(item => {
+        if (item.checked) {
+          anyPositive = true;
+        }
+      });
+
+      const resultDiv = document.getElementById('perc-result');
+      resultDiv.style.display = 'block';
+
+      if (!anyPositive) {
+        resultDiv.innerHTML = `
+          <strong>PERC result:</strong> All negative.<br>
+          <span style="font-size:0.9rem;">
+            In a <strong>low-risk</strong> patient, this makes PE very unlikely and may allow you to avoid further testing (depending on local protocols).
+          </span>
+        `;
+      } else {
+        resultDiv.innerHTML = `
+          <strong>PERC result:</strong> One or more criteria present.<br>
+          <span style="font-size:0.9rem;">
+            PERC cannot be used to rule out PE – consider D-dimer and/or imaging based on your pre-test probability and local guidance.
+          </span>
+        `;
+      }
     }
   </script>
 </body>

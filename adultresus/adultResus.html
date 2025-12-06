@@ -7,82 +7,764 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
     body {
-      background-color:  #EEEEEE;
+      background-color: #EEEEEE;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .page-title {
+      font-size: 1.6rem;
+      margin: 1rem 0 0.25rem 0;
+      color: #003366;
+      text-align: center;
+    }
+
+    .page-subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .section-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 0.6rem 1rem 0.9rem 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: box-shadow 0.15s ease;
+    }
+
+    .section-card.collapsed {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 0.75rem;
+    }
+
+    .section-heading-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .section-card h2 {
+      font-size: 1.05rem;
+      margin: 0;
+      color: #0066cc;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .heading-icon {
+      font-size: 1.1rem;
+      color: #004c99;
+    }
+
+    .section-toggle-icon {
+      font-size: 0.85rem;
+      color: #666;
+      flex-shrink: 0;
+    }
+
+    .section-toggle-icon i {
+      transition: transform 0.2s ease;
+    }
+
+    .section-card.collapsed .section-toggle-icon i {
+      transform: rotate(180deg);
+    }
+
+    .section-body {
+      margin-top: 0.6rem;
+    }
+
+    .section-card p {
+      margin: 0 0 0.6rem 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #444;
+    }
+
+    .pill-note {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #003366;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0.25rem 0 0 0;
+    }
+
+    .links li {
+      margin-bottom: 0.4rem;
+    }
+
+    .links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      background: #f7f9fc;
+      font-size: 0.9rem;
+      color: #003366;
+      border: 1px solid #dde6f3;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .links a:hover,
+    .links a:focus {
+      background: #e6f0ff;
+      transform: translateY(-1px);
+    }
+
+    .link-label {
+      flex: 1;
+      margin-right: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .link-icon {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .urgency-tag {
+      font-size: 0.7rem;
+      padding: 0.05rem 0.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .urgency-critical {
+      background: #ffe5e5;
+      color: #a00000;
+      border: 1px solid #f5b5b5;
+    }
+
+    .urgency-urgent {
+      background: #fff4d6;
+      color: #8a5a00;
+      border: 1px solid #ffd18a;
+    }
+
+    .banner-acs {
+      background: linear-gradient(135deg, #004e92, #0077cc);
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .banner-acs h3 {
+      margin: 0 0 0.6rem 0;
+      font-size: 1.05rem;
+      font-weight: bold;
+    }
+
+    .acs-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .acs-links li {
+      margin-bottom: 0.45rem;
+    }
+
+    .acs-links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.12);
+      padding: 0.55rem 0.7rem;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .acs-links a:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-1px);
+    }
+
+    .subheading {
+      font-size: 1.05rem;
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      color: #0066cc;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+
+    /* Floating Quick Menu Button */
+    #quick-menu-btn {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      border: none;
+      background: #0077cc;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #quick-menu-btn i {
+      font-size: 1.3rem;
+    }
+
+    #quick-menu-panel {
+      position: fixed;
+      right: 1rem;
+      bottom: 4.6rem;
+      width: 260px;
+      max-width: 80vw;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      padding: 0.7rem 0.8rem;
+      z-index: 999;
+      display: none;
+    }
+
+    #quick-menu-panel.open {
+      display: block;
+    }
+
+    #quick-menu-panel h3 {
+      font-size: 0.95rem;
+      margin: 0 0 0.4rem 0;
+      color: #003366;
+    }
+
+    #quick-menu-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+
+    #quick-menu-panel li {
+      margin-bottom: 0.3rem;
+    }
+
+    #quick-menu-panel a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      text-decoration: none;
+      background: #f7f9fc;
+      padding: 0.35rem 0.45rem;
+      border-radius: 8px;
+      border: 1px solid #dde6f3;
+      color: #003366;
+    }
+
+    #quick-menu-panel a i {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 0.75rem;
+      }
+
+      .page-title {
+        font-size: 1.4rem;
+      }
+
+      .section-card {
+        padding: 0.55rem 0.7rem 0.8rem 0.7rem;
+      }
+
+      .links a {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.88rem;
+      }
+
+      .banner-acs {
+        padding: 0.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="logo-container">
-      <h1>Emergency Department Resuscitation Assistant</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </header>
-  <main>
-    <h1>Resuscitation Guides</h1>
-    <ul class="links">
-      <li><a href="/adultresus/resusAlg.html">Adult Resuscitation Algorithms</a></li>
-      <li><a href="/adultresus/paedsResus.html">Pediatric Resuscitation Algorithms</a></li>
-      <li><a href="/adultresus/burns.html">Burns</a></li>
-      <li><a href="/adultresus/toxin.html">Toxicology</a></li>
-      <!--<li><a href="/adult/coMorbid.html">Co-Morbid Conditions Guide</a></li>
-      <li><a href="/adult/psychiatricHistory.html">Psychiatric History Guide</a></li>
-      <li><a href="/adult/obgynHistory.html">OBGYN History Guide</a></li>
-      <li><a href="/adult/commonMeds.html">Commonly used medications in the ED</a></li>
-
-    </ul>
-    <h1>Clinical Examination Guides</h1>
-    <ul class="links">
-      <li><a href="/adult/vitals.html">Assessment of Vitals</a></li>
-      <li><a href="/adult/primaryAssesment.html">Primary Assessment J-A-C-C-O-L-D</a></li>
-      <li><a href="/adult/primarySurvey.html">Primary Survey</a></li>
-      <li><a href="/adult/secondarySurvey.html">Secondary Survey</a></li>
-      <li><a href="/adult/systems examination/systemsNav.html">Systems Examination</a></li>
-     
-    </ul>
-
-    <h1>Investigations Guides</h1>
-    <ul class="links">
-      <li><a href="/adult/basicEcgGuide.html">Basic ECG Guide</a></li>
-      <li><a href="/adult/basicCxrGuide.html">Basic CXR Guide</a></li>
-      <li><a href="/adult/basicCtGuide.html">Basic CT Scan Guide</a></li>
-      <li><a href="/adult/FbcGuide.html">FBC &amp; Differential Guide </a></li>
-      <li><a href="/adult/U&EGuide.html">U&amp;E Guide</a></li>
-      <li><a href="/adult/LFTGuide.html">LFT Guide</a></li>
-      <li><a href="/adult/udip.html">Urine Dipstick Test Guide</a></li>
-
-    </ul>-->
-
-
-  <h1>Calculators &amp Checklists</h1>
-  <ul class="links">
-    <li><a href="/adultresus/burnsCalc.html">Burns Fluid Calculator</a></li>
-    <li><a href="/adultresus/miCheck.html">Myocardial Infarction Checklist</a></li>
-    <li><a href="/adultresus/peCheck.html">Pulmonary Embolism Checklist</a></li>
-    <li><a href="/adultresus/polyCheck.html">Polytrauma Checklist</a></li>
-    <li><a href="/adultresus/dkaCheck.html">Diabetic Keto-Acidosis (DKA) Checklist </a></li>
-    <li><a href="/adultresus/crushCheck.html">Crush-Syndrome Checklist</a></li>
-    <li><a href="/adultresus/acuteAbdomenCheck.html">Acute Abdomen Checklist</a></li>
-    <li><a href="/adultresus/asthmaCheck.html">Acute Severe Asthma Checklist</a></li>
-    <li><a href="/adultresus/neckTraumaCheck.html">Penetrating Neck Trauma Checklist </a></li>
-    <li><a href="/adult/bloodTransfusionCalc.html">Blood Transfusion Calculator </a></li>
-    <!--<li><a href="/adult/packYears.html">Pack year calculator</a></li>
-    <li><a href="/adult/expectedDeliveryDate.html">Expected Delivery Date &amp; Gestational Age Calculator</a></li>
-    <li><a href="/adult/parityGravidityCalculator.html">Parity &amp; Gravidity Calculator</a></li>
-    <li><a href="/adult/gcsCalculator.html">Glasgow Coma Scale Calculator</a></li>
-    <li><a href="/adult/abgAssistant.html">Arterial Blood Gas Assistant</a></li>
-    <li><a href="/adult/basicEcgAnalysis.html">Basic ECG Analysis</a></li>-->
-  </ul>
-  <div class="section">
-    <h2 class="subheading">POCUS (Point-of-Care Ultrasound) and E-FAST Exam for Trauma</h2>
-    <p>POCUS and the E-FAST exam are essential for the assessment of trauma patients. However, it can be challenging to understand the nuances of this topic through a static page alone, as it requires a dynamic understanding of patient and probe positioning, as well as real-time visualization of abnormalities. </p>
-    <p> To make it easier for you, Dr Johnny Wilkinson have compiled a comprehensive <a href="https://www.youtube.com/playlist?list=PL3qoAYOb9nwy4Opx9A7kOLEd2FEean4UA" class="emphasis-link" target="_blank"><i class="fa-brands fa-youtube"></i> playlist on his YouTube channel</a>. This playlist is dedicated to helping you understand POCUS and the E-FAST exam in detail.</p>
-    <p> In addition, we also have our own <a href="https://youtube.com/playlist?list=PLDm83OQCM_lyi6sO7VIOuS-J9FatGqqLd" class="emphasis-link" target="_blank"><i class="fa-brands fa-youtube"></i> playlist of emergency ultrasound examinations</a>. While these videos are more in-depth, they may not be as well-produced as the above playlist.</p>
+<header>
+  <div class="logo-container">
+    <h1>Emergency Department Resuscitation Assistant</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
   </div>
-  
+</header>
+
+<main>
+  <h2 class="page-title">Resuscitation Guides</h2>
+  <p class="page-subtitle">
+    Quick access to algorithms, checklists, and supports. Start with ABCDE, then open the relevant tool.
+  </p>
+
+  <!-- RESUSCITATION ALGORITHMS -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-heading-main">
+        <span class="pill-note">Step 1 – Choose the right algorithm</span>
+        <h2><i class="fa-solid fa-suitcase-medical heading-icon"></i>Resuscitation Algorithms</h2>
+      </div>
+      <span class="section-toggle-icon"><i class="fa-solid fa-chevron-up"></i></span>
+    </div>
+    <div class="section-body">
+      <p>Use these during active resuscitation. Keep the patient on a monitor, delegate tasks, and follow the algorithm step-by-step.</p>
+      <ul class="links">
+        <li>
+          <a href="/adultresus/resusAlg.html">
+            <span class="link-label">
+              Adult Resuscitation Algorithms
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-heart-pulse link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/paedsResus.html">
+            <span class="link-label">
+              Paediatric Resuscitation Algorithms
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-baby link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/burns.html">
+            <span class="link-label">
+              Burns – Initial ED Management
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-fire link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/toxin.html">
+            <span class="link-label">
+              Toxicology &amp; Overdose
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-skull-crossbones link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CLINICAL EXAMINATION GUIDES -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-heading-main">
+        <span class="pill-note">Step 2 – Examine systematically</span>
+        <h2><i class="fa-solid fa-user-doctor heading-icon"></i>Clinical Examination Guides</h2>
+      </div>
+      <span class="section-toggle-icon"><i class="fa-solid fa-chevron-up"></i></span>
+    </div>
+    <div class="section-body">
+      <p>Use these to structure assessment in a busy resus: vitals, primary survey, and focused systems examinations.</p>
+      <ul class="links">
+        <li>
+          <a href="/adult/vitals.html">
+            <span class="link-label">Assessment of Vitals</span>
+            <i class="fa-solid fa-stopwatch link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/primaryAssesment.html">
+            <span class="link-label">Primary Assessment – J-A-C-C-O-L-D</span>
+            <i class="fa-solid fa-notes-medical link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/primarySurvey.html">
+            <span class="link-label">Primary Survey (ABCDE)</span>
+            <i class="fa-solid fa-stethoscope link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/secondarySurvey.html">
+            <span class="link-label">Secondary Survey</span>
+            <i class="fa-solid fa-clipboard-list link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/systems examination/systemsNav.html">
+            <span class="link-label">Systems Examination</span>
+            <i class="fa-solid fa-x-ray link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INVESTIGATION GUIDES -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-heading-main">
+        <span class="pill-note">Step 3 – Targeted investigations</span>
+        <h2><i class="fa-solid fa-microscope heading-icon"></i>Investigation Guides</h2>
+      </div>
+      <span class="section-toggle-icon"><i class="fa-solid fa-chevron-up"></i></span>
+    </div>
+    <div class="section-body">
+      <p>Use these to interpret tests in context. Always link results back to the clinical picture – never treat numbers alone.</p>
+      <ul class="links">
+        <li>
+          <a href="/adult/basicEcgGuide.html">
+            <span class="link-label">Basic ECG Guide</span>
+            <i class="fa-solid fa-wave-square link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/basicCxrGuide.html">
+            <span class="link-label">Basic Chest X-Ray Guide</span>
+            <i class="fa-solid fa-lungs link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/basicCtGuide.html">
+            <span class="link-label">Basic CT Scan Guide</span>
+            <i class="fa-solid fa-film link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/FbcGuide.html">
+            <span class="link-label">FBC &amp; Differential Guide</span>
+            <i class="fa-solid fa-droplet link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/U&EGuide.html">
+            <span class="link-label">U&amp;E Guide</span>
+            <i class="fa-solid fa-flask-vial link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/LFTGuide.html">
+            <span class="link-label">LFT Guide</span>
+            <i class="fa-solid fa-vial-circle-check link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/udip.html">
+            <span class="link-label">Urine Dipstick Guide</span>
+            <i class="fa-solid fa-toilet link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CALCULATORS & CHECKLISTS -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-heading-main">
+        <span class="pill-note">Step 4 – Calculators &amp; safety checklists</span>
+        <h2><i class="fa-solid fa-calculator heading-icon"></i>Calculators &amp; Checklists</h2>
+      </div>
+      <span class="section-toggle-icon"><i class="fa-solid fa-chevron-up"></i></span>
+    </div>
+    <div class="section-body">
+
+      <!-- ACS quick banner -->
+      <div class="banner-acs">
+        <h3><i class="fa-solid fa-heart-circle-bolt"></i> Chest Pain? Open These First</h3>
+        <ul class="acs-links">
+          <li><a href="/adultresus/miCheck.html">Myocardial Infarction Checklist <i class="fa-solid fa-heart-circle-bolt"></i></a></li>
+          <li><a href="/adultresus/stemiAlgorithm.html">STEMI ED Algorithm (Poster) <i class="fa-solid fa-route"></i></a></li>
+          <li><a href="/adultresus/nstemiChecklist.html">NSTEMI / High-Risk ACS <i class="fa-solid fa-notes-medical"></i></a></li>
+          <li><a href="/adultresus/chestPainAlgorithm.html">Chest Pain – Rapid Assessment <i class="fa-solid fa-heart"></i></a></li>
+          <li><a href="/adultresus/dangerECGPatterns.html">ECG Patterns Not to Miss <i class="fa-solid fa-wave-square"></i></a></li>
+        </ul>
+      </div>
+
+      <ul class="links">
+        <li>
+          <a href="/adultresus/burnsCalc.html">
+            <span class="link-label">
+              Burns Fluid Calculator
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-fire-extinguisher link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/peCheck.html">
+            <span class="link-label">
+              Pulmonary Embolism Checklist
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-lungs-virus link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/polyCheck.html">
+            <span class="link-label">
+              Polytrauma Checklist
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-helmet-safety link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/dkaCheck.html">
+            <span class="link-label">
+              Diabetic Keto-Acidosis (DKA)
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-syringe link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/hyperkalaemia.html">
+            <span class="link-label">
+              Emergency Hyperkalaemia Management
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <span class="link-icon"><i class="fa-solid fa-bolt"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/crushCheck.html">
+            <span class="link-label">
+              Crush Syndrome Checklist
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-dumbbell link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/acuteAbdomenCheck.html">
+            <span class="link-label">
+              Acute Abdomen Checklist
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-user-injured link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/asthmaCheck.html">
+            <span class="link-label">
+              Acute Severe Asthma
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-wind link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adultresus/neckTraumaCheck.html">
+            <span class="link-label">
+              Penetrating Neck Trauma
+              <span class="urgency-tag urgency-critical">CRITICAL</span>
+            </span>
+            <i class="fa-solid fa-user-nurse link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/bloodTransfusionCalc.html">
+            <span class="link-label">
+              Blood Transfusion Calculator
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-droplet link-icon"></i>
+          </a>
+        </li>
+
+        <!-- Antidote & toxin dosing quick ref -->
+        <li>
+          <a href="/adultresus/antidoteQuickRef.html">
+            <span class="link-label">
+              Antidote &amp; Toxin Dosing Quick Reference
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-tablets link-icon"></i>
+          </a>
+        </li>
+
+        <!-- Optional tools now enabled -->
+        <li>
+          <a href="/adult/packYears.html">
+            <span class="link-label">Pack Year Calculator</span>
+            <i class="fa-solid fa-smoking link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/expectedDeliveryDate.html">
+            <span class="link-label">EDD &amp; Gestational Age Calculator</span>
+            <i class="fa-solid fa-baby-carriage link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/parityGravidityCalculator.html">
+            <span class="link-label">Parity &amp; Gravidity Calculator</span>
+            <i class="fa-solid fa-circle-nodes link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/gcsCalculator.html">
+            <span class="link-label">
+              Glasgow Coma Scale Calculator
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-brain link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/abgAssistant.html">
+            <span class="link-label">
+              Arterial Blood Gas Assistant
+              <span class="urgency-tag urgency-urgent">URGENT</span>
+            </span>
+            <i class="fa-solid fa-vial link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/basicEcgAnalysis.html">
+            <span class="link-label">Basic ECG Analysis Tool</span>
+            <i class="fa-solid fa-wave-square link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- POCUS / E-FAST -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-heading-main">
+        <h2><i class="fa-solid fa-wave-square heading-icon"></i>POCUS &amp; E-FAST for Trauma</h2>
+      </div>
+      <span class="section-toggle-icon"><i class="fa-solid fa-chevron-up"></i></span>
+    </div>
+    <div class="section-body">
+      <p>
+        POCUS and E-FAST are essential for shocked or trauma patients, but they are difficult to learn from text alone.
+        Probe position, patient positioning, and dynamic views are best seen in motion.
+      </p>
+      <p>
+        For high-quality POCUS teaching, see
+        <a href="https://www.youtube.com/playlist?list=PL3qoAYOb9nwy4Opx9A7kOLEd2FEean4UA"
+           class="emphasis-link" target="_blank">
+          <i class="fa-brands fa-youtube"></i> Dr Johnny Wilkinson’s ultrasound playlist
+        </a>.
+      </p>
+      <p>
+        We also have our own
+        <a href="https://youtube.com/playlist?list=PLDm83OQCM_lyi6sO7VIOuS-J9FatGqqLd"
+           class="emphasis-link" target="_blank">
+          <i class="fa-brands fa-youtube"></i> ED ultrasound playlist (ER Mentorship Hub)
+        </a>, which goes into more depth, although the production quality may be less refined.
+      </p>
+      <p class="note-text">
+        Senior tip: in unstable trauma, use E-FAST to answer focused questions quickly – “is there free fluid?”,
+        “is there pneumothorax?” – and act on the result rather than chasing a perfect scan.
+      </p>
+    </div>
+  </section>
 </main>
+
+<!-- Floating Quick Menu -->
+<button id="quick-menu-btn" title="Quick menu">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<div id="quick-menu-panel">
+  <h3>Quick Jump</h3>
+  <ul>
+    <li><a href="/adultresus/resusAlg.html">Adult Resus Algorithms <i class="fa-solid fa-heart-pulse"></i></a></li>
+    <li><a href="/adultresus/paedsResus.html">Paeds Resus Algorithms <i class="fa-solid fa-baby"></i></a></li>
+    <li><a href="/adultresus/miCheck.html">MI Checklist <i class="fa-solid fa-heart-circle-bolt"></i></a></li>
+    <li><a href="/adultresus/stemiAlgorithm.html">STEMI Algorithm <i class="fa-solid fa-route"></i></a></li>
+    <li><a href="/adultresus/dkaCheck.html">DKA Checklist <i class="fa-solid fa-syringe"></i></a></li>
+    <li><a href="/adultresus/peCheck.html">PE Checklist <i class="fa-solid fa-lungs-virus"></i></a></li>
+    <li><a href="/adultresus/polyCheck.html">Polytrauma Checklist <i class="fa-solid fa-helmet-safety"></i></a></li>
+    <li><a href="/adultresus/hyperkalaemia.html">Hyperkalaemia Emergency <i class="fa-solid fa-bolt"></i></a></li>
+    <li><a href="/adultresus/antidoteQuickRef.html">Antidote Quick Ref <i class="fa-solid fa-tablets"></i></a></li>
+    <li><a href="/adult/abgAssistant.html">ABG Assistant <i class="fa-solid fa-vial"></i></a></li>
+  </ul>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Accordion behaviour
+    const cards = document.querySelectorAll('.section-card');
+    cards.forEach(card => {
+      const header = card.querySelector('.section-header');
+      if (!header) return;
+      header.addEventListener('click', () => {
+        card.classList.toggle('collapsed');
+      });
+    });
+
+    // Quick menu
+    const btn = document.getElementById('quick-menu-btn');
+    const panel = document.getElementById('quick-menu-panel');
+    if (btn && panel) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        panel.classList.toggle('open');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!panel.contains(e.target) && e.target !== btn) {
+          panel.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
