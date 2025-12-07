@@ -7,70 +7,461 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
+  <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+      --border-soft: #dde3f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--bg);
+      background-image: url("/images/gynae.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(to right, rgba(11,79,108,0.96), rgba(194,24,91,0.9));
+      color: #fff;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .logo-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .logo-container h1 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-container a {
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .back-button {
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 1rem 3rem;
+    }
+
+    .page-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .protocol-banner {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.7rem 0.8rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.8);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+
+    .protocol-banner i {
+      color: var(--accent);
+      margin-top: 0.1rem;
+    }
+
+    .protocol-banner a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .protocol-banner a:hover {
+      text-decoration: underline;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .section-title i {
+      background: var(--primary-light);
+      border-radius: 999px;
+      padding: 0.45rem;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      padding: 0.05rem 0.6rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.4rem;
+    }
+
+    .links li {
+      margin: 0;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      padding: 0.45rem 0.65rem;
+      border-radius: 0.55rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.96);
+      font-size: 0.88rem;
+      color: var(--text-main);
+      transition: all 0.15s ease;
+    }
+
+    .links a span.label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .links a i {
+      font-size: 0.85rem;
+      color: var(--primary);
+    }
+
+    .links a:hover {
+      border-color: var(--primary-light);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 480px) {
+      .logo-container h1 { font-size: 0.86rem; }
+      main { padding-inline: 0.8rem; }
+      .section-card { padding-inline: 0.8rem; }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
       <h1>Emergency Department Assistant</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
     </div>
   </header>
-  <em>You can download our departments updated OBGYN protocols <a href="/pdfs/updated protocols 2023 vol obgyn.pdf" class="emphasis-link" target="_blank">here</a></em>
+
   <main>
-    <h1>OBGYN Emergencies</h1>
-    <ul class="links">
-      <li><a href="/adult/obgynHistory.html">OBGYN History</a></li>
-      <li><a href="/adult/systems examination/obstetrics.html">OBGYN Examination</a></li>
-      <!--<li><a href="/paeds/paedsBasics/immunization.html">Immunization Schedule</a></li>
-      <li><a href="/paeds/paedsBasics/paedsCommonMeds.html">Commonly used medications in the ED for children</a></li>-->
+    <h2 class="page-title">OBGYN Emergencies</h2>
+    <p class="page-subtitle">
+      Rapid-access index for obstetric and gynaecologic emergencies in the Emergency Department.
+    </p>
 
-    </ul>
-    <h1>Gynecology Emergencies</h1>
-    <ul class="links">
-      <li><a href="/adult/systems examination/gynae.html">Gynecology Examination</a></li>
-     <li><a href="/OBGYN/adnexalTorsion.html">Adnexal Torsion</a></li>
-     <li><a href="/OBGYN/cystsAndMasses.html">Ovarian Cysts and Masses</a></li>
-      <li><a href="/OBGYN/abnormalUterineBleeding.html">Abnormal Uterine Bleeding</a></li>
-       <li><a href="/OBGYN/emergencyContraception.html">Emergency Contraception</a></li>
+    <!-- Protocol banner -->
+    <div class="protocol-banner">
+      <i class="fa-solid fa-file-pdf"></i>
+      <div>
+        <strong>Updated OBGYN Protocols:</strong>
+        <br>
+        You can download our department’s updated OBGYN protocols
+        <a href="/pdfs/updated protocols 2023 vol obgyn.pdf" target="_blank">here</a>.
+      </div>
+    </div>
 
-      </ul>
-      <h1>Maternal Trauma</h1>
+    <!-- OBGYN Basics -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-user-nurse"></i>
+          OBGYN Basics
+        </h3>
+        <span class="section-tag">Core Assessment</span>
+      </div>
       <ul class="links">
-        <li><a href="/OBGYN/Maternal Trauma/primarySurveyObgyn.html">Primary Survey</a></li>
-       <li><a href="/OBGYN/Maternal Trauma/secondarySurveyObgyn.html">Maternal and Foetal Assessment (The Secondary Survey)</a></li>
-       
-        
-        
-       
+        <li>
+          <a href="/adult/obgynHistory.html">
+            <span class="label"><i class="fa-solid fa-clipboard-list"></i> OBGYN History</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/systems examination/obstetrics.html">
+            <span class="label"><i class="fa-solid fa-person-pregnant"></i> Obstetric Examination</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/systems examination/gynae.html">
+            <span class="label"><i class="fa-solid fa-venus"></i> Gynaecology Examination</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
       </ul>
-      
-     
-    </ul>
-    <h1>Obstetric Emergencies</h1>
-    <ul class="links">
-      <li><a href="/OBGYN/obsExam.html">Obstetric Examination</a></li>
-      <li><a href="/adult/parityGravidityCalculator.html">Parity and Gravidity Calculator</a></li>
-      <li><a href="/adult/expectedDeliveryDate.html">Delivery Date Calculator</a></li>
-     <li><a href="/OBGYN/ectopic.html">Ectopic Pregnancy</a></li>
-     <li><a href="/OBGYN/molarPregnancy.html">Molar Pregnancy</a></li>
-     <li><a href="/OBGYN/hptEmergenciesInPregnancy.html">Pre-Eclampsia and Eclampsia</a></li>
-      <li><a href="/OBGYN/amnioticEmbolus.html">Amniotic Fluid Embolism</a></li>
-       <!--<li><a href="/OBGYN/emergencyContraception.html">Emergency Contraception</a></li>-->
-      
-     
-    </ul>
-    <h1>Complications of Late Pregnancy</h1>
-    <ul class="links">
-      <li><a href="/OBGYN/Late pregnanacy/vagBleeding.html">Vaginal Bleeding</a></li>
-     <li><a href="/OBGYN/Late pregnanacy/abruptioPlacenta.html">Abruptio Placenta</a></li>
-     <li><a href="/OBGYN/Late pregnanacy/placentaPraevia.html">Placenta Praevia</a></li>
-      
-      
-     
-    </ul>
- 
+    </section>
 
-</main>
+    <!-- Gynaecology Emergencies -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-venus"></i>
+          Gynaecology Emergencies
+        </h3>
+        <span class="section-tag">Gynae</span>
+      </div>
+      <ul class="links">
+        <li>
+          <a href="/OBGYN/adnexalTorsion.html">
+            <span class="label"><i class="fa-solid fa-rotate"></i> Adnexal Torsion</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/cystsAndMasses.html">
+            <span class="label"><i class="fa-solid fa-circle-dot"></i> Ovarian Cysts and Masses</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/abnormalUterineBleeding.html">
+            <span class="label"><i class="fa-solid fa-droplet"></i> Abnormal Uterine Bleeding</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/emergencyContraception.html">
+            <span class="label"><i class="fa-solid fa-pills"></i> Emergency Contraception</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Maternal Trauma -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-car-burst"></i>
+          Maternal Trauma
+        </h3>
+        <span class="section-tag">ATLS + Pregnancy</span>
+      </div>
+      <ul class="links">
+        <li>
+          <a href="/OBGYN/Maternal Trauma/primarySurveyObgyn.html">
+            <span class="label"><i class="fa-solid fa-notes-medical"></i> Maternal Primary Survey</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/Maternal Trauma/secondarySurveyObgyn.html">
+            <span class="label"><i class="fa-solid fa-baby"></i> Maternal & Foetal Assessment (Secondary Survey)</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Obstetric Emergencies -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Obstetric Emergencies
+        </h3>
+        <span class="section-tag">Obstetrics</span>
+      </div>
+      <ul class="links">
+        <li>
+          <a href="/OBGYN/obsExam.html">
+            <span class="label"><i class="fa-solid fa-person-pregnant"></i> Obstetric Examination in ED</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/ectopic.html">
+            <span class="label"><i class="fa-solid fa-circle-exclamation"></i> Ectopic Pregnancy</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/molarPregnancy.html">
+            <span class="label"><i class="fa-solid fa-seedling"></i> Molar Pregnancy</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/hptEmergenciesInPregnancy.html">
+            <span class="label"><i class="fa-solid fa-heart-circle-bolt"></i> Pre-eclampsia & Eclampsia</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/amnioticEmbolus.html">
+            <span class="label"><i class="fa-solid fa-lungs"></i> Amniotic Fluid Embolism</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Late Pregnancy Complications -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-baby-carriage"></i>
+          Complications of Late Pregnancy
+        </h3>
+        <span class="section-tag">Late Pregnancy</span>
+      </div>
+      <ul class="links">
+        <li>
+          <a href="/OBGYN/Late pregnanacy/vagBleeding.html">
+            <span class="label"><i class="fa-solid fa-droplet"></i> Vaginal Bleeding in Late Pregnancy</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/Late pregnanacy/abruptioPlacenta.html">
+            <span class="label"><i class="fa-solid fa-heart-crack"></i> Abruptio Placentae</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/OBGYN/Late pregnanacy/placentaPraevia.html">
+            <span class="label"><i class="fa-solid fa-circle-notch"></i> Placenta Praevia</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tools & Calculators -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-calculator"></i>
+          Tools & Calculators
+        </h3>
+        <span class="section-tag">Quick Access</span>
+      </div>
+      <ul class="links">
+        <li>
+          <a href="/adult/parityGravidityCalculator.html">
+            <span class="label"><i class="fa-solid fa-list-ol"></i> Parity & Gravidity Calculator</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="/adult/expectedDeliveryDate.html">
+            <span class="label"><i class="fa-solid fa-calendar-day"></i> Expected Delivery Date Calculator</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
 </body>
 </html>

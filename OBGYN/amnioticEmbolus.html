@@ -7,83 +7,540 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ED highlights */
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    /* Algorithm style list */
+    .algo-list {
+      list-style: none;
+      margin: 0.2rem 0 0.4rem;
+      padding: 0;
+      counter-reset: step-counter;
+    }
+
+    .algo-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .algo-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.08rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    /* Two-column layout on larger screens */
+    @media (min-width: 720px) {
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
       }
-      strong {
-          font-size: large;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bolder;
-          color: orangered;
-        }
+    }
+
+    /* Small pill list */
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Very small screens adjustments */
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.96rem;
+      }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
       <h1>Amniotic Fluid Embolus</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
     </div>
   </header>
-  <div class="section">
-    <h1 class="subheading">Amniotic Fluid Embolus</h1>
-    
-    <p>Amniotic fluid embolus is the release of amniotic fluid into maternal circulation, often during labor or uterine manipulation. This rare event can have severe consequences for the mother.</p>
-    
-    <h2 class="strong">Foundations</h2>
-    <ul>
-      <li>Amniotic fluid embolus can occur during labor, induced abortions, miscarriages, second/third trimesters, amniocentesis, or abruptio placentae.</li>
-      <li>It is a rare but leading cause of cardiovascular collapse during labor, with high maternal mortality.</li>
-    </ul>
 
-    <h2 class="strong">Clinical Features</h2>
-    <ul>
-      <li>Suspect amniotic fluid embolus during the second/third trimester, especially with uterine manipulation.</li>
-      <li>Key clinical features include sudden hypotension, hypoxia, and coagulopathy due to an immunologic response.</li>
-      <li>Triggers for this condition include histamine, endothelin, leukotrienes, which lead to DIC, respiratory distress, and ventricular dysfunction.</li>
-      <li>Approximately 20% of cases present with an initial seizure, while 50% develop a bleeding diathesis and DIC.</li>
-    </ul>
+  <main>
+    <h2 class="page-title">Amniotic Fluid Embolus (AFE)</h2>
+    <p class="page-subtitle">
+      Rare, catastrophic obstetric emergency. Sudden cardiovascular collapse, hypoxia, and coagulopathy during labour or shortly postpartum.
+    </p>
 
-    <h2 class="strong">Differential Diagnoses</h2>
-    <ul>
-      <li>Consider other conditions like pulmonary embolus, drug-induced anaphylaxis, or septic shock.</li>
-      <li>Eclampsia also presents with seizures, but it is associated with hypertension, not cardiovascular collapse.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Peri-partum collapse</span>
+      <span class="chip">Hypoxia + hypotension + DIC</span>
+      <span class="chip">Diagnosis of exclusion</span>
+      <span class="chip">Resuscitate first, label later</span>
+    </div>
 
-    <h2 class="strong">Diagnostic Testing</h2>
-    <ul>
-      <li>Diagnostic testing involves obtaining a complete blood cell count, coagulation studies, arterial blood gas, and chest radiograph.</li>
-      <li>Urine output should be monitored after urinary catheter placement.</li>
-      <li>Definitive diagnosis is often made at autopsy, where fetal hairs, squamous cells, and debris in maternal circulation can be detected.</li>
-      <li>The clinical syndrome matches the typical diagnosis along with characteristic findings.</li>
-    </ul>
+    <!-- ED PRIORITIES / OVERVIEW -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED / Labour Ward Priorities</h3>
+        <span class="section-tag">Overview</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Key concept:</strong> Amniotic Fluid Embolus (AFE) is an <strong>anaphylactoid syndrome of pregnancy</strong>, not a classic embolus. It
+        presents with sudden hypoxia, hypotension or cardiac arrest, and rapidly evolving coagulopathy in association with labour,
+        delivery, or uterine procedures.
+      </div>
+      <ul>
+        <li>AFE is <strong>rare</strong> but one of the leading causes of sudden maternal collapse in labour or immediately postpartum.</li>
+        <li>Clinical diagnosis – there is <strong>no rapid test</strong>. Exclude more common causes (haemorrhage, PE, anaphylaxis, eclampsia, sepsis).</li>
+        <li>Management is supportive: <strong>high-quality resuscitation, ventilation, vasopressors, and aggressive correction of DIC</strong>.</li>
+        <li>Requires immediate multidisciplinary response (ED, obstetrics, anaesthetics, ICU, blood bank).</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Management</h2>
-    <ul>
-      <li>Management is based on anecdotal evidence and animal studies due to the rarity of amniotic fluid embolus.</li>
-      <li>Initial steps include administering high-flow oxygen and intubation for ventilation/oxygenation support.</li>
-      <li>Aggressive fluid resuscitation and inotropic cardiovascular support are essential.</li>
-      <li>Managing consumptive coagulopathy is a critical component of treatment.</li>
-      <li>Invasive hemodynamic monitoring is often required in the intensive care unit.</li>
-    </ul>
+    <!-- QUICK ED/LABOUR ALGORITHM -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Algorithm for Sudden Peri-partum Collapse</h3>
+        <span class="section-tag">Flow</span>
+      </div>
+      <ol class="algo-list">
+        <li>Call for help early – activate <strong>obstetric emergency / code blue</strong>. Ensure airway, breathing, circulation.</li>
+        <li>If no pulse → start <strong>CPR with manual uterine displacement</strong>. Attach monitors (ECG, SpO₂, NIBP).</li>
+        <li>Provide high-flow oxygen; secure airway early (rapid sequence intubation) if not in arrest.</li>
+        <li>Large-bore IV/IO access; start fluid resuscitation and vasopressors for hypotension as per shock protocols.</li>
+        <li>Simultaneously consider differential: haemorrhage, eclampsia, PE, anaphylaxis, sepsis, cardiomyopathy.</li>
+        <li>If cardiac arrest and pregnancy ≥ 20–24 weeks → <strong>perimortem caesarean section</strong> within 4–5 minutes of arrest.</li>
+        <li>Send urgent bloods: FBC, coag profile, fibrinogen, ABG, lactate, cross-match, LFT/U&E.</li>
+        <li>Recognise AFE pattern: sudden hypoxia + hypotension/collapse + bleeding/DIC in temporal relationship to labour/delivery/uterine procedure.</li>
+        <li>Commence <strong>massive transfusion protocol</strong> if ongoing bleeding and coagulopathy.</li>
+      </ol>
+    </section>
 
-    <p>Amniotic fluid embolus is a rare but life-threatening event during pregnancy, leading to rapid cardiovascular collapse. Recognizing the clinical features and promptly providing supportive measures is crucial for improving maternal outcomes.</p>
-  </div>
+    <!-- PATHOPHYSIOLOGY & RISK FACTORS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Foundations</h3>
+        <span class="section-tag">Pathophysiology & Risk Factors</span>
+      </div>
+      <div class="cols-2">
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.1rem;">Pathophysiology</h4>
+          <ul>
+            <li>Entry of amniotic fluid, fetal cells or other debris into maternal circulation.</li>
+            <li>Triggers a <strong>massive inflammatory / anaphylactoid response</strong> with pulmonary vasospasm and right heart failure.</li>
+            <li>Release of mediators (histamine, leukotrienes, endothelin, complement) → acute pulmonary hypertension, hypoxia, myocardial depression.</li>
+            <li>Secondary phase: profound <strong>coagulopathy and DIC</strong>, leading to severe obstetric haemorrhage.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.1rem;">When & Where It Occurs</h4>
+          <ul>
+            <li>Typically during labour or within minutes–hours after delivery (vaginal or C-section).</li>
+            <li>Can occur with:
+              <ul>
+                <li>Induction/augmentation of labour.</li>
+                <li>Instrumentation, manual removal of placenta.</li>
+                <li>Uterine trauma or rupture.</li>
+                <li>Second–third trimester terminations or miscarriages.</li>
+                <li>Invasive procedures (e.g. amniocentesis).</li>
+              </ul>
+            </li>
+            <li>Risk factors may include multiparity, advanced maternal age, placenta praevia/accreta, abruptio placentae – but AFE can occur in women with no risk factors.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLINICAL FEATURES -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Clinical Features</h3>
+        <span class="section-tag">Presentation</span>
+      </div>
+      <p>Classic description: two-phase presentation – first cardiopulmonary collapse, then haemorrhagic phase with DIC.</p>
+      <ul>
+        <li><span class="inline-label">Phase 1 – Cardiopulmonary:</span>
+          <ul>
+            <li>Sudden onset dyspnoea, chest tightness, sense of impending doom.</li>
+            <li>Rapid hypoxia: cyanosis, low SpO₂ despite oxygen.</li>
+            <li>Tachycardia, hypotension, arrhythmias, pulmonary oedema.</li>
+            <li>Seizures or altered consciousness; up to 20% present primarily with a seizure.</li>
+            <li>Cardiac arrest can be the first sign.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Phase 2 – Haemorrhagic / DIC:</span>
+          <ul>
+            <li>Massive uterine bleeding and/or bleeding from IV sites, wounds, mucosa.</li>
+            <li>Laboratory evidence of consumptive coagulopathy (prolonged PT/aPTT, low fibrinogen, thrombocytopenia).</li>
+            <li>Uterine atony and postpartum haemorrhage.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Think AFE if:</strong> sudden hypoxia + hypotension or arrest + coagulopathy/bleeding in a peripartum patient with no other obvious cause.
+      </div>
+    </section>
+
+    <!-- DIFFERENTIAL DIAGNOSIS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Differential Diagnosis</h3>
+        <span class="section-tag">Don’t Miss</span>
+      </div>
+      <p>AFE is a diagnosis of exclusion – rule out:</p>
+      <ul>
+        <li>Massive obstetric haemorrhage (e.g. uterine atony, placenta accreta, uterine rupture).</li>
+        <li>Pulmonary embolism (thromboembolic).</li>
+        <li>High spinal / epidural block, local anaesthetic toxicity.</li>
+        <li>Drug-induced anaphylaxis (e.g. antibiotics, oxytocin, anaesthetic agents).</li>
+        <li>Septic shock (chorioamnionitis, puerperal sepsis).</li>
+        <li>Eclampsia / severe pre-eclampsia (hypertension, proteinuria, seizures).</li>
+        <li>Peripartum cardiomyopathy, myocardial infarction, air embolism.</li>
+      </ul>
+    </section>
+
+    <!-- INVESTIGATIONS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Investigations</h3>
+        <span class="section-tag">Support</span>
+      </div>
+      <p>Do not delay resuscitation for investigations. Send targeted tests once ABC is underway.</p>
+      <ul>
+        <li><strong>ABG:</strong> severe hypoxia, respiratory/metabolic acidosis, raised lactate.</li>
+        <li><strong>FBC:</strong> anaemia from bleeding, thrombocytopenia.</li>
+        <li><strong>Coagulation profile & fibrinogen:</strong> prolonged PT/INR, aPTT, low fibrinogen consistent with DIC.</li>
+        <li><strong>Cross-match</strong> and prepare blood products (RBCs, FFP, cryoprecipitate, platelets).</li>
+        <li><strong>U&E, LFTs:</strong> assess organ dysfunction.</li>
+        <li><strong>ECG & CXR:</strong> evaluate for pulmonary oedema, other cardiac causes.</li>
+        <li>Point-of-care echo (if available) may show acute right ventricular strain or global dysfunction.</li>
+      </ul>
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        Definitive diagnosis is often made <strong>post-mortem</strong> (fetal squames/debris in pulmonary circulation). In practice, we treat presumptively based on the clinical syndrome.
+      </p>
+    </section>
+
+    <!-- MANAGEMENT -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Management</h3>
+        <span class="section-tag">Emergency</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Principles:</strong> aggressive resuscitation (ACLS), optimise oxygen delivery, support the failing heart, and
+        correct coagulopathy/haemorrhage while obstetric team manages delivery and uterine bleeding.
+      </div>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.3rem;">Airway & Breathing</h4>
+      <ul>
+        <li>High-flow oxygen via non-rebreather mask initially.</li>
+        <li>Early <strong>intubation and mechanical ventilation</strong> for severe hypoxia, respiratory distress or decreased level of consciousness.</li>
+        <li>Consider PEEP for pulmonary oedema; titrate to SpO₂ and haemodynamics.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Circulation</h4>
+      <ul>
+        <li>Rapid IV fluid resuscitation, balanced crystalloids initially.</li>
+        <li><strong>Vasopressors</strong> (e.g. noradrenaline) for persistent hypotension after fluids.</li>
+        <li>Inotropes may be required for myocardial dysfunction (guided by echo/ICU team).</li>
+        <li>Continuous monitoring: invasive arterial line and central access if feasible and not delaying resus.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Haemorrhage & Coagulopathy</h4>
+      <ul>
+        <li>Activate <strong>massive transfusion protocol</strong> early if bleeding and coagulopathy are evident.</li>
+        <li>Administer:
+          <ul>
+            <li>Packed red cells to maintain adequate Hb and oxygen carrying capacity.</li>
+            <li>Fresh frozen plasma for clotting factors.</li>
+            <li>Cryoprecipitate or fibrinogen concentrate to correct low fibrinogen.</li>
+            <li>Platelets if thrombocytopenic or heavy bleeding.</li>
+          </ul>
+        </li>
+        <li>Coordinate closely with laboratory/blood bank; repeat coagulation studies and fibrinogen levels.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Obstetric Management</h4>
+      <ul>
+        <li>Continuous involvement of obstetric and anaesthetic teams.</li>
+        <li>Uterine atony and postpartum haemorrhage require:
+          <ul>
+            <li>Uterine massage, uterotonics (e.g. oxytocin, misoprostol; avoid ergometrine if severe hypertension).</li>
+            <li>Mechanical methods (balloon tamponade), surgical haemostasis if required.</li>
+          </ul>
+        </li>
+        <li>Perimortem C-section if cardiac arrest and pregnancy ≥ 20–24 weeks – improves both maternal and neonatal outcomes.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Post-resuscitation Care</h4>
+      <ul>
+        <li>All survivors require <strong>ICU admission</strong> for ongoing respiratory, cardiovascular and coagulation support.</li>
+        <li>Monitor urine output (indwelling catheter) and organ function carefully.</li>
+      </ul>
+    </section>
+
+    <!-- DISPOSITION & COUNSELLING -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Disposition & Family Communication</h3>
+        <span class="section-tag">Support</span>
+      </div>
+      <ul>
+        <li>Any suspected or confirmed AFE → <strong>ICU level care</strong> if the patient survives initial resuscitation.</li>
+        <li>Ensure thorough documentation of:
+          <ul>
+            <li>Timeline of events (onset of symptoms, delivery time, arrest and resuscitation details).</li>
+            <li>Vitals, interventions, drugs and blood products given.</li>
+            <li>Discussions with obstetric, anaesthetic, ICU and blood bank teams.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Family communication:</strong> AFE is sudden and often devastating. Provide clear explanations in simple language,
+        acknowledge uncertainty, and ensure early psychological and bereavement support where needed.
+      </div>
+      <div class="pill-list">
+        <span class="pill">Treat first, diagnose later</span>
+        <span class="pill">Early team activation</span>
+        <span class="pill">Think DIC & massive haemorrhage</span>
+        <span class="pill">ICU for all survivors</span>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

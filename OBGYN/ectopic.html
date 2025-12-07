@@ -7,245 +7,594 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    .algo-list {
+      list-style: none;
+      margin: 0.2rem 0 0.4rem;
+      padding: 0;
+      counter-reset: step-counter;
+    }
+
+    .algo-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .algo-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.08rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    @media (min-width: 720px) {
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
       }
-      strong {
-          font-size: large;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bolder;
-          color: orangered;
-        }
-  
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Images / algorithm cards */
+    .image-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.6rem 0.7rem 0.8rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+      text-align: center;
+    }
+
+    .image-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.7rem;
+      display: block;
+      margin: 0 auto 0.4rem;
+      cursor: zoom-in;
+    }
+
+    .image-caption {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Fullscreen image overlay */
+    .fullscreen-image-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 96vw;
+      max-height: 96vh;
+      border-radius: 0.4rem;
+    }
+
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.96rem;
+      }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card,
+      .image-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <h1>Ectopic Pregnancy</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </header>
- 
-  
-  <div class="section">
-    <h1 class="subheading">Ectopic Pregnancy</h1>
-    <h2 class="strong">Risk Factors for Ectopic Pregnancy</h2>
-    <p>
-      Ectopic pregnancy, a potentially serious condition in which a fertilized egg implants outside the uterus, carries a distinct set of risk factors that warrant careful consideration in the realm of obstetric care. These risk factors can serve as valuable indicators for healthcare providers, enabling them to identify individuals who are at an elevated risk of experiencing an ectopic pregnancy. Early recognition of these risk factors empowers healthcare teams to provide closer monitoring, timely intervention, and proactive management to safeguard both maternal and fetal well-being.
-    </p>
-    <ul>
-      <li>
-        <strong>Tubal Surgery:</strong> Previous surgical procedures involving the fallopian tubes, such as tubal ligation or reconstructive surgery, can disrupt the normal anatomy of the tubes, increasing the risk of ectopic pregnancy.
-      </li>
-      <li>
-        <strong>Pelvic Inflammatory Disease (PID):</strong> Inflammatory conditions affecting the reproductive organs, particularly the fallopian tubes, can create an environment conducive to ectopic implantation.
-      </li>
-      <li>
-        <strong>Smoking:</strong> Tobacco use has been associated with impaired tubal function, which can heighten the risk of ectopic pregnancies.
-      </li>
-      <li>
-        <strong>Advanced Age:</strong> Maternal age, especially when exceeding 35 years, is correlated with an elevated risk of ectopic pregnancy.
-      </li>
-      <li>
-        <strong>Prior Spontaneous Abortion:</strong> A history of previous miscarriage increases the likelihood of experiencing an ectopic pregnancy.
-      </li>
-      <li>
-        <strong>Medically Induced Abortion:</strong> Individuals who have undergone medical termination of a pregnancy are at an increased risk of ectopic pregnancies due to potential tubal damage.
-      </li>
-      <li>
-        <strong>History of Infertility:</strong> Fertility issues and the use of fertility treatments can contribute to altered tubal function, thereby elevating the risk of ectopic pregnancies.
-      </li>
-      <li>
-        <strong>Intrauterine Device (IUD) Use:</strong> Although IUDs are effective contraceptives, they do not entirely eliminate the possibility of ectopic pregnancies, especially if conception occurs.
-      </li>
-      <li>
-        <strong>Assisted Reproduction Techniques:</strong> Individuals who undergo assisted reproductive procedures, such as in vitro fertilization (IVF), may have a higher likelihood of ectopic pregnancies due to the complex dynamics involved.
-      </li>
-    </ul>
-    <p>
-      These risk factors collectively contribute to a heightened susceptibility to ectopic pregnancy. Healthcare providers trained in obstetric care remain vigilant in recognizing these factors when evaluating pregnant patients, as early identification prompts thorough assessments, targeted monitoring, and tailored interventions. By understanding and responding to these risk factors, healthcare teams play a pivotal role in mitigating potential complications and ensuring the optimal health of both the expectant individual and the developing fetus.
-    </p>
-    
+  <header>
+    <div class="logo-container">
+      <h1>Ectopic Pregnancy</h1>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <h2 class="strong">Clinical Presentation and Symptoms</h2>
-    <p>
-      Ectopic pregnancy, characterized by the implantation of a fertilized egg outside the uterus, often presents a diagnostic challenge due to its diverse array of symptoms, which can vary widely in severity and specificity. Recognizing these symptoms is essential for healthcare providers to ensure timely intervention and management of this potentially serious condition. The clinical presentation of ectopic pregnancy encompasses a range of manifestations, making a comprehensive assessment critical for accurate diagnosis and effective care.
+  <main>
+    <h2 class="page-title">Ectopic Pregnancy</h2>
+    <p class="page-subtitle">
+      Life-threatening cause of first-trimester pain and bleeding. A positive pregnancy test + pain/bleeding = ectopic until proven intra-uterine.
     </p>
-    <ul>
-      <li>
-        <strong>Variable and Nonspecific Symptoms:</strong> Ectopic pregnancy's diagnostic complexity is rooted in the variability and sometimes nonspecific nature of its symptoms. The symptoms can mimic those of other gynecological conditions, leading to potential diagnostic confusion.
-      </li>
-      <li>
-        <strong>Classic Symptoms:</strong> While ectopic pregnancy symptoms vary, some individuals do present with hallmark signs. These include <em>delayed or missed menstrual periods</em>, <em>abdominal pain</em>, and <em>vaginal bleeding</em>. However, it's important to note that not all patients experience the exact combination of these symptoms.
-      </li>
-      <li>
-        <strong>Risk Factor Consideration:</strong> Ectopic pregnancy's nuanced symptoms emphasize the significance of assessing risk factors in the diagnostic process. Individuals with known risk factors, as outlined in the previous section, should undergo thorough evaluations, even if their symptoms do not perfectly align with the classic presentation.
-      </li>
-      <li>
-        <strong>Other Symptoms:</strong> Beyond the classic triad of symptoms, ectopic pregnancy may manifest with <em>painful pelvic sensations</em>, <em>shoulder pain</em> (due to diaphragmatic irritation), <em>fatigue</em>, and <em>gastrointestinal symptoms</em>. The diversity of symptoms underscores the need for careful and holistic assessments.
-      </li>
-    </ul>
-    <p>
-      Recognizing the variable nature of ectopic pregnancy symptoms, healthcare providers exercise vigilance when evaluating pregnant individuals. Thoroughly gathering information about the patient's history, risk factors, and symptoms allows for a more accurate diagnosis. In cases where classic symptoms are evident, healthcare teams are better equipped to promptly intervene and initiate appropriate management. However, for patients with atypical or nonspecific symptoms, comprehensive evaluations remain crucial to identify potential ectopic pregnancies and prevent complications. By maintaining a high index of suspicion and conducting thorough assessments, healthcare providers can effectively navigate the intricate diagnostic landscape of ectopic pregnancy, ultimately ensuring the best possible outcomes for both maternal and fetal health.
-    </p>
-    
 
-    <h2 class="strong">Diagnostic Tools</h2>
-    <p>
-      Accurate and timely diagnosis of ectopic pregnancy is imperative to ensure appropriate management and mitigate potential complications. Healthcare providers rely on a combination of diagnostic tools to evaluate the condition and determine the most suitable course of action for each patient.
-    </p>
-    <ul>
-      <li>
-        <strong>Transvaginal Ultrasonography:</strong> This imaging technique plays a pivotal role in diagnosing ectopic pregnancies, particularly in stable patients. Transvaginal ultrasonography utilizes high-frequency sound waves to create detailed images of the pelvic region, offering clear visualization of the uterus, ovaries, and surrounding structures. It can identify the presence of an ectopic pregnancy by revealing the absence of a gestational sac in the uterus and detecting abnormal findings outside the uterine cavity.
-      </li>
-      <li>
-        <strong>Using a Normal Abdominal Probe:</strong> In situations where transvaginal ultrasound is unavailable, healthcare providers can utilize a normal abdominal ultrasound probe as an alternative. Although less sensitive than transvaginal ultrasound, an abdominal probe can still provide valuable information. However, it may not offer the same level of detail, and the accuracy of diagnosis may be compromised.
-      </li>
-      <li>
-        <strong>Serial Serum hCG Measurement:</strong> The human chorionic gonadotropin (hCG) hormone is a crucial marker in evaluating pregnancy. Serial measurements of serum hCG levels—taken at intervals over time—provide valuable insights into the progression of pregnancy. In the context of ectopic pregnancy, abnormally slow hCG level increases or declines may raise suspicion of a nonviable pregnancy or ectopic implantation.
-      </li>
-      <li>
-        <strong>Laparoscopy:</strong> In cases where ultrasound results are inconclusive or unstable patients require immediate assessment, laparoscopy offers a definitive diagnostic and therapeutic solution. This minimally invasive surgical procedure involves inserting a small camera through a small incision in the abdominal wall, allowing healthcare providers to directly visualize the pelvic organs and identify ectopic pregnancies or other abnormalities. Laparoscopy is particularly valuable when surgical intervention or treatment is indicated.
-      </li>
-    </ul>
-    <p>
-      The diagnostic tools employed for ectopic pregnancy highlight the interdisciplinary nature of obstetric care. Transvaginal ultrasonography, the use of a normal abdominal probe, serial hCG measurements, and laparoscopy work together to provide healthcare providers with comprehensive information for informed decision-making. By leveraging these tools, healthcare teams can accurately diagnose ectopic pregnancies, tailor interventions to individual patient needs, and deliver timely and effective care that prioritizes both maternal health and fetal well-being.
-    </p>
-    
+    <div class="chip-row">
+      <span class="chip danger">Early pregnancy + pain/bleeding</span>
+      <span class="chip">Always do β-hCG</span>
+      <span class="chip">Pregnancy of unknown location</span>
+      <span class="chip">Unstable → theatre</span>
+    </div>
 
-    <h2 class="strong">Management and Treatment</h2>
-    <p>
-      The management and treatment of ectopic pregnancy require a thorough assessment of the patient's clinical condition, the characteristics of the ectopic pregnancy, and considerations for both maternal health and fetal well-being.
-    </p>
-    <ul>
-      <li>
-        <strong>Assessing Patient Stability:</strong> The approach to managing ectopic pregnancy is guided by the patient's stability. Unstable patients, who present with severe symptoms, hemodynamic instability, or signs of rupture, require immediate intervention to prevent life-threatening complications. Surgical intervention, such as laparoscopy or laparotomy, may be necessary to remove the ectopic pregnancy and address any bleeding or damage to surrounding structures.
-      </li>
-      <li>
-        <strong>Medical Management:</strong> Stable patients with a confirmed ectopic pregnancy may be candidates for medical management. Methotrexate, a medication commonly used in cancer treatment, can be administered to halt the growth of the abnormal pregnancy tissue. This non-invasive approach is particularly suitable for early ectopic pregnancies with no signs of rupture. Close monitoring and follow-up are essential to track the resolution of the ectopic pregnancy and ensure that human chorionic gonadotropin (hCG) levels return to normal.
-      </li>
-      <li>
-        <strong>Regular Monitoring and Follow-Up:</strong> Regardless of the chosen management approach, regular monitoring and follow-up are essential components of ectopic pregnancy care. For patients undergoing medical management with methotrexate, repeated hCG measurements are performed to track the decline of hCG levels, indicating the successful resolution of the ectopic pregnancy. Obstetricians closely monitor patients to ensure that complications are detected promptly and managed effectively.
-      </li>
-    </ul>
-    <p>
-      The management and treatment of ectopic pregnancy require a personalized approach that considers both the patient's clinical status and the specific characteristics of the ectopic pregnancy. By tailoring interventions to individual needs and closely monitoring the patient's progress, healthcare providers can optimize outcomes and provide comprehensive care that addresses the unique challenges posed by ectopic pregnancies.
-    </p>
-    
+    <!-- ED PRIORITIES / OVERVIEW -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Priorities</h3>
+        <span class="section-tag">Overview</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Key concept:</strong> Any reproductive-age woman with <strong>positive pregnancy test</strong> and abdominal pain and/or vaginal
+        bleeding has an ectopic pregnancy <strong>until proven otherwise</strong>. Your first job is to recognise rupture and prevent
+        maternal collapse.
+      </div>
+      <ul>
+        <li>Peak incidence in first trimester, most commonly 6–8 weeks from last menstrual period.</li>
+        <li>Most ectopics are tubal (ampullary); rupture causes intra-abdominal haemorrhage and shock.</li>
+        <li>Early diagnosis and gynae involvement reduce morbidity and mortality.</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Complications and Follow-Up</h2>
-    <p>
-      Effective management of ectopic pregnancy involves not only the initial treatment but also ongoing monitoring and preparedness for potential complications.
-    </p>
-    <ul>
-      <li>
-        <strong>Medical Management Success and Monitoring:</strong> Medical management with methotrexate has demonstrated a success rate ranging from 85% to 93%. However, close monitoring is crucial to detect any signs of treatment failure or inadequate response. Healthcare providers carefully track the decline of human chorionic gonadotropin (hCG) levels to ensure that they return to normal. Failure to observe a substantial reduction in hCG levels may indicate incomplete resolution of the ectopic pregnancy and the need for further intervention.
-      </li>
-      <li>
-        <strong>Surgical Intervention:</strong> In certain cases, surgical intervention becomes necessary to address complications associated with ectopic pregnancy. Severe ectopic pregnancies, cases of rupture, or instances of methotrexate treatment failure may require surgical exploration. Laparoscopy or laparotomy, depending on the patient's condition, allows healthcare providers to remove the ectopic pregnancy, manage bleeding, and address any additional damage to pelvic structures. Surgical interventions are carried out with the utmost precision and care to ensure optimal outcomes.
-      </li>
-    </ul>
-    <p>
-      Comprehensive follow-up care is a cornerstone of ectopic pregnancy management. Regular appointments and monitoring help healthcare providers assess the patient's progress, track hCG levels, and identify any potential complications or treatment challenges. Through vigilant observation and timely intervention, healthcare teams strive to achieve the best possible outcomes for patients facing ectopic pregnancies.
-    </p>
-    
+    <!-- ALGORITHM -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Algorithm</h3>
+        <span class="section-tag">Flow</span>
+      </div>
+      <ol class="algo-list">
+        <li>Check vitals, ABC. If shocked (tachycardia, hypotension, pallor, syncope) → resuscitate and call gynae immediately.</li>
+        <li>Confirm pregnancy: urine or serum <strong>β-hCG</strong> in all reproductive-age women with pain/bleeding.</li>
+        <li>Take focused history (LMP, pain onset and site, bleeding amount, risk factors, contraception, previous ectopic or PID).</li>
+        <li>Examine:
+          <ul>
+            <li>Abdomen – tenderness, guarding, rebound, distension.</li>
+            <li>Pelvic exam if appropriate – cervical motion tenderness, adnexal mass, uterine size, amount of bleeding.</li>
+          </ul>
+        </li>
+        <li>Send baseline bloods: FBC, U&E, group & save ± cross-match, ± coagulation; consider ABG if unwell.</li>
+        <li>Perform ultrasound (ideally transvaginal) as soon as feasible:
+          <ul>
+            <li><strong>Intrauterine pregnancy (IUP) seen</strong> → ectopic unlikely but heterotopic still possible in IVF/high-risk.</li>
+            <li><strong>No IUP + positive β-hCG</strong> → pregnancy of unknown location (PUL) → ectopic until proven otherwise.</li>
+          </ul>
+        </li>
+        <li>Unstable or high suspicion of rupture at any point → <strong>urgent gynae consult for surgical management</strong>.</li>
+        <li>Stable PUL → arrange serial β-hCG and repeat scan in collaboration with gynae/early pregnancy clinic.</li>
+      </ol>
+    </section>
 
-    <h2 class="strong">Preventive Measures</h2>
-    <p>
-      Taking proactive measures to prevent ectopic pregnancies and raise awareness about risk factors is crucial for promoting reproductive health.
-    </p>
-    <ul>
-      <li>
-        <strong>Early Prenatal Care:</strong> Encouraging pregnant individuals to seek early prenatal care and schedule regular check-ups allows healthcare providers to monitor the progression of the pregnancy closely. Early detection of any abnormalities or potential risk factors enables timely intervention and reduces the likelihood of complications associated with ectopic pregnancies.
-      </li>
-      <li>
-        <strong>Education and Risk Awareness:</strong> Educating individuals about the risks associated with certain contraceptives and reproductive procedures can empower them to make informed decisions about their reproductive health. By understanding the potential consequences and knowing the signs and symptoms of ectopic pregnancy, individuals can seek medical attention promptly if they experience any concerning symptoms, leading to earlier diagnosis and treatment.
-      </li>
-    </ul>
-    <p>
-      By promoting early prenatal care and fostering awareness about ectopic pregnancy risk factors, healthcare providers contribute to the overall well-being of individuals and promote reproductive health and safety.
-    </p>
-    
-    <h2 class="strong">Patient Education</h2>
-    <p>
-      Educating patients about ectopic pregnancies and providing them with information about the condition and its implications is a fundamental aspect of comprehensive care.
-    </p>
-    <ul>
-      <li>
-        Patients should be informed about the <strong>symptoms of ectopic pregnancy,</strong> including delayed menses, abdominal pain, and vaginal bleeding. Recognizing these symptoms and seeking early medical attention can improve outcomes.
-      </li>
-      <li>
-        <strong>Importance of Early Medical Attention:</strong> Patients need to understand that prompt medical attention is crucial if they suspect an ectopic pregnancy. Delayed diagnosis and treatment can lead to severe complications and jeopardize their health.
-      </li>
-      <li>
-        <strong>Follow-Up Care:</strong> After receiving any form of treatment, patients should be educated about the necessity of <strong>follow-up care and monitoring</strong> to ensure that the ectopic pregnancy resolves successfully and that their health is closely monitored.
-      </li>
-    </ul>
-    <p>
-      By empowering patients with knowledge about ectopic pregnancies, healthcare providers enable them to play an active role in their own health and well-being.
-    </p>
-    
-    <h2 class="strong">Advancements in Diagnosis and Treatment</h2>
-    <p>
-      Ongoing advancements in medical technology and techniques have significantly improved the diagnosis and treatment of ectopic pregnancies.
-    </p>
-    <ul>
-      <li>
-        <strong>Ultrasound Technology:</strong> Advances in <strong>ultrasound technology</strong> have enhanced the accuracy and efficiency of diagnosing ectopic pregnancies. Transvaginal ultrasonography provides high-resolution images that aid in visualizing the location and characteristics of the ectopic pregnancy.
-      </li>
-      <li>
-        <strong>Serum hCG Monitoring:</strong> <strong>Monitoring serum hCG levels</strong> has become a more precise method for tracking the progress of ectopic pregnancies and assessing treatment success. Serial measurements help healthcare providers determine the effectiveness of interventions and guide management decisions.
-      </li>
-      <li>
-        <strong>Laparoscopic Techniques:</strong> <strong>Laparoscopic procedures</strong> have gained popularity for the management of ectopic pregnancies. These minimally invasive techniques offer advantages such as reduced postoperative pain, shorter hospital stays, and faster recovery times, ultimately improving patient experiences and outcomes.
-      </li>
-    </ul>
-    <p>
-      As medical practices evolve, healthcare providers are better equipped to diagnose ectopic pregnancies earlier and offer more efficient and less invasive treatment options, ultimately enhancing patient care and outcomes.
-    </p>
-    
+    <!-- RISK FACTORS & EPIDEMIOLOGY -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Risk Factors</h3>
+        <span class="section-tag">Who’s High Risk?</span>
+      </div>
+      <p>Ectopics can occur in patients with <em>no risk factors</em>, but risk is higher in:</p>
+      <ul>
+        <li>Previous ectopic pregnancy.</li>
+        <li>Previous tubal surgery or tubal ligation / reconstruction.</li>
+        <li>Pelvic inflammatory disease, chlamydia or other STIs causing tubal damage.</li>
+        <li>Infertility and assisted reproductive techniques (e.g. IVF).</li>
+        <li>Current or recent IUD use (if pregnancy occurs despite IUD, ectopic risk is higher).</li>
+        <li>Smoking.</li>
+        <li>Advanced maternal age (&gt; 35 years).</li>
+        <li>History of spontaneous or induced abortion (often reflecting underlying tubal pathology).</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Tip for juniors:</strong> A “low risk” history does <strong>not</strong> rule out ectopic. Never skip the pregnancy test.
+      </div>
+    </section>
 
-  </div>
-  <div class="section">
-    <img src="/images/ectopic1.jpg"   alt="Ectopic Pregnancy Algorithm" class="image" onclick="toggleFullscreenImage('/images/ectopic1.jpg')">
-<caption>Ectopic Pregnancy Algorithm</caption>
-  </div>
-  <div class="section">
-    <img src="/images/ectopic2.png"   alt="Types of Ectopic Pregnancies" class="image" onclick="toggleFullscreenImage('/images/ectopic2.png')">
-<caption>Types of Ectopic Pregnancies</caption>
-  </div>
+    <!-- CLINICAL PRESENTATION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Clinical Presentation</h3>
+        <span class="section-tag">Symptoms & Signs</span>
+      </div>
+      <p>Presentation is often subtle and variable. Maintain a high index of suspicion.</p>
+      <ul>
+        <li><span class="inline-label">Classic triad:</span> missed/late period + lower abdominal pain + vaginal bleeding (but all three may not be present).</li>
+        <li>Unilateral pelvic pain, often crampy or sharp.</li>
+        <li>Light to moderate vaginal bleeding or brown discharge.</li>
+        <li>Shoulder tip pain or diaphragmatic irritation if significant intra-abdominal blood.</li>
+        <li>Dizziness, pre-syncope, syncope – especially if rupture and blood loss.</li>
+        <li>On exam: adnexal tenderness or mass, cervical motion tenderness, uterine size smaller than expected.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Red flags for rupture:</strong> sudden severe abdominal pain, collapse, tachycardia, hypotension, abdominal distension,
+        shoulder pain → treat as ruptured ectopic and call gynae/theatre urgently.
+      </div>
+    </section>
+
+    <!-- DIAGNOSTIC TOOLS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Diagnostic Tools</h3>
+        <span class="section-tag">Workup</span>
+      </div>
+      <ul>
+        <li><strong>β-hCG (serum):</strong>
+          <ul>
+            <li>Confirms pregnancy and helps interpret ultrasound.</li>
+            <li>In a viable IUP, β-hCG should typically rise appropriately over 48 hours; plateauing or slow rise raises concern for ectopic or failing pregnancy.</li>
+          </ul>
+        </li>
+        <li><strong>Transvaginal ultrasound (TVUS):</strong>
+          <ul>
+            <li>Preferred imaging modality – detects IUP, adnexal mass, yolk sac, fetal pole, free fluid.</li>
+            <li>Absence of IUP when β-hCG is above the local “discriminatory zone” (often around 1500–2000 IU/L) is highly suspicious for ectopic or PUL.</li>
+          </ul>
+        </li>
+        <li><strong>Abdominal ultrasound:</strong> less sensitive but useful where TVUS unavailable – look for free fluid, obvious adnexal mass.</li>
+        <li><strong>Serial β-hCG measurements:</strong> especially important in stable PUL – rising, falling, or plateauing patterns guide further management.</li>
+        <li><strong>Laparoscopy:</strong> definitive diagnosis and treatment when imaging is inconclusive and suspicion remains high, or when patient is unstable.</li>
+      </ul>
+    </section>
+
+    <!-- STABLE VS UNSTABLE MANAGEMENT -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Management in the ED</h3>
+        <span class="section-tag">Emergency</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Principle:</strong> Resuscitate and stabilise first, then decide between <strong>surgical</strong> and <strong>medical</strong> management with gynae.  
+        Unstable = surgery. Stable = individualised.
+      </div>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.3rem;">1. Haemodynamically Unstable / Ruptured Ectopic</h4>
+      <ul>
+        <li>Immediate ABC assessment; high-flow oxygen.</li>
+        <li>Two large-bore IV lines; send bloods including cross-match.</li>
+        <li>Fluid resuscitation with crystalloid while arranging blood products.</li>
+        <li>Activate massive transfusion if major haemorrhage suspected.</li>
+        <li>Urgent gynae consult – <strong>emergency laparotomy/laparoscopy</strong> for haemostasis and removal of ectopic.</li>
+        <li>Keep NBM; prepare for theatre; continuous monitoring.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">2. Haemodynamically Stable – Surgical vs Medical</h4>
+      <ul>
+        <li><span class="inline-label">Surgical options:</span> laparoscopy (salpingostomy or salpingectomy) or laparotomy depending on local resources and patient factors.</li>
+        <li><span class="inline-label">Medical management (methotrexate):</span> usually considered when:
+          <ul>
+            <li>Patient is stable and reliable for follow-up.</li>
+            <li>No evidence of rupture or significant haemoperitoneum.</li>
+            <li>β-hCG relatively low (local cut-off varies; often &lt; 5000 IU/L).</li>
+            <li>No fetal cardiac activity and small ectopic size on TVUS.</li>
+            <li>No contraindications to methotrexate (e.g. liver disease, breastfeeding, immunodeficiency, renal failure).</li>
+          </ul>
+        </li>
+        <li>Methotrexate protocols and follow-up schedules are usually managed by gynae/early pregnancy services.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">3. Pregnancy of Unknown Location (PUL)</h4>
+      <ul>
+        <li>Positive pregnancy test + no IUP or ectopic seen on scan.</li>
+        <li>Stable patients can often be managed as outpatient with:
+          <ul>
+            <li>Serial β-hCG (typically 48-hour intervals).</li>
+            <li>Repeat TVUS as arranged by gynae/early pregnancy clinic.</li>
+          </ul>
+        </li>
+        <li>Provide clear written instructions and emergency return advice.</li>
+      </ul>
+    </section>
+
+    <!-- COMPLICATIONS & FOLLOW-UP -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Complications & Follow-Up</h3>
+        <span class="section-tag">Aftercare</span>
+      </div>
+      <ul>
+        <li>Immediate complications: haemorrhagic shock, need for transfusion, anaesthetic risk.</li>
+        <li>Long-term concerns: reduced fertility (especially after salpingectomy), risk of recurrent ectopic, psychological impact.</li>
+        <li>Patients treated with methotrexate:
+          <ul>
+            <li>Require repeated β-hCG monitoring until undetectable.</li>
+            <li>Must avoid pregnancy and folate supplements until cleared by gynae.</li>
+          </ul>
+        </li>
+        <li>All patients should receive clear follow-up plans with gynae/early pregnancy services.</li>
+      </ul>
+    </section>
+
+    <!-- PATIENT EDUCATION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Patient Counselling & Education</h3>
+        <span class="section-tag">Communication</span>
+      </div>
+      <ul>
+        <li>Explain in simple terms what an ectopic pregnancy is and why it cannot continue safely.</li>
+        <li>Emphasise the risk of rupture and need for urgent treatment – this is about protecting the patient’s life.</li>
+        <li>Discuss:
+          <ul>
+            <li>Which treatment was chosen (surgical vs medical) and why.</li>
+            <li>Expected symptoms and side-effects.</li>
+            <li>When to seek urgent care – worsening pain, dizziness, collapse, heavy bleeding.</li>
+          </ul>
+        </li>
+        <li>Acknowledge emotional impact and offer support / referral for counselling if available.</li>
+        <li>Discuss future pregnancy planning and the importance of early assessment in subsequent pregnancies.</li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Always test for pregnancy</span>
+        <span class="pill">Positive test + pain/bleeding → ectopic until proven otherwise</span>
+        <span class="pill">Unstable → immediate gynae/theatre</span>
+        <span class="pill">Stable PUL → serial β-hCG + TVUS</span>
+      </div>
+    </section>
+
+    <!-- IMAGES / ALGORITHMS -->
+    <section class="image-card">
+      <img src="/images/ectopic1.jpg"
+           alt="Ectopic Pregnancy Algorithm"
+           onclick="toggleFullscreenImage('/images/ectopic1.jpg')">
+      <div class="image-caption">Ectopic Pregnancy Algorithm</div>
+    </section>
+
+    <section class="image-card">
+      <img src="/images/ectopic2.png"
+           alt="Types of Ectopic Pregnancies"
+           onclick="toggleFullscreenImage('/images/ectopic2.png')">
+      <div class="image-caption">Types of Ectopic Pregnancies</div>
+    </section>
+  </main>
+
   <script>
     function toggleFullscreenImage(src) {
-    let overlay = document.getElementById('fullscreen-image-overlay');
-  
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'fullscreen-image-overlay';
-      overlay.classList.add('fullscreen-image-overlay');
-      overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-      overlay.onclick = () => toggleFullscreenImage(null);
-      document.body.appendChild(overlay);
-    } else {
-      document.body.removeChild(overlay);
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (src && !overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (src && overlay) {
+        const img = overlay.querySelector('img');
+        if (img) img.src = src;
+      } else if (!src && overlay) {
+        document.body.removeChild(overlay);
+      }
     }
-  }
   </script>
 </body>
 </html>

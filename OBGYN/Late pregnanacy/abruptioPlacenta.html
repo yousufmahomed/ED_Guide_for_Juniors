@@ -7,85 +7,629 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .section-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .algo-grid {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    @media (min-width: 720px) {
+      .algo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
-      strong {
-          font-size: large;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bolder;
-          color: orangered;
-        }
+    }
+
+    .algo-box {
+      border-radius: 0.8rem;
+      padding: 0.6rem 0.7rem;
+      font-size: 0.85rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .algo-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      font-size: 0.86rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .algo-title i {
+      font-size: 0.85rem;
+    }
+
+    .algo-box.mild {
+      border-left: 3px solid #2e7d32;
+    }
+
+    .algo-box.moderate {
+      border-left: 3px solid #f9a825;
+    }
+
+    .algo-box.severe {
+      border-left: 3px solid #b71c1c;
+    }
+
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.86rem;
+      }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
       <h1>Abruptio Placentae</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
     </div>
   </header>
-  <div class="section">
-    <h1 class="subheading">Abruptio Placentae</h1>
-    
-    <p>Abruptio placentae involves the separation of the placenta from the uterine wall and occurs in around 1% of pregnancies. This condition can have significant consequences for both the mother and the fetus.</p>
-    
-    <h2 class="strong">Key Points</h2>
-    <ul>
-      <li>Spontaneous hemorrhage into the decidua basalis leads to placental separation and compression.</li>
-      <li>Clinical features include vaginal bleeding, dark blood, uterine tenderness, pain, uterine irritability, and contractions.</li>
-      <li>Maternal hypertension, preeclampsia, advanced maternal age, parity, smoking, thrombophilia, prior miscarriage, and trauma are associated risk factors.</li>
-      <li>Placental separation may be acute or gradual throughout late pregnancy.</li>
-    </ul>
 
-    <h2 class="strong">Severity and Diagnosis</h2>
-    <ul>
-      <li>Placental separation severity varies, with symptoms ranging from occult bleeding to significant uterine contractions, fetal distress, and DIC.</li>
-      <li>Detection is often clinical, based on signs of bleeding, uterine contractions, fetal distress, and coagulation parameters.</li>
-      <li>Ultrasonography may not always be definitive due to similar echogenicity of fresh blood and placenta.</li>
-    </ul>
+  <main>
+    <h2 class="page-title">Abruptio Placentae</h2>
+    <p class="page-subtitle">
+      Painful antepartum bleeding + tender, “woody” uterus. A clinical diagnosis with major maternal and foetal risk —
+      treat as an obstetric emergency.
+    </p>
 
-    <h2 class="strong">Fetal and Maternal Risks</h2>
-    <ul>
-      <li>Fetal distress and death can result from interrupted placental blood and oxygen supply.</li>
-      <li>Risk increases with the extent and speed of placental separation.</li>
-      <li>Maternal risks include coagulopathy, exsanguination, fetomaternal transfusion, and amniotic fluid embolism.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Painful vaginal bleeding</span>
+      <span class="chip">Rigid / tender uterus</span>
+      <span class="chip">Shock may be out of proportion to visible bleeding</span>
+      <span class="chip">Placenta previa = painless bright red bleeding</span>
+    </div>
 
-    <h2 class="strong">Differential Diagnoses</h2>
-    <ul>
-      <li>Placenta previa is the main alternative diagnosis for late-pregnancy bleeding, characterized by painless, bright red bleeding, distinguishable with ultrasonography.</li>
-      <li>Abdominal pain without vaginal bleeding should differentiate abruptio placentae from other causes like preeclampsia, pyelonephritis, liver diseases, gallbladder disease, appendicitis, and ovarian torsion.</li>
-    </ul>
+    <!-- OVERVIEW -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <h3 class="section-title">Definition & Overview</h3>
+        </div>
+        <span class="section-tag">Foundations</span>
+      </div>
+      <p>
+        Abruptio placentae is the premature separation of a normally implanted placenta from the uterine wall,
+        usually in the second half of pregnancy. It occurs in roughly 1% of pregnancies and is a major cause of
+        maternal haemorrhage, foetal compromise, and stillbirth.
+      </p>
+      <div class="highlight-box">
+        <strong>Pathophysiology:</strong> haemorrhage into the decidua basalis →
+        formation of a retroplacental haematoma →
+        separation and compression of the placenta →
+        impaired utero-placental perfusion.
+      </div>
+      <ul>
+        <li>Separation may be <strong>acute</strong> (sudden collapse, heavy bleeding), or <strong>gradual</strong> with
+          progressive symptoms through late pregnancy.</li>
+        <li>Bleeding can be:
+          <ul>
+            <li><strong>Revealed:</strong> obvious vaginal bleeding.</li>
+            <li><strong>Concealed:</strong> little or no vaginal loss but significant internal bleeding and a tense uterus.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Clinical Management</h2>
-    <ul>
-      <li>Timely diagnosis and appropriate intervention are crucial for managing complications like abruptio placentae.</li>
-      <li>Management approaches may include supportive care, monitoring for fetal distress, and consideration of urgent delivery.</li>
-    </ul>
+    <!-- RISK FACTORS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3 class="section-title">Risk Factors</h3>
+        </div>
+        <span class="section-tag">Risk</span>
+      </div>
+      <ul>
+        <li>Maternal hypertension and <strong>pre-eclampsia</strong>.</li>
+        <li>Advanced maternal age and multiparity.</li>
+        <li>Smoking and cocaine/illicit drug use.</li>
+        <li>Thrombophilia and clotting disorders.</li>
+        <li>Previous miscarriage or prior placental abruption.</li>
+        <li>Abdominal trauma (e.g. MVC, IPV, falls).</li>
+        <li>Sudden uterine decompression (e.g. rupture of membranes with polyhydramnios, multiple pregnancy).</li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Hypertension / pre-eclampsia</span>
+        <span class="pill">Smoking / cocaine</span>
+        <span class="pill">Abdominal trauma</span>
+        <span class="pill">Previous abruption</span>
+      </div>
+    </section>
 
-    <h2 class="strong">Multidisciplinary Care</h2>
-    <ul>
-      <li>Treating complications in late pregnancy often requires collaboration among obstetricians, radiologists, anesthesiologists, and other specialists to ensure the best outcomes for both the mother and the fetus.</li>
-    </ul>
+    <!-- CLINICAL FEATURES -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <h3 class="section-title">Clinical Features</h3>
+        </div>
+        <span class="section-tag">Presentation</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Bleeding:</span>
+          <ul>
+            <li>Vaginal bleeding, often dark coloured.</li>
+            <li>May be minimal or absent if bleeding is concealed.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Pain:</span> sudden onset abdominal or back pain, often continuous and severe.</li>
+        <li><span class="inline-label">Uterus:</span>
+          <ul>
+            <li>Uterine tenderness and irritability.</li>
+            <li>Firm or “woody” uterus, frequent contractions.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Maternal status:</span>
+          <ul>
+            <li>Signs of shock (tachycardia, hypotension, pallor) may be disproportionate to visible blood loss.</li>
+            <li>DIC and oozing from venepuncture sites in severe cases.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Foetus:</span>
+          <ul>
+            <li>Reduced movements.</li>
+            <li>Foetal distress on CTG or absent foetal heart in severe cases.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-    <p>Understanding the nuances of complications in late pregnancy is essential for healthcare providers to make informed decisions and provide comprehensive care to pregnant individuals experiencing such issues.</p>
-  </div>
+    <!-- DIAGNOSIS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h3 class="section-title">Diagnosis</h3>
+        </div>
+        <span class="section-tag">Clinical</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Key point:</strong> Abruptio placentae is primarily a
+        <strong>clinical diagnosis</strong> – do not delay management while waiting for imaging.
+      </div>
+      <ul>
+        <li><span class="inline-label">Clinical:</span> painful antepartum bleeding, uterine tenderness/rigidity, foetal distress or demise.</li>
+        <li><span class="inline-label">Laboratory:</span>
+          <ul>
+            <li>FBC, coagulation profile (PT/INR, aPTT), fibrinogen, D-dimer, crossmatch.</li>
+            <li>Look for anaemia and evolving DIC.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Ultrasound:</span>
+          <ul>
+            <li>Can help exclude placenta previa and assess fetal status.</li>
+            <li>Retroplacental clot may be seen, but sensitivity is limited – fresh blood and placenta can look similar.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Treat as abruption if clinical picture fits</span>
+        <span class="pill">Normal scan ≠ no abruption</span>
+      </div>
+    </section>
+
+    <!-- COMPLICATIONS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="section-title">Maternal & Foetal Risks</h3>
+        </div>
+        <span class="section-tag">Complications</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Foetal complications:</span>
+          <ul>
+            <li>Foetal distress and hypoxia.</li>
+            <li>Intrauterine death if separation is extensive or rapid.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Maternal complications:</span>
+          <ul>
+            <li>Massive haemorrhage and hypovolaemic shock.</li>
+            <li>Coagulopathy and disseminated intravascular coagulation (DIC).</li>
+            <li>Fetomaternal transfusion.</li>
+            <li>Amniotic fluid embolism (rare but catastrophic).</li>
+            <li>Renal failure, multi-organ failure.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- DIFFERENTIAL -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-code-branch"></i>
+          </div>
+          <h3 class="section-title">Differential Diagnoses</h3>
+        </div>
+        <span class="section-tag">Differentiate</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Placenta previa:</span>
+          <ul>
+            <li>Painless, bright red vaginal bleeding.</li>
+            <li>Soft, non-tender uterus.</li>
+            <li>Confirmed by ultrasound – <strong>avoid digital vaginal exam</strong> if suspected.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Other causes of abdominal pain without bleeding:</span>
+          <ul>
+            <li>Severe pre-eclampsia / HELLP.</li>
+            <li>Pyelonephritis.</li>
+            <li>Hepatic or gallbladder disease.</li>
+            <li>Appendicitis, bowel pathology.</li>
+            <li>Ovarian torsion or ruptured cyst.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- MANAGEMENT / ALGORITHM -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3 class="section-title">ED Management & Disposition</h3>
+        </div>
+        <span class="section-tag">Management</span>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Priorities:</strong> resuscitate the mother, stabilise haemodynamics, assess foetal status, and involve obstetrics early.
+        Definitive management is usually delivery.
+      </div>
+
+      <div class="algo-grid">
+        <!-- Mild / Stable -->
+        <div class="algo-box mild">
+          <div class="algo-title">
+            <i class="fa-solid fa-heart-circle-check" style="color:#2e7d32;"></i>
+            Mild, stable
+          </div>
+          <ul>
+            <li>Minor bleeding, maternal vitals stable, uterus mildly tender, reassuring foetal status.</li>
+            <li>IV access, bloods (FBC, coagulation, crossmatch).</li>
+            <li>Continuous or frequent foetal monitoring if viable gestation.</li>
+            <li>Admit to obstetric unit for observation and further management.</li>
+          </ul>
+        </div>
+
+        <!-- Moderate -->
+        <div class="algo-box moderate">
+          <div class="algo-title">
+            <i class="fa-solid fa-triangle-exclamation" style="color:#f9a825;"></i>
+            Moderate concern
+          </div>
+          <ul>
+            <li>Ongoing bleeding, uterine tenderness/irritability, maternal tachycardia, non-reassuring foetal status.</li>
+            <li>Two large-bore IVs, crystalloid resuscitation, early blood products as required.</li>
+            <li>Activate obstetric emergency team; CTG / ultrasound if available.</li>
+            <li>Likely need for early delivery depending on gestation and foetal status.</li>
+          </ul>
+        </div>
+
+        <!-- Severe -->
+        <div class="algo-box severe">
+          <div class="algo-title">
+            <i class="fa-solid fa-skull-crossbones" style="color:#b71c1c;"></i>
+            Severe / life-threatening
+          </div>
+          <ul>
+            <li>Shock, rigid “board-like” uterus, heavy revealed or concealed bleeding, DIC, foetal demise or severe distress.</li>
+            <li>Full resuscitation:
+              <ul>
+                <li>O2, airway support as needed.</li>
+                <li>Massive transfusion protocol; treat DIC with blood products per lab and protocol.</li>
+              </ul>
+            </li>
+            <li>Immediate obstetric decision regarding urgent delivery (often emergency caesarean section).</li>
+            <li>ICU / high-care post-delivery for maternal support.</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul>
+        <li><span class="inline-label">Monitoring:</span> continuous BP, HR, SpO₂, urine output; serial labs for Hb, coagulation, fibrinogen.</li>
+        <li><span class="inline-label">Analgesia:</span> use cautiously; do not mask evolving abdominal findings.</li>
+        <li><span class="inline-label">Multidisciplinary:</span> obstetrician, anaesthetist, neonatologist, ICU, haematology as needed.</li>
+      </ul>
+    </section>
+
+    <!-- TEAMWORK -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-icon">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h3 class="section-title">Team Approach</h3>
+        </div>
+        <span class="section-tag">Collaboration</span>
+      </div>
+      <p>
+        Late-pregnancy complications like abruptio placentae demand close collaboration between
+        emergency medicine, obstetrics, anaesthesia, radiology, ICU, and neonatology.
+      </p>
+      <ul>
+        <li>Call obstetrics early for any suspected abruption.</li>
+        <li>Agree on a clear plan: monitoring vs urgent delivery.</li>
+        <li>Ensure appropriate level of care for the mother post-event (high care / ICU when indicated).</li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Resuscitate mother → assess foetus</span>
+        <span class="pill">Treat as abruption on clinical grounds</span>
+        <span class="pill">Do not be reassured by a normal ultrasound</span>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

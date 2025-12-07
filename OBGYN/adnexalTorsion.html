@@ -7,90 +7,532 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bolder;
-      color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
-  
-    
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ED highlights */
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    /* Algorithm style list */
+    .algo-list {
+      list-style: none;
+      margin: 0.2rem 0 0.4rem;
+      padding: 0;
+      counter-reset: step-counter;
+    }
+
+    .algo-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .algo-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.08rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    /* Two-column list on larger screens */
+    @media (min-width: 720px) {
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+    }
+
+    /* Small pill list */
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Very small screens adjustments */
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.96rem;
+      }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <h1>Adnexal Torsion</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </header>
- 
-  
-  <div class="section">
-    <h1 class="subheading">Adnexal Torsion</h1>
-    <h2 class="strong">Introduction</h2>
-    <p>
-      Adnexal torsion is the twisting of the ovary and/or fallopian tube on their ligaments, leading to obstruction of blood supply and potential ischemia. It is a gynecologic emergency that requires prompt diagnosis and management.
+  <header>
+    <div class="logo-container">
+      <h1>Adnexal Torsion</h1>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-title">Adnexal (Ovarian) Torsion</h2>
+    <p class="page-subtitle">
+      Time-critical surgical emergency in females with acute pelvic pain. Normal Doppler does <strong>not</strong> exclude torsion.
     </p>
 
-    <h2 class="strong">Risk Factors</h2>
-    <ul>
-      <li>Known risk factors for adnexal torsion include an ovarian mass, recent assisted reproductive treatments, pregnancy (especially in the first and early second trimesters), and a history of tubal ligation.</li>
-      <li>Torsion is more common in the reproductive years due to the regular development of a corpus luteal cyst during the menstrual cycle.</li>
-      <li>Premenarchal patients may experience torsion due to excessive adnexal mobility.</li>
-    </ul>
-    
-    <h2 class="strong">Diagnostic Evaluation</h2>
-    <ul>
-      <li>Clinical assessment is crucial in guiding management decisions.</li>
-      <li>Ultrasound is the preferred initial imaging modality for suspected adnexal torsion.</li>
-      <li>Ultrasound findings may include asymmetric ovarian enlargement, twisted vascular pedicle, abnormal blood flow on Doppler ultrasound, and presence of an ovarian mass.</li>
-      <li>Computed tomography (CT) or magnetic resonance imaging (MRI) may be considered in atypical presentations or to rule out alternative diagnoses.</li>
-      <li>Laparoscopy is indicated in cases of high clinical suspicion despite negative imaging or when surgical intervention is required.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Acute unilateral pelvic pain</span>
+      <span class="chip">Surgical emergency</span>
+      <span class="chip">Time = ovary</span>
+      <span class="chip">Do not delay gynae for imaging</span>
+    </div>
 
-    <h2 class="strong">Management</h2>
-    <ul>
-      <li>Prompt surgical intervention is essential once the diagnosis of adnexal torsion is suspected.</li>
-      <li>Attempts at ovarian salvage are warranted even if the adnexal structures appear ischemic, as they often recover.</li>
-      <li>Adnexal torsion left untreated can lead to complications such as hemorrhage, peritonitis, and infection.</li>
-      <li>Diagnostic laparoscopy allows for both diagnosis and potential treatment.</li>
-    </ul>
+    <!-- ED PRIORITIES / OVERVIEW -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Priorities</h3>
+        <span class="section-tag">Overview</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Key concept:</strong> Adnexal torsion is twisting of the ovary ± fallopian tube causing venous then arterial
+        obstruction, leading to ischaemia and potential loss of the ovary. Management is <strong>emergent surgery</strong>,
+        not prolonged investigation.
+      </div>
+      <ul>
+        <li>Think torsion in any female with <strong>sudden onset unilateral lower abdominal/pelvic pain</strong>, especially with nausea and vomiting.</li>
+        <li>Pregnancy, known ovarian cysts or assisted reproduction increase risk.</li>
+        <li>Early diagnosis and theatre access preserve ovarian function and fertility.</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Follow-Up</h2>
-    <ul>
-      <li>Close postoperative monitoring is necessary to assess recovery and potential complications.</li>
-      <li>Patient education on preventive measures, risk factors, and early recognition of symptoms can help prevent delayed diagnosis and improve outcomes.</li>
-    </ul>
+    <!-- QUICK ED ALGORITHM -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Algorithm (Quick Guide)</h3>
+        <span class="section-tag">Flow</span>
+      </div>
+      <ol class="algo-list">
+        <li>Assess ABC and vitals; treat pain and nausea early. Establish IV access and monitoring.</li>
+        <li><strong>Do a pregnancy test</strong> (urine or serum β-hCG) in all reproductive-age patients.</li>
+        <li>Take focused history (onset, character, radiation, associated vomiting, prior cysts/surgery, fertility treatment).</li>
+        <li>Perform abdominal and pelvic examination (if appropriate and safe); assess for guarding, adnexal tenderness or mass.</li>
+        <li>Order baseline tests: FBC, CRP, U&E, group & save / crossmatch as per local protocol.</li>
+        <li>Arrange pelvic ultrasound with Doppler if rapidly available, but <strong>do not delay gynae review</strong> if suspicion is high.</li>
+        <li>Make the call: if clinical suspicion of torsion → <strong>urgent gynae consult for diagnostic laparoscopy</strong>.</li>
+        <li>Keep patient NBM, provide IV fluids, analgesia, antiemetics, and prepare for theatre.</li>
+      </ol>
+    </section>
 
-    <h2 class="strong">Multidisciplinary Collaboration</h2>
-    <p>Collaborate with gynecologists, surgeons, radiologists, and other specialists as needed for accurate diagnosis and appropriate management.</p>
+    <!-- RISK FACTORS & TYPICAL PRESENTATION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Risk Factors & Presentation</h3>
+        <span class="section-tag">Clues</span>
+      </div>
+      <div class="cols-2">
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.1rem;">Risk Factors</h4>
+          <ul>
+            <li>Ovarian cysts or masses (&gt;5 cm in diameter).</li>
+            <li>Pregnancy (especially 1st and early 2nd trimester).</li>
+            <li>Assisted reproductive techniques (e.g. ovarian hyperstimulation).</li>
+            <li>Previous adnexal torsion or pelvic surgery.</li>
+            <li>Polycystic ovaries / enlarged ovaries.</li>
+            <li>Premenarchal girls – relatively long ligaments and increased mobility.</li>
+            <li>Benign ovarian tumours (e.g. dermoid cyst / teratoma).</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.1rem;">Typical Presentation</h4>
+          <ul>
+            <li>Sudden onset <strong>unilateral</strong> lower abdominal/pelvic pain, often severe and colicky.</li>
+            <li>May be intermittent if torsion-detorsion episodes occur.</li>
+            <li>Nausea and vomiting are very common.</li>
+            <li>Low-grade fever may occur; high fever and peritonitis usually suggest necrosis/late presentation or another diagnosis.</li>
+            <li>Adnexal tenderness or palpable mass on bimanual exam.</li>
+            <li>Labs can be <strong>normal</strong> – normal bloods do not exclude torsion.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2 class="strong">Patient Counseling</h2>
-    <ul>
-      <li>Educate patients about the signs and symptoms of adnexal torsion, especially those with known risk factors.</li>
-      <li>Encourage timely reporting of symptoms to ensure prompt diagnosis and treatment.</li>
-    </ul>
+    <!-- DIFFERENTIAL DIAGNOSIS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Differential Diagnosis</h3>
+        <span class="section-tag">Don’t Miss</span>
+      </div>
+      <p>Always consider and rapidly exclude other causes of acute pelvic or lower abdominal pain:</p>
+      <ul>
+        <li>Ectopic pregnancy (tubal rupture, haemoperitoneum).</li>
+        <li>Ruptured or haemorrhagic ovarian cyst.</li>
+        <li>Pelvic inflammatory disease / tubo-ovarian abscess.</li>
+        <li>Appendicitis (especially right lower quadrant pain).</li>
+        <li>Renal colic (loin to groin pain, haematuria).</li>
+        <li>Degenerating fibroid.</li>
+        <li>Urinary tract infection, bowel obstruction or colitis.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Tip:</strong> In a pregnant patient with unilateral pelvic pain and normal β-hCG location (intrauterine pregnancy),
+        adnexal torsion becomes a key diagnosis alongside cyst complications.
+      </div>
+    </section>
 
-    <h2 class="strong">Patient Empowerment</h2>
-    <p>Empower patients with information about adnexal torsion and its risk factors to promote early detection and informed decision-making.</p>
+    <!-- INVESTIGATIONS & IMAGING -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Investigations & Imaging</h3>
+        <span class="section-tag">Support</span>
+      </div>
+      <ul>
+        <li><strong>Pregnancy test:</strong> mandatory in all reproductive-age females with pelvic pain.</li>
+        <li>FBC, CRP/ESR, U&E, LFTs as indicated; group & save or crossmatch if surgery likely.</li>
+        <li>Urinalysis to assess for UTI or haematuria.</li>
+        <li>STI swabs if pelvic infection suspected.</li>
+      </ul>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.5rem;">Ultrasound (Preferred Modality)</h4>
+      <ul>
+        <li>Transvaginal US (where appropriate) or transabdominal in younger or pregnant patients.</li>
+        <li>Findings suggestive of torsion:
+          <ul>
+            <li>Unilateral enlarged ovary (&gt;4 cm) with peripheral follicles (“string of pearls”).</li>
+            <li>Ovarian or adnexal mass/cyst.</li>
+            <li>Free pelvic fluid.</li>
+            <li>Twisted vascular pedicle (“whirlpool sign”) if visible.</li>
+            <li>Reduced or absent venous/arterial flow on Doppler – but arterial flow may be preserved early.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Important:</strong> A “normal” Doppler study <strong>does not exclude torsion</strong>. If clinical suspicion is high,
+        proceed to <strong>laparoscopy</strong> despite equivocal imaging.
+      </div>
+      <p style="margin-top: 0.4rem;">
+        CT or MRI may be used if the diagnosis is uncertain or US is unavailable, but they must not delay surgical review in clinically suspicious cases.
+      </p>
+    </section>
 
-   
+    <!-- MANAGEMENT -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Management in the ED</h3>
+        <span class="section-tag">Emergency</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Goal:</strong> Stabilise, control pain, and secure <strong>rapid access to theatre</strong> with gynae or general surgery
+        (depending on local setup).
+      </div>
 
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.3rem;">Initial ED Measures</h4>
+      <ul>
+        <li>ABC assessment, oxygen if indicated, continuous monitoring for unstable patients.</li>
+        <li>IV access with appropriate cannula size; send bloods and group & save / crossmatch.</li>
+        <li>Keep patient <strong>NBM</strong> in anticipation of surgery.</li>
+        <li>Analgesia: paracetamol, NSAIDs (if not contraindicated), opioids for severe pain as required.</li>
+        <li>Antiemetics for nausea/vomiting.</li>
+        <li>IV fluids if dehydrated or vomiting.</li>
+      </ul>
 
-  </div>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Definitive Management</h4>
+      <ul>
+        <li><strong>Urgent gynae consultation</strong> – this is a surgical emergency requiring prompt laparoscopy or laparotomy.</li>
+        <li>Diagnostic laparoscopy allows:
+          <ul>
+            <li>Detorsion and ovarian salvage (even if ovary appears dusky or cyanotic – often recovers).</li>
+            <li>Cystectomy or fixation (oophoropexy) where appropriate.</li>
+            <li>Oophorectomy only if ovary clearly non-viable or malignancy suspected.</li>
+          </ul>
+        </li>
+        <li>Avoid multiple pelvic examinations, which add little and increase discomfort.</li>
+      </ul>
+    </section>
+
+    <!-- SPECIAL GROUPS & PEARLS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Special Groups & Pearls</h3>
+        <span class="section-tag">Nuance</span>
+      </div>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.2rem;">Adolescents & Children</h4>
+      <ul>
+        <li>High index of suspicion with acute lower abdominal pain and vomiting.</li>
+        <li>History may be limited – rely heavily on examination and US.</li>
+        <li>Ovarian preservation is a priority for future fertility and endocrine function.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Pregnancy</h4>
+      <ul>
+        <li>Torsion is more common in early pregnancy – corpus luteum cysts and enlarged ovaries are risk factors.</li>
+        <li>US is safe in pregnancy; avoid delay in surgical management.</li>
+        <li>Most procedures can be performed laparoscopically with appropriate obstetric input.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Post-menopausal Women</h4>
+      <ul>
+        <li>Ovarian torsion less common but more likely associated with a neoplasm.</li>
+        <li>Higher suspicion for malignancy; management decisions often involve definitive surgery (oophorectomy) rather than simple detorsion.</li>
+      </ul>
+
+      <div class="pill-list">
+        <span class="pill">Normal Doppler ≠ no torsion</span>
+        <span class="pill">Severe unilateral pain + cyst = torsion until proven otherwise</span>
+        <span class="pill">NBM + early gynae call</span>
+      </div>
+    </section>
+
+    <!-- DISPOSITION & COUNSELLING -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Disposition & Counselling</h3>
+        <span class="section-tag">Safety</span>
+      </div>
+      <ul>
+        <li>Any patient with suspected adnexal torsion should be <strong>admitted for surgical management</strong> – discharge is inappropriate if torsion is on the differential and not ruled out.</li>
+        <li>Document:
+          <ul>
+            <li>Onset and characteristics of pain.</li>
+            <li>Risk factors and examination findings.</li>
+            <li>US findings (and limitations) if done.</li>
+            <li>Time of gynae consultation and agreed plan.</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.5rem;">Patient Counselling (When Stable)</h4>
+      <ul>
+        <li>Explain that torsion threatens blood supply to the ovary and may require urgent surgery.</li>
+        <li>Reassure that surgery aims to preserve fertility where possible, but sometimes removal of the ovary is necessary.</li>
+        <li>Discuss recurrence risk and the need to seek care urgently in future if similar symptoms recur.</li>
+      </ul>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">
+        <strong>Teamwork:</strong> good communication between ED, gynae, anaesthetics and theatre teams is key to minimising delay and preserving ovarian function.
+      </p>
+    </section>
+  </main>
 </body>
 </html>

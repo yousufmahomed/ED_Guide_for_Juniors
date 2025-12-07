@@ -7,167 +7,611 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-      font-size: xx-large;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bolder;
-      color: navy;
+
+    /* Header overrides (keep consistent with the rest of the site but cleaner) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ED highlights */
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    /* Algorithm style list */
+    .algo-list {
+      list-style: none;
+      margin: 0.2rem 0 0.4rem;
+      padding: 0;
+      counter-reset: step-counter;
+    }
+
+    .algo-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .algo-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.08rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    /* PALM-COEIN table */
+    .table-wrapper {
+      margin-top: 0.3rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     table {
-        border-collapse: collapse;
-        width: 100%;
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 280px;
+      font-size: 0.8rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.4rem 0.45rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f7f9ff;
+    }
+
+    .table-caption {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* Two-column list on larger screens */
+    @media (min-width: 720px) {
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
       }
-      
-      th, td {
-        text-align: left;
-        padding: 8px;
+    }
+
+    /* Small badge row for disposition */
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Very small screens adjustments */
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.96rem;
       }
-      
-      th {
-        background-color: #4CAF50;
-        color: white;
+
+      main {
+        padding-inline: 0.6rem;
       }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
+
+      .section-card {
+        padding-inline: 0.8rem;
       }
-  
+    }
   </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <h1>Abnormal Uterine Bleeding</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </header>
- 
-  
-  <div class="section">
-    <h1 class="subheading">Abnormal Uterine Bleeding</h1>
-    <h2 class="strong">Introduction</h2>
-    <p>
-      An understanding of the normal menstrual cycle is essential to diagnose and manage abnormal uterine bleeding (AUB). The PALM-COEIN classification system helps categorize the causes of AUB.
+  <header>
+    <div class="logo-container">
+      <h1>Abnormal Uterine Bleeding</h1>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-title">Abnormal Uterine Bleeding (AUB)</h2>
+    <p class="page-subtitle">
+      Emergency Department approach for non-pregnant patients. Always exclude pregnancy first.
     </p>
 
-    <h2 class="strong">Menstrual Cycle and PALM-COEIN Classification</h2>
-    <ul>
-      <li>Menstrual cycle involves hormonal changes, ovulation, and withdrawal of hormones leading to menstruation.</li>
-      <li>PALM-COEIN classification system categorizes causes of AUB: PALM for structural causes and COEIN for nonstructural causes.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Pregnancy until proven otherwise</span>
+      <span class="chip">Rule out haemodynamic instability</span>
+      <span class="chip">Use PALM-COEIN to classify</span>
+    </div>
 
-    <h2 class="strong">PALM-COEIN Classification System</h2>
-    <table>
-      <tr>
-        <th>Category</th>
-        <th>Cause</th>
-      </tr>
-      <tr>
-        <td>PALM</td>
-        <td>Structural Causes</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>P: Polyp</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>A: Adenomyosis</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>L: Leiomyoma (fibroids)</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>M: Malignancy and hyperplasia</td>
-      </tr>
-      <tr>
-        <td>COEIN</td>
-        <td>Nonstructural Causes</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>C: Coagulopathy</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>O: Ovulatory dysfunction</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>E: Endometrial</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>I: Iatrogenic</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>N: Not yet classified</td>
-      </tr>
-    </table>
-    
-    <h2 class="strong">Clinical Presentation</h2>
-    <ul>
-      <li>AUB is defined as any change in frequency, regularity, duration, or volume of bleeding.</li>
-      <li>Assess patient history, menstrual cycle pattern, volume and frequency of bleeding, and any associated symptoms.</li>
-      <li>Consider age-related causes of AUB, such as puberty, perimenopause, or postmenopause.</li>
-    </ul>
+    <!-- ED PRIORITIES / OVERVIEW -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Priorities</h3>
+        <span class="section-tag">Overview</span>
+      </div>
+      <div class="highlight-box">
+        <strong>In the ED, AUB is an emergency only if:</strong> bleeding is heavy/ongoing, there is
+        haemodynamic compromise, pregnancy is possible, or the patient is peri- or post-menopausal.
+      </div>
+      <ul>
+        <li><span class="inline-label">Acute AUB:</span> heavy bleeding requiring urgent intervention to prevent blood loss-related morbidity.</li>
+        <li><span class="inline-label">Chronic AUB:</span> abnormal bleeding for &gt;3 months, usually stable and suitable for outpatient management.</li>
+        <li>Use AUB as a <strong>symptom</strong> and the PALM-COEIN system to guide your differential diagnosis.</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Physical Examination</h2>
-    <ul>
-      <li>Perform a systematic physical examination focused on signs of hypovolemia, anemia, and underlying conditions.</li>
-      <li>Evaluate for structural lesions, coagulopathy, thyroid dysfunction, and genital tract pathology.</li>
-    </ul>
+    <!-- QUICK ED ALGORITHM -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Algorithm (Quick Guide)</h3>
+        <span class="section-tag">Flow</span>
+      </div>
+      <ol class="algo-list">
+        <li>Assess ABC, vitals, and visible blood loss. Establish IV access and monitor if bleeding is heavy.</li>
+        <li><strong>Exclude pregnancy</strong> in all reproductive-age patients (urine or serum β-hCG).</li>
+        <li>Identify red flags: syncope, chest pain, tachycardia, hypotension, Hb very low, post-menopausal bleeding.</li>
+        <li>Take focused history (cycle, pattern, contraception, medications, coagulopathy, systemic disease).</li>
+        <li>Perform focused examination: general, abdomen, speculum + bimanual if appropriate and safe.</li>
+        <li>Order targeted tests (FBC, pregnancy test, coagulation screen, TSH, TVUS if available).</li>
+        <li>Stabilise and treat:
+          <ul>
+            <li>Unstable/severe: resuscitate, IV TXA, consider hormonal therapy, urgent gynae consult.</li>
+            <li>Stable: start medical therapy (e.g. NSAIDs, TXA, hormonal options), arrange follow-up.</li>
+          </ul>
+        </li>
+        <li>Decide disposition: home with follow-up vs admission/urgent gynae referral.</li>
+      </ol>
+    </section>
 
-    <h2 class="strong">Diagnostic Evaluation</h2>
-    <ul>
-      <li>Perform a urine or serum pregnancy test in reproductive-age patients.</li>
-      <li>Hemoglobin or hematocrit should be measured in cases of excessive bleeding or anemia suspicion.</li>
-      <li>Screen for coagulopathies, thyroid dysfunction, and sexually transmitted infections.</li>
-      <li>Transvaginal ultrasound (TVUS) may be used to evaluate structural causes, endometrial thickness, and more in-depth assessment of the uterus.</li>
-    </ul>
+    <!-- PALM-COEIN -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">PALM-COEIN Classification</h3>
+        <span class="section-tag">Etiology</span>
+      </div>
+      <p>
+        PALM = structural causes. COEIN = non-structural causes. Use this framework to structure your assessment and documentation.
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 18%;">Letter</th>
+              <th style="width: 32%;">Group</th>
+              <th>Example / Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>P</td>
+              <td>Polyp</td>
+              <td>Endometrial or endocervical polyps.</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>Adenomyosis</td>
+              <td>Globular, tender uterus; dysmenorrhoea, heavy bleeding.</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>Leiomyoma</td>
+              <td>Fibroids (submucosal, intramural, subserosal).</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>Malignancy / Hyperplasia</td>
+              <td>Endometrial carcinoma, atypical hyperplasia (especially &gt;40 years or post-menopausal).</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>Coagulopathy</td>
+              <td>e.g. von Willebrand disease, anticoagulants, thrombocytopenia.</td>
+            </tr>
+            <tr>
+              <td>O</td>
+              <td>Ovulatory dysfunction</td>
+              <td>Anovulation (PCOS, obesity, thyroid disease, hyperprolactinaemia).</td>
+            </tr>
+            <tr>
+              <td>E</td>
+              <td>Endometrial</td>
+              <td>Local endometrial dysfunction; infection, chronic endometritis.</td>
+            </tr>
+            <tr>
+              <td>I</td>
+              <td>Iatrogenic</td>
+              <td>Hormonal contraception, IUCD, anticoagulants, other drugs.</td>
+            </tr>
+            <tr>
+              <td>N</td>
+              <td>Not yet classified</td>
+              <td>Causes currently unclassified or rare mixing of categories.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">
+        <strong>Tip:</strong> in your note, explicitly state the suspected PALM-COEIN category. This helps gynae and future follow-up.
+      </p>
+    </section>
 
-    <h2 class="strong">Management</h2>
-    <ul>
-      <li>Hemodynamically unstable patients with uncontrolled bleeding require standard resuscitation measures and may need surgical interventions.</li>
-      <li>Intrauterine tamponade, estrogen therapy, or medical options like tranexamic acid can be considered for acute management.</li>
-      <li>Oral contraceptives and hormonal IUDs can help regulate the menstrual cycle and treat AUB caused by hormonal imbalance.</li>
-    </ul>
+    <!-- HISTORY & EXAM (two-column on larger screens) -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Assessment in the ED</h3>
+        <span class="section-tag">History & Exam</span>
+      </div>
+      <div class="cols-2">
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.2rem;">Focused History</h4>
+          <ul>
+            <li>Age, parity, last menstrual period, usual cycle pattern.</li>
+            <li>
+              <span class="inline-label">Bleeding pattern:</span> onset, duration, clots, flooding, nocturnal changes.
+            </li>
+            <li>Contraception and sexual history (including STI risk).</li>
+            <li>Medications: anticoagulants, hormonal therapy, emergency contraception.</li>
+            <li>History of coagulopathy, liver disease, thyroid disease, PCOS, obesity.</li>
+            <li>Red-flag symptoms: weight loss, inter-menstrual/post-coital/post-menopausal bleeding, pelvic pain.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.2rem;">Physical Examination</h4>
+          <ul>
+            <li>General: pallor, tachycardia, postural hypotension, signs of shock.</li>
+            <li>Abdomen: uterine size, adnexal masses, tenderness, peritonism.</li>
+            <li>Thyroid and BMI if relevant to endocrine causes.</li>
+            <li>Speculum (if appropriate): cervical lesions, polyps, active bleeding source, trauma, discharge.</li>
+            <li>Bimanual: uterine size/shape, fibroids, adnexal masses, cervical motion tenderness.</li>
+            <li>Look for bruising, petechiae if coagulopathy suspected.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2 class="strong">Nonhormonal Medications</h2>
-    <ul>
-      <li>NSAIDs and tranexamic acid can be used to manage pain and bleeding associated with AUB.</li>
-    </ul>
+    <!-- INVESTIGATIONS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Investigations</h3>
+        <span class="section-tag">Essentials</span>
+      </div>
+      <ul>
+        <li><strong>β-hCG (urine or serum)</strong> in all reproductive-age patients unless clearly not needed.</li>
+        <li>Full blood count (Hb, platelets) in any moderate–severe bleeding, anaemia symptoms, or chronic AUB.</li>
+        <li>Coagulation profile if on anticoagulants or bleeding disorder suspected.</li>
+        <li>TSH, prolactin, +/- glucose/lipids if endocrine/anovulatory cause suspected.</li>
+        <li>STI swabs if discharge, pelvic pain or risk factors present.</li>
+        <li>Transvaginal or pelvic ultrasound (if available) for structural causes, endometrial thickness, adnexal masses.</li>
+        <li>Endometrial sampling is usually outpatient/gynae-led, but <strong>consider urgent referral</strong> if:
+          <ul>
+            <li>Age ≥ 40 with persistent AUB or risk factors (obesity, anovulation, tamoxifen).</li>
+            <li>Any post-menopausal bleeding.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Disposition</h2>
-    <ul>
-      <li>Most patients with AUB can be managed on an outpatient basis, with referral to a gynecologist for further evaluation and management.</li>
-      <li>Severe cases of acute AUB with hemodynamic instability require urgent gynecologic consultation and may necessitate hospitalization.</li>
-    </ul>
+    <!-- MANAGEMENT -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Management in the ED</h3>
+        <span class="section-tag">Treatment</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Step 1 – Stabilise:</strong> ABC, large-bore IV lines, fluids, cross-match if indicated, monitor vitals,
+        give oxygen if needed.
+      </div>
 
-    <h2 class="strong">Patient Counseling</h2>
-    <ul>
-      <li>Educate patients about the potential causes of AUB, available treatment options, and the importance of follow-up care.</li>
-    </ul>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.3rem;">1. Haemodynamically Unstable / Severe Acute AUB</h4>
+      <ul>
+        <li>Resuscitate with IV crystalloids; arrange blood and products if significant loss or anaemia.</li>
+        <li>Administer <strong>tranexamic acid</strong> (e.g. 1 g IV) unless contraindicated, as per local protocol.</li>
+        <li>Consider high-dose hormonal therapy (e.g. IV or high-dose oral estrogen / progestin) according to local guidelines and gynae advice.</li>
+        <li>If available and trained, mechanical methods (e.g. intra-uterine balloon tamponade) can be life-saving.</li>
+        <li><strong>Urgent gynae consultation</strong> – patient usually requires admission and definitive management.</li>
+      </ul>
 
-    <h2 class="strong">Multidisciplinary Collaboration</h2>
-    <p>Collaborate with gynecologists for timely intervention and management of AUB cases that require further evaluation.</p>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">2. Haemodynamically Stable, Heavy but Controlled Bleeding</h4>
+      <ul>
+        <li>Analgesia: avoid NSAIDs if platelet dysfunction/anticoagulants; otherwise NSAIDs reduce bleeding and pain.</li>
+        <li><strong>Tranexamic acid</strong> orally for 3–5 days during heavy bleeding episodes (if no contraindication).</li>
+        <li>Consider hormonal therapy if no contraindications:
+          <ul>
+            <li>Combined oral contraceptive pill regimen.</li>
+            <li>High-dose oral progestin in anovulatory bleeding.</li>
+          </ul>
+        </li>
+        <li>Optimise comorbidities (thyroid, diabetes, blood pressure).</li>
+        <li>Iron replacement if anaemic.</li>
+      </ul>
 
-  </div>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">3. Chronic / Mild AUB</h4>
+      <ul>
+        <li>Ensure no red flags or structural malignancy risk features.</li>
+        <li>Start non-hormonal and/or hormonal therapy as appropriate and safe.</li>
+        <li>Arrange <strong>outpatient gynae or primary care follow-up</strong> for definitive diagnosis and longer-term management (e.g. Mirena IUD, endometrial ablation, surgery).</li>
+      </ul>
+    </section>
+
+    <!-- SPECIAL GROUPS & DISPOSITION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Special Groups & Disposition</h3>
+        <span class="section-tag">Safety</span>
+      </div>
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.2rem;">Adolescents</h4>
+      <ul>
+        <li>AUB often due to anovulatory cycles or underlying coagulopathy.</li>
+        <li>Always exclude pregnancy and sexual assault where appropriate.</li>
+        <li>Low threshold to screen for bleeding disorders and refer to gynae/haematology if recurrent or severe.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Perimenopausal & Post-menopausal</h4>
+      <ul>
+        <li>Any post-menopausal bleeding is <strong>endometrial cancer until proven otherwise</strong>.</li>
+        <li>All such patients need urgent gynae follow-up and endometrial assessment, often admission if unstable or high-risk.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.6rem;">Disposition – When to Admit</h4>
+      <ul>
+        <li>Haemodynamic instability or need for transfusion.</li>
+        <li>Ongoing heavy bleeding despite ED measures.</li>
+        <li>Suspected malignancy with significant bleeding or severe anaemia.</li>
+        <li>No safe home environment or follow-up not reliable.</li>
+      </ul>
+
+      <div class="pill-list">
+        <span class="pill">Stable, controlled bleeding → Home with follow-up</span>
+        <span class="pill">Unstable / transfusion / malignancy risk → Admit</span>
+        <span class="pill">Post-menopausal bleeding → Urgent gynae pathway</span>
+      </div>
+    </section>
+
+    <!-- PATIENT COUNSELLING -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Patient Counselling</h3>
+        <span class="section-tag">Communication</span>
+      </div>
+      <ul>
+        <li>Explain possible causes using simple language and emphasise that cancer is not the most common cause, but must be excluded in some groups.</li>
+        <li>Discuss the medication plan: how to take it, duration, common side-effects, and when it is unsafe to miss doses.</li>
+        <li>Safety-net advice:
+          <ul>
+            <li>Return immediately if soaking &gt;1 pad per hour, large clots, dizziness, chest pain, or shortness of breath.</li>
+            <li>Stress the importance of attending follow-up and any scheduled gynae appointment.</li>
+          </ul>
+        </li>
+      </ul>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">
+        <strong>Teamwork:</strong> document clearly, communicate with gynae early for complex or high-risk cases, and ensure the patient knows what the next step in their care will be.
+      </p>
+    </section>
+  </main>
 </body>
 </html>

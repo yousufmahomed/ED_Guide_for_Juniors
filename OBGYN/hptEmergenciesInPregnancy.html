@@ -5,138 +5,554 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pre-Eclampsia and Eclampsia</title>
   <link rel="stylesheet" href="/genralPages.css">
-  <link rel="stylesheet" href="/preEclampsia.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    .algo-list {
+      list-style: none;
+      margin: 0.2rem 0 0.4rem;
+      padding: 0;
+      counter-reset: step-counter;
+    }
+
+    .algo-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .algo-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.08rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    @media (min-width: 720px) {
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
       }
-      strong {
-          font-size: large;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bolder;
-          color: orangered;
-        }
-      highlight {
-          font-size: larger;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          font-weight: bold;
-          color: #FFD700;
-        }
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .drug-name {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.96rem;
+      }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
       <h1>Pre-Eclampsia and Eclampsia</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
     </div>
   </header>
-  <div class="section">
-    <h1 class="subheading">Pre-Eclampsia and Eclampsia</h1>
-    
-    <p>Pre-eclampsia and eclampsia are serious conditions that can affect pregnant individuals. Understanding their foundations, pathophysiology, clinical features, and management is essential for ensuring the health of both the mother and the fetus.</p>
-    
-    <h2 class="strong">Foundations</h2>
-    <ul>
-      <li>Hypertension affects around 8% of pregnancies and is categorized into several types:</li>
-      <li>Gestational Hypertension: Occurs during pregnancy, resolves postpartum, and is characterized by blood pressure ≥ 140/90 mm Hg.</li>
-      <li>Pre-eclampsia: Gestational hypertension with proteinuria (>300 mg/24 hr).</li>
-      <li>Eclampsia: Seizures in a patient with pre-eclampsia.</li>
-      <li>Pregnancy-Aggravated Hypertension: Chronic hypertension with superimposed preeclampsia/eclampsia.</li>
-      <li>Chronic or Coincidental Hypertension: Preexisting hypertension before pregnancy or persisting > 6 weeks postpartum.</li>
-    </ul>
 
-    <h2 class="strong">Pathophysiology</h2>
-    <ul>
-      <li>Pre-eclampsia is a unique vasospastic disorder in pregnant women.</li>
-      <li>Vasospasm, ischemia, thrombosis in pre-eclampsia cause organ injury, placental infarction, abruption, fetal hypoxia, and prematurity.</li>
-      <li>Eclampsia cause remains unknown; vascular responsiveness to endogenous vasopressors is implicated.</li>
-      <li>Gestational hypertension has elevated cardiac output and abnormal peripheral resistance.</li>
-    </ul>
+  <main>
+    <h2 class="page-title">Pre-Eclampsia & Eclampsia</h2>
+    <p class="page-subtitle">
+      Hypertensive disorders of pregnancy are major causes of maternal morbidity and mortality. In ED: recognise early, control BP, prevent seizures, and arrange urgent obstetric management.
+    </p>
 
-    <h2 class="strong">Clinical Features</h2>
-    <ul>
-      <li>Gestational Hypertension: Mild BP elevation, no proteinuria, normal reflexes, weight, organ function.</li>
-      <li>Preeclampsia: Proteinuria, end-organ symptoms, visual disturbances, headache, hyperreflexia, oliguria, elevated creatinine, liver tenderness.</li>
-      <li>Severe Preeclampsia: Diastolic BP > 110 mm Hg, severe proteinuria, signs of organ damage.</li>
-      <li>Eclampsia: Seizures, visual disturbances, headache, hyperreflexia, thrombocytopenia, elevated liver enzymes, CNS effects.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Pregnancy + BP ≥ 140/90</span>
+      <span class="chip">Ask about headache & visual change</span>
+      <span class="chip">Think HELLP</span>
+      <span class="chip">Magnesium = anti-seizure drug of choice</span>
+    </div>
 
-    <h2 class="strong">Complications</h2>
-    <ul>
-      <li>HELLP Syndrome: Severe preeclampsia variant with hemolysis, elevated liver enzymes, low platelet count.</li>
-      <li>Other complications: Hepatic and splenic hemorrhage, abruptio placentae.</li>
-      <li>Eclampsia: Seizures, coma, maternal CNS damage, renal insufficiency, maternal/fetal death.</li>
-    </ul>
-
-    <h2 class="strong">Diagnostic Testing</h2>
-    <ul>
-      <li>Assess organ injury: complete blood count, renal/liver function, platelet count, coagulation profile, magnesium level.</li>
-      <li>In severe cases, CT scan of head to exclude cerebral thrombosis or hemorrhage.</li>
-    </ul>
-
-    <h2 class="strong">Management</h2>
-    <ul>
-      <li><strong> Pre-eclampsia:</strong> Patients with mild preeclampsia are typically managed as outpatients or in a hospital setting, depending on the clinical situation. Treatment options include:</li>
+    <!-- FOUNDATIONS / DEFINITIONS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Foundations & Definitions</h3>
+        <span class="section-tag">Basics</span>
+      </div>
+      <p>Hypertension occurs in ~8% of pregnancies. Key categories:</p>
       <ul>
-        <li>Bed Rest: Resting in a left lateral position to optimize uterine and placental perfusion.</li>
-        <li>Close Monitoring: Frequent blood pressure measurements, urine tests for proteinuria, and assessment of signs and symptoms of worsening preeclampsia.</li>
-        <li>Expectant Management: If the patient is less than 34 weeks pregnant and stable, expectant management with close follow-up may be considered, aiming to prolong the pregnancy while monitoring for disease progression.</li>
+        <li><span class="inline-label">Gestational hypertension:</span> new BP ≥ 140/90 mmHg after 20 weeks’ gestation, no proteinuria, normal labs.</li>
+        <li><span class="inline-label">Pre-eclampsia:</span> gestational hypertension + evidence of organ involvement, classically proteinuria (&gt;300 mg/24 h) but may also be thrombocytopenia, renal or liver dysfunction, pulmonary oedema, or neurological symptoms.</li>
+        <li><span class="inline-label">Severe features:</span> BP ≥ 160/110 mmHg and/or significant organ dysfunction (severe headache, visual disturbance, epigastric/RUQ pain, oliguria, pulmonary oedema, low platelets, elevated LFTs).</li>
+        <li><span class="inline-label">Eclampsia:</span> generalised tonic–clonic seizures in a woman with pre-eclampsia (antepartum, intrapartum or postpartum).</li>
+        <li><span class="inline-label">Chronic hypertension:</span> known before pregnancy or noted before 20 weeks or persisting &gt; 6 weeks postpartum; may have superimposed pre-eclampsia.</li>
       </ul>
-    
-      <li><strong>Severe Pre-eclampsia</strong>: Management of severe preeclampsia typically requires hospitalization and may include:</li>
-      <ul>
-        <li>Fetal Age Assessment: Evaluation of fetal gestational age and lung maturity to determine the optimal timing of delivery.</li>
-        <li>Organ Function Testing: Comprehensive assessment of organ function, including blood tests to evaluate liver and kidney function.</li>
-        <li>Blood Pressure (BP) Control: Antihypertensive medications are often necessary to lower elevated blood pressure and prevent complications. Medications like:</li>
-        <ul>
-          <li><highlight>Hydralazine:</highlight> Administered intravenously (IV) or intramuscularly (IM), with dosages typically starting at 5 mg IV every 20-30 minutes as needed to achieve BP control.</li>
-          <li><highlight>Labetalol:</highlight> Administered orally or IV, with IV dosages starting at 20 mg, which can be repeated if necessary, up to a maximum dose of 80 mg.</li>
-          <li><highlight>Nifedipine:</highlight>  Oral nifedipine may be used in some cases, with an initial dose of 10-20 mg, followed by additional doses if needed.</li>
-        </ul>
-      </ul>
-    
-      <li><strong>Fulminant Pre-eclampsia:</strong> The management of fulminant preeclampsia is similar to that of eclampsia and involves:</li>
-      <ul>
-        <li>Control of Seizures: Using magnesium sulfate, as described below.</li>
-      </ul>
-    
-      <li><strong>Eclampsia:</strong> Management of eclampsia is critical and includes:</li>
-      <ul>
-        <li>Control of Seizures:<highlight>  Magnesium sulfate</highlight>  is the primary medication used to prevent and treat seizures associated with eclampsia. The standard regimen is an initial loading dose of 4-6 grams IV over 15-20 minutes, followed by a maintenance dose of 2-3 grams per hour administered by continuous IV infusion. Serum magnesium levels should be monitored to avoid toxicity.</li>
-        <li>Antihypertensives: Medications like hydralazine, labetalol, or nifedipine may also be administered to control elevated blood pressure.</li>
-      </ul>
-    
-      <li><strong>Fluid Management:</strong> Care should be taken with fluid management:</li>
-      <ul>
-        <li>Avoid Diuretics: Diuretics should generally be avoided as they can lead to reduced circulating volume and worsen vasospasm.</li>
-        <li>Hyperosmotic Agents: These should also be used with caution due to their potential to exacerbate vascular constriction.</li>
-        <li>IV Fluids: Intravenous fluids may be administered to maintain adequate hydration and support uterine and fetal blood flow.</li>
-      </ul>
-    
-      <li><strong>Goals:</strong> The primary goals of management are to prevent seizures, minimize organ damage, and achieve blood pressure control within safe limits for both the mother and the fetus.</li>
-    </ul>
-    
+      <div class="highlight-box">
+        <strong>Key ED rule:</strong> Any pregnant or postpartum woman with <strong>headache, visual symptoms, epigastric pain, or seizure</strong> must have BP checked and urine protein considered.
+      </div>
+    </section>
 
-    <p>Pre-eclampsia and eclampsia can have severe consequences for both mother and fetus. Effective management involves close monitoring, BP control, prevention of seizures, and prompt delivery when necessary. Magnesium sulfate remains a critical intervention for preventing and treating eclamptic seizures, while antihypertensive therapy should be considered with caution to maintain uteroplacental blood flow. Comprehensive care and a multidisciplinary approach are essential for optimal outcomes in these conditions.</p>
-  </div>
+    <!-- PATHOPHYSIOLOGY & COMPLICATIONS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Pathophysiology & Major Complications</h3>
+        <span class="section-tag">Why It’s Dangerous</span>
+      </div>
+      <div class="cols-2">
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem;">Pathophysiology</h4>
+          <ul>
+            <li>Abnormal placentation → endothelial dysfunction, vasospasm and leaky capillaries.</li>
+            <li>Systemic vasoconstriction and microthrombosis → multi-organ injury (brain, liver, kidney, placenta).</li>
+            <li>Eclampsia involves cerebral oedema, ischaemia and loss of autoregulation → seizures.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="section-title" style="font-size: 0.9rem;">Complications</h4>
+          <ul>
+            <li><span class="inline-label">HELLP syndrome:</span> Haemolysis, Elevated Liver enzymes, Low Platelets – variant of severe pre-eclampsia.</li>
+            <li>Placental abruption, intra-uterine growth restriction, fetal distress and prematurity.</li>
+            <li>Cerebral haemorrhage, pulmonary oedema, renal failure, DIC.</li>
+            <li>Maternal death or severe long-term morbidity if not recognised early.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLINICAL FEATURES -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Clinical Features</h3>
+        <span class="section-tag">Presentation</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Pre-eclampsia (without severe features):</span>
+          <ul>
+            <li>BP ≥ 140/90 mmHg after 20 weeks on at least two readings.</li>
+            <li>Proteinuria or other evidence of organ involvement may be minimal.</li>
+            <li>Often asymptomatic or mild symptoms (mild headache, oedema).</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Pre-eclampsia with severe features:</span>
+          <ul>
+            <li>BP ≥ 160/110 mmHg.</li>
+            <li>Severe or persistent headache, visual disturbances (“flashing lights”, blurring), hyperreflexia or clonus.</li>
+            <li>Epigastric or right upper quadrant pain (capsular stretch from liver involvement).</li>
+            <li>Oliguria, rising creatinine, pulmonary oedema, low platelets, rising LFTs.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Eclampsia:</span> generalised tonic–clonic seizure (before, during or after delivery), often preceded by severe headache, visual symptoms or agitation.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Red flags:</strong> BP ≥ 160/110, severe headache, visual symptoms, RUQ pain, altered mental status, hyperreflexia/clonus,
+        platelets dropping, or any seizure → treat as severe pre-eclampsia/eclampsia and escalate immediately.
+      </div>
+    </section>
+
+    <!-- ED ALGORITHM -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Algorithm</h3>
+        <span class="section-tag">Flow</span>
+      </div>
+      <ol class="algo-list">
+        <li>Assess ABC, place in left lateral position; give high-flow oxygen if unwell; attach monitoring (BP, pulse, SpO₂).</li>
+        <li>Check gestational age and obstetric history; confirm pregnancy or recent delivery (up to 6 weeks postpartum).</li>
+        <li>Measure BP correctly; repeat to confirm. Check urine (dipstick protein if lab unavailable).</li>
+        <li>Take bloods: FBC, platelets, U&E/creatinine, LFTs, coagulation profile; consider magnesium level if on MgSO₄.</li>
+        <li>If <strong>seizure or very high BP</strong>:
+          <ul>
+            <li>Protect airway, give oxygen, manage seizure (MgSO₄ – see below).</li>
+            <li>Start rapid-acting antihypertensive if BP ≥ 160/110 mmHg.</li>
+          </ul>
+        </li>
+        <li>Call obstetrics/anaesthetics early – definitive treatment is <strong>delivery of the fetus and placenta</strong> at an appropriate facility.</li>
+        <li>Consider urgent transfer to higher level of care/ICU if available and safe.</li>
+      </ol>
+    </section>
+
+    <!-- INVESTIGATIONS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Diagnostic Workup</h3>
+        <span class="section-tag">Investigations</span>
+      </div>
+      <ul>
+        <li>Vital signs including BP trend; strict input/output charting (urine catheter if severe).</li>
+        <li>Urine dipstick for protein; 24-hour protein or protein–creatinine ratio if available (not ED-urgent but note if done).</li>
+        <li>Bloods:
+          <ul>
+            <li>FBC &amp; platelets (look for anaemia, thrombocytopenia, HELLP).</li>
+            <li>U&amp;E/creatinine (renal involvement).</li>
+            <li>LFTs (AST/ALT, LDH – liver involvement/HELLP).</li>
+            <li>Coagulation profile if severe disease, HELLP, or abruption suspected.</li>
+          </ul>
+        </li>
+        <li>Consider CT head/MRI if atypical features, focal neurology or poor recovery after seizure to exclude haemorrhage or thrombosis (once stable and in consultation with obstetrics/neurology).</li>
+      </ul>
+    </section>
+
+    <!-- BP CONTROL -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Acute Blood Pressure Control</h3>
+        <span class="section-tag">Antihypertensives</span>
+      </div>
+      <p>Goal in ED: rapidly reduce dangerously high BP (≥ 160 systolic or ≥ 110 diastolic) to safer levels (e.g. &lt; 150/100) without dropping perfusion abruptly.</p>
+      <ul>
+        <li><span class="drug-name">Labetalol (IV)</span>
+          <ul>
+            <li>Common first-line agent (if no asthma, heart block, or severe bradycardia).</li>
+            <li>Example regimen: 20 mg IV bolus over 2 minutes; if insufficient, repeat with 40 mg then 80 mg at 10–20 minute intervals as needed, up to a protocol-defined maximum.</li>
+          </ul>
+        </li>
+        <li><span class="drug-name">Hydralazine (IV)</span>
+          <ul>
+            <li>Alternative or used where labetalol unavailable/contraindicated.</li>
+            <li>Example: 5–10 mg IV slowly; repeat every 20–30 minutes as needed, guided by BP and fetal status.</li>
+          </ul>
+        </li>
+        <li><span class="drug-name">Nifedipine (oral)</span>
+          <ul>
+            <li>Short-acting oral nifedipine (e.g. 10 mg) may be used where IV access or IV agents are not immediately available; monitor BP closely.</li>
+          </ul>
+        </li>
+        <li>Always follow your <strong>local obstetric/anaesthetic protocol</strong> for exact doses and targets.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Important:</strong> Avoid dropping BP too low or too quickly – aim for controlled reduction, maintaining uteroplacental perfusion.
+      </div>
+    </section>
+
+    <!-- MAGNESIUM SULFATE & SEIZURE MANAGEMENT -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Eclampsia & Magnesium Sulfate</h3>
+        <span class="section-tag">Seizures</span>
+      </div>
+      <p>Magnesium sulfate (MgSO₄) is the drug of choice to prevent and treat eclamptic seizures.</p>
+      <h4 class="section-title" style="font-size: 0.9rem;">Initial Seizure Management</h4>
+      <ul>
+        <li>Position patient in left lateral position; protect airway and prevent injury.</li>
+        <li>Give oxygen; suction as needed; prepare for intubation if prolonged or recurrent seizures, or low GCS.</li>
+      </ul>
+
+      <h4 class="section-title" style="font-size: 0.9rem; margin-top: 0.5rem;">Magnesium Sulfate Regimen (example)</h4>
+      <ul>
+        <li>Loading dose: <span class="drug-name">4–6 g IV</span> over 15–20 minutes.</li>
+        <li>Maintenance: <span class="drug-name">2–3 g/hour IV infusion</span>, usually for at least 24 hours after last seizure or delivery (follow local protocol).</li>
+        <li>Monitor:
+          <ul>
+            <li>Respiratory rate, oxygen saturation.</li>
+            <li>Patellar reflexes.</li>
+            <li>Urine output (&gt; 25–30 mL/hour).</li>
+          </ul>
+        </li>
+        <li>Signs of magnesium toxicity: loss of reflexes, respiratory depression, bradycardia.</li>
+        <li>Antidote for toxicity: <span class="drug-name">10 mL of 10% calcium gluconate IV</span> given slowly (as per local protocol) and stop infusion.</li>
+      </ul>
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        Benzodiazepines may be used if seizures persist while arranging MgSO₄, but magnesium remains the primary agent.
+      </p>
+    </section>
+
+    <!-- FLUIDS & GENERAL SUPPORTIVE CARE -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Fluids & Supportive Care</h3>
+        <span class="section-tag">Balance</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Fluids:</span> use cautiously – pre-eclamptic patients are intravascularly depleted but leaky; at risk of pulmonary oedema.</li>
+        <li>Avoid routine diuretics; reserve for pulmonary oedema under specialist guidance.</li>
+        <li>Typical approach: controlled IV fluids (e.g. ~80–100 mL/hour) with strict input/output charting – follow local protocol.</li>
+        <li>Consider ICU/HDU admission for severe disease, eclampsia, HELLP, or organ failure.</li>
+      </ul>
+    </section>
+
+    <!-- DELIVERY & DISPOSITION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Definitive Management & Disposition</h3>
+        <span class="section-tag">Next Steps</span>
+      </div>
+      <ul>
+        <li>Definitive treatment of pre-eclampsia/eclampsia is <strong>delivery of the fetus and placenta</strong> at an appropriate facility.</li>
+        <li>Timing and mode of delivery depend on gestational age, maternal and fetal condition – decided by obstetric team.</li>
+        <li>ED role:
+          <ul>
+            <li>Resuscitate and stabilise (BP control, MgSO₄, airway/fluids).</li>
+            <li>Initiate investigations to identify severity and complications.</li>
+            <li>Communicate clearly with obstetrics/anaesthetics/ICU and prepare for transfer if needed.</li>
+          </ul>
+        </li>
+        <li>Remember postpartum eclampsia can occur up to 6 weeks after delivery – treat the same way (MgSO₄ + BP control + obstetric review).</li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Check BP in all pregnant/postpartum patients with headache or seizure</span>
+        <span class="pill">BP ≥ 160/110 → treat urgently</span>
+        <span class="pill">Magnesium sulfate prevents and treats seizures</span>
+        <span class="pill">Definitive treatment = delivery</span>
+      </div>
+    </section>
+
+    <!-- DOCUMENTATION & HANDOVER -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Documentation & Handover</h3>
+        <span class="section-tag">Safety</span>
+      </div>
+      <ul>
+        <li>Record:
+          <ul>
+            <li>Gestational age, parity, key antenatal history.</li>
+            <li>Serial BP readings, symptoms (headache, visual change, RUQ pain, oedema, seizures).</li>
+            <li>Medications given (antihypertensives, MgSO₄: dose and time), fluids, and investigation results.</li>
+          </ul>
+        </li>
+        <li>Provide a structured handover to obstetric/ICU teams, including trends and response to treatment.</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
-

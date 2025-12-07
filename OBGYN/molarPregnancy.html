@@ -7,99 +7,504 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/gynae.svg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    @media (min-width: 720px) {
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
       }
-      strong {
-          font-size: large;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bolder;
-          color: orangered;
-        }
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.12rem 0.45rem;
+      border-radius: 0.5rem;
+      background: rgba(11, 79, 108, 0.06);
+      color: var(--primary);
+      margin-left: 0.2rem;
+    }
+
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.96rem;
+      }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
       <h1>Molar Pregnancy</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
     </div>
   </header>
-  <div class="section">
-    <h1 class="subheading">Molar Pregnancy</h1>
-    <h2 class="strong">Types of Molar Pregnancy</h2>
-    <ul>
-      <li>Molar pregnancy is classified into two main types: Complete Hydatidiform Mole (CHM) and Partial Hydatidiform Mole (PHM).</li>
-      <li>CHM occurs when an egg without maternal DNA is fertilized and the duplicated haploid genome results in abnormal trophoblastic proliferation.</li>
-      <li>PHM arises from the fertilization of a normal egg by two sperm, leading to triploid karyotype and some fetal tissue along with trophoblastic hyperplasia.</li>
-    </ul>
-    
-    <h2 class="strong">Clinical Presentation and Symptoms</h2>
-    <ul>
-      <li>Early molar pregnancies may not show significant clinical signs.</li>
-      <li>Risk factors for molar pregnancy include extreme maternal age.</li>
-      <li>Symptoms can include abdominal pain, nausea, vomiting, vaginal bleeding, and respiratory distress.</li>
-      <li>The absence of fetal heart tones during the second trimester may raise suspicion of molar pregnancy.</li>
-    </ul>
 
-    <h2 class="strong">Diagnosis and Sonographic Appearance</h2>
-    <ul>
-      <li>Ultrasonography plays a crucial role in diagnosing molar pregnancy.</li>
-      <li>The classic "snowstorm appearance" of hydropic vesicles in the uterus is highly suggestive of molar pregnancy.</li>
-      <li>Partial molar pregnancies can also display cystic changes.</li>
-      <li>Ovarian theca lutein cysts and ovarian torsion may be present due to hormonal stimulation.</li>
-    </ul>
+  <main>
+    <h2 class="page-title">Molar Pregnancy (Hydatidiform Mole)</h2>
+    <p class="page-subtitle">
+      Gestational trophoblastic disease presenting with early pregnancy bleeding, very high β-hCG, and characteristic ultrasound findings.
+      ED role: recognise, stabilise, and arrange urgent gynae follow-up.
+    </p>
 
-    <h2 class="strong">Complications and Diagnostic Challenges</h2>
-    <ul>
-      <li>Molar pregnancies can lead to complications like pre-eclampsia, respiratory distress from trophoblastic embolization, hyperemesis gravidarum, and uterine bleeding.</li>
-      <li>Ultrasonography is valuable, but diagnosis might require histopathologic examination of abortion specimens, especially in partial molar pregnancies.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Think mole in early bleeding + very high β-hCG</span>
+      <span class="chip">“Snowstorm” uterus on ultrasound</span>
+      <span class="chip">Risk of GTN / choriocarcinoma</span>
+      <span class="chip">Needs prolonged hCG follow-up</span>
+    </div>
 
-    <h2 class="strong">Management and Follow-Up</h2>
-    <ul>
-      <li>The primary management approach is uterine dilation and curettage (D&C) to remove molar tissue.</li>
-      <li>After D&C, patients require close monitoring for potential trophoblastic sequelae.</li>
-      <li>Patients are at risk of developing invasive moles or choriocarcinoma, which require specialized oncologic treatment involving chemotherapy, radiation, and surgery.</li>
-    </ul>
+    <!-- ED PRIORITIES -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Priorities</h3>
+        <span class="section-tag">Overview</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Key concept:</strong> Molar pregnancy is a premalignant trophoblastic disease. In ED, treat it as
+        <strong>abnormal early pregnancy</strong> with potential for heavy bleeding, very high β-hCG, and early pre-eclampsia.
+        Your job is to recognise and safely refer.
+      </div>
+      <ul>
+        <li>Consider in any early pregnancy with:
+          <ul>
+            <li>Disproportionately large uterus for gestational age, or</li>
+            <li>Very high β-hCG, severe hyperemesis, early-onset hypertension, or thyroid symptoms.</li>
+          </ul>
+        </li>
+        <li>Stabilise if bleeding or haemodynamically compromised.</li>
+        <li>Arrange urgent gynae assessment for uterine evacuation and follow-up planning.</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Oncologic Implications</h2>
-    <ul>
-      <li>A subset of molar pregnancies can progress to gestational trophoblastic neoplasia (GTN), including invasive moles and choriocarcinoma.</li>
-      <li>GTN necessitates vigilant follow-up, often involving specialized oncology care and close surveillance of hCG levels.</li>
-    </ul>
+    <!-- TYPES / PATHOLOGY -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Types & Pathology</h3>
+        <span class="section-tag">Foundations</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Complete hydatidiform mole (CHM):</span>
+          <ul>
+            <li>Usually 46,XX paternal-only genetic material (empty ovum fertilised and duplicated).</li>
+            <li>No fetus; diffuse hydropic swelling of chorionic villi with marked trophoblastic proliferation.</li>
+            <li>Higher risk of progression to gestational trophoblastic neoplasia (GTN).</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Partial hydatidiform mole (PHM):</span>
+          <ul>
+            <li>Triploid conceptus (e.g. 69,XXX/XXY) due to fertilisation of a normal ovum by two sperm.</li>
+            <li>Abnormal placenta with some normal villi; may have some fetal tissue or sac present.</li>
+            <li>Lower but still present risk of GTN.</li>
+          </ul>
+        </li>
+        <li>Risk factors include extremes of maternal age (very young or &gt; 35–40 years) and previous molar pregnancy.</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Patient Counseling and Education</h2>
-    <ul>
-      <li>Patients diagnosed with molar pregnancy should receive comprehensive counseling about the condition, potential complications, and the need for vigilant follow-up and monitoring.</li>
-    </ul>
+    <!-- CLINICAL PRESENTATION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Clinical Presentation</h3>
+        <span class="section-tag">Symptoms</span>
+      </div>
+      <ul>
+        <li>Vaginal bleeding in the first or early second trimester (often painless but may be heavy or recurrent).</li>
+        <li>Excessive nausea and vomiting (hyperemesis gravidarum) due to very high β-hCG.</li>
+        <li>Uterus larger than dates, pelvic pressure or discomfort.</li>
+        <li>Absence of fetal heart tones when they should be expected.</li>
+        <li>Passage of vesicular tissue per vagina (grape-like clusters) – classic but not always seen.</li>
+        <li>Early-onset pre-eclampsia (before 20 weeks) – strongly consider molar pregnancy.</li>
+        <li>Shortness of breath or respiratory distress if trophoblastic emboli or pulmonary oedema occur (rare but serious).</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Red flags for mole in ED:</strong> early pregnancy + large uterus, severe hyperemesis, very high β-hCG,
+        or pre-eclampsia before 20 weeks.
+      </div>
+    </section>
 
-    <h2 class="strong">Collaborative Care</h2>
-    <ul>
-      <li>Molar pregnancies often require a multidisciplinary approach involving obstetricians, gynecologic oncologists, pathologists, and radiologists to ensure accurate diagnosis and optimal management.</li>
-    </ul>
+    <!-- INVESTIGATIONS & ULTRASOUND -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Investigations & Ultrasound Findings</h3>
+        <span class="section-tag">Diagnosis</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">β-hCG:</span> often markedly elevated for gestational age; may be &gt;100,000 IU/L.</li>
+        <li><span class="inline-label">Ultrasound:</span>
+          <ul>
+            <li>Classic appearance for complete mole: <strong>“snowstorm”</strong> or “cluster of grapes” –
+              diffuse echogenic mass with multiple small cystic spaces, no fetus.</li>
+            <li>Partial mole: may show abnormal placenta with cystic spaces and a growth-restricted or abnormal fetus.</li>
+            <li>Ovarian theca lutein cysts may be seen (due to high β-hCG) and can be large or bilateral.</li>
+          </ul>
+        </li>
+        <li>Baseline bloods:
+          <ul>
+            <li>FBC (anaemia, infection).</li>
+            <li>U&amp;E and LFTs.</li>
+            <li>Clotting profile if heavy bleeding.</li>
+          </ul>
+        </li>
+        <li>Rh status and group &amp; save/crossmatch if bleeding significantly or evacuation anticipated.</li>
+        <li>Definitive diagnosis is by histopathological examination of evacuated tissue.</li>
+      </ul>
+    </section>
 
-    <h2 class="strong">Research and Advances</h2>
-    <ul>
-      <li>Ongoing research aims to improve the early diagnosis, prognosis, and management of molar pregnancies, especially in the context of potential malignant progression.</li>
-      <li>Understanding the intricacies of molar pregnancies is essential for healthcare professionals to provide appropriate care, counseling, and timely interventions to affected individuals.</li>
-    </ul>
-  </div>
+    <!-- COMPLICATIONS / ONCOLOGIC RISK -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Complications & Oncologic Risk</h3>
+        <span class="section-tag">Risks</span>
+      </div>
+      <ul>
+        <li>Heavy uterine bleeding ± haemodynamic compromise.</li>
+        <li>Early pre-eclampsia, hyperthyroidism, and high-output cardiac strain (due to very high β-hCG levels).</li>
+        <li>Respiratory compromise from trophoblastic embolisation or pulmonary oedema.</li>
+        <li>Progression to <strong>gestational trophoblastic neoplasia (GTN)</strong>, including:
+          <ul>
+            <li>Invasive mole (locally invasive).</li>
+            <li>Choriocarcinoma (highly malignant, can metastasise early, especially to lungs and brain).</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Complete mole → higher GTN risk</span>
+        <span class="pill">Needs hCG surveillance until negative</span>
+        <span class="pill">Contraception essential during follow-up</span>
+      </div>
+    </section>
+
+    <!-- ED MANAGEMENT -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Management in the ED</h3>
+        <span class="section-tag">Immediate</span>
+      </div>
+      <ul>
+        <li>Assess ABC; treat shock if present:
+          <ul>
+            <li>Secure IV access, take bloods (including group &amp; save/crossmatch).</li>
+            <li>Start IV fluids cautiously; transfuse if needed as per local protocol.</li>
+          </ul>
+        </li>
+        <li>Control heavy vaginal bleeding with uterine massage and urgent obstetric review.</li>
+        <li>Check vitals repeatedly; monitor for hypoxia or respiratory distress.</li>
+        <li>Administer antiemetics for severe nausea/vomiting.</li>
+        <li>Analgesia as required (paracetamol ± opioids as appropriate).</li>
+        <li>Arrange urgent gynae admission or review for:
+          <ul>
+            <li>Planned uterine evacuation (suction curettage/D&amp;C) in a controlled theatre environment.</li>
+            <li>Baseline staging and planning of follow-up.</li>
+          </ul>
+        </li>
+        <li>Anti-D immunoglobulin if indicated for Rhesus-negative patients with bleeding or planned uterine instrumentation (follow local policy).</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Definitive treatment:</strong> evacuation of uterine contents under specialist care, with
+        histology and long-term β-hCG monitoring.
+      </div>
+    </section>
+
+    <!-- FOLLOW-UP & GTN SURVEILLANCE -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Follow-Up & GTN Surveillance</h3>
+        <span class="section-tag">Aftercare</span>
+      </div>
+      <ul>
+        <li>Serial quantitative β-hCG levels (e.g. weekly until normal, then monthly for a defined period – as per local GTD protocol).</li>
+        <li>Failure of β-hCG to fall appropriately, plateauing, or secondary rise suggests GTN → oncology/GTD centre referral.</li>
+        <li>Treatment for GTN may include chemotherapy (often highly effective), rarely surgery or radiotherapy.</li>
+        <li>Contraception:
+          <ul>
+            <li>Effective contraception is recommended during follow-up to avoid confusing new pregnancy with GTN recurrence.</li>
+            <li>Hormonal methods are generally acceptable once β-hCG is falling; check local guidance.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PATIENT COUNSELLING -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Patient Counselling & Education</h3>
+        <span class="section-tag">Communication</span>
+      </div>
+      <ul>
+        <li>Explain that a molar pregnancy is an abnormal pregnancy where the placenta tissue has grown abnormally and cannot result in a viable baby.</li>
+        <li>Reassure that:
+          <ul>
+            <li>Most women do well with appropriate treatment and follow-up.</li>
+            <li>Future normal pregnancies are often possible once surveillance is complete.</li>
+          </ul>
+        </li>
+        <li>Stress the importance of:
+          <ul>
+            <li>Attending all follow-up appointments for β-hCG monitoring.</li>
+            <li>Using reliable contraception until the team confirms it is safe to conceive again.</li>
+          </ul>
+        </li>
+        <li>Acknowledge the emotional impact of pregnancy loss and the anxiety about malignancy; offer psychological support where available.</li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Early recognition in ED</span>
+        <span class="pill">Urgent gynae referral</span>
+        <span class="pill">Histology + hCG surveillance</span>
+        <span class="pill">Counselling about future pregnancy</span>
+      </div>
+    </section>
+
+    <!-- TEAMWORK -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Multidisciplinary Care</h3>
+        <span class="section-tag">Team</span>
+      </div>
+      <ul>
+        <li>Obstetricians/gynaecologists – diagnosis, evacuation, and initial follow-up.</li>
+        <li>Pathologists – confirm type of mole and assess risk features.</li>
+        <li>Oncology or GTD specialist centre – manage GTN if it develops.</li>
+        <li>Primary care / family planning – assist with contraception and long-term support.</li>
+      </ul>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">
+        For juniors in ED, a clear handover to gynae and accurate documentation of findings, β-hCG, and ultrasound impressions are key safety steps.
+      </p>
+    </section>
+  </main>
 </body>
 </html>

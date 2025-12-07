@@ -7,72 +7,496 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <script src="/script.js"></script>
+
   <style>
+    :root {
+      --primary: #0b4f6c;
+      --primary-light: #e3f2fd;
+      --accent: #c2185b;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-main: #222;
+      --text-muted: #555;
+      --danger: #b71c1c;
+      --border-soft: #dde3f0;
+      --radius-lg: 0.9rem;
+      --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
       background-image: url("/images/pain.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
     }
-    .strong {
-        font-size: xx-large;
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bolder;
-        color: navy;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to right, rgba(11, 79, 108, 0.96), rgba(194, 24, 91, 0.9));
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.9rem;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 0.4rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1.05rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-container a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-button {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .back-button i {
+      font-size: 0.8rem;
+    }
+
+    main {
+      padding: 0.75rem 0.9rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 79, 108, 0.18);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip.danger {
+      border-color: rgba(183, 28, 28, 0.3);
+      background: rgba(183, 28, 28, 0.04);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .section-tag {
+      font-size: 0.68rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    p {
+      margin: 0.25rem 0 0.45rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin: 0.1rem 0 0.4rem 1.1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .highlight-box {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(to right, rgba(194, 24, 91, 0.06), rgba(255, 255, 255, 0.9));
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+    }
+
+    .algo-list {
+      list-style: none;
+      margin: 0.2rem 0 0.4rem;
+      padding: 0;
+      counter-reset: step-counter;
+    }
+
+    .algo-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .algo-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.08rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 420px) {
+      .logo-container h1 {
+        font-size: 0.9rem;
       }
-      strong {
-          font-size: large;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bolder;
-          color: orangered;
-        }
+
+      main {
+        padding-inline: 0.6rem;
+      }
+
+      .section-card {
+        padding-inline: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
       <h1>Maternal Primary Survey</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
+      <div class="logo-actions">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back</span>
+        </button>
+      </div>
     </div>
   </header>
-  <div class="section">
-    <h1 class="subheading">Primary Survey in Maternal Care</h1>
-    
-    <p>When dealing with maternal emergencies, it is crucial to perform a primary survey to assess and prioritize the mother's health and obtain preliminary information about the fetus's age. Here are the key steps in the maternal primary survey:</p>
-    
-    <h2 class="strong">Airway and Breathing</h2>
-    <ul>
-      <li>Institute oxygen therapy early to ensure adequate oxygenation.</li>
-      <li>Maintain oxygen saturation levels above 95%.</li>
-      <li>Consider rapid sequence intubation after pre-oxygenation if necessary.</li>
-      <li>Adjust mechanical ventilation settings as needed.</li>
-    </ul>
 
-    <h2 class="strong">Circulation</h2>
-    <ul>
-      <li>Ensure intravenous access with two large-bore catheters placed above the diaphragm.</li>
-      <li>Monitor maternal blood pressure and heart rate.</li>
-      <li>Begin fluid resuscitation with isotonic fluids if significant blood loss is suspected.</li>
-      <li>Use Type O-negative packed red blood cells until type-specific blood products are available.</li>
-      <li>Initiate a massive transfusion protocol with a 1:1:1 ratio of red blood cells, platelets, and plasma.</li>
-      <li>Administer tranexamic acid within 3 hours of injury.</li>
-      <li>Implement a left lateral tilt of 15 to 30 degrees if the gestation is beyond 20 weeks.</li>
-      <li>Use a Foley catheter to measure urine output for circulatory volume status evaluation.</li>
-    </ul>
+  <main>
+    <h2 class="page-title">Maternal Primary Survey (ABCDE)</h2>
+    <p class="page-subtitle">
+      In trauma or medical collapse, resuscitate the mother first. Use a standard ABCDE approach with pregnancy-specific modifications, then assess gestation and fetal status.
+    </p>
 
-    <h2 class="strong">Assessment of Uterine Size and Fetal Viability</h2>
-    <ul>
-      <li>Measure uterine size from the symphysis pubis to the fundus to estimate gestational age.</li>
-      <li>Check fetal heart tones through auscultation or Doppler probe.</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip danger">Mother first = baby first</span>
+      <span class="chip">Left lateral tilt ≥ 20 weeks</span>
+      <span class="chip">Two large-bore IVs above diaphragm</span>
+      <span class="chip">Aim SpO₂ ≥ 95%</span>
+    </div>
 
-    <p>The maternal primary survey is a critical step in maternal care during emergencies, focusing on the mother's well-being while considering the age and viability of the fetus.</p>
-  </div>
+    <!-- OVERVIEW -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">ED Priorities</h3>
+        <span class="section-tag">Overview</span>
+      </div>
+      <div class="highlight-box">
+        <strong>Key concept:</strong> Use the usual primary survey (ABCDE), but adapt for pregnancy:
+        maintain maternal oxygenation and perfusion, avoid aortocaval compression, and quickly estimate gestational age and fetal viability.
+      </div>
+      <ul>
+        <li>Mother’s ABC takes priority – fetal status improves only if maternal status is stabilised.</li>
+        <li>From ~20 weeks, the gravid uterus can compress the IVC → always consider <strong>left uterine displacement / tilt</strong>.</li>
+        <li>Perform a rapid gestational age and fetal viability check once immediate threats to maternal life are addressed.</li>
+      </ul>
+    </section>
+
+    <!-- QUICK FLOW -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Quick Maternal Primary Survey Flow</h3>
+        <span class="section-tag">Sequence</span>
+      </div>
+      <ol class="algo-list">
+        <li>Call for help early; activate trauma/obstetric/emergency team as appropriate.</li>
+        <li>Position: supine with <strong>manual left uterine displacement</strong> or 15–30° left lateral tilt if ≥ 20 weeks.</li>
+        <li>Airway with cervical spine protection (if trauma) and high-flow oxygen; aim SpO₂ ≥ 95%.</li>
+        <li>Breathing: assess and support ventilation; consider early intubation if needed.</li>
+        <li>Circulation: two large-bore IVs above diaphragm; treat shock aggressively; consider massive transfusion.</li>
+        <li>Disability: quick GCS/AVPU, pupils, blood glucose; manage seizures if present.</li>
+        <li>Exposure: fully expose to look for injuries/bleeding; prevent hypothermia; then assess uterus size and fetal heart.</li>
+      </ol>
+    </section>
+
+    <!-- AIRWAY & BREATHING -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">A – Airway & B – Breathing</h3>
+        <span class="section-tag">A + B</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Airway:</span>
+          <ul>
+            <li>Look for obstruction, vomitus, blood; suction as needed.</li>
+            <li>Use jaw thrust if trauma; protect C-spine.</li>
+            <li>High-flow oxygen via mask; aim <strong>SpO₂ ≥ 95%</strong> (pregnant women desaturate faster).</li>
+            <li>Early consideration of rapid sequence intubation if:
+              <ul>
+                <li>GCS ≤ 8 or inability to protect airway, or</li>
+                <li>Severe respiratory distress, shock, or ongoing seizures.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Breathing:</span>
+          <ul>
+            <li>Inspect, palpate, percuss, auscultate the chest – look for pneumothorax, haemothorax, flail chest.</li>
+            <li>Pregnancy causes reduced FRC and increased oxygen demand → tolerate <strong>no hypoxia</strong>.</li>
+            <li>Support with bag–valve–mask if needed while preparing for intubation.</li>
+            <li>Adjust ventilator settings in intubated patients to avoid both hypoxia and significant hyperventilation.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CIRCULATION -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">C – Circulation</h3>
+        <span class="section-tag">Shock</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Positioning:</span> if ≥ 20 weeks:
+          <ul>
+            <li>Manual left uterine displacement (push uterus up and left) or tilt bed 15–30° to the left.</li>
+            <li>Reduces aortocaval compression and improves venous return and cardiac output.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">IV access & monitoring:</span>
+          <ul>
+            <li>Two large-bore IV cannulae <strong>above the diaphragm</strong> (e.g. antecubital fossa).</li>
+            <li>Continuous BP, HR, SpO₂; consider arterial line if available and patient severely unwell.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Fluids & blood:</span>
+          <ul>
+            <li>Start isotonic crystalloid for suspected hypovolaemia, while arranging blood.</li>
+            <li>Use type O-negative packed red cells if immediate transfusion required and group-specific blood not yet available.</li>
+            <li>For major haemorrhage, activate massive transfusion protocol (e.g. approximate 1:1:1 ratio RBC : plasma : platelets as per local guideline).</li>
+            <li>Administer <strong>tranexamic acid</strong> early (ideally within 3 hours) in major trauma or postpartum haemorrhage, as per protocol.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Urine output:</span>
+          <ul>
+            <li>Insert a Foley catheter unless contraindicated (e.g. suspected urethral injury in trauma).</li>
+            <li>Target urine output ≥ 0.5 mL/kg/hr; low output suggests inadequate perfusion.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Remember:</strong> A pregnant woman can lose a large blood volume before obvious hypotension — look for tachycardia, tachypnoea, pallor, and altered mental status as early signs of shock.
+      </div>
+    </section>
+
+    <!-- DISABILITY & EXPOSURE -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">D – Disability & E – Exposure</h3>
+        <span class="section-tag">Neuro & Exam</span>
+      </div>
+      <ul>
+        <li><span class="inline-label">Disability (neurological):</span>
+          <ul>
+            <li>Rapid GCS or AVPU assessment.</li>
+            <li>Check pupils, limb movement, and signs of lateralising deficits.</li>
+            <li>Check capillary blood glucose in all altered patients.</li>
+            <li>If seizure → protect airway, treat with appropriate anti-seizure meds; if pregnant, consider eclampsia and give magnesium sulfate as per protocol.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Exposure:</span>
+          <ul>
+            <li>Fully expose to look for injuries, bleeding, bruising, rashes; gently log-roll if trauma and spine precautions.</li>
+            <li>Pay special attention to abdomen, flank and perineum; look for vaginal bleeding or fluid loss.</li>
+            <li>Prevent hypothermia with warm blankets, warmed IV fluids, and warmed environment.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- UTERUS & FETUS -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Assessment of Uterus & Fetus</h3>
+        <span class="section-tag">Gestation</span>
+      </div>
+      <p>Once life-threatening maternal problems have been addressed, perform a rapid obstetric assessment.</p>
+      <ul>
+        <li><span class="inline-label">Uterine size / gestational age:</span>
+          <ul>
+            <li>Palpate uterus from symphysis pubis to fundus (fundal height in cm approximates gestational age in weeks after ~20 weeks).</li>
+            <li>Note:
+              <ul>
+                <li>Fundus at umbilicus ≈ 20 weeks.</li>
+                <li>Each finger breadth above/below ≈ 1–2 weeks, roughly.</li>
+              </ul>
+            </li>
+            <li>Large/small for dates may indicate multiple pregnancy, polyhydramnios, growth restriction, etc.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Fetal heart:</span>
+          <ul>
+            <li>Use Doppler or fetoscope if equipment available and gestation allows (usually ≥ 12–14 weeks for Doppler).</li>
+            <li>Document rate and rhythm; normal baseline ~110–160 bpm.</li>
+            <li>Absent fetal heart in the resus room does <strong>not</strong> change initial maternal resuscitation — continue ABCDE and involve obstetrics early.</li>
+          </ul>
+        </li>
+        <li><span class="inline-label">Abdominal tenderness / uterine tone:</span>
+          <ul>
+            <li>Localised tenderness or rigid “wooden” uterus → think placental abruption.</li>
+            <li>Contractions – frequency, duration and pain; possible labour or uterine irritability after trauma.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">Fundal height → approximate GA</span>
+        <span class="pill">Check fetal heart if viable GA</span>
+        <span class="pill">Tender, rigid uterus → suspect abruption</span>
+      </div>
+    </section>
+
+    <!-- WRAP-UP & TEAMWORK -->
+    <section class="section-card">
+      <div class="section-header">
+        <h3 class="section-title">Next Steps, Documentation & Teamwork</h3>
+        <span class="section-tag">Handover</span>
+      </div>
+      <ul>
+        <li>After primary survey, repeat ABCDE as needed and move to secondary survey (full head-to-toe + detailed obstetric assessment).</li>
+        <li>Involve:
+          <ul>
+            <li>Obstetrics/gynecology (for fetal and uterine assessment, potential delivery decisions).</li>
+            <li>Anaesthetics/ICU (for airway, ventilation, inotropes if needed).</li>
+            <li>Surgery/trauma team in cases of significant injury.</li>
+          </ul>
+        </li>
+        <li>Document clearly:
+          <ul>
+            <li>Time of assessment, gestational age (estimated), uterine size and fetal heart findings.</li>
+            <li>All interventions: oxygen, IV fluids, blood products, drugs (e.g. TXA), and response.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Remember:</strong> repeat and re-prioritise the primary survey whenever the patient deteriorates –
+        ABCDE is a cycle, not a once-off event.
+      </div>
+    </section>
+  </main>
 </body>
 </html>
