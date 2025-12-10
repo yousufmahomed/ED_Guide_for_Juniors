@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title> Child Abuse and Neglect Assessment and Management</title>
     <meta charset="UTF-8">
+    <title>Child Abuse and Neglect Assessment and Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -12,65 +12,74 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 16px;
             font-weight: bold;
-            line-height: 2;
+            line-height: 1.8;
             color: #333;
             background-image: url("/images/checklistBackground.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-           
-          }
-          p {
-            text-decoration: underline;
-            line-height: 1.5;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #333;
-          }
-          
-          ul {
-            margin-top: 20px;
-          }
-          
-          ul li {
-            margin-bottom: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: #333;
-            line-height: 1.5rem;
-          }
-          
-          ul ul li {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #333;
-          }
-          ul li em{
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: red;
-              font-size: larger;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-              text-decoration: underline;
+            margin: 0;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.05);
+        }
+
+        .subheading {
+            font-size: 1.3rem;
+            color: #003366;
+            margin-bottom: 0.4rem;
+        }
+
+        p {
+            margin-top: 0.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        ul, ol {
+            margin: 0.3rem 0 0.3rem 1.2rem;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .warning-box {
+            background: #ffe6e6;
+            border-left: 6px solid #cc0000;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .note-box {
+            background: #fff8d8;
+            border-left: 6px solid #ff9900;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .bottom-link {
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .subheading {
+                font-size: 1.15rem;
             }
-            ul ul li em{
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: green;
-              font-size: larger;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-              text-decoration: underline;
-            }
-            ol {
-              margin-top: 20px;
-            }
-            ol li {
-              margin-bottom: 10px;
-              font-family: Arial, sans-serif;
-              font-size: 16px;
-              color: #333;
-              line-height: 1.5rem;
-            }
+        }
     </style>
 </head>
 <body>
@@ -81,88 +90,182 @@
           <button class="back-button" onclick="goBack()">Back</button>
         </div>
     </header>
-    
-    <div class="section">
-        <h2 class="subheading">Introduction</h2>
-        <p>Child maltreatment is a prevalent issue, with over 650,000 children experiencing abuse or neglect annually in the United States. Emergency physicians play a crucial role in identifying nonaccidental injuries and preventing further harm. Child maltreatment includes neglect (68%), physical abuse (16%), sexual abuse (8%), emotional abuse, and medical child abuse (8%).</p>
-    </div>
-    
-    <div class="section">
-        <h2 class="subheading">Neglect Evaluation and Management</h2>
-        <ul>
-            <li>Neglect is the most common form of maltreatment, contributing to up to 50% of child maltreatment fatalities.</li>
-            <li>Neglect occurs when a caregiver fails to provide basic needs, resulting in serious impairment of the child's health or development.</li>
-            <li>Multiple risk factors associated with neglect, such as poverty, parental substance abuse, and mental health issues, should be assessed.</li>
-            <li>In the emergency department (ED), recognize when neglect may be a concern, document presenting issues, and trigger a multidisciplinary team approach for investigation and management.</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h2 class="subheading">Clinical Features and Assessment</h2>
-        <ul>
-            <li>Children may present with failure to thrive, malnutrition, infections, repeated injuries, behavioural problems, or mental health concerns.</li>
-            <li>Review the hospital record before obtaining parental medical history.</li>
-            <li>Evaluate the parents' ability to provide a clear history and knowledge about their child's health.</li>
-            <li>Note growth parameters, immunization status, medications, and chronic health problems.</li>
-            <li>Observe parent-child interaction and document clothing, hygiene, and unusual behaviours.</li>
-            <li>Focus on skin, hair, teeth, and respiratory system during the physical examination.</li>
-            <li>Consider skeletal survey for severe neglect to identify abuse or skeletal abnormalities.</li>
-        </ul>
-    </div>
-    
-   <!-- Laboratory Testing and Imaging Section -->
-<div class="section">
-    <h2 class="subheading">Laboratory Testing and Imaging</h2>
-    <p>Perform investigations based on illness severity. For neglect cases:</p>
-    <ul>
-        <li>Comprehensive nutritional and metabolic profile for failure to thrive cases.</li>
-        <li>Consider a skeletal survey for serious neglect cases to assess abuse or nutritional deficiencies.</li>
-    </ul>
-</div>
 
-<!-- Treatment and Disposition Section -->
-<div class="section">
-    <h2 class="subheading">Treatment and Disposition</h2>
-    <ul>
-        <li>Stabilize acute medical issues and injuries.</li>
-        <li>Manage severe malnourishment and fluid/electrolyte imbalance.</li>
-        <li>Educate parents sensitively on urgent problems, further investigation, and treatment.</li>
-        <li>Consult paediatric specialists or child abuse experts for concerns of neglect.</li>
-        <li>Regular re-evaluation is necessary for comprehensive neglect management.</li>
-    </ul>
-</div>
+    <main>
+        <div class="section">
+            <h2 class="subheading">Introduction</h2>
+            <p>
+                Child abuse and neglect are common and often under-recognised. Emergency clinicians are in a key
+                position to identify non-accidental injuries, initiate protection and prevent further harm.
+            </p>
+            <p>
+                Maltreatment includes:
+            </p>
+            <ul>
+                <li>Neglect (failure to provide basic needs and supervision).</li>
+                <li>Physical abuse (inflicted injury).</li>
+                <li>Sexual abuse and exploitation.</li>
+                <li>Emotional/psychological abuse.</li>
+                <li>Medical neglect or “medical child abuse”.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Remember:</strong> Your role is to recognise concerns, stabilise the child, document carefully,
+                and trigger the appropriate reporting and multidisciplinary response according to local law and hospital policy.
+            </div>
+        </div>
 
-<!-- Physical Abuse Evaluation and Management Section -->
-<div class="section">
-    <h2 class="subheading">Physical Abuse Evaluation and Management</h2>
-    <ul>
-        <li>Physical abuse accounts for 16% of child abuse cases.</li>
-        <li>Injuries can occur on the skin, skeleton, head, and abdomen.</li>
-        <li>Prioritize medical evaluation and treatment over legal investigation.</li>
-        <li>Gather a detailed history from all involved parties, focusing on the onset and progression of symptoms.</li>
-        <li>Evaluate the child's alertness, work of breathing, perfusion, and movement.</li>
-        <li>Examine the scalp, mouth, skin, and extremities for signs of injury.</li>
-        <li>Document the precise location, size, and shape of any injuries.</li>
-    </ul>
-</div>
+        <div class="section">
+            <h2 class="subheading">ED Red Flags for Possible Abuse or Neglect</h2>
+            <ul>
+                <li>Inconsistent, vague or changing history between caregivers, or between history and injury pattern.</li>
+                <li>Delay in seeking care for significant injury or illness.</li>
+                <li>Injuries incompatible with the child’s developmental stage (e.g. femur fracture in a non-ambulant infant).</li>
+                <li>Multiple injuries at different stages of healing (old and new bruises or fractures).</li>
+                <li>Patterned bruises or marks (belt, cord, handprints, looped objects, bite marks).</li>
+                <li>Injuries to protected areas: ears, neck, inner thighs, trunk, genital or perianal region.</li>
+                <li>Failure to thrive, malnutrition, poor hygiene, untreated chronic conditions.</li>
+                <li>Child fearful of caregiver, excessively withdrawn, or overly anxious in their presence.</li>
+                <li>Caregiver intoxicated, aggressive, unconcerned or obstructive to care.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="subheading">Neglect – Evaluation and Management</h2>
+            <ul>
+                <li>Neglect is the most common form of maltreatment and contributes substantially to child mortality.</li>
+                <li>Occurs when a caregiver fails to provide basic needs (nutrition, shelter, supervision, medical care),
+                    resulting in actual or potential harm.</li>
+                <li>Assess risk factors: poverty, parental substance use, mental illness, domestic violence, social isolation.</li>
+                <li>
+                    In the ED:
+                    <ul>
+                        <li>Identify when presenting complaint may be a manifestation of chronic neglect (e.g. severe malnutrition, untreated asthma, missed chronic meds).</li>
+                        <li>Document presenting issues clearly, including appearance, hygiene and interaction.</li>
+                        <li>Alert senior staff and initiate a multidisciplinary response (paediatrics, social work, child protection services).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="subheading">Clinical Features and Assessment</h2>
+            <ul>
+                <li>Possible presentations: failure to thrive, malnutrition, recurrent infections, repeated injuries,
+                    developmental delay, behavioural or mental health concerns.</li>
+                <li>Review previous hospital/clinic records before accepting the caregiver’s history at face value.</li>
+                <li>Evaluate the caregiver’s knowledge of the child’s medical conditions and medications.</li>
+                <li>Note growth parameters, immunisation status, chronic conditions and missed follow-ups.</li>
+                <li>Observe parent–child interaction: warmth vs hostility, responsiveness, fear, over- or under-involvement.</li>
+                <li>On examination, pay special attention to:
+                    <ul>
+                        <li>Skin, hair, teeth, nails (signs of neglect, nutritional deficiency, trauma).</li>
+                        <li>Respiratory and cardiovascular status (untreated asthma, heart disease, anaemia).</li>
+                        <li>Neurological status and developmental level.</li>
+                    </ul>
+                </li>
+                <li>Consider a skeletal survey (especially in infants and toddlers) if severe neglect or physical abuse is suspected.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="subheading">Laboratory Testing and Imaging</h2>
+            <p>Investigations should be guided by clinical findings and severity of illness.</p>
+            <ul>
+                <li>For failure to thrive or suspected neglect:
+                    <ul>
+                        <li>Baseline FBC, U&amp;E, LFTs, glucose, CRP/ESR, urinalysis.</li>
+                        <li>Nutritional and metabolic profile as indicated (iron studies, vitamins, thyroid, coeliac screening, etc.).</li>
+                    </ul>
+                </li>
+                <li>Consider skeletal survey and, where appropriate, CT/MRI for suspected inflicted head injury or occult fractures.</li>
+                <li>Document reasons for all investigations, especially where they relate to suspected abuse.</li>
+            </ul>
+        </div>
 
-<!-- Additional Considerations Section -->
-<div class="section">
-    <h2 class="subheading">Additional Considerations</h2>
-    <ul>
-        <li>Collaborate with multidisciplinary teams for thorough assessment and management.</li>
-        <li>Maintain a respectful and culturally sensitive approach to parents and caregivers.</li>
-        <li>Document findings, interventions, consultations, and recommended follow-up care.</li>
-        <li>Comply with legal reporting requirements for suspected child abuse and neglect.</li>
-    </ul>
-</div>
+        <div class="section">
+            <h2 class="subheading">Treatment and Disposition</h2>
+            <ul>
+                <li>Stabilise acute medical and traumatic problems first (ABCs, analgesia, resuscitation as required).</li>
+                <li>Treat acute complications of neglect (severe malnutrition, dehydration, electrolyte disturbance, infection).</li>
+                <li>Admit children where there is medical instability, high risk of further harm, or inadequate supervision at home.</li>
+                <li>Involve paediatrics, social work, psychology/psychiatry and child protection services early.</li>
+                <li>Explain concerns and next steps to caregivers in a calm, non-accusatory manner, while prioritising the child’s safety.</li>
+            </ul>
+        </div>
 
-<!-- Conclusion Section -->
-<div class="section">
-    <h2 class="subheading">Conclusion</h2>
-    <p>Child abuse and neglect assessments require comprehensive evaluations, interdisciplinary collaboration, and sensitive communication. Early recognition and appropriate management by emergency physicians are essential to ensuring the safety and well-being of vulnerable children.</p>
-</div>
-<h3>Download the <a href="/pdfs/GBV child abuse and adult or partner abuse protocol.pdf" class="emphasis-link" target="_blank">Full Protocol here</a></h3>
-    
+        <div class="section">
+            <h2 class="subheading">Physical Abuse – Evaluation and Management</h2>
+            <ul>
+                <li>Commonly involves skin, skeletal, head and abdominal injuries.</li>
+                <li>Medical stabilisation takes priority over investigative or legal processes.</li>
+                <li>Take a detailed, structured history:
+                    <ul>
+                        <li>Onset and progression of symptoms.</li>
+                        <li>Exact mechanism, timing, and who witnessed the event.</li>
+                        <li>Any previous similar injuries or unexplained events.</li>
+                    </ul>
+                </li>
+                <li>
+                    Examine systematically:
+                    <ul>
+                        <li>General: alertness, work of breathing, perfusion, movement.</li>
+                        <li>Skin: bruises, abrasions, burns, scars; note any patterned or clustered lesions.</li>
+                        <li>Head &amp; neck: scalp, frenula, palate, ears, eyes (subconjunctival haemorrhages, retinal haemorrhages where suspected).</li>
+                        <li>Trunk and abdomen: tenderness, guarding, bruising, especially over ribs and flanks.</li>
+                        <li>Extremities: swelling, deformity, reduced movement.</li>
+                    </ul>
+                </li>
+                <li>Document precise location, size, colour and shape of injuries; use body diagrams if available.</li>
+                <li>Photograph injuries as per hospital policy, with consent and secure storage.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="subheading">Documentation & Medico-Legal Considerations</h2>
+            <ul>
+                <li>Record the history verbatim where possible, especially key phrases and inconsistencies.</li>
+                <li>Use objective language: describe what you see and hear; avoid labels like “abusive parent” in notes.</li>
+                <li>Include who was present, who gave the history, and any discrepancies between informants.</li>
+                <li>Document all examinations, investigations, discussions with seniors, and referrals made.</li>
+                <li>Complete any required forms (e.g. medico-legal documentation, J88 or local equivalent) carefully and legibly.</li>
+                <li>Follow your local mandatory reporting procedures for suspected abuse/neglect and record that this was done.</li>
+            </ul>
+            <div class="note-box">
+                <strong>Key point:</strong> You do not have to “prove” abuse – a reasonable suspicion, based on your clinical
+                assessment, is enough to trigger formal reporting and multidisciplinary review.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="subheading">Additional Considerations</h2>
+            <ul>
+                <li>Work with a multidisciplinary team: paediatrics, social work, psychology, child protection, and law enforcement where appropriate.</li>
+                <li>Maintain a respectful, culturally sensitive approach while keeping the child’s safety at the centre of decisions.</li>
+                <li>Offer support or referral for caregiver mental health, substance use, or social stressors where possible.</li>
+                <li>Arrange clear follow-up plans for medical review and ongoing protection.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="subheading">Conclusion</h2>
+            <p>
+                Assessing child abuse and neglect in the ED requires systematic clinical evaluation, careful
+                documentation, sensitive communication and a low threshold to involve senior staff and child
+                protection services. Early recognition and appropriate response can be life-saving.
+            </p>
+        </div>
+
+        <div class="section bottom-link">
+            <h3>Full Protocol</h3>
+            <p>
+                Download the detailed protocol for gender-based violence, child abuse, and adult or partner abuse:
+            </p>
+            <p>
+                <a href="/pdfs/GBV child abuse and adult or partner abuse protocol.pdf" class="emphasis-link" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> Download Full Protocol
+                </a>
+            </p>
+        </div>
+    </main>
 </body>
 </html>

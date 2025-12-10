@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Commonly Used Pediatric Resuscitation Drugs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -10,172 +11,325 @@
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      line-height: 1.6;
       color: #333;
       background-image: url("/images/medications.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      margin: 0;
     }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
+      font-size: 0.9rem;
     }
+
     th, td {
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
+
     th {
-      background-color: #4CAF50;
+      background-color: #00509E;
       color: white;
     }
+
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    input[type=text] {
+
+    input[type="text"] {
       width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
+      padding: 10px 12px;
+      margin: 0.5rem 0 1rem 0;
       box-sizing: border-box;
       border: 2px solid #ccc;
       border-radius: 4px;
+      font-size: 1rem;
     }
-    input[type=text]:focus {
-      border: 2px solid #4CAF50;
+
+    input[type="text"]:focus {
+      border-color: #00509E;
+      outline: none;
+    }
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <nav class="logo-container">
-      <div class="logo-container">
-        <h1 class="main-header">Commonly Used Pediatric Resuscitation Drugs</h1>
-        <div class="navbar-icons">
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-        </div>
-        <button class="back-button" onclick="goBack()">Back</button>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Commonly Used Pediatric Resuscitation Drugs</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </a>
       </div>
-    </nav>
-  </header>
-  <body>
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for resuscitation drugs...">
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Commonly Used Pediatric Resuscitation Drugs</h1>
+    <p>
+      This table is a <strong>quick reference</strong> for commonly used emergency and resuscitation drugs in children.
+      Always use up-to-date <strong>PALS/paediatric ALS</strong> and your <strong>local hospital protocols</strong> for
+      exact dosing, indications, and preparation.
+    </p>
+
+    <div class="info-box">
+      <strong>General rules:</strong><br>
+      • All doses are weight based (mg/kg or μg/kg); use the child’s actual weight if possible.<br>
+      • Never exceed recommended adult maximum doses.<br>
+      • Critically ill, neonates, and children with organ failure require senior/ICU input.
+    </div>
+
+    <div class="danger-box">
+      Drug dosing in paediatric resuscitation is high risk.  
+      Double-check calculations and involve a senior doctor for all infusions and high-risk medications.
+    </div>
+  </section>
+
+  <section>
+    <h2>Search Drug</h2>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for resuscitation drugs (e.g. adrenaline)...">
+  </section>
+
+  <section>
+    <h2>Common Pediatric Resuscitation Drugs</h2>
     <table id="resuscitation">
       <tr>
         <th>Drug</th>
-        <th>Pediatric Dosage</th>
-        <th>Route of Administration</th>
-        <th>Indication for Use</th>
+        <th>Typical Paediatric Dose (Guide)</th>
+        <th>Route</th>
+        <th>Indication / Notes</th>
       </tr>
+
       <tr>
         <td>Adrenaline (Epinephrine)</td>
-        <td>0.01 mg/kg every 3-5 minutes</td>
-        <td>Intravenous, intraosseous, or endotracheal</td>
-        <td>Cardiac arrest, anaphylaxis, bronchospasm, hypotension</td>
+        <td>
+          Cardiac arrest: ~0.01 mg/kg IV/IO (0.1 mL/kg of 1:10 000) every 3–5 min.  
+          Anaphylaxis (IM): ~0.01 mg/kg of 1:1 000 (max per dose as per local guideline).
+        </td>
+        <td>IV / IO / IM (ET only as per protocol)</td>
+        <td>
+          Cardiac arrest, anaphylaxis, severe bronchospasm with shock.  
+          Follow current paediatric resuscitation algorithm.
+        </td>
       </tr>
-      <!-- Add more drugs and their pediatric dosages here -->
-      <!-- Add this code below the existing drugs -->
 
-<tr>
-    <td>Adenosine</td>
-    <td>0.1 mg/kg rapid IV push, followed by a 1-2 mL saline flush</td>
-    <td>Intravenous</td>
-    <td>Supraventricular tachycardia</td>
-  </tr>
-  <tr>
-    <td>Aminophylline</td>
-    <td>5-6 mg/kg slow IV infusion over 20-30 minutes</td>
-    <td>Intravenous</td>
-    <td>Acute severe asthma</td>
-  </tr>
-  <tr>
-    <td>Bronchodilators (e.g., Salbutamol)</td>
-    <td>0.15-0.3 mg/kg per dose via nebulization or inhalation, up to 10 mg</td>
-    <td>Nebulization or Inhalation</td>
-    <td>Acute asthma exacerbation</td>
-  </tr>
-  <tr>
-    <td>Dextrose 10%</td>
-    <td>5-10 mL/kg IV bolus</td>
-    <td>Intravenous</td>
-    <td>Hypoglycemia</td>
-  </tr>
-  <tr>
-    <td>Diazepam (Valium)</td>
-    <td>0.2-0.5 mg/kg IV or rectal dose, repeat in 5-10 minutes if needed</td>
-    <td>Intravenous or Rectal</td>
-    <td>Seizures, status epilepticus</td>
-  </tr>
-  <tr>
-    <td>Dobutamine</td>
-    <td>2-20 μg/kg/minute continuous IV infusion</td>
-    <td>Intravenous</td>
-    <td>Low cardiac output, heart failure</td>
-  </tr>
-  <tr>
-    <td>Dopamine</td>
-    <td>2-20 μg/kg/minute continuous IV infusion</td>
-    <td>Intravenous</td>
-    <td>Low cardiac output, shock</td>
-  </tr>
-  <tr>
-    <td>Glycopyrrolate</td>
-    <td>0.005-0.01 mg/kg IV or IM, every 2-4 hours</td>
-    <td>Intravenous or Intramuscular</td>
-    <td>Bradycardia, anticholinesterase poisoning</td>
-  </tr>
-  <tr>
-    <td>Midazolam</td>
-    <td>0.05-0.2 mg/kg IV or IM, repeat as needed</td>
-    <td>Intravenous or Intramuscular</td>
-    <td>Sedation, seizures</td>
-  </tr>
-  <tr>
-    <td>Morphine</td>
-    <td>0.05-0.1 mg/kg IV, IM, or subcutaneous</td>
-    <td>Intravenous, Intramuscular, or Subcutaneous</td>
-    <td>Pain relief</td>
-  </tr>
-  <tr>
-    <td>Ondansetron</td>
-    <td>0.15 mg/kg IV or oral dose</td>
-    <td>Intravenous or Oral</td>
-    <td>Nausea and vomiting</td>
-  </tr>
-  <tr>
-    <td>Phenobarbital</td>
-    <td>15-20 mg/kg IV over 15-20 minutes, repeat as needed</td>
-    <td>Intravenous</td>
-    <td>Seizures</td>
-  </tr>
-  <tr>
-    <td>Vasopressin</td>
-    <td>0.0003-0.002 units/kg IV</td>
-    <td>Intravenous</td>
-    <td>Cardiac arrest</td>
-  </tr>
- 
-  
+      <tr>
+        <td>Adenosine</td>
+        <td>
+          First dose: ~0.1 mg/kg rapid IV bolus (max single dose per local guideline),  
+          may increase to ~0.2 mg/kg if no response.
+        </td>
+        <td>Rapid IV bolus with immediate saline flush</td>
+        <td>
+          Haemodynamically stable supraventricular tachycardia (SVT).  
+          Requires monitoring and ECG recording.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Aminophylline</td>
+        <td>
+          ~5–6 mg/kg slow IV over 20–30 minutes  
+          (only if not on regular theophylline; specialist input recommended).
+        </td>
+        <td>IV infusion</td>
+        <td>
+          Severe acute asthma not responding to first-line therapy.  
+          Risk of arrhythmias and toxicity – use with caution.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Bronchodilators (e.g. Salbutamol)</td>
+        <td>
+          Neb: ~0.15 mg/kg per dose (max around 5 mg per neb)  
+          at intervals as per asthma protocol.
+        </td>
+        <td>Nebulised / inhaled</td>
+        <td>
+          Acute asthma exacerbation, bronchospasm.  
+          Often combined with ipratropium in moderate–severe attacks.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Dextrose 10%</td>
+        <td>
+          ~2 mL/kg IV bolus (recheck glucose and repeat as per guideline).  
+          Use more concentrated solutions via central line only.
+        </td>
+        <td>IV</td>
+        <td>
+          Symptomatic hypoglycaemia.  
+          Follow-up with infusion/feeds to maintain normoglycaemia.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Diazepam</td>
+        <td>
+          IV: ~0.1–0.2 mg/kg IV slowly (max as per guideline).<br>
+          Rectal: ~0.5 mg/kg PR (max per dose as per guideline).
+        </td>
+        <td>IV / Rectal</td>
+        <td>
+          Seizures, status epilepticus (where midazolam not available or per local protocol).  
+          Monitor for respiratory depression.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Dobutamine</td>
+        <td>
+          ~2–20 μg/kg/min IV infusion (start low and titrate to effect).
+        </td>
+        <td>IV infusion</td>
+        <td>
+          Low cardiac output, heart failure with adequate blood pressure.  
+          Requires continuous monitoring and senior involvement.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Dopamine</td>
+        <td>
+          ~5–20 μg/kg/min IV infusion (start at lower dose; titrate to effect).
+        </td>
+        <td>IV infusion</td>
+        <td>
+          Shock with low cardiac output and hypotension where other agents unavailable  
+          or as per local protocol. Requires intensive monitoring.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Glycopyrrolate</td>
+        <td>
+          ~0.005–0.01 mg/kg IV/IM every 2–4 hours as needed (max per guideline).
+        </td>
+        <td>IV / IM</td>
+        <td>
+          Anticholinergic agent – used in some settings for bradycardia or as premedication.  
+          Atropine is more commonly used in resuscitation algorithms.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Midazolam</td>
+        <td>
+          Seizures: ~0.1–0.2 mg/kg IV/IM (or buccal/intranasal per protocol).<br>
+          Sedation: lower doses (e.g. 0.05–0.1 mg/kg IV) titrated slowly.
+        </td>
+        <td>IV / IM (also buccal / IN per local protocol)</td>
+        <td>
+          Acute seizure control, procedural sedation.  
+          Risk of respiratory depression – airway and monitoring essential.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Morphine</td>
+        <td>
+          ~0.05–0.1 mg/kg IV slowly, titrated to effect  
+          (or equivalent IM/SC dosing where IV not available).
+        </td>
+        <td>IV / IM / SC</td>
+        <td>
+          Moderate–severe pain, e.g. major trauma, burns.  
+          Monitor for hypotension and respiratory depression.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Ondansetron</td>
+        <td>
+          ~0.1–0.15 mg/kg IV or PO (up to usual paediatric max dose per guideline).
+        </td>
+        <td>IV / Oral</td>
+        <td>
+          Nausea and vomiting, especially in dehydrated or post-op children.  
+          Use cautiously in prolonged QT or with other QT-prolonging drugs.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Phenobarbital</td>
+        <td>
+          Loading: ~15–20 mg/kg IV over 15–20 minutes,  
+          may repeat smaller doses as per protocol and senior guidance.
+        </td>
+        <td>IV (also oral for maintenance)</td>
+        <td>
+          Seizures, including neonatal seizures or status epilepticus after benzodiazepines.  
+          Causes respiratory and cardiovascular depression – monitor closely.
+        </td>
+      </tr>
     </table>
-    <script>
-      function searchTable() {
-        let input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("resuscitation");
-        tr = table.getElementsByTagName("tr");
-        for (i = 1; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-          if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
-            }
-          }
+  </section>
+</main>
+
+<script>
+  function searchTable() {
+    const input = document.getElementById("search");
+    const filter = input.value.toUpperCase();
+    const table = document.getElementById("resuscitation");
+    const tr = table.getElementsByTagName("tr");
+
+    // Skip header row
+    for (let i = 1; i < tr.length; i++) {
+      const td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        const txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
         }
       }
-    </script>
-  </body>
+    }
+  }
+</script>
+</body>
 </html>

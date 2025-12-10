@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Commonly Used Anti-Epileptic Medications in Pediatrics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -10,119 +11,228 @@
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      line-height: 1.6;
       color: #333;
       background-image: url("/images/medications.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      margin: 0;
     }
-    
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
+      font-size: 0.9rem;
     }
-    
+
     th, td {
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
-    
+
     th {
-      background-color: #4CAF50;
+      background-color: #00509E;
       color: white;
     }
-    
+
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    
-    input[type=text] {
+
+    input[type="text"] {
       width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
+      padding: 10px 12px;
+      margin: 0.5rem 0 1rem 0;
       box-sizing: border-box;
       border: 2px solid #ccc;
       border-radius: 4px;
+      font-size: 1rem;
     }
-    
-    input[type=text]:focus {
-      border: 2px solid #4CAF50;
+
+    input[type="text"]:focus {
+      border-color: #00509E;
+      outline: none;
+    }
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
   </style>
 </head>
+
+<body>
 <header>
   <nav class="logo-container">
     <div class="logo-container">
       <h1 class="main-header">Commonly Used Anti-Epileptic Medications in Pediatrics</h1>
       <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </a>
       </div>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </nav>
 </header>
-<body>
-  
-  <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for anti-epileptic medications...">
-  <table id="antiepileptics">
-    <tr>
-      <th>Medication</th>
-      <th>Dosage</th>
-      <th>Route of Administration</th>
-      <th>Precautions</th>
-    </tr>
-    <tr>
-      <td>Carbamazepine</td>
-      <td>10-20 mg/kg/day</td>
-      <td>Oral</td>
-      <td>Monitor for potential adverse effects on liver function.</td>
-    </tr>
-    <tr>
-      <td>Lamotrigine</td>
-      <td>1-15 mg/kg/day</td>
-      <td>Oral</td>
-      <td>Titrate dose slowly to reduce the risk of rash.</td>
-    </tr>
-    <tr>
-      <td>Levetiracetam</td>
-      <td>20-60 mg/kg/day</td>
-      <td>Oral or intravenous</td>
-      <td>May cause behavioral changes; monitor closely.</td>
-    </tr>
-    <tr>
-      <td>Phenytoin</td>
-      <td>5-10 mg/kg/day</td>
-      <td>Oral or intravenous</td>
-      <td>Monitor serum drug levels due to potential toxicity.</td>
-    </tr>
-    <tr>
-      <td>Sodium Valproate</td>
-      <td>15-60 mg/kg/day</td>
-      <td>Oral</td>
-      <td>Monitor for liver function, platelet count, and bleeding.</td>
-    </tr>
-  </table>
-  <script>
-    function searchTable() {
-      let input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("search");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("antiepileptics");
-      tr = table.getElementsByTagName("tr");
-      for (i = 1; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
+
+<main>
+  <section>
+    <h1>Commonly Used Anti-Epileptic Medications in Pediatrics</h1>
+    <p>
+      This table provides approximate <strong>maintenance dosing ranges</strong> for commonly used anti-epileptic
+      medications in children (not neonates).  
+      Exact dosing, titration schedules, and drug combinations should follow neurology or local protocols.
+    </p>
+
+    <div class="info-box">
+      <strong>Key points:</strong><br>
+      • Doses are usually given in <strong>divided doses</strong> (e.g. 2–3 times per day).<br>
+      • Always adjust for <strong>age, weight, renal/hepatic function</strong> and comorbidities.<br>
+      • For <strong>status epilepticus</strong>, use your local emergency/status protocol (loading doses etc.).
+    </div>
+
+    <div class="danger-box">
+      Anti-epileptic drugs have significant interactions and toxicity risks.  
+      <strong>Never</strong> start, stop, or rapidly change doses without senior/neurology input unless in an acute
+      emergency and according to protocol.
+    </div>
+  </section>
+
+  <section>
+    <h2>Search Medication</h2>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for an anti-epileptic (e.g. valproate)...">
+  </section>
+
+  <section>
+    <h2>Common Paediatric Anti-Epileptic Doses (Maintenance)</h2>
+    <table id="antiepileptics">
+      <tr>
+        <th>Medication</th>
+        <th>Typical Paediatric Dose (Maintenance)</th>
+        <th>Route</th>
+        <th>Precautions / Monitoring</th>
+      </tr>
+
+      <tr>
+        <td>Carbamazepine</td>
+        <td>
+          ~10–20 mg/kg/day in 2–3 divided doses  
+          (start low and titrate up according to response and serum levels, if measured)
+        </td>
+        <td>Oral</td>
+        <td>
+          Monitor <strong>LFTs</strong>, FBC (risk of blood dyscrasias), and sodium (hyponatraemia).  
+          Watch for rash and neurotoxicity (dizziness, ataxia).
+        </td>
+      </tr>
+
+      <tr>
+        <td>Lamotrigine</td>
+        <td>
+          Maintenance range ~1–15 mg/kg/day in 1–2 divided doses  
+          (titrated very slowly over weeks according to local protocol and co-medications).
+        </td>
+        <td>Oral</td>
+        <td>
+          Must be titrated slowly to reduce risk of serious rash (incl. Stevens–Johnson syndrome).  
+          Dosing schedules differ if given with valproate or enzyme inducers – follow neurology guidelines.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Levetiracetam</td>
+        <td>
+          ~20–60 mg/kg/day in 2 divided doses  
+          (e.g. start around 10 mg/kg twice daily and increase as needed).
+        </td>
+        <td>Oral or intravenous</td>
+        <td>
+          May cause behavioural changes (irritability, mood changes).  
+          Adjust dose in renal impairment. Generally fewer interactions than many other AEDs.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Phenytoin</td>
+        <td>
+          Maintenance ~4–8 mg/kg/day in 1–2 divided doses  
+          (after an appropriate loading dose for status, per protocol).
+        </td>
+        <td>Oral or intravenous</td>
+        <td>
+          Narrow therapeutic index – monitor <strong>serum levels</strong> and watch for toxicity  
+          (nystagmus, ataxia, confusion, arrhythmias with IV use).  
+          Many drug interactions; adjust in hepatic impairment.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Sodium Valproate</td>
+        <td>
+          ~15–60 mg/kg/day in 2–3 divided doses  
+          (start with lower dose and titrate up).
+        </td>
+        <td>Oral</td>
+        <td>
+          Monitor <strong>LFTs</strong> and <strong>platelet count</strong>.  
+          Watch for abdominal pain, jaundice, bruising/bleeding.  
+          Avoid or use with extreme caution in known liver disease or metabolic disorders.
+        </td>
+      </tr>
+    </table>
+  </section>
+</main>
+
+<script>
+  function searchTable() {
+    const input = document.getElementById("search");
+    const filter = input.value.toUpperCase();
+    const table = document.getElementById("antiepileptics");
+    const tr = table.getElementsByTagName("tr");
+
+    // Skip header row
+    for (let i = 1; i < tr.length; i++) {
+      const td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        const txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
         }
       }
     }
-  </script>
+  }
+</script>
 </body>
 </html>

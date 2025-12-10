@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neonatal Emergencies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background-image: url("/images/neonates.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+    ul { padding-left: 1.2rem; }
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Neonatal Emergencies</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Neonatal Emergencies</h1>
+    <p>Neonates (first 28 days of life) can deteriorate rapidly. Any sick neonate is an emergency until proven otherwise.</p>
+  </section>
+
+  <section>
+    <h2>Common Presentations</h2>
+    <ul>
+      <li>Poor feeding, lethargy.</li>
+      <li>Hypothermia or fever.</li>
+      <li>Respiratory distress.</li>
+      <li>Jaundice, vomiting, abdominal distension.</li>
+      <li>Seizures, abnormal movements.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Initial Approach</h2>
+    <ul>
+      <li>ABC stabilisation (warm, dry environment, oxygen if needed).</li>
+      <li>Check glucose early; treat hypoglycaemia promptly.</li>
+      <li>IV/IO access; consider umbilical venous line in some settings.</li>
+      <li>Consider sepsis in any unwell neonate: start antibiotics per local protocol after cultures if possible.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Red Flags</h2>
+    <div class="danger-box">
+      <ul>
+        <li>Apnoea, gasping, cyanosis.</li>
+        <li>Poor perfusion, mottled skin, prolonged capillary refill.</li>
+        <li>Bulging fontanelle, seizures, reduced level of consciousness.</li>
+      </ul>
+      These require immediate senior assistance, possible NICU transfer.
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -2,118 +2,251 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pediatric Medical History</title>
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url(/images/historyStructure.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      background-image: url(/images/historyStructure.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .subheading {
+      font-size: 1.3rem;
+      color: #003366;
+      margin-bottom: 0.4rem;
+    }
+
+    .main-header {
+      font-size: 1.6rem;
+    }
+
+    ul {
+      margin: 0.3rem 0 0.3rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .note-box {
+      background: #fff8d8;
+      border-left: 6px solid #ff9900;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .bottom-link {
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Pediatric Medical History</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <main>
-        <section class="section">
-            <h2 class="subheading">Main Complaint</h2>
-            <p>This is a brief statement by the caregiver/parent that describes the reason for seeking medical attention for the child. It is important to document their own words.</p>
-            <ul>
-              <li>Try and elicit as many symptoms as you can, as this will help you in diagnosis.</li>
-              <li>Be open to listening, the caregiver/parent is not a health professional, and you may have to read between the lines, considering their observations and concerns to understand the child's condition better.</li>
-              <li>This may sound intimidating, but as you take more histories and practice, it can be accomplished in a very short time.</li>
-              <li>It is also important to understand the circumstances surrounding the illness or injury.</li>
-                <ul>
-                  <li>For example, if the child has an injury, try to gather information about the event that led to the injury to better assess the condition.</li>
-                </ul>
-            </ul>
-          </section>
-          
-          <section class="section">
-            <h2 class="subheading">History of Present Illness</h2>
-            <p>This is a detailed description of the current problem the child is experiencing.</p>
-            <ul>
-              <li>
-                Onset
-                <ul>
-                  <li>Is this the first time the child is experiencing this problem, or has it occurred before?</li>
-                  <li>If it is recurring, try to determine if this episode is similar to others, and if not, how does it differ?</li>
-                </ul>
-              </li>
-              <li>Duration of symptoms</li>
-                <ul>
-                  <li>If the problem has been present for more than 24 hours, what prompted the caregiver/parent to seek medical help now?</li>
-                  <li>Consider factors that led to seeking medical attention, such as changes in severity, lack of improvement with home care, or specific events or symptoms concerning the caregiver/parent.</li>
-                </ul>
-              <li>
-                Severity (Use appropriate scales if needed)
-                <ul>
-                  <li>Has the severity changed over time, and if so, how?</li>
-                  <li>Ask about factors that aggravate or alleviate the symptoms to get a better understanding of the child's condition.</li>
-                </ul>
-              </li>
-            </ul>
-          </section>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Pediatric Medical History</h1>
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" alt="House icon"></i>
+      </a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
 
-          <section class="section">
-            <h2 class="subheading">Past Medical &amp; Co-Morbid History</h2>
-            <p>This includes a summary of the child's past illnesses, surgeries, hospitalizations, and chronic conditions.</p>
-            <p>For a more comprehensive look at this aspect, please ask the caregiver/parent about the child's medical history and any significant medical conditions the child has experienced in the past.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Medications</h2>
-            <p>Document all current medications the child is taking, including prescription medications, over-the-counter medications, and supplements.</p>
-            <p>It is also important to note medications that the child may have taken for long periods before but have now stopped and why.</p> 
-            <p>Ask the caregiver/parent about the frequency and dosages of any medications the child is currently or was previously taking.</p>
-            <p> <em style="color: brown;">Hint!!</em> If the caregiver/parent has brought the child's medications along (or a prescription or list), thank them for their thoughtfulness, as it builds rapport and makes the consultation go much smoother.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Allergies</h2>
-            <p>Document any known allergies the child has. </p>
-            <p>Especially important are allergies to medications, food, or other substances that may cause allergic reactions in the child.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Family History</h2>
-            <p>Document any significant medical problems or conditions that run in the child's family. </p>
-            <p>Ask the caregiver/parent about immediate family members' medical history, especially if there are any conditions that have caused deaths or extended treatments.</p> 
-            <p>For example, knowing that the child has a family history of certain diseases can be important for early diagnosis and prevention.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Social History</h2>
-            <p>This includes information on the child's living situation, any relevant social habits of the family (e.g., smoking or alcohol use by family members), and the child's usual daily activities.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Events Preceding Illness/Injury</h2>
-            <p>This is more important for patients where the mechanism of injury or illness seems suspicious or warrants further investigation.</p>
-            <p>For example, if a child presents with an injury, ask detailed questions about the events leading up to the injury to rule out any potential child abuse or trauma.</p>
-          </section>
-          <section class="section">
-            <h2 class="subheading">Child's Last Meal</h2>
-            <p>This is especially important if the child requires a medical procedure or surgery.</p>
-          </section>
+  <main>
+    <section class="section">
+      <h2 class="subheading">Main Complaint</h2>
+      <p>
+        A brief statement by the caregiver or parent describing the reason for seeking medical attention.
+        Try to document this in their own words.
+      </p>
+      <ul>
+        <li>Let them talk initially without interruption; then clarify details.</li>
+        <li>Elicit all relevant symptoms (respiratory, GI, neuro, urinary, systemic).</li>
+        <li>Be aware that caregivers are not clinicians – you may need to “translate” their observations into medical terms.</li>
+        <li>Always ask about the context of the illness or injury (where, when, who was present).</li>
+        <li>
+          For injuries, clarify:
+          <ul>
+            <li>Exact mechanism (fall from what height? onto what surface? vehicle speed?).</li>
+            <li>Witnesses and any delay in presentation.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="section">
+      <h2 class="subheading">History of Present Illness</h2>
+      <p>Structured description of the current problem. Think in terms of onset, course, and impact.</p>
+      <ul>
+        <li>
+          <strong>Onset</strong>
+          <ul>
+            <li>When did the problem start? Sudden or gradual?</li>
+            <li>First episode or recurrent? If recurrent, is this episode similar or different?</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Duration</strong>
+          <ul>
+            <li>How long have the symptoms been present?</li>
+            <li>If &gt; 24 hours, what has changed to prompt seeking help now?</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Severity</strong>
+          <ul>
+            <li>Use age-appropriate scales (e.g. Wong-Baker, FLACC) for pain where possible.</li>
+            <li>Ask how the symptoms affect feeding, play, sleep, school, and activity.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Character and Associated Symptoms</strong>
+          <ul>
+            <li>Explore site, radiation, character of pain, presence of fever, vomiting, cough, diarrhoea, rash, seizures, etc.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Aggravating / Relieving Factors</strong>
+          <ul>
+            <li>What makes it better or worse (position, medications, feeds, exertion)?</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Treatments Already Given</strong>
+          <ul>
+            <li>Any medication given at home or at a clinic (dose, timing, response)?</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="note-box">
+        <strong>Tip:</strong> For acute presentations, a simple symptom timeline (day-by-day) often clarifies the story.
+      </div>
+    </section>
 
-          <section class="section">
-            <p>It is impossible to cover all the intricacies of history taking for pediatric patients on a single page, and you should refer to your Texts and seniors for more information. However, this will provide you with a basic structure that your history should take. <i class="fa-solid fa-face-smile"></i> </p>
-          </section>
+    <section class="section">
+      <h2 class="subheading">Past Medical &amp; Co-Morbid History</h2>
+      <p>
+        Summarise previous illnesses, chronic conditions, surgeries and hospitalisations. This strongly
+        influences triage and risk in the ED.
+      </p>
+      <ul>
+        <li>Prematurity, NICU stay, congenital anomalies.</li>
+        <li>Chronic conditions (asthma, epilepsy, cardiac disease, HIV, TB, renal, endocrine, neuromuscular).</li>
+        <li>Previous ICU admissions, intubation or major infections.</li>
+        <li>Previous surgeries (especially cardiac, neuro, abdominal, orthopaedic).</li>
+      </ul>
+      <p class="note-box">
+        For a structured approach to common paediatric co-morbidities, see the
+        <a href="/paeds/paedsBasics/paedsCoMorbid.html" class="emphasis-link">Co-Morbid Conditions Guide</a>.
+      </p>
+    </section>
 
-    </main>
+    <section class="section">
+      <h2 class="subheading">Medications</h2>
+      <p>Document all current and recent medications, including non-prescription items.</p>
+      <ul>
+        <li>Prescribed drugs (names, doses, frequency, route).</li>
+        <li>Inhalers, nebulisers, supplements, traditional/herbal medicines.</li>
+        <li>Recently stopped medications and reasons (side effects, cost, non-compliance).</li>
+      </ul>
+      <p>
+        <em style="color:brown;">Hint:</em> If caregivers bring medications or a prescription, thank them – it builds
+        rapport and helps avoid errors.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Allergies</h2>
+      <p>Always ask specifically about allergies.</p>
+      <ul>
+        <li>Medications (especially antibiotics, contrast, anaesthetics).</li>
+        <li>Foods (e.g. peanuts, eggs, cow’s milk, shellfish).</li>
+        <li>Other: latex, insect stings, environmental triggers.</li>
+        <li>Clarify the reaction (rash, anaphylaxis, vomiting, “just nausea”, etc.).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Family History</h2>
+      <p>Identify inherited or familial illness that may affect the child’s risk.</p>
+      <ul>
+        <li>Chronic conditions: asthma, epilepsy, diabetes, hypertension, TB, HIV, heart disease.</li>
+        <li>Genetic or metabolic conditions, sudden unexplained deaths, early-onset cardiac disease.</li>
+        <li>Bleeding disorders, clotting disorders, autoimmune disease.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Social History</h2>
+      <p>Understand the child’s environment and supports.</p>
+      <ul>
+        <li>Who lives at home with the child? Primary caregiver?</li>
+        <li>Exposure to tobacco smoke, alcohol or substance use in the home.</li>
+        <li>School/crèche attendance, recent absences, bullying or stressors.</li>
+        <li>Housing, overcrowding, access to transport and health care.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Events Preceding Illness or Injury</h2>
+      <p>Crucial for trauma and cases where non-accidental injury is a concern.</p>
+      <ul>
+        <li>Exact sequence of events, including who was present and any delays in seeking care.</li>
+        <li>Consistency of the story between different caregivers.</li>
+        <li>Red flags for abuse: changing stories, mechanism inconsistent with injury, recurrent injuries.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Child’s Last Meal</h2>
+      <p>Particularly important if sedation, anaesthesia or urgent procedures may be required.</p>
+      <ul>
+        <li>Time and type of last oral intake (solids vs liquids).</li>
+        <li>Any vomiting or aspiration risk since last meal.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p>
+        It is impossible to cover all the intricacies of paediatric history taking on a single page,
+        and you should use this as a basic structure. Build on it with your clinical texts, protocols,
+        and advice from seniors. <i class="fa-solid fa-face-smile"></i>
+      </p>
+    </section>
+
+    <section class="section bottom-link">
+      <p>
+        For structured questions about chronic illnesses, see the
+        <a href="/paeds/paedsBasics/paedsCoMorbid.html" class="emphasis-link">Pediatric Co-Morbid Conditions</a> page.
+      </p>
+    </section>
+  </main>
 </body>
 </html>

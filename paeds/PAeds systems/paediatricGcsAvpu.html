@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paediatric GCS & AVPU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background-image: url("/images/paedsGCS.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 6px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #00509E;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Paediatric GCS & AVPU</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Paediatric GCS & AVPU</h1>
+    <p>Use AVPU for rapid assessment, and paediatric-modified GCS for more detailed scoring.</p>
+  </section>
+
+  <section>
+    <h2>AVPU Scale</h2>
+    <ul>
+      <li><strong>A</strong> – Alert</li>
+      <li><strong>V</strong> – Responds to Voice</li>
+      <li><strong>P</strong> – Responds to Pain</li>
+      <li><strong>U</strong> – Unresponsive</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Paediatric GCS (Young Children)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Score</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4"><strong>Eye opening (E)</strong></td>
+          <td>4</td>
+          <td>Spontaneous</td>
+        </tr>
+        <tr><td>3</td><td>To speech</td></tr>
+        <tr><td>2</td><td>To pain</td></tr>
+        <tr><td>1</td><td>No response</td></tr>
+
+        <tr>
+          <td rowspan="5"><strong>Verbal response (V)</strong></td>
+          <td>5</td>
+          <td>Smiles, oriented to sounds, follows objects</td>
+        </tr>
+        <tr><td>4</td><td>Crying but consolable</td></tr>
+        <tr><td>3</td><td>Inconsolable, persistent crying</td></tr>
+        <tr><td>2</td><td>Moans to pain</td></tr>
+        <tr><td>1</td><td>No response</td></tr>
+
+        <tr>
+          <td rowspan="5"><strong>Motor response (M)</strong></td>
+          <td>6</td>
+          <td>Spontaneous, purposeful movements</td>
+        </tr>
+        <tr><td>5</td><td>Withdraws to touch</td></tr>
+        <tr><td>4</td><td>Withdraws to pain</td></tr>
+        <tr><td>3</td><td>Abnormal flexion to pain</td></tr>
+        <tr><td>2</td><td>Extension to pain</td></tr>
+        <tr><td>1</td><td>No response</td></tr>
+      </tbody>
+    </table>
+    <p>Total GCS = E + V + M (maximum 15, minimum 3).</p>
+  </section>
+</main>
+</body>
+</html>

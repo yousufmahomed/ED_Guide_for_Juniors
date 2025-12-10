@@ -1,248 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Commonly Used Resuscitation Drugs for Pediatrics</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-      table {
-        border-collapse: collapse;
-        width: 100%;
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used Resuscitation Drugs for Pediatrics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.7;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 1100px;
+      margin: 0 auto 3.5rem auto;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h1.main-header {
+      font-size: 1.5rem;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .print-btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      background: #0059b3;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .print-btn:hover {
+      background: #003d80;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: #444;
+    }
+
+    .layout-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-top: 0.75rem;
+    }
+
+    .main-column {
+      flex: 3;
+      min-width: 0;
+    }
+
+    .quick-ref {
+      flex: 1;
+      min-width: 230px;
+      background: #f7f9ff;
+      border-radius: 10px;
+      padding: 10px 12px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      font-weight: normal;
+      font-size: 0.9rem;
+    }
+
+    .quick-ref h2 {
+      font-size: 1rem;
+      margin-top: 0;
+      color: #003366;
+    }
+
+    .quick-ref ul {
+      margin: 0.2rem 0 0.4rem 1rem;
+      padding: 0;
+    }
+
+    .quick-ref li {
+      margin-bottom: 2px;
+    }
+
+    .legend {
+      list-style: none;
+      margin: 0.3rem 0 0 0;
+      padding: 0;
+    }
+
+    .legend li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3px;
+    }
+
+    .legend-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      margin-right: 6px;
+    }
+
+    /* Calculator Section */
+    .calculator-section {
+      background: #f0f6ff;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.05);
+      font-weight: normal;
+    }
+
+    .calculator-section h2 {
+      font-size: 1.05rem;
+      margin-top: 0;
+      color: #003366;
+    }
+
+    .calculator-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      align-items: center;
+    }
+
+    .calculator-row select,
+    .calculator-row input {
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      font-size: 0.95rem;
+      font-weight: normal;
+    }
+
+    .calculator-row input {
+      max-width: 110px;
+    }
+
+    .calc-button {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      background: #1a73e8;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .calc-button:hover {
+      background: #1557a6;
+    }
+
+    .calc-output {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .calc-note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    /* Search Bar */
+    #search {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 10px 0 15px 0;
+      font-size: 1rem;
+      border: 2px solid #0059b3;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    #search:focus {
+      outline: none;
+      border-color: #003d80;
+    }
+
+    /* Table Styling */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      font-weight: normal;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: #0059b3;
+      color: white;
+      padding: 10px;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    td {
+      padding: 8px 10px;
+      vertical-align: top;
+      line-height: 1.4rem;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e6f0ff;
+      transition: 0.2s;
+    }
+
+    /* Category colours */
+    .cat-cardiac {
+      border-left: 5px solid #c62828;
+    }
+
+    .cat-airway {
+      border-left: 5px solid #1565c0;
+    }
+
+    .cat-shock {
+      border-left: 5px solid #2e7d32;
+    }
+
+    .cat-metabolic {
+      border-left: 5px solid #6a1b9a;
+    }
+
+    .cat-seizure {
+      border-left: 5px solid #ff8f00;
+    }
+
+    @media (max-width: 900px) {
+      .layout-row {
+        flex-direction: column;
       }
 
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  input[type=text]:focus {
-    border: 2px solid #4CAF50;
-  }
-</style>
-  </head>
-  <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Commonly Used Resuscitation Drugs for Pediatrics</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-  <body>
-
-<input type="text" id="search" onkeyup="searchTable()" placeholder="Search for resuscitation drugs...">
-<table id="resuscitation">
-  <tr>
-    <th>Drug</th>
-    <th>Dosage</th>
-    <th>Route of Administration</th>
-    <th>Indication for Use</th>
-  </tr>
-  <tr>
-    <td>Adrenaline (Epinephrine)</td>
-    <td>0.01 mg/kg/dose (0.1 mL/kg/dose of 1:10,000 solution), every 3-5 minutes</td>
-    <td>Intravenous, intraosseous, or endotracheal</td>
-    <td>Cardiac arrest, anaphylaxis, bronchospasm, hypotension</td>
-  </tr>
-  <tr>
-    <td>Amiodarone</td>
-    <td>5 mg/kg bolus, then 5-10 mg/kg over 20-60 minutes</td>
-    <td>Intravenous</td>
-    <td>Ventricular fibrillation, ventricular tachycardia</td>
-  </tr>
-  <tr>
-    <td>Atropine</td>
-    <td>0.02 mg/kg/dose (minimum dose: 0.1 mg; maximum dose: 0.5 mg) </td>
-    <td>Intravenous, intraosseous, or endotracheal</td>
-    <td>Bradycardia, organophosphate poisoning</td>
-    </tr>
-    <tr>
-    <td>Bicarbonate</td>
-    <td>1-2 mEq/kg/dose (maximum dose: 50 mEq/dose)</td>
-    <td>Intravenous</td>
-    <td>Metabolic acidosis, hyperkalemia</td>
-    </tr>
-    <tr>
-    <td>Lidocaine</td>
-    <td>1 mg/kg/dose, may repeat at 0.5-0.75 mg/kg/dose every 5-10 minutes (maximum dose: 3 mg/kg)</td>
-    <td>Intravenous, intraosseous, or endotracheal</td>
-    <td>Ventricular fibrillation, ventricular tachycardia</td>
-    </tr>
-    <tr>
-    <td>Calcium gluconate</td>
-    <td>100 mg/kg/dose (maximum dose: 1 g/dose)</td>
-    <td>Intravenous</td>
-    <td>Hyperkalemia, hypocalcemia, calcium channel blocker overdose</td>
-    </tr>
-    <tr>
-    <td>Furosemide</td>
-    <td>1 mg/kg/dose intravenous or intramuscular, may repeat every 6 hours as needed</td>
-    <td>Intravenous or intramuscular</td>
-    <td>Acute pulmonary edema, edema associated with heart failure, hypertension</td>
-    </tr>
-    <tr>
-    <td>Hydrocortisone</td>
-    <td>1-2 mg/kg/dose intravenous or intramuscular, every 6 hours as needed</td>
-    <td>Intravenous or intramuscular</td>
-    <td>Adrenal insufficiency, sepsis, anaphylaxis, asthma</td>
-    </tr>
-    <tr>
-    <td>Short-acting insulin</td>
-    <td>0.1-0.2 units/kg/hour intravenous infusion, adjust dose based on blood glucose levels</td>
-    <td>Intravenous</td>
-    <td>Diabetic ketoacidosis, hyperosmolar hyperglycemic state, hyperkalemia</td>
-    </tr>
-    <tr>
-    <td>Ipratropium</td>
-    <td>250-500 mcg (1-2 vials) mixed with 2.5-3 mL of normal saline, administered every 20 minutes up to 3 doses</td>
-    <td>Inhalation</td>
-    <td>Acute exacerbation of asthma or chronic obstructive pulmonary disease (COPD)</td>
-    </tr>
-    <tr>
-    <td>Magnesium sulfate</td>
-    <td>25-50 mg/kg/dose intravenous over 10-20 minutes (maximum dose: 2 g/dose)</td>
-    <td>Intravenous</td>
-    <td>Torsades de pointes, eclampsia, hypomagnesemia</td>
-    </tr>
-    <tr>
-    <td>Promethazine</td>
-    <td>0.25-1 mg/kg/dose intravenous or intramuscular (maximum dose: 25 mg/dose)</td>
-    <td>Intravenous or intramuscular</td>
-</tr>
-<tr>
-  <td>Dexamethasone</td>
-  <td>0.15 mg/kg/dose (maximum dose: 16 mg)</td>
-  <td>Intravenous, intramuscular, or oral</td>
-  <td>Asthma exacerbation, croup, anaphylaxis, acute spinal cord injury</td>
-</tr>
-<tr>
-  <td>Epinephrine (Adrenaline)</td>
-  <td>0.01 mg/kg/dose (maximum dose: 0.3 mg/dose) intramuscular</td>
-  <td>Intramuscular</td>
-  <td>Anaphylaxis, severe asthma exacerbation</td>
-</tr>
-<tr>
-  <td>Ibuprofen</td>
-  <td>10 mg/kg/dose (maximum dose: 400 mg/dose)</td>
-  <td>Oral</td>
-  <td>Fever, pain, inflammatory conditions</td>
-</tr>
-<tr>
-  <td>Paracetamol (Acetaminophen)</td>
-  <td>15 mg/kg/dose (maximum dose: 500 mg/dose)</td>
-  <td>Oral</td>
-  <td>Fever, pain</td>
-</tr>
-<tr>
-  <td>Salbutamol (Albuterol)</td>
-  <td>0.15 mg/kg/dose (maximum dose: 5 mg/dose) nebulized or 0.1 mg/kg/dose (maximum dose: 10 mg/dose) via metered-dose inhaler</td>
-  <td>Inhalation</td>
-  <td>Asthma exacerbation, acute bronchiolitis</td>
-</tr>
-<tr>
-  <td>Ceftriaxone</td>
-  <td>50-100 mg/kg/dose intravenous or intramuscular (maximum dose: 2 g/dose)</td>
-  <td>Intravenous or intramuscular</td>
-  <td>Bacterial infections</td>
-</tr>
-<tr>
-  <td>Ampicillin</td>
-  <td>50-100 mg/kg/dose intravenous or intramuscular (maximum dose: 2 g/dose)</td>
-  <td>Intravenous or intramuscular</td>
-  <td>Bacterial infections</td>
-</tr>
-<tr>
-  <td>Gentamicin</td>
-  <td>4-7.5 mg/kg/dose intravenous or intramuscular (maximum dose: 240 mg/dose)</td>
-  <td>Intravenous or intramuscular</td>
-  <td>Bacterial infections</td>
-</tr>
-<tr>
-  <td>Phenobarbital</td>
-  <td>15-20 mg/kg/dose intravenous (maximum rate: 100 mg/minute)</td>
-  <td>Intravenous</td>
-  <td>Seizures</td>
-</tr>
-<tr>
-  <td>Phenytoin</td>
-  <td>15-20 mg/kg/dose intravenous (maximum rate: 50 mg/minute)</td>
-  <td>Intravenous</td>
-  <td>Seizures</td>
-</tr>
-</table>
-<script>
-  function searchTable() {
-      let input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("search");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("resuscitation");
-      tr = table.getElementsByTagName("tr");
-      for (i = 1; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
+      .quick-ref {
+        order: -1;
       }
     }
-    
-    // Add event listener to the search bar
-    const searchBar = document.getElementById("search");
-    searchBar.addEventListener("keyup", searchTable); 
-    </script>
-  </body>
-</html>    
 
+    @media print {
+      body {
+        background: white !important;
+      }
+      header, .back-button, .logo-container a, #search, .quick-ref, .print-btn {
+        display: none !important;
+      }
+      main {
+        box-shadow: none;
+        background: white;
+        margin: 0;
+        max-width: 100%;
+      }
+      th {
+        position: static !important;
+      }
+    }
+  </style>
+</head>
 
+<body>
 
+<header>
+  <div class="logo-container">
+    <h1 class="main-header">Commonly Used Resuscitation Drugs for Pediatrics</h1>
+    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
 
+<main>
+  <div class="top-actions">
+    <span class="note">
+      Quick reference for paediatric resus drugs. Always confirm with local protocols and maximum doses.
+    </span>
+    <button class="print-btn" onclick="window.print()">
+      <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
+  </div>
 
-    
-    
-    
-    
-    
-    
+  <div class="layout-row">
+    <div class="main-column">
 
+      <!-- Dose Calculator -->
+      <section class="calculator-section">
+        <h2>Weight-Based Dose Calculator</h2>
+        <p class="note">
+          Select a drug and enter the child’s weight (kg) for a rough single-dose calculation.
+          Always cross-check with local paediatric guidelines.
+        </p>
+        <div class="calculator-row">
+          <label for="drugSelect">Drug:</label>
+          <select id="drugSelect">
+            <option value="">-- Select a drug --</option>
+            <option value="adrenaline_iv">Adrenaline (IV/IO – arrest)</option>
+            <option value="adrenaline_im">Adrenaline (IM – anaphylaxis)</option>
+            <option value="amiodarone">Amiodarone (bolus)</option>
+            <option value="atropine">Atropine</option>
+            <option value="bicarbonate">Sodium Bicarbonate</option>
+            <option value="lidocaine">Lidocaine</option>
+            <option value="calcium">Calcium gluconate</option>
+            <option value="furosemide">Furosemide</option>
+            <option value="hydrocortisone">Hydrocortisone</option>
+            <option value="insulin">Insulin infusion</option>
+            <option value="ipratropium">Ipratropium (neb)</option>
+            <option value="magnesium">Magnesium sulfate</option>
+            <option value="dexamethasone">Dexamethasone</option>
+            <option value="salbutamol">Salbutamol (neb)</option>
+            <option value="phenobarbital">Phenobarbital (loading)</option>
+            <option value="phenytoin">Phenytoin (loading)</option>
+          </select>
 
+          <label for="weightInput">Weight (kg):</label>
+          <input type="number" id="weightInput" min="1" step="0.1" placeholder="e.g. 15">
+          <button class="calc-button" onclick="calculateDose()">Calculate</button>
+        </div>
+        <div id="calcOutput" class="calc-output"></div>
+        <div id="calcNote" class="calc-note"></div>
+      </section>
 
+      <!-- Search -->
+      <input type="text" id="search" placeholder="Search for a resuscitation drug...">
 
+      <!-- Drugs Table -->
+      <table id="resuscitation">
+        <tr>
+          <th>Drug</th>
+          <th>Dosage</th>
+          <th>Route</th>
+          <th>Indication</th>
+        </tr>
 
+        <tr class="cat-cardiac">
+          <td>Adrenaline (Epinephrine) – arrest</td>
+          <td>0.01 mg/kg (0.1 mL/kg of 1:10 000) every 3–5 min</td>
+          <td>IV, IO, ET</td>
+          <td>Cardiac arrest, profound shock</td>
+        </tr>
+
+        <tr class="cat-cardiac">
+          <td>Amiodarone</td>
+          <td>5 mg/kg bolus; repeat to max 15 mg/kg</td>
+          <td>IV</td>
+          <td>VF, pulseless VT</td>
+        </tr>
+
+        <tr class="cat-cardiac">
+          <td>Atropine</td>
+          <td>0.02 mg/kg (min 0.1 mg; max 0.5 mg)</td>
+          <td>IV, IO, ET</td>
+          <td>Bradycardia, organophosphate poisoning</td>
+        </tr>
+
+        <tr class="cat-metabolic">
+          <td>Sodium Bicarbonate</td>
+          <td>1–2 mEq/kg</td>
+          <td>IV</td>
+          <td>Severe metabolic acidosis, hyperkalaemia (as per protocol)</td>
+        </tr>
+
+        <tr class="cat-cardiac cat-metabolic">
+          <td>Lidocaine</td>
+          <td>1 mg/kg; repeat 0.5 mg/kg every 5–10 min (max 3 mg/kg)</td>
+          <td>IV, IO, ET</td>
+          <td>VF, VT (alternative to amiodarone)</td>
+        </tr>
+
+        <tr class="cat-metabolic cat-cardiac">
+          <td>Calcium gluconate</td>
+          <td>100 mg/kg (max 1 g)</td>
+          <td>IV</td>
+          <td>Hyperkalaemia, hypocalcaemia, calcium channel blocker toxicity</td>
+        </tr>
+
+        <tr class="cat-shock">
+          <td>Furosemide</td>
+          <td>1 mg/kg</td>
+          <td>IV, IM</td>
+          <td>Pulmonary oedema, fluid overload (with careful monitoring)</td>
+        </tr>
+
+        <tr class="cat-shock cat-metabolic">
+          <td>Hydrocortisone</td>
+          <td>1–2 mg/kg every 6 h</td>
+          <td>IV, IM</td>
+          <td>Adrenal crisis, septic shock, anaphylaxis, asthma</td>
+        </tr>
+
+        <tr class="cat-metabolic">
+          <td>Insulin (regular infusion)</td>
+          <td>0.1 units/kg/hour</td>
+          <td>IV</td>
+          <td>DKA, HHS, hyperkalaemia (with glucose)</td>
+        </tr>
+
+        <tr class="cat-airway">
+          <td>Ipratropium</td>
+          <td>250–500 mcg every 20 min × 3</td>
+          <td>Nebulised</td>
+          <td>Severe asthma, bronchiolitis (with salbutamol)</td>
+        </tr>
+
+        <tr class="cat-airway cat-metabolic">
+          <td>Magnesium sulfate</td>
+          <td>25–50 mg/kg over 20 min (max 2 g)</td>
+          <td>IV</td>
+          <td>Severe asthma, torsades de pointes, hypomagnesaemia</td>
+        </tr>
+
+        <tr class="cat-airway cat-shock">
+          <td>Dexamethasone</td>
+          <td>0.15 mg/kg (max 16 mg)</td>
+          <td>IV, IM, PO</td>
+          <td>Croup, asthma, anaphylaxis</td>
+        </tr>
+
+        <tr class="cat-airway cat-shock">
+          <td>Adrenaline (Epinephrine) – IM</td>
+          <td>0.01 mg/kg (max 0.3 mg)</td>
+          <td>IM</td>
+          <td>Anaphylaxis, refractory asthma</td>
+        </tr>
+
+        <tr class="cat-airway">
+          <td>Salbutamol (Albuterol)</td>
+          <td>0.15 mg/kg (max 5 mg) nebulised</td>
+          <td>Neb / MDI</td>
+          <td>Asthma, acute wheeze, bronchiolitis</td>
+        </tr>
+
+        <tr class="cat-seizure">
+          <td>Phenobarbital</td>
+          <td>15–20 mg/kg loading dose</td>
+          <td>IV</td>
+          <td>Seizures, status epilepticus (after benzodiazepines)</td>
+        </tr>
+
+        <tr class="cat-seizure">
+          <td>Phenytoin (or fosphenytoin)</td>
+          <td>15–20 mg/kg loading (max rate 50 mg/min)</td>
+          <td>IV</td>
+          <td>Seizures, status epilepticus</td>
+        </tr>
+
+      </table>
+    </div>
+
+    <!-- Quick Reference Sidebar -->
+    <aside class="quick-ref">
+      <h2>Quick Reference by Category</h2>
+      <ul class="legend">
+        <li><span class="legend-swatch" style="background:#c62828;"></span> Cardiac / Arrest</li>
+        <li><span class="legend-swatch" style="background:#1565c0;"></span> Airway / Breathing</li>
+        <li><span class="legend-swatch" style="background:#2e7d32;"></span> Shock / Circulation</li>
+        <li><span class="legend-swatch" style="background:#6a1b9a;"></span> Metabolic</li>
+        <li><span class="legend-swatch" style="background:#ff8f00;"></span> Seizures</li>
+      </ul>
+
+      <h2>Cardiac / Arrest</h2>
+      <ul>
+        <li>Adrenaline (IV/IO – arrest)</li>
+        <li>Amiodarone</li>
+        <li>Atropine</li>
+        <li>Lidocaine</li>
+        <li>Calcium gluconate</li>
+      </ul>
+
+      <h2>Airway / Breathing</h2>
+      <ul>
+        <li>Adrenaline IM (anaphylaxis)</li>
+        <li>Salbutamol</li>
+        <li>Ipratropium</li>
+        <li>Dexamethasone</li>
+        <li>Magnesium sulfate</li>
+      </ul>
+
+      <h2>Shock / Circulation</h2>
+      <ul>
+        <li>Adrenaline (all forms)</li>
+        <li>Hydrocortisone</li>
+        <li>Furosemide</li>
+      </ul>
+
+      <h2>Metabolic</h2>
+      <ul>
+        <li>Sodium bicarbonate</li>
+        <li>Insulin</li>
+        <li>Calcium gluconate</li>
+        <li>Magnesium sulfate</li>
+      </ul>
+
+      <h2>Seizures</h2>
+      <ul>
+        <li>Phenobarbital</li>
+        <li>Phenytoin</li>
+      </ul>
+    </aside>
+  </div>
+</main>
+
+<script>
+  // Search
+  function searchTable() {
+    let input = document.getElementById("search");
+    let filter = input.value.toUpperCase();
+    let table = document.getElementById("resuscitation");
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+      let td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        let txtValue = td.textContent || td.innerText;
+        tr[i].style.display = txtValue.toUpperCase().includes(filter) ? "" : "none";
+      }
+    }
+  }
+  document.getElementById("search").addEventListener("keyup", searchTable);
+
+  // Dose calculator data
+  const drugCalcData = {
+    adrenaline_iv: {
+      label: "Adrenaline (IV/IO – arrest)",
+      perKg: 0.01,
+      unit: "mg",
+      max: null,
+      extra: "0.1 mL/kg of 1:10 000"
+    },
+    adrenaline_im: {
+      label: "Adrenaline (IM – anaphylaxis)",
+      perKg: 0.01,
+      unit: "mg",
+      max: 0.3,
+      extra: "1:1000 (max 0.3 mg per dose)"
+    },
+    amiodarone: {
+      label: "Amiodarone (bolus)",
+      perKg: 5,
+      unit: "mg",
+      max: 300,
+      extra: "Single bolus; do not exceed total 15 mg/kg in resus"
+    },
+    atropine: {
+      label: "Atropine",
+      perKg: 0.02,
+      unit: "mg",
+      min: 0.1,
+      max: 0.5,
+      extra: "Minimum 0.1 mg, maximum 0.5 mg per dose"
+    },
+    bicarbonate: {
+      label: "Sodium Bicarbonate",
+      perKg: 1,
+      unit: "mEq",
+      max: null,
+      extra: "Typical starting dose 1–2 mEq/kg"
+    },
+    lidocaine: {
+      label: "Lidocaine",
+      perKg: 1,
+      unit: "mg",
+      max: 100,
+      extra: "Do not exceed 3 mg/kg total"
+    },
+    calcium: {
+      label: "Calcium gluconate",
+      perKg: 100,
+      unit: "mg",
+      max: 1000,
+      extra: "Give slowly with ECG monitoring"
+    },
+    furosemide: {
+      label: "Furosemide",
+      perKg: 1,
+      unit: "mg",
+      max: 40,
+      extra: "Consider renal function and fluid status"
+    },
+    hydrocortisone: {
+      label: "Hydrocortisone",
+      perKg: 2,
+      unit: "mg",
+      max: 100,
+      extra: "Stress dosing – check local adrenal crisis protocol"
+    },
+    insulin: {
+      label: "Insulin infusion",
+      perKg: 0.1,
+      unit: "units/hour",
+      max: null,
+      extra: "Standard DKA starting rate 0.1 units/kg/hour"
+    },
+    ipratropium: {
+      label: "Ipratropium (nebule)",
+      perKg: null,
+      unit: "",
+      extra: "Usual dose 250–500 mcg neb 4–6 hourly; not strictly weight-based"
+    },
+    magnesium: {
+      label: "Magnesium sulfate",
+      perKg: 40,
+      unit: "mg",
+      max: 2000,
+      extra: "Give over 20 minutes; do not exceed 2 g"
+    },
+    dexamethasone: {
+      label: "Dexamethasone",
+      perKg: 0.15,
+      unit: "mg",
+      max: 16,
+      extra: "Often single dose for croup/asthma"
+    },
+    salbutamol: {
+      label: "Salbutamol nebulised",
+      perKg: 0.15,
+      unit: "mg",
+      max: 5,
+      extra: "Round to nearest standard neb dose"
+    },
+    phenobarbital: {
+      label: "Phenobarbital loading",
+      perKg: 20,
+      unit: "mg",
+      max: null,
+      extra: "Loading dose 15–20 mg/kg; avoid too rapid administration"
+    },
+    phenytoin: {
+      label: "Phenytoin loading",
+      perKg: 20,
+      unit: "mg",
+      max: null,
+      extra: "Loading dose 15–20 mg/kg; max rate 50 mg/min"
+    }
+  };
+
+  function calculateDose() {
+    const drugKey = document.getElementById("drugSelect").value;
+    const weight = parseFloat(document.getElementById("weightInput").value);
+    const outputEl = document.getElementById("calcOutput");
+    const noteEl = document.getElementById("calcNote");
+
+    outputEl.textContent = "";
+    noteEl.textContent = "";
+
+    if (!drugKey) {
+      outputEl.textContent = "Please select a drug.";
+      return;
+    }
+    if (!weight || weight <= 0) {
+      outputEl.textContent = "Please enter a valid weight in kg.";
+      return;
+    }
+
+    const data = drugCalcData[drugKey];
+    if (!data) {
+      outputEl.textContent = "No calculator data available for this drug.";
+      return;
+    }
+
+    // Drugs that are not strictly weight-based (e.g. ipratropium)
+    if (data.perKg === null) {
+      outputEl.textContent = data.label + " is not calculated strictly per kg.";
+      noteEl.textContent = data.extra;
+      return;
+    }
+
+    let dose = weight * data.perKg;
+    let capped = false;
+    let floorApplied = false;
+
+    if (data.min && dose < data.min) {
+      dose = data.min;
+      floorApplied = true;
+    }
+    if (data.max && dose > data.max) {
+      dose = data.max;
+      capped = true;
+    }
+
+    const roundedDose = (data.unit.includes("hour")) ? dose.toFixed(2) : dose.toFixed(1);
+
+    outputEl.textContent = `Estimated dose for ${data.label}: ${roundedDose} ${data.unit}`;
+    if (capped) {
+      noteEl.textContent = `Dose has been capped at the usual maximum. ${data.extra}`;
+    } else if (floorApplied) {
+      noteEl.textContent = `Minimum dose applied. ${data.extra}`;
+    } else {
+      noteEl.textContent = data.extra;
+    }
+  }
+</script>
+
+</body>
+</html>

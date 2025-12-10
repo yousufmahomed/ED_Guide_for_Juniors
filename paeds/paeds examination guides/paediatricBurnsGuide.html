@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paediatric Burns Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background-image: url("/images/paedsBurns.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+    ul { padding-left: 1.2rem; }
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+    }
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Paediatric Burns Guide</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Paediatric Burns</h1>
+    <p>Burns in children require careful assessment of depth and total body surface area (TBSA), prompt analgesia, and fluid resuscitation for larger burns.</p>
+  </section>
+
+  <section>
+    <h2>Estimating Burn Size (TBSA)</h2>
+    <ul>
+      <li>Use age-adjusted Lund & Browder chart or local tool.</li>
+      <li>Exclude simple erythema from TBSA calculations.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Fluid Resuscitation (If Indicated)</h2>
+    <div class="info-box">
+      Common formula (e.g. Parkland):<br>
+      4 mL × weight (kg) × % TBSA<br>
+      Half in first 8 hours, rest over next 16 hours.<br>
+      <strong>Always follow local burns protocol.</strong>
+    </div>
+  </section>
+
+  <section>
+    <h2>Initial Management</h2>
+    <ul>
+      <li>Stop the burning process; remove hot clothing and jewellery.</li>
+      <li>Cool the burn with cool (not ice) running water for 20 minutes if within 3 hours of injury.</li>
+      <li>Cover with clean, non-adherent dressing or cling film.</li>
+      <li>Provide strong analgesia early.</li>
+      <li>Assess for inhalation injury (facial burns, singed nasal hairs, hoarseness).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Red Flags</h2>
+    <div class="danger-box">
+      <ul>
+        <li>Burns &gt; 10% TBSA in children.</li>
+        <li>Facial, perineal, or circumferential limb burns.</li>
+        <li>Suspected inhalation injury.</li>
+        <li>Suspected non-accidental injury.</li>
+      </ul>
+      These need specialist burns referral and senior involvement.
+    </div>
+  </section>
+</main>
+</body>
+</html>

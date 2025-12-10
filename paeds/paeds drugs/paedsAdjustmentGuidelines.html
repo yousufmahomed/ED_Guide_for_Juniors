@@ -6,99 +6,178 @@
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+
   <style>
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
-      color: #333;
+      line-height: 1.6;
+      color: #222;
       background-image: url("/images/medications.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      margin: 0;
+      padding: 0;
     }
-    
-    table {
-      border-collapse: collapse;
-      width: 100%;
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
     }
-    
-    th, td {
-      text-align: left;
-      padding: 8px;
+
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
     }
-    
-    th {
-      background-color: #4CAF50;
-      color: white;
+
+    ul {
+      padding-left: 1.2rem;
     }
-    
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
     }
-    
-    .section {
-      margin: 20px 0;
-    }
-    
-    .subheading {
-      font-size: 1.2em;
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-weight: bold;
     }
   </style>
 </head>
-<header>
-  <nav class="logo-container">
-    <div class="logo-container">
-      <h1 class="main-header">Paediatric Dosage Adjustment Guidelines</h1>
-      <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-      </div>
-      <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </nav>
-</header>
+
 <body>
-  
-  <div class="section">
-    <h1>Paediatric Dosage Adjustment Guidelines</h1>
-    <p>Adjusting medication dosages for pediatric patients requires careful consideration of factors such as age, weight, renal function, and hepatic function. The following guidelines, formulas, and tips can assist healthcare professionals in ensuring safe and effective medication dosing for children.</p>
-  </div>
-  
-  <div class="section">
-    <h2 class="subheading">Factors to Consider</h2>
-    <ul>
-      <li><strong>Age:</strong> Children's age significantly impacts medication metabolism. Younger children may require lower doses per kilogram of body weight.</li>
-      <li><strong>Weight:</strong> Dosages are often calculated based on weight, with milligrams per kilogram (mg/kg) being a common unit of measurement.</li>
-      <li><strong>Renal Function:</strong> Impaired renal function can affect drug clearance. Creatinine clearance is commonly used to estimate renal function.</li>
-      <li><strong>Hepatic Function:</strong> Impaired liver function can influence drug metabolism. The Child-Pugh score is a tool to assess hepatic impairment.</li>
-    </ul>
-  </div>
-  
-  <div class="section">
-    <h2 class="subheading">Formulas for Dosage Adjustment</h2>
-    <p>Several formulas can aid in adjusting medication dosages for pediatric patients:</p>
-    <ul>
-      <li><strong>Creatinine Clearance (CrCl):</strong> (140 - age) x weight (kg) / (72 x serum creatinine (mg/dL))</li>
-      <li><strong>Child-Pugh Score:</strong> (1.0 x bilirubin) + (0.7 x INR) + (1.8 x ascites) + (3.0 x encephalopathy)</li>
-    </ul>
-  </div>
-  
-  <div class="section">
-    <h2 class="subheading">Tips and Tricks</h2>
-    <ul>
-      <li>Always verify dosages using reputable pediatric drug references or guidelines.</li>
-      <li>Use weight-based dosing for accurate medication administration.</li>
-      <li>For liquid medications, use the patient's weight in kilograms to calculate the appropriate volume to administer.</li>
-      <li>Consider rounding doses to practical and safe increments (e.g., using commercially available strengths).</li>
-      <li>Monitor patients closely for adverse effects and therapeutic response, especially during dosage adjustments.</li>
-    </ul>
-  </div>
-  
-  <div class="section">
-    <h2 class="subheading">Consultation with Experts</h2>
-    <p>Adjusting pediatric medication dosages is a complex task. Always consult with pediatric pharmacists, clinical pharmacologists, or experienced colleagues when in doubt.</p>
-  </div>
-  
+
+  <header>
+    <nav class="logo-container">
+      <div class="logo-container">
+        <h1 class="main-header">Paediatric Dosage Adjustment Guidelines</h1>
+        <div class="navbar-icons">
+          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <h1>Paediatric Dosage Adjustment Guidelines</h1>
+      <p>
+        Safe prescribing in children requires careful adjustment of medication based on 
+        **weight, age, organ maturity, renal/hepatic function, clinical severity, and drug toxicity**. 
+        This guide provides simple ED-friendly rules to ensure safe dosing.
+      </p>
+    </section>
+
+    <!-- SECTION: GENERAL PRINCIPLES -->
+    <section>
+      <h2>General Principles</h2>
+      <ul>
+        <li><strong>Always use weight in kilograms.</strong> Never estimate unless absolutely necessary.</li>
+        <li><strong>Drug doses should be mg/kg or micrograms/kg.</strong></li>
+        <li><strong>Infants metabolise drugs differently.</strong> Neonates especially have immature organs.</li>
+        <li><strong>Never exceed the recommended adult dose.</strong></li>
+        <li><strong>Re-check calculations twice</strong> for high-risk drugs (opiates, sedatives, electrolytes, adrenaline).</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>Broselow Tape Rule:</strong>  
+        If weight is unknown: weight (kg) ≈ <strong>(age in years + 4) × 2</strong>.
+      </div>
+    </section>
+
+    <!-- SECTION: RENAL DOSING -->
+    <section>
+      <h2>Renal Function & Dose Adjustment</h2>
+      <p>Children do <strong>not</strong> use Cockcroft-Gault. Instead, use:</p>
+
+      <div class="info-box">
+        <strong>Schwartz Formula (Paediatrics):</strong><br>
+        eGFR (mL/min/1.73m²) = <strong>0.413 × height (cm) / serum creatinine (mg/dL)</strong>
+      </div>
+
+      <p>
+        Renally cleared drugs requiring adjustment in children include:
+      </p>
+      <ul>
+        <li>Aminoglycosides (gentamicin, amikacin)</li>
+        <li>Vancomycin</li>
+        <li>Cefepime, ceftriaxone (severe impairment only)</li>
+        <li>Oseltamivir</li>
+        <li>Apixaban/rivaroxaban (age dependent)</li>
+      </ul>
+
+      <div class="danger-box">
+        HIGH RISK: Gentamicin dose errors are a common cause of paediatric adverse events.  
+        Always confirm dose & frequency with a calculator/pharmacist.
+      </div>
+    </section>
+
+    <!-- SECTION: HEPATIC DOSING -->
+    <section>
+      <h2>Hepatic Impairment in Children</h2>
+      <p>
+        The **Child-Pugh score is NOT used for paediatrics**. Instead, dosing is based on clinical staging and specialist guidance.
+      </p>
+
+      <ul>
+        <li>Avoid or reduce paracetamol in moderate–severe hepatic disease.</li>
+        <li>Avoid benzodiazepines if hepatic encephalopathy suspected.</li>
+        <li>Consider dose reduction for morphine, codeine, and anticonvulsants.</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>General rule:</strong>  
+        If the child has jaundice, coagulopathy, ascites, or hepatomegaly, assume impaired metabolism → reduce dose and give longer intervals.
+      </div>
+    </section>
+
+    <!-- SECTION: ED PRACTICAL DOSING GUIDES -->
+    <section>
+      <h2>Practical ED Dosing Tips</h2>
+      <ul>
+        <li><strong>Concentrations matter</strong> — check the vial strength before calculating.</li>
+        <li>Round volumes sensibly, not doses (e.g., to nearest 0.1–0.2 mL for small volumes).</li>
+        <li><strong>Use oral syringes for liquid meds</strong>; never use teaspoons.</li>
+        <li>Document mg/kg, total mg, and final mL for clarity.</li>
+        <li><strong>Monitor high-risk drugs</strong> (opiates, insulin, electrolytes, sedatives).</li>
+      </ul>
+
+      <div class="danger-box">
+        RED FLAG: Any paediatric drug dose > adult dose is almost always wrong.
+      </div>
+    </section>
+
+    <!-- SECTION: CONSULTATION -->
+    <section>
+      <h2>When to Ask for Help</h2>
+      <p>
+        Always consult a paediatric pharmacist, paediatrician, or senior ED doctor when prescribing:
+      </p>
+      <ul>
+        <li>Infant <strong>&lt; 3 months</strong></li>
+        <li>Renal or liver disease</li>
+        <li>IV sedation or opiates</li>
+        <li>Electrolyte replacements</li>
+        <li>Anticonvulsants</li>
+        <li>Toxic ingestion or overdose</li>
+      </ul>
+    </section>
+
+  </main>
+
 </body>
 </html>

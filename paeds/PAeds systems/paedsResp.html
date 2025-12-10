@@ -12,58 +12,119 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 16px;
             font-weight: bold;
-            line-height: 2;
+            line-height: 1.8;
             color: #333;
             background-image: url("/images/resp.svg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-          }
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+        }
+
 		.section {
 			margin-bottom: 30px;
+            background: rgba(255,255,255,0.85);
+            padding: 15px;
+            border-radius: 10px;
 		}
+
 		.subheading {
 			font-size: 24px;
 			margin-bottom: 10px;
+            color: #003366;
 		}
+
 		.image {
 			max-width: 100%;
+            display: block;
 			border-radius: 10px;
 			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
+			margin: 10px auto;
 		}
+
+        .caption {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
             margin-bottom: 20px;
         }
+
         th, td {
             border: 1px solid black;
             padding: 8px;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #e6f0ff;
+        }
+
+        .highlight-box {
+            background: #fff8d8;
+            border-left: 6px solid #ff9900;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .highlight-box ul {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .algo-list {
+            list-style-type: decimal;
+            padding-left: 1.1rem;
+        }
+
+        .algo-sublist {
+            list-style-type: disc;
+            padding-left: 1.5rem;
         }
 	</style>
 </head>
-<header>
-<div class="logo-container">
-    <h1>Pediatric Respiratory Exam</h1>
-    <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-    <button class="back-button" onclick="goBack()">Back</button>
-  </div>
-</header>
+
 <body>
+
+<header>
+    <div class="logo-container">
+        <h1>Pediatric Respiratory Exam</h1>
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+
+<main>
+
 	<div class="section">
 		<h1>Pediatric Respiratory Examination in the Emergency Department</h1>
-		<p>A pediatric respiratory examination is essential for evaluating children presenting to the emergency department with respiratory symptoms. This examination aims to identify respiratory abnormalities affecting the lungs, airways, and chest wall.</p>
+		<p>
+            A pediatric respiratory examination is essential for evaluating children presenting to the emergency
+            department with respiratory symptoms. The aim is to identify respiratory abnormalities affecting the
+            lungs, airways and chest wall, and to rapidly recognise life-threatening distress.
+        </p>
 	</div>
 	
 	<div class="section">
 		<h2 class="subheading">Inspection</h2>
 		<p>Begin with inspection to observe breathing patterns, chest movements, and signs of respiratory distress:</p>
 		<ul>
-			<li>Assess breathing rate, rhythm, and depth.</li>
-			<li>Look for retractions or nasal flaring indicating increased work of breathing.</li>
-			<li>Check for chest wall deformities or asymmetry.</li>
+			<li>Assess breathing rate, rhythm, and depth for age.</li>
+			<li>Look for retractions (subcostal, intercostal, suprasternal), head bobbing, or nasal flaring.</li>
+			<li>Check for chest wall deformities or asymmetry of chest movement.</li>
 			<li>Observe for cyanosis of lips, tongue, or fingers.</li>
+            <li>Note level of consciousness and ability to speak/cry normally.</li>
 		</ul>
 	</div>
 	
@@ -71,10 +132,10 @@
 		<h2 class="subheading">Palpation</h2>
 		<p>Palpate the chest and neck areas to assess respiratory function:</p>
 		<ul>
-			<li>Check for tenderness, crepitus, or masses on the chest wall.</li>
-			<li>Assess breath sounds for abnormalities like decreased or increased sounds.</li>
-			<li>Palpate trachea for any deviation indicating airway obstruction.</li>
-			<li>Assess neck for tenderness or crepitus, suggesting subcutaneous emphysema.</li>
+			<li>Check for tenderness, crepitus, or masses on the chest wall (trauma, infection).</li>
+			<li>Assess chest expansion and symmetry.</li>
+			<li>Palpate trachea for any deviation suggesting mediastinal shift or tension pneumothorax.</li>
+			<li>Assess neck and upper chest for subcutaneous emphysema.</li>
 		</ul>
 	</div>
 	
@@ -82,7 +143,8 @@
 		<h2 class="subheading">Percussion</h2>
 		<p>Use percussion to assess lung tissue density:</p>
 		<ul>
-			<li>Percuss chest wall for dullness (consolidation, pleural effusion) or hyperresonance (pneumothorax, emphysema).</li>
+			<li>Dullness may suggest consolidation, pleural effusion or collapse.</li>
+            <li>Hyper-resonance may indicate pneumothorax or hyperinflation (e.g. severe asthma).</li>
         </ul>
     </div>
     
@@ -90,9 +152,76 @@
         <h2 class="subheading">Auscultation</h2>
         <p>Listen for breath sounds and abnormalities using a stethoscope:</p>
         <ul>
-            <li>Auscultate anterior and posterior chest walls for normal/abnormal breath sounds, wheezing, crackles, or rhonchi.</li>
-            <li>Auscultate trachea and mainstem bronchi for breath sound abnormalities and stridor.</li>
+            <li>Auscultate anterior, lateral and posterior chest walls for normal vesicular breath sounds.</li>
+            <li>Identify added sounds: wheeze, crackles, rhonchi, or absent/silent areas.</li>
+            <li>Auscultate the trachea and mainstem bronchi for stridor or asymmetry.</li>
         </ul>
+    </div>
+
+    <!-- RED FLAGS SECTION -->
+    <div class="section">
+        <h2 class="subheading">Pediatric Respiratory Red Flags in the ED</h2>
+        <p>These signs should prompt urgent senior review and often resuscitation/admission:</p>
+        <div class="highlight-box">
+            <ul>
+                <li>Severe respiratory distress: marked recession, head bobbing, grunting, or use of accessory muscles.</li>
+                <li>Silent or very quiet chest in a child with asthma symptoms (impending respiratory failure).</li>
+                <li>Stridor at rest, especially with drooling, toxic appearance or inability to lie flat.</li>
+                <li>Central cyanosis (blue lips/tongue) or SpO<sub>2</sub> persistently &lt; 92% on room air.</li>
+                <li>Apnoeic episodes, irregular breathing or gasping respirations.</li>
+                <li>Altered level of consciousness, lethargy, agitation or poor responsiveness.</li>
+                <li>Inability to talk in full sentences or feed in infants due to breathlessness.</li>
+                <li>Signs of shock: poor perfusion, tachycardia, hypotension, mottled or cool peripheries.</li>
+                <li>Rapidly progressing symptoms, especially in very young infants or immunocompromised children.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- QUICK ED ALGORITHM -->
+    <div class="section">
+        <h2 class="subheading">Quick Pediatric Respiratory Algorithm for the ED</h2>
+        <ol class="algo-list">
+            <li>
+                <strong>Immediate Assessment</strong>
+                <ul class="algo-sublist">
+                    <li>Apply ABC approach; assess airway patency and breathing effort.</li>
+                    <li>Check SpO<sub>2</sub>, respiratory rate, heart rate and level of consciousness.</li>
+                    <li>Give high-flow oxygen if hypoxic or in significant distress (as per local protocol).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Stratify Severity</strong>
+                <ul class="algo-sublist">
+                    <li>Mild–moderate distress: tachypnoea, mild recession, able to talk/feed.</li>
+                    <li>Severe/critical distress: marked recession, silent chest, cyanosis, altered mental state.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Identify Likely Syndrome</strong>
+                <ul class="algo-sublist">
+                    <li>Wheeze predominant → asthma/viral-induced wheeze, bronchiolitis (younger child).</li>
+                    <li>Focal crackles, fever → pneumonia.</li>
+                    <li>Barking cough + stridor → croup; stridor + drooling/toxicity → consider epiglottitis or severe upper airway obstruction.</li>
+                    <li>Sudden onset unilateral decreased air entry/hyper-resonance → pneumothorax or foreign body.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Treat While You Investigate</strong>
+                <ul class="algo-sublist">
+                    <li>Start bronchodilators and steroids for asthma where indicated.</li>
+                    <li>Consider nebulised adrenaline and steroids for significant croup.</li>
+                    <li>Give antibiotics early for suspected bacterial pneumonia/sepsis.</li>
+                    <li>Do not agitate a child with suspected severe upper airway obstruction; call anaesthetics/ENT early.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Decide Disposition</strong>
+                <ul class="algo-sublist">
+                    <li>Admit if any red flags, ongoing oxygen requirement, poor oral intake, or unreliable follow-up.</li>
+                    <li>Discharge well children with mild symptoms, clear diagnosis, inhaler/supportive therapy plan and safety-netting advice.</li>
+                </ul>
+            </li>
+        </ol>
     </div>
     
     <div class="section">
@@ -109,10 +238,10 @@
                     <td>Asthma</td>
                     <td>
                         <ul>
-                            <li>Wheezing during expiration</li>
+                            <li>Expiratory wheeze</li>
                             <li>Shortness of breath</li>
                             <li>Cough, especially at night or early morning</li>
-                            <li>Increase in symptoms with triggers (allergens, exercise)</li>
+                            <li>Increase in symptoms with triggers (allergens, viral infections, exercise)</li>
                         </ul>
                     </td>
                 </tr>
@@ -120,10 +249,10 @@
                     <td>Pneumonia</td>
                     <td>
                         <ul>
-                            <li>Fever, chills</li>
-                            <li>Cough with or without mucus</li>
+                            <li>Fever, malaise or chills</li>
+                            <li>Cough with or without sputum</li>
                             <li>Rapid or difficult breathing</li>
-                            <li>Chest pain</li>
+                            <li>Focal crackles, bronchial breathing, or dullness to percussion</li>
                         </ul>
                     </td>
                 </tr>
@@ -132,9 +261,9 @@
                     <td>
                         <ul>
                             <li>Barking cough</li>
-                            <li>Stridor</li>
+                            <li>Inspiratory stridor</li>
                             <li>Hoarseness</li>
-                            <li>Difficulty breathing</li>
+                            <li>Symptoms often worse at night</li>
                         </ul>
                     </td>
                 </tr>
@@ -145,9 +274,17 @@
     
     <div class="section">
         <h2 class="subheading">Conclusion</h2>
-        <p>A pediatric respiratory examination is vital for assessing children with respiratory symptoms. By inspecting, palpating, percussing, and auscultating, healthcare providers can identify abnormalities and develop appropriate treatment plans. Early detection and intervention ensure optimal outcomes for pediatric patients.</p>
+        <p>
+            A pediatric respiratory examination is vital for assessing children with respiratory symptoms.
+            By systematically inspecting, palpating, percussing and auscultating, using the ED algorithm, and
+            actively looking for red flags, clinicians can identify serious pathology early and initiate appropriate
+            management, improving outcomes for pediatric patients.
+        </p>
         <img src="/images/lungAuscultation.png" alt="Areas of Lung Auscultation" class="image">
-        <caption>Areas of Lung Auscultation</caption>
+        <div class="caption">Areas of Lung Auscultation</div>
     </div>
+
+</main>
+
 </body>
 </html>

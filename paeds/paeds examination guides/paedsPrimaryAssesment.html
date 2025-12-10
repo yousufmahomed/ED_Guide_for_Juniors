@@ -2,188 +2,358 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Primary Assessment J-A-C-C-O-L-D</title>
+  <title>Primary Assessment J-A-C-C-O-L-D (Paediatrics)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url("/images/primaryAssessment.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      strong {
-        font-weight: bold;
-        font-size: 1.2em;
-        color: orangered;
-      }
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/primaryAssessment.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+
+    .section {
+      margin: 1.5rem 0;
+    }
+
+    .section img.image {
+      max-width: 100%;
+      border-radius: 6px;
+      display: block;
+      margin: 0.75rem auto;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    strong {
+      font-weight: 600;
+      color: #d84315;
+    }
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
   </style>
 </head>
+
 <body class="vitals-page">
-    <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Primary Assessment J-A-C-C-O-L-D</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="section">
-        <h2 class="subheading">Jaundice in Pediatric Patients</h2>
-        <p><strong>Clinical features:</strong> Yellowing of the skin and eyes, dark urine, pale stools</p>
-        <p><strong>Symptoms:</strong> Fatigue, weakness, abdominal pain, itching</p>
-        <p><strong>Causes:</strong> Liver disease, hemolytic anemia, bile duct obstruction</p>
-        <p><strong>Relevant investigations:</strong> Liver function tests, bilirubin levels, ultrasound, CT scan</p>
-        <img src="/images/Causes-of-jaundice.png" alt="causes of jaundice" class="image">
-      </section>
-      <section class="section">
-        <h2 class="subheading">Anemia in Pediatric Patients</h2>
-        <p><strong>Clinical features:</strong> Pallor, fatigue, irritability, poor appetite</p>
-        <p><strong>Symptoms:</strong> Weakness, dizziness, headache, rapid heartbeat</p>
-        <p><strong>Causes:</strong> Nutritional deficiencies (iron, vitamin B12, folic acid), chronic disease, blood loss</p>
-        <p><strong>Relevant investigations:</strong> Complete blood count, iron studies, vitamin levels, stool occult blood test</p>
-        <img src="/images/anemia_causes_symptoms_risks-1.png" alt="Causes of anemia" class="image">
-      </section>
-      
-      <section class="section">
-        <h2 class="subheading">Cyanosis in Pediatric Patients</h2>
-        <p><strong>Clinical features:</strong> Bluish discoloration of the skin, lips, and nail beds</p>
-        <p><strong>Symptoms:</strong> Rapid breathing, restlessness, irritability</p>
-        <p><strong>Causes:</strong> Congenital heart defects, respiratory disorders, cold exposure</p>
-        <p><strong>Relevant investigations:</strong> Pulse oximetry, arterial blood gas analysis, chest X-ray, echocardiogram</p>
-        <img src="/images/cyanosis.jpg" alt="Causes of cyanosis" class="image">
-      </section>
-      
-  
-      <section class="section">
-        <h2 class="subheading">Digital Clubbing in Pediatric Patients</h2>
-        <p><strong>Clinical features:</strong> Enlargement and rounding of fingertips, nail bed softening, curved nails</p>
-        <p><strong>Symptoms:</strong> Shortness of breath, chest discomfort, fatigue</p>
-        <p><strong>Causes:</strong> Congenital heart defects, chronic lung diseases (e.g., cystic fibrosis), other chronic illnesses</p>
-        <p><strong>Relevant investigations:</strong> Chest X-ray, echocardiogram, pulmonary function tests, blood tests</p>
-        <img src="/images/clubbing.jpg" alt="Causes of clubbing" class="image">
-        <img src="/images/clubbing2.jpg" alt="Causes of clubbing" class="image">
-      </section>
-      
-      <section class="section">
-        <h2 class="subheading">Pediatric Edema</h2>
-        <p><strong>Clinical features:</strong> Swelling of the feet, ankles, legs, or abdomen</p>
-        <p><strong>Symptoms:</strong> Breathing difficulties, fatigue, decreased activity</p>
-        <p><strong>Causes:</strong> Heart conditions, kidney problems, liver diseases, severe malnutrition</p>
-        <p><strong>Relevant investigations:</strong> Blood tests, urine tests, chest X-ray, echocardiogram</p>
-        <img src="/images/oedema.jpg" alt="Causes of edema" class="image">
-      </section>
-      
-      <section class="section">
-        <h2 class="subheading">Pediatric Lymphadenopathy</h2>
-        <p><strong>Clinical features:</strong> Enlarged and palpable lymph nodes, often in neck, armpits, or groin</p>
-        <p><strong>Symptoms:</strong> Fatigue, fever, night sweats, weight loss</p>
-        <p><strong>Causes:</strong> Commonly due to viral or bacterial infections, reactive to inflammation</p>
-        <p><strong>Relevant investigations:</strong> Blood tests, imaging studies (ultrasound, CT scan), clinical assessment</p>
-        <img src="/images/Causes-of-Localized-Lymphadenopathy.png" alt="Causes of lymphadenopathy" class="image">
-        <img src="/images/cervical_lymphadenopathy_2.jpg" alt="Cervical lymphadenopathy" class="image">
-      </section>
-      
-      <section class="section">
-        <h2 class="subheading">Dehydration in Pediatric Patients</h2>
-        <p><strong>Clinical features:</strong> Dehydration in children can present with various signs, including:</p>
-        <ul>
-          <li>Dry mouth and dry lips</li>
-          <li>Decreased urine output or darker urine</li>
-          <li>Thirst and irritability</li>
-          <li>Dry and cool extremities</li>
-          <li>Sunken fontanelles (soft spots on the baby's head)</li>
-          <li>Sunken eyes</li>
-          <li>Rapid heart rate</li>
-          <li>Low blood pressure</li>
-        </ul>
-        
-        <p><strong>Symptoms:</strong> Dehydration can lead to various symptoms in pediatric patients:</p>
-        <ul>
-          <li>General fatigue and weakness</li>
-          <li>Dizziness and lightheadedness</li>
-          <li>Confusion and irritability</li>
-          <li>Rapid heartbeat</li>
-          <li>Headache</li>
-        </ul>
-      
-        <p><strong>Causes:</strong> Dehydration in children can be caused by:</p>
-        <ul>
-          <li>Excessive sweating due to fever or vigorous physical activity</li>
-          <li>Diarrhea and vomiting</li>
-          <li>Insufficient fluid intake, especially in hot weather</li>
-          <li>Diabetes</li>
-          <li>Use of certain medications</li>
-        </ul>
-        
-        <section class="section">
-          <h2 class="subheading">Dehydration in Pediatric Patients: Clinical Recognition and Emergency Management</h2>
-          
-          <p><strong>Clinical Recognition:</strong> Recognizing the stages of dehydration in pediatric patients is crucial for timely intervention. Clinical signs can vary based on the severity of dehydration:</p>
-          <ul>
-            <li><strong>Mild Dehydration:</strong> Thirst, slightly dry mucous membranes, normal or slightly decreased urine output, alert and responsive behavior.</li>
-            <li><strong>Moderate Dehydration:</strong> Dry mucous membranes, decreased skin turgor, sunken fontanelles (in infants), decreased urine output, increased heart rate, irritability.</li>
-            <li><strong>Severe Dehydration:</strong> Very dry mucous membranes, markedly decreased skin turgor, deeply sunken fontanelles (in infants), minimal urine output or anuria, rapid and weak pulse, lethargy, cold extremities, altered mental status.</li>
-          </ul>
-          
-          <p><strong>Emergency Department Management:</strong> Management strategies for pediatric dehydration in the emergency department include:</p>
-          <ul>
-            <li><strong>Mild Dehydration:</strong> Offer oral rehydration solution (ORS) to replace lost fluids and electrolytes. Monitor the child's condition and ensure adequate fluid intake.</li>
-            <li><strong>Moderate Dehydration:</strong> Administer ORS or intravenous fluids if necessary. Monitor vital signs, urine output, and clinical signs of improvement. Address the underlying cause, such as treating infections.</li>
-            <li><strong>Severe Dehydration:</strong> Initiate rapid rehydration with intravenous fluids. Monitor vital signs closely, including blood pressure, heart rate, and mental status. Address electrolyte imbalances and correct acidosis if present. Consider consulting pediatric specialists if available.</li>
-          </ul>
-        
-          <p><strong>Reassessment:</strong> Regularly reassess the child's hydration status and adjust the management plan accordingly. Monitor vital signs, urine output, and clinical improvement.</p>
-          
-          <p><strong>Note:</strong> Dehydration in pediatric patients can lead to critical complications rapidly. Early recognition, appropriate clinical assessment, and timely intervention are paramount in preventing severe outcomes.</p>
-        </section>
-        
-      
-        <p><strong>Relevant investigations:</strong> If dehydration is suspected, healthcare providers may perform:</p>
-        <ul>
-          <li>Blood tests to assess electrolyte levels and kidney function</li>
-          <li>Urine tests to measure specific gravity and urine osmolality</li>
-          <li>Physical examination to assess vital signs and clinical signs of dehydration</li>
-        </ul>
-        
-        <img src="/images/Clin feat dehydration.jpg" alt="clinical features of dehydration" class="image">
-      </section>
-      <section class="section">
-        <h2 class="subheading">Intravenous Rehydration in Pediatric Patients</h2>
-      
-        <p><strong>Preferred Fluids:</strong> When administering intravenous (IV) fluids for rehydration in pediatric patients, the choice of fluid depends on the patient's age, clinical condition, and electrolyte imbalances.</p>
-        <ul>
-          <li><strong>Isotonic Fluids:</strong> Isotonic solutions like Normal Saline (0.9% Sodium Chloride) and Lactated Ringer's are commonly used for most cases of dehydration. They help restore extracellular fluid volume and electrolyte balance.</li>
-          <li><strong>Hypotonic Fluids:</strong> Hypotonic fluids like Half Normal Saline (0.45% Sodium Chloride) may be used cautiously in specific cases of hypernatremic dehydration.</li>
-          <li><strong>Hypertonic Fluids:</strong> Hypertonic solutions are typically reserved for specific conditions like severe hyponatremia under close monitoring due to potential complications.</li>
-        </ul>
-      
-        <p><strong>Rates of Infusion:</strong> The rate of IV fluid infusion should be tailored to the severity of dehydration and the patient's clinical condition:</p>
-        <ul>
-          <li><strong>Mild Dehydration:</strong> Start with 20 mL/kg of isotonic fluid over 1 to 2 hours, then reassess and adjust as needed.</li>
-          <li><strong>Moderate to Severe Dehydration:</strong> Initiate rehydration with a bolus of 20 mL/kg of isotonic fluid over 15 to 30 minutes. Subsequent fluid administration depends on ongoing assessment and response, typically at 2-4 times maintenance rate.</li>
-        </ul>
-      
-        <p><strong>Close Monitoring:</strong> Regularly monitor vital signs, urine output, clinical improvement, and electrolyte levels during IV fluid administration. Adjust the rate and type of fluids as needed based on the patient's response.</p>
-      
-        <p><strong>Consultation:</strong> In cases of severe dehydration or complex medical conditions, consult with pediatric specialists for guidance on fluid composition, rates, and monitoring.</p>
-      </section>
-      
-      
-      
-  
-  </body>
-  </html>
-    </main>
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Primary Assessment – J-A-C-C-O-L-D</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="section">
+    <h1>Primary Assessment – J-A-C-C-O-L-D</h1>
+    <p>
+      J-A-C-C-O-L-D is a quick visual and clinical screening tool during primary assessment in children:
+      <strong>J</strong>aundice, <strong>A</strong>naemia, <strong>C</strong>yanosis, <strong>C</strong>lubbing,
+      <strong>O</strong>edema, <strong>L</strong>ymphadenopathy, <strong>D</strong>ehydration.
+    </p>
+    <div class="info-box">
+      Use this as a structured “head-to-toe” observation to pick up serious underlying disease early,
+      alongside your ABC assessment and vital signs.
+    </div>
+  </section>
+
+  <!-- J – Jaundice -->
+  <section class="section">
+    <h2>J – Jaundice in Paediatric Patients</h2>
+    <p><strong>Clinical features:</strong></p>
+    <ul>
+      <li>Yellow discoloration of sclerae and skin.</li>
+      <li>Dark urine, pale or putty-coloured stools.</li>
+    </ul>
+
+    <p><strong>Associated symptoms:</strong></p>
+    <ul>
+      <li>Fatigue, poor feeding or failure to thrive.</li>
+      <li>Abdominal pain or hepatomegaly.</li>
+      <li>Pruritus (especially in cholestatic disease).</li>
+    </ul>
+
+    <p><strong>Common causes (by age):</strong></p>
+    <ul>
+      <li>Neonates: physiological jaundice, sepsis, haemolysis, biliary atresia.</li>
+      <li>Infants/children: viral hepatitis, autoimmune or metabolic liver disease, haemolytic anaemias, biliary obstruction.</li>
+    </ul>
+
+    <p><strong>Key ED investigations:</strong></p>
+    <ul>
+      <li>Liver function tests, conjugated vs unconjugated bilirubin.</li>
+      <li>FBC, reticulocyte count, Coombs test if haemolysis suspected.</li>
+      <li>Abdominal ultrasound if obstructive or structural disease suspected.</li>
+    </ul>
+
+    <img src="/images/Causes-of-jaundice.png" alt="Causes of jaundice" class="image">
+  </section>
+
+  <!-- A – Anaemia -->
+  <section class="section">
+    <h2>A – Anaemia in Paediatric Patients</h2>
+    <p><strong>Clinical features:</strong></p>
+    <ul>
+      <li>Pallor (conjunctivae, palms, mucosa), tachycardia.</li>
+      <li>Fatigue, irritability, poor feeding or exercise intolerance.</li>
+    </ul>
+
+    <p><strong>Common causes:</strong></p>
+    <ul>
+      <li>Nutritional deficiencies – iron, folate, B12.</li>
+      <li>Haemolysis – hereditary, autoimmune, infections.</li>
+      <li>Chronic disease, renal disease, malignancy, blood loss.</li>
+    </ul>
+
+    <p><strong>Key ED investigations:</strong></p>
+    <ul>
+      <li>Full blood count and blood film.</li>
+      <li>Reticulocyte count, iron studies; consider haemolysis screen if indicated.</li>
+      <li>Stool occult blood or other tests guided by history.</li>
+    </ul>
+
+    <img src="/images/anemia_causes_symptoms_risks-1.png" alt="Causes of anaemia" class="image">
+  </section>
+
+  <!-- C – Cyanosis -->
+  <section class="section">
+    <h2>C – Cyanosis in Paediatric Patients</h2>
+    <p><strong>Clinical features:</strong></p>
+    <ul>
+      <li>Bluish discoloration of lips, tongue, nail beds, or extremities.</li>
+      <li>May be central (tongue) or peripheral (extremities).</li>
+    </ul>
+
+    <p><strong>Associated symptoms:</strong></p>
+    <ul>
+      <li>Tachypnoea, respiratory distress.</li>
+      <li>Irritability, poor feeding, lethargy.</li>
+      <li>Failure to thrive, recurrent chest infections.</li>
+    </ul>
+
+    <p><strong>Important causes:</strong></p>
+    <ul>
+      <li>Congenital heart disease (cyanotic lesions).</li>
+      <li>Severe pneumonia, bronchiolitis, asthma, foreign body.</li>
+      <li>Sepsis, shock, or methemoglobinaemia (rare).</li>
+    </ul>
+
+    <p><strong>Key ED investigations:</strong></p>
+    <ul>
+      <li>Pulse oximetry and blood gas (consider co-oximetry if available).</li>
+      <li>Chest X-ray, ECG; consider echocardiogram (often via cardiology).</li>
+      <li>Basic bloods and lactate if septic or shocked.</li>
+    </ul>
+
+    <img src="/images/cyanosis.jpg" alt="Cyanosis" class="image">
+  </section>
+
+  <!-- C – Clubbing -->
+  <section class="section">
+    <h2>C – Digital Clubbing in Paediatric Patients</h2>
+    <p><strong>Clinical features:</strong></p>
+    <ul>
+      <li>Bulbous enlargement of distal phalanges, “drumstick” fingers.</li>
+      <li>Loss of nail–fold angle, spongy nail beds.</li>
+    </ul>
+
+    <p><strong>Suggestive of chronic disease:</strong></p>
+    <ul>
+      <li>Chronic suppurative lung disease (e.g., cystic fibrosis, bronchiectasis, TB).</li>
+      <li>Cyanotic congenital heart disease.</li>
+      <li>Chronic liver disease, inflammatory bowel disease, some malignancies.</li>
+    </ul>
+
+    <p><strong>Key ED considerations:</strong> clubbing is usually chronic – it should prompt you to look for
+      long-standing cardiopulmonary or systemic illness and confirm appropriate follow-up.</p>
+
+    <img src="/images/clubbing.jpg" alt="Clubbing example" class="image">
+    <img src="/images/clubbing2.jpg" alt="Clubbing example 2" class="image">
+  </section>
+
+  <!-- O – Oedema -->
+  <section class="section">
+    <h2>O – Oedema in Paediatric Patients</h2>
+    <p><strong>Clinical features:</strong></p>
+    <ul>
+      <li>Swelling of feet, ankles, legs, periorbital area or abdomen (ascites).</li>
+      <li>Pitting oedema over bony prominences.</li>
+    </ul>
+
+    <p><strong>Common causes:</strong></p>
+    <ul>
+      <li>Renal disease (e.g., nephrotic syndrome, nephritis).</li>
+      <li>Cardiac failure, congenital heart disease.</li>
+      <li>Liver disease, severe malnutrition, protein-losing enteropathy.</li>
+    </ul>
+
+    <p><strong>Key ED investigations:</strong></p>
+    <ul>
+      <li>Urinalysis (protein, blood), U&E, creatinine.</li>
+      <li>Liver function tests, albumin.</li>
+      <li>Chest X-ray, echocardiogram where indicated.</li>
+    </ul>
+
+    <img src="/images/oedema.jpg" alt="Oedema" class="image">
+  </section>
+
+  <!-- L – Lymphadenopathy -->
+  <section class="section">
+    <h2>L – Lymphadenopathy in Paediatric Patients</h2>
+    <p><strong>Clinical features:</strong></p>
+    <ul>
+      <li>Enlarged lymph nodes (commonly cervical, axillary, inguinal).</li>
+      <li>Nodes may be tender, mobile, or fixed depending on cause.</li>
+    </ul>
+
+    <p><strong>Common causes:</strong></p>
+    <ul>
+      <li>Self-limiting viral or bacterial infections.</li>
+      <li>Suppurative nodes, TB, atypical mycobacterial infection.</li>
+      <li>Haematological malignancies or systemic inflammatory disease (less common but important).</li>
+    </ul>
+
+    <p><strong>Key ED considerations:</strong></p>
+    <ul>
+      <li>Look for red flags – weight loss, night sweats, persistent fever, very large or hard, fixed nodes.</li>
+      <li>Document size, site, tenderness, and overlying skin changes.</li>
+    </ul>
+
+    <p><strong>Suggested investigations:</strong> (guided by history)</p>
+    <ul>
+      <li>FBC, inflammatory markers, TB screening where appropriate.</li>
+      <li>Ultrasound of node(s) if concern for abscess or malignancy.</li>
+    </ul>
+
+    <img src="/images/Causes-of-Localized-Lymphadenopathy.png" alt="Causes of lymphadenopathy" class="image">
+    <img src="/images/cervical_lymphadenopathy_2.jpg" alt="Cervical lymphadenopathy" class="image">
+  </section>
+
+  <!-- D – Dehydration -->
+  <section class="section">
+    <h2>D – Dehydration in Paediatric Patients</h2>
+
+    <p><strong>Key clinical signs:</strong></p>
+    <ul>
+      <li>Dry mucous membranes, dry lips and tongue.</li>
+      <li>Reduced tears, decreased urine output or dark urine.</li>
+      <li>Sunken eyes, sunken fontanelle in infants.</li>
+      <li>Tachycardia, cool peripheries, prolonged capillary refill in more severe cases.</li>
+    </ul>
+
+    <p><strong>Symptoms (depending on age and severity):</strong></p>
+    <ul>
+      <li>Thirst, irritability, lethargy.</li>
+      <li>Dizziness, weakness, headache in older children.</li>
+      <li>Reduced activity, poor feeding.</li>
+    </ul>
+
+    <p><strong>Common causes:</strong></p>
+    <ul>
+      <li>Gastroenteritis (vomiting and diarrhoea).</li>
+      <li>Fever with poor intake, excessive sweating.</li>
+      <li>Diabetes (e.g., new-onset diabetes or DKA), diuretics or other medications.</li>
+    </ul>
+
+    <h3>Clinical Grading (Bedside)</h3>
+    <ul>
+      <li><strong>Mild:</strong> Slightly dry mucosa, normal vitals, alert, urine output slightly reduced.</li>
+      <li><strong>Moderate:</strong> Dry mucosa, reduced skin turgor, sunken eyes/fontanelle, tachycardia, irritable.</li>
+      <li><strong>Severe:</strong> Very dry mucosa, markedly reduced turgor, deeply sunken eyes/fontanelle, weak rapid pulse, cold peripheries, lethargy or altered mental status.</li>
+    </ul>
+
+    <h3>Emergency Department Management</h3>
+    <ul>
+      <li><strong>Mild dehydration:</strong> Oral rehydration solution (ORS); small frequent amounts; continue feeding when possible.</li>
+      <li><strong>Moderate dehydration:</strong> ORS if tolerated; consider IV fluids if ongoing losses or inability to drink; monitor vitals and urine output closely.</li>
+      <li><strong>Severe dehydration / shock:</strong> Treat as an emergency – IV or IO access, isotonic fluid bolus (e.g. 10–20 mL/kg) over 10–20 minutes, then reassess and repeat as per local protocol.</li>
+    </ul>
+
+    <div class="danger-box">
+      Red flags: reduced consciousness, poor perfusion, absent urine, severe abdominal pain, suspected DKA or sepsis.  
+      In these cases, involve senior/paediatric support early and consider ICU or transfer.
+    </div>
+
+    <p><strong>Relevant investigations (based on severity and cause):</strong></p>
+    <ul>
+      <li>U&E, creatinine, glucose, bicarbonate.</li>
+      <li>Blood gas (venous/arterial) to assess acidosis and lactate.</li>
+      <li>Urinalysis (ketones, specific gravity), stool studies if indicated.</li>
+    </ul>
+
+    <img src="/images/Clin feat dehydration.jpg" alt="Clinical features of dehydration" class="image">
+  </section>
+
+  <!-- Intravenous Rehydration – brief ED guide -->
+  <section class="section">
+    <h2>Intravenous Rehydration – ED Approach</h2>
+
+    <p><strong>Choice of fluid:</strong></p>
+    <ul>
+      <li><strong>Isotonic crystalloids</strong> (e.g. 0.9% saline, Ringer’s lactate) are first-line in most children with significant dehydration or shock.</li>
+      <li>Avoid hypotonic fluids for initial resuscitation.</li>
+      <li>Use specialised protocols for DKA, hypernatraemia, or complex electrolyte disturbances.</li>
+    </ul>
+
+    <p><strong>Typical ED strategy:</strong></p>
+    <ul>
+      <li>Start with a bolus of <strong>10–20 mL/kg</strong> isotonic crystalloid over 10–20 minutes in shock; reassess after each bolus.</li>
+      <li>Once circulation stabilised, calculate maintenance plus replacement according to local guidelines and ongoing losses.</li>
+      <li>Monitor heart rate, blood pressure, capillary refill, mental status, urine output and weight (if possible).</li>
+    </ul>
+
+    <div class="info-box">
+      In infants, children with cardiac or renal disease, or in suspected DKA/hypernatraemia,
+      fluid plans should be individualised and made with senior or specialist input.
+    </div>
+  </section>
+
+</main>
 </body>
 </html>

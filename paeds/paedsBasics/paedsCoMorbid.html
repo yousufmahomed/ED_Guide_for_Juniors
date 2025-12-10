@@ -8,16 +8,70 @@
   <script src="/script.js"></script>
   <style>
     body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 2;
-        color: #333;
-        background-image: url(/images/coMorbid.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      background-image: url(/images/coMorbid.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 0.5rem;
+    }
+
+    .subheading {
+      font-size: 1.3rem;
+      color: #003366;
+      margin-bottom: 0.3rem;
+    }
+
+    ul {
+      margin: 0.3rem 0 0.3rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .note-box {
+      background: #fff8d8;
+      border-left: 6px solid #ff9900;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .note-box ul {
+      margin: 0.4rem 0 0 1.2rem;
+    }
+
+    .bottom-link {
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -28,48 +82,137 @@
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </header>
-  <main>
-    <h1 class="title">Pediatric Co-Morbidities</h1>
-    <ul class="links">
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Asthma</li>
-        <p>Ask about triggers, age of onset, medications, and previous hospitalizations.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Congenital Heart Defects</li>
-        <p>Ask about surgeries, symptoms, and regular care such as medications or follow-up visits with specialists.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Diabetes (Type I mainly)</li>
-        <p>Ask about age of onset, medications, diet, and any history of diabetic ketoacidosis (DKA).</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Epilepsy</li>
-        <p>Ask about types of seizures, medications, recent changes in behavior or academics, and any developmental delays.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Developmental Disorders</li>
-        <p>Include Autism Spectrum Disorders, ADHD, learning disabilities, etc.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Growth and Nutritional Concerns</li>
-        <p>Ask about feeding habits, known food allergies, and growth patterns. Important to identify malnutrition or obesity.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Genetic Conditions</li>
-        <p>Include information about any known genetic conditions like Down Syndrome, Cystic Fibrosis, etc.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Previous Surgeries or Hospitalizations</li>
-        <p>Include surgeries for congenital anomalies or injuries, any hospitalizations for infections or other serious conditions.</p>
-      </section>
-      <section class="section">
-        <li style="font-size: larger; text-decoration:underline;">Immunization Status</li>
-        <p>Important to have an updated immunization record as per the local guidelines.</p>
-      </section>
-    </ul>
 
-    <h2>For a list of common pediatric medications and dosages, click <a href="/pediatric/commonMeds.html" class="emphasis-link">here.</a></h2>
+  <main>
+    <div class="section">
+      <h1 class="title">Pediatric Co-Morbidities in the ED</h1>
+      <p>
+        When assessing a child in the emergency department, a focused but thorough past history helps you
+        understand baseline risk, likely complications and medication interactions. Use the prompts below
+        to guide your questions about common paediatric co-morbid conditions.
+      </p>
+      <div class="note-box">
+        <strong>General past history prompts (ask in <em>every</em> child):</strong>
+        <ul>
+          <li>Birth history (prematurity, NICU stay, congenital anomalies).</li>
+          <li>Chronic conditions (cardiac, respiratory, neurological, endocrine, renal).</li>
+          <li>HIV exposure/status, TB contacts or treatment history.</li>
+          <li>Regular medications (including inhalers, anticonvulsants, steroids).</li>
+          <li>Allergies (especially to medications, foods, contrast, latex).</li>
+          <li>Previous ICU admissions, intubations or major operations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Asthma</h2>
+      <ul>
+        <li>Age of onset and how often they have attacks.</li>
+        <li>Known triggers (infections, exercise, allergens, smoke exposure).</li>
+        <li>Current controller and reliever medications (inhaled steroids, LABA, montelukast, SABA).</li>
+        <li>Correct inhaler / spacer technique and adherence.</li>
+        <li>Previous ED visits, admissions or ICU/intubation for asthma.</li>
+        <li>Any recent increase in reliever use or night-time symptoms.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Congenital or Structural Heart Disease</h2>
+      <ul>
+        <li>Exact diagnosis (if known) and any surgeries or interventions (e.g. shunt, repair, stent).</li>
+        <li>Ongoing symptoms: cyanosis, poor feeding, sweating with feeds, exercise intolerance, syncope.</li>
+        <li>Current medications (e.g. diuretics, ACE inhibitors, anticoagulants, anti-arrhythmics).</li>
+        <li>Last cardiology follow-up and any restrictions (activity, fluid, medications).</li>
+        <li>Baseline saturations if cyanotic heart disease (important for triage interpretation).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Diabetes (Type 1 mainly)</h2>
+      <ul>
+        <li>Age at diagnosis and type of diabetes (Type 1 vs other).</li>
+        <li>Insulin regimen (basal-bolus / premix / insulin pump) and typical doses.</li>
+        <li>Recent glucose control (frequent hypo/hyperglycaemia, HbA1c if known).</li>
+        <li>History of diabetic ketoacidosis (DKA) or severe hypoglycaemic events.</li>
+        <li>Ability of child/caregiver to recognise and treat hypo/hyperglycaemia.</li>
+        <li>Associated autoimmune conditions (thyroid disease, coeliac, etc.).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Epilepsy</h2>
+      <ul>
+        <li>Seizure type(s) and typical duration/recovery pattern.</li>
+        <li>Known triggers (fever, missed doses, sleep deprivation, flashing lights).</li>
+        <li>Regular anti-epileptic drugs, doses and adherence.</li>
+        <li>Recent change in seizure frequency or pattern.</li>
+        <li>History of status epilepticus or ICU admissions.</li>
+        <li>Developmental history and school/academic progress.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Developmental and Neurobehavioural Disorders</h2>
+      <p>Includes Autism Spectrum Disorder, ADHD, global developmental delay, learning disorders.</p>
+      <ul>
+        <li>Developmental milestones (gross motor, fine motor, speech, social).</li>
+        <li>Formal diagnoses and current supports (OT, speech, psychology, special schooling).</li>
+        <li>Sensory sensitivities or behavioural triggers relevant to ED environment.</li>
+        <li>Communication needs (non-verbal, picture boards, parent acting as interpreter).</li>
+        <li>Current medications (e.g. stimulants, antipsychotics, mood stabilisers).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Growth and Nutritional Concerns</h2>
+      <ul>
+        <li>Feeding history: breastfeeding, formula, solids introduction, picky eating.</li>
+        <li>Any known food allergies or intolerances.</li>
+        <li>Documented concerns about poor weight gain or obesity (growth chart if available).</li>
+        <li>Chronic conditions affecting nutrition (CF, CHD, chronic diarrhoea, coeliac, HIV).</li>
+        <li>Vitamin or micronutrient supplementation.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Genetic and Chronic Conditions</h2>
+      <p>Examples: Down Syndrome, Cystic Fibrosis, Sickle Cell Disease, neuromuscular disorders.</p>
+      <ul>
+        <li>Specific diagnosis and main systems affected (cardiac, respiratory, neurological, etc.).</li>
+        <li>Baseline functional status (mobility, feeding, communication).</li>
+        <li>Regular specialist follow-up (cardiology, neurology, pulmonology, genetics).</li>
+        <li>History of recurrent infections, hospitalisations or ICU admissions.</li>
+        <li>Any advanced care plans or documented treatment limitations.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Previous Surgeries or Hospitalisations</h2>
+      <ul>
+        <li>Major operations (especially cardiac, abdominal, neurosurgical, orthopaedic).</li>
+        <li>Any post-operative complications or prolonged ICU stay.</li>
+        <li>Hospitalisations for severe infections, respiratory failure, seizures, DKA, trauma.</li>
+        <li>History of intubation and mechanical ventilation.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Immunization Status</h2>
+      <ul>
+        <li>Check the Road-to-Health booklet or other records if available.</li>
+        <li>Confirm whether the child is up to date with the South African schedule.</li>
+        <li>Ask about delayed or missed vaccines and reasons (access, hesitancy, illness).</li>
+        <li>Special considerations: immunocompromised status, splenectomy, chronic disease.</li>
+      </ul>
+    </div>
+
+    <div class="section bottom-link">
+      <h2 class="subheading">Related Resource</h2>
+      <p>
+        For a list of common pediatric medications and typical ED uses, click
+        <a href="/paeds/paedsBasics/paedsCommonMeds.html" class="emphasis-link">here</a>.
+      </p>
+    </div>
   </main>
 </body>
 </html>

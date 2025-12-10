@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Commonly Used HIV Drugs in Pediatrics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -10,126 +11,244 @@
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      line-height: 1.6;
       color: #333;
       background-image: url("/images/medications.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      margin: 0;
     }
-    
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
+      font-size: 0.9rem;
     }
-    
+
     th, td {
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
-    
+
     th {
-      background-color: #4CAF50;
+      background-color: #00509E;
       color: white;
     }
-    
+
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    
-    input[type=text] {
+
+    input[type="text"] {
       width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
+      padding: 10px 12px;
+      margin: 0.5rem 0 1rem 0;
       box-sizing: border-box;
       border: 2px solid #ccc;
       border-radius: 4px;
+      font-size: 1rem;
     }
-    
-    input[type=text]:focus {
-      border: 2px solid #4CAF50;
+
+    input[type="text"]:focus {
+      border-color: #00509E;
+      outline: none;
+    }
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
   </style>
 </head>
+
+<body>
 <header>
   <nav class="logo-container">
     <div class="logo-container">
       <h1 class="main-header">Commonly Used HIV Drugs in Pediatrics</h1>
       <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </a>
       </div>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </nav>
 </header>
-<body>
-  
-  <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for drugs...">
-  <table id="hiv">
-    <tr>
-      <th>Drug</th>
-      <th>Dosage</th>
-      <th>Route of Administration</th>
-      <th>Indication for Use</th>
-      <th>Precautions</th>
-    </tr>
-    <tr>
-      <td>Tenofovir disoproxil fumarate (TDF)</td>
-      <td>8 mg/kg once daily (max: 300 mg)</td>
-      <td>Oral</td>
-      <td>HIV-1 infection in pediatric patients 2 years of age and older</td>
-      <td>Monitor renal function and bone health.</td>
-    </tr>
-    <tr>
-      <td>Emtricitabine (FTC)</td>
-      <td>3 mg/kg once daily (max: 200 mg)</td>
-      <td>Oral</td>
-      <td>HIV-1 infection in pediatric patients 2 years of age and older</td>
-      <td>Monitor for adverse effects.</td>
-    </tr>
-    <tr>
-      <td>Dolutegravir (DTG)</td>
-      <td>Weight-based dosing; consult pediatric guidelines</td>
-      <td>Oral</td>
-      <td>HIV-1 infection in pediatric patients 6 years of age and older</td>
-      <td>Monitor for adverse effects and drug interactions.</td>
-    </tr>
-    <tr>
-      <td>Raltegravir (RAL)</td>
-      <td>Weight-based dosing; consult pediatric guidelines</td>
-      <td>Oral</td>
-      <td>HIV-1 infection in pediatric patients 4 weeks of age and older</td>
-      <td>Monitor for adverse effects and drug interactions.</td>
-    </tr>
-    <tr>
-      <td>Atazanavir (ATV)</td>
-      <td>Weight-based dosing; consult pediatric guidelines</td>
-      <td>Oral</td>
-      <td>HIV-1 infection in pediatric patients 6 years of age and older</td>
-      <td>Monitor for hyperbilirubinemia and drug interactions.</td>
-    </tr>
-    <!-- Add more HIV drugs and precautions as needed -->
-  </table>
-  <script>
-    function searchTable() {
-      let input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("search");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("hiv");
-      tr = table.getElementsByTagName("tr");
-      for (i = 1; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
+
+<main>
+  <section>
+    <h1>Commonly Used HIV Drugs in Pediatrics</h1>
+    <p>
+      This page gives a brief overview of commonly used antiretroviral drugs in children.  
+      Paediatric ART is <strong>specialised</strong> and dosing must follow the latest
+      <strong>national paediatric HIV guidelines</strong> (weight-band dosing) or advice from an HIV/paediatrics specialist.
+    </p>
+
+    <div class="info-box">
+      <strong>In the ED:</strong><br>
+      • Confirm and continue the child’s <strong>existing regimen</strong> where possible.<br>
+      • Avoid making major changes to chronic ART without HIV clinic/paeds input.<br>
+      • For PEP or new starts, follow the dedicated <strong>HIV PEP/ART protocol</strong> rather than this summary table.
+    </div>
+
+    <div class="danger-box">
+      Do <strong>not</strong> rely on this page alone to calculate ART doses.  
+      Always check the latest paediatric HIV guideline, weight-band tables, and potential drug–drug interactions.
+    </div>
+  </section>
+
+  <section>
+    <h2>Search Drug</h2>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for a drug (e.g. dolutegravir)...">
+  </section>
+
+  <section>
+    <h2>Common Paediatric HIV Drugs (Overview)</h2>
+    <table id="hiv">
+      <tr>
+        <th>Drug</th>
+        <th>Typical Paediatric Dosing Approach</th>
+        <th>Route</th>
+        <th>Indication / Role</th>
+        <th>Precautions</th>
+      </tr>
+
+      <tr>
+        <td>Tenofovir disoproxil fumarate (TDF)</td>
+        <td>
+          Weight-band dosing; commonly around 8 mg/kg once daily  
+          (maximum usually 300 mg) – follow national guideline tables.
+        </td>
+        <td>Oral</td>
+        <td>
+          NRTI backbone for HIV-1 in children meeting age/weight criteria  
+          (often ≥ 2 years and appropriate weight).
+        </td>
+        <td>
+          Monitor <strong>renal function</strong> (creatinine, eGFR) and <strong>bone health</strong>.  
+          Use with caution in renal impairment or low body weight.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Emtricitabine (FTC)</td>
+        <td>
+          Weight-band dosing; typical range approx. 3–6 mg/kg once daily  
+          (maximum usually 200 mg) – follow guideline tables.
+        </td>
+        <td>Oral</td>
+        <td>
+          NRTI used with TDF or other agents as part of combination ART.
+        </td>
+        <td>
+          Generally well tolerated; adjust dose in renal impairment.  
+          Monitor for gastrointestinal upset and other adverse effects.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Dolutegravir (DTG)</td>
+        <td>
+          <strong>Strict weight-band dosing</strong> (mg once daily) – consult paediatric HIV guideline.  
+          Often used in children ≥ 6 years / specific weight thresholds.
+        </td>
+        <td>Oral</td>
+        <td>
+          Integrase inhibitor; now preferred in many first-line paediatric regimens.
+        </td>
+        <td>
+          Check for drug interactions (e.g. rifampicin, some antacids).  
+          Monitor for neuropsychiatric symptoms and GI side effects.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Raltegravir (RAL)</td>
+        <td>
+          Granules or tablets with weight-band dosing;  
+          doses vary by age and formulation – use paediatric tables.
+        </td>
+        <td>Oral</td>
+        <td>
+          Integrase inhibitor; used in infants and children from ~4 weeks of age in certain regimens.
+        </td>
+        <td>
+          Monitor for GI upset, insomnia, and potential interactions.  
+          Check formulation-specific dosing carefully.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Atazanavir (ATV)</td>
+        <td>
+          Boosted regimen (usually with ritonavir).  
+          Weight-band and age-dependent dosing – follow specialist guideline.
+        </td>
+        <td>Oral</td>
+        <td>
+          Protease inhibitor used in combination therapy in older children/adolescents.
+        </td>
+        <td>
+          Monitor for <strong>hyperbilirubinaemia</strong>, jaundice, and drug interactions  
+          (e.g. PPIs, some anticonvulsants). Check liver function tests.
+        </td>
+      </tr>
+
+      <!-- Add further agents (e.g. ABC, 3TC, LPV/r) similarly if you want to expand later -->
+    </table>
+  </section>
+</main>
+
+<script>
+  function searchTable() {
+    const input = document.getElementById("search");
+    const filter = input.value.toUpperCase();
+    const table = document.getElementById("hiv");
+    const tr = table.getElementsByTagName("tr");
+
+    // Skip header row
+    for (let i = 1; i < tr.length; i++) {
+      const td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        const txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
         }
       }
     }
-  </script>
+  }
+</script>
 </body>
 </html>

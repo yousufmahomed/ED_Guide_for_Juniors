@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Pediatric ENT Exam</title>
     <meta charset="UTF-8">
@@ -7,91 +7,311 @@
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
+
     <style>
-        /* Your existing styles */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.8;
+            color: #333;
+            background-image: url("/images/pedsENT.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.85);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .subheading {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #003366;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .caption {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .highlight-box {
+            background: #fff8d8;
+            border-left: 6px solid #ff9900;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .highlight-box ul {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .algo-list {
+            list-style-type: decimal;
+            padding-left: 1.1rem;
+        }
+
+        .algo-sublist {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-          <h1>Pediatric ENT Exam</h1>
-          <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-    </header>
-    
+
+<header>
+    <div class="logo-container">
+      <h1>Pediatric ENT Exam</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+</header>
+
+<main>
+
+    <!-- HISTORY -->
     <div class="section">
         <h2 class="subheading">Child's Medical History</h2>
-        <p>Start by asking the child's caregiver about their symptoms and medical history, including:</p>
+        <p>Begin by asking the caregiver about symptoms and key background information:</p>
         <ul>
-            <li>Ear discomfort or pain: Children may experience ear pain due to infections, fluid buildup, or other issues.</li>
-            <li>Hearing concerns: Inquire about any difficulties the child has with hearing or responding to sounds.</li>
-            <li>Balance and dizziness issues: Ask about any episodes of unsteadiness or vertigo the child has experienced.</li>
-            <li>Speech and communication: Assess the child's language development and any speech-related concerns.</li>
-            <li>Nasal congestion or breathing problems: Inquire about any breathing difficulties, snoring, or persistent congestion.</li>
-            <li>Swallowing difficulties: Ask if the child experiences any discomfort or difficulties when eating or drinking.</li>
-            <li>Previous ear, nose, or throat conditions: Knowing the child's medical history can help in diagnosing recurring issues.</li>
-            <li>Recent injuries: Any recent head or neck injuries that may impact the ears, nose, or throat.</li>
+            <li>Ear pain or discomfort</li>
+            <li>Hearing loss or delayed response to sounds</li>
+            <li>Balance issues or dizziness</li>
+            <li>Speech or language delays</li>
+            <li>Breathing difficulty, snoring, or nasal congestion</li>
+            <li>Swallowing difficulties</li>
+            <li>Past ENT problems or recurrent infections</li>
+            <li>Recent trauma to the ear, nose or throat</li>
         </ul>
     </div>
-    
+
+    <!-- EXAMINATION -->
     <div class="section">
         <h2 class="subheading">Physical Examination</h2>
-        <p>Conduct a gentle and child-friendly examination of the ears, nose, and throat, including:</p>
-        <strong>Ears</strong>
-		<p>Use an otoscope to examine the ear canal and tympanic membrane (eardrum). Look for:</p>
-		<ul>
-            <li>Redness, swelling, or discharge: These may indicate an infection or inflammation in the ear. Redness and swelling may also be a sign of trauma to the ear. Discharge can be a symptom of a ruptured eardrum or an ear infection.</li>
-            <li>Tearing or perforation of the eardrum: A ruptured eardrum can cause hearing loss and may require medical treatment.</li>
-            <li>Foreign bodies (such as earwax or insects): These can cause irritation, pain, or hearing loss and may need to be removed by a healthcare professional.</li>
-            <li>Signs of infection or inflammation: These may include redness, warmth, tenderness, and pain in the ear. The ear may also produce pus or other discharge.</li>
-            <li>Abnormalities in hearing: Conduct a hearing test to check for any hearing loss or abnormalities in hearing. This may involve a whisper test or tuning fork test.</li>
+
+        <h3>Ears</h3>
+        <p>Use an otoscope to assess the ear canal and tympanic membrane. Look for:</p>
+        <ul>
+            <li>Redness, swelling or discharge</li>
+            <li>Tympanic membrane perforation</li>
+            <li>Foreign bodies</li>
+            <li>Signs of infection or inflammation</li>
+            <li>Hearing abnormalities (whisper test / tuning fork)</li>
         </ul>
-		<img src="/images/normalTymp.jpg" alt="Ear Exam" class="image">
-        <caption>A normal Tympanic membrane</caption>
-        <img src="/images/otitis.jpg" alt="Otitis changes" class="image">
-        <caption>Tympanic membrane changes in Otitis</caption>
-        <img src="/images/perforatedTm.jpg" alt="Perforated TM" class="image">
-        <caption>Tympanic membrane Perforations</caption>
-		
-		<strong>Nose</strong>
-		<p>Examine the nasal passages for:</p>
-		<ul>
-            <li>Signs of obstruction or congestion: These may indicate a blockage in the nasal passages, which can cause difficulty breathing, snoring, or sleep apnea.</li>
-            <li>Discharge or bleeding: These can be symptoms of a sinus infection, allergies, or other conditions.</li>
-            <li>Deviated septum or other abnormalities: A deviated septum is a common condition in which the nasal septum (the wall that separates the two nostrils) is shifted to one side, making it difficult to breathe through one or both nostrils. Other abnormalities may include nasal polyps, tumors, or cysts.</li>
-            <li>Foreign bodies: These can include objects that are stuck in the nose, such as small toys or food particles. Foreign bodies can cause irritation, inflammation, or infection in the nasal passages.</li>
+
+        <img src="/images/normalTymp.jpg" alt="Normal TM" class="image">
+        <div class="caption">Normal Tympanic Membrane</div>
+
+        <img src="/images/otitis.jpg" alt="Otitis Media Changes" class="image">
+        <div class="caption">Tympanic Membrane Changes in Otitis Media</div>
+
+        <img src="/images/perforatedTm.jpg" alt="Perforated Tympanic Membrane" class="image">
+        <div class="caption">Tympanic Membrane Perforation</div>
+
+
+        <h3>Nose</h3>
+        <p>Inspect the nasal passages for:</p>
+        <ul>
+            <li>Obstruction or congestion</li>
+            <li>Discharge or epistaxis</li>
+            <li>Deviated septum or structural abnormalities</li>
+            <li>Foreign bodies</li>
         </ul>
-		<img src="/images/normalNasal.jpg" alt="Nose Exam" class="image">
-        <caption>Normal Nasal View</caption>
-		
-		<strong>Throat</strong>
-		<p>Examine the mouth and throat using a tongue depressor and flashlight. Look for:</p>
-		<ul>
-            <li>Redness, swelling, or discharge: These may indicate an infection or inflammation in the throat. Redness and swelling may also be a sign of trauma to the throat. Discharge can be a symptom of a throat infection.</li>
-            <li>Tonsillitis or pharyngitis: Tonsillitis is inflammation of the tonsils, while pharyngitis is inflammation of the pharynx (the back of the throat). These conditions can cause sore throat, difficulty swallowing, fever, and swollen lymph nodes in the neck.</li>
-            <li>Ulcers or lesions: These may indicate a viral infection, such as herpes simplex virus (cold sores) or Epstein-Barr virus (mononucleosis). They can also be a sign of oral cancer or other conditions.</li>
-            <li>Foreign bodies: These can include objects that are stuck in the throat, such as fish bones or pills. Foreign bodies can cause irritation, inflammation, or infection in the throat.</li>
-            <li>Difficulty swallowing: This can be a symptom of a variety of conditions, including throat infections, acid reflux, or neurological disorders.</li>
-            <li>Enlarged lymph nodes: These may indicate an infection or inflammation in the throat, or may be a sign of a more serious condition such as lymphoma.</li>
+
+        <img src="/images/normalNasal.jpg" alt="Normal Nasal View" class="image">
+        <div class="caption">Normal Nasal Examination</div>
+
+
+        <h3>Throat</h3>
+        <p>Use a tongue depressor and light to examine:</p>
+        <ul>
+            <li>Redness, swelling or exudates</li>
+            <li>Tonsillitis or pharyngitis</li>
+            <li>Ulcers or oral lesions</li>
+            <li>Foreign bodies</li>
+            <li>Dysphagia</li>
+            <li>Cervical lymphadenopathy</li>
         </ul>
-		<img src="/images/normalThroat.jpg" alt="Normal Throat" class="image">
-        <caption>Normal Throat View</caption>
+
+        <img src="/images/normalThroat.jpg" alt="Normal Throat" class="image">
+        <div class="caption">Normal Throat</div>
+
         <img src="/images/tonsillitis-inflammation.jpg" alt="Tonsillitis" class="image">
-        <caption>Tonsillitis</caption>
-        <img src="/images/quinsy.jpg" alt="peri-tonsillar abscess" class="image">
-        <caption>Peri-tonsillar Abscess/ Quinsy</caption>
+        <div class="caption">Tonsillitis</div>
+
+        <img src="/images/quinsy.jpg" alt="Peritonsillar Abscess" class="image">
+        <div class="caption">Peritonsillar Abscess (Quinsy)</div>
     </div>
-    
+
+    <!-- DIAGNOSTICS -->
     <div class="section">
         <h2 class="subheading">Diagnostic Evaluation</h2>
-        <p>Based on the child's symptoms and examination, diagnostic tests may include:</p>
+        <p>Further tests may include:</p>
         <ul>
-            <li>Hearing assessment: Pediatric audiometry to evaluate hearing ability and detect any issues.</li>
-            <li>Imaging studies: Specialized imaging like MRI or CT to assess structures of ears, nose, and throat.</li>
-            <li>Endoscopy: A child-friendly procedure using a small camera to examine nasal passages, throat, or vocal cords.</li>
-            <li>Swab tests: Collect samples for lab analysis to identify bacterial or viral infections.</li>
+            <li>Pediatric audiometry</li>
+            <li>CT or MRI imaging</li>
+            <li>Flexible nasopharyngoscopy</li>
+            <li>Throat or nasal swab cultures</li>
         </ul>
     </div>
+
+    <!-- RED FLAGS -->
+    <div class="section">
+        <h2 class="subheading">Pediatric ENT Red Flags</h2>
+        <p>These features should prompt urgent senior review, possible ENT referral, and consideration for admission:</p>
+
+        <div class="highlight-box">
+            <ul>
+                <li>Stridor, noisy breathing, or any signs of respiratory distress (retractions, tachypnoea, hypoxia).</li>
+                <li>Drooling, inability to handle secretions, tripod position, or very painful swallowing.</li>
+                <li>Muffled “hot potato” voice, trismus, or severe unilateral throat pain (suggesting quinsy or deep neck infection).</li>
+                <li>Rapidly enlarging neck swelling, torticollis, or obvious neck asymmetry.</li>
+                <li>Mastoid tenderness, swelling, or protruding pinna suggesting mastoiditis.</li>
+                <li>Persistent unilateral foul-smelling or bloody nasal discharge (possible foreign body or mass).</li>
+                <li>Sudden onset hearing loss or facial nerve weakness.</li>
+                <li>Systemic toxicity: high fever, lethargy, poor feeding, altered mental status, or signs of sepsis.</li>
+                <li>Very young infants (&lt;3 months) with fever and any ENT focus.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- QUICK ENT ALGORITHM FOR A&E -->
+    <div class="section">
+        <h2 class="subheading">Quick Pediatric ENT Algorithm for A&amp;E</h2>
+        <p>Use this as a quick mental flow in the Emergency Department:</p>
+
+        <ol class="algo-list">
+            <li>
+                <strong>Initial Impression: Sick or Not Sick?</strong>
+                <ul class="algo-sublist">
+                    <li>Check ABCDE immediately.</li>
+                    <li>If any airway or breathing compromise → call for senior help, anaesthetics/ENT, prepare for airway support.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Airway/Breathing Symptoms Present?</strong>
+                <ul class="algo-sublist">
+                    <li><strong>Stridor / respiratory distress:</strong> High flow oxygen, nebulised adrenaline if indicated, steroids, keep child calm, early ENT/anaesthetics.</li>
+                    <li><strong>Drooling / inability to swallow / tripod position:</strong> Do not attempt aggressive oral examination, keep child upright, urgent ENT and anaesthetics.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>If Airway Stable – Identify Main Complaint</strong>
+                <ul class="algo-sublist">
+                    <li><strong>Ear pain / discharge:</strong> Consider otitis media/externa, foreign body, TM perforation.</li>
+                    <li><strong>Sore throat:</strong> Tonsillitis, pharyngitis, quinsy, viral URTI.</li>
+                    <li><strong>Nasal symptoms:</strong> Rhinitis, sinusitis, epistaxis, nasal foreign body.</li>
+                    <li><strong>Hearing or speech delay:</strong> Glue ear, conductive hearing loss, sensorineural loss.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Look for Red Flags</strong>
+                <ul class="algo-sublist">
+                    <li>If any present → escalate, consider imaging, IV antibiotics, admission.</li>
+                    <li>If no red flags and child well → manage as outpatient with safety netting.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Decide on Disposition</strong>
+                <ul class="algo-sublist">
+                    <li><strong>Admit:</strong> Airway/breathing issues, systemic toxicity, severe pain not controlled, concern for mastoiditis, quinsy, deep neck space infection.</li>
+                    <li><strong>Discharge:</strong> Stable child, no red flags, clear diagnosis, caregiver understands red flags and follow-up advice.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- COMMON PEDIATRIC ENT EMERGENCIES -->
+    <div class="section">
+        <h2 class="subheading">Common Pediatric ENT Emergencies</h2>
+        <p>Key emergencies you will often see in A&amp;E and their initial management priorities:</p>
+
+        <h3>1. Stridor &amp; Acute Upper Airway Obstruction</h3>
+        <ul>
+            <li>Keep child with caregiver, avoid upsetting them.</li>
+            <li>High flow oxygen, consider nebulised adrenaline if indicated.</li>
+            <li>Give systemic steroids if appropriate (e.g. dexamethasone).</li>
+            <li>Urgent ENT/anaesthetic review for potential airway intervention.</li>
+            <li>Do <strong>not</strong> force the child to lie flat or cry unnecessarily.</li>
+        </ul>
+
+        <h3>2. Inhaled or Impacted Foreign Body (Airway)</h3>
+        <ul>
+            <li>Sudden onset cough, wheeze, or unilateral decreased air entry.</li>
+            <li>If complete obstruction and child conscious → age-appropriate choking algorithm (back blows, chest/abdominal thrusts).</li>
+            <li>If partial obstruction and stable → avoid blind sweeps, urgent ENT/anaesthetics for bronchoscopy.</li>
+            <li>Consider imaging but do not delay airway management.</li>
+        </ul>
+
+        <h3>3. Nasal Foreign Body</h3>
+        <ul>
+            <li>Common in toddlers; unilateral foul-smelling or bloody discharge.</li>
+            <li>If visible and cooperative child → consider simple removal in ED (parent’s kiss technique, suction, hook) if trained and safe.</li>
+            <li>Avoid pushing object further back.</li>
+            <li>ENT referral if not easily removed, if button battery, or if penetrating object.</li>
+        </ul>
+
+        <h3>4. Epistaxis</h3>
+        <ul>
+            <li>Sit child up, head slightly forward, pinch soft part of nose continuously for 10–15 minutes.</li>
+            <li>Reassure child and caregiver, avoid swallowing blood.</li>
+            <li>Consider topical vasoconstrictor and local pressure if persistent.</li>
+            <li>ENT referral for recurrent, severe, or posterior bleeds.</li>
+        </ul>
+
+        <h3>5. Tonsillitis &amp; Peritonsillar Abscess (Quinsy)</h3>
+        <ul>
+            <li>Severe sore throat, trismus, muffled “hot potato” voice, unilateral swelling, uvula deviation.</li>
+            <li>ABC assessment – ensure no airway compromise.</li>
+            <li>IV fluids, analgesia, antibiotics if indicated.</li>
+            <li>ENT referral for drainage of quinsy and admission if unwell.</li>
+        </ul>
+
+        <h3>6. Mastoiditis</h3>
+        <ul>
+            <li>Post-auricular swelling, erythema, tenderness, protruding pinna, often following otitis media.</li>
+            <li>Systemically unwell child, fever, irritability.</li>
+            <li>Urgent ENT referral, IV antibiotics, and imaging if required.</li>
+        </ul>
+
+        <h3>7. Deep Neck Space Infection</h3>
+        <ul>
+            <li>Neck swelling, torticollis, severe pain, fever, drooling, trismus.</li>
+            <li>Airway evaluation is the first priority.</li>
+            <li>IV antibiotics, imaging (CT neck with contrast if safe), urgent ENT and anaesthetics.</li>
+        </ul>
+
+        <p>Always document red flags, safety net advice, and review arrangements clearly in the notes.</p>
+    </div>
+
+</main>
+
 </body>
 </html>

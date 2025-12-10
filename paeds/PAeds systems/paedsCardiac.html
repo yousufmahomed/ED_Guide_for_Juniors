@@ -1,213 +1,388 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Pediatric Cardiac Examination</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/genralPages.css">
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
-	<style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/cardiac.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-		.section {
-			margin-bottom: 30px;
-		}
-		.subheading {
-			font-size: 24px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-		table {
-			border-collapse: collapse;
-			width: 100%;
-			margin-bottom: 20px;
-		}
-		th, td {
-			padding: 10px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
-		th {
-			background-color: #f2f2f2;
-		}
-        strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-	</style>
+  <meta charset="UTF-8">
+  <title>Pediatric Cardiac Examination</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-image: url("/images/cardiac.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 8px;
+    }
+
+    h1, h2, h3 {
+      color: #00509E;
+      text-align: center;
+    }
+
+    .section {
+      margin: 1.5rem 0;
+    }
+
+    .subheading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    strong {
+      font-weight: 600;
+      color: #d84315;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #00509E;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f7f7f7;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 0.75rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    figure {
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .tag-green {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .tag-red {
+      color: #c62828;
+      font-weight: 600;
+    }
+
+    .tag-yellow {
+      color: #f57c00;
+      font-weight: 600;
+    }
+  </style>
 </head>
-<header>
-    <div class="logo-container">
-      <h1>Pediatric Cardiac Exam</h1>
-      <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
-      <button class="back-button" onclick="goBack()">Back</button>
-    </div>
-  </header>
+
 <body>
-	<div class="section">
-		<p>A pediatric cardiac examination is a physical assessment performed to evaluate the function and health of a child's heart. This examination is essential for diagnosing and managing a variety of congenital and acquired cardiac conditions in pediatric patients.</p>
-	</div>
+<header>
+  <div class="logo-container">
+    <h1 class="main-header">Pediatric Cardiac Exam</h1>
+    <div class="navbar-icons">
+      <a href="/index.html" title="Home">
+        <i class="fa-solid fa-house" aria-hidden="true"></i>
+      </a>
+    </div>
+    <button class="back-button" onclick="goBack()">Back</button>
+  </div>
+</header>
 
-	<div class="section">
-		<h2 class="subheading">Patient History</h2>
-		<p>Collecting a comprehensive medical history is crucial in the pediatric cardiac examination. Important information includes:</p>
-		<ul>
-			<li>Family history of congenital heart disease</li>
-			<li>Maternal history during pregnancy</li>
-			<li>History of cyanosis, poor feeding, or developmental delays</li>
-			<li>Current medications</li>
-			<li>History of respiratory infections or frequent pneumonias</li>
-			<li>Growth and development milestones</li>
-		</ul>
-	</div>
+<main>
+  <!-- INTRO -->
+  <section class="section">
+    <h1>Pediatric Cardiac Examination</h1>
+    <p>
+      The paediatric cardiac exam in the ED aims to rapidly identify children with
+      <strong>congenital heart disease, heart failure, shock, arrhythmia or carditis</strong>.
+      It combines focused history, vital signs, assessment of perfusion, and careful auscultation.
+    </p>
+    <div class="info-box">
+      Always interpret findings in the context of the child’s overall appearance:
+      work of breathing, perfusion, growth, feeding and exercise tolerance.
+    </div>
+  </section>
 
-	<div class="section">
-		<h2 class="subheading">Vital Signs</h2>
-		<p>The following vital signs should be assessed:</p>
-		<ul>
-			<li>Heart rate</li>
-			<li>Respiratory rate</li>
-			<li>Blood pressure</li>
-			<li>Oxygen saturation</li>
-			<li>Temperature</li>
-		</ul>
-		<p>Abnormal vital signs may indicate underlying cardiac issues and should be monitored closely in pediatric patients.</p>
-	</div>
+  <!-- HISTORY -->
+  <section class="section">
+    <h2 class="subheading">Focused Cardiac History</h2>
+    <p>Useful ED screening questions include:</p>
+    <ul>
+      <li>Family history of <strong>congenital heart disease</strong>, sudden cardiac death, cardiomyopathy, arrhythmias.</li>
+      <li>Pregnancy/perinatal history: maternal diabetes, infections, medications, prematurity, NICU stay.</li>
+      <li>Feeding history in infants: poor feeding, sweating when feeding, prolonged feeds, failure to thrive.</li>
+      <li>Breathlessness: tachypnoea, recurrent chest infections, difficulty keeping up with peers.</li>
+      <li>Cyanosis: central (tongue, lips) vs peripheral; episodes during crying/feeding.</li>
+      <li>Syncope or presyncope, especially <strong>exertional</strong> or associated with palpitations/chest pain.</li>
+      <li>Exercise tolerance in older children: inability to run/play normally, early fatigue.</li>
+      <li>Past history of rheumatic fever, Kawasaki disease, known heart disease, or cardiac surgery.</li>
+      <li>Medications (including stimulants, antiepileptics, chemotherapy).</li>
+    </ul>
+    <div class="danger-box">
+      Red flag history: exertional syncope, exertional chest pain, family history of sudden unexplained death,
+      or known cardiomyopathy/long QT – <strong>urgent cardiology review</strong>.
+    </div>
+  </section>
 
-	<div class="section">
-		<h2 class="subheading">Physical Examination</h2>
-        <div class="section">
-		<p>The following physical examinations should be performed:</p>
-		<ul>
-			<li>Inspection: Observe the chest for any abnormalities, such as a visible apical impulse, or heaves and lifts.</li>
-			<li>Palpation: Assess for any areas of tenderness, palpable thrills or heaves, or pulsations. Palpate the carotid arteries, assess for JVP, palpate the precordium, and assess for a point of maximal impulse.</li>
-        </div>
-            <div class="section">
-                <h2 class="subheading">Palpation During a Cardiac Examination</h2>
-                <p>Palpation is an important component of the cardiac examination that involves feeling different areas of the chest and neck for any abnormalities or indications of heart function. During palpation, healthcare providers assess for areas of tenderness, palpable thrills or heaves, and pulsations.</p>
-                <p>Here are the key areas that healthcare providers typically palpate during a cardiac examination:</p>
-                <ul>
-                    <li><strong>Carotid arteries:</strong> Healthcare providers palpate the carotid arteries on either side of the neck to assess for any abnormalities, such as carotid artery stenosis or bruits.</li>
-                    <li><strong>Jugular venous pulse (JVP):</strong> The JVP is assessed by feeling for pulsations in the jugular veins in the neck. It is used to assess right atrial pressure and can indicate heart failure or other cardiac conditions.</li>
-                    <li><strong>Precordium:</strong> The precordium is the area of the chest overlying the heart. Healthcare providers palpate the precordium to assess for any areas of tenderness, thrills, or heaves. A thrill is a vibration felt on the chest wall that indicates turbulent blood flow, while a heave is a visible pulsation of the chest wall that indicates increased force of cardiac contraction.</li>
-                    <li><strong>Point of maximal impulse (PMI):</strong> The PMI is the point on the chest where the apex of the heart touches the chest wall. Healthcare providers palpate the PMI to assess for any abnormalities, such as a displaced or enlarged PMI.</li>
-                </ul>
-                <p>Common findings and abnormalities detected during palpation during a cardiac examination include:</p>
-                <ul>
-                    <li>Pulsations or thrills: These may indicate heart murmurs or other abnormalities in blood flow.</li>
-                    <li>Tenderness or pain: These may indicate inflammation or other cardiac conditions.</li>
-                    <li>Jugular venous distention: This may indicate right-sided heart failure or other cardiac conditions.</li>
-                    <li>Enlarged or displaced PMI: This may indicate an enlarged heart or other cardiac conditions.</li>
-                </ul>
-            </div>
-            
-			<li>Auscultation: Listen for heart sounds, including S1, S2, and any murmurs, rubs, or gallops. Use the bell and diaphragm of the stethoscope to assess for high-pitched and low-pitched sounds.</li>
-            <div class="section">
-                <h2 class="subheading">Auscultation of the Heart</h2>
-                <p>Auscultation of the heart is a critical component of the cardiac examination. By listening to the sounds produced by the heart, healthcare providers can detect a wide range of abnormalities and conditions. During the auscultation process, the healthcare provider listens for heart sounds using a stethoscope, which consists of a bell and a diaphragm.</p>
-                <p>The bell is used to detect low-pitched sounds, while the diaphragm is used to detect high-pitched sounds. Healthcare providers typically listen for four primary sounds: S1, S2, S3, and S4.</p>
-                <ul>
-                    <li><strong>S1:</strong> The first heart sound and is caused by the closure of the mitral and tricuspid valves. It is typically a low-pitched sound that occurs at the beginning of systole.</li>
-                    <li><strong>S2:</strong> The second heart sound and is caused by the closure of the aortic and pulmonic valves. It is typically a higher-pitched sound than S1 and occurs at the end of systole.</li>
-                    <li><strong>S3:</strong> A low-pitched sound that occurs early in diastole and is associated with rapid filling of the ventricles. S3 can be a normal finding in children and young adults but may indicate heart failure in older patients.</li>
-                    <li><strong>S4:</strong> A low-pitched sound that occurs late in diastole and is associated with atrial contraction. S4 is often a sign of a stiff or noncompliant ventricle and may indicate coronary artery disease or hypertension.</li>
-                </ul>
-                <p>In addition to these four primary sounds, healthcare providers listen for murmurs, rubs, and gallops during auscultation. Murmurs are caused by turbulent blood flow and may indicate valve abnormalities or other cardiac conditions. Rubs are caused by inflammation of the pericardium and may indicate pericarditis. Gallops are additional heart sounds that may indicate heart failure or other cardiac conditions.</p>
-                <p>Common findings and abnormalities detected during auscultation of the heart include:</p>
-                <ul>
-                    <li>Murmurs: These may indicate valve abnormalities, such as stenosis, regurgitation, or prolapse. They can also be caused by congenital heart defects, endocarditis, or other cardiac conditions.</li>
-                    <li>Extra heart sounds (S3 and S4): These may indicate heart failure, hypertension, or coronary artery disease.</li>
-                    <li>Tachycardia: This is a heart rate that is faster than normal and may indicate an underlying cardiac condition or other medical problem.</li>
-                    <li>Bradycardia: This is a heart rate that is slower than normal and may indicate an underlying cardiac condition or other medical problem.</li>
-                    <li>Irregular heart rhythm: This may indicate arrhythmias, such as atrial fibrillation or ventricular tachycardia.</li>
-                    <li>Rubs: These may indicate pericarditis, a condition in which the sac surrounding the heart becomes inflamed.</li>
-                </ul>
-            </div>
-            
-			<li>Percussion: Not typically used in a cardiac examination.</li>
-        </ul>
-	</div>
+  <!-- VITALS & PERFUSION -->
+  <section class="section">
+    <h2 class="subheading">Vital Signs & Perfusion</h2>
+    <p>Record and interpret age-appropriate vitals (see your paeds vitals page):</p>
+    <ul>
+      <li>Heart rate (tachycardia / bradycardia, rhythm regular vs irregular).</li>
+      <li>Respiratory rate and work of breathing (heart failure often presents with tachypnoea).</li>
+      <li>Blood pressure – ideally <strong>four-limb BP</strong> in suspected coarctation.</li>
+      <li>Oxygen saturation – pre- and post-ductal (right hand vs foot) if cyanotic heart disease suspected.</li>
+      <li>Temperature (fever raises suspicion for myocarditis, pericarditis, rheumatic carditis, sepsis).</li>
+    </ul>
+    <p>Assess perfusion:</p>
+    <ul>
+      <li>Capillary refill time (central and peripheral).</li>
+      <li>Skin colour and temperature: mottling, cool peripheries, central cyanosis.</li>
+      <li>Hepatomegaly – an important sign of paediatric heart failure.</li>
+      <li>Urine output (if known) and level of consciousness.</li>
+    </ul>
+  </section>
 
-	<div class="section">
-		<h2 class="subheading">Common Pediatric Cardiac Abnormalities</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Cardiac Abnormality</th>
-					<th>Clinical Findings</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Ventricular Septal Defect (VSD)</td>
-					<td>
-						<ul>
-							<li>Harsh holosystolic murmur at left lower sternal border</li>
-							<li>Increased pulmonary flow causing symptoms of congestive heart failure</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-					<td>Tetralogy of Fallot</td>
-					<td>
-						<ul>
-							<li>Cyanosis, particularly during crying or feeding</li>
-							<li>Tet spells with sudden onset of cyanosis and hypoxia</li>
-							<li>Systolic ejection murmur</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
-					<td>Atrial Septal Defect (ASD)</td>
-					<td>
-						<ul>
-							<li>Fixed split S2 heart sound</li>
-							<li>Systolic ejection murmur at upper left sternal border</li>
-							<li>Asymptomatic or mild symptoms of fatigue</li>
-						</ul>
-					</td>
-				</tr>
-				<!-- Add more abnormalities and findings here -->
-			</tbody>
-		</table>
-	</div>
+  <!-- GENERAL INSPECTION -->
+  <section class="section">
+    <h2 class="subheading">General Inspection</h2>
+    <ul>
+      <li>Growth: underweight, small for age, or faltering growth can reflect chronic cardiac disease.</li>
+      <li>Cyanosis: lips/tongue (central) vs hands/feet (peripheral); clubbing in chronic conditions.</li>
+      <li>Respiratory distress: nasal flaring, retractions, grunting.</li>
+      <li>Chest wall: visible precordial activity, deformity (pectus excavatum), surgical scars.</li>
+      <li>Dysmorphic features associated with syndromes (e.g. Down syndrome with AVSD).</li>
+      <li>Peripheral oedema (rare in small children, more common in adolescents).</li>
+    </ul>
+  </section>
 
-	<div class="section">
-		<h2 class="subheading">Diagnostic Tests</h2>
-		<p>Diagnostic tests for pediatric cardiac conditions may include:</p>
-		<ul>
-			<li>Electrocardiogram (ECG)</li>
-			<li>Echocardiography</li>
-			<li>Chest X-ray</li>
-			<li>Cardiac catheterization (in certain cases)</li>
-		</ul>
-		<p>These tests aid in confirming diagnoses and assessing the severity of the cardiac abnormality.</p>
-	</div>
+  <!-- PALPATION -->
+  <section class="section">
+    <h2 class="subheading">Pulses, JVP & Precordium</h2>
+    <h3>Pulses & Blood Pressure</h3>
+    <ul>
+      <li>Palpate <strong>brachial and femoral pulses</strong> in infants; look for delay or absence (coarctation).</li>
+      <li>In older children, check radial and femoral pulses simultaneously for radio-femoral delay.</li>
+      <li>Assess pulse volume and character (bounding, thready, collapsing).</li>
+      <li>Measure arm and leg BP if coarctation is suspected (leg BP lower than arm is abnormal).</li>
+    </ul>
 
-	<div class="section">
-		<h2 class="subheading">Summary</h2>
-		<p>The pediatric cardiac examination is crucial for early detection and management of cardiac abnormalities in children. Through a thorough assessment, healthcare providers can diagnose and initiate appropriate treatment for pediatric cardiac conditions.</p>
-		<img class="image" src="/images/heart_valve_locations_paediatrics-700x300.jpg"  alt="Pediatric Cardiac Examination">
-        <caption>Areas of Focus in Pediatric Cardiac Examination</caption>
-	</div>
+    <h3>JVP / Neck Veins</h3>
+    <ul>
+      <li>JVP assessment is harder in small children but gross distension suggests right heart failure or tamponade.</li>
+    </ul>
+
+    <h3>Precordial Palpation</h3>
+    <ul>
+      <li>Locate the <strong>apex beat/PMI</strong> (usually 4th–5th ICS mid-clavicular in children) – is it displaced?</li>
+      <li>Feel for <strong>heaves</strong> (ventricular hypertrophy) with the heel of your hand at left sternal edge.</li>
+      <li>Feel for <strong>thrills</strong> (palpable murmurs) at the valve areas and along left sternal border.</li>
+      <li>Note any tenderness or chest wall abnormalities (consider trauma, costochondritis).</li>
+    </ul>
+  </section>
+
+  <!-- AUSCULTATION -->
+  <section class="section">
+    <h2 class="subheading">Auscultation of the Heart</h2>
+    <p>
+      Use both the diaphragm (high-pitched sounds) and bell (low-pitched sounds). Listen
+      in a quiet environment with the child as calm as possible.
+    </p>
+    <ul>
+      <li>Aortic area – right 2nd ICS parasternal.</li>
+      <li>Pulmonic area – left 2nd ICS parasternal.</li>
+      <li>Tricuspid area – left lower sternal border.</li>
+      <li>Mitral area – apex (5th ICS mid-clavicular, more lateral in older children).</li>
+      <li>Back and axilla – to follow radiation of murmurs (e.g. PDA to back, MR to axilla).</li>
+    </ul>
+
+    <h3>Heart Sounds</h3>
+    <ul>
+      <li><strong>S1:</strong> closure of mitral/tricuspid; best at apex. Usually single and normal.</li>
+      <li><strong>S2:</strong> closure of aortic/pulmonic; normally splits with inspiration in older children.</li>
+      <li><strong>Wide, fixed split S2:</strong> classic for atrial septal defect (ASD).</li>
+      <li><strong>S3:</strong> may be normal in children/young adults; with symptoms it can indicate heart failure.</li>
+      <li><strong>S4:</strong> usually pathologic; suggests stiff ventricle, hypertrophy or reduced compliance.</li>
+    </ul>
+
+    <h3>Murmurs – Innocent vs Pathological</h3>
+    <p>Key features of a likely <span class="tag-green">innocent/physiological murmur</span>:</p>
+    <ul>
+      <li>Soft (grade 1–2/6), systolic only, short, musical or vibratory.</li>
+      <li>Best heard at left sternal border, no radiation.</li>
+      <li>Normal S2, no clicks, no added sounds.</li>
+      <li>No symptoms (normal growth, exercise tolerance, no cyanosis).</li>
+    </ul>
+    <p>Features suggesting a <span class="tag-red">pathological murmur</span>:</p>
+    <ul>
+      <li>Harsh, loud (&gt; 3/6), pansystolic, diastolic or continuous murmur.</li>
+      <li>Abnormal S2 (single, widely split, loud P2).</li>
+      <li>Radiation to back, neck or axilla.</li>
+      <li>Associated symptoms: cyanosis, failure to thrive, syncope, chest pain, heart failure signs.</li>
+    </ul>
+
+    <div class="danger-box">
+      Diastolic murmurs, continuous murmurs, or any murmur with cyanosis, failure to thrive, or signs of heart failure
+      should be considered <strong>pathologic</strong> until proven otherwise – refer for echocardiography.
+    </div>
+  </section>
+
+  <!-- COMMON PAEDS LESIONS -->
+  <section class="section">
+    <h2 class="subheading">Common Pediatric Cardiac Abnormalities – Exam Clues</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Key Clinical Findings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ventricular Septal Defect (VSD)</td>
+          <td>
+            <ul>
+              <li>Harsh <strong>pansystolic</strong> murmur at left lower sternal border.</li>
+              <li>Larger defects: signs of heart failure, poor feeding, recurrent chest infections, hepatomegaly.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Atrial Septal Defect (ASD)</td>
+          <td>
+            <ul>
+              <li><strong>Fixed, wide split S2</strong> at upper left sternal border.</li>
+              <li>Soft ejection systolic murmur due to increased pulmonary flow.</li>
+              <li>Often asymptomatic or mild exercise intolerance.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Patent Ductus Arteriosus (PDA)</td>
+          <td>
+            <ul>
+              <li>“Machinery” <strong>continuous</strong> murmur, best at left infraclavicular area and back.</li>
+              <li>Bounding pulses, wide pulse pressure, possible heart failure in large PDA.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Tetralogy of Fallot (TOF)</td>
+          <td>
+            <ul>
+              <li>Cyanosis, especially during crying/feeding; “tet spells” relieved by squatting/knee-chest position.</li>
+              <li>Systolic ejection murmur from RV outflow obstruction at upper left sternal border.</li>
+              <li>Clubbing in older children.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Coarctation of the Aorta</td>
+          <td>
+            <ul>
+              <li>Weak/absent femoral pulses; radio-femoral delay.</li>
+              <li>Higher BP in arms than legs.</li>
+              <li>In infants: heart failure, poor feeding, shock when duct closes.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ED INVESTIGATIONS -->
+  <section class="section">
+    <h2 class="subheading">Key ED Investigations</h2>
+    <ul>
+      <li><strong>Pulse oximetry:</strong> pre- and post-ductal saturations in suspected congenital heart disease.</li>
+      <li><strong>ECG:</strong> rhythm, rate, axis deviation, chamber hypertrophy, conduction abnormalities, QT interval.</li>
+      <li><strong>Chest X-ray:</strong> heart size, pulmonary vascularity, lung pathology, characteristic silhouettes (boot-shaped heart, egg-on-a-string, etc.).</li>
+      <li><strong>Blood tests:</strong> FBC, CRP, troponin, BNP/NT-proBNP, electrolytes if myocarditis/heart failure suspected.</li>
+      <li><strong>Echocardiography:</strong> usually done by paediatric cardiology/echo service; arrange urgently if unstable.</li>
+    </ul>
+    <div class="danger-box">
+      Any child with suspected myocarditis/pericarditis, arrhythmia, cardiogenic shock, or duct-dependent lesion
+      needs <strong>urgent senior and cardiology input</strong> and monitoring (high-care/ICU as available).
+    </div>
+  </section>
+
+  <!-- IMAGE -->
+  <section class="section">
+    <h2 class="subheading">Valve & Auscultation Areas</h2>
+    <figure>
+      <img class="image" src="/images/heart_valve_locations_paediatrics-700x300.jpg"
+           alt="Paediatric heart valve auscultation areas">
+      <figcaption>Typical auscultation areas for paediatric heart valves and common murmurs.</figcaption>
+    </figure>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="section">
+    <h2 class="subheading">Summary</h2>
+    <p>
+      The paediatric cardiac exam in the ED focuses on recognising children who are unstable or have
+      significant structural or functional heart disease. A structured approach – history, vitals,
+      perfusion assessment, precordial exam and auscultation – plus judicious use of ECG, CXR and
+      echocardiography, allows timely diagnosis and referral. When in doubt, <strong>observe, repeat the exam,
+      and escalate early</strong>.
+    </p>
+  </section>
+</main>
 
 </body>
 </html>

@@ -1,52 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pediatric Ophthalmology Exam</title>
+    <title>Pediatric Ophthalmology Exam</title>
     <link rel="stylesheet" href="/genralPages.css">
     <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
-	<style>
+
+    <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 16px;
             font-weight: bold;
-            line-height: 2;
+            line-height: 1.8;
             color: #333;
             background-image: url("/images/eye.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-          }
-		.section {
-			margin-bottom: 40px;
-		}
+        }
 
-		.subheading {
-			font-size: 24px;
-			font-weight: bold;
-			margin-top: 30px;
-			margin-bottom: 20px;
-		}
+        main {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+        }
 
-		.image {
-			max-width: 100%;
-			height: 400px;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.85);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .subheading {
+            font-size: 24px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .caption {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
         table {
             border-collapse: collapse;
-          }
-          
-          th, td {
-            border: 1px solid black;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #000;
             padding: 8px;
-          }
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #e6f0ff;
+        }
+
+        td ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .highlight-box {
+            background: #fff8d8;
+            border-left: 6px solid #ff9900;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .highlight-box ul {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .algo-list {
+            list-style-type: decimal;
+            padding-left: 1.1rem;
+        }
+
+        .algo-sublist {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
     </style>
 </head>
+
+<body>
+
 <header>
     <div class="logo-container">
       <h1>Pediatric Ophthalmology Exam</h1>
@@ -54,105 +111,253 @@
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
 </header>
-<body>
-	<div class="section">
-		<p>Conduct a comprehensive eye and vision exam tailored for pediatric patients, including:</p>
 
-		<div class="section">
-            <h2 class="subheading">Visual Assessment</h2>
-            <p>Evaluate the child's visual acuity using child-friendly eye charts or methods:</p>
-            <p>Visual acuity testing assesses a child's ability to see objects clearly at a distance. It involves using age-appropriate charts or interactive methods to measure how well the child can identify shapes, letters, or symbols.</p>
-            <p>The results are typically recorded as "20/20" if the child can see at a standard distance what a person with normal vision can see at 20 feet. Adjustments can be made for children who are unable to read letters by using pictures or other engaging visual stimuli.</p>
-        </div>
+<main>
 
-		<h2 class="subheading">External Eye Examination</h2>
-		<p>Perform an external examination of the eyes, including:</p>
-		<ul>
-			<li>Redness, swelling, or discharge: These symptoms may indicate infections or inflammation.</li>
-			<li>Eyelid position and movement: Assess for any abnormalities in eyelid control or movement.</li>
-			<li>Lumps or bumps: Look for any growths or masses that may affect eye health.</li>
-			<li>Foreign bodies: Check for foreign objects that may have entered the eye.</li>
-		</ul>
-		<img src="/images/externalEye.jpg" alt="External Eye anatomy" class="image">
-        <caption>External Eye Anatomy</caption>
+    <!-- INTRO / VISUAL ASSESSMENT -->
+    <div class="section">
+        <p>Conduct a comprehensive eye and vision exam tailored for pediatric patients, focusing on visual function and early detection of serious pathology.</p>
 
-		<h2 class="subheading">Internal Eye Examination</h2>
-		<p>Conduct an internal eye examination using specialized tools, including:</p>
-		<ul>
-			<li>Pupillary response: Evaluate pupil size and light reaction for signs of nerve function.</li>
-			<li>Lens clarity: Check the transparency of the lens, looking for cloudiness or abnormalities.</li>
-			<li>Retina and optic nerve: Examine the retina and optic nerve for signs of abnormalities.</li>
-		</ul>
-		<img src="/images/internal eye.jpg" alt="Internal Eye anatomy" class="image">
-        <caption>Internal Eye Anatomy</caption>
+        <h2 class="subheading">Visual Assessment</h2>
+        <p>Evaluate the child's visual acuity using age-appropriate, child-friendly tools:</p>
+        <ul>
+            <li>Picture or symbol charts for pre-literate children.</li>
+            <li>Snellen or similar letter charts for older children.</li>
+            <li>Fixation and following behaviour in infants (does the child track a face or object?).</li>
+        </ul>
+        <p>
+            Visual acuity is often recorded as values such as <strong>6/6</strong> (or 20/20) if the child can see at a standard distance what is expected for normal vision.
+            Use matching games, pointing, or picture naming for shy or non-verbal children.
+        </p>
+    </div>
+
+    <!-- EXTERNAL EYE EXAM -->
+    <div class="section">
+        <h2 class="subheading">External Eye Examination</h2>
+        <p>Inspect the peri-ocular region and anterior eye structures:</p>
+        <ul>
+            <li>Redness, swelling or discharge (conjunctivitis, blepharitis).</li>
+            <li>Eyelids: ptosis, entropion/ectropion, incomplete closure.</li>
+            <li>Lid position and movement: facial nerve palsy, poor blink.</li>
+            <li>Lumps or bumps: chalazion, stye, masses.</li>
+            <li>Foreign bodies: on conjunctiva, under lids, on cornea.</li>
+        </ul>
+
+        <img src="/images/externalEye.jpg" alt="External Eye Anatomy" class="image">
+        <div class="caption">External Eye Anatomy</div>
+    </div>
+
+    <!-- INTERNAL EXAM -->
+    <div class="section">
+        <h2 class="subheading">Internal Eye Examination</h2>
+        <p>Use an ophthalmoscope and torchlight to assess:</p>
+        <ul>
+            <li><strong>Pupillary response:</strong> Size, symmetry, direct and consensual light reflexes.</li>
+            <li><strong>Cornea:</strong> Clarity, scars, abrasions (consider fluorescein staining if corneal injury suspected).</li>
+            <li><strong>Lens:</strong> Clarity (look for cataract, leukocoria).</li>
+            <li><strong>Red reflex:</strong> Equal and bright in both eyes; any asymmetry or white reflex is concerning.</li>
+            <li><strong>Fundus (if possible):</strong> Optic disc, vessels, macula and background retina.</li>
+        </ul>
+
+        <img src="/images/internal eye.jpg" alt="Internal Eye Anatomy" class="image">
+        <div class="caption">Internal Eye Anatomy</div>
+
         <img src="/images/fundoscopy.jpg" alt="Normal Fundoscopy" class="image">
-        <caption>Normal Fundoscopy</caption>
+        <div class="caption">Normal Fundoscopy</div>
+    </div>
 
-		<h2 class="subheading">Intraocular Pressure</h2>
-		<p>Measure the child's intraocular pressure using child-friendly methods. Elevated or low intraocular pressure may have different implications in children than in adults.</p>
-	</div>
+    <!-- IOP -->
+    <div class="section">
+        <h2 class="subheading">Intraocular Pressure</h2>
+        <p>
+            Measure intraocular pressure (IOP) with child-friendly methods (e.g. handheld tonometer) when indicated
+            – such as suspected glaucoma or trauma. Note:
+        </p>
+        <ul>
+            <li>Raised IOP may present with enlarged cornea, photophobia, tearing, irritability in infants.</li>
+            <li>Always correlate with optic disc appearance and corneal findings.</li>
+        </ul>
+    </div>
+
+    <!-- CONDITIONS TABLE -->
     <div class="section">
         <h2 class="subheading">Types of Pediatric Eye Conditions</h2>
         <table>
-        <thead>
-            <tr>
-                <th>Type of Condition</th>
-                <th>Common Clinical Features</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Amblyopia (Lazy Eye)</td>
-                <td>
-                    <ul>
-                        <li>Reduced vision in one eye</li>
-                        <li>Strabismus (crossed or misaligned eyes)</li>
-                        <li>Squinting or tilting the head to see</li>
-                        <li>Difficulty with depth perception</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Conjunctivitis (Pink Eye)</td>
-                <td>
-                    <ul>
-                        <li>Redness and irritation of the eye</li>
-                        <li>Watery or mucous discharge</li>
-                        <li>Crusty eyelids in the morning</li>
-                        <li>Itching or discomfort</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Pre-septal Cellulitis</td>
-                <td>
-                    <ul>
-                        <li>Swelling and redness around the eye</li>
-                        <li>Tenderness and warmth in the affected area</li>
-                        <li>Eye pain or discomfort</li>
-                        <li>Fever</li>
-                        <li>No visual changes or loss of vision</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Orbital Cellulitis</td>
-                <td>
-                    <ul>
-                        <li>Swelling and redness around the eye</li>
-                        <li>Proptosis (bulging of the eye)</li>
-                        <li>Pain with eye movements</li>
-                        <li>Decreased or blurry vision</li>
-                        <li>Double vision</li>
-                        <li>Fever</li>
-                        <li>Eye pain or discomfort</li>
-                        <li>Tenderness and warmth in the affected area</li>
-                        <li>Decreased eye movement or inability to move the eye</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th>Type of Condition</th>
+                    <th>Common Clinical Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amblyopia (Lazy Eye)</td>
+                    <td>
+                        <ul>
+                            <li>Reduced vision in one eye not fully correctable with glasses.</li>
+                            <li>Strabismus (misaligned eyes) may be present.</li>
+                            <li>Squinting, closing one eye, or head tilt to see better.</li>
+                            <li>Poor depth perception.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Conjunctivitis (Pink Eye)</td>
+                    <td>
+                        <ul>
+                            <li>Red, irritated eye(s).</li>
+                            <li>Watery or mucopurulent discharge.</li>
+                            <li>Crusty eyelids on waking.</li>
+                            <li>Itching or gritty discomfort.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pre-septal Cellulitis</td>
+                    <td>
+                        <ul>
+                            <li>Swelling, redness and warmth of eyelids and surrounding tissue.</li>
+                            <li>Tenderness but <strong>no pain with eye movements</strong>.</li>
+                            <li>Vision and eye movements are normal.</li>
+                            <li>May have fever and systemic symptoms.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Orbital Cellulitis</td>
+                    <td>
+                        <ul>
+                            <li>Swelling and redness around the eye extending beyond the eyelids.</li>
+                            <li><strong>Proptosis</strong> (bulging eye).</li>
+                            <li><strong>Painful and/or restricted eye movements.</strong></li>
+                            <li>Decreased or blurred vision, possible diplopia.</li>
+                            <li>Fever and systemic toxicity often present.</li>
+                            <li>An emergency – high risk of intracranial spread and vision loss.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+    <!-- RED FLAGS -->
+    <div class="section">
+        <h2 class="subheading">Pediatric Eye Red Flags</h2>
+        <p>Any of the following should prompt urgent ophthalmology/senior review and often admission:</p>
+        <div class="highlight-box">
+            <ul>
+                <li>Reduced visual acuity, especially acute onset or asymmetric vision.</li>
+                <li>Leukocoria (white pupillary reflex) or abnormal red reflex.</li>
+                <li>Severe eye pain or photophobia.</li>
+                <li>Proptosis or obvious globe displacement.</li>
+                <li>Painful or restricted eye movements.</li>
+                <li>Marked eyelid swelling with systemic toxicity (concern for orbital cellulitis).</li>
+                <li>History of high-velocity trauma, penetrating eye injury, or chemical exposure.</li>
+                <li>New-onset strabismus, nystagmus, or abnormal eye movements.</li>
+                <li>Associated neurological signs (headache, vomiting, seizures, altered consciousness).</li>
+                <li>Infants who are persistently tearing, photophobic, and rubbing their eyes.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- QUICK ALGORITHM -->
+    <div class="section">
+        <h2 class="subheading">Quick Pediatric Eye Algorithm for A&amp;E</h2>
+        <p>Use this mental flow to structure assessment in the Emergency Department:</p>
+        <ol class="algo-list">
+            <li>
+                <strong>Initial Impression</strong>
+                <ul class="algo-sublist">
+                    <li>Is the child systemically unwell? (fever, toxic, septic picture)</li>
+                    <li>Is there any concern for orbital cellulitis, trauma, or chemical injury?</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Check Vision and Red Flags</strong>
+                <ul class="algo-sublist">
+                    <li>Assess visual acuity in both eyes where possible.</li>
+                    <li>Look quickly for leukocoria, proptosis, corneal opacity, or marked swelling.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Define the Main Problem</strong>
+                <ul class="algo-sublist">
+                    <li><strong>Red, sticky eye</strong> → conjunctivitis vs keratitis vs foreign body.</li>
+                    <li><strong>Swollen eyelids</strong> → pre-septal vs orbital cellulitis.</li>
+                    <li><strong>Painful, photophobic eye</strong> → consider keratitis, uveitis, acute glaucoma, corneal abrasion.</li>
+                    <li><strong>Sudden visual change</strong> → urgent ophthalmology review.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Look for Red Flags</strong>
+                <ul class="algo-sublist">
+                    <li>If any red flag present → escalate for urgent imaging/ophthalmology input.</li>
+                    <li>If no red flags, child well, and likely minor condition → treat in ED and provide safety net advice.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Disposition</strong>
+                <ul class="algo-sublist">
+                    <li><strong>Admit / urgent referral:</strong> orbital cellulitis, chemical injury, penetrating trauma, severe visual loss, suspected intra-ocular pathology.</li>
+                    <li><strong>Discharge:</strong> mild conjunctivitis, simple corneal abrasion, stable pre-septal cellulitis on oral therapy (with good follow-up).</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- COMMON EMERGENCIES -->
+    <div class="section">
+        <h2 class="subheading">Common Pediatric Eye Emergencies</h2>
+        <p>Key ophthalmic emergencies you will often encounter in A&amp;E:</p>
+
+        <h3>1. Orbital Cellulitis</h3>
+        <ul>
+            <li>Swollen, red eyelids with proptosis, painful/restricted eye movements, decreased vision, fever.</li>
+            <li>Medical emergency – risk of cavernous sinus thrombosis and intracranial spread.</li>
+            <li>Urgent IV antibiotics, imaging (CT or MRI), and ophthalmology/ENT referral.</li>
+        </ul>
+
+        <h3>2. Pre-septal Cellulitis</h3>
+        <ul>
+            <li>Eyelid swelling and redness without proptosis or pain on eye movement, and normal vision.</li>
+            <li>Often associated with local skin infection or insect bite.</li>
+            <li>Oral or IV antibiotics depending on severity and age; close follow-up.</li>
+        </ul>
+
+        <h3>3. Corneal Abrasion / Foreign Body</h3>
+        <ul>
+            <li>Pain, photophobia, lacrimation, foreign body sensation.</li>
+            <li>Examine with fluorescein; evert eyelids to look for hidden foreign body.</li>
+            <li>Topical antibiotics, analgesia; avoid contact lenses until healed.</li>
+            <li>Urgent referral if large central defects, suspected penetrating injury, or non-healing.</li>
+        </ul>
+
+        <h3>4. Chemical Eye Injury</h3>
+        <ul>
+            <li>True emergency – start immediate irrigation <strong>before</strong> full history/exam.</li>
+            <li>Irrigate with copious normal saline or clean water for at least 15–30 minutes.</li>
+            <li>Check pH and repeat irrigation until normal.</li>
+            <li>Urgent ophthalmology review after initial resuscitation and irrigation.</li>
+        </ul>
+
+        <h3>5. Acute Visual Loss</h3>
+        <ul>
+            <li>Sudden reduction in vision in one or both eyes.</li>
+            <li>Check acuity, pupils (RAPD), visual fields and fundus if possible.</li>
+            <li>Urgent ophthalmology and possibly neurology referral – time-critical.</li>
+        </ul>
+
+        <h3>6. Leukocoria (White Pupil)</h3>
+        <ul>
+            <li>Abnormal white reflex noticed by caregiver or on photos.</li>
+            <li>Causes include cataract, retinoblastoma, retinal detachment, Coats disease.</li>
+            <li>Requires urgent specialist assessment – treat as high priority.</li>
+        </ul>
+
+        <p>Always document visual acuity (or best possible assessment), red reflex, key findings, and safety net advice clearly in the notes.</p>
+    </div>
+
+</main>
+
 </body>
 </html>

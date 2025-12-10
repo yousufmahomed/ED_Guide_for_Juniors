@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paediatric Resuscitation (ABC)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background-image: url("/images/paedsResus.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+    }
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="logo-container">
+    <div class="logo-container">
+      <h1 class="main-header">Paediatric Resuscitation (ABC)</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Paediatric Resuscitation (ABC)</h1>
+    <p>Use an <strong>ABC approach</strong> with age-appropriate vital signs, weight-based dosing, and early senior help.</p>
+    <div class="info-box">
+      <strong>Weight estimation if unknown:</strong> weight (kg) ≈ (age in years + 4) × 2
+    </div>
+  </section>
+
+  <section>
+    <h2>A – Airway</h2>
+    <ul>
+      <li>Assess: talking/crying, stridor, gurgling, apnoea.</li>
+      <li>Position: neutral in infants, sniffing in older children.</li>
+      <li>Open airway: jaw thrust in trauma, chin lift otherwise.</li>
+      <li>Suction secretions, vomit, blood.</li>
+      <li>Adjuncts: oropharyngeal airway (if no gag), nasopharyngeal if semi-conscious.</li>
+      <li>Consider early senior/anaesthesia help in anticipated difficult airway.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>B – Breathing</h2>
+    <ul>
+      <li>Look: work of breathing, accessory muscles, recession, cyanosis.</li>
+      <li>Listen: wheeze, crackles, absent breath sounds.</li>
+      <li>Feel: chest expansion, tracheal position.</li>
+      <li>Give high-flow oxygen via non-rebreather if hypoxic or in shock.</li>
+      <li>If apnoeic or inadequate effort: bag-valve-mask (BVM) with appropriate mask size and two-person technique if possible.</li>
+      <li>Consider:
+        <ul>
+          <li>Nebulised salbutamol ± ipratropium for wheeze.</li>
+          <li>Adrenaline neb for croup/upper airway obstruction.</li>
+          <li>Needle decompression if tension pneumothorax suspected.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>C – Circulation</h2>
+    <ul>
+      <li>Check: heart rate, BP, capillary refill, pulse volume, mental state, urine output.</li>
+      <li>Establish IV or IO access early in shocked child.</li>
+      <li>Initial fluid bolus for septic/undifferentiated shock: 
+        <strong>10–20 mL/kg</strong> isotonic crystalloid over 10–20 minutes, reassess after each bolus.</li>
+      <li>Cardiogenic shock: smaller boluses (5–10 mL/kg) and senior input.</li>
+      <li>Control haemorrhage with direct pressure, splinting, pelvic binder if needed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>D – Disability</h2>
+    <ul>
+      <li>Use AVPU or paediatric GCS.</li>
+      <li>Check pupils, blood glucose, temperature.</li>
+      <li>Treat hypoglycaemia urgently.</li>
+      <li>Consider seizures, head injury, meningitis, toxins.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>E – Exposure / Everything Else</h2>
+    <ul>
+      <li>Fully expose to look for rash, injuries, burns, bruising.</li>
+      <li>Prevent hypothermia: warm blankets, warmed fluids.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Red Flags Requiring Immediate Senior Help</h2>
+    <div class="danger-box">
+      <ul>
+        <li>Persistently poor perfusion despite fluid resuscitation.</li>
+        <li>Recurrent apnoea or severe respiratory distress.</li>
+        <li>Altered mental status (P or U on AVPU, GCS &lt; 9).</li>
+        <li>Uncontrolled seizures.</li>
+        <li>Suspected non-accidental injury.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>

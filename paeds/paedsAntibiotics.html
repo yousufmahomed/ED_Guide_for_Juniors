@@ -1,175 +1,272 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Commonly Used Antibiotics in Hospitals for Pediatric Patients</title>
-    <link rel="stylesheet" href="/genralPages.css">
-    <script src="/script.js"></script>
-    <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2;
-            color: #333;
-            background-image: url("/images/medications.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-      }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  input[type=text]:focus {
-    border: 2px solid #4CAF50;
-  }
-  .fullscreen-image-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    cursor: zoom-out;
-  }
-</style>
-  </head>
-  <header>
-    <nav class="logo-container">
-        <div class="logo-container">
-          <h1 class="main-header">Commonly Used Antibiotics in Hospitals for Pediatric Patients</h1>
-          <div class="navbar-icons">
-            <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
-          </div>
-          <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-      </nav>
-    </header>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Commonly Used Antibiotics in Hospitals for Pediatric Patients</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/genralPages.css">
+  <script src="/script.js"></script>
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: #333;
+      background-image: url("/images/medications.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+    }
 
-<input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antibiotics...">
-<table id="antibiotics">
-  <tr>
-    <th>Antibiotic</th>
-    <th>Oral Dosage (Pediatric Patients)</th>
-    <th>Intravenous Dosage (Pediatric Patients)</th>
-  </tr>
-  <tr>
-    <td>Amoxicillin</td>
-    <td>20-40 mg/kg/day in divided doses every 8 hours</td>
-    <td>25-50 mg/kg/day in divided doses every 8 hours</td>
-  </tr>
-  <tr>
-    <td>Augmentin</td>
-    <td>20-45 mg/kg/day in divided doses every 8 hours</td>
-    <td>25-80 mg/kg/day in divided doses every 8 hours</td>
-  </tr>
-  <tr>
-    <tr>
-        <td>Ceftriaxone</td>
-        <td>20-80 mg/kg/day divided every 12-24 hours</td>
-        <td>20-80 mg/kg/day divided every 12-24 hours</td>
-      </tr>
-      <tr>
-        <td>Cephalexin</td>
-        <td>25-50 mg/kg/day divided every 6-12 hours</td>
-        <td>N/A</td>
-      </tr>
-      <tr>
-        <td>Clarithromycin</td>
-        <td>7.5 mg/kg/dose every 12 hours</td>
-        <td>7.5 mg/kg/dose every 12 hours</td>
-      </tr>
-      <tr>
-        <td>Linezolid</td>
-        <td>10-20 mg/kg/dose every 8-12 hours</td>
-        <td>10-20 mg/kg/dose every 8-12 hours</td>
-      </tr>
-      <tr>
-        <td>Piperacillin/Tazobactam</td>
-        <td>80-100 mg/kg/day divided every 6 hours</td>
-        <td>80-100 mg/kg/day divided every 6 hours</td>
-      </tr>
-      <tr>
-        <td>Tobramycin</td>
-        <td>N/A</td>
-        <td>2-7 mg/kg/day divided every 8-24 hours</td>
-      </tr>
-    </table>
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.95);
+      padding: 15px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .main-header {
+      font-size: 1.6rem;
+    }
+
+    .subheading {
+      font-size: 1.3rem;
+      color: #003366;
+      margin-bottom: 0.4rem;
+    }
+
+    .search-wrapper {
+      margin: 10px 0 15px 0;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #1a3b6a;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+      font-weight: normal;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #1a3b6a;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .note-box {
+      background: #fff8d8;
+      border-left: 6px solid #ff9900;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      cursor: zoom-in;
+    }
+
+    .fullscreen-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    .fullscreen-image-overlay img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    caption {
+      display: block;
+      text-align: center;
+      margin-top: 4px;
+      font-weight: normal;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header">Commonly Used Antibiotics in Hospitals for Pediatric Patients</h1>
+      <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main>
     <div class="section">
-      <img src="/images/antibioticCheatSheet.jpg" alt="Antibiotic cheat sheet" class="image" onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')">
+      <h2 class="subheading">Overview</h2>
+      <p>
+        This table provides a quick reference to commonly used antibiotics and typical paediatric
+        weight-based doses. Always check local hospital guidelines, formularies and maximum daily
+        doses before prescribing.
+      </p>
+      <div class="note-box">
+        <strong>Safety note:</strong> Doses here are general suggestions only. Adjust for age, renal
+        function, infection severity, local resistance patterns and specific indications.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Antibiotic Dosing Table</h2>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="search"
+          class="search-input"
+          onkeyup="searchTable()"
+          placeholder="Search for an antibiotic (e.g. amoxicillin, ceftriaxone)...">
+      </div>
+
+      <table id="antibiotics">
+        <thead>
+          <tr>
+            <th>Antibiotic</th>
+            <th>Oral Dosage (Pediatric)</th>
+            <th>Intravenous Dosage (Pediatric)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Amoxicillin</td>
+            <td>20–40 mg/kg/day in divided doses every 8 hours</td>
+            <td>25–50 mg/kg/day in divided doses every 8 hours</td>
+          </tr>
+          <tr>
+            <td>Augmentin (Amoxicillin/Clavulanate)</td>
+            <td>20–45 mg/kg/day (amoxicillin component) in divided doses every 8 hours</td>
+            <td>25–80 mg/kg/day (amoxicillin component) in divided doses every 8 hours</td>
+          </tr>
+          <tr>
+            <td>Ceftriaxone</td>
+            <td>20–80 mg/kg/day divided every 12–24 hours</td>
+            <td>20–80 mg/kg/day divided every 12–24 hours</td>
+          </tr>
+          <tr>
+            <td>Cephalexin</td>
+            <td>25–50 mg/kg/day divided every 6–12 hours</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Clarithromycin</td>
+            <td>7.5 mg/kg/dose every 12 hours</td>
+            <td>7.5 mg/kg/dose every 12 hours</td>
+          </tr>
+          <tr>
+            <td>Linezolid</td>
+            <td>10–20 mg/kg/dose every 8–12 hours</td>
+            <td>10–20 mg/kg/dose every 8–12 hours</td>
+          </tr>
+          <tr>
+            <td>Piperacillin/Tazobactam</td>
+            <td>80–100 mg/kg/day (piperacillin component) divided every 6 hours</td>
+            <td>80–100 mg/kg/day (piperacillin component) divided every 6 hours</td>
+          </tr>
+          <tr>
+            <td>Tobramycin</td>
+            <td>N/A</td>
+            <td>2–7 mg/kg/day divided every 8–24 hours (use local protocol for exact regimen)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="subheading">Antibiotic Cheat Sheet</h2>
+      <p>
+        Tap or click the image to view it full screen. Use according to your hospital’s antibiotic guidelines and stewardship policies.
+      </p>
+      <img
+        src="/images/antibioticCheatSheet.jpg"
+        alt="Antibiotic cheat sheet"
+        class="image"
+        onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')">
       <caption>Antibiotic cheat sheet</caption>
     </div>
-    <script>
-      function searchTable() {
-        let input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("antibiotics");
-        tr = table.getElementsByTagName("tr");
-        for (i = 1; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-          if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
-            }
+  </main>
+
+  <script>
+    function searchTable() {
+      let input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("antibiotics");
+      tr = table.getElementsByTagName("tr");
+      // Start at 1 to skip header row
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
           }
         }
       }
-      function toggleFullscreenImage(src) {
-        let overlay = document.getElementById('fullscreen-image-overlay');
-      
-        if (!overlay) {
-          overlay = document.createElement('div');
-          overlay.id = 'fullscreen-image-overlay';
-          overlay.classList.add('fullscreen-image-overlay');
-          overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-          overlay.onclick = () => toggleFullscreenImage(null);
-          document.body.appendChild(overlay);
-        } else {
-          document.body.removeChild(overlay);
-        }
+    }
+
+    function toggleFullscreenImage(src) {
+      let overlay = document.getElementById('fullscreen-image-overlay');
+
+      if (!overlay && src) {
+        overlay = document.createElement('div');
+        overlay.id = 'fullscreen-image-overlay';
+        overlay.classList.add('fullscreen-image-overlay');
+        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
+        overlay.onclick = () => toggleFullscreenImage(null);
+        document.body.appendChild(overlay);
+      } else if (overlay) {
+        document.body.removeChild(overlay);
       }
-    </script>
-  </body>
-</html>    
-
-
-
-
-
+    }
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Pediatric Genitourinary Examination</title>
     <meta charset="UTF-8">
@@ -12,56 +12,102 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 16px;
             font-weight: bold;
-            line-height: 2;
+            line-height: 1.8;
             color: #333;
             background-image: url("/images/gut.svg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-          }
-		
-		h1 {
-			text-align: center;
-			font-size: 36px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		
-		ul {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			padding-left: 20px;
-		}
-		
-		li {
-			margin-bottom: 5px;
-		}
-		
-		.image {
-			max-width: 100%;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin-top: 20px;
-		}
-        strong{
-            font-size: large;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bolder;
-            color: red;
-          }
-          table {
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.85);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        h1.heading {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .subheading {
+            font-size: 22px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #003366;
+        }
+
+        ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        table {
             border-collapse: collapse;
-          }
-          
-          th, td {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th, td {
             border: 1px solid black;
             padding: 8px;
-          }
+            vertical-align: top;
+        }
 
+        th {
+            background-color: #e6f0ff;
+        }
+
+        .highlight-box {
+            background: #fff8d8;
+            border-left: 6px solid #ff9900;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .highlight-box ul {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .algo-list {
+            list-style-type: decimal;
+            padding-left: 1.1rem;
+        }
+
+        .algo-sublist {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
-  
+
 <header>
     <div class="logo-container">
         <h1>Pediatric Genitourinary Exam</h1>
@@ -69,39 +115,145 @@
         <button class="back-button" onclick="goBack()">Back</button>
     </div>
 </header>
-<div class="section">
-    <h1 class="heading">Pediatric Genitourinary System Examination</h1>
-    <p>The genitourinary system in pediatric patients includes the kidneys, ureters, bladder, urethra, and genital organs. A thorough examination involves gathering a comprehensive history, conducting a physical examination, and, if necessary, performing diagnostic tests.</p>
-    <h2 class="subheading">History</h2>
-    <p>Ask the patient about any symptoms they are experiencing, such as pain with urination, changes in urinary frequency, urgency, or incontinence, blood in the urine, flank pain, or genital or pelvic pain. Also ask about any past medical history, such as kidney disease, urinary tract infections, sexually transmitted infections, or prostate problems.</p>
-    <h2 class="subheading">Physical Examination</h2>
-    <h3 class="subheading">Male Examination</h3>
-    <p>For male patients, the examination may include:</p>
-    <ul>
-      <li>Inspection of the external genitalia for any lesions, swelling, or discharge</li>
-      <li>Palpation of the testes for size, tenderness, or masses</li>
-      <li>Palpation of the prostate for size, tenderness, or nodules</li>
-      <li>Digital rectal examination to assess for any rectal masses or abnormalities</li>
-    </ul>
-    <h3 class="subheading">Female Examination</h3>
-    <p>For female patients, the examination may include:</p>
-    <ul>
-      <li>Inspection of the external genitalia for any lesions, swelling, or discharge</li>
-      <li>Bimanual examination to assess the size, position, and tenderness of the uterus and ovaries</li>
-      <li>Pelvic examination to assess for any masses or tenderness</li>
-      <li>Speculum examination to inspect the cervix and collect samples for testing (such as a Pap smear)</li>
-    </ul>
-    <h2 class="subheading">Diagnostic Tests</h2>
-    <p>Diagnostic tests may include:</p>
-    <ul>
-      <li>Urinalysis to assess for infection, blood, or other abnormalities</li>
-      <li>Urine culture to identify any bacterial infections</li>
-      <li>Blood tests to assess kidney function</li>
-      <li>Imaging studies, such as ultrasound or CT scan, to assess for any abnormalities in the kidneys or bladder</li>
-      <li>Cystoscopy to visualize the bladder and urethra</li>
-    </ul>
-</div>
 
+<main>
+
+    <!-- INTRO & HISTORY -->
+    <div class="section">
+        <h1 class="heading">Pediatric Genitourinary System Examination</h1>
+        <p>
+            The pediatric genitourinary (GU) system includes the kidneys, ureters, bladder, urethra and genital organs.
+            In the emergency department, the focus is on identifying serious pathology (e.g. UTI with sepsis, obstruction,
+            testicular torsion, acute kidney injury) while maintaining sensitivity, privacy and safeguarding.
+        </p>
+
+        <h2 class="subheading">History</h2>
+        <p>Take history from the caregiver (and age-appropriate child), including:</p>
+        <ul>
+            <li>Dysuria (painful urination), frequency, urgency, incontinence or daytime wetting.</li>
+            <li>Nocturnal enuresis, new onset bedwetting after being dry.</li>
+            <li>Haematuria (red/brown urine), cloudy or foul-smelling urine.</li>
+            <li>Abdominal, flank, suprapubic, scrotal or vulval pain.</li>
+            <li>Fever, vomiting, poor feeding, weight loss, oedema or reduced urine output.</li>
+            <li>Previous UTIs, kidney disease, congenital renal or urinary anomalies.</li>
+            <li>Medication use (especially nephrotoxic drugs), recent dehydration or diarrhoea.</li>
+            <li>Concerns for trauma or possible sexual abuse (handle with great care and follow local protocols).</li>
+        </ul>
+    </div>
+
+    <!-- EXAMINATION -->
+    <div class="section">
+        <h2 class="subheading">Physical Examination</h2>
+        <p>Always explain each step and preserve the child’s privacy and dignity. Have a chaperone present where appropriate.</p>
+
+        <h3 class="subheading">General & Abdominal Examination</h3>
+        <ul>
+            <li>Overall appearance: well vs toxic/ill, hydration status, oedema (periorbital, peripheral).</li>
+            <li>Vital signs: fever, tachycardia, blood pressure (for nephritic/nephrotic, AKI), respiratory rate.</li>
+            <li>Abdomen: distension, tenderness (suprapubic, flank, loin), palpable masses (e.g. enlarged kidneys, bladder).</li>
+            <li>Costovertebral angle tenderness (CVAT) suggesting pyelonephritis.</li>
+        </ul>
+
+        <h3 class="subheading">Male Examination (Child/Adolescent)</h3>
+        <p>Inspect and palpate gently, with a parent/carer present and appropriate chaperone:</p>
+        <ul>
+            <li>External genitalia: position of urethral meatus (hypospadias/epispadias), phimosis, balanitis, discharge, skin changes or bruising.</li>
+            <li>Scrotum: size, symmetry, swelling, erythema, tenderness, transillumination (hydrocele).</li>
+            <li>Testes: ensure both are descended, assess size, consistency and tenderness.</li>
+            <li>Acute scrotal pain: compare lie of both testes, check for high-riding or horizontally lying testis, absent cremasteric reflex → suspect torsion.</li>
+            <li>Inguinal region: hernias, lymphadenopathy, signs of trauma.</li>
+        </ul>
+        <p><em>Digital rectal examination is rarely needed in the ED in children and should only be done on clear indication and by senior staff, following local policy.</em></p>
+
+        <h3 class="subheading">Female Examination (Child/Adolescent)</h3>
+        <p>In most pediatric ED cases, only an external genital examination is required:</p>
+        <ul>
+            <li>Inspect vulva and perineum: erythema, discharge, ulcers, adhesions, oedema, trauma or bruising.</li>
+            <li>Observe urethral meatus for discharge, bleeding or prolapse.</li>
+            <li>Look for labial adhesions, signs of vulvovaginitis, foreign body or dermatitis.</li>
+        </ul>
+        <p>
+            Internal, bimanual or speculum examinations are <strong>rare in children</strong> and should only be performed
+            in specialist settings (e.g. gynaecology/forensic, under sedation or anaesthesia if necessary) and always
+            according to safeguarding and consent policies.
+        </p>
+    </div>
+
+    <!-- RED FLAGS -->
+    <div class="section">
+        <h2 class="subheading">Pediatric GU Red Flags in the ED</h2>
+        <p>These findings should prompt urgent senior review and often admission:</p>
+        <div class="highlight-box">
+            <ul>
+                <li>Acute scrotal pain with high-riding testis, absent cremasteric reflex or severe tenderness → <strong>suspect testicular torsion</strong>.</li>
+                <li>Severe abdominal/flank pain with vomiting and fever → possible obstructive uropathy or pyelonephritis with sepsis.</li>
+                <li>Visible haematuria, especially with trauma, clot retention, or associated shock.</li>
+                <li>Oliguria/anuria, generalised oedema, hypertension, or severe electrolyte derangement (AKI or nephritic/nephrotic syndrome).</li>
+                <li>Palpable abdominal mass (e.g. enlarged kidneys, possible tumour) or grossly distended bladder.</li>
+                <li>Signs concerning for sexual abuse or non-accidental injury – follow local safeguarding pathways immediately.</li>
+                <li>Very young infants (&lt;3 months) with fever and suspected UTI.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- QUICK ED ALGORITHM -->
+    <div class="section">
+        <h2 class="subheading">Quick Pediatric GU Algorithm for the ED</h2>
+        <ol class="algo-list">
+            <li>
+                <strong>Initial Assessment</strong>
+                <ul class="algo-sublist">
+                    <li>ABCDE and overall impression (well vs septic / shocked).</li>
+                    <li>Check vital signs, hydration, urine output.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Define the Main Complaint</strong>
+                <ul class="algo-sublist">
+                    <li>Dysuria / frequency / fever → suspect UTI.</li>
+                    <li>Flank pain / fever → pyelonephritis, obstruction.</li>
+                    <li>Oedema, haematuria, hypertension → nephritic/nephrotic or AKI.</li>
+                    <li>Acute scrotal or vulval pain/swelling → torsion, hernia, infection, trauma.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Look for Red Flags</strong>
+                <ul class="algo-sublist">
+                    <li>If present → urgent senior review, early antibiotics/fluids/imaging, consider admission.</li>
+                    <li>If absent and child well → treat, arrange follow-up, give safety net advice.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Investigations (as indicated)</strong>
+                <ul class="algo-sublist">
+                    <li>Urinalysis ± urine culture.</li>
+                    <li>U&E, creatinine, FBC, CRP, albumin (for nephrotic/nephritic, AKI).</li>
+                    <li>Renal/bladder ultrasound for obstruction, hydronephrosis, structural anomalies.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Disposition</strong>
+                <ul class="algo-sublist">
+                    <li>Admit for red flags, systemic illness, young infants or unreliable follow-up.</li>
+                    <li>Discharge stable children with clear diagnosis, treatment plan and safety-netting.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- DIAGNOSTIC TESTS -->
+    <div class="section">
+        <h2 class="subheading">Diagnostic Tests</h2>
+        <p>Common investigations in pediatric GU presentations:</p>
+        <ul>
+            <li><strong>Urinalysis:</strong> leukocytes, nitrites, blood, protein, glucose.</li>
+            <li><strong>Urine culture:</strong> to confirm and guide treatment of UTI.</li>
+            <li><strong>Blood tests:</strong> U&E, creatinine, urea, FBC, CRP/ESR, albumin, lipids.</li>
+            <li><strong>Imaging:</strong> renal and bladder ultrasound; further imaging (MCUG, DMSA etc.) usually arranged via specialists.</li>
+        </ul>
+    </div>
+
+    <!-- TABLES: UTI & HYDRONEPHROSIS -->
     <div class="section">
         <h2 class="subheading">Table 1: Pediatric Urinary Tract Infection (UTI)</h2>
         <table>
@@ -113,20 +265,20 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Fever, irritability, poor feeding</td>
-                    <td>Bacterial infection of the urinary tract</td>
+                    <td>Fever, irritability, poor feeding (especially in infants)</td>
+                    <td>Bacterial infection of the urinary tract (often ascending)</td>
                 </tr>
                 <tr>
                     <td>Frequent urination, urgency, pain or discomfort during urination</td>
-                    <td>Escherichia coli (E. coli) or other bacteria</td>
+                    <td>Escherichia coli (E. coli) or other Gram-negative bacteria</td>
                 </tr>
                 <tr>
                     <td>Cloudy, foul-smelling, or bloody urine</td>
-                    <td>Ascending infection from the urethra</td>
+                    <td>Ascending infection from the urethra, cystitis or pyelonephritis</td>
                 </tr>
                 <tr>
                     <td>Abdominal or flank pain</td>
-                    <td>Urinary stasis or structural abnormalities</td>
+                    <td>Upper tract involvement or urinary stasis/structural abnormality</td>
                 </tr>
             </tbody>
         </table>
@@ -144,26 +296,27 @@
             <tbody>
                 <tr>
                     <td>Flank or abdominal pain</td>
-                    <td>Obstruction of the urinary tract</td>
+                    <td>Obstruction of the urinary tract (UPJ obstruction, stones, posterior urethral valves)</td>
                 </tr>
                 <tr>
-                    <td>Unilateral or bilateral swelling of the kidney</td>
+                    <td>Unilateral or bilateral swelling of the kidney on ultrasound</td>
                     <td>Ureteral obstruction or vesicoureteral reflux</td>
                 </tr>
                 <tr>
-                    <td>Urinary tract infections</td>
-                    <td>Backflow of urine due to vesicoureteral reflux</td>
+                    <td>Recurrent urinary tract infections</td>
+                    <td>Backflow of urine due to vesicoureteral reflux or obstruction</td>
                 </tr>
                 <tr>
-                    <td>Feeding difficulties, poor weight gain</td>
-                    <td>Congenital structural abnormalities</td>
+                    <td>Feeding difficulties, poor weight gain (especially in infants)</td>
+                    <td>Congenital structural abnormalities of the urinary tract</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
+    <!-- NEPHRITIC VS NEPHROTIC -->
     <div class="section">
-        <h2 class="subheading">Table 3: Nephritic Syndrome vs. Nephrotic Syndrome</h2>
+        <h2 class="subheading">Table 3: Nephritic Syndrome vs Nephrotic Syndrome</h2>
         <table>
             <thead>
                 <tr>
@@ -175,35 +328,39 @@
             <tbody>
                 <tr>
                     <td>Urine Protein</td>
-                    <td>Less proteinuria</td>
-                    <td>Heavy proteinuria</td>
+                    <td>Usually mild–moderate proteinuria</td>
+                    <td>Heavy proteinuria (&gt;3.5 g/24h equivalent)</td>
                 </tr>
                 <tr>
                     <td>Urine Blood</td>
-                    <td>More common</td>
-                    <td>Less common</td>
+                    <td>Common; microscopic or macroscopic haematuria</td>
+                    <td>Less common; may be absent or minimal</td>
                 </tr>
                 <tr>
-                    <td>Edema</td>
-                    <td>Less severe</td>
-                    <td>Severe</td>
+                    <td>Oedema</td>
+                    <td>Present but often less severe</td>
+                    <td>Marked, generalised oedema (periorbital, peripheral, ascites)</td>
                 </tr>
                 <tr>
-                    <td>Hypertension</td>
-                    <td>More common</td>
-                    <td>Less common</td>
+                    <td>Blood Pressure</td>
+                    <td>Frequently elevated (hypertension)</td>
+                    <td>May be normal or mildly elevated</td>
                 </tr>
                 <tr>
-                    <td>Periorbital Edema</td>
-                    <td>Less common</td>
-                    <td>More common</td>
+                    <td>Typical Age / Presentation</td>
+                    <td>Often school-aged children with haematuria and hypertension</td>
+                    <td>Often preschool children with heavy proteinuria and oedema</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
+    <!-- ENDOCRINE LINKS -->
     <div class="section">
-        <h2 class="subheading">Table 4: Cushing's Syndrome</h2>
+        <h2 class="subheading">Related Endocrine Conditions Affecting Fluid &amp; GU Status</h2>
+        <p>Some endocrine disorders can present with GU-related symptoms such as hypertension, fluid retention or electrolyte abnormalities.</p>
+
+        <h3 class="subheading">Table 4: Cushing's Syndrome</h3>
         <table>
             <thead>
                 <tr>
@@ -213,27 +370,25 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Weight gain, especially around the abdomen</td>
-                    <td>Excess production of cortisol</td>
+                    <td>Weight gain, especially central obesity</td>
+                    <td>Excess cortisol production (endogenous or exogenous)</td>
                 </tr>
                 <tr>
-                    <td>Facial rounding (moon face) and hump on the upper back (buffalo hump)</td>
-                    <td>Adrenal gland tumors, prolonged use of corticosteroids</td>
+                    <td>Facial rounding (moon face), dorsal fat pad (buffalo hump)</td>
+                    <td>Adrenal or pituitary tumours; prolonged corticosteroid therapy</td>
                 </tr>
                 <tr>
-                    <td>Thinning skin, easy bruising, and slow wound healing</td>
-                    <td>Long-term use of corticosteroids</td>
+                    <td>Thinning skin, easy bruising, slow wound healing</td>
+                    <td>Chronic glucocorticoid excess</td>
                 </tr>
                 <tr>
                     <td>High blood pressure and high blood sugar</td>
-                    <td>Excess cortisol affecting metabolism</td>
+                    <td>Metabolic effects of excess cortisol</td>
                 </tr>
             </tbody>
         </table>
-    </div>
 
-    <div class="section">
-        <h2 class="subheading">Table 5: Addison's Disease</h2>
+        <h3 class="subheading">Table 5: Addison's Disease</h3>
         <table>
             <thead>
                 <tr>
@@ -243,32 +398,37 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Extreme fatigue and weakness</td>
-                    <td>Insufficient adrenal gland function</td>
+                    <td>Extreme fatigue, weakness</td>
+                    <td>Primary adrenal insufficiency (autoimmune, infection, genetic)</td>
                 </tr>
                 <tr>
-                    <td>Darkening of the skin (hyperpigmentation)</td>
-                    <td>Autoimmune destruction of the adrenal cortex</td>
+                    <td>Hyperpigmentation (skin darkening)</td>
+                    <td>Increased ACTH due to adrenal failure</td>
                 </tr>
                 <tr>
-                    <td>Weight loss and loss of appetite</td>
-                    <td>Adrenal gland damage or infection</td>
+                    <td>Weight loss, loss of appetite</td>
+                    <td>Chronic cortisol and aldosterone deficiency</td>
                 </tr>
                 <tr>
-                    <td>Low blood pressure and salt craving</td>
-                    <td>Reduced production of cortisol and aldosterone</td>
+                    <td>Low blood pressure, salt craving, possible hyponatraemia/hyperkalaemia</td>
+                    <td>Reduced cortisol and aldosterone production</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
+    <!-- CONCLUSION -->
+    <div class="section">
+        <h2 class="subheading">Conclusion</h2>
+        <p>
+            The genitourinary examination in pediatric patients is a key component of ED assessment.
+            By taking a careful history, performing a focused but sensitive examination, watching for red flags,
+            and using targeted investigations, clinicians can identify and manage GU conditions effectively
+            and escalate early when serious disease is suspected.
+        </p>
+    </div>
 
+</main>
 
-   
-
-    <h2 class="subheading">Conclusion</h2>
-    <p>The genitourinary examination for pediatric patients is a crucial aspect of their healthcare evaluation. By obtaining a thorough history, conducting a comprehensive physical examination, and performing relevant diagnostic tests, healthcare providers can identify and manage genitourinary conditions effectively in children.</p>
-</div>
-  
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Commonly Used Antibiotics in Pediatrics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/genralPages.css">
   <script src="/script.js"></script>
   <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
@@ -10,47 +11,101 @@
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 16px;
-      font-weight: bold;
-      line-height: 2;
+      line-height: 1.6;
       color: #333;
       background-image: url("/images/medications.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      margin: 0;
     }
-    
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #00509E;
+      text-align: center;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
+      font-size: 0.9rem;
     }
-    
+
     th, td {
       text-align: left;
       padding: 8px;
+      vertical-align: top;
     }
-    
+
     th {
-      background-color: #4CAF50;
+      background-color: #00509E;
       color: white;
     }
-    
+
     tr:nth-child(even) {
       background-color: #f2f2f2;
     }
-    
-    input[type=text] {
+
+    input[type="text"] {
       width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
+      padding: 10px 12px;
+      margin: 0.5rem 0 1rem 0;
       box-sizing: border-box;
       border: 2px solid #ccc;
       border-radius: 4px;
+      font-size: 1rem;
     }
-    
-    input[type=text]:focus {
-      border: 2px solid #4CAF50;
+
+    input[type="text"]:focus {
+      border-color: #00509E;
+      outline: none;
     }
-    
+
+    .section {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 6px;
+      cursor: zoom-in;
+    }
+
+    .section caption {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .info-box {
+      background: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #00509E;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .danger-box {
+      background: #ffebee;
+      padding: 10px;
+      border-left: 4px solid #c62828;
+      border-radius: 5px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
     .fullscreen-image-overlay {
       position: fixed;
       top: 0;
@@ -64,106 +119,221 @@
       z-index: 9999;
       cursor: zoom-out;
     }
+
+    .fullscreen-image-overlay img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 8px;
+    }
   </style>
 </head>
+
+<body>
 <header>
   <nav class="logo-container">
     <div class="logo-container">
       <h1 class="main-header">Commonly Used Antibiotics in Pediatrics</h1>
       <div class="navbar-icons">
-        <a href="/index.html" title="Home"><i class="fa-solid fa-house" alt="House icon"></i></a>
+        <a href="/index.html" title="Home">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </a>
       </div>
       <button class="back-button" onclick="goBack()">Back</button>
     </div>
   </nav>
 </header>
-<body>
-  
-  <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for antibiotics...">
-  <table id="antibiotics">
-    <tr>
-      <th>Antibiotic</th>
-      <th>Oral Dosage</th>
-      <th>Intravenous Dosage</th>
-    </tr>
-    <tr>
-      <td>Amoxicillin</td>
-      <td>15 mg/kg every 8 hours</td>
-      <td>25 mg/kg every 8 hours</td>
-    </tr>
-    <tr>
-      <td>Augmentin</td>
-      <td>15 mg/kg every 8 hours or 25 mg/kg every 12 hours</td>
-      <td>45 mg/kg every 8 hours</td>
-    </tr>
-    <tr>
-      <td>Ceftriaxone</td>
-      <td>N/A</td>
-      <td>50-100 mg/kg once a day</td>
-    </tr>
-    <tr>
-      <td>Ciprofloxacin</td>
-      <td>10-20 mg/kg every 12 hours</td>
-      <td>10-20 mg/kg every 8-12 hours</td>
-    </tr>
-    <tr>
-      <td>Clindamycin</td>
-      <td>10 mg/kg every 6 hours</td>
-      <td>10 mg/kg every 8 hours</td>
-    </tr>
-    <tr>
-      <td>Gentamicin</td>
-      <td>N/A</td>
-      <td>4-7 mg/kg every 8 hours</td>
-    </tr>
-    <tr>
-      <td>Levofloxacin</td>
-      <td>8 mg/kg every 24 hours</td>
-      <td>8 mg/kg every 24 hours</td>
-    </tr>
-    <tr>
-      <td>Metronidazole</td>
-      <td>15 mg/kg every 8 hours</td>
-      <td>15 mg/kg every 8 hours</td>
-    </tr>
-  </table>
-  <div class="section">
-    <img src="/images/antibioticCheatSheet.jpg" alt="Antibiotic cheat sheet" class="image" onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')">
-    <caption>Antibiotic cheat sheet</caption>
-  </div>
-  <script>
-    function searchTable() {
-      let input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("search");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("antibiotics");
-      tr = table.getElementsByTagName("tr");
-      for (i = 1; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
+
+<main>
+  <section>
+    <h1>Commonly Used Antibiotics in Pediatrics</h1>
+    <p>
+      Approximate ED dosing guide for children <strong>older than neonates</strong>.
+      Always confirm with local guidelines and a paediatric drug reference, and adjust for renal/hepatic
+      impairment and severity of infection.
+    </p>
+
+    <div class="info-box">
+      <strong>Weight-based dosing:</strong> Dose = mg/kg (or mg/kg/day) and
+      <strong>never exceed the recommended adult maximum dose.</strong>
+    </div>
+
+    <div class="danger-box">
+      This table is a <strong>quick reference only</strong>.  
+      Neonates, critically ill children, and those with organ impairment require
+      specialist advice and more detailed dosing charts.
+    </div>
+  </section>
+
+  <section>
+    <h2>Search Antibiotic</h2>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for an antibiotic (e.g. ceftriaxone)...">
+  </section>
+
+  <section>
+    <h2>Common Paediatric Antibiotic Doses</h2>
+    <table id="antibiotics">
+      <tr>
+        <th>Antibiotic</th>
+        <th>Oral Dosage (Child)</th>
+        <th>Intravenous Dosage (Child)</th>
+        <th>Comments</th>
+      </tr>
+
+      <tr>
+        <td>Amoxicillin</td>
+        <td>
+          ~20–40 mg/kg/day divided every 8 hours<br>
+          (e.g. 10–15 mg/kg every 8 hours)
+        </td>
+        <td>
+          ~25–50 mg/kg/day divided every 6–8 hours<br>
+          (e.g. 25 mg/kg every 8 hours)
+        </td>
+        <td>
+          First-line for many ENT/respiratory infections.  
+          Higher doses may be used for otitis media or severe infections as per local protocol.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Amoxicillin–Clavulanate (Augmentin)</td>
+        <td>
+          Dose based on amoxicillin component. Common range:  
+          ~20–40 mg/kg/day (amoxicillin) divided every 8–12 hours
+        </td>
+        <td>
+          ~25–45 mg/kg/day (amoxicillin) divided every 8–12 hours
+        </td>
+        <td>
+          Use for beta-lactamase producing organisms or where broader cover is needed   
+          (e.g. bite wounds, some ENT/resp infections).
+        </td>
+      </tr>
+
+      <tr>
+        <td>Ceftriaxone</td>
+        <td>N/A</td>
+        <td>
+          ~50–80 mg/kg once daily (max adult dose)<br>
+          For meningitis: up to 100 mg/kg once daily as per protocol.
+        </td>
+        <td>
+          Broad-spectrum 3rd gen cephalosporin. Avoid in significant jaundice in neonates.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Ciprofloxacin</td>
+        <td>
+          ~10–15 mg/kg every 12 hours (max adult dose)<br>
+          Use only where clearly indicated and alternatives unsuitable.
+        </td>
+        <td>
+          ~10 mg/kg every 8–12 hours (max adult dose)
+        </td>
+        <td>
+          Fluoroquinolone – reserve for specific indications (e.g. Pseudomonas, CF, resistant organisms)
+          and follow local restrictions.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Clindamycin</td>
+        <td>
+          ~8–12 mg/kg every 8 hours (PO)  
+        </td>
+        <td>
+          ~8–12 mg/kg every 6–8 hours (IV)
+        </td>
+        <td>
+          Useful for skin/soft tissue infections, MRSA (depending on local sensitivity), anaerobic coverage.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Gentamicin</td>
+        <td>N/A</td>
+        <td>
+          Typical extended-interval dosing: ~7 mg/kg IV once daily  
+          (adjust dose and frequency according to local protocol, age, and renal function).
+        </td>
+        <td>
+          Aminoglycoside – <strong>high risk for nephro- and ototoxicity</strong>.  
+          Check levels and renal function according to local guidelines.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Levofloxacin</td>
+        <td>
+          ~8–10 mg/kg every 12–24 hours (max adult dose; indication-dependent)
+        </td>
+        <td>
+          ~8–10 mg/kg every 12–24 hours (max adult dose)
+        </td>
+        <td>
+          Fluoroquinolone – reserve for specific, resistant infections and follow local paediatric restrictions.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Metronidazole</td>
+        <td>
+          ~7.5–10 mg/kg every 8 hours (PO)
+        </td>
+        <td>
+          ~7.5–10 mg/kg every 8 hours (IV)
+        </td>
+        <td>
+          Anaerobic cover, intra-abdominal infections, dental infections, some protozoal infections.
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <img src="/images/antibioticCheatSheet.jpg"
+         alt="Antibiotic cheat sheet"
+         onclick="toggleFullscreenImage('/images/antibioticCheatSheet.jpg')">
+    <caption>Tap to enlarge the antibiotic cheat sheet.</caption>
+  </section>
+</main>
+
+<script>
+  function searchTable() {
+    const input = document.getElementById("search");
+    const filter = input.value.toUpperCase();
+    const table = document.getElementById("antibiotics");
+    const tr = table.getElementsByTagName("tr");
+
+    // Start from 1 to skip header row
+    for (let i = 1; i < tr.length; i++) {
+      const td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        const txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
         }
       }
     }
-    function toggleFullscreenImage(src) {
-      let overlay = document.getElementById('fullscreen-image-overlay');
-      
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'fullscreen-image-overlay';
-        overlay.classList.add('fullscreen-image-overlay');
-        overlay.innerHTML = `<img src="${src}" alt="Full-size image" />`;
-        overlay.onclick = () => toggleFullscreenImage(null);
-        document.body.appendChild(overlay);
-      } else {
-        document.body.removeChild(overlay);
-      }
+  }
+
+  function toggleFullscreenImage(src) {
+    let overlay = document.getElementById('fullscreen-image-overlay');
+
+    if (!overlay && src) {
+      overlay = document.createElement('div');
+      overlay.id = 'fullscreen-image-overlay';
+      overlay.classList.add('fullscreen-image-overlay');
+      overlay.innerHTML = '<img src="' + src + '" alt="Full-size image">';
+      overlay.onclick = () => toggleFullscreenImage(null);
+      document.body.appendChild(overlay);
+    } else if (overlay) {
+      document.body.removeChild(overlay);
     }
-  </script>
+  }
+</script>
 </body>
 </html>
