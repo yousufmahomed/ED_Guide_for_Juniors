@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pediatric RSI Doses (Weight-Based)</title>
+
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js" defer></script>
+
+  <style>
+    body.general-page main { max-width: 1100px; }
+
+    .panel {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      margin: 12px auto 16px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: end;
+    }
+    @media (min-width: 800px) {
+      .row { grid-template-columns: 1.3fr 1fr 1fr auto; }
+    }
+
+    label { font-weight: 900; display: block; margin-bottom: 6px; }
+    select, input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.2);
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 900;
+      cursor: pointer;
+      background: #0f6abf;
+      color: #fff;
+      width: 100%;
+      touch-action: manipulation;
+    }
+    @media (min-width: 800px) { .btn { width: auto; } }
+
+    .hint { font-size: 0.92rem; opacity: 0.85; margin: 8px 0 0; }
+
+    .quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,106,191,0.10);
+      border: 1px solid rgba(15,106,191,0.18);
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .result {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      margin: 0 auto 16px;
+    }
+
+    .result h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      text-decoration: underline;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 12px;
+    }
+    .meta .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.96);
+    }
+    .card .k {
+      font-weight: 900;
+      margin-bottom: 6px;
+      color: #0b1f4a;
+    }
+    .card .v { font-size: 0.98rem; line-height: 1.4; }
+
+    details { margin-top: 12px; }
+    details summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: #0f6abf;
+      padding: 8px 0;
+    }
+
+    table.compact {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+    table.compact th, table.compact td {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.compact th {
+      background: navy;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .warn {
+      font-size: 0.92rem;
+      background: rgba(255, 99, 71, 0.12);
+      border: 1px solid rgba(255, 99, 71, 0.25);
+      padding: 10px 12px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-weight: 900;
+      background: rgba(255,255,255,0.9);
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      margin: 0 auto 20px;
+    }
+  </style>
+</head>
+
+<body class="general-page">
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header" style="color: antiquewhite;">Paediatric RSI Doses</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <div class="row">
+        <div>
+          <label for="itemSearch">Search (fast)</label>
+          <input id="itemSearch" type="text" placeholder="Type: ketamine, etomidate, rocuronium, sux, propofol..." />
+        </div>
+
+        <div>
+          <label for="item">Drug / Item</label>
+          <select id="item"></select>
+        </div>
+
+        <div>
+          <label for="weight">Weight</label>
+          <select id="weight"></select>
+        </div>
+
+        <div>
+          <button class="btn" id="showBtn" type="button">Show</button>
+        </div>
+      </div>
+
+      <div class="quick" id="quick"></div>
+
+      <p class="hint">
+        Pick the <strong>drug first</strong>, then the weight. This page is <strong>RSI only</strong>.
+      </p>
+
+      <div class="warn">
+        <strong>Important:</strong> Succinylcholine dosing differs by age in many protocols.
+        Because this page is weight-based, it shows <strong>both</strong> common options (2 mg/kg and 1.5 mg/kg).
+      </div>
+    </div>
+
+    <div class="result" id="result" hidden>
+      <h2 id="title"></h2>
+
+      <div class="meta" id="meta"></div>
+
+      <div class="grid" id="cards"></div>
+
+      <details>
+        <summary>Show all weights for this drug/item (double-check)</summary>
+        <div style="overflow:auto;">
+          <table class="compact" id="allTable"></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="footer-note">
+      From <strong>40 kg</strong> upwards treat as an adult, but use <strong>lowest adult dose</strong>.
+    </div>
+  </main>
+
+  <script>
+    // -----------------------------
+    // Weights (same as your existing table)
+    // -----------------------------
+    const WEIGHTS = [10,12,14,16,18,20,22,24,26,28,30,32,34,36,38];
+
+    // -----------------------------
+    // Helpers
+    // -----------------------------
+    const round1 = (n) => Math.round(n * 10) / 10;
+
+    function formatRange(a, b, unit=" mg") {
+      const a1 = round1(a);
+      const b1 = round1(b);
+      if (a1 === b1) return `${a1}${unit}`;
+      return `${a1}–${b1}${unit}`;
+    }
+
+    function adultNote(w){
+      return w >= 40 ? "≥40 kg: treat as adult (lowest adult dose)" : "";
+    }
+
+    // -----------------------------
+    // RSI dose functions (weight-based)
+    // -----------------------------
+    // Induction
+    function ketamineRSI(w){ // 1–2 mg/kg IV
+      return { "IV (1–2 mg/kg)": formatRange(1*w, 2*w), "Notes": "Preferred if hypotensive/asthma; consider haemodynamics." };
+    }
+
+    function etomidateRSI(w){ // 0.3 mg/kg IV
+      return { "IV (0.3 mg/kg)": `${round1(0.3*w)} mg`, "Notes": "Consider adrenal suppression context; follow local protocol." };
+    }
+
+    function propofolRSI(w){ // 1–2 mg/kg IV
+      return { "IV (1–2 mg/kg)": formatRange(1*w, 2*w), "Notes": "Caution: hypotension. Avoid/adjust in shock." };
+    }
+
+    // Paralytics
+    function rocuroniumRSI(w){ // 1.2 mg/kg IV for RSI; repeat 0.6 mg/kg
+      return {
+        "RSI dose (1.2 mg/kg IV)": `${round1(1.2*w)} mg`,
+        "Repeat (0.6 mg/kg IV)": `${round1(0.6*w)} mg`,
+        "Notes": "Longer duration than sux."
+      };
+    }
+
+    function suxRSI(w){
+      return {
+        "Option A (2 mg/kg IV)": `${round1(2*w)} mg`,
+        "Option B (1.5 mg/kg IV)": `${round1(1.5*w)} mg`,
+        "IM (4 mg/kg in extremis)": `${round1(4*w)} mg`,
+        "Notes": "Choose age-appropriate option per local protocol."
+      };
+    }
+
+    // -----------------------------
+    // Page Items
+    // -----------------------------
+    const ITEMS = [
+      { key:"ketamine_rsi", label:"Ketamine (RSI induction) — 1–2 mg/kg IV", value: ketamineRSI },
+      { key:"etomidate_rsi", label:"Etomidate (RSI induction) — 0.3 mg/kg IV", value: etomidateRSI },
+      { key:"propofol_rsi", label:"Propofol (RSI induction) — 1–2 mg/kg IV (caution hypotension)", value: propofolRSI },
+      { key:"rocuronium_rsi", label:"Rocuronium (paralytic) — 1.2 mg/kg IV RSI; repeat 0.6 mg/kg", value: rocuroniumRSI },
+      { key:"sux_rsi", label:"Succinylcholine (paralytic) — show 2 mg/kg vs 1.5 mg/kg options", value: suxRSI }
+    ];
+
+    const FAVS = ["ketamine_rsi","etomidate_rsi","rocuronium_rsi","sux_rsi","propofol_rsi"];
+
+    // -----------------------------
+    // UI wiring
+    // -----------------------------
+    const itemSearch = document.getElementById("itemSearch");
+    const itemSelect = document.getElementById("item");
+    const weightSelect = document.getElementById("weight");
+    const showBtn = document.getElementById("showBtn");
+    const quick = document.getElementById("quick");
+
+    const result = document.getElementById("result");
+    const title = document.getElementById("title");
+    const meta = document.getElementById("meta");
+    const cards = document.getElementById("cards");
+    const allTable = document.getElementById("allTable");
+
+    function populateWeights(){
+      weightSelect.innerHTML = "";
+      WEIGHTS.forEach(w=>{
+        const opt=document.createElement("option");
+        opt.value=w;
+        opt.textContent=`${w} kg`;
+        weightSelect.appendChild(opt);
+      });
+      weightSelect.value="10";
+    }
+
+    function renderItemOptions(filter=""){
+      const f = filter.trim().toLowerCase();
+      itemSelect.innerHTML = "";
+      const list = ITEMS.filter(it => it.label.toLowerCase().includes(f) || it.key.includes(f));
+      list.forEach(it=>{
+        const opt=document.createElement("option");
+        opt.value=it.key;
+        opt.textContent=it.label;
+        itemSelect.appendChild(opt);
+      });
+      if(!itemSelect.value && list.length){
+        itemSelect.value=list[0].key;
+      }
+    }
+
+    function buildQuick(){
+      quick.innerHTML = "";
+      FAVS.forEach(k=>{
+        const it = ITEMS.find(x=>x.key===k);
+        if(!it) return;
+        const chip=document.createElement("div");
+        chip.className="chip";
+        chip.textContent=it.label.split("—")[0].trim();
+        chip.title=it.label;
+        chip.onclick=()=>{
+          itemSelect.value=k;
+          show();
+        };
+        quick.appendChild(chip);
+      });
+    }
+
+    function show(){
+      const w = Number(weightSelect.value);
+      const key = itemSelect.value;
+      const it = ITEMS.find(x=>x.key===key);
+      if(!it) return;
+
+      const vals = it.value(w);
+
+      result.hidden = false;
+      title.textContent = `${it.label} — ${w} kg`;
+
+      meta.innerHTML = "";
+      const p1=document.createElement("div");
+      p1.className="pill";
+      p1.textContent=`Weight: ${w} kg`;
+      meta.appendChild(p1);
+
+      const note = adultNote(w);
+      if(note){
+        const p2=document.createElement("div");
+        p2.className="pill";
+        p2.textContent=note;
+        meta.appendChild(p2);
+      }
+
+      cards.innerHTML = "";
+      Object.keys(vals).forEach(k=>{
+        const c=document.createElement("div");
+        c.className="card";
+        const kk=document.createElement("div");
+        kk.className="k";
+        kk.textContent=k;
+        const vv=document.createElement("div");
+        vv.className="v";
+        vv.textContent=vals[k];
+        c.appendChild(kk);
+        c.appendChild(vv);
+        cards.appendChild(c);
+      });
+
+      // all weights table
+      allTable.innerHTML = "";
+      const keys = Object.keys(it.value(WEIGHTS[0]));
+
+      const thead = document.createElement("thead");
+      const trh = document.createElement("tr");
+      const thW = document.createElement("th");
+      thW.textContent = "Weight (kg)";
+      trh.appendChild(thW);
+      keys.forEach(k=>{
+        const th=document.createElement("th");
+        th.textContent=k;
+        trh.appendChild(th);
+      });
+      thead.appendChild(trh);
+
+      const tbody = document.createElement("tbody");
+      WEIGHTS.forEach(ww=>{
+        const tr=document.createElement("tr");
+        const tdw=document.createElement("td");
+        tdw.textContent=ww;
+        tr.appendChild(tdw);
+
+        const row = it.value(ww);
+        keys.forEach(k=>{
+          const td=document.createElement("td");
+          td.textContent = row[k] ?? "";
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      allTable.appendChild(thead);
+      allTable.appendChild(tbody);
+    }
+
+    itemSearch.addEventListener("input", ()=> renderItemOptions(itemSearch.value));
+    showBtn.addEventListener("click", show);
+    itemSelect.addEventListener("change", show);
+    weightSelect.addEventListener("change", show);
+
+    // Init
+    populateWeights();
+    renderItemOptions("");
+    buildQuick();
+    show();
+  </script>
+</body>
+</html>

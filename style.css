@@ -1,436 +1,466 @@
-/* === BASE THEME === */
+/* =========================================================
+   ED Assistant - HOME THEME (DROP-IN SUBSTITUTE)
+   Purpose:
+   - Keeps your modern home-page look (hero/cards/nav)
+   - Plays nicely with your existing app + genralPages.css
+   - Avoids global clashes by scoping to: body.app-home
+     (Recommended) OR body:not(.general-page)
+   ---------------------------------------------------------
+   HOW TO USE (recommended):
+   1) On your HOME page only: <body class="app-home">
+   2) Keep genralPages.css for all general pages:
+      <body class="general-page">
+   ========================================================= */
 
+/* ---------- THEME TOKENS ---------- */
 :root {
   --bg: #f5f7fb;
   --bg-alt: #ffffff;
   --primary: #0f6abf;
+  --primary-2: #1691ff;
   --primary-soft: #e1efff;
   --text-main: #1f2933;
   --text-muted: #6b7280;
   --border-subtle: #e5e7eb;
   --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 999px;
   --shadow-soft: 0 10px 30px rgba(15, 106, 191, 0.08);
+  --shadow-card: 0 6px 16px rgba(15, 106, 191, 0.05);
+  --shadow-card-hover: 0 10px 24px rgba(15, 106, 191, 0.10);
+  --focus: 0 0 0 3px rgba(22, 145, 255, 0.25);
 }
 
-*,
-*::before,
-*::after {
+/* =========================================================
+   SCOPE: HOME ONLY
+   Use body.app-home on the home page to prevent clashes.
+   ========================================================= */
+body.app-home {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
+  min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: var(--text-main);
-  background-color: var(--bg); /* ✅ no big background image */
+  background-color: var(--bg);
 }
 
-a {
+/* Better default sizing without clobbering the whole site */
+body.app-home *,
+body.app-home *::before,
+body.app-home *::after {
+  box-sizing: border-box;
+}
+
+body.app-home a {
   color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+body.app-home a:hover {
+  text-decoration: none;
 }
 
-/* === LAYOUT WRAPPERS === */
-
-main {
+/* ---------- Layout wrappers ---------- */
+body.app-home main {
   padding: 0 1rem 2rem;
 }
 
-.section {
+body.app-home .section {
   max-width: 1100px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
 }
 
-.section-alt {
+body.app-home .section-alt {
   background-color: var(--bg-alt);
   border-radius: 20px;
   padding: 1.25rem 1rem;
   box-shadow: 0 4px 18px rgba(15, 106, 191, 0.03);
+  border: 1px solid rgba(229, 231, 235, 0.7);
 }
 
-.section-header h2 {
+body.app-home .section-header h2 {
   margin: 0 0 0.25rem;
   font-size: 1.15rem;
 }
 
-.section-header p {
+body.app-home .section-header p {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-/* === HEADER / NAVIGATION === */
-
-.site-header {
+/* ---------- Header / Navigation ---------- */
+body.app-home .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(245, 247, 251, 0.98);
+  background-color: rgba(245, 247, 251, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.header-inner {
+body.app-home .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
 }
 
-.brand {
+body.app-home .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
+  min-width: 200px;
 }
 
-.brand-logo {
-  width: 36px;
-  height: 36px;
+body.app-home .brand-logo {
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary), #1691ff);
-  display: flex;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   box-shadow: var(--shadow-soft);
 }
 
-.brand-logo i {
+body.app-home .brand-logo i {
   font-size: 1rem;
 }
 
-.brand-text {
+body.app-home .brand-text {
   display: flex;
   flex-direction: column;
+  line-height: 1.15;
 }
 
-.brand-title {
+body.app-home .brand-title {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.brand-subtitle {
+body.app-home .brand-subtitle {
   font-size: 0.75rem;
   color: var(--text-muted);
 }
 
-.nav-toggle {
+body.app-home .nav-toggle {
   border: none;
   background: var(--primary);
   color: #ffffff;
-  border-radius: 999px;
-  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-full);
+  padding: 0.45rem 0.8rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 6px 14px rgba(15, 106, 191, 0.14);
 }
 
-.nav-toggle i {
+body.app-home .nav-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+body.app-home .nav-toggle i {
   font-size: 0.95rem;
 }
 
-.site-nav {
+body.app-home .site-nav {
   display: none;
 }
 
-.site-nav.open {
+body.app-home .site-nav.open {
   display: block;
 }
 
-.site-nav ul {
+body.app-home .site-nav ul {
   list-style: none;
-  margin: 0.5rem 0 0;
-  padding: 0.5rem 1rem 0.75rem;
+  margin: 0.55rem 0 0;
+  padding: 0.65rem 1rem 0.85rem;
   border-top: 1px solid var(--border-subtle);
 }
 
-.site-nav li {
-  margin: 0.15rem 0;
+body.app-home .site-nav li {
+  margin: 0.2rem 0;
 }
 
-.site-nav a {
+body.app-home .site-nav a {
   display: block;
-  font-size: 0.9rem;
-  padding: 0.25rem 0;
+  font-size: 0.92rem;
+  padding: 0.35rem 0;
+  color: var(--text-main);
 }
 
-.site-nav a.active,
-.site-nav a:hover {
+body.app-home .site-nav a.active,
+body.app-home .site-nav a:hover {
   color: var(--primary);
 }
 
-/* === SEARCH SECTION === */
-
-.search-section {
+/* ---------- Search section ---------- */
+body.app-home .search-section {
   max-width: 1100px;
-  margin: 0.5rem auto 0.75rem;
+  margin: 0.55rem auto 0.85rem;
   padding: 0 1rem;
 }
 
-/* === HERO (HOME PAGE) === */
-
-.hero {
+/* ---------- Hero ---------- */
+body.app-home .hero {
   max-width: 1100px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
 }
 
-.hero-inner {
+body.app-home .hero-inner {
   background: radial-gradient(circle at top left, var(--primary-soft), #ffffff);
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
   padding: 1.4rem 1.1rem;
   box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(225, 239, 255, 0.6);
 }
 
-.hero-badge {
+body.app-home .hero-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.15rem 0.7rem;
-  border-radius: 999px;
+  gap: 0.4rem;
+  padding: 0.18rem 0.75rem;
+  border-radius: var(--radius-full);
   font-size: 0.75rem;
   background-color: #ffffff;
   border: 1px solid var(--primary-soft);
   color: var(--text-muted);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
 }
 
-.hero h1 {
+body.app-home .hero h1 {
   margin: 0 0 0.6rem;
-  font-size: 1.6rem;
+  font-size: 1.65rem;
+  letter-spacing: -0.01em;
 }
 
-.hero-lead {
-  margin: 0 0 0.9rem;
-  font-size: 0.95rem;
+body.app-home .hero-lead {
+  margin: 0 0 0.95rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
 }
 
-.hero-actions {
+body.app-home .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-bottom: 0.5rem;
 }
 
-.btn {
+body.app-home .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
+  gap: 0.45rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-full);
   border: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.92rem;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  touch-action: manipulation;
 }
 
-.btn.primary {
+body.app-home .btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+body.app-home .btn.primary {
   background-color: var(--primary);
   color: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 106, 191, 0.18);
 }
 
-.btn.secondary {
+body.app-home .btn.primary:hover {
+  transform: translateY(-1px);
+}
+
+body.app-home .btn.secondary {
   background-color: #ffffff;
   color: var(--primary);
   border: 1px solid var(--primary-soft);
 }
 
-.hero-note {
-  font-size: 0.8rem;
+body.app-home .btn.secondary:hover {
+  transform: translateY(-1px);
+}
+
+body.app-home .hero-note {
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin: 0.2rem 0 0;
 }
 
-/* === CARD GRID (HOME CATEGORY TILES) === */
-
-.card-grid {
+/* ---------- Card grid ---------- */
+body.app-home .card-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.9rem;
 }
 
-.card {
+body.app-home .card {
   background-color: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 0.9rem 0.95rem;
+  padding: 0.95rem 0.95rem;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 6px 16px rgba(15, 106, 191, 0.03);
-  transition: transform 0.12s ease, box-shadow 0.12s ease,
-    border-color 0.12s ease;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
   color: inherit;
 }
 
-.card:hover {
+body.app-home .card:hover {
   transform: translateY(-2px);
-  border-color: var(--primary-soft);
-  box-shadow: 0 10px 24px rgba(15, 106, 191, 0.08);
+  border-color: rgba(225, 239, 255, 0.9);
+  box-shadow: var(--shadow-card-hover);
 }
 
-.card-icon {
-  width: 32px;
-  height: 32px;
+body.app-home .card:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+body.app-home .card-icon {
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-full);
   background-color: var(--primary-soft);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
-.card-icon i {
-  font-size: 1rem;
+body.app-home .card-icon i {
+  font-size: 1.05rem;
   color: var(--primary);
 }
 
-.card h3 {
+body.app-home .card h3 {
   margin: 0 0 0.25rem;
-  font-size: 1rem;
+  font-size: 1.02rem;
 }
 
-.card p {
-  margin: 0 0 0.5rem;
-  font-size: 0.85rem;
+body.app-home .card p {
+  margin: 0 0 0.55rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
-.card-tag {
+body.app-home .card-tag {
   display: inline-block;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
   color: var(--primary);
   background-color: var(--primary-soft);
 }
 
-/* === ABOUT SECTION === */
-
-.about-grid {
+/* ---------- About + Community ---------- */
+body.app-home .about-grid,
+body.app-home .community-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.9rem;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
-.about-grid p {
-  margin-top: 0;
-}
-
-.standards-note {
+body.app-home .standards-note,
+body.app-home .small-note {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
 
-.about-meta h3 {
+body.app-home .about-meta h3 {
   margin: 0 0 0.4rem;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
-.about-meta ul {
+body.app-home .about-meta ul {
   margin: 0;
   padding-left: 1.1rem;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.86rem;
 }
 
-/* === COMMUNITY & TEACHING === */
-
-.community-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.social-links {
+body.app-home .social-links {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
-.social-link {
+body.app-home .social-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  padding: 0.45rem 0.6rem;
-  border-radius: 999px;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  padding: 0.48rem 0.7rem;
+  border-radius: var(--radius-full);
   background-color: #ffffff;
   border: 1px solid var(--border-subtle);
 }
 
-.social-link i {
+body.app-home .social-link i {
   font-size: 1.1rem;
 }
 
-.resource-link {
+body.app-home .resource-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
+  gap: 0.55rem;
+  padding: 0.48rem 0.85rem;
+  border-radius: var(--radius-full);
   background-color: var(--primary);
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  box-shadow: 0 8px 18px rgba(15, 106, 191, 0.18);
 }
 
-.resource-link i {
+body.app-home .resource-link i {
   font-size: 1rem;
 }
 
-.small-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* === FOOTER === */
-
-.site-footer {
+/* ---------- Footer ---------- */
+body.app-home .site-footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 0.85rem 1rem 1rem;
+  padding: 0.9rem 1rem 1.1rem;
   margin-top: 1.5rem;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
-/* === LEGACY AGE MENU (used on other pages) === */
-/* This keeps your existing age-menu pages working while we modernise elsewhere. */
-
-.age-menu {
+/* ---------- Legacy age menu (kept, but scoped) ---------- */
+body.app-home .age-menu {
   max-width: 1100px;
   margin: 0 auto 1.5rem;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.96);
   border-radius: 20px;
   box-shadow: 0 4px 18px rgba(15, 106, 191, 0.06);
+  border: 1px solid rgba(229, 231, 235, 0.7);
 }
 
-.age-menu-heading {
+body.app-home .age-menu-heading {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
   color: var(--text-main);
 }
 
-.age-menu-links {
+body.app-home .age-menu-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -439,118 +469,153 @@ main {
   padding: 0;
 }
 
-.age-menu-item {
+body.app-home .age-menu-item {
   width: calc((100% - 1rem) / 2);
   background-color: #ffffff;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: 0 2px 6px rgba(15, 106, 191, 0.06);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    border-color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-.age-menu-item:hover {
+body.app-home .age-menu-item:hover {
   transform: translateY(-3px);
-  border-color: var(--primary-soft);
-  box-shadow: 0 8px 20px rgba(15, 106, 191, 0.12);
+  border-color: rgba(225, 239, 255, 0.95);
+  box-shadow: 0 10px 22px rgba(15, 106, 191, 0.14);
 }
 
-.age-menu-item a {
+body.app-home .age-menu-item a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.75rem 0.6rem;
+  padding: 0.8rem 0.65rem;
   text-align: center;
 }
 
-.age-menu-link-icon {
-  font-size: 1.5rem;
+body.app-home .age-menu-link-icon {
+  font-size: 1.55rem;
   margin-bottom: 0.35rem;
   color: var(--primary);
 }
 
-.age-menu-link-text {
+body.app-home .age-menu-link-text {
   display: block;
   margin: 0.1rem 0;
   color: var(--text-main);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
 }
 
-/* === RESPONSIVE === */
-
+/* ---------- Responsive ---------- */
 @media screen and (max-width: 768px) {
-  main {
+  body.app-home main {
     padding: 0 1rem 2rem;
   }
 
-  .age-menu-links {
+  body.app-home .age-menu-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
+    gap: 1rem;
   }
 
-  .age-menu-item {
+  body.app-home .age-menu-item {
     width: auto;
   }
 
-  .age-menu-link-text {
-    font-size: 0.95rem;
+  body.app-home .age-menu-link-text {
+    font-size: 0.96rem;
   }
 }
 
 @media (min-width: 768px) {
-  .nav-toggle {
+  body.app-home .nav-toggle {
     display: none;
   }
 
-  .header-inner {
+  body.app-home .header-inner {
     padding: 0.75rem 1rem;
   }
 
-  .site-nav {
+  body.app-home .site-nav {
     display: block !important;
   }
 
-  .site-nav ul {
+  body.app-home .site-nav ul {
     margin: 0;
     padding: 0;
     border-top: none;
     display: flex;
     gap: 1rem;
+    align-items: center;
   }
 
-  .site-nav li {
+  body.app-home .site-nav li {
     margin: 0;
   }
 
-  .site-nav a {
-    font-size: 0.9rem;
-    padding: 0.1rem 0;
-  }
-
-  main {
+  body.app-home main {
     padding: 0 1.5rem 2rem;
   }
 
-  .hero-inner {
+  body.app-home .hero-inner {
     padding: 1.6rem 1.6rem;
   }
 
-  .hero h1 {
+  body.app-home .hero h1 {
     font-size: 2rem;
   }
 
-  .card-grid {
+  body.app-home .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-grid {
+  body.app-home .about-grid {
     grid-template-columns: 3fr 2fr;
   }
 
-  .community-grid {
+  body.app-home .community-grid {
     grid-template-columns: 3fr 2fr;
   }
 }
 
+/* ---------- Dark mode (scoped) ---------- */
+@media (prefers-color-scheme: dark) {
+  body.app-home {
+    background-color: #0f1115;
+    color: #f2f4f8;
+  }
+
+  body.app-home .site-header {
+    background-color: rgba(15, 17, 21, 0.86);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  body.app-home .section-alt,
+  body.app-home .card,
+  body.app-home .social-link,
+  body.app-home .age-menu {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.10);
+  }
+
+  body.app-home .hero-inner {
+    background: radial-gradient(circle at top left, rgba(22,145,255,0.18), rgba(255,255,255,0.04));
+    border-color: rgba(22, 145, 255, 0.15);
+  }
+
+  body.app-home .brand-subtitle,
+  body.app-home .hero-lead,
+  body.app-home .section-header p,
+  body.app-home .standards-note,
+  body.app-home .small-note,
+  body.app-home .card p,
+  body.app-home .site-footer {
+    color: rgba(242, 244, 248, 0.75);
+  }
+
+  body.app-home .btn.secondary {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(22, 145, 255, 0.18);
+    color: #dbeafe;
+  }
+}

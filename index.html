@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="ED Assistant is a web application for managing emergency department patients and resources. Aimed at junior doctors and students." />
+  <meta name="description" content="Emergency Department Assistant – practical ED tools for junior doctors and medical students." />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -11,23 +11,23 @@
   <!-- Main styles -->
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- Font Awesome icons -->
-  <link
-    rel="stylesheet"
-    href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"
-    integrity="sha384-zfNGgMjYzt5H5nc+i1/B2B8WU6UEjv6LTboU6xByc6aWjJkSKv3dC3yX9Xj8WlQu"
-    crossorigin="anonymous"
-  />
+  <!-- Font Awesome (match your other pages) -->
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
 
   <!-- Favicon -->
-  <link
-    rel="icon"
-    href="/images/emergency-icon-512x512-cka5azee.png"
-    type="image/x-icon"
-  />
+  <link rel="icon" href="/images/emergency-icon-512x512-cka5azee.png" type="image/x-icon" />
+
+  <!-- OPTIONAL: quick visual indicator if CSS didn't load (remove later if you want) -->
+  <style>
+    .css-check { display:none; }
+    body.home-page .css-check { display:inline-block; }
+  </style>
 </head>
-<body class="home-page">
-  <!-- Header -->
+
+<body class="app-home">
+
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="brand">
@@ -35,7 +35,7 @@
           <i class="fa-solid fa-truck-medical"></i>
         </div>
         <div class="brand-text">
-          <span class="brand-title">Emergency Department Assistant</span>
+          <span class="brand-title">Emergency Department Assistant <span class="css-check">✅</span></span>
           <span class="brand-subtitle">Practical tools for juniors &amp; students</span>
         </div>
       </a>
@@ -50,27 +50,29 @@
           <li><a href="/adultresus/adultResus.html">Resuscitation</a></li>
           <li><a href="/adult/adult.html">Adult ED</a></li>
           <li><a href="/paeds/paedsMenu.html">Paediatrics</a></li>
-          <li><a href="/weightPaeds.html">Paeds weight tables</a></li>
+          <li><a href="/paeds/weight-based/">Paeds weight-based drugs</a></li>
           <li><a href="/OBGYN/obgynMenu.html">OBGYN</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Google custom search -->
+  <!-- SEARCH -->
   <section class="search-section">
     <script async src="https://cse.google.com/cse.js?cx=220b68de6e1ff4d36"></script>
     <div class="gcse-search"></div>
   </section>
 
   <main>
-    <!-- Hero / intro -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-badge">ED support • South African / British standards</div>
+        <div class="hero-badge">ED support • South African &amp; British standards</div>
+
         <h1>Your pocket ED assistant</h1>
+
         <p class="hero-lead">
-          Designed for medical students and young doctors in emergency settings.
+          Designed for medical students and junior doctors working in emergency settings.
           Use it for quick history prompts, examination guides, calculators and checklists
           to support safe, structured patient care.
         </p>
@@ -87,175 +89,127 @@
         </div>
 
         <p class="hero-note">
-          Use your clinical judgement and local protocols first. This site is an educational aid,
-          not a replacement for senior advice or bedside assessment.
+          This site is an educational aid only. Always use clinical judgement,
+          senior input, and local protocols first.
         </p>
       </div>
     </section>
 
-    <!-- Category tiles -->
+    <!-- CATEGORY TILES -->
     <section class="section">
       <div class="section-header">
-        <h2>Choose a category to begin</h2>
-        <p>Tap a tile below. Optimised for mobile — ideal for use on shift.</p>
+        <h2>Choose a category</h2>
+        <p>Optimised for mobile use during shifts.</p>
       </div>
 
       <div class="card-grid">
         <a href="/adultresus/adultResus.html" class="card">
-          <div class="card-icon">
-            <i class="fa-solid fa-truck-medical"></i>
-          </div>
+          <div class="card-icon"><i class="fa-solid fa-truck-medical"></i></div>
           <h3>Resuscitation</h3>
-          <p>
-            Structured ABCDE approach, time-critical interventions, and team-based ED resus support.
-          </p>
+          <p>ABCDE approach, time-critical actions, and ED resus support.</p>
           <span class="card-tag">High acuity</span>
         </a>
 
         <a href="/adult/adult.html" class="card">
-          <div class="card-icon">
-            <i class="fa-solid fa-user"></i>
-          </div>
+          <div class="card-icon"><i class="fa-solid fa-user"></i></div>
           <h3>Adult ED</h3>
-          <p>
-            Common adult emergencies, red flags, and safe disposition planning for busy departments.
-          </p>
+          <p>Common adult emergencies, red flags, and disposition planning.</p>
           <span class="card-tag">Adult protocols</span>
         </a>
 
-        <a href="/weightPaeds.html" class="card">
-          <div class="card-icon">
-            <i class="fa-solid fa-children"></i>
-          </div>
-          <h3>Weight-based paediatric resus tables</h3>
-          <p>
-            Quick weight estimates and dosing bands. For best experience on mobile, view in portrait.
-          </p>
+        <a href="/paeds/weight-based/" class="card">
+          <div class="card-icon"><i class="fa-solid fa-children"></i></div>
+          <h3>Paeds weight-based dosing</h3>
+          <p>Fast drug-first lookup for paediatric resuscitation, procedural sedation, and RSI dosing.</p>
           <span class="card-tag">Dosing support</span>
         </a>
 
         <a href="/paeds/paedsMenu.html" class="card">
-          <div class="card-icon">
-            <i class="fa-solid fa-child"></i>
-          </div>
+          <div class="card-icon"><i class="fa-solid fa-child"></i></div>
           <h3>Paediatrics</h3>
-          <p>
-            Paediatric assessment, common presentations, and paeds-specific ED considerations.
-          </p>
+          <p>Paediatric assessment, common presentations, and ED considerations.</p>
           <span class="card-tag">Paeds ED</span>
         </a>
 
         <a href="/OBGYN/obgynMenu.html" class="card">
-          <div class="card-icon">
-            <i class="fa-solid fa-person-pregnant"></i>
-          </div>
+          <div class="card-icon"><i class="fa-solid fa-person-pregnant"></i></div>
           <h3>OBGYN Emergencies</h3>
-          <p>
-            Early pregnancy problems, bleeding, septic miscarriage and other ED-relevant OBGYN scenarios.
-          </p>
+          <p>Bleeding, early pregnancy problems, septic miscarriage, and more.</p>
           <span class="card-tag">OBGYN</span>
         </a>
       </div>
     </section>
 
-    <!-- About section -->
+    <!-- ABOUT -->
     <section class="section section-alt">
       <div class="section-header">
         <h2>About this assistant</h2>
       </div>
+
       <div class="about-grid">
         <article>
-          <p>
-            Thank you for using the Emergency Department Assistant. This tool was created to support
-            medical students and junior doctors working in emergency settings, particularly in
-            resource-constrained environments.
-          </p>
-          <p>
-            It provides history and examination prompts, calculators, and checklists to help you structure
-            your assessment and management. It is <strong>not</strong> a substitute for a thorough clinical
-            examination, senior input, or your hospital&apos;s protocols.
-          </p>
-          <p>
-            Use your clinical judgement first, then use this assistant to enhance your understanding,
-            organisation, and productivity on shift.
-          </p>
-          <p class="standards-note">
-            Values are based on South African and British standards unless otherwise stated.
-          </p>
+          <p>This tool supports junior doctors and medical students working in emergency departments.</p>
+          <p>It provides prompts, calculators, and checklists. It does <strong>not</strong> replace senior input or local protocols.</p>
+          <p class="standards-note">Values are based on South African and British standards unless otherwise stated.</p>
         </article>
 
         <div class="about-meta">
-          <h3>How to get the most out of it</h3>
+          <h3>Tips</h3>
           <ul>
             <li>Bookmark this site on your phone home screen.</li>
-            <li>Use the tools and checklists at the bedside while seeing patients.</li>
+            <li>Use bedside during shifts.</li>
             <li>Review sections after shifts to consolidate learning.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Community & teaching -->
+    <!-- COMMUNITY -->
     <section class="section">
       <div class="section-header">
-        <h2>Community &amp; teaching resources</h2>
-        <p>Stay connected and access more detailed teaching material.</p>
+        <h2>Community &amp; teaching</h2>
       </div>
 
       <div class="community-grid">
-        <div class="community-links">
-          <h3>Join the learning groups</h3>
+        <div>
+          <h3>Learning groups</h3>
           <div class="social-links">
             <a href="https://chat.whatsapp.com/GReC7EIpuj28wT7go8rGEw" target="_blank" rel="noopener" class="social-link">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>WhatsApp learning group</span>
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp learning group
             </a>
-          
             <a href="https://twitter.com/@CMadadeni" target="_blank" rel="noopener" class="social-link">
-              <i class="fa-brands fa-twitter"></i>
-              <span>Twitter / X updates</span>
+              <i class="fa-brands fa-twitter"></i> Twitter / X updates
             </a>
           </div>
         </div>
 
-        <div class="community-resources">
-          <h3>Teaching slides &amp; presentations</h3>
-          <p>
-            Explore presentations on ECGs, ABGs, trauma, and other ED topics:
-          </p>
-          <p>
-            <a href="https://jazzy-fox-934d99.netlify.app/" target="_blank" rel="noopener" class="resource-link">
-              <i class="fa-solid fa-file-powerpoint"></i>
-              <span>View ED teaching presentations</span>
-            </a>
-          </p>
-        </div>
+        <div>
+  <h3>Teaching videos</h3>
+  <a
+    href="https://www.youtube.com/@ermentorshiphub"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="resource-link"
+  >
+    <i class="fa-brands fa-youtube"></i>
+    ER Mentorship Hub – YouTube
+  </a>
+</div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <p>
-      &copy; <span id="year"></span> Emergency Department Assistant.
-      Educational support only – not a substitute for local protocols or senior advice.
-    </p>
+    <p>&copy; <span id="year"></span> Emergency Department Assistant. Educational support only.</p>
   </footer>
 
   <script>
-    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const siteNav = document.querySelector('.site-nav');
-
-    if (navToggle && siteNav) {
-      navToggle.addEventListener('click', () => {
-        siteNav.classList.toggle('open');
-      });
-    }
-
-    // Dynamic year
+    navToggle?.addEventListener('click', () => siteNav.classList.toggle('open'));
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-

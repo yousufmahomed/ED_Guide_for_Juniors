@@ -1,9 +1,28 @@
-/* ================================
-   GENERAL PAGES LAYOUT (NON-HOME)
-   Scope: body.general-page
-   ================================ */
+/* =========================================================
+   genralPages.css  (DROP-IN COMPLETE)
+   Scope: pages that use <body class="general-page">
+   Includes:
+   - header/nav layout (logo, icons, back button)
+   - menus (.links)
+   - sections, headings, tables
+   - responsive + dark mode
+   - fullscreen image overlay support (for script.js)
+   ========================================================= */
 
-/* Header for general pages */
+/* ---------- Base / reset-ish ---------- */
+body.general-page {
+  margin: 0;
+  padding: 0;
+  background-color: #d9dde3;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body.general-page * {
+  box-sizing: border-box;
+}
+
+/* ---------- Header / top bar ---------- */
 body.general-page header {
   background-color: #000;
   color: #fff;
@@ -16,13 +35,27 @@ body.general-page .logo-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 0.75rem;
   flex: 1;
+  flex-wrap: wrap;
 }
 
-body.general-page .logo-container h1 {
+body.general-page .logo-container h1,
+body.general-page .main-header {
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
+}
+
+body.general-page .navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body.general-page .navbar-icons i {
+  font-size: 24px;
 }
 
 body.general-page .fa-syringe {
@@ -33,19 +66,45 @@ body.general-page .fa-syringe {
 body.general-page .fa-house {
   font-size: 2rem;
   color: #999;
+  text-decoration: none;
 }
 
-/* Page layout & headings */
+body.general-page .back-button {
+  background-color: #2196f3;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  touch-action: manipulation;
+}
+
+body.general-page .back-button:hover {
+  background-color: #0d47a1;
+}
+
+body.general-page .back-button:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Main content ---------- */
 body.general-page main {
   margin: 1rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3.5rem; /* avoids overlap if you later add fixed footer */
 }
 
 body.general-page h1 {
   font-size: 2rem;
   margin: 0 0 1rem;
+  text-align: center;
 }
 
-/* Links list style (e.g. menus) */
+/* ---------- Menu link list (.links) ---------- */
 body.general-page .links {
   list-style: none;
   margin: 0;
@@ -61,76 +120,29 @@ body.general-page .links a {
   background-color: #fff;
   color: #000;
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.4rem;
   text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Alternate link colours inside .links */
-body.general-page .links a:nth-child(even) {
+/* Correct alternating colours (li-based, not a-based) */
+body.general-page .links li:nth-child(even) a {
   background-color: #6fa8dc;
   color: #fff;
 }
 
-body.general-page .links a:nth-child(odd) {
+body.general-page .links li:nth-child(odd) a {
   background-color: #f7cac9;
   color: #000;
 }
 
 body.general-page .links a:hover {
   transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-/* Top navbar (back button, icons) */
-body.general-page .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body.general-page .navbar-container {
-  max-width: 1000px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-body.general-page .main-header {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-}
-
-body.general-page .navbar-icons {
-  display: flex;
-}
-
-body.general-page .navbar-icons i {
-  font-size: 24px;
-  margin-right: 12px;
-}
-
-body.general-page .back-button {
-  background-color: #2196f3;
-  border: none;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-body.general-page .back-button:hover {
-  background-color: #0d47a1;
-}
-
-/* Subheadings & sections */
+/* ---------- Subheadings / sections ---------- */
 body.general-page .subheading {
   font-size: 24px;
   margin-top: 20px;
@@ -145,27 +157,28 @@ body.general-page .section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 body.general-page .section p {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
+  margin: 0.5rem 0;
+  width: 100%;
 }
 
-body.general-page .section p::before {
-  display: inline-block;
-  margin-right: 8px;
-}
-
-/* Images & emphasis text */
+/* ---------- Images ---------- */
 body.general-page .image {
   max-width: 100%;
-  height: 400px; /* adjust per page if needed */
+  height: auto;
+  max-height: 420px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
   margin-top: 20px;
+  cursor: zoom-in;
 }
 
+/* ---------- Emphasis text / links ---------- */
 body.general-page strong {
   font-size: large;
   font-family: "Times New Roman", Times, serif;
@@ -173,7 +186,14 @@ body.general-page strong {
   color: orangered;
 }
 
-/* Tables */
+body.general-page .emphasis-link {
+  font-weight: bold;
+  color: #0070c0;
+  font-size: larger;
+  text-decoration: underline;
+}
+
+/* ---------- Tables ---------- */
 body.general-page caption {
   font-weight: bold;
   font-size: 1.2rem;
@@ -186,12 +206,15 @@ body.general-page caption {
 
 body.general-page table {
   border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
 }
 
 body.general-page th,
 body.general-page td {
-  border: 1px solid black;
+  border: 1px solid #000;
   padding: 8px;
+  text-align: left;
 }
 
 body.general-page tr:nth-child(even) {
@@ -203,53 +226,48 @@ body.general-page th {
   color: whitesmoke;
 }
 
-/* Fullscreen image overlay */
+/* ---------- Fullscreen image overlay (for toggleFullscreenImage) ---------- */
 body.general-page .fullscreen-image-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   cursor: zoom-out;
+
+  /* fade support */
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+body.general-page .fullscreen-image-overlay.show {
+  opacity: 1;
 }
 
 body.general-page .fullscreen-image-overlay img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 95%;
+  max-height: 95%;
   object-fit: contain;
+  border-radius: 10px;
 }
 
-/* Emphasis link style (e.g. key links in text) */
-body.general-page .emphasis-link {
-  font-weight: bold;
-  color: #0070c0;
-  font-size: larger;
-}
-
-/* Background for general pages (overrides main if needed) */
-body.general-page {
-  background-color: #d9dde3;
-}
-
-/* =========================
-   RESPONSIVE (GENERAL PAGES)
-   ========================= */
-
+/* ---------- Responsive ---------- */
 @media only screen and (max-width: 600px) {
-  body.general-page .logo-container {
-    font-size: 1rem;
+  body.general-page header {
+    padding: 0.75rem;
   }
 
-  body.general-page .fa-syringe {
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
+  body.general-page .logo-container h1,
+  body.general-page .main-header {
+    font-size: 1.15rem;
   }
 
+  body.general-page .fa-syringe,
   body.general-page .fa-house {
     font-size: 1.5rem;
   }
@@ -264,25 +282,13 @@ body.general-page {
   }
 
   body.general-page .links a {
-    padding: 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  body.general-page .navbar {
-    height: 50px;
-  }
-
-  body.general-page .main-header {
-    font-size: 20px;
-  }
-
-  body.general-page .navbar-icons i {
-    font-size: 20px;
+    padding: 0.85rem;
+    font-size: 0.95rem;
   }
 
   body.general-page .back-button {
     font-size: 14px;
-    padding: 6px 12px;
+    padding: 7px 12px;
   }
 
   body.general-page .subheading {
@@ -295,32 +301,40 @@ body.general-page {
     margin-top: 24px;
     margin-bottom: 24px;
   }
+
+  body.general-page .image {
+    max-height: 320px;
+  }
 }
 
-/* =========================
-   DARK MODE (GENERAL PAGES)
-   ========================= */
-
+/* ---------- Dark mode ---------- */
 @media (prefers-color-scheme: dark) {
   body.general-page {
     background-color: #121212;
     color: #ffffff;
   }
 
-  body.general-page header,
-  body.general-page .navbar {
+  body.general-page header {
     background-color: #1a1a1a;
   }
 
-  body.general-page .links a {
-    background-color: #333333;
-    color: #ffffff;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  body.general-page .fa-house {
+    color: #cfcfcf;
   }
 
-  body.general-page th,
-  body.general-page .fullscreen-image-overlay {
-    background-color: #2a2a2a;
+  body.general-page .links a {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.08);
+  }
+
+  body.general-page .links li:nth-child(even) a {
+    background-color: #2a4a66;
+    color: #ffffff;
+  }
+
+  body.general-page .links li:nth-child(odd) a {
+    background-color: #4a2a2a;
     color: #ffffff;
   }
 
@@ -328,7 +342,21 @@ body.general-page {
     background-color: #242424;
   }
 
+  body.general-page caption {
+    background-color: #1f1f1f;
+    border-color: #333;
+  }
+
+  body.general-page th {
+    background-color: #0b1f4a;
+    color: #ffffff;
+  }
+
   body.general-page .emphasis-link {
     color: #4fc3f7;
+  }
+
+  body.general-page .fullscreen-image-overlay {
+    background-color: rgba(0, 0, 0, 0.92);
   }
 }

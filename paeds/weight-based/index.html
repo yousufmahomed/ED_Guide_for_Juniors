@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fast weight-based paediatric drug dosing for resuscitation, procedural sedation, and RSI." />
+  <title>Paeds Weight-Based Drugs</title>
+
+  <!-- Use your existing general pages stylesheet -->
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js" defer></script>
+
+  <style>
+    /* Match your site feel: centered content, clean “cards”, mobile-first */
+    main {
+      max-width: 950px;
+      margin: 0 auto 3.5rem auto;
+      padding: 1rem;
+    }
+
+    .page-title {
+      text-align: center;
+      margin: 0.75rem 0 0.25rem;
+      font-size: 1.6rem;
+      color: #003366;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    .subtitle {
+      text-align: center;
+      margin: 0 0 1rem;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .notice {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      margin: 0 auto 1rem;
+      line-height: 1.5;
+    }
+
+    .notice strong {
+      color: #b34700;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .card-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(15,106,191,0.22);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex: 0 0 auto;
+    }
+
+    .icon-badge i { font-size: 1.2rem; }
+
+    .blue { background: rgba(33,150,243,0.12); }
+    .blue i { color: #0f6abf; }
+
+    .red { background: rgba(220,53,69,0.12); }
+    .red i { color: #dc3545; }
+
+    .purple { background: rgba(111,66,193,0.12); }
+    .purple i { color: #6f42c1; }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.12rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      text-decoration: underline;
+    }
+
+    .card-desc {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      opacity: 0.95;
+    }
+
+    .tag-row {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(0,0,0,0.04);
+    }
+
+    .tag i { font-size: 0.9rem; }
+
+    .small {
+      font-size: 0.86rem;
+      opacity: 0.9;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* Optional: make cards feel tappier on mobile */
+    @media (max-width: 600px) {
+      .card-link { padding: 14px 12px; }
+      .page-title { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+
+<body class="general-page">
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header" style="color: antiquewhite;">Paeds Weight-Based Drugs</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="page-title">Choose a dosing tool</h2>
+    <p class="subtitle">Fast workflow: <strong>search → drug → weight</strong></p>
+
+    <div class="notice">
+      <strong>Safety note:</strong> Use the correct page for context.
+      <ul style="margin: 8px 0 0; padding-left: 18px;">
+        <li><strong>Resus + Procedural Sedation</strong> = sedation ranges &amp; resuscitation values</li>
+        <li><strong>RSI</strong> = induction + paralytic doses (intubation)</li>
+      </ul>
+    </div>
+
+    <section class="grid">
+      <!-- Procedural sedation + resus values -->
+      <a class="card-link" href="./paedsResusWeightBased.html">
+        <div class="card-top">
+          <div class="icon-badge blue">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3 class="card-title">Resus + Procedural Sedation</h3>
+        </div>
+        <p class="card-desc">
+          Rapid weight-based lookup for paediatric resuscitation values and procedural sedation
+          (e.g., ketamine/midazolam sedation ranges), plus “show all weights” for cross-checking.
+        </p>
+        <div class="tag-row">
+          <span class="tag"><i class="fa-solid fa-bolt"></i> Resus support</span>
+          <span class="tag"><i class="fa-solid fa-mobile-screen-button"></i> Mobile-first</span>
+        </div>
+      </a>
+
+      <!-- RSI dosing -->
+      <a class="card-link" href="./paedsRSIDoses.html">
+        <div class="card-top">
+          <div class="icon-badge red">
+            <i class="fa-solid fa-lungs"></i>
+          </div>
+          <h3 class="card-title">RSI Doses</h3>
+        </div>
+        <p class="card-desc">
+          Induction and paralytic dosing for rapid sequence intubation.
+          Clear labelling + weight table for quick double-checking during high stress.
+        </p>
+        <div class="tag-row">
+          <span class="tag"><i class="fa-solid fa-triangle-exclamation"></i> High acuity</span>
+          <span class="tag"><i class="fa-solid fa-check"></i> Quick cross-check</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- Optional third link if you want a future “calculator / estimate weight” page -->
+    <a class="card-link" href="/paeds/paedsMenu.html" style="margin-top: 12px;">
+      <div class="card-top">
+        <div class="icon-badge purple">
+          <i class="fa-solid fa-child"></i>
+        </div>
+        <h3 class="card-title">Back to Paediatrics</h3>
+      </div>
+      <p class="card-desc">
+        Return to paeds assessment, red flags, and paediatric ED content.
+      </p>
+      <div class="tag-row">
+        <span class="tag"><i class="fa-solid fa-arrow-left"></i> Paeds menu</span>
+      </div>
+    </a>
+
+    <p class="small">
+      From <strong>40 kg</strong> upwards treat as an adult, but use the <strong>lowest adult dose</strong>.
+    </p>
+  </main>
+</body>
+</html>

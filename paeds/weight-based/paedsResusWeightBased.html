@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pediatric Resuscitation Values</title>
+
+  <link rel="stylesheet" href="/genralPages.css" />
+  <script src="https://kit.fontawesome.com/834304401a.js" crossorigin="anonymous"></script>
+  <script src="/script.js" defer></script>
+
+  <style>
+    body.general-page main { max-width: 1100px; }
+
+    .panel {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      margin: 12px auto 16px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: end;
+    }
+    @media (min-width: 800px) {
+      .row { grid-template-columns: 1.3fr 1fr 1fr auto; }
+    }
+
+    label { font-weight: 800; display: block; margin-bottom: 6px; }
+    select, input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.2);
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      cursor: pointer;
+      background: #0f6abf;
+      color: #fff;
+      width: 100%;
+      touch-action: manipulation;
+    }
+    @media (min-width: 800px) { .btn { width: auto; } }
+
+    .hint { font-size: 0.92rem; opacity: 0.85; margin: 8px 0 0; }
+
+    .quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,106,191,0.10);
+      border: 1px solid rgba(15,106,191,0.18);
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .result {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      margin: 0 auto 16px;
+    }
+
+    .result h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      text-decoration: underline;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 12px;
+    }
+    .meta .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.96);
+    }
+    .card .k {
+      font-weight: 900;
+      margin-bottom: 6px;
+      color: #0b1f4a;
+    }
+    .card .v { font-size: 0.98rem; line-height: 1.4; }
+
+    details { margin-top: 12px; }
+    details summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: #0f6abf;
+      padding: 8px 0;
+    }
+
+    table.compact {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+    table.compact th, table.compact td {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.compact th {
+      background: navy;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-weight: 800;
+      background: rgba(255,255,255,0.9);
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      margin: 0 auto 20px;
+    }
+
+    .warn {
+      font-size: 0.9rem;
+      background: rgba(255, 165, 0, 0.12);
+      border: 1px solid rgba(255, 165, 0, 0.25);
+      padding: 10px 12px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body class="general-page">
+  <header>
+    <div class="logo-container">
+      <h1 class="main-header" style="color: antiquewhite;">Pediatric Resuscitation Values</h1>
+      <div class="navbar-icons">
+        <a href="/index.html" title="Home"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <div class="row">
+        <div>
+          <label for="itemSearch">Search (fast)</label>
+          <input id="itemSearch" type="text" placeholder="Type: adrenaline, fluids, ett, dextrose, ketamine, midazolam..." />
+        </div>
+
+        <div>
+          <label for="item">Drug / Item</label>
+          <select id="item"></select>
+        </div>
+
+        <div>
+          <label for="weight">Weight</label>
+          <select id="weight"></select>
+        </div>
+
+        <div>
+          <button class="btn" id="showBtn" type="button">Show</button>
+        </div>
+      </div>
+
+      <div class="quick" id="quick"></div>
+
+      <p class="hint">
+        Workflow: choose the <strong>drug/item first</strong>, then select weight.
+        This is faster than scanning a huge table.
+      </p>
+
+      <div class="warn">
+        <strong>Procedural sedation:</strong> Ketamine &amp; Midazolam below are shown as <strong>sedation dose ranges</strong>.
+        (If you want RSI doses instead, tell me and I’ll generate a separate “RSI” tab/page.)
+      </div>
+    </div>
+
+    <div class="result" id="result" hidden>
+      <h2 id="title"></h2>
+
+      <div class="meta" id="meta"></div>
+
+      <div class="grid" id="cards"></div>
+
+      <details>
+        <summary>Show all weights for this drug/item (teaching / double-check)</summary>
+        <div style="overflow:auto;">
+          <table class="compact" id="allTable"></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="footer-note">
+      From <strong>40 kg</strong> upwards treat as an adult, but use <strong>lowest adult dose</strong>.
+    </div>
+  </main>
+
+  <script>
+    // -----------------------------
+    // Weights
+    // -----------------------------
+    const WEIGHTS = [10,12,14,16,18,20,22,24,26,28,30,32,34,36,38];
+
+    // -----------------------------
+    // Helper calculators (cleaned)
+    // -----------------------------
+    function maintenance421(w){
+      // 4-2-1 rule (mL/hr)
+      if (w <= 10) return 4*w;
+      if (w <= 20) return 40 + 2*(w-10);
+      return 60 + 1*(w-20);
+    }
+
+    function formatRange(a,b,unit=""){
+      if (a === b) return `${a}${unit}`;
+      return `${a}–${b}${unit}`;
+    }
+
+    // -----------------------------
+    // Original table values (kept unless clearly wrong)
+    // NOTE: The following items are corrected:
+    // - Adrenaline label (units)
+    // - Dextrose bolus (D10 2 mL/kg)
+    // - Fluid bolus (10–20 mL/kg) simplified
+    // - Maintenance rate uses 4-2-1
+    // - Ketamine + Midazolam switched to procedural sedation ranges
+    // -----------------------------
+
+    // Items that are truly “lookup” (not reliably formula-based here)
+    const ETT_SIZE = {
+      10:"3.0 cuffed / 3.5 uncuffed", 12:"3.5 cuffed / 4.0 uncuffed",
+      14:"4.0 cuffed / 4.5 uncuffed", 16:"4.5 cuffed / 5.0 uncuffed",
+      18:"5.0 cuffed / 5.5 uncuffed", 20:"5.5 cuffed / 6.0 uncuffed",
+      22:"5.5 cuffed / 6.0 uncuffed", 24:"6.0 cuffed / 6.5 uncuffed",
+      26:"6.5 cuffed / 7.0 uncuffed", 28:"6.5 cuffed / 7.0 uncuffed",
+      30:"6.5 cuffed / 7.0 uncuffed", 32:"7.0 cuffed / 7.5 uncuffed",
+      34:"7.5 cuffed / 8.0 uncuffed", 36:"7.5 cuffed / 8.0 uncuffed",
+      38:"8.0 cuffed / 8.5 uncuffed"
+    };
+
+    const ETT_DEPTH = {
+      10:"11 cm at the lip", 12:"12 cm at the lip", 14:"13 cm at the lip", 16:"14 cm at the lip",
+      18:"15 cm at the lip", 20:"16 cm at the lip", 22:"17 cm at the lip", 24:"18 cm at the lip",
+      26:"19 cm at the lip", 28:"20 cm at the lip", 30:"21 cm at the lip", 32:"22 cm at the lip",
+      34:"23 cm at the lip", 36:"24 cm at the lip", 38:"25 cm at the lip"
+    };
+
+    // Keep your original “rounded protocol” values for these
+    const ROCURONIUM = { 10:"12mg",12:"15mg",14:"15mg",16:"15mg",18:"20mg",20:"24mg",22:"26mg",24:"28mg",26:"30mg",28:"33mg",30:"36mg",32:"36mg",34:"36mg",36:"39mg",38:"39mg" };
+    const ETOMIDATE  = { 10:"3mg",12:"3.5mg",14:"4mg",16:"4mg",18:"5mg",20:"6mg",22:"6mg",24:"7mg",26:"8mg",28:"8mg",30:"9mg",32:"9mg",34:"10mg",36:"10mg",38:"11mg" };
+    const PROPOFOL   = { 10:"20mg",12:"24mg",14:"30mg",16:"30mg",18:"35mg",20:"40mg",22:"44mg",24:"48mg",26:"52mg",28:"56mg",30:"60mg",32:"60mg",34:"68mg",36:"72mg",38:"76mg" };
+    const VALERON    = { 10:"4 drops",12:"4 drops",14:"5 drops",16:"6 drops",18:"8 drops",20:"8 drops",22:"9 drops",24:"10 drops",26:"10 drops",28:"11 drops",30:"12 drops",32:"13 drops",34:"13 drops",36:"14 drops",38:"15 drops" };
+    const MORPHINE   = { 10:"1mg",12:"1.2mg",14:"1.4mg",16:"1.6mg",18:"1.8mg",20:"2mg",22:"2.2mg",24:"2.4mg",26:"2.6mg",28:"2.8mg",30:"3mg",32:"3.2mg",34:"3.4mg",36:"3.6mg",38:"3.8mg" };
+    const PETHIDINE  = { 10:"5mg",12:"6mg",14:"7mg",16:"8mg",18:"9mg",20:"10mg",22:"11mg",24:"12mg",26:"13mg",28:"14mg",30:"15mg",32:"16mg",34:"17mg",36:"18mg",38:"19mg" };
+    const ATIVAN     = { 10:"0.5mg",12:"0.6mg",14:"0.7mg",16:"0.8mg",18:"0.9mg",20:"1mg",22:"1.1mg",24:"1.2mg",26:"1.3mg",28:"1.4mg",30:"1.5mg",32:"1.6mg",34:"1.7mg",36:"1.8mg",38:"1.9mg" };
+    const PARACETAMOL= { 10:"200mg",12:"240mg",14:"280mg",16:"320mg",18:"360mg",20:"400mg",22:"440mg",24:"480mg",26:"500mg",28:"500mg",30:"500mg",32:"500mg",34:"500mg",36:"500–750mg",38:"500–750mg" };
+
+    // Suxamethonium in your table is ~2 mg/kg (kept)
+    function sux(w){ return `${2*w}mg`; }
+
+    // Defib (PALS): first 2 J/kg, second 4 J/kg, subsequent ≥4 J/kg (max 10 J/kg/adult)
+    function defib(w){ return `First: ${2*w} J; Second: ${4*w} J (subsequent ≥4 J/kg; max 10 J/kg/adult)`; }
+
+    // SBP minimum in your table matches w + 60 (kept as your protocol)
+    function minSBP(w){ return `${w + 60} mmHg`; }
+
+    // Calcium in your table is 10–20 mg/kg (kept; fixed 12kg typo)
+    function calcium(w){ return `${10*w}–${20*w} mg IV/IO`; }
+
+    // Adrenaline volume matches 0.1 mL/kg of 1:10,000 (0.1 mg/mL)
+    function adrenalineVol(w){ return `${(0.1*w).toFixed(1).replace(/\.0$/,'')} mL of 1:10,000 (0.01 mg/kg)`; }
+
+    // Dextrose D10: 2 mL/kg bolus
+    function dextroseD10(w){ return `${2*w} mL of 10% (D10) IV bolus (2 mL/kg)`; }
+
+    // Fluids bolus 10–20 mL/kg
+    function fluidsBolus(w){ return `${10*w}–${20*w} mL (10–20 mL/kg bolus)`; }
+
+    // Procedural sedation dosing (ranges)
+    // Ketamine: IV 1–1.5 mg/kg; IM 2–4 mg/kg (labelled)
+    function ketamineSed(w){
+      return `IV: ${formatRange(Math.round(1*w), Math.round(1.5*w), " mg")} | IM: ${formatRange(Math.round(2*w), Math.round(4*w), " mg")}`;
+    }
+    // Midazolam: IV 0.05–0.1 mg/kg; IM 0.1–0.2 mg/kg
+    function midazSed(w){
+      const iv1 = (0.05*w).toFixed(2);
+      const iv2 = (0.10*w).toFixed(2);
+      const im1 = (0.10*w).toFixed(2);
+      const im2 = (0.20*w).toFixed(2);
+      return `IV: ${iv1}–${iv2} mg | IM: ${im1}–${im2} mg`;
+    }
+
+    // -----------------------------
+    // Item definitions
+    // -----------------------------
+    const ITEMS = [
+      {
+        key: "adrenaline",
+        label: "Adrenaline (1:10,000) — 0.01 mg/kg (0.1 mL/kg)",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: adrenalineVol(w) })
+      },
+      {
+        key: "iv_bolus",
+        label: "IV Fluids — Bolus (10–20 mL/kg)",
+        fields: ["Bolus"],
+        value: (w) => ({ Bolus: fluidsBolus(w) })
+      },
+      {
+        key: "iv_maintenance",
+        label: "IV Fluids — Maintenance rate (4–2–1 rule)",
+        fields: ["Rate"],
+        value: (w) => ({ Rate: `${maintenance421(w)} mL/hr` })
+      },
+      {
+        key: "ett_size",
+        label: "ETT Size (cuffed/uncuffed) — protocol table",
+        fields: ["Size"],
+        value: (w) => ({ Size: ETT_SIZE[w] || "" })
+      },
+      {
+        key: "ett_depth",
+        label: "ETT Depth — protocol table",
+        fields: ["Depth"],
+        value: (w) => ({ Depth: ETT_DEPTH[w] || "" })
+      },
+      {
+        key: "defib",
+        label: "Defib dose (PALS)",
+        fields: ["Shocks"],
+        value: (w) => ({ Shocks: defib(w) })
+      },
+      {
+        key: "dextrose",
+        label: "Dextrose bolus (D10) — 2 mL/kg",
+        fields: ["Bolus"],
+        value: (w) => ({ Bolus: dextroseD10(w) })
+      },
+      {
+        key: "sbp",
+        label: "Minimum acceptable SBP (your table: weight + 60)",
+        fields: ["SBP min"],
+        value: (w) => ({ "SBP min": minSBP(w) })
+      },
+      {
+        key: "calcium",
+        label: "Calcium dose (your table: 10–20 mg/kg) — specify salt in protocol",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: calcium(w) })
+      },
+      {
+        key: "ketamine",
+        label: "Ketamine (procedural sedation) — IV 1–1.5 mg/kg | IM 2–4 mg/kg",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: ketamineSed(w) })
+      },
+      {
+        key: "midazolam",
+        label: "Midazolam (procedural sedation) — IV 0.05–0.1 mg/kg | IM 0.1–0.2 mg/kg",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: midazSed(w) })
+      },
+      {
+        key: "sux",
+        label: "Suxamethonium (your table ≈ 2 mg/kg)",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: sux(w) })
+      },
+      {
+        key: "rocuronium",
+        label: "Rocuronium (your protocol values)",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: ROCURONIUM[w] || "" })
+      },
+      {
+        key: "etomidate",
+        label: "Etomidate (your protocol values)",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: ETOMIDATE[w] || "" })
+      },
+      {
+        key: "propofol",
+        label: "Propofol (your protocol values)",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: PROPOFOL[w] || "" })
+      },
+      {
+        key: "valeron",
+        label: "Valeron drops (sublingual) — your protocol values",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: VALERON[w] || "" })
+      },
+      {
+        key: "morphine",
+        label: "Morphine — your protocol values",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: MORPHINE[w] || "" })
+      },
+      {
+        key: "pethidine",
+        label: "Pethidine — your protocol values",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: PETHIDINE[w] || "" })
+      },
+      {
+        key: "ativan",
+        label: "Ativan (lorazepam) — your protocol values",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: ATIVAN[w] || "" })
+      },
+      {
+        key: "paracetamol",
+        label: "Paracetamol (stat) — your protocol values",
+        fields: ["Dose"],
+        value: (w) => ({ Dose: PARACETAMOL[w] || "" })
+      }
+    ];
+
+    // -----------------------------
+    // UI wiring
+    // -----------------------------
+    const itemSearch = document.getElementById("itemSearch");
+    const itemSelect = document.getElementById("item");
+    const weightSelect = document.getElementById("weight");
+    const showBtn = document.getElementById("showBtn");
+    const quick = document.getElementById("quick");
+
+    const result = document.getElementById("result");
+    const title = document.getElementById("title");
+    const meta = document.getElementById("meta");
+    const cards = document.getElementById("cards");
+    const allTable = document.getElementById("allTable");
+
+    const FAVS = ["adrenaline","iv_bolus","iv_maintenance","ett_size","ett_depth","defib","dextrose","ketamine","midazolam"];
+
+    function populateWeights(){
+      weightSelect.innerHTML = "";
+      WEIGHTS.forEach(w=>{
+        const opt=document.createElement("option");
+        opt.value=w;
+        opt.textContent=`${w} kg`;
+        weightSelect.appendChild(opt);
+      });
+      weightSelect.value="10";
+    }
+
+    function renderItemOptions(filter=""){
+      const f = filter.trim().toLowerCase();
+      itemSelect.innerHTML = "";
+      const list = ITEMS.filter(it => it.label.toLowerCase().includes(f) || it.key.includes(f));
+      list.forEach(it=>{
+        const opt=document.createElement("option");
+        opt.value=it.key;
+        opt.textContent=it.label;
+        itemSelect.appendChild(opt);
+      });
+      if(!itemSelect.value && list.length){
+        itemSelect.value=list[0].key;
+      }
+    }
+
+    function buildQuick(){
+      quick.innerHTML = "";
+      FAVS.forEach(k=>{
+        const it = ITEMS.find(x=>x.key===k);
+        if(!it) return;
+        const chip=document.createElement("div");
+        chip.className="chip";
+        chip.textContent=it.label.split("—")[0].trim();
+        chip.title=it.label;
+        chip.onclick=()=>{
+          itemSelect.value=k;
+          show();
+        };
+        quick.appendChild(chip);
+      });
+    }
+
+    function show(){
+      const w = Number(weightSelect.value);
+      const key = itemSelect.value;
+      const it = ITEMS.find(x=>x.key===key);
+      if(!it) return;
+
+      result.hidden = false;
+      title.textContent = `${it.label} — ${w} kg`;
+
+      meta.innerHTML = "";
+      const p1=document.createElement("div");
+      p1.className="pill";
+      p1.textContent=`Weight: ${w} kg`;
+      meta.appendChild(p1);
+
+      const p2=document.createElement("div");
+      p2.className="pill";
+      p2.textContent=`Item: ${it.key}`;
+      meta.appendChild(p2);
+
+      if (w >= 40) {
+        const p3=document.createElement("div");
+        p3.className="pill";
+        p3.textContent="≥40 kg: treat as adult (lowest adult dose)";
+        meta.appendChild(p3);
+      }
+
+      const vals = it.value(w);
+
+      cards.innerHTML = "";
+      it.fields.forEach(field=>{
+        const c=document.createElement("div");
+        c.className="card";
+        const k=document.createElement("div");
+        k.className="k";
+        k.textContent=field;
+        const v=document.createElement("div");
+        v.className="v";
+        v.textContent=vals[field] ?? "";
+        c.appendChild(k); c.appendChild(v);
+        cards.appendChild(c);
+      });
+
+      // Build "all weights" table
+      allTable.innerHTML = "";
+      const thead = document.createElement("thead");
+      const trh = document.createElement("tr");
+      const thW = document.createElement("th");
+      thW.textContent = "Weight (kg)";
+      trh.appendChild(thW);
+      it.fields.forEach(f=>{
+        const th=document.createElement("th");
+        th.textContent=f;
+        trh.appendChild(th);
+      });
+      thead.appendChild(trh);
+
+      const tbody = document.createElement("tbody");
+      WEIGHTS.forEach(ww=>{
+        const tr=document.createElement("tr");
+        const tdw=document.createElement("td");
+        tdw.textContent=ww;
+        tr.appendChild(tdw);
+        const vv = it.value(ww);
+        it.fields.forEach(f=>{
+          const td=document.createElement("td");
+          td.textContent = vv[f] ?? "";
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      allTable.appendChild(thead);
+      allTable.appendChild(tbody);
+    }
+
+    // Events
+    itemSearch.addEventListener("input", ()=>{
+      renderItemOptions(itemSearch.value);
+    });
+
+    showBtn.addEventListener("click", show);
+    itemSelect.addEventListener("change", show);
+    weightSelect.addEventListener("change", show);
+
+    // Init
+    populateWeights();
+    renderItemOptions("");
+    buildQuick();
+    show();
+  </script>
+</body>
+</html>
